@@ -1,3 +1,3 @@
 export const SectionTitleMerkliste = ({ bookmarks }) => {
-  return `meine Merkliste ${"(" + bookmarks + ")"}`;
+  return `meine Merkliste ${`(${bookmarks})`}`;
 };

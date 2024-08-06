@@ -45,6 +45,7 @@ const baseConfig = {
     "react-refresh/only-export-components": ["warn",
       { allowConstantExport: true },
     ],
+    "prefer-template": "warn",
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
     "jsx-a11y/anchor-is-valid": "off", // TODO discuss accesibility issue or convert links to buttons
@@ -56,6 +57,7 @@ const baseConfig = {
     "jsx-a11y/no-autofocus": "warn",
     "jsx-a11y/no-noninteractive-element-interactions": "warn",
     "jsx-a11y/no-static-element-interactions": "off", // TODO
+    "react/jsx-no-literals": "warn",
     "react/jsx-no-target-blank": "warn",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
