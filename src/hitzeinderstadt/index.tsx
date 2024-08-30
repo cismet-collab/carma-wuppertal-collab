@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
+import { TopicMapContext } from "react-cismap/contexts/TopicMapContextProvider";
 import {
   Footer,
   Introduction,
@@ -18,9 +19,9 @@ const getCollabedHelpComponentConfig = ({
   footerLogoUrl,
   email,
 }) => {
+  const { setAppMenuActiveMenuSection } =
+    useContext<typeof UIDispatchContext>(UIDispatchContext);
   const MyFooter = () => {
-    const { setAppMenuActiveMenuSection } =
-      useContext<typeof UIDispatchContext>(UIDispatchContext);
     return (
       <Footer
         version={versionString}
@@ -36,10 +37,12 @@ const getCollabedHelpComponentConfig = ({
     <Datengrundlage
       setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
     />,
-    <Karteninhalt />,
+    <Karteninhalt setAppMenuActiveMenuSection={setAppMenuActiveMenuSection} />,
     <InKartePositionieren />,
     <Standort />,
-    <Modellberechnungen />,
+    <Modellberechnungen
+      setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
+    />,
     <Aussagekraft />,
   ];
 
