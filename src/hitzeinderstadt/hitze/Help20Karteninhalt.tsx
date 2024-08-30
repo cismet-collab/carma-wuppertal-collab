@@ -1,13 +1,11 @@
 import Section from "react-cismap/topicmaps/menu/Section";
 import Icon from "react-cismap/commons/Icon";
+import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
+import { useContext } from "react";
 
-type Help20KarteninhaltProps = {
-  setAppMenuActiveMenuSection: (arg: string) => void;
-};
-
-export const Help20Karteninhalt = ({
-  setAppMenuActiveMenuSection,
-}: Help20KarteninhaltProps) => {
+export const Help20Karteninhalt = () => {
+  const { setAppMenuActiveMenuSection } =
+    useContext<typeof UIDispatchContext>(UIDispatchContext);
   return (
     <Section
       key="karteninhalt"

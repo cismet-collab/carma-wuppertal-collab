@@ -1,11 +1,10 @@
+import { useContext } from "react";
+import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
 import Section from "react-cismap/topicmaps/menu/Section";
-type Help10DatengrundlageProps = {
-  setAppMenuActiveMenuSection: (arg: string) => void;
-};
 
-export const Help10Datengrundlage = ({
-  setAppMenuActiveMenuSection,
-}: Help10DatengrundlageProps) => {
+export const Help10Datengrundlage = () => {
+  const { setAppMenuActiveMenuSection } =
+    useContext<typeof UIDispatchContext>(UIDispatchContext);
   return (
     <Section
       key="datengrundlage"

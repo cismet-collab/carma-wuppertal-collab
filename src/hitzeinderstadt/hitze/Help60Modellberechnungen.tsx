@@ -1,12 +1,10 @@
+import { useContext } from "react";
+import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
 import Section from "react-cismap/topicmaps/menu/Section";
 
-type Help60ModellberechnungenProps = {
-  setAppMenuActiveMenuSection: (arg: string) => void;
-};
-
-export const Help60Modellberechnungen = ({
-  setAppMenuActiveMenuSection,
-}: Help60ModellberechnungenProps) => {
+export const Help60Modellberechnungen = () => {
+  const { setAppMenuActiveMenuSection } =
+    useContext<typeof UIDispatchContext>(UIDispatchContext);
   return (
     <Section
       key="modellberechnungen"
