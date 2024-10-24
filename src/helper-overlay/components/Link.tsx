@@ -1,29 +1,24 @@
-import { OverlayTourContext } from "./OverlayTourProvider";
-import type { OverlayTourContext as OverlayTourContextSettings } from "../helperTypes";
 import { useContext } from "react";
 import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
-import { UIContext } from "react-cismap/contexts/UIContextProvider";
+import type { OverlayTourContext as OverlayTourContextSettings } from "../helperTypes";
+import { OverlayTourContext } from "./OverlayTourProvider";
 
 interface LinkProps {
   children: JSX.Element | string;
   target?: string;
   section?: string;
+  onClick?: () => void;
 }
 
-export const Link = ({ children, target, section }: LinkProps) => {
-  const { setSecondaryWithKey, showOverlay } =
+export const Link = ({ children, target, section, onClick }: LinkProps) => {
+  const { setSecondaryWithKey } =
     useContext<OverlayTourContextSettings>(OverlayTourContext);
   const { setAppMenuActiveMenuSection, setAppMenuVisible } =
     useContext<typeof UIDispatchContext>(UIDispatchContext);
-  const { appMenuVisible } = useContext<typeof UIContext>(UIContext);
 
   const showSecondaryWithKeyHandler = (e) => {
     e.stopPropagation();
     if (target) {
-      if (appMenuVisible) {
-        setAppMenuVisible(false);
-        showOverlay(true);
-      }
       setSecondaryWithKey(target);
     }
 
@@ -34,7 +29,7 @@ export const Link = ({ children, target, section }: LinkProps) => {
   };
   return (
     <span
-      onClick={showSecondaryWithKeyHandler}
+      onClick={onClick ? onClick : showSecondaryWithKeyHandler}
       style={{ cursor: "pointer", color: "#4493F8" }}
     >
       <u>{children}</u>

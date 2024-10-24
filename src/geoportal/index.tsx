@@ -14,7 +14,15 @@ export { demoElements } from "./demoElements";
 export { backgroundSettings } from "./backgroundSettings";
 export { additionalInfoFactory } from "./sachdatenabfrage-modals/helper/factory";
 
-const getCollabedHelpComponentConfig = ({ versionString }) => {
+interface CollabedHelpComponentProps {
+  versionString: string;
+  showOverlayFromOutside?: (key: string) => void;
+}
+
+const getCollabedHelpComponentConfig = ({
+  versionString,
+  showOverlayFromOutside = () => {},
+}: CollabedHelpComponentProps) => {
   const MyFooter = () => {
     const { setAppMenuActiveMenuSection } =
       useContext<typeof UIDispatchContext>(UIDispatchContext);
@@ -26,7 +34,9 @@ const getCollabedHelpComponentConfig = ({ versionString }) => {
     );
   };
 
-  const menuIntroduction = <Help05Introduction />;
+  const menuIntroduction = (
+    <Help05Introduction showOverlayFromOutside={showOverlayFromOutside} />
+  );
   const menuIcon = "info";
   const menuTitle = "Kompaktanleitung und Hintergrundinformationen";
   const menuSections = [
