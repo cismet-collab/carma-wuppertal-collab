@@ -1,10 +1,36 @@
 name: Release Action
+run-name: >
+  ${{ github.event.inputs['release-type'] }} Release 
+  -- will trigger a ${{ github.event.inputs['target'] }} Deployment for
+  ${{ github.event.inputs['project-name'] }}
+
 on:
   workflow_dispatch:
     inputs:
       release-type:
-        description: "Release type (one of): patch, minor, major, prepatch, preminor, premajor, prerelease"
+        description: "Versionsmanipulation im Collab-Projekt (eine der folgenden): patch, minor, major, prepatch, preminor, premajor, prerelease"
         required: true
+      project-name:
+        description: "Bitte geben Sie einen Projektnamen ein oder * für alle Projekte"
+        required: true
+      target:
+        type: choice
+        description: "Wohin soll ich deployen?"
+        options:
+          - dev
+          - live
+      i-know-what-im-doing:
+        type: boolean
+        description: "Ich weiß, was ich tue"
+        required: true
+      i-know-what-im-doing-multiple:
+        type: boolean
+        description: "Ich weiß, was ich tue, wenn ich mehrere Deployments anfordere"
+        required: false
+      i-know-what-im-doing-live:
+        type: boolean
+        description: "Ich weiß, was ich tue, wenn ich live-Deployments mache"
+        required: false
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -15,6 +41,49 @@ jobs:
       matrix:
         node-version: [20.x]
     steps:
+      - name: Pre-check validations
+        run: |
+          # Validate i-know-what-im-doing is true
+          if [ "${{ github.event.inputs['i-know-what-im-doing'] }}" != "true" ]; then
+            echo "Error: You must acknowledge that you know what you're doing."
+            exit 1
+          fi
+
+          # Validate if it's a live deploy, i-know-what-im-doing-live must be true, otherwise false
+          target="${{ github.event.inputs['target'] }}"
+          if [ "$target" = "live" ]; then
+            if [ "${{ github.event.inputs['i-know-what-im-doing-live'] }}" != "true" ]; then
+              echo "Error: Live deploy requires you to confirm that you know what you're doing."
+              exit 1
+            fi
+          else
+            if [ "${{ github.event.inputs['i-know-what-im-doing-live'] }}" = "true" ]; then
+              echo "Error: The 'I know what I'm doing live' option should not be checked for non-live deployments."
+              exit 1
+            fi
+          fi
+
+          # Validate if project-name=* then i-know-what-im-doing-multiple must be true, otherwise false
+          project_name="${{ github.event.inputs['project-name'] }}"
+          if [ "$project_name" = "*" ]; then
+            if [ "${{ github.event.inputs['i-know-what-im-doing-multiple'] }}" != "true" ]; then
+              echo "Error: Deploying to all projects requires you to confirm that you know what you're doing for multiple deployments."
+              exit 1
+            fi
+          else
+            if [ "${{ github.event.inputs['i-know-what-im-doing-multiple'] }}" = "true" ]; then
+              echo "Error: The 'I know what I'm doing multiple' option should not be checked if you are not deploying to all projects."
+              exit 1
+            fi
+          fi
+
+          # Validate that project-name is either * or a non-empty string
+          if [ -z "$project_name" ] || { [ "$project_name" != "*" ] && [ -z "$project_name" ]; }; then
+            echo "Error: Project name must be either '*' or a non-empty string."
+            exit 1
+          fi
+
+          echo "All checks passed."
       - uses: actions/checkout@v3
         with:
           clean: true
@@ -75,3 +144,32 @@ jobs:
           publish_dir: ./storybook-static
       - name: show deployed folder
         run: ls storybook-static
+      - name: Trigger Workflow in Another Repository
+        run: |
+          # Set the required variables
+          repo_owner="cismet"
+          repo_name="carma"
+          event_type="trigger-workflow"
+          versionManipulator=""
+          projectName="${{ github.event.inputs['project-name'] }}"
+          actor="${{ github.actor }}"
+          target="${{ github.event.inputs['target'] }}"
+
+          # Dynamically construct the client_payload as a single line
+          if [ -z "$versionManipulator" ]; then
+            payload="{\"event_type\": \"$event_type\", \"client_payload\": {\"project-name\": \"$projectName\", \"target\": \"$target\", \"actor\": \"$actor\", \"unit\": false, \"integration\": true}}"
+          else
+            payload="{\"event_type\": \"$event_type\", \"client_payload\": {\"project-name\": \"$projectName\", \"target\": \"$target\", \"version-manipulator\": \"$versionManipulator\", \"actor\": \"$actor\", \"unit\": false, \"integration\": true}}"
+          fi
+
+          # Print the payload (optional, for debugging purposes)
+          echo "Payload: $payload"
+
+          # Send the request
+          curl -L \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.CISMET_CI_DEPLOY2_PAT }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/$repo_owner/$repo_name/dispatches \
+            -d "$payload"
