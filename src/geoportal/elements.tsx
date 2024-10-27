@@ -143,7 +143,7 @@ export const elements: Record<string, ElementType> = {
   },
   gazetteerControl: {
     key: "GAZETTEER_SUCHE",
-    content: <div>Gazetteer Suche</div>,
+    content: <div><b>In Karte positionieren</b></div>,
     containerPos: "center",
     contentPos: "center",
   },
