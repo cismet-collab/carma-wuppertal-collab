@@ -146,6 +146,14 @@ export const elements: Record<string, ElementType> = {
     content: <div><b>In Karte positionieren</b></div>,
     containerPos: "center",
     contentPos: "center",
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <GazetteerText />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "right",
+    },
   },
   infoboxControl: {
     key: "INFOBOX",
