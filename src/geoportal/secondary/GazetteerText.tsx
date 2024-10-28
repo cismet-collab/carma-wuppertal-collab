@@ -1,6 +1,6 @@
 import { Link } from "../../helper-overlay/components/Link";
 
-export const LocatorText = () => {
+export const GazetteerText = () => {
   return (
     <ul
       className="overlay-helper-ul-class"
