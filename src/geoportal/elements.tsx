@@ -5,6 +5,7 @@ import { FullScreenModeText } from "./secondary/FullScreenModeText"
 import { HomeText } from "./secondary/HomeText";
 import { FeatureInfoText } from "./secondary/FeatureInfoText";
 import { LocatorText } from "./secondary/LocatorText";
+import { GazetteerText } from "./secondary/GazetteerText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 
 
