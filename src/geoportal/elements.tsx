@@ -6,6 +6,7 @@ import { HomeText } from "./secondary/HomeText";
 import { FeatureInfoText } from "./secondary/FeatureInfoText";
 import { LocatorText } from "./secondary/LocatorText";
 import { GazetteerText } from "./secondary/GazetteerText";
+import { ZoomText } from "./secondary/ZoomText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 
 
@@ -36,9 +37,17 @@ export const elements: Record<string, ElementType> = {
   },
   zoomControl: {
     key: "ZOOM",
-    content: <div>Zoom</div>,
+    content: <div><b>Zoom in/Zoom out</b></div>,
     containerPos: "center",
     contentPos: "left-center",
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <ZoomText />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "right",
+    },
   },
   fullScreenControl: {
     key: "VOLLBILD",
