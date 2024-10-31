@@ -40,6 +40,7 @@ export const elements: Record<string, ElementType> = {
     content: <div><b>Zoom in/<br />Zoom out</b></div>,
     containerPos: "center",
     contentPos: "left-center",
+    contentWidth: "70px",
     secondary: {
       content: (
         <OverlayTourProvider>
