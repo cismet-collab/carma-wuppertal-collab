@@ -7,6 +7,7 @@ import { FeatureInfoText } from "./secondary/FeatureInfoText";
 import { LocatorText } from "./secondary/LocatorText";
 import { GazetteerText } from "./secondary/GazetteerText";
 import { ZoomText } from "./secondary/ZoomText";
+import { NorthOrientationText } from "./secondary/NorthOrientationText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 
 
@@ -94,10 +95,18 @@ export const elements: Record<string, ElementType> = {
   },
   alignNorthControl: {
     key: "EINNORDEN",
-    content: <div>Nach Norden ausrichten</div>,
+    content: <div><b>Nach Norden ausrichten</b></div>,
     containerPos: "center",
     contentPos: "left-center",
-    contentWidth: "172px",
+    contentWidth: "170px",
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <NorthOrientationText />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "right",
+    },
   },
   featureInfoControl: {
     key: "SACHDATENABFRAGE",
