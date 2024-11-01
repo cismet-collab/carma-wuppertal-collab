@@ -8,6 +8,7 @@ import { LocatorText } from "./secondary/LocatorText";
 import { GazetteerText } from "./secondary/GazetteerText";
 import { ZoomText } from "./secondary/ZoomText";
 import { NorthOrientationText } from "./secondary/NorthOrientationText";
+import { Toggle2d3dText } from "./secondary/Toggle2d3dText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 
 
@@ -88,10 +89,18 @@ export const elements: Record<string, ElementType> = {
   },
   mapModeToggleControl: {
     key: "2D_3D_TOGGLE",
-    content: <div>Wechsel von 2D- und 3D-Ansicht</div>,
+    content: <div><b>Wechsel von 2D- und 3D-Ansicht</b></div>,
     containerPos: "center",
     contentPos: "left-center",
     contentWidth: "234px",
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <Toggle2d3dText />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "right",
+    },
   },
   alignNorthControl: {
     key: "EINNORDEN",
