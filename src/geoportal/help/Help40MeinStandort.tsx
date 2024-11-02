@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import meinStandpunktMarkerMitKompass from "./assets/MeinStandpunktMarkerMitKompass.jpg";
 import meinStandpunktMarkerDoppel from "./assets/meinStandpunktMarkerDoppel.jpg";
+import { Link } from "../../helper-overlay/components/Link";
 
-const Component = () => {
+const Component = ({ showOverlayFromOutside }) => {
   return (
     <GenericModalMenuSection
       sectionKey="standort"
@@ -91,6 +92,15 @@ const Component = () => {
             der Methode, mit der Ihr Endgerät und der von Ihnen verwendete
             Browser die Position bestimmen.
           </p>
+          <br />
+          <Link
+            onClick={() => {
+              showOverlayFromOutside("MEINE_POSITION");
+            }}
+          >
+            zur Hilfe-Folie
+          ic
+          </Link>
         </div>
       }
     />
