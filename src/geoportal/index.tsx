@@ -42,7 +42,7 @@ const getCollabedHelpComponentConfig = ({
   const menuSections = [
     <Help15Datengrundlage key="Datengrundlage" />,
     <Help30InKartePositionieren key="InKartePositionieren" />,
-    <Help40MeinStandort = (<Help40MeinStandort showOverlayFromOutside={showOverlayFromOutside} />) key="MeinStandort" />,
+    <Help40MeinStandort key="MeinStandort" />,
     <Help90Haftungsausschluss key="Haftungsausschluss" />,
     <Help98DigitalerZwilling key="zwilling" />,
   ];
