@@ -52,7 +52,7 @@ const getCollabedHelpComponentConfig = ({
 
   return {
     menuIntroduction,
-    menuSectionMeinStandort
+    menuSectionMeinStandort,
     menuIcon,
     menuTitle,
     menuSections,
