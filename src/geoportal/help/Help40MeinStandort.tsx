@@ -92,7 +92,6 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             der Methode, mit der Ihr Endgerät und der von Ihnen verwendete
             Browser die Position bestimmen.
           </p>
-          <br />
           <Link
             onClick={() => {
               showOverlayFromOutside("MEINE_POSITION");
