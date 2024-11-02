@@ -37,22 +37,18 @@ const getCollabedHelpComponentConfig = ({
   const menuIntroduction = (
     <Help05Introduction showOverlayFromOutside={showOverlayFromOutside} />
   );
-  const menuSectionMeinStandort = (
-    <Help40MeinStandort showOverlayFromOutside={showOverlayFromOutside} />
-  );
   const menuIcon = "info";
   const menuTitle = "Kompaktanleitung und Hintergrundinformationen";
   const menuSections = [
     <Help15Datengrundlage key="Datengrundlage" />,
     <Help30InKartePositionieren key="InKartePositionieren" />,
-    <Help40MeinStandort key="MeinStandort" />,
+    <Help40MeinStandort = (<Help40MeinStandort showOverlayFromOutside={showOverlayFromOutside} />) key="MeinStandort" />,
     <Help90Haftungsausschluss key="Haftungsausschluss" />,
     <Help98DigitalerZwilling key="zwilling" />,
   ];
 
   return {
     menuIntroduction,
-    menuSectionMeinStandort,
     menuIcon,
     menuTitle,
     menuSections,
