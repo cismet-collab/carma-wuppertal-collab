@@ -37,6 +37,9 @@ const getCollabedHelpComponentConfig = ({
   const menuIntroduction = (
     <Help05Introduction showOverlayFromOutside={showOverlayFromOutside} />
   );
+  const menuSectionMeinStandort = (
+    <Help40MeinStandort showOverlayFromOutside={showOverlayFromOutside} />
+  );
   const menuIcon = "info";
   const menuTitle = "Kompaktanleitung und Hintergrundinformationen";
   const menuSections = [
@@ -49,6 +52,7 @@ const getCollabedHelpComponentConfig = ({
 
   return {
     menuIntroduction,
+    menuSectionMeinStandort
     menuIcon,
     menuTitle,
     menuSections,

@@ -105,4 +105,4 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
     />
   );
 };
-export default Component;
+export default Help40MeinStandort;
