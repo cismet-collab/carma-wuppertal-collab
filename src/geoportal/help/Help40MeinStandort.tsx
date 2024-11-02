@@ -5,7 +5,7 @@ import meinStandpunktMarkerMitKompass from "./assets/MeinStandpunktMarkerMitKomp
 import meinStandpunktMarkerDoppel from "./assets/meinStandpunktMarkerDoppel.jpg";
 import { Link } from "../../helper-overlay/components/Link";
 
-const Component = ({ showOverlayFromOutside }) => {
+const Help40MeinStandort = ({ showOverlayFromOutside }) => {
   return (
     <GenericModalMenuSection
       sectionKey="standort"
@@ -99,7 +99,6 @@ const Component = ({ showOverlayFromOutside }) => {
             }}
           >
             zur Hilfe-Folie
-          ic
           </Link>
         </div>
       }
