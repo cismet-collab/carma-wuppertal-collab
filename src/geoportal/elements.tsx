@@ -9,6 +9,7 @@ import { GazetteerText } from "./secondary/GazetteerText";
 import { ZoomText } from "./secondary/ZoomText";
 import { NorthOrientationText } from "./secondary/NorthOrientationText";
 import { Toggle2d3dText } from "./secondary/Toggle2d3dText";
+import { LayerButtonsText } from "./secondary/LayerButtonsText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 
 
@@ -23,7 +24,15 @@ export const elements: Record<string, ElementType> = {
     key: "LAYERBUTTONS",
     containerPos: "center",
     contentPos: "center",
-    content: <div>Layer Buttons</div>,
+    content: <div><b>Kartensteuerelemente</b></div>,
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <LayerButtonsText />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "down",
+    },
   },
   hintergrund: {
     key: "HINTERGRUND",
