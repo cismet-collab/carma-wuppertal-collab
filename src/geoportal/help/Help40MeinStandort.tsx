@@ -97,7 +97,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
               showOverlayFromOutside("MEINE_POSITION");
             }}
           >
-            zur Hilfe-Folie
+            zur Hilfefolie
           </Link>
         </div>
       }
