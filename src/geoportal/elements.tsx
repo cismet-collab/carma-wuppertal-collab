@@ -31,7 +31,7 @@ export const elements: Record<string, ElementType> = {
           <LayerButtonsText />
         </OverlayTourProvider>
       ),
-      secondaryPos: "down",
+      secondaryPos: "bottom",
     },
   },
   hintergrund: {
