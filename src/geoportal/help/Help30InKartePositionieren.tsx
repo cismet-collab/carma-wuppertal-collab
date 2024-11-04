@@ -30,17 +30,17 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   eine <Icon name="child" /> Kindertageseinrichtung oder eine{" "}
                   <Icon name="graduation-cap" /> Schule handelt.
                 </p>
-                <Link
-                  onClick={() => {
-                    showOverlayFromOutside("GAZETTEER_SUCHE");
-                  }}
-                >
-                  zur Hilfefolie
-                </Link>
-                <br/>
               </>
             }
-          />
+            <p>
+              <Link
+                onClick={() => {
+                  showOverlayFromOutside("GAZETTEER_SUCHE");
+                }}
+              >
+                zur Hilfefolie
+              </Link>
+            </p>
         </div>
       }
     />
