@@ -3,15 +3,18 @@ import { Link } from "../../helper-overlay/components/Link";
 const Help05Introduction = ({ showOverlayFromOutside }) => {
   return (
     <span>
-      Could now she how in was sleep dropped in by back shall come into needed
-      wild that picture they to have would by her succeeding.{" "}
+      Wählen Sie eine der folgenden farbigen Schaltflächen, um sich weitere 
+      Bedienungs- und Hintergrundinformationen zu dem entsprechenden Thema 
+      anzeigen zu lassen. Als alternative Unterstützung steht Ihnen auch eine{" "}
       <Link
         onClick={() => {
           showOverlayFromOutside();
         }}
       >
-        Test Link
+        Hilfefolie
       </Link>
+      {" "}zur Verfügung, mit der Sie gezielt die Nutzung und Funktionsweise der
+      einzelnen Bedienelemente des Portals erforschen können. 
     </span>
   );
 };
