@@ -1,8 +1,9 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { InKartePositionierenText } from "../../commons";
 import Icon from "react-cismap/commons/Icon";
+import { Link } from "../../helper-overlay/components/Link";
 
-const Component = () => {
+const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
   return (
     <GenericModalMenuSection
       sectionKey="positionieren"
@@ -29,6 +30,13 @@ const Component = () => {
                   eine <Icon name="child" /> Kindertageseinrichtung oder eine{" "}
                   <Icon name="graduation-cap" /> Schule handelt.
                 </p>
+                <Link
+                  onClick={() => {
+                    showOverlayFromOutside("GAZETTEER_SUCHE");
+                  }}
+                >
+                  zur Hilfefolie
+                </Link>
               </>
             }
           />
@@ -37,4 +45,4 @@ const Component = () => {
     />
   );
 };
-export default Component;
+export default Help30InKartePositionieren;
