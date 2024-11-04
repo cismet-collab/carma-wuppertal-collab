@@ -7,7 +7,7 @@ const Help05Introduction = ({ showOverlayFromOutside }) => {
       wild that picture they to have would by her succeeding.{" "}
       <Link
         onClick={() => {
-          showOverlayFromOutside("INFOBOX");
+          showOverlayFromOutside();
         }}
       >
         Test Link
