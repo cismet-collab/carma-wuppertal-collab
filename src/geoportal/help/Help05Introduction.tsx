@@ -14,7 +14,7 @@ const Help05Introduction = ({ showOverlayFromOutside }) => {
         Hilfefolie
       </Link>
       {" "}zur Verfügung, mit der Sie gezielt die Nutzung und Funktionsweise der
-      einzelnen Bedienungselemente des Portals erforschen können.<br/> 
+      einzelnen Bedienungselemente des Portals erforschen können.
     </span>
   );
 };
