@@ -41,7 +41,7 @@ const getCollabedHelpComponentConfig = ({
   const menuTitle = "Kompaktanleitung und Hintergrundinformationen";
   const menuSections = [
     <Help15Datengrundlage key="Datengrundlage" />,
-    <Help30InKartePositionieren key="InKartePositionieren" />,
+    <Help30InKartePositionieren showOverlayFromOutside={showOverlayFromOutside} key="InKartePositionieren" />,
     <Help40MeinStandort key="MeinStandort" />,
     <Help90Haftungsausschluss key="Haftungsausschluss" />,
     <Help98DigitalerZwilling key="zwilling" />,
