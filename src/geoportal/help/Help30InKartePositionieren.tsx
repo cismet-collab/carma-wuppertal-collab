@@ -37,6 +37,7 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                 >
                   zur Hilfefolie
                 </Link>
+                <br/>
               </>
             }
           />
