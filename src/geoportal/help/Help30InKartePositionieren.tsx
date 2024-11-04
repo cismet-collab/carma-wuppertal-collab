@@ -32,15 +32,18 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                 </p>
               </>
             }
-            <p>
-              <Link
-                onClick={() => {
-                  showOverlayFromOutside("GAZETTEER_SUCHE");
-                }}
-              >
-                zur Hilfefolie
-              </Link>
-            </p>
+            posttext={
+              <p>
+                <Link
+                  onClick={() => {
+                    showOverlayFromOutside("GAZETTEER_SUCHE");
+                  }}
+                >
+                  zur Hilfefolie
+                </Link>
+              </p>
+            }
+          />
         </div>
       }
     />
