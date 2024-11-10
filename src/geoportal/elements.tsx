@@ -45,8 +45,8 @@ export const elements: Record<string, ElementType> = {
     key: "MENU",
     containerPos: "right",
     contentPos: "right-center",
-    contentWidth: "100px",
-    content: <div><b>Anwendungs-menü</b></div>,
+    contentWidth: "150px",
+    content: <div><b>Anwendungs-<br />menü</b></div>,
     secondary: {
       content: (
         <OverlayTourProvider>
