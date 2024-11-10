@@ -10,6 +10,7 @@ import { ZoomText } from "./secondary/ZoomText";
 import { NorthOrientationText } from "./secondary/NorthOrientationText";
 import { Toggle2d3dText } from "./secondary/Toggle2d3dText";
 import { LayerButtonsText } from "./secondary/LayerButtonsText";
+import { ApplicationMenuText } from "./secondary/ApplicationMenuText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 
 
@@ -44,7 +45,16 @@ export const elements: Record<string, ElementType> = {
     key: "MENU",
     containerPos: "center",
     contentPos: "center",
-    content: <div>Menü</div>,
+    contentWidth: "60px",
+    content: <div><b>Anwendungsmenü</b></div>,
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <ApplicationMenuText />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "bottom",
+    },
   },
   zoomControl: {
     key: "ZOOM",
@@ -214,3 +224,4 @@ export const elements: Record<string, ElementType> = {
     },
   },
 };
+import { LayerButtonsText } from "./secondary/LayerButtonsText";
