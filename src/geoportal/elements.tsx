@@ -224,4 +224,3 @@ export const elements: Record<string, ElementType> = {
     },
   },
 };
-import { LayerButtonsText } from "./secondary/LayerButtonsText";
