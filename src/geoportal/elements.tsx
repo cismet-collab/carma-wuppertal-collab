@@ -43,10 +43,10 @@ export const elements: Record<string, ElementType> = {
   },
   modalMenu: {
     key: "MENU",
-    containerPos: "center",
-    contentPos: "center",
-    contentWidth: "60px",
-    content: <div><b>Anwendungsmenü</b></div>,
+    containerPos: "right",
+    contentPos: "right-center",
+    contentWidth: "100px",
+    content: <div><b>Anwendungs-menü</b></div>,
     secondary: {
       content: (
         <OverlayTourProvider>
