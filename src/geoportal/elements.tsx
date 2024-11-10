@@ -43,9 +43,9 @@ export const elements: Record<string, ElementType> = {
   },
   modalMenu: {
     key: "MENU",
-    containerPos: "center",
-    contentPos: "left-center",
-    contentWidth: "138px",
+    containerPos: "right",
+    contentPos: "right-center",
+    contentWidth: "100px",
     content: <div><b>Anwendungs-<br />menü</b></div>,
     secondary: {
       content: (
