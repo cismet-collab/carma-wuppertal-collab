@@ -39,13 +39,13 @@ export const elements: Record<string, ElementType> = {
     key: "HINTERGRUND",
     content: <div>Hintergrund</div>,
     containerPos: "center",
-    contentPos: "center",
+    contentPos: "left-center",
   },
   modalMenu: {
     key: "MENU",
     containerPos: "right",
-    contentPos: "right-center",
-    contentWidth: "150px",
+    contentPos: "center",
+    contentWidth: "100px",
     content: <div><b>Anwendungs-<br />menü</b></div>,
     secondary: {
       content: (
