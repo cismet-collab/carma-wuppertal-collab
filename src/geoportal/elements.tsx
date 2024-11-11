@@ -1,7 +1,7 @@
 import type { ElementType } from "../helper-overlay/helperTypes";
 import { MeasurementsText } from "./secondary/MeasurementsText";
 import { InfoboxText } from "./secondary/InfoboxText";
-import { FullScreenModeText } from "./secondary/FullScreenModeText"
+import { FullScreenModeText } from "./secondary/FullScreenModeText";
 import { HomeText } from "./secondary/HomeText";
 import { FeatureInfoText } from "./secondary/FeatureInfoText";
 import { LocatorText } from "./secondary/LocatorText";
@@ -12,7 +12,6 @@ import { Toggle2d3dText } from "./secondary/Toggle2d3dText";
 import { LayerButtonsText } from "./secondary/LayerButtonsText";
 import { ApplicationMenuText } from "./secondary/ApplicationMenuText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
-
 
 export const elements: Record<string, ElementType> = {
   menu: {
@@ -25,7 +24,11 @@ export const elements: Record<string, ElementType> = {
     key: "LAYERBUTTONS",
     containerPos: "center",
     contentPos: "center",
-    content: <div><b>Kartensteuerelemente</b></div>,
+    content: (
+      <div>
+        <b>Kartensteuerelemente</b>
+      </div>
+    ),
     secondary: {
       content: (
         <OverlayTourProvider>
@@ -37,16 +40,29 @@ export const elements: Record<string, ElementType> = {
   },
   hintergrund: {
     key: "HINTERGRUND",
-    content: <div>Hintergrund</div>,
+    content: (
+      <div>
+        Hintergrund-
+        <br />
+        karte
+      </div>
+    ),
     containerPos: "center",
     contentPos: "left-center",
   },
   modalMenu: {
     key: "MENU",
-    containerPos: "right",
+    containerPos: "center",
     contentPos: "right-center",
-    contentWidth: "100px",
-    content: <div><b>Anwendungs-<br />menü</b></div>,
+    content: (
+      <div style={{ textAlign: "right" }}>
+        <b>
+          Anwendungs-
+          <br />
+          menü
+        </b>
+      </div>
+    ),
     secondary: {
       content: (
         <OverlayTourProvider>
@@ -58,7 +74,15 @@ export const elements: Record<string, ElementType> = {
   },
   zoomControl: {
     key: "ZOOM",
-    content: <div><b>Zoom in/<br />Zoom out</b></div>,
+    content: (
+      <div>
+        <b>
+          Zoom in/
+          <br />
+          Zoom out
+        </b>
+      </div>
+    ),
     containerPos: "center",
     contentPos: "left-center",
     contentWidth: "70px",
@@ -92,7 +116,11 @@ export const elements: Record<string, ElementType> = {
   },
   navigatorControl: {
     key: "MEINE_POSITION",
-    content: <div><b>Mein Standort</b></div>,
+    content: (
+      <div>
+        <b>Mein Standort</b>
+      </div>
+    ),
     containerPos: "center",
     contentPos: "left-center",
     contentWidth: "100px",
@@ -104,11 +132,14 @@ export const elements: Record<string, ElementType> = {
       ),
       secondaryPos: "right",
     },
-
   },
   mapModeToggleControl: {
     key: "2D_3D_TOGGLE",
-    content: <div><b>Wechsel von 2D- und 3D-Ansicht</b></div>,
+    content: (
+      <div>
+        <b>Wechsel von 2D- und 3D-Ansicht</b>
+      </div>
+    ),
     containerPos: "center",
     contentPos: "left-center",
     contentWidth: "234px",
@@ -123,7 +154,11 @@ export const elements: Record<string, ElementType> = {
   },
   alignNorthControl: {
     key: "EINNORDEN",
-    content: <div><b>Nach Norden ausrichten</b></div>,
+    content: (
+      <div>
+        <b>Nach Norden ausrichten</b>
+      </div>
+    ),
     containerPos: "center",
     contentPos: "left-center",
     contentWidth: "170px",
@@ -138,7 +173,11 @@ export const elements: Record<string, ElementType> = {
   },
   featureInfoControl: {
     key: "SACHDATENABFRAGE",
-    content: <div><b>Modus Sachdatenabfrage</b></div>,
+    content: (
+      <div>
+        <b>Modus Sachdatenabfrage</b>
+      </div>
+    ),
     containerPos: "center",
     contentPos: "left-center",
     contentWidth: "181px",
@@ -191,7 +230,11 @@ export const elements: Record<string, ElementType> = {
   },
   gazetteerControl: {
     key: "GAZETTEER_SUCHE",
-    content: <div><b>In Karte positionieren</b></div>,
+    content: (
+      <div>
+        <b>In Karte positionieren</b>
+      </div>
+    ),
     containerPos: "center",
     contentPos: "center",
     secondary: {
