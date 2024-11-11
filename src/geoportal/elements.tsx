@@ -41,7 +41,7 @@ export const elements: Record<string, ElementType> = {
   hintergrund: {
     key: "HINTERGRUND",
     content: (
-      <div>
+      <div style={{ textAlign: "center" }}>
         Hintergrund-
         <br />
         karte
@@ -55,7 +55,7 @@ export const elements: Record<string, ElementType> = {
     containerPos: "center",
     contentPos: "right-center",
     content: (
-      <div style={{ textAlign: "right" }}>
+      <div style={{ textAlign: "center" }}>
         <b>
           Anwendungs-
           <br />
