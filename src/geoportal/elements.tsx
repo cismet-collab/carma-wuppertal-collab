@@ -20,6 +20,12 @@ export const elements: Record<string, ElementType> = {
     contentPos: "center",
     content: <div>Menüleiste</div>,
   },
+  helpOverlay: {
+    key: "HILFE_OVERLAY",
+    containerPos: "center",
+    contentPos: "center",
+    content: <div>Hilfe</div>,
+  },
   layerWrapper: {
     key: "LAYERBUTTONS",
     containerPos: "center",

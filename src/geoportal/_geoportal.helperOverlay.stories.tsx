@@ -24,6 +24,18 @@ export const Menüleiste: StoryObj = {
   },
 };
 
+export const HilfeOverlay: StoryObj = {
+  render: () => {
+    const element = getCollabedHelpElementsConfig("HILFE_OVERLAY", geoElements);
+    const config = useOverlayHelper(element);
+    return (
+      <div>
+        <DisplayContentHelper config={config} />
+      </div>
+    );
+  },
+};
+
 export const LayerButtons: StoryObj = {
   render: () => {
     const element = getCollabedHelpElementsConfig("LAYERBUTTONS", geoElements);
