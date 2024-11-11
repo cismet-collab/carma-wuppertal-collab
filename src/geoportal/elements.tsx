@@ -24,6 +24,7 @@ export const elements: Record<string, ElementType> = {
     key: "HILFE_OVERLAY",
     containerPos: "center",
     contentPos: "center",
+    contentWidth: "145px",
     content: <div>Hilfefolie überlagern</div>,
   },
   layerWrapper: {
