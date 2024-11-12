@@ -29,8 +29,10 @@ export const elements: Record<string, ElementType> = {
   },
   layerWrapper: {
     key: "LAYERBUTTONS",
-    containerPos: "center",
-    contentPos: "center",
+    position: {
+      top: 69,
+      right: "calc(50% - 73px)",
+    },
     content: (
       <div>
         <b>Kartensteuerelemente</b>
