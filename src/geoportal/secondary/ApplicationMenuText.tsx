@@ -8,7 +8,7 @@ export const ApplicationMenuText = () => {
       >
         <div>
           Bedienungsanleitung und Hintergrundinformationen in kompaktem 
-          Akkordeon-Design (<b>2D</b> und <b>3D</b>) | diverse Verknüpfungen mit Hilfefolie
+          Akkordeon-Design (<b>2D</b> und <b>3D</b>) | diverse Verknüpfungen mit <Link target="HILFE_OVERLAY">Hilfefolie</Link>
         </div>
       </ul>
     );
