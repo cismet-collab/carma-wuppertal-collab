@@ -11,6 +11,7 @@ import { NorthOrientationText } from "./secondary/NorthOrientationText";
 import { Toggle2d3dText } from "./secondary/Toggle2d3dText";
 import { LayerButtonsText } from "./secondary/LayerButtonsText";
 import { ApplicationMenuText } from "./secondary/ApplicationMenuText";
+import { HelpOverlayText } from "./secondary/HelpOverlayText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 
 export const elements: Record<string, ElementType> = {
@@ -25,7 +26,23 @@ export const elements: Record<string, ElementType> = {
     containerPos: "center",
     contentPos: "center",
     contentWidth: "145px",
-    content: <div>Hilfefolie überlagern</div>,
+    content: (
+      <div style={{ textAlign: "center" }}>
+        <b>
+          Hilfefolie
+          <br />
+          überlagern
+        </b>
+      </div>
+    ),
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <HelpOverlayText />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "bottom",
+    },
   },
   layerWrapper: {
     key: "LAYERBUTTONS",
