@@ -7,7 +7,8 @@ export const BackgroundSelectionText = () => {
         style={{ margin: "0", paddingLeft: "20px", maxWidth: "600px" }}
       >
         <div>
-          Wechselschalter für die Auswahl der Hintergrundkarte (<b>2D</b>) bzw. des 3D-Modells (<b>3D</b>) 
+          Wechselschalter für die Auswahl der Hintergrundkarte (<b>2D</b>) bzw. des 3D-Modells (<b>3D</b>) | 
+          Voreinstellung der 2D-Karte im <Link target="LAYERBUTTONS">Hintergrund-Steuerelement</Link>  
         </div>
       </ul>
     );
