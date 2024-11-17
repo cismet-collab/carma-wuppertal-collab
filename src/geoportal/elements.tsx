@@ -12,6 +12,7 @@ import { Toggle2d3dText } from "./secondary/Toggle2d3dText";
 import { LayerButtonsText } from "./secondary/LayerButtonsText";
 import { ApplicationMenuText } from "./secondary/ApplicationMenuText";
 import { HelpOverlayText } from "./secondary/HelpOverlayText";
+import { BackgroundSelectionText } from "./secondary/BackgroundSelectionText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 
 export const elements: Record<string, ElementType> = {
@@ -66,15 +67,25 @@ export const elements: Record<string, ElementType> = {
   },
   hintergrund: {
     key: "HINTERGRUND",
-    content: (
-      <div style={{ textAlign: "center" }}>
-        Hintergrund-
-        <br />
-        karte
-      </div>
-    ),
     containerPos: "center",
     contentPos: "left-center",
+    content: (
+      <div style={{ textAlign: "center" }}>
+        <b>
+          Hintergrund
+          <br />
+          auswählen
+        </b>
+      </div>
+    ),
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <BackgroundSelectionText />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "bottom",
+    },
   },
   modalMenu: {
     key: "MENU",
