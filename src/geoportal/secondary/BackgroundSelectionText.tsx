@@ -8,7 +8,9 @@ export const BackgroundSelectionText = () => {
       >
         <div>
           Wechselschalter für die Auswahl der Hintergrundkarte (<b>2D</b>) bzw. des 3D-Modells (<b>3D</b>) | 
-          Voreinstellung der 2D-Karte im <Link target="LAYERBUTTONS">Hintergrund-Steuerelement</Link>  
+          Voreinstellung der 2D-Karte im <Link target="LAYERBUTTONS">Hintergrund-Steuerelement</Link> | 
+          3D: "Karte" basiert auf LoD2-Gebäudemodell der Landesvermessung NRW, "Luftbild" liefert 3D-Mesh 
+          (berechnet aus Befliegung in 03/24) 
         </div>
       </ul>
     );
