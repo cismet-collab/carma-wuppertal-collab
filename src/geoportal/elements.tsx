@@ -280,7 +280,7 @@ export const elements: Record<string, ElementType> = {
           <GazetteerText />
         </OverlayTourProvider>
       ),
-      secondaryPos: "right",
+      secondaryPos: "top",
     },
   },
   infoboxControl: {
@@ -300,7 +300,7 @@ export const elements: Record<string, ElementType> = {
           <InfoboxText />
         </OverlayTourProvider>
       ),
-      secondaryPos: "left",
+      secondaryPos: "top",
     },
   },
 };
