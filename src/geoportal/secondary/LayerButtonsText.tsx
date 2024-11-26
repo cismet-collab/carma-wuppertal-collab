@@ -20,7 +20,7 @@ export const LayerButtonsText = () => {
           aller Kartenebenen (zentrale Steuerung für kleine Bildschirme)
         </li>
         <li>
-          <b>Ebenen-Steuerelemente<b>: Kurzbeschreibung (abstract) | Legende | ...
+          <b>Ebenen-Steuerelemente</b>: Kurzbeschreibung (abstract) | Legende | ...
         </li>
       </ul>
     );
