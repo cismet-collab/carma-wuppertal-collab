@@ -11,8 +11,7 @@ export const LayerButtonsText = () => {
           für jede weitere geladene Kartenebene ein Ebenen-Steuerelement (<b>2D</b>) | 
           horizontales Verschieben der Ebenen-Steuerelemente zur Änderung der Darstellungsreihenfolge | 
           Klicken/Tippen auf das Steuerelement zum Öffnen einer Zeile für die Steuerung von 
-          Transparenz und Sichtbarkeit <br /><br /> 
-          Aufklappen der Zeile zur Anzeige weiterer Informationen:
+          Transparenz und Sichtbarkeit | Aufklappen der Zeile zur Anzeige weiterer Informationen:
         </div>
         <li>
           <b>Hintergrund-Steuerelement</b>: Auswahl/Voreinstellung der <Link target="HINTERGRUND">Hintergrundkarte</Link> | 
@@ -20,7 +19,7 @@ export const LayerButtonsText = () => {
           aller Kartenebenen (zentrale Steuerung für kleine Bildschirme)
         </li>
         <li>
-          <b>Ebenen-Steuerelemente</b>: Kurzbeschreibung (abstract) | Legende | ...
+          <b>Ebenen-Steuerelemente</b>: Kurzbeschreibung (abstract) | Legende | Verknüpfungen mit Metadaten, Open Data etc.
         </li>
       </ul>
     );
