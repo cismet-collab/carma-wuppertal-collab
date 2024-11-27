@@ -163,6 +163,10 @@ const EMobiModal = ({ feature, setOpen }) => {
                   <b>Schnellladestation:</b>{" "}
                   {!!ladestation.schnellladestation === true ? "Ja" : "Nein"}
                 </div>
+                <div>
+                  <b>Öko-Strom:</b>{" "}
+                  {!!ladestation.gruen === true ? "Ja" : "Nein"}
+                </div>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
