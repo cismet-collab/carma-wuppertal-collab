@@ -13,6 +13,7 @@ import { LayerButtonsText } from "./secondary/LayerButtonsText";
 import { ApplicationMenuText } from "./secondary/ApplicationMenuText";
 import { HelpOverlayText } from "./secondary/HelpOverlayText";
 import { BackgroundSelectionText } from "./secondary/BackgroundSelectionText";
+import { MenuBarText } from "./secondary/MenuBarText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 
 export const elements: Record<string, ElementType> = {
@@ -20,7 +21,19 @@ export const elements: Record<string, ElementType> = {
     key: "MENULEISTE",
     containerPos: "center",
     contentPos: "center",
-    content: <div>Menüleiste</div>,
+    content: (
+      <div>
+        <b>Menüleiste</b>
+      </div>
+    ),
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <MenuBarText />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "bottom",
+    },    
   },
   helpOverlay: {
     key: "HILFE_OVERLAY",
