@@ -225,7 +225,7 @@ export const elements: Record<string, ElementType> = {
     key: "SACHDATENABFRAGE",
     content: (
       <div>
-        <b>Modus Sachdatenabfrage</b>
+        <b>Modus Multi-Sachdatenabfrage</b>
       </div>
     ),
     containerPos: "center",
