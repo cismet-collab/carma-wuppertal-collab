@@ -20,7 +20,7 @@ export const MenuBarText = () => {
           </td>
           <td>
             <b>Aktualisieren</b> - Erneutes Laden aller nicht ausgeblendeten 
-            <Link target="LAYERBUTTONS">Kartenebenen</Link> 
+            {" "}<Link target="LAYERBUTTONS">Kartenebenen</Link> 
           </td>
         </tr>
         <tr>
@@ -31,7 +31,7 @@ export const MenuBarText = () => {
           <td>
             <b>Hintergrundkarte abschwächen / zurücksetzen</b> - Wechselschalter
             zum Abschwächen (starke Transparenz) und Zurücksetzen (keine
-            Transparenz) der <Link target="HINTERGRUND">Hintergrundkarte</Link>{" "}
+            Transparenz) der {" "}<Link target="HINTERGRUND">Hintergrundkarte</Link>{" "}
             | zum Auffinden von Fachobjekten bei dünn besetzten Kartenebenen
           </td>
         </tr>
