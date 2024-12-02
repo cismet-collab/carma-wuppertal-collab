@@ -17,7 +17,6 @@ export const MenuBarText = () => {
         <tr>
           <td>
             <img src={focusOff} style={{ height: "18px" }} />
-            <br />
             <img src={focusOn} style={{ height: "18px" }} />
           </td>
           <td>
