@@ -14,7 +14,7 @@ export const MenuBarText = () => {
         Die Menüleiste umfasst mehrere Aktionen und Dialoge zur Steuerung und
         Weiterverarbeitung der Karteninhalte:
       </div>
-      <table valign="top">
+      <table>
         <tr>
           <td>
             <FontAwesomeIcon icon={faRotateRight} />
@@ -25,7 +25,7 @@ export const MenuBarText = () => {
           </td>
         </tr>
         <tr>
-          <td>
+          <td valign="top">
             <img src={focusOff} style={{ height: "14px" }} />
             <img src={focusOn} style={{ height: "14px" }} />
           </td>
@@ -47,7 +47,7 @@ export const MenuBarText = () => {
           </td>
         </tr>
         <tr>
-          <td>
+          <td valign="top">
             <FontAwesomeIcon icon="print" />
           </td>
           <td>
