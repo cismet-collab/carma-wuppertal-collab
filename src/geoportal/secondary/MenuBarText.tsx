@@ -16,7 +16,7 @@ export const MenuBarText = () => {
       <table>
         <tr>
           <td>
-            <FontAwesomeIcon icon="eye" /> <FontAwesomeIcon icon="rotate-right" />
+            <FontAwesomeIcon icon="rotate-right" />
           </td>
           <td>
             <b>Aktualisieren</b> - Erneutes Laden aller nicht ausgeblendeten Kartenebenen 
