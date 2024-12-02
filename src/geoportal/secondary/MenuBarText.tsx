@@ -1,5 +1,8 @@
 import focusOn from "./assets/focus-on.png";
 import focusOff from "./assets/focus-off.png";
+import {
+  rotate-right, eye, eye-slash, file-export, print, share-nodes
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "../../helper-overlay/components/Link";
 
 export const MenuBarText = () => {
@@ -14,7 +17,7 @@ export const MenuBarText = () => {
         <table>
           <tr>
             <td>
-              <img src={focusOff} style={{ height: "18px" }} />{" "}/
+              <img src={focusOff} style={{ height: "18px" }} />
               <br /> 
               <img src={focusOn} style={{ height: "18px" }} />
             </td>
@@ -32,7 +35,7 @@ export const MenuBarText = () => {
             </td>
           </tr>
           <tr>
-            <td>Icon</td>
+            <td><img src={print} style={{ height: "18px" }} /></td>
             <td>
               <b>Drucken</b> - Einfacher Ausdruck in PDF-Datei mit Auswahl von Format, Maßstab und Auflösung | 
               verschiebbarer Druckvorschaurahmen | kein Ausdruck von Legenden, Metadaten etc.
