@@ -16,8 +16,16 @@ export const MenuBarText = () => {
       <table>
         <tr>
           <td>
-            <img src={focusOff} style={{ height: "18px" }} />
-            <img src={focusOn} style={{ height: "18px" }} />
+            <FontAwesomeIcon icon="eye" /> <FontAwesomeIcon icon="rotate-right" />
+          </td>
+          <td>
+            <b>Aktualisieren</b> - Erneutes Laden aller nicht ausgeblendeten Kartenebenen 
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src={focusOff} style={{ height: "14px" }} />
+            <img src={focusOn} style={{ height: "14px" }} />
           </td>
           <td>
             <b>Hintergrundkarte abschwächen / zurücksetzen</b> - Wechselschalter
