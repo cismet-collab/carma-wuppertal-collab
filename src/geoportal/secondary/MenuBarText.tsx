@@ -1,5 +1,6 @@
 import focusOn from "./assets/focus-on.png";
 import focusOff from "./assets/focus-off.png";
+import { Link } from "../../helper-overlay/components/Link";
 
 export const MenuBarText = () => {
     return (
