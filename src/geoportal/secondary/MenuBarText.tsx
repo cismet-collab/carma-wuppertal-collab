@@ -1,7 +1,7 @@
 import focusOn from "./assets/focus-on.png";
 import focusOff from "./assets/focus-off.png";
 import {
-  rotate-right, eye, eye-slash, file-export, print, share-nodes
+  eye, print
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "../../helper-overlay/components/Link";
 
