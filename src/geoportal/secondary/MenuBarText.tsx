@@ -14,6 +14,8 @@ export const MenuBarText = () => {
         <table>
           <tr>
             <td>
+              <img src={focusOff} style={{ height: "18px" }} />{" "}/</td>
+              <br /> 
               <img src={focusOn} style={{ height: "18px" }} /></td>
             <td>
               <b>Hintergrundkarte abschwächen / zurücksetzen</b> - Wechselschalter zum Abschwächen (starke Transparenz) 
