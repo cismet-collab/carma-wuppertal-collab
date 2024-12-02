@@ -2,6 +2,7 @@ import focusOn from "./assets/focus-on.png";
 import focusOff from "./assets/focus-off.png";
 import { Link } from "../../helper-overlay/components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 
 export const MenuBarText = () => {
   return (
@@ -16,11 +17,11 @@ export const MenuBarText = () => {
       <table>
         <tr>
           <td>
-            <FontAwesomeIcon icon="rotate-right" />
+            <FontAwesomeIcon icon={faRotateRight} />
           </td>
           <td>
-            <b>Aktualisieren</b> - Erneutes Laden aller nicht ausgeblendeten 
-            {" "}<Link target="LAYERBUTTONS">Kartenebenen</Link> 
+            <b>Aktualisieren</b> - Erneutes Laden aller nicht ausgeblendeten{" "}
+            <Link target="LAYERBUTTONS">Kartenebenen</Link>
           </td>
         </tr>
         <tr>
@@ -31,7 +32,7 @@ export const MenuBarText = () => {
           <td>
             <b>Hintergrundkarte abschwächen / zurücksetzen</b> - Wechselschalter
             zum Abschwächen (starke Transparenz) und Zurücksetzen (keine
-            Transparenz) der {" "}<Link target="HINTERGRUND">Hintergrundkarte</Link>{" "}
+            Transparenz) der <Link target="HINTERGRUND">Hintergrundkarte</Link>{" "}
             | zum Auffinden von Fachobjekten bei dünn besetzten Kartenebenen
           </td>
         </tr>
