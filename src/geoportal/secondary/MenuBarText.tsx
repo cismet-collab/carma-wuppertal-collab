@@ -1,5 +1,5 @@
-import focus-on from "./assets/focus-on.png";
-import focus-off from "./assets/focus-off.png";
+import focusOn from "./assets/focus-on.png";
+import focusOff from "./assets/focus-off.png";
 import { Link } from "../../helper-overlay/components/Link";
 
 export const MenuBarText = () => {
@@ -13,7 +13,8 @@ export const MenuBarText = () => {
         </div>
         <table>
           <tr>
-            <td><img src={focus-on} style={{ height: "18px" }} /></td>
+            <td>
+              <img src={focusOn} style={{ height: "18px" }} /></td>
             <td>
               <b>Hintergrundkarte abschwächen / zurücksetzen</b> - Wechselschalter zum Abschwächen (starke Transparenz) 
               und Zurücksetzen (keine Transparenz) der <Link target="HINTERGRUND">Hintergrundkarte</Link> | zum Auffinden 
