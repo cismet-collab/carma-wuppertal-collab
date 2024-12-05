@@ -9,7 +9,7 @@ export const FeatureInfoText = () => {
         <div>
           Wechselschalter zum Ein-/Ausschalten des Multi-Sachdatenabfragemodus (<b>2D</b>) | 
           blau unterstrichene <Link target="LAYERBUTTONS">Kartensteuerelemente</Link> kennzeichnen abfragbare Kartenebenen | 
-          in Karte klicken/tippen für Abfrage aller sichtbaren "blauen" Kartenebenen an dieser Stelle ("thematischer Durchstich") | 
+          in Karte klicken für Abfrage aller sichtbaren "blauen" Kartenebenen an dieser Stelle ("thematischer Durchstich") | 
           Ergebnis- und zusätzliche Koordinatenanzeige in der <Link target="INFOBOX">Info-Box</Link>
         </div>
       </ul>
