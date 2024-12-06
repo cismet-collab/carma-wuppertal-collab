@@ -15,6 +15,7 @@
     /* Bundler mode */
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
+    "moduleResolution":"node",
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
