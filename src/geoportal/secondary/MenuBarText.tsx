@@ -17,7 +17,7 @@ export const MenuBarText = () => {
       <table>
         <tr>
           <td>
-          <img src={addLayers} style={{ height: "14px" }} />
+            <img src={addLayers} style={{ height: "14px" }} />
           </td>
           <td>
             <b>Aktualisieren</b> - Erneutes Laden aller nicht ausgeblendeten{" "}
