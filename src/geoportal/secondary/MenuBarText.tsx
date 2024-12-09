@@ -27,7 +27,7 @@ export const MenuBarText = () => {
         </tr>
         <tr>
           <td>            
-            <img src={addLayers} style={{ height: "14px" }} />
+            <img src={addLayers} style={{ height: "18px" }} />
           </td>
           <td>
             <b>Karteninhalte hinzufügen</b> - Dialog für Suche, Vorschau und Laden von 
