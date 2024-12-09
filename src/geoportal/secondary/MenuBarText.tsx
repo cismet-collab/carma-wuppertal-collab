@@ -17,7 +17,7 @@ export const MenuBarText = () => {
       <table>
         <tr>
           <td>
-            <img src={addLayers} style={{ height: "14px" }} />
+            <FontAwesomeIcon icon={faRotateRight} />
           </td>
           <td>
             <b>Aktualisieren</b> - Erneutes Laden aller nicht ausgeblendeten{" "}
@@ -25,8 +25,8 @@ export const MenuBarText = () => {
           </td>
         </tr>
         <tr>
-          <td>
-            <FontAwesomeIcon icon={faRotateRight} />
+          <td>            
+            <img src={addLayers} style={{ height: "14px" }} />
           </td>
           <td>
             <b>Karteninhalte hinzufügen</b> - Dialog für Suche, Vorschau und Laden von 
