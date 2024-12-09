@@ -17,11 +17,21 @@ export const MenuBarText = () => {
       <table>
         <tr>
           <td>
-            <FontAwesomeIcon icon={faRotateRight} />
+          <img src={addLayers} style={{ height: "14px" }} />
           </td>
           <td>
             <b>Aktualisieren</b> - Erneutes Laden aller nicht ausgeblendeten{" "}
             <Link target="LAYERBUTTONS">Kartenebenen</Link>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon={faRotateRight} />
+          </td>
+          <td>
+            <b>Karteninhalte hinzufügen</b> - Dialog für Suche, Vorschau und Laden von 
+            Karteninhalten im DigiTal Zwilling | zum Laden externer Kartendienste Adresse 
+            (WMS-Capabilities-URL) markieren und in das Kartenfenster ziehen 
           </td>
         </tr>
         <tr>
@@ -51,7 +61,7 @@ export const MenuBarText = () => {
             <FontAwesomeIcon icon="print" />
           </td>
           <td>
-            <b>Drucken</b> - Einfacher Ausdruck in PDF-Datei mit Auswahl von
+            <b>Drucken</b> - Dialog für einfachen Ausdruck in PDF-Datei mit Auswahl von
             Format, Maßstab und Auflösung | verschiebbarer Druckvorschaurahmen |
             kein Ausdruck von Legenden, Metadaten etc.
           </td>
