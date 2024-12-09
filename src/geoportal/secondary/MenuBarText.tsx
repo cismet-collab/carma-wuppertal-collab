@@ -1,5 +1,6 @@
 import focusOn from "./assets/focus-on.png";
 import focusOff from "./assets/focus-off.png";
+import addLayers from "./assets/add-layers.png";
 import { Link } from "../../helper-overlay/components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
