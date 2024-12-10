@@ -16,7 +16,7 @@ export const MenuBarText = () => {
         Weiterverarbeitung der Karteninhalte:
       </div>
       <table>
-        <tr>
+        <tr style={border-bottom: 1px solid #ccc}>
           <td>
             <FontAwesomeIcon icon={faRotateRight} />
           </td>
