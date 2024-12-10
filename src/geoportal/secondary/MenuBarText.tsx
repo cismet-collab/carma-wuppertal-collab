@@ -16,10 +16,7 @@ export const MenuBarText = () => {
         Weiterverarbeitung der Karteninhalte:
       </div>
       <table>
-        <tr
-          className="overlay-helper-table-class"
-          style={{ border-bottom: "1px" }}
-        >
+        <tr>
           <td>
             <FontAwesomeIcon icon={faRotateRight} />
           </td>
