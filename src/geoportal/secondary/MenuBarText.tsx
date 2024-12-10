@@ -59,22 +59,22 @@ export const MenuBarText = () => {
         </tr>
         <tr>
           <td>
+            <FontAwesomeIcon icon="file-export" />
+          </td>
+          <td>
+            <b>Karte speichern</b> - Dialog zum Speichern der aktuell zusammengestellten 
+            Kartenebenen mit Beschreibung und Vorschaubild | Laden über Menüleiste / 
+            Karteninhalte hinzufügen
+          </td>
+        </tr>
+        <tr>
+          <td>
             <FontAwesomeIcon icon="print" />
           </td>
           <td>
             <b>Drucken</b> - Dialog für einfachen Ausdruck in PDF-Datei mit Auswahl von
             Format, Maßstab und Auflösung | verschiebbarer Druckvorschaurahmen |
             kein Ausdruck von Legenden, Metadaten etc.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <FontAwesomeIcon icon="file-export" />
-          </td>
-          <td>
-            <b>Karte speichern</b> - Dialog zum Speichern der aktuell zusammengestellten 
-            Kartenebenen mit Beschreibung und Vorschaubild | Laden über Menüleiste / 
-            Karteninhalte hinzufügen"
           </td>
         </tr>
       </table>
