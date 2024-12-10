@@ -67,6 +67,16 @@ export const MenuBarText = () => {
             kein Ausdruck von Legenden, Metadaten etc.
           </td>
         </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon="file-export" />
+          </td>
+          <td>
+            <b>Karte speichern</b> - Dialog zum Speichern der aktuell zusammengestellten 
+            Kartenebenen mit Beschreibung und Vorschaubild | Laden über Menüleiste / 
+            Karteninhalte hinzufügen"
+          </td>
+        </tr>
       </table>
     </ul>
   );
