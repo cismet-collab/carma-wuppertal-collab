@@ -64,7 +64,7 @@ export const MenuBarText = () => {
           <td>
             <b>Karte speichern</b> - Dialog zum Speichern der aktuell zusammengestellten 
             Kartenebenen mit Beschreibung und Vorschaubild | Laden über Menüleiste / 
-            Karteninhalte hinzufügen
+            Karteninhalte hinzufügen / Favoriten / Meine Karten
           </td>
         </tr>
         <tr>
