@@ -4,6 +4,7 @@ import addLayers from "./assets/add-layers.png";
 import { Link } from "../../helper-overlay/components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
+import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 
 export const MenuBarText = () => {
   return (
@@ -78,11 +79,11 @@ export const MenuBarText = () => {
         </tr>
         <tr>
           <td>
-            <FontAwesomeIcon icon="share-nodes" />
+            <FontAwesomeIcon icon={faShareNodes} />
           </td>
           <td>
             <b>Teilen</b> - Dialog für das Erzeugen von Links auf das Geoportal mit 
-            den aktuellen Karteninhalten |
+            den aktuellen Karteninhalten | variables Ausblenden von Bedienungselement-Gruppen
             Links werden in Zwischenablage kopiert
           </td>
         </tr>
