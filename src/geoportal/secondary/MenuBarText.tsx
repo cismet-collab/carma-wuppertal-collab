@@ -83,7 +83,7 @@ export const MenuBarText = () => {
           </td>
           <td>
             <b>Teilen</b> - Dialog für das Erzeugen von Links auf das Geoportal mit 
-            den aktuellen Karteninhalten | variables Ausblenden von Bedienungselement-Gruppen
+            den aktuellen Karteninhalten | variables Ausblenden von Bedienungselement-Gruppen | 
             Links werden in Zwischenablage kopiert
           </td>
         </tr>

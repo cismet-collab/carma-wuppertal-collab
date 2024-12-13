@@ -13,7 +13,7 @@ export const MeasurementsText = () => {
       <div>
         Wechselschalter zum Ein-/Ausschalten des Messungsmodus (<b>2D</b>) |
         in Karte klicken zum Zeichnen von Messgeometrien | Linienzüge beenden mit
-        Doppelklick, Polygone schließen durch erneutes Anklicken des
+        Doppelklick, Flächen schließen durch erneutes Anklicken des
         Startpunktes | Ergebnisanzeige und Verwalten mehrerer Messgeometrien in
         der <Link target="INFOBOX">Info-Box</Link> | Speicherung der
         Messgeometrien im Browser
