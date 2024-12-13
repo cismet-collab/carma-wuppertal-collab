@@ -44,7 +44,6 @@ export const MenuBarText = () => {
             <b>Hintergrundkarte abschwächen / zurücksetzen</b> - Wechselschalter
             zum Abschwächen (starke Transparenz) und Zurücksetzen (keine
             Transparenz) der <Link target="HINTERGRUND">Hintergrundkarte</Link>{" "}
-            | zum Auffinden von Fachobjekten bei dünn besetzten Kartenebenen
           </td>
         </tr>
         <tr>
@@ -75,6 +74,16 @@ export const MenuBarText = () => {
             <b>Drucken</b> - Dialog für einfachen Ausdruck in PDF-Datei mit Auswahl von
             Format, Maßstab und Auflösung | verschiebbarer Druckvorschaurahmen |
             kein Ausdruck von Legenden, Metadaten etc.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <FontAwesomeIcon icon="share-nodes" />
+          </td>
+          <td>
+            <b>Teilen</b> - Dialog für das Erzeugen von Links auf das Geoportal mit 
+            den aktuellen Karteninhalten |
+            Links werden in Zwischenablage kopiert
           </td>
         </tr>
       </table>
