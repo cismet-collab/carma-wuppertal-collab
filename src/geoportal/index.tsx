@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Help05Introduction from "./help/Help05Introduction";
 import Help15Datengrundlage from "./help/Help15Datengrundlage";
 import Help30InKartePositionieren from "./help/Help30InKartePositionieren";
+import Help35KarteninhalteHinzufuegen from "./help/Help35KarteninhalteHinzufuegen";
 import Help40MeinStandort from "./help/Help40MeinStandort";
 import Help90Haftungsausschluss from "./help/Help90Haftungsausschluss";
 import Help98DigitalerZwilling from "./help/Help98DigitalerZwilling";
@@ -42,6 +43,7 @@ const getCollabedHelpComponentConfig = ({
   const menuSections = [
     <Help15Datengrundlage key="Datengrundlage" />,
     <Help30InKartePositionieren showOverlayFromOutside={showOverlayFromOutside} key="InKartePositionieren" />,
+    <Help35KarteninhalteHinzufuegen showOverlayFromOutside={showOverlayFromOutside} key="KarteninhalteHinzufuegen" />,
     <Help40MeinStandort showOverlayFromOutside={showOverlayFromOutside} key="MeinStandort" />,
     <Help90Haftungsausschluss key="Haftungsausschluss" />,
     <Help98DigitalerZwilling key="zwilling" />,
