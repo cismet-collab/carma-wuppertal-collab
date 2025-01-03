@@ -3,7 +3,8 @@ import Help05Introduction from "./help/Help05Introduction";
 import Help15Datengrundlage from "./help/Help15Datengrundlage";
 import Help30InKartePositionieren from "./help/Help30InKartePositionieren";
 import Help35KarteninhalteHinzufuegen from "./help/Help35KarteninhalteHinzufuegen";
-import Help40MeinStandort from "./help/Help40MeinStandort";
+import Help40KarteninhalteUntersuchen from "./help/Help35KarteninhalteUntersuchen";
+import Help45MeinStandort from "./help/Help45MeinStandort";
 import Help90Haftungsausschluss from "./help/Help90Haftungsausschluss";
 import Help98DigitalerZwilling from "./help/Help98DigitalerZwilling";
 import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
@@ -44,7 +45,8 @@ const getCollabedHelpComponentConfig = ({
     <Help15Datengrundlage key="Datengrundlage" />,
     <Help30InKartePositionieren showOverlayFromOutside={showOverlayFromOutside} key="InKartePositionieren" />,
     <Help35KarteninhalteHinzufuegen key="KarteninhalteHinzufuegen" />,
-    <Help40MeinStandort showOverlayFromOutside={showOverlayFromOutside} key="MeinStandort" />,
+    <Help35KarteninhalteUntersuchen key="KarteninhalteUntersuchen" />,
+    <Help45MeinStandort showOverlayFromOutside={showOverlayFromOutside} key="MeinStandort" />,
     <Help90Haftungsausschluss key="Haftungsausschluss" />,
     <Help98DigitalerZwilling key="zwilling" />,
   ];
