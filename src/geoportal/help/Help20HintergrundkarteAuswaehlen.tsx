@@ -3,9 +3,9 @@ import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 const Component = () => {
   return (
     <GenericModalMenuSection
-      sectionKey="einstellungen"
-      sectionTitle="Einstellungen"
-      sectionBsStyle="success"
+      sectionKey="hintergrundkarte"
+      sectionTitle="Hintergrundkarte auswählen"
+      sectionBsStyle="info"
       sectionContent={
         <div>
           Could now she how in was sleep dropped in by back shall come into
