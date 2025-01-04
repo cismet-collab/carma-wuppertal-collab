@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import Help05Introduction from "./help/Help05Introduction";
-import Help15Datengrundlage from "./help/Help15Datengrundlage";
+import Help10DigitalerZwilling from "./help/Help10DigitalerZwilling";
+import Help20HintergrundkarteAuswaehlen from "./help/Help20HintergrundkarteAuswaehlen";
 import Help30InKartePositionieren from "./help/Help30InKartePositionieren";
 import Help35KarteninhalteHinzufuegen from "./help/Help35KarteninhalteHinzufuegen";
 import Help40KarteninhalteUntersuchen from "./help/Help40KarteninhalteUntersuchen";
 import Help45KartenDrucken from "./help/Help45KartenDrucken";
 import Help50MeinStandort from "./help/Help50MeinStandort";
 import Help90Haftungsausschluss from "./help/Help90Haftungsausschluss";
-import Help98DigitalerZwilling from "./help/Help98DigitalerZwilling";
 import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
 import { Footer } from "./Footer";
 export { tooltipText } from "./tooltips";
@@ -43,14 +43,14 @@ const getCollabedHelpComponentConfig = ({
   const menuIcon = "info";
   const menuTitle = "Kompaktanleitung und Hintergrundinformationen";
   const menuSections = [
-    <Help15Datengrundlage key="Datengrundlage" />,
+    <Help10DigitalerZwilling key="zwilling" />,
+    <Help20HintergrundkarteAuswaehlen key="HintergrundkarteAuswaehlen" />,
     <Help30InKartePositionieren showOverlayFromOutside={showOverlayFromOutside} key="InKartePositionieren" />,
     <Help35KarteninhalteHinzufuegen key="KarteninhalteHinzufuegen" />,
     <Help40KarteninhalteUntersuchen key="KarteninhalteUntersuchen" />,
     <Help45KartenDrucken key="KartenDrucken" />,
     <Help50MeinStandort showOverlayFromOutside={showOverlayFromOutside} key="MeinStandort" />,
     <Help90Haftungsausschluss key="Haftungsausschluss" />,
-    <Help98DigitalerZwilling key="zwilling" />,
   ];
 
   return {
