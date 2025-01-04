@@ -9,7 +9,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
   return (
     <GenericModalMenuSection
       sectionKey="standort"
-      sectionTitle="Mein Standort"
+      sectionTitle="Nutzung auf mobilen Geräten"
       sectionBsStyle="success"
       sectionContent={
         <div>
