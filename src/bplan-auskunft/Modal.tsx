@@ -190,7 +190,7 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 Nach einer solchen Positionierung in der Karte über die
                 B-Plan-Nummer können Sie die Suche mit dem Werkzeug{" "}
                 <Icon name="times" /> links neben dem Eingabefeld zurücksetzen
-                (Entfernung von Marker bzw. Abdunklung, Löschen des Textes im
+                (Entfernung des Markers, Löschen des Textes im
                 Eingabebereich). Es wird Ihnen danach an dieser Stelle wieder
                 das Werkzeug <Icon name="search" /> angeboten, mit dem Sie im
                 aktuellen Kartenausschnitt nach B-Plänen suchen können.
@@ -231,7 +231,7 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 &nbsp;POI, die&nbsp;
                 <Icon name="tags" />
                 &nbsp;alternative Bezeichnung eines POI oder eine{" "}
-                <Icon name="graduation-cap" /> Schule handlet. (Probieren Sie es
+                <Icon name="graduation-cap" /> Schule handelt. (Probieren Sie es
                 mal mit der Eingabe "Sankt".)
               </p>
               <p>
