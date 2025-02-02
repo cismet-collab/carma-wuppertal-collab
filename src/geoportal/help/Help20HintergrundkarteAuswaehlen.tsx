@@ -1,6 +1,7 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
+import { Link } from "../../helper-overlay/components/Link";
 
-const Component = () => {
+const Component = ({ showOverlayFromOutside }) => {
   return (
     <GenericModalMenuSection
       sectionKey="hintergrundkarte"
@@ -33,7 +34,14 @@ const Component = () => {
             Dreiecksnetzes berechnet, auf das dann die Bildinhalte projiziert werden. Solche Modelle enthalten beim 
             gegenwärtigen Stadt der Technik regelmäßig Lücken und falsche Darstellungen, vor allem dort, wo mehrere 
             Ebenen vertikal übereinander liegen (z. B. bei den Schwebebahnhöfen).
-          </p> 
+          </p>
+          <Link
+            onClick={() => {
+              showOverlayFromOutside("HINTERGRUND");
+            }}
+          >
+            zur Hilfefolie
+          </Link>
         </div>
       }
     />
