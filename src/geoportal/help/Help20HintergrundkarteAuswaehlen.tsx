@@ -1,5 +1,4 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
-import { Link } from "../../helper-overlay/components/Link";
 
 const Component = () => {
   return (
@@ -27,15 +26,6 @@ const Component = () => {
           <p>
             Im 3D-Modus bieten wir Ihnen über den Wechselschalter Karte / Luftbild zwei fest eingestellte 3D-Modelle an.
           </p> 
-          <p>
-            <Link
-              onClick={() => {
-                showOverlayFromOutside("GAZETTEER_SUCHE");
-              }}
-            >
-              zur Hilfefolie
-            </Link>
-          </p>
         </div>
       }
     />
