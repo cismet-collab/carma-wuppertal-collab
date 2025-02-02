@@ -1,4 +1,5 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
+import { Link } from "../../helper-overlay/components/Link";
 
 const Component = () => {
   return (
@@ -8,14 +9,33 @@ const Component = () => {
       sectionBsStyle="info"
       sectionContent={
         <div>
-          Could now she how in was sleep dropped in by back shall come into
-          needed wild that picture they to have would by her succeeding, hair a
-          with the I first should expected line of so got her solitary the and
-          that coffee that omens, treble-range are quitting for high line text,
-          parts else. A have the unprofitable both the leather at neighbours in
-          on each written and assignment. When me the his degree read. She that
-          the equation, of by hand. Select picture spare not got in social and
-          parameters absolutely he and that if the alphabet carpeting of.
+          <p>
+            Mit dem Wechselschalter Karte / Luftbild rechts oben können Sie jederzeit zwischen einer klassischen 
+            Karte und einer Luftbildkarte als Hintergrundkarte wechseln. Durch Anklicken des Hintergrund-Steuerelements 
+            rechts neben dem Wechselschalter öffnen Sie einen Dialog mit einer größeren Auswahl an Karten bzw. 
+            Luftbildkarten. Im aufgeklappten Zustand dieses Dialogs werden zusätzlich Informationen zur Eignung 
+            und zum Inhalt der jeweils selektierten Karte angezeigt. Die von Ihnen hier ausgewählte Hintergrundkarte 
+            wird sofort geladen und zusätzlich als Belegung für den Wechselschalter gespeichert. Wenn Sie den Mauszeiger 
+            über die beiden Schaltflächen des Wechselschalters bewegen, werden die aktuell eingestellten Hintergrundkarten 
+            als Tooltip angezeigt.
+          </p>          
+          <p>
+            Das identische Hintergrund-Steuerelement finden Sie auch als erstes (linkes) Kartensteuerelement oben im 
+            Kartenfenster. Es dient nämlich auch als zentrales Steuerelement für alle geladenen Kartenebenen, was vor 
+            allem für kleine Bildschirme vorteilhaft ist. 
+          </p>
+          <p>
+            Im 3D-Modus bieten wir Ihnen über den Wechselschalter Karte / Luftbild zwei fest eingestellte 3D-Modelle an.
+          </p> 
+          <p>
+            <Link
+              onClick={() => {
+                showOverlayFromOutside("GAZETTEER_SUCHE");
+              }}
+            >
+              zur Hilfefolie
+            </Link>
+          </p>
         </div>
       }
     />
