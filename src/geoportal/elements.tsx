@@ -81,7 +81,7 @@ export const elements: Record<string, ElementType> = {
   hintergrund: {
     key: "HINTERGRUND",
     containerPos: "center",
-    contentPos: "left-center",
+    contentPos: "center-center",
     content: (
       <div style={{ textAlign: "center" }}>
         <b>
