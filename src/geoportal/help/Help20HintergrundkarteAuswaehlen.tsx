@@ -24,7 +24,15 @@ const Component = () => {
             allem für kleine Bildschirme vorteilhaft ist. 
           </p>
           <p>
-            Im 3D-Modus bieten wir Ihnen über den Wechselschalter Karte / Luftbild zwei fest eingestellte 3D-Modelle an.
+            Im 3D-Modus bieten wir Ihnen über den Wechselschalter Karte / Luftbild zwei fest eingestellte 3D-Modelle an. 
+            Mit der Schaltfläche "Karte" laden Sie den Wuppertaler Ausschnitt des für ganz NRW vorliegenden 3D-Gebäudemodells 
+            der Landesvermessung NRW (Geobasis NRW) in der inhaltlichen Ausbaustufe "Level of Detail 2 (LoD2)". Das sind 
+            einfache Klötzchen mit standardisierten Dachformen. Mit "Luftbild" laden Sie ein 3D-Mesh, das weitestgehend 
+            automatisiert aus den Bilddaten der im Auftrag der Stadt Wuppertal im März 2024 durchgeführten Befliegung 
+            abgeleitet wurde. Für ein 3D-Mesh wird aus den Bilddaten ein Digitales Oberflächenmodell in Form eines 
+            Dreiecksnetzes berechnet, auf das dann die Bildinhalte projiziert werden. Solche Modelle enthalten beim 
+            gegenwärtigen Stadt der Technik regelmäßig Lücken und falsche Darstellungen, vor allem dort, wo mehrere 
+            Ebenen vertikal übereinander liegen (z. B. bei den Schwebebahnhöfen).
           </p> 
         </div>
       }
