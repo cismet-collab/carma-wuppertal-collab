@@ -7,7 +7,7 @@ export const FullScreenModeText = () => {
       style={{ margin: "0", paddingLeft: "20px", maxWidth: "600px" }}
     >
       <div>
-        Wechselschalter zum Ein-/Ausschalten des Vollbildmodus (<b>2D</b> und <b>3D</b>) |
+        <b>Wechselschalter zum Ein-/Ausschalten des Vollbildmodus (2D und 3D)</b><br/>
         Ausblenden der Bedienungselemente des Browsers erzeugt maximalen Platz
         für das Geoportal | Vollbildmodus kombinierbar mit{" "}
         <Link target="MESSUNGEN">Modus Strecke/Fläche messen</Link> oder{" "} 
