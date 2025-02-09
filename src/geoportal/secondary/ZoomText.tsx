@@ -6,7 +6,7 @@ export const ZoomText = () => {
       >
         <div>
           <b>Klicken zum Vergrößern („Zoom in“) bzw. Verkleinern („Zoom out“)</b><br/>
-          Veränderung des Kartenmaßstabs in festen Zoomstufen (2D und 3D) | 
+          Veränderung des Kartenmaßstabs in festen Zoomstufen (2D und 3D) |<br/> 
           "+" für Zoom in, "-" für Zoom out | je größer die Zoomstufe, desto größer der Maßstab  
         </div>
       </ul>
