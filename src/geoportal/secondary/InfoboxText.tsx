@@ -7,7 +7,7 @@ export const InfoboxText = () => {
       style={{ margin: "0", paddingLeft: "20px", maxWidth: "600px" }}
     >
       <div>
-        Nur sichtbar in Modi mit Anzeige von Objektinformationen (<b>2D</b>) |{" "} 
+        <b>Modusabhängige Anzeige von Objektinformationen (2D)</b><br/> 
         <Link target="MESSUNGEN">Modus Strecke/Fläche messen</Link>: 
         Navigation in zuvor angelegten Messgeometrien, Anzeige der Messergebnisse, Löschen von Messgeometrien 
         | <b>Modus Sachdatenabfrage</b>: Anzeige der wichtigsten Informationen/Links zum selektierten 
