@@ -13,8 +13,8 @@ export const MenuBarText = () => {
       style={{ margin: "0", paddingLeft: "20px", maxWidth: "600px" }}
     >
       <div>
-        Die Menüleiste umfasst mehrere Aktionen und Dialoge zur Steuerung und
-        Weiterverarbeitung der Karteninhalte:
+        <b>Aktionen und Dialoge zur Steuerung und
+        Weiterverarbeitung der Karteninhalte</b>
       </div>
       <table>
         <tr>
