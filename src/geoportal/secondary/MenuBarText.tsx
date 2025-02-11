@@ -44,7 +44,8 @@ export const MenuBarText = () => {
           <td>
             <b>Hintergrundkarte abschwächen / zurücksetzen</b> - Wechselschalter
             zum Abschwächen (starke Transparenz) und Zurücksetzen (keine
-            Transparenz) der <Link target="HINTERGRUND">Hintergrundkarte</Link>{" "}
+            Transparenz) der <Link target="HINTERGRUND">Hintergrundkarte</Link>{" "} |
+            Einstellung des starken Transparenzwertes im Hintergrund-Steuerelement 
           </td>
         </tr>
         <tr>
