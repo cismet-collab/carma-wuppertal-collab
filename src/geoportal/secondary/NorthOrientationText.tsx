@@ -8,7 +8,7 @@ export const NorthOrientationText = () => {
         <b>3D-Darstellung mit gedrückter linker Maustaste drehen und kippen (3D)</b><br/>  
         horizontale Mausbewegung zum Drehen, vertikale zum Kippen |
         nach Norden ausrichten mit einfachem Klick | in die Senkrechtperspektive kippen
-        mit Doppelklick | aus Selnrechtperspektive zur letzten Bildneigung mit einfachem Klick
+        mit Doppelklick | aus Senkrechtperspektive zur letzten Bildneigung mit einfachem Klick
       </div>
     </ul>
   );
