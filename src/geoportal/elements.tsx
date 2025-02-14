@@ -206,7 +206,7 @@ export const elements: Record<string, ElementType> = {
     key: "EINNORDEN",
     content: (
       <div>
-        <b>Nach Norden ausrichten</b>
+        <b>3D-Ansicht drehen und kippen</b>
       </div>
     ),
     containerPos: "center",
