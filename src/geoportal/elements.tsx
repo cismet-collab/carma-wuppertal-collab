@@ -7,7 +7,7 @@ import { FeatureInfoText } from "./secondary/FeatureInfoText";
 import { LocatorText } from "./secondary/LocatorText";
 import { GazetteerText } from "./secondary/GazetteerText";
 import { ZoomText } from "./secondary/ZoomText";
-import { NorthOrientationText } from "./secondary/3DRotateAndTiltText";
+import { 3DRotateAndTiltText } from "./secondary/3DRotateAndTiltText";
 import { Toggle2d3dText } from "./secondary/Toggle2d3dText";
 import { LayerButtonsText } from "./secondary/LayerButtonsText";
 import { ApplicationMenuText } from "./secondary/ApplicationMenuText";
