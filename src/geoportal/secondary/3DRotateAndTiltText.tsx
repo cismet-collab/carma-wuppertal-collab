@@ -1,4 +1,4 @@
-export const NorthOrientationText = () => {
+export const 3DRotateAndTiltText = () => {
   return (
     <ul
       className="overlay-helper-ul-class"
