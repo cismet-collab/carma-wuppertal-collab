@@ -7,7 +7,7 @@ import { FeatureInfoText } from "./secondary/FeatureInfoText";
 import { LocatorText } from "./secondary/LocatorText";
 import { GazetteerText } from "./secondary/GazetteerText";
 import { ZoomText } from "./secondary/ZoomText";
-import { 3DRotateAndTiltText } from "./secondary/3DRotateAndTiltText";
+import { RotateAndTiltText } from "./secondary/RotateAndTiltText";
 import { Toggle2d3dText } from "./secondary/Toggle2d3dText";
 import { LayerButtonsText } from "./secondary/LayerButtonsText";
 import { ApplicationMenuText } from "./secondary/ApplicationMenuText";
@@ -215,7 +215,7 @@ export const elements: Record<string, ElementType> = {
     secondary: {
       content: (
         <OverlayTourProvider>
-          <3DRotateAndTiltText />
+          <RotateAndTiltText />
         </OverlayTourProvider>
       ),
       secondaryPos: "right",

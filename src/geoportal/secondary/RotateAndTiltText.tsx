@@ -1,4 +1,4 @@
-export const 3DRotateAndTiltText = () => {
+export const RotateAndTiltText = () => {
   return (
     <ul
       className="overlay-helper-ul-class"
