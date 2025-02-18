@@ -37,12 +37,6 @@ export const MapInteractionsUI = () => {
       />
 
       <MapInteraction
-        icon={faArrowPointer}
-        action="Einfacher Klick"
-        description="Punkt auswählen"
-      />
-
-      <MapInteraction
         icon={faMagnifyingGlassPlus}
         action="Scrollrad"
         description="In die Karte hinein- oder herauszoomen"
