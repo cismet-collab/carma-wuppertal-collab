@@ -12,6 +12,7 @@ import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
 import { Footer } from "./Footer";
 export { tooltipText } from "./tooltips";
 export { searchTextPlaceholder } from "./searchTextPlaceholder";
+export { mobileInfo } from "./mobileInfo";
 export { elements as geoElements } from "./elements";
 export { demoElements } from "./demoElements";
 export { backgroundSettings } from "./backgroundSettings";
@@ -44,12 +45,21 @@ const getCollabedHelpComponentConfig = ({
   const menuTitle = "Kompaktanleitung und Hintergrundinformationen";
   const menuSections = [
     <Help10DigitalerZwilling key="zwilling" />,
-    <Help20HintergrundkarteAuswaehlen showOverlayFromOutside={showOverlayFromOutside} key="HintergrundkarteAuswaehlen" />,
-    <Help30InKartePositionieren showOverlayFromOutside={showOverlayFromOutside} key="InKartePositionieren" />,
+    <Help20HintergrundkarteAuswaehlen
+      showOverlayFromOutside={showOverlayFromOutside}
+      key="HintergrundkarteAuswaehlen"
+    />,
+    <Help30InKartePositionieren
+      showOverlayFromOutside={showOverlayFromOutside}
+      key="InKartePositionieren"
+    />,
     <Help35KarteninhalteHinzufuegen key="KarteninhalteHinzufuegen" />,
     <Help40KarteninhalteUntersuchen key="KarteninhalteUntersuchen" />,
     <Help45KartenDrucken key="KartenDrucken" />,
-    <Help50MeinStandort showOverlayFromOutside={showOverlayFromOutside} key="MeinStandort" />,
+    <Help50MeinStandort
+      showOverlayFromOutside={showOverlayFromOutside}
+      key="MeinStandort"
+    />,
     <Help90Haftungsausschluss key="Haftungsausschluss" />,
   ];
 
