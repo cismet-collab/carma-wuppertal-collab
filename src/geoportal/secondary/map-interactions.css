@@ -7,7 +7,7 @@
 .map-interaction {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .map-interaction-icon {
@@ -29,6 +29,7 @@
 .map-interaction-action {
   font-weight: 600;
   font-size: 0.875rem;
+  margin-bottom: 0.25rem;
 }
 
 .map-interaction-description {
