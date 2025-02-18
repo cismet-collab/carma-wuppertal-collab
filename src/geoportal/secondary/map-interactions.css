@@ -1,0 +1,37 @@
+.map-interactions-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.map-interaction {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.map-interaction-icon {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  margin-right: 0.75rem;
+}
+
+.map-interaction-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #4b5563;
+}
+
+.map-interaction-text {
+  flex: 1;
+}
+
+.map-interaction-action {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.map-interaction-description {
+  font-size: 0.875rem;
+  color: #4b5563;
+}

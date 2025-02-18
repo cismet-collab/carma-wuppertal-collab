@@ -201,6 +201,18 @@ export const Infobox: StoryObj = {
   },
 };
 
+export const Center: StoryObj = {
+  render: () => {
+    const element = getCollabedHelpElementsConfig("CENTER", geoElements);
+    const config = useOverlayHelper(element);
+    return (
+      <div>
+        <DisplayContentHelper config={config} primaryPlaceInStory="left" />
+      </div>
+    );
+  },
+};
+
 export const Background: StoryObj = {
   render: () => {
     const { transparency, color } = backgroundSettings;

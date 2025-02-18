@@ -15,6 +15,9 @@ import { HelpOverlayText } from "./secondary/HelpOverlayText";
 import { BackgroundSelectionText } from "./secondary/BackgroundSelectionText";
 import { MenuBarText } from "./secondary/MenuBarText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
+import { MapInteractionsUI } from "./secondary/MapInteractions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandPointer } from "@fortawesome/free-solid-svg-icons";
 
 export const elements: Record<string, ElementType> = {
   menu: {
@@ -33,7 +36,7 @@ export const elements: Record<string, ElementType> = {
         </OverlayTourProvider>
       ),
       secondaryPos: "bottom",
-    },    
+    },
   },
   helpOverlay: {
     key: "HILFE_OVERLAY",
@@ -76,6 +79,22 @@ export const elements: Record<string, ElementType> = {
         </OverlayTourProvider>
       ),
       secondaryPos: "bottom",
+    },
+  },
+  centerElement: {
+    key: "CENTER",
+    position: {
+      top: "50%",
+      left: "50%",
+    },
+    content: <FontAwesomeIcon icon={faHandPointer} />,
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <MapInteractionsUI />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "right",
     },
   },
   hintergrund: {
