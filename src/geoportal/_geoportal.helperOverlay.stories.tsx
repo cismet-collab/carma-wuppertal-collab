@@ -207,7 +207,7 @@ export const Center: StoryObj = {
     const config = useOverlayHelper(element);
     return (
       <div>
-        <DisplayContentHelper config={config} primaryPlaceInStory="left" />
+        <DisplayContentHelper config={config} />
       </div>
     );
   },

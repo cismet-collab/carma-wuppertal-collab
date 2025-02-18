@@ -94,7 +94,7 @@ export const elements: Record<string, ElementType> = {
           <MapInteractionsUI />
         </OverlayTourProvider>
       ),
-      secondaryPos: "right",
+      secondaryPos: "bottom",
     },
   },
   hintergrund: {
