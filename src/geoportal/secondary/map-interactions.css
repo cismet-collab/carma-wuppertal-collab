@@ -1,7 +1,6 @@
 .map-interactions-title {
-  font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .map-interaction {
@@ -17,8 +16,8 @@
 }
 
 .map-interaction-icon svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
   color: #4b5563;
 }
 
@@ -28,11 +27,11 @@
 
 .map-interaction-action {
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   margin-bottom: 0.25rem;
 }
 
 .map-interaction-description {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: #4b5563;
 }

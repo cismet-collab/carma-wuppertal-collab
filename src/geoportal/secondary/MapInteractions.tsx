@@ -28,7 +28,7 @@ const MapInteraction = ({ icon, action, description }: MapInteractionProps) => (
 export const MapInteractionsUI = () => {
   return (
     <div>
-      <h2 className="map-interactions-title">Karteninteraktionen</h2>
+      <div className="map-interactions-title">Karteninteraktionen</div>
 
       <MapInteraction
         icon={faUpDownLeftRight}
