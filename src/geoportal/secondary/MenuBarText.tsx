@@ -50,12 +50,13 @@ export const MenuBarText = () => {
         </tr>
         <tr>
           <td>
-            <FontAwesomeIcon icon="eye" /> <FontAwesomeIcon icon="eye-slash" />
+            <FontAwesomeIcon icon="eye" />
           </td>
           <td>
-            <b>Kartensteuerelemente aus-/einblenden</b> - Wechselschalter zum
-            Aus- und Einblenden der{" "}
-            <Link target="LAYERBUTTONS">Kartensteuerelemente</Link>
+            <b>Bedienelemente ausblenden ("Zen-Modus")</b> - Anzeige von Objektinformationen 
+            in der <Link target="INFOBOX">Info-Box</Link>{" "} 
+            wird unterstützt | Bedienelemente wieder einblenden mit Werkzeug <FontAwesomeIcon icon="eye-slash" />{" "}
+            links oben 
           </td>
         </tr>
         <tr>
