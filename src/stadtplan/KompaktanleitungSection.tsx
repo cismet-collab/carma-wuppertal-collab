@@ -10,6 +10,7 @@ import {
   LuftbildkarteText,
   InKartePositionierenText,
 } from "../commons";
+import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
 
 export const KompaktanleitungSection = () => {
   return (
@@ -196,6 +197,7 @@ export const KompaktanleitungSection = () => {
                                 Kindertageseinrichtung oder eine{" "}
                                 <Icon name="graduation-cap" /> Schule handelt.
                               </p>
+                              <FuzzySearchParagraph />
                             </>
                           }
                         />
