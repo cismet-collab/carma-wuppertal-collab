@@ -94,7 +94,7 @@ export const elements: Record<string, ElementType> = {
           borderRadius: 10,
           padding: 10,
           borderStyle: "solid",
-          width: "fit-content",
+          width: "max-content",
         }}
       >
         <b>
