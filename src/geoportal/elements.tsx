@@ -87,7 +87,21 @@ export const elements: Record<string, ElementType> = {
       top: "50%",
       left: "50%",
     },
-    content: <FontAwesomeIcon icon={faHandPointer} />,
+    content: (
+      <div
+        style={{
+          border: 1,
+          borderRadius: 10,
+          padding: 10,
+          borderStyle: "solid",
+          width: "fit-content",
+        }}
+      >
+        <b>
+          Karteninteraktion mit <br /> Maus oder Touchscreen
+        </b>
+      </div>
+    ),
     secondary: {
       content: (
         <OverlayTourProvider>
