@@ -13,12 +13,14 @@ export const MenuBarText = () => {
       style={{ margin: "0", paddingLeft: "20px", maxWidth: "600px" }}
     >
       <div>
-        <b>Aktionen und Dialoge zur Steuerung und
-        Weiterverarbeitung der Karteninhalte</b>
+        <b>
+          Aktionen und Dialoge zur Steuerung und Weiterverarbeitung der
+          Karteninhalte
+        </b>
       </div>
       <table>
         <tr>
-          <td>
+          <td style={{ paddingRight: "10px" }}>
             <FontAwesomeIcon icon={faRotateRight} />
           </td>
           <td>
@@ -27,13 +29,24 @@ export const MenuBarText = () => {
           </td>
         </tr>
         <tr>
-          <td>            
+          <td colSpan={2}>
+            <hr style={{ margin: "0px" }} />
+          </td>
+        </tr>
+        <tr>
+          <td>
             <img src={addLayers} style={{ height: "18px" }} />
           </td>
           <td>
-            <b>Karteninhalte hinzufügen</b> - Dialog für Suche, Vorschau und Laden von 
-            Karteninhalten im DigiTal Zwilling | zum Laden externer Kartendienste Adresse 
-            (WMS-Capabilities-URL) markieren und in das Kartenfenster ziehen 
+            <b>Karteninhalte hinzufügen</b> - Dialog für Suche, Vorschau und
+            Laden von Karteninhalten im DigiTal Zwilling | zum Laden externer
+            Kartendienste Adresse (WMS-Capabilities-URL) markieren und in das
+            Kartenfenster ziehen
+          </td>
+        </tr>
+        <tr>
+          <td colSpan={2}>
+            <hr style={{ margin: "0px" }} />
           </td>
         </tr>
         <tr>
@@ -44,8 +57,14 @@ export const MenuBarText = () => {
           <td>
             <b>Hintergrundkarte abschwächen / zurücksetzen</b> - Wechselschalter
             zum Abschwächen (starke Transparenz) und Zurücksetzen (keine
-            Transparenz) der <Link target="HINTERGRUND">Hintergrundkarte</Link>{" "} |
-            Einstellung des starken Transparenzwertes im Hintergrund-Steuerelement 
+            Transparenz) der <Link target="HINTERGRUND">Hintergrundkarte</Link>{" "}
+            | Einstellung des starken Transparenzwertes im
+            Hintergrund-Steuerelement
+          </td>
+        </tr>
+        <tr>
+          <td colSpan={2}>
+            <hr style={{ margin: "0px" }} />
           </td>
         </tr>
         <tr>
@@ -53,10 +72,15 @@ export const MenuBarText = () => {
             <FontAwesomeIcon icon="eye" />
           </td>
           <td>
-            <b>Bedienelemente ausblenden ("Zen-Modus")</b> - Anzeige von Objektinformationen 
-            in der <Link target="INFOBOX">Info-Box</Link>{" "} 
-            wird unterstützt | Bedienelemente wieder einblenden mit Werkzeug <FontAwesomeIcon icon="eye-slash" />{" "}
-            links oben 
+            <b>Bedienelemente ausblenden ("Zen-Modus")</b> - Anzeige von
+            Objektinformationen in der <Link target="INFOBOX">Info-Box</Link>{" "}
+            wird unterstützt | Bedienelemente wieder einblenden mit Werkzeug{" "}
+            <FontAwesomeIcon icon="eye-slash" /> links oben
+          </td>
+        </tr>
+        <tr>
+          <td colSpan={2}>
+            <hr style={{ margin: "0px" }} />
           </td>
         </tr>
         <tr>
@@ -64,9 +88,15 @@ export const MenuBarText = () => {
             <FontAwesomeIcon icon="file-export" />
           </td>
           <td>
-            <b>Karte speichern</b> - Dialog zum Speichern der aktuell zusammengestellten 
-            Kartenebenen mit Beschreibung und Vorschaubild | Laden über Menüleiste / 
-            Karteninhalte hinzufügen / Favoriten / Meine Karten
+            <b>Karte speichern</b> - Dialog zum Speichern der aktuell
+            zusammengestellten Kartenebenen mit Beschreibung und Vorschaubild |
+            Laden über Menüleiste / Karteninhalte hinzufügen / Favoriten / Meine
+            Karten
+          </td>
+        </tr>
+        <tr>
+          <td colSpan={2}>
+            <hr style={{ margin: "0px" }} />
           </td>
         </tr>
         <tr>
@@ -74,9 +104,14 @@ export const MenuBarText = () => {
             <FontAwesomeIcon icon="print" />
           </td>
           <td>
-            <b>Drucken</b> - Dialog für einfachen Ausdruck in PDF-Datei mit Auswahl von
-            Format, Maßstab und Auflösung | verschiebbarer Druckvorschaurahmen |
-            kein Ausdruck von Legenden, Metadaten etc.
+            <b>Drucken</b> - Dialog für einfachen Ausdruck in PDF-Datei mit
+            Auswahl von Format, Maßstab und Auflösung | verschiebbarer
+            Druckvorschaurahmen | kein Ausdruck von Legenden, Metadaten etc.
+          </td>
+        </tr>
+        <tr>
+          <td colSpan={2}>
+            <hr style={{ margin: "0px" }} />
           </td>
         </tr>
         <tr>
@@ -84,9 +119,9 @@ export const MenuBarText = () => {
             <FontAwesomeIcon icon={faShareNodes} />
           </td>
           <td>
-            <b>Teilen</b> - Dialog für das Erzeugen von Links auf das Geoportal mit 
-            den aktuellen Karteninhalten | variables Ausblenden von Bedienungselement-Gruppen | 
-            Links werden in Zwischenablage kopiert
+            <b>Teilen</b> - Dialog für das Erzeugen von Links auf das Geoportal
+            mit den aktuellen Karteninhalten | variables Ausblenden von
+            Bedienungselement-Gruppen | Links werden in Zwischenablage kopiert
           </td>
         </tr>
       </table>
