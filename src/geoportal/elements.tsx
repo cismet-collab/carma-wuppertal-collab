@@ -95,6 +95,7 @@ export const elements: Record<string, ElementType> = {
           padding: 10,
           borderStyle: "solid",
           width: "max-content",
+          textAlign: "center"
         }}
       >
         <b>
