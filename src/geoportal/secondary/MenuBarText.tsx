@@ -75,7 +75,7 @@ export const MenuBarText = () => {
             <b>Bedienelemente ausblenden ("Zen-Modus")</b> - Anzeige von
             Objektinformationen in der <Link target="INFOBOX">Info-Box</Link>{" "}
             wird unterstützt | Bedienelemente wieder einblenden mit Werkzeug{" "}
-            <FontAwesomeIcon icon="eye-slash" /> links oben
+            <FontAwesomeIcon icon="eye-slash" /> an selber Stelle
           </td>
         </tr>
         <tr>
