@@ -1,5 +1,6 @@
 import Section from "react-cismap/topicmaps/menu/Section";
 import Icon from "react-cismap/commons/Icon";
+import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
 
 interface InKartePositionierenProps {
   setAppMenuActiveMenuSection: (arg: string) => void;
@@ -99,6 +100,7 @@ export const InKartePositionieren: React.FC<InKartePositionierenProps> = ({
             werden kann. Zusätzlich wird der Bereich außerhalb dieser Fläche
             abgedunkelt (Spotlight-Effekt).
           </p>
+          <FuzzySearchParagraph />
           <p>
             Nach einer Positionierung in der Karte über das Suchfeld können Sie
             mit dem Werkzeug <Icon name="x" /> links neben dem Eingabebereich

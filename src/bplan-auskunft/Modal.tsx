@@ -9,6 +9,7 @@ import {
   StadtplanTagNachtText,
 } from "../commons";
 import { Footer } from ".";
+import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
 
 interface ModalProps {
   visible?: boolean;
@@ -171,12 +172,13 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
             <div>
               <p>
                 Um ein B-Plan-Verfahren direkt anzusteuern, geben Sie den Anfang
-                der B-Plan-Nummer im Eingabefeld rechts neben dem Lupen-Symbol&nbsp;
+                der B-Plan-Nummer im Eingabefeld rechts neben dem
+                Lupen-Symbol&nbsp;
                 <Icon name="search" />
-                &nbsp;ein (mindestens 2 Ziffern). Alle Verfahren, die mit diesen
-                Ziffern beginnen, werden Ihnen in einer inkrementellen
-                Auswahlliste angeboten. (Wenn Sie weitere Zeichen eingeben, wird
-                der Inhalt der Auswahlliste angepasst.)
+                &nbsp;ein. Alle Verfahren, die mit diesen Ziffern beginnen,
+                werden Ihnen in einer inkrementellen Auswahlliste angeboten.
+                (Wenn Sie weitere Zeichen eingeben, wird der Inhalt der
+                Auswahlliste angepasst.)
               </p>
               <p>
                 Nach Auswahl eines B-Plan-Verfahrens aus dieser Liste wird
@@ -190,10 +192,10 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 Nach einer solchen Positionierung in der Karte über die
                 B-Plan-Nummer können Sie die Suche mit dem Werkzeug{" "}
                 <Icon name="times" /> links neben dem Eingabefeld zurücksetzen
-                (Entfernung des Markers, Löschen des Textes im
-                Eingabebereich). Es wird Ihnen danach an dieser Stelle wieder
-                das Werkzeug <Icon name="search" /> angeboten, mit dem Sie im
-                aktuellen Kartenausschnitt nach B-Plänen suchen können.
+                (Entfernung des Markers, Löschen des Textes im Eingabebereich).
+                Es wird Ihnen danach an dieser Stelle wieder das Werkzeug{" "}
+                <Icon name="search" /> angeboten, mit dem Sie im aktuellen
+                Kartenausschnitt nach B-Plänen suchen können.
               </p>
               <p>
                 Klicken Sie nun auf <Icon name="search" />, um alle Pl&auml;ne
@@ -201,6 +203,9 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 stellen Sie auch sicher, dass Sie keinen Plan &uuml;bersehen,
                 der sich mit dem zuvor gesuchten &uuml;berlappt.
               </p>
+              <hr />
+              <h6>Anmerkung:</h6>
+              <FuzzySearchParagraph />
             </div>
           }
         />,
@@ -215,10 +220,10 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 Um die B-Plan-Situation an einem bestimmten Punkt des
                 Stadtgebietes zu erkunden, geben Sie den Anfang eines
                 Stra&szlig;ennamens oder eines interessanten Ortes (auch Point
-                of Interest oder kurz POI genannt) im Eingabefeld ein
-                (mindestens 2 Zeichen). In der inkrementellen Auswahlliste
-                werden Ihnen passende Treffer angeboten. (Wenn sie weitere
-                Zeichen eingeben, wird der Inhalt der Auswahlliste angepasst.)
+                of Interest oder kurz POI genannt) im Eingabefeld ein. In der
+                inkrementellen Auswahlliste werden Ihnen passende Treffer
+                angeboten. (Wenn sie weitere Zeichen eingeben, wird der Inhalt
+                der Auswahlliste angepasst.)
               </p>
               <p>
                 Durch das vorangestellte Symbol erkennen Sie, ob es sich dabei
@@ -255,6 +260,9 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 </a>
                 ).
               </p>
+              <hr />
+              <h6>Anmerkung:</h6>
+              <FuzzySearchParagraph />
             </div>
           }
         />,
@@ -289,21 +297,19 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
               </p>
               <p>
                 Alternativ k&ouml;nnen Sie die Treffermenge mit den
-                Schaltfl&auml;chen <a
-                 className="useAClassNameToRenderProperLink"
-                >&gt;&gt;</a> (n&auml;chster Treffer) und
-                &nbsp;
-                <a
-                 className="useAClassNameToRenderProperLink"
-                >&lt;&lt;</a> (vorheriger Treffer) durchmustern. (Die
-                Treffermenge ist geordnet nach zunehmendem Abstand des Plans vom
-                Bezugspunkt ihrer Suche.)
+                Schaltfl&auml;chen{" "}
+                <a className="useAClassNameToRenderProperLink">&gt;&gt;</a>{" "}
+                (n&auml;chster Treffer) und &nbsp;
+                <a className="useAClassNameToRenderProperLink">&lt;&lt;</a>{" "}
+                (vorheriger Treffer) durchmustern. (Die Treffermenge ist
+                geordnet nach zunehmendem Abstand des Plans vom Bezugspunkt
+                ihrer Suche.)
               </p>
               <p>
                 Mit&nbsp;
-                <a
-                className="useAClassNameToRenderProperLink"
-                >alle Treffer anzeigen</a>
+                <a className="useAClassNameToRenderProperLink">
+                  alle Treffer anzeigen
+                </a>
                 &nbsp;k&ouml;nnen Sie den Kartenausschnitt zuvor so anpassen,
                 dass alle Pl&auml;ne der Treffermenge vollst&auml;ndig angezeigt
                 werden.
@@ -361,7 +367,12 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 Stadtverwaltung Wuppertal, Stand 04/2020 sind sie für rund 72%
                 der Wuppertaler B-Pläne verfügbar. Die Namenskonventionen für
                 die vielfältigen Zusatzdateien sind im Dokument{" "}
-                <a href={"https://wunda-geoportal-docs.cismet.de/bplaene_dokumente/Info_BPlan-Zusatzdokumente_WUP.pdf"} target="_info">
+                <a
+                  href={
+                    "https://wunda-geoportal-docs.cismet.de/bplaene_dokumente/Info_BPlan-Zusatzdokumente_WUP.pdf"
+                  }
+                  target="_info"
+                >
                   Info Dateinamen
                 </a>{" "}
                 beschrieben, das in der Navigationsleiste als oberstes
