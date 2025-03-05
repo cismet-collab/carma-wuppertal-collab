@@ -1,1 +1,1 @@
-export const searchTextPlaceholder = "Stadtteil | Adresse | POI";
+export const searchTextPlaceholder = "Wohin?";

@@ -8,7 +8,7 @@ interface InKartePositionierenTextProps {
 }
 const InKartePositionierenText = ({
   pretext,
-  zoomstufe = 18,
+  zoomstufe = 14,
   punktgeometrie = "(Adresse, Straße, POI)",
   flachengeometrie = "(Stadtbezirk, Quartier)",
   posttext,
