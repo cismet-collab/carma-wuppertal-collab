@@ -12,6 +12,7 @@ import {
   LuftbildkarteText,
   InKartePositionierenText,
 } from "../commons";
+import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
 
 const urlPrefix = window.location.origin + window.location.pathname;
 
@@ -209,29 +210,32 @@ export const KompaktanleitungSection = ({
                     content: (
                       <InKartePositionierenText
                         pretext={
-                          <p>
-                            Um direkt zu einer Ladestation zu gelangen, geben
-                            Sie den Anfang des Namens dieser Ladestation im
-                            Eingabefeld links unten ein (mindestens 2 Zeichen).
-                            In der inkrementellen Auswahlliste werden Ihnen
-                            passende Treffer angeboten. (Wenn Sie weitere
-                            Zeichen eingeben, wird der Inhalt der Auswahlliste
-                            angepasst.) Sie können auch andere Suchbegriffe
-                            eingeben, nämlich Stadtteil (Stadtbezirk oder
-                            Quartier), Adresse, Straßenname oder POI. Durch das
-                            in der Auswahlliste vorangestellte Symbol erkennen
-                            Sie, ob es sich bei einem Treffer um eine{" "}
-                            <Icon name="charging-station" /> Ladestation, einen{" "}
-                            <Icon name="circle" /> Stadtbezirk, ein{" "}
-                            <Icon name="pie-chart" /> Quartier, eine{" "}
-                            <Icon name="home" /> Adresse, eine{" "}
-                            <Icon name="road" /> Straße ohne zugeordnete
-                            Hausnummern, einen <Icon name="tag" /> POI, die{" "}
-                            <Icon name="tags" /> alternative Bezeichnung eines
-                            POI, eine <Icon name="child" />{" "}
-                            Kindertageseinrichtung oder eine{" "}
-                            <Icon name="graduation-cap" /> Schule handelt.
-                          </p>
+                          <>
+                            <p>
+                              Um direkt zu einer Ladestation zu gelangen, geben
+                              Sie den Anfang des Namens dieser Ladestation im
+                              Eingabefeld links unten ein (mindestens 2 Zeichen).
+                              In der inkrementellen Auswahlliste werden Ihnen
+                              passende Treffer angeboten. (Wenn Sie weitere
+                              Zeichen eingeben, wird der Inhalt der Auswahlliste
+                              angepasst.) Sie können auch andere Suchbegriffe
+                              eingeben, nämlich Stadtteil (Stadtbezirk oder
+                              Quartier), Adresse, Straßenname oder POI. Durch das
+                              in der Auswahlliste vorangestellte Symbol erkennen
+                              Sie, ob es sich bei einem Treffer um eine{" "}
+                              <Icon name="charging-station" /> Ladestation, einen{" "}
+                              <Icon name="circle" /> Stadtbezirk, ein{" "}
+                              <Icon name="pie-chart" /> Quartier, eine{" "}
+                              <Icon name="home" /> Adresse, eine{" "}
+                              <Icon name="road" /> Straße ohne zugeordnete
+                              Hausnummern, einen <Icon name="tag" /> POI, die{" "}
+                              <Icon name="tags" /> alternative Bezeichnung eines
+                              POI, eine <Icon name="child" />{" "}
+                              Kindertageseinrichtung oder eine{" "}
+                              <Icon name="graduation-cap" /> Schule handelt.
+                            </p>
+                            <FuzzySearchParagraph />
+                          </>
                         }
                         punktgeometrie="(Ladestation, Adresse, Straße, POI)"
                         posttext={

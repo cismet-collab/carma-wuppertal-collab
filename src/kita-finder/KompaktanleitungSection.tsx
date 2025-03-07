@@ -167,14 +167,17 @@ export const KompaktanleitungSection = () => {
                               Zeichen). In der inkrementellen Auswahlliste werden
                               Ihnen passende Treffer angeboten. (Wenn Sie weitere
                               Zeichen eingeben, wird der Inhalt der Auswahlliste
-                              angepasst.) Durch das vorangestellte Symbol erkennen
-                              Sie, ob es sich dabei um einen{" "}
+                              angepasst.) Durch das vorangestellte Symbol
+                              erkennen Sie, ob es sich dabei um einen{" "}
                               <Icon name="circle" /> Stadtbezirk, ein{" "}
                               <Icon name="pie-chart" /> Quartier, eine{" "}
                               <Icon name="home" /> Adresse, eine{" "}
                               <Icon name="road" /> Straße ohne zugeordnete
-                              Hausnummern, einen <Icon name="tag" /> POI oder eine{" "}
-                              <Icon name="child" /> Kita handelt.
+                              Hausnummern, einen <Icon name="tag" /> POI, die{" "}
+                              <Icon name="tags" /> alternative Bezeichnung eines
+                              POI, eine <Icon name="child" />{" "}
+                              Kindertageseinrichtung oder eine{" "}
+                              <Icon name="graduation-cap" /> Schule handelt.
                             </p>
                             <FuzzySearchParagraph />
                           </>
