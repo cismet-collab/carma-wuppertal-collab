@@ -13,8 +13,8 @@ import {
   StadtplanTagNachtText,
   LuftbildkarteText,
   InKartePositionierenText,
-  FuzzySearchParagraph
 } from "../commons";
+import FuzzySearchParagraph from "../../commons/FuzzySearchParagraph";
 
 export const KompaktanleitungSection = () => {
   return (
