@@ -14,7 +14,7 @@ import {
   LuftbildkarteText,
   InKartePositionierenText,
 } from "../commons";
-import FuzzySearchParagraph from "../../commons/FuzzySearchParagraph";
+import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
 
 export const KompaktanleitungSection = () => {
   return (
