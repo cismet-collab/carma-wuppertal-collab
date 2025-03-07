@@ -13,6 +13,7 @@ import {
   StadtplanTagNachtText,
   LuftbildkarteText,
   InKartePositionierenText,
+  FuzzySearchParagraph
 } from "../commons";
 
 export const KompaktanleitungSection = () => {
@@ -208,6 +209,7 @@ export const KompaktanleitungSection = () => {
                               Kindertageseinrichtung oder eine{" "}
                               <Icon name="graduation-cap" /> Schule handelt.
                             </p>
+                            <FuzzySearchParagraph />
                           </>
                         }
                       />
