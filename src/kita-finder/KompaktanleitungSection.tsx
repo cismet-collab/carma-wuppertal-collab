@@ -168,16 +168,17 @@ export const KompaktanleitungSection = () => {
                               Ihnen passende Treffer angeboten. (Wenn Sie weitere
                               Zeichen eingeben, wird der Inhalt der Auswahlliste
                               angepasst.) Durch das vorangestellte Symbol
-                              erkennen Sie, ob es sich dabei um einen{" "}
+                              erkennen Sie, ob es sich dabei um eine{" "} 
+                              <Icon name="child" />,
+                              Kindertageseinrichtung, eine{" "}
+                              <Icon name="graduation-cap" /> Schule, einen{" "}
                               <Icon name="circle" /> Stadtbezirk, ein{" "}
                               <Icon name="pie-chart" /> Quartier, eine{" "}
                               <Icon name="home" /> Adresse, eine{" "}
                               <Icon name="road" /> Straße ohne zugeordnete
-                              Hausnummern, einen <Icon name="tag" /> POI, die{" "}
+                              Hausnummern, einen <Icon name="tag" /> POI oder die{" "}
                               <Icon name="tags" /> alternative Bezeichnung eines
-                              POI, eine <Icon name="child" />{" "}
-                              Kindertageseinrichtung oder eine{" "}
-                              <Icon name="graduation-cap" /> Schule handelt.
+                              POI handelt.
                             </p>
                             <FuzzySearchParagraph />
                           </>
