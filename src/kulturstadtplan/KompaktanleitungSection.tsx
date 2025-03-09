@@ -190,14 +190,15 @@ export const KompaktanleitungSection = () => {
                           <>
                             <p>
                               Um eine bestimmte Stelle des Stadtgebietes zu
-                              erkunden, geben Sie den Anfang eines Stadtteils
-                              (Stadtbezirk oder Quartier), einer Adresse, eines
-                              Straßennamens oder eines POI im Eingabefeld links
-                              unten ein (mindestens 2 Zeichen). In der
-                              inkrementellen Auswahlliste werden Ihnen passende
-                              Treffer angeboten. (Wenn Sie weitere Zeichen
-                              eingeben, wird der Inhalt der Auswahlliste
-                              angepasst.) Durch das vorangestellte Symbol
+                              erkunden, geben Sie den Namen eines Stadtteils
+                              (Stadtbezirk oder Quartier), einer Adresse,
+                              eines Straßennamens oder eines POI im
+                              Eingabefeld links unten ein. In der 
+                              inkrementellen Auswahlliste werden Ihnen schon 
+                              nach der Eingabe des ersten Buchstabens passende 
+                              Treffer angeboten. (Wenn Sie weitere Zeichen eingeben, 
+                              wird der Inhalt der Auswahlliste angepasst.) 
+                              Durch das vorangestellte Symbol
                               erkennen Sie, ob es sich dabei um einen{" "}
                               <Icon name="circle" /> Stadtbezirk, ein{" "}
                               <Icon name="pie-chart" /> Quartier, eine{" "}
@@ -234,15 +235,15 @@ export const KompaktanleitungSection = () => {
                         {" "}
                         <p>
                           Unter "<strong>Mein Kulturstadtplan</strong>" finden
-                          sie im Anwendungsmenü zwei alternative Möglichkeiten
-                          vor, die Menge der angezeigten POI gemäß Ihren
+                          sie im Anwendungsmenü zwei alternative Möglichkeiten, 
+                          die Menge der angezeigten POI gemäß Ihren
                           Vorlieben einzuschränken. Auf zwei angedeuteten
                           Karteikarten wird zum einen das Filtern nach
                           Kategorien von Einrichtungen angeboten, zum anderen
                           das Filtern nach Kategorien von Veranstaltungen, die
                           an den zugehörigen POI typischerweise angeboten
                           werden. Der Titel der gerade nicht sichtbaren
-                          Karteikarte wird als <a>Hyperlink</a> dargestellt Zum
+                          Karteikarte wird als <a>Hyperlink</a> dargestellt. Zum
                           Wechsel zwischen den beiden Karteikarten klicken Sie
                           auf den jeweils verfügbaren Link.
                         </p>
