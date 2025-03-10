@@ -55,7 +55,7 @@ export const MenuIntroduction: React.FC<MenuIntroductionProps> = ({
       >
         Urbaner Digitaler Zwilling
       </Link>{" "}
-      für eine Einordnung des Kita-Finders in das Gesamtsystem des Digitalen Zwillings der Stadt Wuppertal.
+      für eine Einordnung des Kita-Finders in das Gesamtsystem des Digitalen Zwillings der Stadt Wuppertal ("DigiTal Zwilling").
     </span>
   );
 };

@@ -191,8 +191,8 @@ export const KompaktanleitungSection = () => {
                             <p>
                               Um eine bestimmte Stelle des Stadtgebietes zu
                               erkunden, geben Sie den Namen eines Stadtteils
-                              (Stadtbezirk oder Quartier), einer Adresse,
-                              eines Straßennamens oder eines POI im
+                              (Stadtbezirk oder Quartier), eine Adresse,
+                              einen Straßennamen oder den Namen eines POI im
                               Eingabefeld links unten ein. In der 
                               inkrementellen Auswahlliste werden Ihnen schon 
                               nach der Eingabe des ersten Buchstabens passende 
