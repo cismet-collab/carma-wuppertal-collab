@@ -7,7 +7,7 @@ interface LuftbildkarteTextProps {
 const LuftbildkarteText = ({
   bodenaufloesung = 5,
   ohneKartenschrift = "",
-  details = "(Details s.Hintergrundkarte Stadtplan)",
+  details = "(Details s. Hintergrundkarte Stadtplan)",
 }: LuftbildkarteTextProps) => {
   return (
     <li>
