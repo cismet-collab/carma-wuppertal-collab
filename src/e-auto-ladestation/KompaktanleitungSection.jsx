@@ -221,7 +221,8 @@ export const KompaktanleitungSection = ({
                               eingeben, wird der Inhalt der Auswahlliste angepasst.) 
                               Sie können auch andere Suchbegriffe
                               eingeben, nämlich Stadtteil (Stadtbezirk oder
-                              Quartier), Adresse, Straßenname oder POI. Durch das
+                              Quartier), Adresse, Straßenname oder den Namen eines 
+                              interessanten Ortes (Point of Interest, kurz POI). Durch das
                               in der Auswahlliste vorangestellte Symbol erkennen
                               Sie, ob es sich bei einem Treffer um eine{" "}
                               <Icon name="charging-station" /> Ladestation, einen{" "}
