@@ -16,6 +16,7 @@ import {
   LuftbildkarteText,
   InKartePositionierenText,
 } from "../commons";
+import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
 
 export const KompaktanleitungSection = () => {
   const chargingOnlineSVG = getSymbolSVG(
@@ -199,30 +200,33 @@ export const KompaktanleitungSection = () => {
                     content: (
                       <InKartePositionierenText
                         pretext={
-                          <p>
-                            Um direkt zu einer Lade- oder Verleihstation zu
-                            gelangen, geben Sie den Anfang des Namens dieser
-                            Station im Eingabefeld links unten ein (mindestens 2
-                            Zeichen). In der inkrementellen Auswahlliste werden
-                            Ihnen passende Treffer angeboten. (Wenn Sie weitere
-                            Zeichen eingeben, wird der Inhalt der Auswahlliste
-                            angepasst.) Sie können auch andere Suchbegriffe
-                            eingeben, nämlich Stadtteil (Stadtbezirk oder
-                            Quartier), Adresse, Straßenname oder POI. Durch das
-                            in der Auswahlliste vorangestellte Symbol erkennen
-                            Sie, ob es sich bei einem Treffer um eine{" "}
-                            <Icon name="charging-station" /> Ladestation, eine{" "}
-                            <Icon name="bicycle" /> Verleihstation, einen{" "}
-                            <Icon name="circle" /> Stadtbezirk, ein{" "}
-                            <Icon name="pie-chart" /> Quartier, eine{" "}
-                            <Icon name="home" /> Adresse, eine{" "}
-                            <Icon name="road" /> Straße ohne zugeordnete
-                            Hausnummern, einen <Icon name="tag" /> POI, die{" "}
-                            <Icon name="tags" /> alternative Bezeichnung eines
-                            POI, eine <Icon name="child" />{" "}
-                            Kindertageseinrichtung oder eine{" "}
-                            <Icon name="graduation-cap" /> Schule handelt.
-                          </p>
+                          <>
+                            <p>
+                              Um direkt zu einer Lade- oder Verleihstation zu gelangen, 
+                              geben Sie den Namen dieser Station im Eingabefeld links 
+                              unten ein. In der inkrementellen Auswahlliste werden 
+                              Ihnen schon nach der Eingabe des ersten Buchstabens 
+                              passende Treffer angeboten. (Wenn Sie weitere Zeichen 
+                              eingeben, wird der Inhalt der Auswahlliste angepasst.) 
+                              Sie können auch andere Suchbegriffe eingeben, nämlich 
+                              Stadtteil (Stadtbezirk oder Quartier), Adresse, Straßenname 
+                              oder den Namen eines interessanten Ortes (Point of Interest, 
+                              kurz POI). Durch das in der Auswahlliste vorangestellte Symbol 
+                              erkennen Sie, ob es sich bei einem Treffer um eine{" "}
+                              <Icon name="charging-station" /> Ladestation, eine{" "}
+                              <Icon name="bicycle" /> Verleihstation, einen{" "}
+                              <Icon name="circle" /> Stadtbezirk, ein{" "}
+                              <Icon name="pie-chart" /> Quartier, eine{" "}
+                              <Icon name="home" /> Adresse, eine{" "}
+                              <Icon name="road" /> Straße ohne zugeordnete
+                              Hausnummern, einen <Icon name="tag" /> POI, die{" "}
+                              <Icon name="tags" /> alternative Bezeichnung eines
+                              POI, eine <Icon name="child" />{" "}
+                              Kindertageseinrichtung oder eine{" "}
+                              <Icon name="graduation-cap" /> Schule handelt.
+                            </p>
+                              <FuzzySearchParagraph />
+                          </>
                         }
                         punktgeometrie="(Ladestation, Verleihstationen, Adresse, Straße, POI)"
                         posttext={
@@ -235,7 +239,7 @@ export const KompaktanleitungSection = () => {
                             <Link to="MeinThemenstadtplan" containerId="myMenu">
                               Filtereinstellungen
                             </Link>{" "}
-                            die Darstellung der Ladestation in der Karte
+                            die Darstellung der Station in der Karte
                             erlauben.
                           </p>
                         }
