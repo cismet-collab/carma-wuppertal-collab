@@ -9,7 +9,7 @@ on:
     inputs:
       release-type:
         description: "Versionsmanipulation im Collab-Projekt (eine der folgenden): patch, minor, major, prepatch, preminor, premajor, prerelease"
-        required: true
+        required: false
       project-name:
         description: "Bitte geben Sie einen Projektnamen ein oder * für alle Projekte"
         required: true
