@@ -31,6 +31,13 @@ on:
         type: boolean
         description: "Ich weiß, was ich tue, wenn ich live-Deployments mache"
         required: false
+      carma-release-type:
+        description: "Versionsmanipulation im Carma-Projekt (eine der folgenden): patch, minor, major, prepatch, preminor, premajor, prerelease"
+        required: true
+      i-know-what-im-doing-live-release-type:
+        type: boolean
+        description: "Ich weiß, was ich tue, wenn ich live-Deployments mit Versionsmanipulation mache"
+        required: false
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -43,6 +50,10 @@ jobs:
     steps:
       - name: Pre-check validations
         run: |
+          # Get common variables
+          target="${{ github.event.inputs['target'] }}"
+          project_name="${{ github.event.inputs['project-name'] }}"
+
           # Validate i-know-what-im-doing is true
           if [ "${{ github.event.inputs['i-know-what-im-doing'] }}" != "true" ]; then
             echo "Error: You must acknowledge that you know what you're doing."
@@ -50,10 +61,14 @@ jobs:
           fi
 
           # Validate if it's a live deploy, i-know-what-im-doing-live must be true, otherwise false
-          target="${{ github.event.inputs['target'] }}"
           if [ "$target" = "live" ]; then
             if [ "${{ github.event.inputs['i-know-what-im-doing-live'] }}" != "true" ]; then
               echo "Error: Live deploy requires you to confirm that you know what you're doing."
+              exit 1
+            fi
+            # Prevent wildcard deployments to live
+            if [ "$project_name" = "*" ]; then
+              echo "Error: Wildcard deployments (*) are not allowed for live target."
               exit 1
             fi
           else
@@ -64,7 +79,6 @@ jobs:
           fi
 
           # Validate if project-name=* then i-know-what-im-doing-multiple must be true, otherwise false
-          project_name="${{ github.event.inputs['project-name'] }}"
           if [ "$project_name" = "*" ]; then
             if [ "${{ github.event.inputs['i-know-what-im-doing-multiple'] }}" != "true" ]; then
               echo "Error: Deploying to all projects requires you to confirm that you know what you're doing for multiple deployments."
@@ -81,6 +95,20 @@ jobs:
           if [ -z "$project_name" ] || { [ "$project_name" != "*" ] && [ -z "$project_name" ]; }; then
             echo "Error: Project name must be either '*' or a non-empty string."
             exit 1
+          fi
+
+          # Validate carma-release-type and i-know-what-im-doing-live-release-type relationship
+          carma_release_type="${{ github.event.inputs['carma-release-type'] }}"
+          if [ -n "$carma_release_type" ]; then
+            if [ "${{ github.event.inputs['i-know-what-im-doing-live-release-type'] }}" != "true" ]; then
+              echo "Error: When specifying a carma-release-type, you must acknowledge that you know what you're doing with live release type changes."
+              exit 1
+            fi
+          else
+            if [ "${{ github.event.inputs['i-know-what-im-doing-live-release-type'] }}" = "true" ]; then
+              echo "Error: The 'I know what I'm doing live release type' option should not be checked when carma-release-type is empty."
+              exit 1
+            fi
           fi
 
           echo "All checks passed."
@@ -150,7 +178,7 @@ jobs:
           repo_owner="cismet"
           repo_name="carma"
           event_type="trigger-workflow"
-          versionManipulator=""
+          versionManipulator=${{ github.event.inputs.carma-release-type }}
           projectName="${{ github.event.inputs['project-name'] }}"
           actor="${{ github.actor }}"
           target="${{ github.event.inputs['target'] }}"
