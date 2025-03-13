@@ -23,6 +23,10 @@ on:
         type: boolean
         description: "Ich weiß, was ich tue"
         required: true
+      i-know-what-im-doing-when-i-dont-manipulate-version-in-collab:
+        type: boolean
+        description: "Ich weiß, was ich tue, wenn ich keine Versionsmanipulation im Collab-Projekt mache"
+        required: true
       i-know-what-im-doing-multiple:
         type: boolean
         description: "Ich weiß, was ich tue, wenn ich mehrere Deployments anfordere"
@@ -53,6 +57,7 @@ jobs:
           # Get common variables
           target="${{ github.event.inputs['target'] }}"
           project_name="${{ github.event.inputs['project-name'] }}"
+          release_type="${{ github.event.inputs['release-type'] }}"
 
           # Validate i-know-what-im-doing is true
           if [ "${{ github.event.inputs['i-know-what-im-doing'] }}" != "true" ]; then
@@ -95,6 +100,19 @@ jobs:
           if [ -z "$project_name" ] || { [ "$project_name" != "*" ] && [ -z "$project_name" ]; }; then
             echo "Error: Project name must be either '*' or a non-empty string."
             exit 1
+          fi
+
+          # Validate release-type and i-know-what-im-doing-when-i-dont-manipulate-version-in-collab relationship
+          if [ -z "$release_type" ]; then
+            if [ "${{ github.event.inputs['i-know-what-im-doing-when-i-dont-manipulate-version-in-collab'] }}" != "true" ]; then
+              echo "Error: When no release-type is specified, you must acknowledge that you know what you're doing without version manipulation in collab."
+              exit 1
+            fi
+          else
+            if [ "${{ github.event.inputs['i-know-what-im-doing-when-i-dont-manipulate-version-in-collab'] }}" = "true" ]; then
+              echo "Error: The 'I know what I'm doing when I don't manipulate version in collab' option should not be checked when release-type is specified."
+              exit 1
+            fi
           fi
 
           # Validate carma-release-type and i-know-what-im-doing-live-release-type relationship
