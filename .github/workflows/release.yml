@@ -37,7 +37,7 @@ on:
         required: false
       carma-release-type:
         description: "Versionsmanipulation im Carma-Projekt (eine der folgenden): patch, minor, major, prepatch, preminor, premajor, prerelease"
-        required: true
+        required: false
       i-know-what-im-doing-live-release-type:
         type: boolean
         description: "Ich weiß, was ich tue, wenn ich live-Deployments mit Versionsmanipulation mache"
