@@ -2,7 +2,7 @@ import React from "react";
 import Icon from "react-cismap/commons/Icon";
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { InKartePositionierenText } from "../../commons";
-import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
+import FuzzySearchParagraph from "../../commons/FuzzySearchParagraph";
 
 const Component = () => {
   return (
