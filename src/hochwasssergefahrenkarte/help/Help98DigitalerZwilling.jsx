@@ -31,7 +31,7 @@ const Component = ({ email }) => {
               "Hochwasser-Gefährdungsbeurteilung" bereit. Im Konzept des DigiTal Zwillings implementiert die 
               Hochwassergefahrenkarte einen {" "}<b>Teilzwilling</b>, der dem <b>Fachzwilling Klimawandel</b>{" "}  
               zuzuordnen ist. 
-            </div>            
+            </div>           
           </p>
           <p>
             Der Aufbau des DigiTal Zwillings ist eines der drei großen Umsetzungsprojekte 
