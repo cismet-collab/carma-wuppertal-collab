@@ -41,7 +41,7 @@ const Component = () => {
             Morsbach, Hardenberger Bach, Deilbach).
           </p>
           <p>
-            Zur Betrachtung der Wassertiefen stellen wir Ihnen drei verschiedene
+            Zur <b>2D-Betrachtung</b> der Wassertiefen stellen wir Ihnen drei verschiedene
             Hintergrundkarten bereit, die auf den folgenden Geodatendiensten und
             Geodaten basieren:
           </p>
@@ -108,6 +108,12 @@ const Component = () => {
               (OpenStreetMap contributors).
             </li>
           </ul>
+          <p>
+            Die <b>3D-Betrachtung</b> der überfluteten Flächen erfolgt auf der Grundlage eines 
+            sog. 3D-Mesh, das von der Firma Aerowest GmbH/Dortmund aus den Ergebnisdaten 
+            (Senkrecht- und Schrägaufnahmen) der ebenfalls von Aerowest durchgeführten 
+            Bildflüge vom 14.03. und 17.03.2024 berechnet worden ist.
+          </p>
         </div>
       }
     />
