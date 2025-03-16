@@ -26,9 +26,21 @@ const Component = () => {
           <p>
             Ein Klick auf eine beliebige Position in der Karte bewirkt jetzt,
             dass die Zelle in der Karte markiert und der zugehörige Maximalwert
-            der Wassertiefe in diesem Feld angezeigt wird. Die Anzeige der
-            maximalen Wassertiefe wird dabei auf volle 10 cm gerundet (z. B.
-            "ca. 50 cm"), um die beschränkte Aussagekraft der
+            der Wassertiefe in diesem Feld angezeigt wird. In der 2D-Ansicht wird 
+            die abgefragte Zelle durch einen schwarzen Rahmen mit transparenter 
+            grauer Füllung markiert. In der 3D-Ansicht wird dafür ein schwarz-gelber 
+            Pegel-Balken dargestellt. Damit man diesen auch aus größerer Betrachtungshöhe 
+            schnell entdeckt, wird ggf. zusätzlich ein senkrechter Lichtstrahl auf 
+            den Pegel-Balken ausgeprägt. Die 3D-Hochwasseroberfläche bildet in den 
+            überfluteten Bereichen eine durchgängige Fläche über der natürlichen 
+            Geländeoberfläche, die aber bei höheren künstlichen Objekten wie Gebäuden 
+            oder Autos nicht sichtbar ist. Trotzdem können Sie die Wassertiefe über dem 
+            natürlichen Gelände auch in diesen Bereichen abfragen. Der Pegel-Balken 
+            verschwindet dann ganz oder teilweise in den künstlichen Objekten.
+          </p> 
+          <p>  
+            Die Anzeige der maximalen Wassertiefe wird auf volle 10 cm gerundet 
+            (z. B. "ca. 50 cm"), um die beschränkte Aussagekraft der
             Simulationsergebnisse zu verdeutlichen. Aus demselben Grund werden
             berechnete Wassertiefen von mehr als 150 cm nur als "&lt; 150 cm"
             angezeigt.
