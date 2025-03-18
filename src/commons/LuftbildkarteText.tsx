@@ -5,7 +5,7 @@ interface LuftbildkarteTextProps {
 }
 
 const LuftbildkarteText = ({
-  bodenaufloesung = 5,
+  bodenaufloesung = 3,
   ohneKartenschrift = "",
   details = "(Details s. Hintergrundkarte Stadtplan)",
 }: LuftbildkarteTextProps) => {
@@ -13,7 +13,7 @@ const LuftbildkarteText = ({
     <li>
       <strong>Luftbildkarte</strong>: (1) Kartendienst (WMS) der Stadt
       Wuppertal. Datengrundlage:{" "}
-      <strong>True Orthophoto aus Bildflug vom 16.03.2022</strong>, hergestellt
+      <strong>True Orthophoto aus Bildflügen vom 14. und 17.03.2024</strong>, hergestellt
       durch Aerowest GmbH/Dortmund, Bodenauflösung {bodenaufloesung} cm. (True
       Orthophoto: Aus Luftbildern mit hoher Längs- und Querüberdeckung in einem
       automatisierten Bildverarbeitungsprozess berechnetes Bild in
