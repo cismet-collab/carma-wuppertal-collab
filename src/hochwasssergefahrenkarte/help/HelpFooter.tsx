@@ -22,7 +22,7 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
       }}
     >
       <div>
-        <b>Hintergrundkarten</b>: True Orthophoto 2024, Amtliche Basiskarte
+        <b>Hintergrundkarten</b>: True Orthophoto und 3D-Mesh 2024, Amtliche Basiskarte
         (ABK), Hillshade © Stadt Wuppertal | Stadtkarte 2.0 © RVR | basemap.de
         web Vektor © GeoBasis-DE / BKG{" "}
         <a
