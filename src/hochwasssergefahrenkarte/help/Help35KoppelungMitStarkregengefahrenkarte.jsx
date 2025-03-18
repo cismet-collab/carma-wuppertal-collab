@@ -47,7 +47,7 @@ const Component = () => {
           </p>
           <p>
             Mit dem Wechselschalter "Synchronisation stoppen / Synchronisation starten" 
-            (das unterste Werkzeug in der Werkzeugleiste links oben) können Sie 
+            (das oberste Werkzeug in der Werkzeugleiste links oben) können Sie 
             einzelne Anwendungsfenster aus der Gruppe der synchronisierten Kartenanwendungen 
             herausnehmen und wieder hinzufügen. Bei deaktivierter Synchronisation wird das Symbol 
             auf dem Werkzeug ausgegraut dargestellt. Wenn Sie den Mauszeiger auf dieses Werkzeug 

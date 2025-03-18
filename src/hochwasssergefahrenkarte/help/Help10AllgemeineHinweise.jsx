@@ -70,6 +70,27 @@ const Component = ({ dev = false }) => {
             Wassertiefen unter 10 cm werden nicht farbig ausgeprägt
             (transparente Darstellung).
           </p>
+          <p>
+            Im März 2025 wurde die Hochwassergefahrenkarte als erste Anwendung aus der 
+            Familie der{" "} 
+            <a
+              target="_legal"
+              href="https://www.wuppertal.de/microsite/geoportal/topicmaps/topicmaps.php"
+            >
+              TopicMaps Wuppertal
+            </a>{" "} 
+            um eine anschauliche 3D-Visualisierung der Fachdaten (hier der 
+            überfluteten Flächen) erweitert. Die 3D-Erweiterung der TopicMaps
+            wurde im Rahmen des Projektes smart.wuppertal/DigiTal Zwilling entwickelt. 
+            In diesem Projekt wird ein{" "} 
+            <a
+              className="renderAsLink"
+              onClick={() => setAppMenuActiveMenuSection("szenarien")}
+            >
+              Urbaner Digitaler Zwilling
+            </a>{" "} 
+            der Stadt Wuppertal aufgebaut.
+          </p>
         </div>
       }
     />
