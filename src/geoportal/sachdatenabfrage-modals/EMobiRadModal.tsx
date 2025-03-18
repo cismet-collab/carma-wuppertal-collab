@@ -81,6 +81,50 @@ import {
             </tr>
             );
         });
+
+
+        let ladeboxTable: React.ReactNode[] = [];
+
+        {
+            ladeboxTable.push(
+            <tbody>
+                <tr>                    
+                        <div style={{width: "100%", minHeight: 50}}>
+                            <div style={{float: "left", paddingRight: "5px"}}>
+                                <div>
+                                <b>Ladebox:</b>
+                            </div>
+                            <div>
+                            {(
+                                <img
+                                    alt="Box"
+                                    style={{
+                                        paddingLeft: 10,
+                                        paddingRight: 10,
+                                        float: "left",
+                                        paddingBottom: "5px",
+                                }}
+                                src={station_rad.ladebox_zu}
+                                width="50"
+                                />
+                            )}
+                            </div>
+                            </div>
+                            <div style={{float: "left"}}>
+                                <div>
+                                    {station_rad.ladebox_anz}
+                                </div>
+                                
+                                <div>
+                                    {station_rad.ladebox_pfand}
+                                </div>
+                            </div>
+                        </div>
+                    
+                </tr>
+            </tbody>
+            );
+        };
     
         return (
             <Modal
@@ -101,48 +145,44 @@ import {
             </Modal.Header>
             <Modal.Body id="myMenu" key={"prbr.secondaryInfo"}>
                 <div style={{ width: "100%", minHeight: 250 }}>
-                    <table style={{ marginTop: 8 }}>
-                        <tbody>
-                            <tr>
-                                <td style={{ fontSize: "115%", padding: "10px", paddingTop: "0px", verticalAlign: "top" }}>
-                                   <div style={{ fontSize: "100%", padding: "10px", paddingTop: "0px", verticalAlign: "top" }}>
-                                        <div>
-                                            <b>Adresse:</b>
-                                        </div>
-                                        <div>{station_rad.adresse}</div>
-                                        <br />
-                                        <div>{station_rad.bezirk}</div>
-                                    </div> 
-                                </td>
-                                <td>
-                                    <div style={{ width: "100%", minHeight: 250 }}>
-                                        {foto !== undefined && (
-                                        <img
-                                        alt="Bild"
-                                        style={{
-                                            paddingLeft: 10,
-                                            paddingRight: 10,
-                                            float: "right",
-                                            paddingBottom: "5px",
-                                        }}
-                                            src={foto}
-                                            width="250"
-                                        />
-                                        )}
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
+                    <div style={{ width: "100%", minHeight: 250 }}>
+                        {foto !== undefined && (
+                            <img
+                            alt="Bild"
+                            style={{
+                                paddingLeft: 10,
+                                paddingRight: 10,
+                                float: "right",
+                                paddingBottom: "5px",
+                            }}
+                            src={foto}
+                            width="250"
+                            />
+                        )}
+                        
+                            <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
+                                <div>
+                                    <b>Adresse:</b>
+                                </div>
+                                <div>{station_rad.adresse}</div>
+                                <br />
+                                <div><b>Detailinformation:</b> </div>
+                                <div>{station_rad.detailbeschreibung} </div>
+                                <br />
+                                <div><b>Bemerkung:</b> </div>
+                                <div>{station_rad.bemerkung}</div>
+                                <div>{station_rad.zusatzinfo}</div>
+                            </div> 
+                    </div>
                 </div>
+
                 <div style={{ padding: "10px", paddingTop: "0px" }}>
-                    <div>{station_rad.bemerkung}</div>
-                    <div> {station_rad.detailbeschreibung}</div>
-                    <div> {station_rad.zusatzinfo}</div>
                     <br />
                     <div>
                         <b>Öffnungszeiten:</b> {station_rad.oeffnungszeiten}
                     </div>
+                    <br />
                     <div>
                         <b>Stellplätze:</b> {station_rad.anzahl_plaetze}
                     </div>
@@ -160,11 +200,13 @@ import {
                     <Accordion.Collapse eventKey="0">
                     <Card.Body style={{ backgroundColor: "white" }}>
                         <div>
-                            <b>Verfügbarkeit:</b> {station_rad.verfuegbar}
+                            {station_rad.verfuegbar}
                         </div>
+                        <br />
                         <div>
                             <b>Ladepunkte:</b> {station_rad.anzahl_ladepunkte}
                         </div>
+                        <br />
                         <div>
                         <b>Steckerverbindungen:</b>
                         <Table striped bordered hover style={{ marginTop: 8 }}>
@@ -177,35 +219,9 @@ import {
                         </div>
                         <div style={{ width: "100%" }}>
                             <table style={{ marginTop: 8 }}>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div style={{ width: "100%", minHeight: 50, verticalAlign: "top"}}>
-                                                {station_rad.ladebox_zu.length > 0 && (
-                                                    <img
-                                                        alt="Box"
-                                                        style={{
-                                                            paddingLeft: 10,
-                                                            paddingRight: 10,
-                                                            float: "right",
-                                                            paddingBottom: "5px",
-                                                    }}
-                                                    src={station_rad.ladebox_zu}
-                                                    width="50"
-                                                    />
-                                                )}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>
-                                                {station_rad.ladebox_anz}
-                                            </div>
-                                            <div>
-                                                {station_rad.ladebox_pfand}
-                                            </div>
-                                        </td>
-                                    </tr>    
-                                </tbody>
+                                
+                                {ladeboxTable}
+                                
                             </table>
                         </div>
                     </Card.Body>
@@ -222,7 +238,7 @@ import {
                     <Accordion.Collapse eventKey="1">
                     <Card.Body style={{ backgroundColor: "white" }}>
                         <div>
-                        <b>Zugang:</b>{" "}
+                        <b>Authentifizierung:</b>{" "}
                         {station_rad.zugangsarten.map((zugangsarten, index) => (
                             <div key={index}>{zugangsarten}</div>
                         ))}
