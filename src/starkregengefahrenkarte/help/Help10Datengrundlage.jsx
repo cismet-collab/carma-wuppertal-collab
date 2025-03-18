@@ -119,45 +119,6 @@ const Component = () => {
 
           <ul>
             <li>
-              <strong>Topographische Karte</strong>: (1) Kartendienste (WMS) der
-              Stadt Wuppertal. Datengrundlagen: (a){" "}
-              <b>Amtliche Basiskarte ABK Graustufen</b>. (Wöchentlich in einem
-              automatisierten Prozess aus dem Fachverfahren ALKIS des
-              Liegenschaftskatasters abgeleitete großmaßstäbige topographische
-              Karte in Graustufen.) © Stadt Wuppertal (
-              <a target="_legal" href="https://www.govdata.de/dl-de/zero-2-0">
-                Datenlizenz Deutschland - Zero - Version 2.0)
-              </a>
-              . (b) <b>Hillshade</b> (Schummerungsdarstellung eines für
-              hydrologische Fragestellungen optimierten Digitalen Geländemodells
-              aus Laserscanner-Befliegungen (12/2008 und 01/2009) mit ergänztem
-              Gebäudebestand (Auflösung 25 cm x 25 cm), ausgeführt in 2012 vom
-              Ingenieurbüro Reinhard Beck GmbH & Co. KG / Wuppertal.) ©
-              Wuppertaler Stadtwerke WSW Energie & Wasser AG. (2) Kartendienst
-              (WMS) des Regionalverbandes Ruhr (RVR). Datengrundlage:{" "}
-              <b>Stadtkarte 2.0</b> ohne Kartenschrift. (Details s.
-              Hintergrundkarte Stadtplan.) (3) Kartendienst (WMS) des
-              Bundesamtes für Kartographie und Geodäsie (
-              <a target="_blank" href="https://www.bkg.bund.de/">
-                BKG
-              </a>
-              ). Datengrundlage: <b>basemap.de Web Vektor</b> © GeoBasis-DE /{" "}
-              <a target="_blank" href="https://www.bkg.bund.de/">
-                BKG
-              </a>{" "}
-              (2024){" "}
-              <a
-                target="_blank"
-                href="https://creativecommons.org/licenses/by/4.0/"
-              >
-                CC BY 4.0
-              </a>
-              .
-            </li>
-
-            <LuftbildkarteText />
-
-            <li>
               <strong>Stadtplan</strong>: Kartendienst (WMS) des
               Regionalverbandes Ruhr (RVR). Datengrundlage:{" "}
               <strong>Stadtkarte 2.0</strong>. Wöchentlich in einem
@@ -181,6 +142,43 @@ const Component = () => {
               </a>{" "}
               (OpenStreetMap contributors).
             </li>
+            <li>
+              <strong>Topographische Karte</strong>: (1) Kartendienste (WMS) der
+              Stadt Wuppertal. Datengrundlagen: (a){" "}
+              <b>Amtliche Basiskarte ABK Graustufen</b>. (Wöchentlich in einem
+              automatisierten Prozess aus dem Fachverfahren ALKIS des
+              Liegenschaftskatasters abgeleitete großmaßstäbige topographische
+              Karte in Graustufen.) © Stadt Wuppertal (
+              <a target="_legal" href="https://www.govdata.de/dl-de/zero-2-0">
+                Datenlizenz Deutschland - Zero - Version 2.0)
+              </a>
+              . (b) <b>Hillshade</b> (Schummerungsdarstellung eines für
+              hydrologische Fragestellungen optimierten Digitalen Geländemodells
+                aus Laserscanner-Befliegungen (12/2008 und 01/2009) mit ergänztem
+              Gebäudebestand (Auflösung 25 cm x 25 cm), ausgeführt in 2012 vom
+              Ingenieurbüro Reinhard Beck GmbH & Co. KG / Wuppertal.) ©
+              Wuppertaler Stadtwerke WSW Energie & Wasser AG. (2) Kartendienst
+              (WMS) des Regionalverbandes Ruhr (RVR). Datengrundlage:{" "}
+              <b>Stadtkarte 2.0</b> ohne Kartenschrift. (Details s.
+              Hintergrundkarte Stadtplan.) (3) Kartendienst (WMS) des
+              Bundesamtes für Kartographie und Geodäsie (
+              <a target="_blank" href="https://www.bkg.bund.de/">
+                BKG
+              </a>
+              ). Datengrundlage: <b>basemap.de Web Vektor</b> © GeoBasis-DE /{" "}
+              <a target="_blank" href="https://www.bkg.bund.de/">
+                BKG
+              </a>{" "}
+              (2024){" "}
+              <a
+                target="_blank"
+                href="https://creativecommons.org/licenses/by/4.0/"
+              >
+                CC BY 4.0
+              </a>
+              .
+            </li>
+            <LuftbildkarteText />
           </ul>
         </div>
       }

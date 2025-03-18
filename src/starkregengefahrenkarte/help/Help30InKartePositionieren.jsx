@@ -2,6 +2,7 @@ import React from "react";
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import Icon from "react-cismap/commons/Icon";
 import { InKartePositionierenText } from "../../commons";
+import FuzzySearchParagraph from "../../commons/FuzzySearchParagraph";
 
 const Component = () => {
   return (
@@ -13,26 +14,30 @@ const Component = () => {
         <div>
           <InKartePositionierenText
             pretext={
-              <p>
-                Um die Gefährdung durch Starkregen in einem bestimmten Bereich
-                des Stadtgebietes zu erkunden, geben Sie den Anfang (mindestens
-                zwei Zeichen) eines Stadtteils (Stadtbezirk oder Quartier),
-                einer Adresse, eines interessanten Ortes (Point of Interest POI)
-                oder eines GEP-Bereichs im Eingabefeld links unten ein. (Die
-                Bedeutung der GEP-Bereiche wird am Ende dieses Abschnittes der
-                Kompaktanleitung erläutert!) In der inkrementellen Auswahlliste
-                werden Ihnen passende Treffer angeboten. (Wenn Sie weitere
-                Zeichen eingeben, wird der Inhalt der Auswahlliste angepasst.)
-                Durch das vorangestellte Symbol erkennen Sie, ob es sich dabei
-                um einen <Icon name="circle" /> Stadtbezirk, ein{" "}
-                <Icon name="pie-chart" /> Quartier, eine <Icon name="home" />{" "}
-                Adresse, eine <Icon name="road" /> Straße ohne zugeordnete
-                Hausnummern, einen <Icon name="tag" /> POI, die{" "}
-                <Icon name="tags" /> alternative Bezeichnung eines POI, eine{" "}
-                <Icon name="child" /> Kindertageseinrichtung, eine{" "}
-                <Icon name="graduation-cap" /> Schule oder einen{" "}
-                <Icon name="code-fork" /> GEP-Bereich handelt.
-              </p>
+              <>
+                <p>
+                  Um die Gefährdung durch Starkregen in einem bestimmten Bereich
+                  des Stadtgebietes zu erkunden, geben Sie den Namen eines Stadtteils 
+                  (Stadtbezirk oder Quartier), eine Adresse, den Namen eines 
+                  interessanten Ortes (Point of Interest, kurz POI)
+                  oder die Bezeichnung eines GEP-Bereichs im Eingabefeld links 
+                  unten ein. (Die Bedeutung der GEP-Bereiche wird am Ende dieses 
+                  Abschnittes der Kompaktanleitung erläutert!) In der inkrementellen 
+                  Auswahlliste werden Ihnen schon nach der Eingabe des ersten Buchstabens 
+                  passende Treffer angeboten. (Wenn Sie weitere Zeichen eingeben, 
+                  wird der Inhalt der Auswahlliste angepasst.)
+                  Durch das vorangestellte Symbol erkennen Sie, ob es sich dabei
+                  um einen <Icon name="circle" /> Stadtbezirk, ein{" "}
+                  <Icon name="chart-pie" /> Quartier, eine <Icon name="home" />{" "}
+                  Adresse, eine <Icon name="road" /> Straße ohne zugeordnete
+                  Hausnummern, einen <Icon name="tag" /> POI, die{" "}
+                  <Icon name="tags" /> alternative Bezeichnung eines POI, eine{" "}
+                  <Icon name="child" /> Kindertageseinrichtung, eine{" "}
+                  <Icon name="graduation-cap" /> Schule oder einen{" "}
+                  <Icon name="code-branch" /> GEP-Bereich handelt. 
+                </p>
+                <FuzzySearchParagraph />
+              </>
             }
             zoomstufe={18}
             flachengeometrie="(Stadtbezirk, Quartier, GEP)"

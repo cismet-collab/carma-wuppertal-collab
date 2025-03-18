@@ -19,7 +19,7 @@ const Component = () => {
                 des Stadtgebietes zu erkunden, geben Sie den Namen eines Stadtteils 
                 (Stadtbezirk oder Quartier), eine Adresse, den Namen eines 
                 interessanten Ortes (Point of Interest, kurz POI)
-                oder die Bezechnung eines GEP-Bereichs im Eingabefeld links 
+                oder die Bezeichnung eines GEP-Bereichs im Eingabefeld links 
                 unten ein. (Die Bedeutung der GEP-Bereiche wird am Ende dieses 
                 Abschnittes der Kompaktanleitung erläutert!) In der inkrementellen 
                 Auswahlliste werden Ihnen schon nach der Eingabe des ersten Buchstabens 
