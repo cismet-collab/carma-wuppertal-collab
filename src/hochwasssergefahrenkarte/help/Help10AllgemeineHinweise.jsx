@@ -85,7 +85,7 @@ const Component = ({ dev = false }) => {
             In diesem Projekt wird ein{" "} 
             <a
               className="renderAsLink"
-              onClick={() => setAppMenuActiveMenuSection("szenarien")}
+              onClick={() => setAppMenuActiveMenuSection("zwilling")}
             >
               Urbaner Digitaler Zwilling
             </a>{" "} 
