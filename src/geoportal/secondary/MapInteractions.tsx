@@ -47,25 +47,25 @@ export const MapInteractionsUI = () => {
         <tr>
           <td>
             <img src={TouchPanning} style={{ height: "40px" }} />
-          </td>
+          </td>{" "}
           <td>Ausschnitt verschieben</td>
         </tr>
         <tr>
           <td>
             <img src={TouchRotate} style={{ height: "40px" }} />
-          </td>
+          </td>{" "}
           <td>Zoom in / Zoom out (Pinch-Geste)</td>
         </tr>
         <tr>
           <td>
             <img src={TouchTilt} style={{ height: "40px" }} />
-          </td>
+          </td>{" "}
           <td>3D-Ansicht kippen</td>
         </tr>
         <tr>
           <td>
             <img src={TouchZoom} style={{ height: "40px" }} />
-          </td>
+          </td>{" "}
           <td>3D-Ansicht drehen</td>
         </tr>
         <tr>
