@@ -13,7 +13,7 @@ export const MapInteractionsUI = () => {
       <table>
         <tr>
           <td colSpan={2}>
-            <strong>Maus /Tastatur </strong>
+            <strong>Maus / Tastatur </strong>
           </td>
         </tr>
         <tr>
