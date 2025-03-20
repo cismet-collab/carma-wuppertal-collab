@@ -36,10 +36,10 @@ const Component = () => {
             Alternativ können sie dazu das Mausrad verwenden oder auf einem Touchscreen mit 2 Fingern
             einen Bereich aufziehen oder zusammenschieben ("Pinch-Geste"). <b>Verschieben</b> können Sie den 
             betrachteten Ausschnitt ebenfalls wie im 2D-Modus mit gedrückter linker Maustaste oder auf einem 
-            Touchscreen durch Ziehen mit einem Finger. Ein kombiniertes <b>Drehen und Kippen der 3D-Ansicht</b> 
+            Touchscreen durch Ziehen mit einem Finger. Ein kombiniertes <b>Drehen und Kippen der 3D-Ansicht</b>{" "} 
             ist mit gedrückter linker Maustaste bei gleichzeitigem Drücken von [Strg]/[ctrl] auf der Tastatur 
             möglich. Auf einem Touchscreen kann die 3D-Ansicht durch vertikales Ziehen mit 2 parallelen Fingern 
-            gekippt und durch Rotieren von zwei Fingern um einen gemeinsamen Mittelpunkt gedreht werden.  
+            gekippt und durch Rotieren mit zwei Fingern um einen gemeinsamen Mittelpunkt gedreht werden.  
           </p>
         </div>
       }
