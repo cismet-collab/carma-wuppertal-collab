@@ -24,6 +24,14 @@ const Component = () => {
             Beim Zurückwechseln von 3D nach 2D wird die Ansicht zunächst nach Norden ausgerichtet und 
             die Senkrechtperspektive eingestellt, sodass sich eine kartenartige Darstellung ergibt.                  
           </p>
+          <p>
+            Im 3D-Modus können wie in der 2D-Kartenbetrachtung die Werkzeuge "<b>+</b>" und "<b>-</b>"
+            zum <b>Vergrößern bzw. Verkleinern</b> des Ansichtsmaßstabes in festen Zoomstufen verwendet werden. 
+            Alternativ können sie dazu das Mausrad verwenden oder auf einem Touchscreen mit 2 Fingern
+            einen Bereich aufziehen oder zusammenschieben ("Pinch-Geste"). <b>Verschieben</b> können Sie den 
+            betrachteten Ausschnitt ebenfalls wie im 2D-Modus mit gedrückter linker Maustaste oder auf einem 
+            Touchscreen durch Ziehen mit einem Finger.  
+          </p>
         </div>
       }
     />
