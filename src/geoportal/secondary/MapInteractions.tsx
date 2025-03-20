@@ -1,46 +1,33 @@
-import { type IconProp } from "@fortawesome/fontawesome-svg-core";
-import {
-  faArrowPointer,
-  faMagnifyingGlassPlus,
-  faUpDownLeftRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./map-interactions.css";
-
-interface MapInteractionProps {
-  icon: IconProp;
-  action: string;
-  description: string;
-}
-
-const MapInteraction = ({ icon, action, description }: MapInteractionProps) => (
-  <div className="map-interaction">
-    <div className="map-interaction-icon">
-      <FontAwesomeIcon icon={icon} />
-    </div>
-    <div className="map-interaction-text">
-      <p className="map-interaction-action">{action}</p>
-      <p className="map-interaction-description">{description}</p>
-    </div>
-  </div>
-);
+import MouseLeft from "./assets/MouseTouchPics/MouseLeft.png";
+import MouseCenter from "./assets/MouseTouchPics/MouseCenter.png";
+import TouchPanning from "./assets/MouseTouchPics/TouchPanning.png";
+import TouchRotate from "./assets/MouseTouchPics/TouchRotate.png";
+import TouchTilt from "./assets/MouseTouchPics/TouchTilt.png";
+import TouchZoom from "./assets/MouseTouchPics/TouchZoom.png";
+import { Link } from "../../helper-overlay/components/Link";
 
 export const MapInteractionsUI = () => {
   return (
     <div>
-      <div className="map-interactions-title">Karteninteraktionen</div>
 
-      <MapInteraction
-        icon={faUpDownLeftRight}
-        action="Linksklick + Ziehen"
-        description="Karte verschieben"
-      />
+      <table>
+        <tr><td colspan="2"><strong>Maus /Tastatur </strong></td></tr>
+        <tr><td><img src={MouseLeft} style={{ height: "30px" }} /></td><td>Ausschnitt verschieben</td></tr>
+        <tr><td><img src={MouseCenter} style={{ height: "30px" }} /></td><td>Zoom in / Zoom out</td></tr>
+        <tr><td><img src={MouseLeft} style={{ height: "30px" }} /></td><td><strong>+[Strg]</strong> 3D-Ansicht drehen und kippen</td></tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr><td colspan="2"><strong>Touchscreen</strong></td></tr>
+        <tr><td><img src={TouchPanning} style={{ height: "40px" }} /></td><td>Ausschnitt verschieben</td></tr>
+        <tr><td><img src={TouchRotate} style={{ height: "40px" }} /></td><td>Zoom in / Zoom out (Pinch-Geste)</td></tr>
+        <tr><td><img src={TouchTilt} style={{ height: "40px" }} /></td><td>3D-Ansicht kippen</td></tr>
+        <tr><td><img src={TouchZoom} style={{ height: "40px" }} /></td><td>3D-Ansicht drehen</td></tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr><td colspan="2" align="center"><Link section="positionieren">weitere Informationen</Link>{" "}</td></tr>
+      </table>
 
-      <MapInteraction
-        icon={faMagnifyingGlassPlus}
-        action="Scrollrad"
-        description="In die Karte hinein- oder herauszoomen"
-      />
     </div>
   );
 };
+
+
