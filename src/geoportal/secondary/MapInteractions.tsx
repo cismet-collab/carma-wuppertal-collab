@@ -10,24 +10,73 @@ import { Link } from "../../helper-overlay/components/Link";
 export const MapInteractionsUI = () => {
   return (
     <div>
-
       <table>
-        <tr><td colspan="2"><strong>Maus /Tastatur </strong></td></tr>
-        <tr><td><img src={MouseLeft} style={{ height: "30px" }} /></td><td>Ausschnitt verschieben</td></tr>
-        <tr><td><img src={MouseCenter} style={{ height: "30px" }} /></td><td>Zoom in / Zoom out</td></tr>
-        <tr><td><img src={MouseLeft} style={{ height: "30px" }} /></td><td><strong>+[Strg]</strong> 3D-Ansicht drehen und kippen</td></tr>
-        <tr><td colspan="2">&nbsp;</td></tr>
-        <tr><td colspan="2"><strong>Touchscreen</strong></td></tr>
-        <tr><td><img src={TouchPanning} style={{ height: "40px" }} /></td><td>Ausschnitt verschieben</td></tr>
-        <tr><td><img src={TouchRotate} style={{ height: "40px" }} /></td><td>Zoom in / Zoom out (Pinch-Geste)</td></tr>
-        <tr><td><img src={TouchTilt} style={{ height: "40px" }} /></td><td>3D-Ansicht kippen</td></tr>
-        <tr><td><img src={TouchZoom} style={{ height: "40px" }} /></td><td>3D-Ansicht drehen</td></tr>
-        <tr><td colspan="2">&nbsp;</td></tr>
-        <tr><td colspan="2" align="center"><Link section="positionieren">weitere Informationen</Link>{" "}</td></tr>
+        <tr>
+          <td colSpan={2}>
+            <strong>Maus /Tastatur </strong>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src={MouseLeft} style={{ height: "30px" }} />
+          </td>
+          <td>Ausschnitt verschieben</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={MouseCenter} style={{ height: "30px" }} />
+          </td>
+          <td>Zoom in / Zoom out</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={MouseLeft} style={{ height: "30px" }} />
+          </td>
+          <td>
+            <strong>+[Strg]</strong> 3D-Ansicht drehen und kippen
+          </td>
+        </tr>
+        <tr>
+          <td colSpan={2}>&nbsp;</td>
+        </tr>
+        <tr>
+          <td colSpan={2}>
+            <strong>Touchscreen</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src={TouchPanning} style={{ height: "40px" }} />
+          </td>
+          <td>Ausschnitt verschieben</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={TouchRotate} style={{ height: "40px" }} />
+          </td>
+          <td>Zoom in / Zoom out (Pinch-Geste)</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={TouchTilt} style={{ height: "40px" }} />
+          </td>
+          <td>3D-Ansicht kippen</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={TouchZoom} style={{ height: "40px" }} />
+          </td>
+          <td>3D-Ansicht drehen</td>
+        </tr>
+        <tr>
+          <td colSpan={2}>&nbsp;</td>
+        </tr>
+        <tr>
+          <td colSpan={2} style={{ textAlign: "center" }}>
+            <Link section="positionieren">weitere Informationen</Link>{" "}
+          </td>
+        </tr>
       </table>
-
     </div>
   );
 };
-
-
