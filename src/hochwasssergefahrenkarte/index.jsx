@@ -9,6 +9,7 @@ import {
 import Help10AllgemeineHinweise from "./help/Help10AllgemeineHinweise";
 import Help15Datengrundlage from "./help/Help15Datengrundlage";
 import Help20Karteninhalt from "./help/Help20Karteninhalt";
+import Help25Wechsel2D3D from "./help/Help25Wechsel2D3D";
 import Help30InKartePositionieren from "./help/Help30InKartePositionieren";
 import Help35KoppelungMitStarkregengefahrenkarte from "./help/Help35KoppelungMitStarkregengefahrenkarte";
 import Help40MeinStandort from "./help/Help40MeinStandort";
@@ -47,6 +48,7 @@ const getCollabedHelpComponentConfig = ({
     <Help10AllgemeineHinweise key="AllgemeineHinweise" />,
     <Help15Datengrundlage key="Datengrundlage" />,
     <Help20Karteninhalt key="Karteninhalt" />,
+    <Help25Wechsel2D3D key="Wechsel2D3D" />,
     <Help30InKartePositionieren key="InKartePositionieren" />,
     <Help35KoppelungMitStarkregengefahrenkarte key="Koppelung" />,
     <Help40MeinStandort key="MeinStandort" />,
