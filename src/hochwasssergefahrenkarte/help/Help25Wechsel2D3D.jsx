@@ -20,7 +20,13 @@ const Component = () => {
             die Wasseroberfläche in den überfluteten Bereichen wie eine zweite digitale 
             Geländeoberfläche in einem transparenten Blauton dargestellt. Dadurch 
             entsteht ein anschauliches Bild von der Überflutungssituation. Als Grundlage
-            dieser Darstellung dient ein sog. 3D-Mesh, das aus Luftbildern berechnet worden ist.
+            dieser Darstellung dient ein sog.{" "}
+            <a
+              className="renderAsLink"
+              onClick={() => setAppMenuActiveMenuSection("datengrundlage")}
+            >
+              3D-Mesh
+            </a>, das aus Luftbildern berechnet worden ist.
             Beim Zurückwechseln von 3D nach 2D wird die Ansicht zunächst nach Norden ausgerichtet und 
             die Senkrechtperspektive eingestellt, sodass sich eine kartenartige Darstellung ergibt.                  
           </p>
