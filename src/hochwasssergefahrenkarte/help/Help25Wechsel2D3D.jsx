@@ -40,12 +40,15 @@ const Component = () => {
             ist mit gedrückter linker Maustaste bei gleichzeitigem Drücken von [Strg]/[ctrl] auf der Tastatur 
             möglich. Auf einem Touchscreen kann die 3D-Ansicht durch vertikales Ziehen mit 2 parallelen Fingern 
             gekippt und durch Rotieren mit zwei Fingern um einen gemeinsamen Mittelpunkt gedreht werden. 
-
-            Wenn Sie das Werkzeug mit der linken Maustaste anklicken und diese gedrückt halten, können Sie  
-            durch Bewegung der Maus die Ansicht kippen und drehen, so als hätten Sie die Taste [Strg]/[ctrl] 
-            gedrückt (Bedienung mit einer Hand). Auf einem Touchscreen steht diese Steuerungsmöglichkeit nicht 
-            zur Verfügung. Ein einfacher Klick auf das Kompasswerkzeug richtet die Darstellung nach Norden aus. 
-            Ein Doppelklick kippt die Ansicht in die Senkrechtperspektive.    
+          </p>
+          <p>
+            Im 3D-Modus wird zusätzlich ein Spezialwerkzeug zur Steuerung der 3D-Ansicht, nämlich die Kompassnadel 
+            über dem 3D/2D-Wechselschalter, aktiviert. Wenn Sie das Werkzeug mit der linken Maustaste anklicken 
+            und diese gedrückt halten, können Sie durch Bewegung der Maus die Ansicht kippen und drehen, so als 
+            hätten Sie die Taste [Strg]/[ctrl] gedrückt (Bedienung mit einer Hand). Auf einem Touchscreen steht 
+            diese Steuerungsmöglichkeit nicht zur Verfügung. Ein einfacher Klick auf das Kompasswerkzeug richtet 
+            die Darstellung nach Norden aus. Ein Doppelklick kippt die Ansicht zusätzlich in die Senkrechtperspektive. 
+            Ein weiterer Klick kippt die Ansicht wieder in die zuletzt verwendete Bildneigung.     
           </p>
         </div>
       }
