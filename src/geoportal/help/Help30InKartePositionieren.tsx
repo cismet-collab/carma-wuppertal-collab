@@ -3,6 +3,7 @@ import { InKartePositionierenText } from "../../commons";
 import Icon from "react-cismap/commons/Icon";
 import { Link } from "../../helper-overlay/components/Link";
 import FuzzySearchParagraph from "../../commons/FuzzySearchParagraph";
+import CompassNeedle from "../../commons/CompassNeedle";
 
 const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
   return (
@@ -31,6 +32,16 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   >
                     Übersicht auf der Hilfefolie
                   </Link>).
+                  Im 3D-Modus wird zusätzlich ein Spezialwerkzeug zur Steuerung der 
+                  3D-Ansicht aktiviert, nämlich die Kompassnadel{" "}<CompassNeedle />{" "}über dem 
+                  3D/2D-Wechselschalter. Wenn Sie das Werkzeug mit der 
+                  linken Maustaste anklicken und diese gedrückt halten, können Sie 
+                  durch Bewegung der Maus die Ansicht kippen und drehen (Bedienung 
+                  mit einer Hand). Auf einem Touchscreen steht diese Steuerungsmöglichkeit 
+                  nicht zur Verfügung. Ein einfacher Klick auf das Kompasswerkzeug richtet 
+                  die Darstellung nach Norden aus. Ein Doppelklick kippt die Ansicht 
+                  zusätzlich in die Senkrechtperspektive. Ein weiterer Klick kippt 
+                  die Ansicht wieder in die zuletzt verwendete Bildneigung.
                 </p>
                 <p>
                   Um eine bestimmte Stelle des Stadtgebietes zu
