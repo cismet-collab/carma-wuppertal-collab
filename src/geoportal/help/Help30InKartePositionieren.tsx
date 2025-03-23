@@ -16,6 +16,23 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
             pretext={
               <>
                 <p>
+                  Sowohl in der 2D-Kartenbetrachtung wie auch im 3D-Modus können 
+                  die Werkzeuge "<b>+</b>" und "<b>-</b>" (links oben in der 
+                  Werkzeugleiste im Kartenfenster) zum Vergrößern bzw. Verkleinern des 
+                  Ansichtsmaßstabes in festen Zoomstufen verwendet werden. Für solche 
+                  Maßstabsveränderungen, zum Verschieben des betrachteten Ausschnittes 
+                  sowie zum Drehen und Kippen einer 3D-Ansicht stehen darüber hinaus die 
+                  in Web-Kartenanwendungen übliche Mausaktionen bzw. Touchscreen-Gesten 
+                  zur Verfügung ( 
+                  <Link
+                  onClick={() => {
+                    showOverlayFromOutside("CENTER");
+                  }}
+                  >
+                    Übersicht auf der Hilfefolie
+                  </Link>).
+                </p>
+                <p>
                   Um eine bestimmte Stelle des Stadtgebietes zu
                   erkunden, geben Sie den Namen eines Stadtteils
                   (Stadtbezirk oder Quartier), einer Adresse,
