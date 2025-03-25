@@ -83,9 +83,8 @@ export const KompaktanleitungSection = () => {
                           mit einem individuellen Profil, die unterschiedlichen
                           Veranstaltungsarten Raum geben{" "}
                           <img
+                            style={{ height: 20 }}
                             alt="Cluster"
-                            width="20"
-                            height="20"
                             src={kontakthof}
                           />
                           . Zum anderen umfasst diese Kategorie alle POI, die
@@ -93,8 +92,7 @@ export const KompaktanleitungSection = () => {
                           z. B. die Bergische Musikschule{" "}
                           <img
                             alt="Cluster"
-                            width="20"
-                            height="20"
+                            style={{ height: 20 }}
                             src={bergischeMusikschule}
                           />{" "}
                           in erster Linie als Bildungseinrichtung eingestuft, in
@@ -108,8 +106,7 @@ export const KompaktanleitungSection = () => {
                           repräsentierten POI im Zentrum{" "}
                           <img
                             alt="Cluster"
-                            width="30"
-                            height="30"
+                            style={{ height: 30 }}
                             src={veranstaltungsorteZusammen}
                           />
                           . Vergrößern Sie ein paar Mal durch direktes Anklicken
