@@ -82,13 +82,13 @@ export const KompaktanleitungSection = () => {
                           verwendet. Hierunter fallen zum einen Einrichtungen
                           mit einem individuellen Profil, die unterschiedlichen
                           Veranstaltungsarten Raum geben{" "}
-                          <img alt="Cluster" height="20" src={kontakthof} />.
-                          Zum anderen umfasst diese Kategorie alle POI, die nur
-                          in zweiter Linie Veranstaltungsorte sind. So ist z. B.
+                          <img alt="Cluster" width="20" src={kontakthof} />. Zum
+                          anderen umfasst diese Kategorie alle POI, die nur in
+                          zweiter Linie Veranstaltungsorte sind. So ist z. B.
                           die Bergische Musikschule{" "}
                           <img
                             alt="Cluster"
-                            height="20"
+                            width="20"
                             src={bergischeMusikschule}
                           />{" "}
                           in erster Linie als Bildungseinrichtung eingestuft, in
@@ -102,7 +102,7 @@ export const KompaktanleitungSection = () => {
                           repräsentierten POI im Zentrum{" "}
                           <img
                             alt="Cluster"
-                            height="30"
+                            width="30"
                             src={veranstaltungsorteZusammen}
                           />
                           . Vergrößern Sie ein paar Mal durch direktes Anklicken
@@ -191,17 +191,16 @@ export const KompaktanleitungSection = () => {
                             <p>
                               Um eine bestimmte Stelle des Stadtgebietes zu
                               erkunden, geben Sie den Namen eines Stadtteils
-                              (Stadtbezirk oder Quartier), eine Adresse,
-                              einen Straßennamen oder den Namen eines POI im
-                              Eingabefeld links unten ein. In der 
-                              inkrementellen Auswahlliste werden Ihnen schon 
-                              nach der Eingabe des ersten Buchstabens passende 
-                              Treffer angeboten. (Wenn Sie weitere Zeichen eingeben, 
-                              wird der Inhalt der Auswahlliste angepasst.) 
-                              Durch das vorangestellte Symbol
-                              erkennen Sie, ob es sich dabei um einen{" "}
-                              <Icon name="circle" /> Stadtbezirk, ein{" "}
-                              <Icon name="pie-chart" /> Quartier, eine{" "}
+                              (Stadtbezirk oder Quartier), eine Adresse, einen
+                              Straßennamen oder den Namen eines POI im
+                              Eingabefeld links unten ein. In der inkrementellen
+                              Auswahlliste werden Ihnen schon nach der Eingabe
+                              des ersten Buchstabens passende Treffer angeboten.
+                              (Wenn Sie weitere Zeichen eingeben, wird der
+                              Inhalt der Auswahlliste angepasst.) Durch das
+                              vorangestellte Symbol erkennen Sie, ob es sich
+                              dabei um einen <Icon name="circle" /> Stadtbezirk,
+                              ein <Icon name="pie-chart" /> Quartier, eine{" "}
                               <Icon name="home" /> Adresse, eine{" "}
                               <Icon name="road" /> Straße ohne zugeordnete
                               Hausnummern, einen <Icon name="tag" /> POI, die{" "}
@@ -235,17 +234,17 @@ export const KompaktanleitungSection = () => {
                         {" "}
                         <p>
                           Unter "<strong>Mein Kulturstadtplan</strong>" finden
-                          sie im Anwendungsmenü zwei alternative Möglichkeiten, 
-                          die Menge der angezeigten POI gemäß Ihren
-                          Vorlieben einzuschränken. Auf zwei angedeuteten
-                          Karteikarten wird zum einen das Filtern nach
-                          Kategorien von Einrichtungen angeboten, zum anderen
-                          das Filtern nach Kategorien von Veranstaltungen, die
-                          an den zugehörigen POI typischerweise angeboten
-                          werden. Der Titel der gerade nicht sichtbaren
-                          Karteikarte wird als <a>Hyperlink</a> dargestellt. Zum
-                          Wechsel zwischen den beiden Karteikarten klicken Sie
-                          auf den jeweils verfügbaren Link.
+                          sie im Anwendungsmenü zwei alternative Möglichkeiten,
+                          die Menge der angezeigten POI gemäß Ihren Vorlieben
+                          einzuschränken. Auf zwei angedeuteten Karteikarten
+                          wird zum einen das Filtern nach Kategorien von
+                          Einrichtungen angeboten, zum anderen das Filtern nach
+                          Kategorien von Veranstaltungen, die an den zugehörigen
+                          POI typischerweise angeboten werden. Der Titel der
+                          gerade nicht sichtbaren Karteikarte wird als{" "}
+                          <a>Hyperlink</a> dargestellt. Zum Wechsel zwischen den
+                          beiden Karteikarten klicken Sie auf den jeweils
+                          verfügbaren Link.
                         </p>
                         <p>
                           Auf den beiden Karteikarten wird Ihnen eine Liste von
