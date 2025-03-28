@@ -17,7 +17,9 @@ export const DokumenteBetrachten = () => {
             FNP-Änderungsverfahren oder zum FNP betrachtet werden können. Wenn
             zu einem Verfahren mehrere Dokumente verfügbar sind, werden diese in
             einer Navigationsleiste am linken Rand des Dokumentenviewers
-            angeboten. Klicken Sie auf eines der Symbole in der
+            angeboten. Die Zusatzdokumente liegen überwiegend in sortierenden 
+            Unterverzeichnissen, die Sie mit einem einfachen Mausklick öffnen 
+            bzw. schließen können. Klicken Sie auf eines der Dokument-Symbole in der
             Navigationsleiste, um das zugehörige Dokument in den Anzeigebereich
             des Dokumentenviewers zu laden. Mit den Werkzeugen{" "}
             <Icon name="chevron-left" /> <i>"vorherige Seite"</i> und{" "}
@@ -37,12 +39,8 @@ export const DokumenteBetrachten = () => {
             verfahrensbegleitenden Zusatzdokumente nur dann im Dokumentenviewer
             angezeigt, wenn sie bereits in digitaler Form vorliegen. (Bei
             B-Planverfahren werden allerdings auch dann schon mehrere Dokumente
-            angezeigt, wenn der B-Plan mehrere Planteile umfasst.) Die
-            Online-Bereitstellung der Zusatzdokumente ist ein laufendes Vorhaben
-            der Stadtverwaltung Wuppertal. Stand 03/2020 sind sie für rund 72%
-            der Wuppertaler B-Pläne und 63% der relevanten
-            FNP-Änderungsverfahren verfügbar. Die Namenskonventionen für die
-            vielfältigen Zusatzdateien sind jeweils im Dokument{" "}
+            angezeigt, wenn der B-Plan mehrere Planteile umfasst.) Die 
+            Namenskonventionen für die vielfältigen Zusatzdateien sind jeweils im Dokument{" "}
             <a
               target="_info"
               href="https://wunda-geoportal-docs.cismet.de/fnp_dokumente/Info_FNP-Zusatzdokumente_WUP.pdf"
