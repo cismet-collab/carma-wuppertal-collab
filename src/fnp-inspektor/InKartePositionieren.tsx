@@ -84,7 +84,7 @@ export const InKartePositionieren: React.FC<InKartePositionierenProps> = ({
             möglich. Geben Sie dazu im Eingabefeld links unten den Namen 
             eines Stadtteils (Stadtbezirk oder Quartier), eine Adresse,
             einen Straßennamen oder den Namen eines interessanten Ortes 
-            (Point of Interest, kurz POI). In der inkrementellen Auswahlliste 
+            (Point of Interest, kurz POI) ein. In der inkrementellen Auswahlliste 
             werden Ihnen schon nach der Eingabe des ersten Buchstabens 
             passende Treffer angeboten. (Wenn Sie weitere Zeichen eingeben, 
             wird der Inhalt der Auswahlliste angepasst. Durch das in der 
@@ -96,8 +96,8 @@ export const InKartePositionieren: React.FC<InKartePositionierenProps> = ({
             , ein <Icon name="quartier" /> Quartier, eine{" "}
             <Icon name="adresse" /> Adresse, eine <Icon name="strasse" /> Straße
             ohne zugeordnete Hausnummern, einen <Icon name="poi" /> POI, die{" "}
-            <Icon name="altpoi" /> alternative Bezeichnung eines POI, eine 
-            <Icon name="child" />{" "}Kindertageseinrichtung oder eine{" "}
+            <Icon name="altpoi" /> alternative Bezeichnung eines POI, eine{" "} 
+            <Icon name="child" />Kindertageseinrichtung oder eine{" "}
             <Icon name="graduation-cap" /> Schule handelt. Bei Suchbegriffen mit 
             Punktgeometrie (Adresse, Straße, POI) wird
             ein großer Maßstab (Zoomstufe 14) eingestellt und ein{" "}
