@@ -95,7 +95,7 @@ export const InKartePositionieren: React.FC<InKartePositionierenProps> = ({
             </span>
             , ein <Icon name="quartier" /> Quartier, eine{" "}
             <Icon name="adresse" /> Adresse, eine {" "}<Icon name="strasse" />{" "}Straße
-            ohne zugeordnete Hausnummern, einen {" "}<Icon name="poi" />{" "} POI, die{" "}
+            ohne zugeordnete Hausnummern, einen {" "}<Icon name="poi" />{" "}POI, die{" "}
             <Icon name="altpoi" />{" "}alternative Bezeichnung eines POI, eine{" "} 
             <Icon name="child" />{" "}Kindertageseinrichtung oder eine{" "}
             <Icon name="graduation-cap" />{" "}Schule handelt. Bei Suchbegriffen mit 
