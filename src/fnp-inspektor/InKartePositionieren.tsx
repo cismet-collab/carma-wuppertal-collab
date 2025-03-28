@@ -87,18 +87,18 @@ export const InKartePositionieren: React.FC<InKartePositionierenProps> = ({
             (Point of Interest, kurz POI) ein. In der inkrementellen Auswahlliste 
             werden Ihnen schon nach der Eingabe des ersten Buchstabens 
             passende Treffer angeboten. (Wenn Sie weitere Zeichen eingeben, 
-            wird der Inhalt der Auswahlliste angepasst. Durch das in der 
+            wird der Inhalt der Auswahlliste angepasst.) Durch das in der 
             Auswahlliste vorangestellte Symbol erkennen Sie, ob es sich bei 
             einem Treffer um einen{" "}
             <span style={{ whiteSpace: "nowrap" }}>
               <Icon name="stadtbezirk" /> Stadtbezirk
             </span>
             , ein <Icon name="quartier" /> Quartier, eine{" "}
-            <Icon name="adresse" /> Adresse, eine <Icon name="strasse" /> Straße
-            ohne zugeordnete Hausnummern, einen <Icon name="poi" /> POI, die{" "}
-            <Icon name="altpoi" /> alternative Bezeichnung eines POI, eine{" "} 
-            <Icon name="child" />Kindertageseinrichtung oder eine{" "}
-            <Icon name="graduation-cap" /> Schule handelt. Bei Suchbegriffen mit 
+            <Icon name="adresse" /> Adresse, eine {" "}<Icon name="strasse" />{" "}Straße
+            ohne zugeordnete Hausnummern, einen {" "}<Icon name="poi" />{" "} POI, die{" "}
+            <Icon name="altpoi" />{" "}alternative Bezeichnung eines POI, eine{" "} 
+            <Icon name="child" />{" "}Kindertageseinrichtung oder eine{" "}
+            <Icon name="graduation-cap" />{" "}Schule handelt. Bei Suchbegriffen mit 
             Punktgeometrie (Adresse, Straße, POI) wird
             ein großer Maßstab (Zoomstufe 14) eingestellt und ein{" "}
             <Icon name="map-marker" /> Marker auf der Zielposition platziert.
