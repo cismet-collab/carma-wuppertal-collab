@@ -35,8 +35,8 @@ export const AenderungsverfahrenAnzeigenUndAbfragen: React.FC<
             <p>
               Mit einem Doppelklick auf einen ÄV-Geltungsbereich werden alle
               Änderungsverfahren geladen, die an dieser Stelle liegen - meistens
-              genau eines, in seltenen Fällen auch mehrere (z. B. beim ÄV 94, das
-              teilweise vom ÄV 161 überlagert wird). Mit einem weiteren Klick auf
+              genau eines, in seltenen Fällen auch mehrere (z. B. beim ÄV 3, das
+              teilweise vom ÄV 154 überlagert wird). Mit einem weiteren Klick auf
               diese Fläche wird der Kartenausschnitt so angepasst, dass der
               ÄV-Geltungsbereich vollständig und zentriert dargestellt wird. In
               der Info-Box rechts unten werden ihnen die Detailinformationen zum
