@@ -26,12 +26,6 @@ export const DokumenteHerunterladen = () => {
           <p>
             Unten rechts im Anzeigebereich finden Sie stets den Dateinamen,
             unter dem das gerade dargestellte Dokument heruntergeladen wird.
-            Diese Dateinamen sind bei FNP-Änderungsverfahren und
-            B-Plan-Verfahren etwas länger als die in der Navigationsleiste
-            verwendeten Bezeichnungen, wo die für alle Dokumente eines
-            Verfahrens gleichen Namensbestandteile ausgeblendet werden.
-          </p>
-          <p>
             Ob eine heruntergeladene Datei nach dem Download sofort mit einem
             geeigneten Programm (PDF-Viewer oder Dateimanager) geöffnet wird,
             hängt von Ihren Betriebssystem- und/oder Browsereinstellungen ab.
