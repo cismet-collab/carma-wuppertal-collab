@@ -6,11 +6,13 @@ interface MenuFooterProps {
   title?: string;
   version: string;
   setAppMenuActiveMenuSection: (arg: string) => void;
+  hintergrundkarten?: string | JSX.Element;
 }
 const MenuFooter: React.FC<MenuFooterProps> = ({
   title = document.title,
   version,
   setAppMenuActiveMenuSection,
+  hintergrundkarten = "Stadtkarte 2.0 © RVR | True Orthophoto 2022 © Stadt Wuppertal",
 }: MenuFooterProps) => {
   return (
     <div
@@ -21,8 +23,7 @@ const MenuFooter: React.FC<MenuFooterProps> = ({
       }}
     >
       <div>
-        <b>Hintergrundkarten</b>: Stadtkarte 2.0 © RVR | True Orthophoto 2022
-        © Stadt Wuppertal{" "}
+        <b>Hintergrundkarten</b>: {hintergrundkarten}{" "}
         <a
           className="pleaseRenderAsLink"
           onClick={() => {
