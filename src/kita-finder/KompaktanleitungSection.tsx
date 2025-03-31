@@ -2,7 +2,7 @@ import Icon from "react-cismap/commons/Icon";
 import ConfigurableDocBlocks from "react-cismap/topicmaps/ConfigurableDocBlocks";
 import Section from "react-cismap/topicmaps/menu/Section";
 import KitaZusammen from "./assets/kita_zusammen.png";
-import VorherTreffer from "./assets/vorher_treffer.png";
+// import VorherTreffer from "./assets/vorher_treffer.png";
 // import AdressMarker from "./assets/AdressMarker.jpg";
 import {
   MeinStandortText,
@@ -126,8 +126,8 @@ export const KompaktanleitungSection = () => {
                           Wenn Sie noch nicht aktiv eine bestimmte Kita im
                           aktuellen Kartenausschnitt selektiert haben, wird der
                           Fokus automatisch auf die nördlichste Einrichtung
-                          gesetzt. Mit den Funktionen <a>&lt;&lt;</a> vorheriger Treffer
-                          und <a>&gt;&gt;</a> nächster Treffer können
+                          gesetzt. Mit den Funktionen <a>&lt;&lt;</a> vorheriger
+                          Treffer und <a>&gt;&gt;</a> nächster Treffer können
                           Sie ausgehend von der Kita, auf der gerade der Fokus
                           liegt, in nördlicher bzw. südlicher Richtung alle
                           aktuell im Kartenfenster angezeigten Kitas
@@ -161,23 +161,23 @@ export const KompaktanleitungSection = () => {
                               Um die Kitas in einem bestimmten Bereich des
                               Stadtgebietes zu erkunden, geben Sie den Namen
                               eines Stadtteils (Stadtbezirk oder Quartier), eine
-                              Adresse, einen Straßennamen, den Namen einer Kita 
-                              oder den Namen eines anderen interessanten Ortes 
-                              (Point of Interest, kurz POI) im Eingabefeld links 
-                              unten ein. In der inkrementellen Auswahlliste werden 
-                              Ihnen schon nach der Eingabe des ersten Buchstabens passende 
-                              Treffer angeboten. (Wenn Sie weitere Zeichen eingeben, 
-                              wird der Inhalt der Auswahlliste angepasst.) 
-                              Durch das vorangestellte Symbol
-                              erkennen Sie, ob es sich dabei um einen{" "}
+                              Adresse, einen Straßennamen, den Namen einer Kita
+                              oder den Namen eines anderen interessanten Ortes
+                              (Point of Interest, kurz POI) im Eingabefeld links
+                              unten ein. In der inkrementellen Auswahlliste
+                              werden Ihnen schon nach der Eingabe des ersten
+                              Buchstabens passende Treffer angeboten. (Wenn Sie
+                              weitere Zeichen eingeben, wird der Inhalt der
+                              Auswahlliste angepasst.) Durch das vorangestellte
+                              Symbol erkennen Sie, ob es sich dabei um einen{" "}
                               <Icon name="circle" /> Stadtbezirk, ein{" "}
                               <Icon name="pie-chart" /> Quartier, eine{" "}
                               <Icon name="home" /> Adresse, eine{" "}
                               <Icon name="road" /> Straße ohne zugeordnete
-                              Hausnummern, eine{" "} <Icon name="child" />
+                              Hausnummern, eine <Icon name="child" />
                               Kindertageseinrichtung, eine{" "}
-                              <Icon name="graduation-cap" /> Schule, 
-                              einen <Icon name="tag" /> POI oder die{" "}
+                              <Icon name="graduation-cap" /> Schule, einen{" "}
+                              <Icon name="tag" /> POI oder die{" "}
                               <Icon name="tags" /> alternative Bezeichnung eines
                               POI handelt.
                             </p>

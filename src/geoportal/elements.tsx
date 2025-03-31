@@ -16,8 +16,6 @@ import { BackgroundSelectionText } from "./secondary/BackgroundSelectionText";
 import { MenuBarText } from "./secondary/MenuBarText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 import { MapInteractionsUI } from "./secondary/MapInteractions";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandPointer } from "@fortawesome/free-solid-svg-icons";
 
 export const elements: Record<string, ElementType> = {
   menu: {
@@ -95,7 +93,7 @@ export const elements: Record<string, ElementType> = {
           padding: 10,
           borderStyle: "solid",
           width: "max-content",
-          textAlign: "center"
+          textAlign: "center",
         }}
       >
         <b>
