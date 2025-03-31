@@ -33,6 +33,10 @@ jobs:
         run: cat src/version.js
       - name: debug gitdescribe.js
         run: cat .gitdescribe
+      - name: Build to detect errors
+        run: npm run build
+        env:
+          CI: false
       - name: Build Storybook
         run: npm run build-storybook
         env:
