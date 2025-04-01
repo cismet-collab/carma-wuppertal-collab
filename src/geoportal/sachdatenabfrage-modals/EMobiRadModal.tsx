@@ -85,7 +85,7 @@ import {
 
         let ladeboxTable: React.ReactNode[] = [];
 
-        {
+        if (station_rad?.ladebox_zu) {
             ladeboxTable.push(
             <tbody>
                 <tr>                    
