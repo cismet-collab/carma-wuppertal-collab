@@ -78,7 +78,7 @@ export const Help10Datengrundlage = () => {
             <li>
               <strong>Stadtplan</strong>: Kartendienst (WMS) des
               Regionalverbandes Ruhr (RVR). Datengrundlage:{" "}
-              <strong>Stadtkarte2.0</strong>. Wöchentlich in einem
+              <strong>Stadtkarte 2.0</strong>. Wöchentlich in einem
               automatischen Prozess aktualisierte Zusammenführung des
               Straßennetzes der OpenStreetMap mit Amtlichen Geobasisdaten des
               Landes NRW aus den Fachverfahren ALKIS (Gebäude, Flächennutzungen)
