@@ -71,7 +71,7 @@ export const Help10Datengrundlage = () => {
           <p>
             Zur Betrachtung der Hitzebelastungen stellen wir Ihnen drei
             verschiedene Hintergrundkarten bereit, die auf den folgenden
-            Geodatendiensten und Geodaten basieren:
+            Geodatendiensten und Geodaten basieren: 
           </p>
 
           <ul>
