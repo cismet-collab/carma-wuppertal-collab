@@ -21,7 +21,7 @@ export const Footer = ({
       }}
     >
       <div>
-        <b>Hintergrundkarten</b>: True Orthophoto 2022, Amtliche Basiskarte
+        <b>Hintergrundkarten</b>: True Orthophoto 2024, Amtliche Basiskarte
         (ABK), Hillshade © Stadt Wuppertal | Stadtkarte 2.0 © RVR | basemap.de
         web Vektor © GeoBasis-DE / BKG{" "}
         <a

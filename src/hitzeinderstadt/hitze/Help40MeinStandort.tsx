@@ -15,10 +15,10 @@ export const Help40MeinStandort = () => {
         <div>
           <p>
             Das Werkzeug &quot;Mein Standort&quot;{" "}
-            <FontAwesomeIcon icon={faLocationArrow} /> funktioniert so wie hier
-            beschrieben nur auf mobilen Endgeräten wie Smartphones und
-            Tablet-PC&#39;s, die i. d. R. mit einem GNSS-Empfänger als
-            Positionssensor ausgestattet sind (GNSS steht für Global Navigation
+            <FontAwesomeIcon icon={faLocationArrow} /> wird nur auf
+            mobilen Endgeräten wie Smartphones und Tablet-PC&#39;s angeboten, 
+            denn nur diese sind regelmäßig mit einem GNSS-Empfänger als
+            Positionssensor ausgestattet (GNSS steht für Global Navigation
             Satellite Systems, z.B.{" "}
             <a
               target="_info"
