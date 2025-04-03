@@ -57,14 +57,14 @@ export const Help20Karteninhalt = () => {
 
           <p>
             Unter <b>Karte</b> können Sie aus drei verschiedenen
-            Hintergrundkarten auswählen: einer topographischen Karte in
-            Graustufen, einer Luftbildkarte und einem Stadtplan. Die
-            topographische Karte verschafft Ihnen den besten Überblick über die
-            Situation, da sie einen plastischen Geländeeindruck vermittelt. Der
+            Hintergrundkarten auswählen: einem Stadtplan, einer 
+            Luftbildkarte und einer topographischen Karte in Graustufen. Der
             Stadtplan eignet sich gut für die sichere Identifizierung Ihres
             Hauses, da hier die Hausnummern aller Gebäude dargestellt werden.
             Die Luftbildkarte ist die anschaulichste Kartengrundlage, sie eignet
-            sich daher vor allem für Detailbetrachtungen. Näheres zu den
+            sich daher vor allem für Detailbetrachtungen. Die topographische Karte 
+            verschafft Ihnen den besten Überblick über die Situation, da sie einen 
+            plastischen Geländeeindruck vermittelt. Näheres zu den
             Geodaten, die diesen Karten zu Grunde liegen, finden Sie ebenfalls
             unter{" "}
             <a
