@@ -1,5 +1,6 @@
 import Section from "react-cismap/topicmaps/menu/Section";
 import Icon from "react-cismap/commons/Icon";
+import FuzzySearchParagraph from "../../commons/FuzzySearchParagraph";
 
 export const Help30InKartePositionieren = () => {
   return (
@@ -28,6 +29,7 @@ export const Help30InKartePositionieren = () => {
             Kindertageseinrichtung oder eine <Icon name="graduation-cap" />{" "}
             Schule handelt.
           </p>
+            <FuzzySearchParagraph />
           <p>
             Nach der Auswahl eines Treffers aus der Liste wird die Karte auf die
             zugehörige Position zentriert. Bei Suchbegriffen mit Punktgeometrie
