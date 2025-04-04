@@ -174,7 +174,8 @@ export const KompaktanleitungSection = () => {
                               <Icon name="pie-chart" /> Quartier, eine{" "}
                               <Icon name="home" /> Adresse, eine{" "}
                               <Icon name="road" /> Straße ohne zugeordnete
-                              Hausnummern, eine <Icon name="child" />
+                              Hausnummern, eine{" "}
+                              <Icon name="child" />{" "}
                               Kindertageseinrichtung, eine{" "}
                               <Icon name="graduation-cap" /> Schule, einen{" "}
                               <Icon name="tag" /> POI oder die{" "}
