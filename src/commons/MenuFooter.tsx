@@ -12,7 +12,7 @@ const MenuFooter: React.FC<MenuFooterProps> = ({
   title = document.title,
   version,
   setAppMenuActiveMenuSection,
-  hintergrundkarten = "Stadtkarte 2.0 © RVR | True Orthophoto 2022 © Stadt Wuppertal",
+  hintergrundkarten = "Stadtkarte 2.0 © RVR | True Orthophoto 2024 © Stadt Wuppertal",
 }: MenuFooterProps) => {
   return (
     <div
