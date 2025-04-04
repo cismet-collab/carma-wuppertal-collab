@@ -8,9 +8,10 @@ const MeinStandortText = () => {
     <div>
       <p>
         Das Werkzeug &quot;Mein Standort&quot;{" "}
-        <FontAwesomeIcon icon={faLocationArrow} /> wird nur
-        auf mobilen Endgeräten wie Smartphones und
-        Tablet-PC&#39;s angeboten, denn nur diese sind 
+        <FontAwesomeIcon icon={faLocationArrow} /> 
+        
+        wird nur auf mobilen Endgeräten wie Smartphones 
+        und Tablet-PC&#39;s angeboten, denn nur diese sind 
         regelmäßig mit einem GNSS-Empfänger als Positionssensor 
         ausgestattet (GNSS steht für Global Navigation
         Satellite Systems, z.B.{" "}
