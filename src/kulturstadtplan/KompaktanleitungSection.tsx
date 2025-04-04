@@ -43,7 +43,7 @@ export const KompaktanleitungSection = () => {
                         </p>
                         <ul>
                           <StadtplanTagNachtText />
-                          <LuftbildkarteText bodenaufloesung={10} />
+                          <LuftbildkarteText bodenaufloesung={3} />
                         </ul>
 
                         <p>
