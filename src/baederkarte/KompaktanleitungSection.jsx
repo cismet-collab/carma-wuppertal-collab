@@ -13,6 +13,8 @@ import {
   LuftbildkarteText,
   InKartePositionierenText,
 } from "../commons";
+import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
+
 const hallenbadSVGsrc = `
 <svg xmlns="http://www.w3.org/2000/svg" width="20.0" height="20.0">
 <path class="fg-fill" fill="#FFF"  d="M0 0h20.008v20.945H0z"/>
@@ -214,27 +216,31 @@ export const KompaktanleitungSection = ({
                     content: (
                       <InKartePositionierenText
                         pretext={
-                          <p>
-                            Um die Schwimmbäder in einem bestimmten Bereich des
-                            Stadtgebietes zu erkunden, geben Sie den Anfang
-                            eines Stadtteils (Stadtbezirk oder Quartier), einer
-                            Adresse, eines Straßennamens oder eines POI im
-                            Eingabefeld links unten ein (mindestens 2 Zeichen).
-                            In der inkrementellen Auswahlliste werden Ihnen
-                            passende Treffer angeboten. (Wenn Sie weitere
-                            Zeichen eingeben, wird der Inhalt der Auswahlliste
-                            angepasst.) Durch das vorangestellte Symbol erkennen
-                            Sie, ob es sich dabei um einen{" "}
-                            <Icon name="circle" /> Stadtbezirk, ein{" "}
-                            <Icon name="pie-chart" /> Quartier, eine{" "}
-                            <Icon name="home" /> Adresse, eine{" "}
-                            <Icon name="road" /> Straße ohne zugeordnete
-                            Hausnummern, einen <Icon name="tag" /> POI, die{" "}
-                            <Icon name="tags" /> alternative Bezeichnung eines
-                            POI, eine <Icon name="child" />{" "}
-                            Kindertageseinrichtung oder eine{" "}
-                            <Icon name="graduation-cap" /> Schule handelt.
-                          </p>
+                          <>
+                            <p>
+                              Um die Schwimmbäder in einem bestimmten Bereich des
+                              Stadtgebietes zu erkunden, geben Sie den Namen
+                              eines Stadtteils (Stadtbezirk oder Quartier), eine
+                              Adresse oder den Namen eines interessanten Ortes 
+                              (Point of Interest, kurz POI) im Eingabefeld links unten 
+                              ein. In der inkrementellen Auswahlliste werden 
+                              Ihnen schon nach der Eingabe des ersten Buchstabens 
+                              passende Treffer angeboten. (Wenn Sie weitere Zeichen 
+                              eingeben, wird der Inhalt der Auswahlliste angepasst.
+                              Durch das vorangestellte Symbol erkennen
+                              Sie, ob es sich dabei um einen{" "}
+                              <Icon name="circle" /> Stadtbezirk, ein{" "}
+                              <Icon name="pie-chart" /> Quartier, eine{" "}
+                              <Icon name="home" /> Adresse, eine{" "}
+                              <Icon name="road" /> Straße ohne zugeordnete
+                              Hausnummern, einen <Icon name="tag" /> POI, die{" "}
+                              <Icon name="tags" /> alternative Bezeichnung eines
+                              POI, eine <Icon name="child" />{" "}
+                              Kindertageseinrichtung oder eine{" "}
+                              <Icon name="graduation-cap" /> Schule handelt.
+                            </p>
+                              <FuzzySearchParagraph />
+                          </>
                         }
                         posttext={
                           <p>
