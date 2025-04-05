@@ -219,10 +219,8 @@ export const KompaktanleitungSection = () => {
                               <Icon name="road" /> Straße ohne zugeordnete
                               Hausnummer, einen{" "}
                               <Icon name="circle" /> Stadtbezirk, ein{" "}
-                              <Icon name="pie-chart" /> Quartier, eine{" "}
-                              <Icon name="home" /> Adresse, eine{" "}
-                              <Icon name="road" /> Straße ohne zugeordnete
-                              Hausnummern, einen <Icon name="tag" /> POI, die{" "}
+                              <Icon name="pie-chart" /> Quartier, einen{" "} 
+                              <Icon name="tag" /> POI, die{" "}
                               <Icon name="tags" /> alternative Bezeichnung eines
                               POI, eine <Icon name="child" />{" "}
                               Kindertageseinrichtung oder eine{" "}
