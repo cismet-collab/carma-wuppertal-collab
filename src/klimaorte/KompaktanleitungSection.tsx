@@ -16,6 +16,7 @@ import {
   StadtplanTagNachtText,
   InKartePositionierenText,
 } from "../commons";
+import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
 
 export const KompaktanleitungSection = () => {
   return (
@@ -439,13 +440,12 @@ export const KompaktanleitungSection = () => {
                           <>
                             <p>
                               Um in der Karte direkt zu einer bestimmten Adresse
-                              zu gelangen, geben Sie den Anfang des betreffenden
-                              Straßennamens im Eingabefeld links unten ein
-                              (mindestens 2 Zeichen). In der inkrementellen
-                              Auswahlliste werden Ihnen passende Treffer
-                              angeboten. (Wenn Sie weitere Zeichen eingeben,
-                              wird der Inhalt der Auswahlliste angepasst.) Sie
-                              können auch andere Suchbegriffe eingeben, nämlich
+                              zu gelangen, geben Sie diese im Eingabefeld links 
+                              unten ein. In der inkrementellen Auswahlliste werden 
+                              Ihnen schon nach der Eingabe des ersten Buchstabens 
+                              passende Treffer angeboten. (Wenn Sie weitere Zeichen 
+                              eingeben, wird der Inhalt der Auswahlliste angepasst.)
+                              Sie können auch andere Suchbegriffe eingeben, nämlich
                               Stadtteil (Stadtbezirk oder Quartier), Straßenname
                               (bei Straßen ohne zugeordnete Hausnummern) oder
                               "Point of Interest" (interessanter Ort, kurz als
@@ -462,6 +462,7 @@ export const KompaktanleitungSection = () => {
                               <Icon name="graduation-cap" /> Schule oder einen{" "}
                               <Icon name="sun" /> Klimaort handelt.
                             </p>
+                              <FuzzySearchParagraph />
                           </>
                         }
                       />
