@@ -119,9 +119,9 @@ export const MenuBarText = () => {
             <FontAwesomeIcon icon={faShareNodes} />
           </td>
           <td>
-            <b>Teilen</b> - Dialog für das Erzeugen von Links auf das Geoportal
-            mit den aktuellen Karteninhalten | variables Ausblenden von
-            Bedienungselement-Gruppen | Links werden in Zwischenablage kopiert
+            <b>Teilen</b> - Dialog für das Erzeugen eines Links auf das Geoportal
+            mit aktuellen Karteninhalten und aktuellem Kartenausschnitt | 
+            Link wird in Zwischenablage kopiert
           </td>
         </tr>
       </table>
