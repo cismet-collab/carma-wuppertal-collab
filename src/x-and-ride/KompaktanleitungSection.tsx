@@ -16,6 +16,7 @@ import {
   LuftbildkarteText,
   InKartePositionierenText,
 } from "../commons";
+import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
 
 interface KompaktanleitungSectionProps {
   setAppMenuActiveMenuSection: (arg: string) => void;
@@ -188,7 +189,7 @@ export const KompaktanleitungSection: React.FC<
                           <>
                             <p>
                               Um direkt zu einer P+R- oder B+R-Anlage zu gelangen, 
-                              geben Sie ihren Namen im Eingabefeld links unten ein.
+                              geben Sie deren Namen im Eingabefeld links unten ein.
                               In der inkrementellen Auswahlliste werden 
                               Ihnen schon nach der Eingabe des ersten Buchstabens 
                               passende Treffer angeboten. (Wenn Sie weitere Zeichen 
@@ -214,6 +215,7 @@ export const KompaktanleitungSection: React.FC<
                               Sie eine vollständige Auswahlliste aller P+R- bzw.
                               B+R-Anlagen.
                             </p>
+                              <FuzzySearchParagraph />
                           </>
                         }
                         punktgeometrie="(P+R- oder B+R-Anlage, Adresse, Straße, POI)"
