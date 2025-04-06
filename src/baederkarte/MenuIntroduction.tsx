@@ -44,7 +44,7 @@ export const MenuIntroduction = ({
       >
         Urbaner Digitaler Zwilling
       </Link>{" "}
-      für eine Einordnung der Bäderkarte in das Gesamtsystem des Digitalen Zwillings der Stadt Wuppertal. 
+      für eine Einordnung der Bäderkarte in das Gesamtsystem des Digitalen Zwillings der Stadt Wuppertal ("DigiTal Zwilling"). 
     </span>
   );
 };

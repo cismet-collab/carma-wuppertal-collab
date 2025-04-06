@@ -52,7 +52,7 @@ export const KompaktanleitungSection: React.FC<
                         </p>
                         <ul>
                           <StadtplanTagNachtText />
-                          <LuftbildkarteText bodenaufloesung={10} />
+                          <LuftbildkarteText bodenaufloesung={3} />
                         </ul>
 
                         <p>
@@ -187,16 +187,17 @@ export const KompaktanleitungSection: React.FC<
                         pretext={
                           <>
                             <p>
-                              Um direkt zu einer P+R- oder B+R-Anlage zu
-                              gelangen, geben Sie den Anfang des Namens der
-                              Anlage im Eingabefeld links unten ein (mindestens
-                              2 Zeichen). In der inkrementellen Auswahlliste
-                              werden Ihnen passende Treffer angeboten. (Wenn Sie
-                              weitere Zeichen eingeben, wird der Inhalt der
-                              Auswahlliste angepasst.) Sie können auch andere
-                              Suchbegriffe eingeben, nämlich Stadtteil
-                              (Stadtbezirk oder Quartier), Adresse, Straßenname
-                              oder POI. Durch das in der Auswahlliste
+                              Um direkt zu einer P+R- oder B+R-Anlage zu gelangen, 
+                              geben Sie ihren Namen im Eingabefeld links unten ein.
+                              In der inkrementellen Auswahlliste werden 
+                              Ihnen schon nach der Eingabe des ersten Buchstabens 
+                              passende Treffer angeboten. (Wenn Sie weitere Zeichen 
+                              eingeben, wird der Inhalt der Auswahlliste angepasst.) 
+                              Sie können auch andere Suchbegriffe
+                              eingeben, nämlich Stadtteil (Stadtbezirk oder
+                              Quartier), Adresse, Straßenname oder den Namen eines 
+                              interessanten Ortes (Point of Interest, kurz POI).
+                              Durch das in der Auswahlliste
                               vorangestellte Symbol erkennen Sie, ob es sich bei
                               einem Treffer um eine <Icon name="car" />{" "}
                               P+R-Anlage, eine <Icon name="bicycle" />{" "}
