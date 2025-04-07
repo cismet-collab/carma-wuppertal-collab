@@ -18,6 +18,7 @@ import {
   LuftbildkarteText,
   InKartePositionierenText,
 } from "../commons";
+import FuzzySearchParagraph from "../commons/FuzzySearchParagraph";
 
 export const KompaktanleitungSection = () => {
   return (
@@ -752,13 +753,12 @@ export const KompaktanleitungSection = () => {
                           <>
                             <p>
                               Um in der Karte direkt zu einer bestimmten Adresse
-                              zu gelangen, geben Sie den Anfang des betreffenden
-                              Straßennamens im Eingabefeld links unten ein
-                              (mindestens 2 Zeichen). In der inkrementellen
-                              Auswahlliste werden Ihnen passende Treffer
-                              angeboten. (Wenn Sie weitere Zeichen eingeben,
-                              wird der Inhalt der Auswahlliste angepasst.) Sie
-                              können auch andere Suchbegriffe eingeben, nämlich
+                              zu gelangen, geben Sie diese im Eingabefeld links 
+                              unten ein. In der inkrementellen Auswahlliste werden 
+                              Ihnen schon nach der Eingabe des ersten Buchstabens 
+                              passende Treffer angeboten. (Wenn Sie weitere Zeichen 
+                              eingeben, wird der Inhalt der Auswahlliste angepasst.)
+                              Sie können auch andere Suchbegriffe eingeben, nämlich
                               Stadtteil (Stadtbezirk oder Quartier), Straßenname
                               (bei Straßen ohne zugeordnete Hausnummern) oder
                               "Point of Interest" (interessanter Ort, kurz als
@@ -777,6 +777,7 @@ export const KompaktanleitungSection = () => {
                               Kindertageseinrichtung oder eine{" "}
                               <Icon name="graduation-cap" /> Schule handelt.
                             </p>
+                              <FuzzySearchParagraph />
                             <p>
                               Zusätzlich können Sie auch die Bezeichnung einer
                               Potenzialfläche als Suchbegriff eingeben. Die
@@ -799,15 +800,13 @@ export const KompaktanleitungSection = () => {
                               WuNDa/Potenzialflächen werden für alle
                               Potenzialflächen Aliasse generiert, die den
                               Kennbuchstaben aus den Kategorie-Symbolen und ein
-                              Leerzeichen als Präfix erhalten. So entsteht z. B
-                              für die Wohnbauflächen &quot;Stollenstraße&quot;
-                              der Alias &quot;W Stollenstraße&quot;. Damit
+                              Leerzeichen als Präfix erhalten. So entsteht z. B.
+                              für die Wohnbaufläche &quot;Friedenshort&quot;
+                              der Alias &quot;W Friedenshort&quot;. Damit
                               können Sie durch die Eingabe des jeweiligen
                               Kennbuchstabens und eines Leerzeichens im
-                              Eingabefeld eine Auswahlliste aller
-                              Potenzialflächen dieser Kategorie generieren, z.
-                              B. durch Eingabe von &quot;W &quot; eine
-                              Auswahlliste aller Wohnbaupotenzialflächen.
+                              Eingabefeld effizient nach allen
+                              Potenzialflächen dieser Kategorie suchen.
                             </p>
                           </>
                         }
