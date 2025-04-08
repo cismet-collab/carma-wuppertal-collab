@@ -8,7 +8,8 @@ export const Introduction = () => {
       Hintergrundkarte angeboten werden (Gewässer- und Kanalnetz,
       Trinkwasserbrunnen). Wählen Sie <strong>Kompaktanleitung</strong> für
       detailliertere Bedienungsinformationen und <strong>Urbaner Digitaler Zwilling</strong> für 
-      eine Einordnung des Umweltalarms in das Gesamtsystem des Digitalen Zwillings der Stadt Wuppertal.
+      eine Einordnung des Umweltalarms in das Gesamtsystem des Digitalen Zwillings der 
+      Stadt Wuppertal ("DigiTal Zwilling").
     </span>
   );
 };
