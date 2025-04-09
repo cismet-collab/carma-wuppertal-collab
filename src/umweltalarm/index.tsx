@@ -28,7 +28,14 @@ const getCollabedHelpComponentConfig = ({
     );
   };
 
-  const menuIntroduction = <Introduction />;
+  const MyIntroduction = () => {
+    const { setAppMenuActiveMenuSection } =
+      useContext<typeof UIDispatchContext>(UIDispatchContext);
+    return (
+      <Introduction setAppMenuActiveMenuSection={setAppMenuActiveMenuSection} />
+    );
+  };
+
   const menuIcon = "bars";
   const menuTitle = "Einstellungen, Legende und Kompaktanleitung";
   const menuSections = [
@@ -39,7 +46,7 @@ const getCollabedHelpComponentConfig = ({
   ];
 
   return {
-    menuIntroduction,
+    menuIntroduction: <MyIntroduction />,
     menuIcon,
     menuTitle,
     menuSections,
