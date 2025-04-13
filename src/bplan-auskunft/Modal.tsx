@@ -70,10 +70,19 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                   ).
                 </li>
                 <li>
-                  <strong>WebAtlasDE, in Übersichtsdarstellungen</strong>:
-                  Kartendienst (WMS) des Bundesamtes für Kartographie und
-                  Geodäsie (BKG). Datengrundlage: WebAtlasDE © GeoBasis-DE /
-                  BKG 2018
+                  <strong>basmap.de, in Übersichtsdarstellungen</strong>:
+                  Kartendienst (WMS) des Bundesamtes für Kartographie und Geodäsie (
+                  <a target="_blank" href="https://www.bkg.bund.de/">
+                    BKG
+                  </a>
+                  ). Datengrundlage: <b>basemap.de Web Vektor</b> © GeoBasis-DE /{" "}
+                  <a target="_blank" href="https://www.bkg.bund.de/">
+                    BKG
+                  </a>{" "}
+                  (2024){" "}
+                  <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                    CC BY 4.0
+                  </a>
                 </li>
                 <li>
                   <strong>B-Plan-Geltungsbereiche, in allen Maßstäben</strong>:
