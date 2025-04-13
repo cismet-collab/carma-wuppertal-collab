@@ -75,7 +75,7 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                   <a target="_blank" href="https://www.bkg.bund.de/">
                     BKG
                   </a>
-                  ). Datengrundlage: <b>basemap.de Web Vektor</b> © GeoBasis-DE /{" "}
+                  ). Datengrundlage: basemap.de Web Vektor © GeoBasis-DE /{" "}
                   <a target="_blank" href="https://www.bkg.bund.de/">
                     BKG
                   </a>{" "}
