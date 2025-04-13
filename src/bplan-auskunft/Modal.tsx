@@ -212,9 +212,6 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 stellen Sie auch sicher, dass Sie keinen Plan &uuml;bersehen,
                 der sich mit dem zuvor gesuchten &uuml;berlappt.
               </p>
-              <hr />
-              <h6>Anmerkung:</h6>
-              <FuzzySearchParagraph />
             </div>
           }
         />,
