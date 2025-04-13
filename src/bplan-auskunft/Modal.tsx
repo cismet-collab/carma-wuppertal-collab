@@ -180,11 +180,11 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
           sectionContent={
             <div>
               <p>
-                Um ein B-Plan-Verfahren direkt anzusteuern, geben Sie den Anfang
-                der B-Plan-Nummer im Eingabefeld rechts neben dem
-                Lupen-Symbol&nbsp;
+                Um ein B-Plan-Verfahren direkt anzusteuern, geben die 
+                zugehörige B-Plan-Nummer im Eingabefeld links unten 
+                rechts neben dem Lupen-Symbol&nbsp;
                 <Icon name="search" />
-                &nbsp;ein. Alle Verfahren, die mit diesen Ziffern beginnen,
+                &nbsp;ein. Alle Verfahren, die die eingegebenen Ziffern enthalten,
                 werden Ihnen in einer inkrementellen Auswahlliste angeboten.
                 (Wenn Sie weitere Zeichen eingeben, wird der Inhalt der
                 Auswahlliste angepasst.)
