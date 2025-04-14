@@ -7,12 +7,14 @@ interface MenuFooterProps {
   version: string;
   setAppMenuActiveMenuSection: (arg: string) => void;
   hintergrundkarten?: string | JSX.Element;
+  sectionKey?: string;
 }
 const MenuFooter: React.FC<MenuFooterProps> = ({
   title = document.title,
   version,
   setAppMenuActiveMenuSection,
   hintergrundkarten = "Stadtkarte 2.0 © RVR | True Orthophoto 2024 © Stadt Wuppertal",
+  sectionKey = "help",
 }: MenuFooterProps) => {
   return (
     <div
@@ -27,7 +29,7 @@ const MenuFooter: React.FC<MenuFooterProps> = ({
         <a
           className="pleaseRenderAsLink"
           onClick={() => {
-            setAppMenuActiveMenuSection("help");
+            setAppMenuActiveMenuSection(sectionKey);
             scroller.scrollTo("Datengrundlage", { containerId: "myMenu" });
           }}
         >

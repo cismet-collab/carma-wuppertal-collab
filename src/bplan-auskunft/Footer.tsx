@@ -14,6 +14,7 @@ export const Footer = ({
       title="B-Plan-Auskunft Wuppertal"
       version={version}
       setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
+      sectionKey="hintergrundkarte"
     />
   );
 };
