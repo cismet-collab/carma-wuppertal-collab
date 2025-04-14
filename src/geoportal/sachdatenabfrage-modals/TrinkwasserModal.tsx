@@ -27,10 +27,36 @@ import {
             foto = trinkwasser.foto;
         }
         
-        let winterruhe;
-        if (trinkwasser.winterruhe !== undefined) {
-            winterruhe = trinkwasser.winterruhe;
-        }
+        //let winterruhe;
+        //if (trinkwasser.winterruhe !== undefined) {
+        //    winterruhe = trinkwasser.winterruhe;
+        //}
+        let winterruheTable: React.ReactNode[] = [];
+        if (trinkwasser?.winterruhe) {
+            winterruheTable.push(
+            <tbody>
+                <tr> 
+                <div style={{width: "100%", minHeight: 50}}>
+                    {trinkwasser.winterruhe}
+                </div>
+                </tr>
+            </tbody>
+            );
+        };
+
+        let massnahmenTable: React.ReactNode[] = [];
+        if (trinkwasser?.massnahmen) {
+            massnahmenTable.push(
+            <tbody>
+                <tr> 
+                <div style={{width: "100%", minHeight: 50}}>
+                    <b>Massnahmen:</b>
+                </div>
+                <div>{trinkwasser.massnahmen}</div>
+                </tr>
+            </tbody>
+            );
+        };
 
         let dauerlaeufer;
         if (trinkwasser.dauerlaeufer !== undefined) {
@@ -47,10 +73,10 @@ import {
         //    gebaeude = trinkwasser.gebaeude;
         //}
         
-        let massnahmen;
-        if (trinkwasser.massnahmen !== undefined) {
-            massnahmen = trinkwasser.massnahmen;
-        }
+        //let massnahmen;
+        //if (trinkwasser.massnahmen !== undefined) {
+        //    massnahmen = trinkwasser.massnahmen;
+        //}
 
         let links: React.ReactNode[] = [];
         if (trinkwasser?.betreiber_url) {
@@ -88,7 +114,9 @@ import {
             </Modal.Header>
             <Modal.Body id="myMenu" key={"prbr.secondaryInfo"}>
                 <div style={{ width: "100%", minHeight: 250 }}>
-                <b>{winterruhe}</b> 
+                    <table style={{ marginTop: 8 }}>
+                        {winterruheTable}
+                    </table>
                     <div style={{ width: "100%", minHeight: 250 }}>
                         {foto !== undefined && (
                             <img
@@ -115,10 +143,9 @@ import {
                                 <br />
                                 <div>{dauerlaeufer} </div>
                                 <br />
-                                <div>
-                                    <b>Massnahmen:</b>
-                                </div>
-                                <div>{massnahmen} </div>
+                                <table style={{ marginTop: 8 }}>
+                                    {massnahmenTable}
+                                </table>
                             </div> 
                     </div>
                 </div>
