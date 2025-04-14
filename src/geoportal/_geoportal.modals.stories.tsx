@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import SecondaryInfoModal from "./sachdatenabfrage-modals/EMobiModal";
 import SecondaryInfoModalRad from "./sachdatenabfrage-modals/EMobiRadModal";
+import SecondaryInfoModalTrinkwasser from "./sachdatenabfrage-modals/TrinkwasserModal";
 
 const meta: Meta = {
   title: "Geoportal/Sachdatenabfrage",
@@ -102,6 +103,33 @@ export const EMobilitätRad: StoryObj = {
               "https://www.wuppertal.de/geoportal/emobil/images-autos/pikto_gruener_strom.png",
             signatur: "svg-signaturen/pikto_e-auto_blau_freigestellt_2.svg",
             signatur2: "svg-signaturen/pikto_e-auto_blau_freigestellt_3.svg",
+          },
+        }}
+        setOpen={() => {}}
+      />
+    );
+  },
+};
+
+export const Trinkwasser: StoryObj = {
+  render: () => {
+    return (
+      <SecondaryInfoModalTrinkwasser
+        feature={{
+          properties: {
+            winterruhe: "!!!Achtung alle Trinkwasserbrunnen im Freien befinden sich in Winterruhe",
+            name: "Test - Breslauer Straße",
+            adresse: "Breslauer Str.",
+            foto: "https://www.wuppertal.de/geoportal/Trinkwasserbrunnen/fotos/Breslauer.jpg",
+            beschreibung: "Vor dem Zugang zum Spielplatz am Bergischen Plateu",
+            betreiber: "Stadt Wuppertal - WAW",
+            offen:
+              "https://www.wuppertal.de/geoportal/emobil/images-autos/pikto_24-7.png",
+            betreiber_url:
+              "https://www.wuppertal.de/microsite/wasserversorgung/index.php",
+            signatur: "svg-signaturen/tw_outdoor.svg",
+            massnahmen: "Baum, Haus",
+            dauerlaeufer: "Dies ist ein Dauerläufer.",
           },
         }}
         setOpen={() => {}}
