@@ -47,29 +47,33 @@ import {
         let massnahmenTable: React.ReactNode[] = [];
         if (trinkwasser?.massnahmen) {
             massnahmenTable.push(
-            <tbody>
-                <tr> 
-                <div style={{width: "100%", minHeight: 50}}>
-                    <b>Massnahmen:</b>
-                    <br/>
-                {trinkwasser.massnahmen}
-                </div>
-                </tr>
-            </tbody>
+            <table style={{ marginTop: 8 }}>
+                <tbody>
+                    <tr> 
+                    <div style={{width: "100%", minHeight: 50}}>
+                        <b>Massnahmen:</b>
+                        <br/>
+                    {trinkwasser.massnahmen}
+                    </div>
+                    </tr>
+                </tbody>
+            </table>
             );
         };
         let dauerlaeuferTable: React.ReactNode[] = [];
         if (trinkwasser?.dauerlaeufer) {
             dauerlaeuferTable.push(
-            <tbody>
-                <tr> 
-                <div style={{width: "100%", minHeight: 50}}>
-                    <b>Dauerläufer:</b>
-                    <br/>
-                {trinkwasser.dauerlaeufer}
-                </div>
-                </tr>
-            </tbody>
+            <table style={{ marginTop: 8 }}>
+                <tbody>
+                    <tr> 
+                    <div style={{width: "100%", minHeight: 50}}>
+                        <b>Dauerläufer:</b>
+                        <br/>
+                        {trinkwasser.dauerlaeufer}
+                    </div>
+                    </tr>
+                </tbody>
+            </table>
             );
         };
 
@@ -104,7 +108,7 @@ import {
             <Modal.Header>
                 <Modal.Title>
                 <FontAwesomeIcon icon={faFaucetDrip} />
-                {` Datenblatt: Trinkwasserbrunnen ${trinkwasser.name}`}
+                {` Datenblatt: Trinkwasserbrunnen ${trinkwasser.geographicidentifier}`}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body id="myMenu" key={"prbr.secondaryInfo"}>
@@ -135,24 +139,16 @@ import {
                                 <br />
                                 <div><b>Beschreibung:</b> </div>
                                 <div>{trinkwasser.beschreibung} </div>
+                                {dauerlaeuferTable}
+                                {massnahmenTable}
                                 <br />
-                                <table style={{ marginTop: 8 }}>
-                                    {dauerlaeuferTable}
-                                </table>
-                                <br />
-                                <table style={{ marginTop: 8 }}>
-                                    {massnahmenTable}
-                                </table>
+                                <div>
+                                    <b>Öffnungszeiten:</b> {trinkwasser.oeffnungszeiten}
+                                </div>
                             </div> 
                     </div>
                 </div>
 
-                <div style={{ padding: "10px", paddingTop: "0px" }}>
-                    <br />
-                    <div>
-                        <b>Öffnungszeiten:</b> {trinkwasser.oeffnungszeiten}
-                    </div>
-                </div>
                 <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
                 <Card style={{ backgroundColor: "#d6e9c6" }}>
                     <Card.Header>

@@ -1,7 +1,7 @@
 export const normalizeInput = (properties: {
     adresse: string;
     beschreibung: string;
-    name: string;
+    geographicidentifier: string;
     betreiber: string;
     foto: string;
     wartung: string;
