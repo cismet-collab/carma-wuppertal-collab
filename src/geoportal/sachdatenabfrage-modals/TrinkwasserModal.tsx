@@ -37,7 +37,7 @@ import {
             <tbody>
                 <tr> 
                 <div style={{width: "100%", minHeight: 50}}>
-                    {trinkwasser.winterruhe}
+                    <b>{trinkwasser.winterruhe}</b>
                 </div>
                 </tr>
             </tbody>
@@ -51,32 +51,27 @@ import {
                 <tr> 
                 <div style={{width: "100%", minHeight: 50}}>
                     <b>Massnahmen:</b>
+                    <br/>
+                {trinkwasser.massnahmen}
                 </div>
-                <div>{trinkwasser.massnahmen}</div>
                 </tr>
             </tbody>
             );
         };
-
-        let dauerlaeufer;
-        if (trinkwasser.dauerlaeufer !== undefined) {
-            dauerlaeufer = trinkwasser.dauerlaeufer;
-        }
-
-        //let wartung;
-        //if (trinkwasser.wartung !== undefined) {
-        //    wartung = trinkwasser.wartung;
-        //}
-
-        //let gebaeude;
-        //if (trinkwasser.gebaeude !== undefined) {
-        //    gebaeude = trinkwasser.gebaeude;
-        //}
-        
-        //let massnahmen;
-        //if (trinkwasser.massnahmen !== undefined) {
-        //    massnahmen = trinkwasser.massnahmen;
-        //}
+        let dauerlaeuferTable: React.ReactNode[] = [];
+        if (trinkwasser?.dauerlaeufer) {
+            dauerlaeuferTable.push(
+            <tbody>
+                <tr> 
+                <div style={{width: "100%", minHeight: 50}}>
+                    <b>Dauerläufer:</b>
+                    <br/>
+                {trinkwasser.dauerlaeufer}
+                </div>
+                </tr>
+            </tbody>
+            );
+        };
 
         let links: React.ReactNode[] = [];
         if (trinkwasser?.betreiber_url) {
@@ -141,7 +136,9 @@ import {
                                 <div><b>Beschreibung:</b> </div>
                                 <div>{trinkwasser.beschreibung} </div>
                                 <br />
-                                <div>{dauerlaeufer} </div>
+                                <table style={{ marginTop: 8 }}>
+                                    {dauerlaeuferTable}
+                                </table>
                                 <br />
                                 <table style={{ marginTop: 8 }}>
                                     {massnahmenTable}
@@ -155,7 +152,6 @@ import {
                     <div>
                         <b>Öffnungszeiten:</b> {trinkwasser.oeffnungszeiten}
                     </div>
-                    
                 </div>
                 <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
                 <Card style={{ backgroundColor: "#d6e9c6" }}>
