@@ -37,15 +37,15 @@ import {
             dauerlaeufer = trinkwasser.dauerlaeufer;
         }
 
-        let wartung;
-        if (trinkwasser.wartung !== undefined) {
-            wartung = trinkwasser.wartung;
-        }
+        //let wartung;
+        //if (trinkwasser.wartung !== undefined) {
+        //    wartung = trinkwasser.wartung;
+        //}
 
-        let gebaeude;
-        if (trinkwasser.gebaeude !== undefined) {
-            gebaeude = trinkwasser.gebaeude;
-        }
+        //let gebaeude;
+        //if (trinkwasser.gebaeude !== undefined) {
+        //    gebaeude = trinkwasser.gebaeude;
+        //}
         
         let massnahmen;
         if (trinkwasser.massnahmen !== undefined) {
@@ -113,6 +113,12 @@ import {
                                 <div><b>Beschreibung:</b> </div>
                                 <div>{trinkwasser.beschreibung} </div>
                                 <br />
+                                <div>{dauerlaeufer} </div>
+                                <br />
+                                <div>
+                                    <b>Massnahmen:</b>
+                                </div>
+                                <div>{massnahmen} </div>
                             </div> 
                     </div>
                 </div>
