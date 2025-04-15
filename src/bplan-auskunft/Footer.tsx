@@ -24,10 +24,21 @@ export const Footer = ({
           >
             Stadtkarte 2.0 © RVR
           </a>{" "}
-          | Amtliche Basiskarte (ABK), B-Plan-Geltungsbereiche (rechtswirksam | laufende Verfahren) © Stadt Wuppertal |
+          | Amtliche Basiskarte (ABK), B-Plan-Geltungsbereiche (
+          <a
+            className="pleaseRenderAsLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://offenedaten-wuppertal.de/dataset/rechtsverbindliche-bebauungspl%C3%A4ne-wuppertal"
+          > 
+            rechtswirksam
+          </a>{" "}
+          | laufende Verfahren) © Stadt Wuppertal |
           basemap.de web Vektor © GeoBasis-DE / BKG
         </span>
       }
     />
   );
 };
+
+
