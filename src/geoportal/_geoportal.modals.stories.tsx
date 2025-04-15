@@ -120,16 +120,17 @@ export const Trinkwasser: StoryObj = {
             //winterruhe: "!!!Achtung alle Trinkwasserbrunnen im Freien befinden sich in Winterruhe",
             geographicidentifier: "Test - Breslauer Straße",
             adresse: "Breslauer Str.",
-            foto: "https://www.wuppertal.de/geoportal/Trinkwasserbrunnen/fotos/Breslauer.jpg",
+            //foto: "https://www.wuppertal.de/geoportal/Trinkwasserbrunnen/fotos/Breslauer.jpg",
+            foto: "https://www.wuppertal.de/geoportal/Trinkwasserbrunnen/fotos/Korzert.jpg",
             beschreibung: "Vor dem Zugang zum Spielplatz am Bergischen Plateau",
             betreiber: "Stadt Wuppertal - WAW",
-            offen:
-              "https://www.wuppertal.de/geoportal/emobil/images-autos/pikto_24-7.png",
+            offen: "https://www.wuppertal.de/geoportal/emobil/images-autos/pikto_24-7.png",
             betreiber_url:
               "https://www.wuppertal.de/microsite/wasserversorgung/index.php",
             signatur: "svg-signaturen/tw_outdoor.svg",
             //massnahmen: "Baum, Haus",
             //dauerlaeufer: "Dies ist ein Dauerläufer.",
+            frei: "https://www.wuppertal.de/geoportal/Trinkwasserbrunnen/pikto_barrierefrei.png",
           },
         }}
         setOpen={() => {}}
