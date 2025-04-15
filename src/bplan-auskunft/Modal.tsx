@@ -268,9 +268,6 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 </a>
                 ).
               </p>
-              <hr />
-              <h6>Anmerkung:</h6>
-              <FuzzySearchParagraph />
             </div>
           }
         />,
