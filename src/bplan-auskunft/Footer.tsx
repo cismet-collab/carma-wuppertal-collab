@@ -15,6 +15,19 @@ export const Footer = ({
       version={version}
       setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
       sectionKey="hintergrundkarte"
+      hintergrundkarten={
+        <span>
+          <a
+            target="_rvrReference"
+            rel="noopener noreferrer"
+            href="https://www.rvr.ruhr/?id=1002#c179626"
+          >
+            Stadtkarte 2.0 © RVR
+          </a>{" "}
+          | Amtliche Basiskarte (ABK), B-Plan-Geltungsbereiche (rechtswirksam | laufende Verfahren) © Stadt Wuppertal |
+          basemap.de web Vektor © GeoBasis-DE / BKG
+        </span>
+      }
     />
   );
 };
