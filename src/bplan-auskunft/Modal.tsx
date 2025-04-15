@@ -224,24 +224,25 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
             <div>
               <p>
                 Um die B-Plan-Situation an einem bestimmten Punkt des
-                Stadtgebietes zu erkunden, geben Sie den Anfang eines
-                Stra&szlig;ennamens oder eines interessanten Ortes (auch Point
-                of Interest oder kurz POI genannt) im Eingabefeld ein. In der
-                inkrementellen Auswahlliste werden Ihnen passende Treffer
-                angeboten. (Wenn sie weitere Zeichen eingeben, wird der Inhalt
-                der Auswahlliste angepasst.)
+                Stadtgebietes zu erkunden, geben Sie den Namen eines Stadtteils 
+                (Stadtbezirk oder Quartier), eine Adresse oder den Namen eines 
+                interessanten Ortes (Point of Interest, kurz POI) im Eingabefeld 
+                links unten ein. In der inkrementellen Auswahlliste werden Ihnen 
+                schon nach der Eingabe des ersten Buchstabens passende Treffer 
+                angeboten. (Wenn Sie weitere Zeichen eingeben, wird der Inhalt der 
+                Auswahlliste angepasst.)
               </p>
               <p>
-                Durch das vorangestellte Symbol erkennen Sie, ob es sich dabei
-                um eine&nbsp;
-                <Icon name="home" />
-                &nbsp;Adresse, eine&nbsp;
-                <Icon name="road" />
-                &nbsp;Stra&szlig;e ohne zugeordnete Hausnummern, einen&nbsp;
-                <Icon name="tag" />
-                &nbsp;POI, die&nbsp;
-                <Icon name="tags" />
-                &nbsp;alternative Bezeichnung eines POI oder eine{" "}
+                Durch das vorangestellte Symbol erkennen
+                Sie, ob es sich dabei um einen{" "}
+                <Icon name="circle" /> Stadtbezirk, ein{" "}
+                <Icon name="pie-chart" /> Quartier, eine{" "}
+                <Icon name="home" /> Adresse, eine{" "}
+                <Icon name="road" /> Straße ohne zugeordnete
+                Hausnummern, einen <Icon name="tag" /> POI, die{" "}
+                <Icon name="tags" /> alternative Bezeichnung eines
+                POI, eine <Icon name="child" />{" "}
+                Kindertageseinrichtung oder eine{" "}
                 <Icon name="graduation-cap" /> Schule handelt. (Probieren Sie es
                 mal mit der Eingabe "Sankt".)
               </p>
