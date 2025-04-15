@@ -223,10 +223,10 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
           sectionContent={
             <div>
               <p>
-                Um die B-Plan-Situation an einem bestimmten Punkt des
-                Stadtgebietes zu erkunden, geben Sie den Namen eines Stadtteils 
-                (Stadtbezirk oder Quartier), eine Adresse oder den Namen eines 
-                interessanten Ortes (Point of Interest, kurz POI) im Eingabefeld 
+                Um die B-Plan-Situation in einem bestimmten Bereich oder an einem 
+                bestimmten Punkt des Stadtgebietes zu erkunden, geben Sie den Namen 
+                eines Stadtteils (Stadtbezirk oder Quartier), eine Adresse oder den 
+                Namen eines interessanten Ortes (Point of Interest, kurz POI) im Eingabefeld 
                 links unten ein. In der inkrementellen Auswahlliste werden Ihnen 
                 schon nach der Eingabe des ersten Buchstabens passende Treffer 
                 angeboten. (Wenn Sie weitere Zeichen eingeben, wird der Inhalt der 
@@ -248,11 +248,26 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
               </p>
               <FuzzySearchParagraph />
               <p>
-                Nach der Auswahl eines Eintrags wird die entsprechende Position
-                in der Karte markiert. B-Plan-Verfahren werden hier allerdings
-                in der Umgebung dieses Punktes gesucht, in einem
-                Kartenausschnitt der Zoomstufe 14. Sie erhalten daher in der
-                Regel mehrere Treffer.
+                Nach der Auswahl eines Treffers aus der Liste wird die Karte 
+                auf die zugehörige Position zentriert. Bei Suchbegriffen mit 
+                Punktgeometrie (Adresse, Straße, POI) wird außerdem ein großer 
+                Maßstab (Zoomstufe 14) eingestellt und ein Marker auf der 
+                Zielposition platziert. Bei Suchbegriffen mit Flächengeometrie 
+                (Stadtbezirk, Quartier) wird der Maßstab so eingestellt, dass 
+                die Fläche vollständig dargestellt werden kann. Zusätzlich wird 
+                der Bereich außerhalb dieser Fläche abgedunkelt (Spotlight-Effekt).
+              </p>
+              <p>  
+                Nach Positionierung und Zoom auf eine Punktgeometrie wird zudem 
+                automatisch an dieser Stelle nach B-Plan-Verfahren gesucht. Liegt der Punkt 
+                innerhalb des Geltungsbereiches eines B-Planverfahrens, wird genau dieser
+                Plan geladen und zentriert. (Der Marker für die Zielposition befindet 
+                sich dann nicht mehr im Zentrum.) Die Maßstabsstufe wird so angepasst,
+                dass der Plan vollständig dargestellt werden kann. Liegt der Punkt nicht
+                im Geltungsbereich eines B-Plan-Verfahrens, wird im Kartenausschnitt, 
+                also in der Nachbarschaft des Punktes, nach B-Plan-Verfahren gesucht. Dabei 
+                werden oft mehrere B-Plan-Verfahren gefunden, die alle geladen und 
+                angezeigt werden.
               </p>
               <p>
                 Auch nach einer Positionierung in der Karte über Adresse oder
