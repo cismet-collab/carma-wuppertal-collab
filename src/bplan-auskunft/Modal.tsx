@@ -218,7 +218,7 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
         <Section
           key="suche-ueber-adresse-oder-poi"
           sectionKey="suche-ueber-adresse-oder-poi"
-          sectionTitle="Suche über Adresse oder POI"
+          sectionTitle="Suche über Stadtteil, Adresse oder POI"
           sectionBsStyle="success"
           sectionContent={
             <div>
@@ -246,6 +246,7 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 <Icon name="graduation-cap" /> Schule handelt. (Probieren Sie es
                 mal mit der Eingabe "Sankt".)
               </p>
+              <FuzzySearchParagraph />
               <p>
                 Nach der Auswahl eines Eintrags wird die entsprechende Position
                 in der Karte markiert. B-Plan-Verfahren werden hier allerdings
