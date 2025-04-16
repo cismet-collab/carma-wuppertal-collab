@@ -370,10 +370,12 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 Dokumente zu demjenigen B-Plan betrachtet werden können, der
                 gerade den Fokus hat. Wenn zu dem B-Plan mehrere Dokumente
                 verfügbar sind, werden diese in einer Navigationsleiste am
-                linken Rand des Dokumentenviewers angeboten. Klicken Sie auf
-                eines der Symbole in der Navigationsleiste, um das zugehörige
-                Dokument in den Anzeigebereich des Dokumentenviewers zu laden.
-                Mit den Werkzeugen <Icon name="chevron-left" />{" "}
+                linken Rand des Dokumentenviewers angeboten. Die Zusatzdokumente 
+                liegen überwiegend in sortierenden Unterverzeichnissen, die Sie 
+                mit einem einfachen Mausklick öffnen bzw. schließen können.
+                Klicken Sie auf eines der Symbole in der Navigationsleiste, um 
+                das zugehörige Dokument in den Anzeigebereich des Dokumentenviewers 
+                zu laden. Mit den Werkzeugen <Icon name="chevron-left" />{" "}
                 <i>"vorherige Seite"</i> und <Icon name="chevron-right" />{" "}
                 <i>"nächste Seite"</i> in der Werkzeugleiste am oberen Rand des
                 Dokumentenviewers können Sie in mehrseitigen Dokumenten vor- und
@@ -384,7 +386,7 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 Planteile umfasst oder wenn die verfahrensbegleitenden
                 Zusatzdokumente bereits in digitaler Form vorliegen. Die
                 Bereitstellung dieser Dokumente ist ein laufendes Vorhaben der
-                Stadtverwaltung Wuppertal, Stand 04/2020 sind sie für rund 72%
+                Stadtverwaltung Wuppertal, Stand 04/2025 sind sie für rund 87%
                 der Wuppertaler B-Pläne verfügbar. Die Namenskonventionen für
                 die vielfältigen Zusatzdateien sind im Dokument{" "}
                 <a
@@ -395,7 +397,7 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
                 >
                   Info Dateinamen
                 </a>{" "}
-                beschrieben, das in der Navigationsleiste als oberstes
+                beschrieben, das in der Navigationsleiste ggf. als oberstes
                 Zusatzdokument angeboten wird.
               </p>
               <p>
@@ -442,12 +444,6 @@ export const Modal: React.FC<ModalProps> = ({ visible, version }) => {
               <p>
                 Unten rechts im Anzeigebereich finden Sie stets den Dateinamen,
                 unter dem das gerade dargestellte Dokument heruntergeladen wird.
-                Diese Dateinamen sind etwas länger als die in der
-                Navigationsleiste verwendeten Bezeichnungen, wo die für alle
-                Dokumente eines B-Plans gleichen Namensbestandteile ausgeblendet
-                werden.
-              </p>
-              <p>
                 Ob eine heruntergeladene Datei nach dem Download sofort mit
                 einem geeigneten Programm (PDF-Viewer oder Dateimanager)
                 geöffnet wird, hängt von Ihren Betriebssystem- und/oder
