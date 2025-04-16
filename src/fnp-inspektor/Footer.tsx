@@ -14,6 +14,7 @@ export const Footer = ({
       title="FNP-Inspektor Wuppertal"
       version={version}
       setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
+      sectionKey="RechtsplanUndArbeitskarte"
       hintergrundkarten={
         <span>
           <a
