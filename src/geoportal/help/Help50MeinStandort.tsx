@@ -4,8 +4,15 @@ import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import meinStandpunktMarkerMitKompass from "./assets/MeinStandpunktMarkerMitKompass.jpg";
 import meinStandpunktMarkerDoppel from "./assets/meinStandpunktMarkerDoppel.jpg";
 import { Link } from "../../helper-overlay/components/Link";
+import UAParser from "ua-parser-js";
 
 const Help40MeinStandort = ({ showOverlayFromOutside }) => {
+  let parser = new UAParser();
+  const isMobile =
+    parser.getDevice().type === "mobile" ||
+    parser.getDevice().type === "tablet";
+
+  console.log("xxx", isMobile);
   return (
     <GenericModalMenuSection
       sectionKey="standort"
@@ -92,13 +99,19 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             der Methode, mit der Ihr Endgerät und der von Ihnen verwendete
             Browser die Position bestimmen.
           </p>
-          <Link
-            onClick={() => {
-              showOverlayFromOutside("MEINE_POSITION");
+          <p
+            style={{
+              display: isMobile ? "block" : "none",
             }}
           >
-            zur Hilfefolie
-          </Link>
+            <Link
+              onClick={() => {
+                showOverlayFromOutside("MEINE_POSITION");
+              }}
+            >
+              zur Hilfefolie
+            </Link>
+          </p>
         </div>
       }
     />
