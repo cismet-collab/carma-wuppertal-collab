@@ -49,13 +49,15 @@ const Component = ({ showOverlayFromOutside }) => {
             wo mehrere Ebenen vertikal übereinander liegen (z. B. bei den
             Schwebebahnhöfen).
           </p>
-          <Link
-            onClick={() => {
-              showOverlayFromOutside("HINTERGRUND");
-            }}
-          >
-            zur Hilfefolie
-          </Link>
+          <p className="hide-on-small-screens">
+            <Link
+              onClick={() => {
+                showOverlayFromOutside("HINTERGRUND");
+              }}
+            >
+              zur Hilfefolie
+            </Link>
+          </p>
         </div>
       }
     />

@@ -17,6 +17,7 @@ export { elements as geoElements } from "./elements";
 export { demoElements } from "./demoElements";
 export { backgroundSettings } from "./backgroundSettings";
 export { additionalInfoFactory } from "./sachdatenabfrage-modals/helper/factory";
+import "./geoportal.css";
 
 interface CollabedHelpComponentProps {
   versionString: string;
