@@ -103,6 +103,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             style={{
               display: isMobile ? "block" : "none",
             }}
+            className="hide-on-small-screens"
           >
             <Link
               onClick={() => {
