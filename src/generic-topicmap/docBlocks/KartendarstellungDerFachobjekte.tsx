@@ -1,4 +1,4 @@
-const KartendarstellungDerFachobjekte = () => {
+export const KartendarstellungDerFachobjekte = () => {
   return (
     <p>
       Zur Darstellung der Fachobjekte des Kartenthemas in der Karte werden weiße
@@ -12,5 +12,3 @@ const KartendarstellungDerFachobjekte = () => {
     </p>
   );
 };
-
-export default KartendarstellungDerFachobjekte;

@@ -4,7 +4,7 @@ const NW = (props) => {
   return <span style={{ whiteSpace: "nowrap" }}>{props.children}</span>;
 };
 
-const InKartePositionieren = ({
+export const InKartePositionieren = ({
   listWithSymbols = (
     <p>
       Durch das in der Auswahlliste vorangestellte Symbol erkennen Sie, ob es
@@ -82,5 +82,3 @@ const InKartePositionieren = ({
     </div>
   );
 };
-
-export default InKartePositionieren;

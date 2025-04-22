@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import meinStandpunktMarkerDoppel from "../../commons/assets/MeinStandpunktMarkerDoppel.jpg";
 import meinStandpunktMarkerMitKompass from "../../commons/assets/MeinStandpunktMarkerMitKompass.jpg";
 
-const GenericHelpTextForMyLocation = () => {
+export const GenericHelpTextForMyLocation = () => {
   return (
     <>
       <p>
@@ -82,5 +82,3 @@ const GenericHelpTextForMyLocation = () => {
     </>
   );
 };
-
-export default GenericHelpTextForMyLocation;

@@ -1,4 +1,4 @@
-const Datengrundlage = ({
+export const Datengrundlage = ({
   titleContent = "Die Karte",
   stylesDesc = " (Tag | Nacht)",
 }) => {
@@ -62,5 +62,3 @@ const Datengrundlage = ({
     </div>
   );
 };
-
-export default Datengrundlage;

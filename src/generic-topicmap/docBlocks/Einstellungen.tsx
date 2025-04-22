@@ -1,4 +1,4 @@
-const Einstellungen = () => {
+export const Einstellungen = () => {
   return (
     <div>
       <p>
@@ -45,5 +45,3 @@ const Einstellungen = () => {
     </div>
   );
 };
-
-export default Einstellungen;

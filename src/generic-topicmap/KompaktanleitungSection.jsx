@@ -1,11 +1,11 @@
 import ConfigurableDocBlocks from "react-cismap/topicmaps/ConfigurableDocBlocks";
 import Section from "react-cismap/topicmaps/menu/Section";
-import FachobjekteAuswaehlenUndAbfragen from "./docBlocks/FachobjekteAuswaehlenUndAbfragen";
-import KartendarstellungDerFachobjekte from "./docBlocks/KartendarstellungDerFachobjekte";
-import InKartePositionieren from "./docBlocks/InKartePositionieren";
-import GenericHelpTextForMyLocation from "./docBlocks/GenericHelpTextForMyLocation";
-import Einstellungen from "./docBlocks/Einstellungen";
-import Datengrundlage from "./docBlocks/Datengrundlage";
+import { FachobjekteAuswaehlenUndAbfragen } from "./docBlocks/FachobjekteAuswaehlenUndAbfragen";
+import { KartendarstellungDerFachobjekte } from "./docBlocks/KartendarstellungDerFachobjekte";
+import { InKartePositionieren } from "./docBlocks/InKartePositionieren";
+import { GenericHelpTextForMyLocation } from "./docBlocks/GenericHelpTextForMyLocation";
+import { Einstellungen } from "./docBlocks/Einstellungen";
+import { Datengrundlage } from "./docBlocks/Datengrundlage";
 
 export const KompaktanleitungSection = () => {
   return (

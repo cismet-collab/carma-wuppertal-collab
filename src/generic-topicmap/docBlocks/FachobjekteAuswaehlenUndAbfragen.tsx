@@ -1,6 +1,6 @@
 import Icon from "react-cismap/commons/Icon";
 
-const FachobjekteAuswaehlenUndAbfragen = ({
+export const FachobjekteAuswaehlenUndAbfragen = ({
   furtherExplanationOfClickableContent = "",
 }) => {
   return (
@@ -64,5 +64,3 @@ const FachobjekteAuswaehlenUndAbfragen = ({
     </div>
   );
 };
-
-export default FachobjekteAuswaehlenUndAbfragen;
