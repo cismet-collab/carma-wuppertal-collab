@@ -7,11 +7,12 @@ export const GenericHelpTextForMyLocation = () => {
   return (
     <>
       <p>
-        Das Werkzeug &quot;Mein Standort&quot;{" "}
-        <FontAwesomeIcon icon={faLocationArrow} /> funktioniert so wie hier
-        beschrieben nur auf mobilen Endgeräten wie Smartphones und
-        Tablet-PC&#39;s, die i. d. R. mit einem GNSS-Empfänger als
-        Positionssensor ausgestattet sind (GNSS steht für Global Navigation
+      Das Werkzeug &quot;Mein Standort&quot;{" "}
+        <FontAwesomeIcon icon={faLocationArrow} />{" "}      
+        wird nur auf mobilen Endgeräten wie Smartphones 
+        und Tablet-PC&#39;s angeboten, denn nur diese sind 
+        regelmäßig mit einem GNSS-Empfänger als Positionssensor 
+        ausgestattet (GNSS steht für Global Navigation
         Satellite Systems, z.B.{" "}
         <a
           target="_info"
@@ -35,9 +36,9 @@ export const GenericHelpTextForMyLocation = () => {
           alt="MeinStandpunktMarkerDoppel"
           src={meinStandpunktMarkerDoppel}
         />
-        . Durch Antippen dieses Kreises können Sie einen Texthinweis mit einer
-        konkreten Angabe der aktuellen Positionsgenauigkeit einblenden. Dieser
-        Hinweis kann durch das Antippen einer beliebigen Stelle außerhalb seines
+        . Durch Antippen des inneren Kreises können Sie einen Texthinweis mit 
+        einer konkreten Angabe der aktuellen Positionsgenauigkeit einblenden. 
+        Dieser Hinweis kann durch das Antippen einer beliebigen Stelle außerhalb seines 
         Textfeldes geschlossen werden. Wenn Sie sich mit Ihrem Endgerät bewegen
         (z. B. bei einer Wanderung), wird Ihre aktuelle Position im &quot;Follow
         me&quot;-Modus in schneller Folge neu bestimmt und stets in der Mitte
