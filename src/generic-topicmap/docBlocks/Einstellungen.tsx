@@ -3,8 +3,10 @@ export const Einstellungen = () => {
     <div>
       <p>
         Unter &quot;<strong>Einstellungen</strong>&quot; können Sie im
-        Anwendungsmenü festlegen, wie die Hintergrundkarte und die Fachobjekte
-        des Kartenthemas angezeigt werden sollen.
+        Anwendungsmenü festlegen, welche Hintergrundkarte angezeigt werden 
+        soll. In zukünftigen Ausbaustufen der GenericTopicMap werden Sie 
+        hier auch Einstellungen zur Anzeige der Fachobjekte des Kartenthemas 
+        vornehmen können.
       </p>
       <p>
         Unter &quot;
@@ -27,20 +29,11 @@ export const Einstellungen = () => {
         (Kartenschrift, durchscheinende Linien) verbindet.
       </p>
       <p>
-        Unter &quot;
-        <strong>
-          <em>Symbolgröße</em>
-        </strong>
-        &quot; können Sie in Abhängigkeit von Ihrer Bildschirmauflösung und
-        Ihrem Sehvermögen auswählen, ob die Fachobjekte mit kleinen (25 Pixel),
-        mittleren (35 Pixel) oder großen (45 Pixel) Symbolen angezeigt werden.
-      </p>
-      <p>
         In der{" "}
         <strong>
           <em>Vorschau</em>
         </strong>{" "}
-        sehen Sie direkt die prinzipielle Wirkung ihrer Einstellungen.
+        sehen Sie direkt die Wirkung ihrer Einstellungen.
       </p>
     </div>
   );
