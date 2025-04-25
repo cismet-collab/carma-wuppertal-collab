@@ -7,9 +7,9 @@ export const KartendarstellungDerFachobjekte = () => {
       dargestellt. Die für den Symbolhintergrund bzw. die Flächen verwendeten Farben
       werden in der Titelzeile der Info-Box aufgegriffen. Zusätzlich werden dort
       die Informationen textlich zusammengefasst, die für die Kartendarstellung
-      (Symbol und Hintergrundfarbe) relevant sind. Die verwendete Symbolik erklärt 
-      sich auf diese Weise selbst, sodass die Kartenanwendung keine klassische 
-      Legendengrafik benötigt.
+      (Symbol und Hintergrund- bzw. Flächenfarbe) relevant sind. Die verwendete 
+      Symbolik erklärt sich auf diese Weise selbst, sodass die Kartenanwendung 
+      keine klassische Legendengrafik benötigt.
     </p>
   );
 };
