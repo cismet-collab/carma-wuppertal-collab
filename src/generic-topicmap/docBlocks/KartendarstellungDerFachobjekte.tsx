@@ -1,14 +1,15 @@
 export const KartendarstellungDerFachobjekte = () => {
   return (
     <p>
-      Zur Darstellung der Fachobjekte des Kartenthemas in der Karte werden weiße
-      Symbole mit farbigem Hintergrund verwendet. Die dabei verwendeten Farben
+      Zur Darstellung von punktförmigen Fachobjekten werden weiße Symbole mit 
+      farbigem Hintergrund verwendet. Flächenförmige Objekte werden mit 
+      farbigen Umringen und/oder transparenten Flächenfüllungen in derselben Farbe
+      dargestellt. Die für den Symbolhintergrund bzw. die Flächen verwendeten Farben
       werden in der Titelzeile der Info-Box aufgegriffen. Zusätzlich werden dort
       die Informationen textlich zusammengefasst, die für die Kartendarstellung
-      (Symbol und Hintergrundfarbe) relevant sind. Dort finden Sie also die
-      Bedeutung des Symbols. Die verwendete Symbolik erklärt sich auf diese
-      Weise selbst, sodass die Kartenanwendung keine klassische Legendengrafik
-      benötigt.
+      (Symbol und Hintergrundfarbe) relevant sind. Die verwendete Symbolik erklärt 
+      sich auf diese Weise selbst, sodass die Kartenanwendung keine klassische 
+      Legendengrafik benötigt.
     </p>
   );
 };
