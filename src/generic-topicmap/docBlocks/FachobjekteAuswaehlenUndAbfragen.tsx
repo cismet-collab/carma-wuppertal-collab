@@ -1,23 +1,21 @@
 import Icon from "react-cismap/commons/Icon";
 
-export const FachobjekteAuswaehlenUndAbfragen = ({
-  furtherExplanationOfClickableContent = "",
-}) => {
+export const FachobjekteAuswaehlenUndAbfragen = () => {
   return (
     <div>
       <p>
-        Durch Anklicken eines Fachobjektes (Punktsymbol, Linie oder Fläche)
-        wird der Fokus auf dieses Fachobjekt gesetzt. Es wird dann blau hinterlegt 
-        bzw. umrandet. Die zugehörigen Informationen (bei Punktkatastern i. d. R. 
-        Name, Straße und Hausnummer, Kurzinformation) werden unten rechts in der 
-        Info-Box angezeigt. Ggf. werden Ihnen in der Info-Box weiterführende 
-        Funktionen und Kommunikationslinks zu diesem Fachobjekt angeboten. Mit der
-        Lupenfunktion <Icon name="search" /> wird die Karte auf das aktuelle
-        Fachobjekt zentriert und gleichzeitig ein großer Betrachtungsmaßstab
-        eingestellt. Falls es mehr Informationen zu den Fachobjekten gibt, 
-        als in der Info-Box dargestellt werden können, können
-        Sie sich diese über die Datenblattfunktion <Icon name="info" /> anzeigen
-        lassen. Die Kommunikationslinks können <Icon name="phone" />{" "}
+        Durch Anklicken eines Fachobjektes (Punktsymbol, Linie oder Fläche) 
+        setzen Sie den Fokus auf dieses Objekt. Es wird dann blau hinterlegt 
+        oder umrandet und die zugehörigen Informationen (bei Punktkatastern 
+        i. d. R. Name, Straße und Hausnummer, Kurzinformation) werden unten 
+        rechts in der Info-Box angezeigt. Ggf. werden Ihnen in der Info-Box 
+        auch weiterführende Funktionen und Kommunikationslinks zu diesem 
+        Fachobjekt angeboten. Mit der Lupenfunktion <Icon name="search" /> 
+        wird die Karte auf das aktuelle Fachobjekt zentriert und gleichzeitig 
+        ein großer Betrachtungsmaßstab eingestellt. Falls es mehr Informationen 
+        zu den Fachobjekten gibt, als in der Info-Box dargestellt werden können, 
+        können Sie sich diese über die Datenblattfunktion <Icon name="info" /> 
+        anzeigen lassen. Die Kommunikationslinks können <Icon name="phone" />{" "}
         Telefon, <Icon name="envelope-square" /> E-Mail und{" "}
         <Icon name="external-link-square" /> Internet-Homepage umfassen.
       </p>
