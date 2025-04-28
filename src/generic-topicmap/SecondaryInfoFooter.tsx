@@ -7,7 +7,6 @@ interface SecondaryInfoFooterProps {
 
 export const SecondaryInfoFooter = ({
   close,
-  version,
 }: SecondaryInfoFooterProps) => {
   return (
     <table
