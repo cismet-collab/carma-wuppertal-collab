@@ -14,7 +14,7 @@ export const Datengrundlage = ({
         <p></p>
         <ul>
           <li>
-            <strong>TEST-Luftbildkarte</strong>: (1) Kartendienst (WMS) der Stadt
+            <strong>Luftbildkarte</strong>: (1) Kartendienst (WMS) der Stadt
             Wuppertal. Datengrundlage:{" "}
             <strong>True Orthophoto aus Bildflügen vom 14.03. und 17.03.2024</strong>,
             hergestellt durch Aerowest GmbH/Dortmund, Bodenauflösung 3 cm. (True
