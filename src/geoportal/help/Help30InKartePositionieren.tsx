@@ -25,7 +25,7 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   Verschieben des betrachteten Ausschnittes sowie zum Drehen und
                   Kippen einer 3D-Ansicht stehen darüber hinaus die in
                   Web-Kartenanwendungen übliche Mausaktionen bzw.
-                  Touchscreen-Gesten zur Verfügung{" "}
+                  Touchscreen-Gesten zur Verfügung.{" "}
                   <span className="hide-on-small-screens">
                     (
                     <Link
@@ -37,7 +37,7 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                     </Link>
                     )
                   </span>
-                  . Im 3D-Modus wird zusätzlich ein Spezialwerkzeug zur
+                  Im 3D-Modus wird zusätzlich ein Spezialwerkzeug zur
                   Steuerung der 3D-Ansicht aktiviert, nämlich die Kompassnadel{" "}
                   <CompassNeedle /> über dem 3D/2D-Wechselschalter. Wenn Sie das
                   Werkzeug mit der linken Maustaste anklicken und diese gedrückt
