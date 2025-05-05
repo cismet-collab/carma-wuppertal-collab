@@ -18,7 +18,7 @@ const Component = () => {
           zu erleichtern, sind die Karteninhalte in vertikaler Richtung nach Art 
           und in horizontaler Richtung nach Thema geordnet. Wenn Sie also im 
           Navigationsbereich auf der linken Seite z. B. auf 
-          {" "}<FontAwesomeIcon icon="faMap" />{" "} <strong>Kartenebenen</strong> 
+          {" "}<FontAwesomeIcon icon="fa-map" />{" "} <strong>Kartenebenen</strong> 
           klicken, werden Vorschaubilder zu allen Kartenebenen in den Hauptbereich 
           des Dialogs geladen. Wenn Sie dann in der horizontalen Navigationsleiste 
           im Kopfbereich z. B. auf "Planung" klicken, wird im Hauptbereich auf den 
