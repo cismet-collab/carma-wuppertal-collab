@@ -1,5 +1,5 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
-import addLayers from "../../secondary/assets/add-layers.png";
+import addLayers from "../secondary/assets/add-layers.png";
 
 const Component = () => {
   return (
