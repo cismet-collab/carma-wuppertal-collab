@@ -27,7 +27,6 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   Web-Kartenanwendungen übliche Mausaktionen bzw.
                   Touchscreen-Gesten zur Verfügung.{" "}
                   <span className="hide-on-small-screens">
-                    (
                     <Link
                       onClick={() => {
                         showOverlayFromOutside("CENTER");
@@ -35,7 +34,6 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                     >
                       Übersicht auf der Hilfefolie
                     </Link>
-                    )
                   </span>
                   Im 3D-Modus wird zusätzlich ein Spezialwerkzeug zur
                   Steuerung der 3D-Ansicht aktiviert, nämlich die Kompassnadel{" "}

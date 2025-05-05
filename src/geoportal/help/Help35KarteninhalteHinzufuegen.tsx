@@ -1,4 +1,5 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
+import addLayers from "../../secondary/assets/add-layers.png";
 
 const Component = () => {
   return (
@@ -8,14 +9,18 @@ const Component = () => {
       sectionBsStyle="info"
       sectionContent={
         <div>
-          Could now she how in was sleep dropped in by back shall come into
-          needed wild that picture they to have would by her succeeding, hair a
-          with the I first should expected line of so got her solitary the and
-          that coffee that omens, treble-range are quitting for high line text,
-          parts else. A have the unprofitable both the leather at neighbours in
-          on each written and assignment. When me the his degree read. She that
-          the equation, of by hand. Select picture spare not got in social and
-          parameters absolutely he and that if the alphabet carpeting of.
+          Das Herzstück des Geoportals ist der Dialog "Karteninhalte hinzufügen" 
+          (Symbol {" "}<img src={addLayers} style={{ height: "18px" }} />{" "} in der Menüleiste), 
+          mit dem Sie das gesamte Datenangebot des DigiTal Zwillings durchsuchen 
+          und für Sie interessante Inhalte als Kartenebene hinzufügen können. Um 
+          Ihnen die Orientierung in dem umfangreichen Angebot zu erleichtern, sind 
+          die Karteninhalte in vertikaler Richtung nach ihrer Art und in horizontaler 
+          Richtung nach ihrem Thema geordnet. Wenn Sie also im Navigationsbereich 
+          auf der linken Seite z. B. auf Icon "Kartenebenen" klicken, werden 
+          Vorschaubilder zu allen Kartenebenen in den Hauptbereich des Dialogs 
+          geladen. Wenn Sie dann in der horizontalen Navigationsleiste 
+          im Kopfbereich z. B. auf "Planung" klicken, wird im Hauptbereich auf den 
+          Beginn des Blocks der Kartenebenen zum Thema "Planung" positioniert.
         </div>
       }
     />
