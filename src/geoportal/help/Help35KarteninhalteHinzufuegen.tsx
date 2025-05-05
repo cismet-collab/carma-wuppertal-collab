@@ -59,7 +59,7 @@ const Component = ({ showOverlayFromOutside }) => {
             Browsers geöffnet. Der Bereich {" "}<FontAwesomeIcon icon={faMapPin} />{" "} 
             <strong>Sensoren</strong>{" "} befindet sich im Aufbau, er ist daher noch deaktiviert. 
             Hier werden Sie zukünftig die Smart-City-Sensoren der Stadt Wuppertal 
-            finden, die Sie als dynamischen Kartenebenen in das Geoportal integrieren können.  
+            finden, die Sie als dynamische Kartenebenen in das Geoportal integrieren können.  
           </p>
           <p className="hide-on-small-screens">
             <Link

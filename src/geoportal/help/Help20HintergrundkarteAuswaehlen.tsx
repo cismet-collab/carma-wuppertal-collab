@@ -38,8 +38,8 @@ const Component = ({ showOverlayFromOutside }) => {
             wurde. Es stellt einen Ausschnitt des für ganz Nordrhein-Westfalen vorliegenden 
             3D-Gebäudemodells der Landesvermessung NRW (Geobasis NRW) in der inhaltlichen 
             Ausbaustufe "Level of Detail 2 (LoD2)" dar. Dieses Modell umfasst einfache 
-            Gebäudeformen mit standardisierten Dachformen. Mit der Schaltfläche "Luftbild" l
-            aden Sie ein 3D-Mesh, das aus Bilddaten erstellt wurde, die durch eine Befliegung 
+            Gebäudeformen mit standardisierten Dachformen. Mit der Schaltfläche "Luftbild" 
+            laden Sie ein 3D-Mesh, das aus Bilddaten erstellt wurde, die durch eine Befliegung 
             im Auftrag der Stadt Wuppertal im März 2024 gewonnen wurden. Dabei wird aus den 
             Bilddaten ein digitales Oberflächenmodell in Form eines Dreiecksnetzes berechnet, 
             auf das die Bilder projiziert werden. Solche Modelle können Fehler und Lücken 
