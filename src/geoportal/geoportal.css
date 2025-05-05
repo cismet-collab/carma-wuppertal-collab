@@ -1,8 +1,4 @@
 /* Hide content on small screens */
-.hide-on-small-screens {
-  display: block;
-}
-
 @media screen and (max-width: 640px) {
   .hide-on-small-screens {
     display: none;

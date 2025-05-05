@@ -34,9 +34,9 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                     >
                       Übersicht auf der Hilfefolie
                     </Link>
-                  </span>
-                  Im 3D-Modus wird zusätzlich ein Spezialwerkzeug zur
-                  Steuerung der 3D-Ansicht aktiviert, nämlich die Kompassnadel{" "}
+                  </span>{" "}
+                  Im 3D-Modus wird zusätzlich ein Spezialwerkzeug zur Steuerung
+                  der 3D-Ansicht aktiviert, nämlich die Kompassnadel{" "}
                   <CompassNeedle /> über dem 3D/2D-Wechselschalter. Wenn Sie das
                   Werkzeug mit der linken Maustaste anklicken und diese gedrückt
                   halten, können Sie durch Bewegung der Maus die Ansicht kippen
