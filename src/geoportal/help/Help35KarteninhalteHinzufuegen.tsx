@@ -31,13 +31,18 @@ const Component = () => {
           Ausgehend von einem Vorschaubild können Sie entweder durch Anklicken des 
           Wechselschalters {" "}<FontAwesomeIcon icon={faChevronDown} />{" "} bzw. 
           {" "}<FontAwesomeIcon icon={faChevronUp} />{" "} einen Bereich mit 
-          Informationen zu der Kartenebene aufklappen, der auch Schaltflächen zum 
-          Hinzufügen und Favorisieren dieser Kartenebene enthält. Oder Sie benutzen 
+          Informationen zu der Kartenebene auf- bzw. zuklappenklappen, der auch Schaltflächen 
+          zum Hinzufügen und Favorisieren dieser Kartenebene enthält. Oder Sie benutzen 
           hierfür direkt die Symbole {" "}<FontAwesomeIcon icon={faPlus} />{" "} 
           und {" "}<FontAwesomeIcon icon={faStar} />{" "} im Vorschaubild. 
           "Hinzufügen" bewirkt, dass diese Kartenebene im Geoportal direkt geladen 
-          und angezeigt wird. Außerdem wird für diese Kartenebene ein weiteres 
-          Ebenen-Steuerelement rechts neben dem Hintergrund-Steuerelement ergänzt. 
+          und angezeigt wird. Außerdem wird für sie ein weiteres Ebenen-Steuerelement 
+          rechts neben dem Hintergrund-Steuerelement ergänzt. Durch "Favorisieren" wird 
+          die Kartenebene in Ihrem Favoriten-Bereich unter "Meine Kartenebenen" 
+          gespeichert. Zu Ihren Favoriten gelangen Sie, indem Sie oben im Navigationsbereich 
+          auf {" "}<FontAwesomeIcon icon={faStar} />{" "} <strong>Favoriten</strong>{" "} klicken. 
+          Das Speichen der Favoriten benutzt den Cache-Speicher Ihres Browsers. Wenn Sie diesen 
+          Speicher löschen, verschwinden auch die dort gespeicherten Karteninhalte.
         </div>
       }
     />
