@@ -7,6 +7,8 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { faMapPin } from "@fortawesome/free-solid-svg-icons";
 
 const Component = ({ showOverlayFromOutside }) => {
   return (
@@ -46,10 +48,23 @@ const Component = ({ showOverlayFromOutside }) => {
             Das Speichen der Favoriten benutzt den Cache-Speicher Ihres Browsers. Wenn Sie diesen 
             Speicher löschen, verschwinden auch die dort gespeicherten Karteninhalte.
           </p>
+          <p>
+            Wenn Sie im Navigationsbereich auf {" "}<FontAwesomeIcon icon={faBook} />{" "} 
+            <strong>Teilzwillinge</strong>{" "} klicken, werden im Hauptbereich Vorschaubilder 
+            für Kartenanwendungen angezeigt, die jeweils einen themenspezifischen 
+            Ausschnitt aus den Daten und Methoden des DigiTal Zwillings für einen konkreten Anwendungsfall 
+            umfassen. (Im Konzept des DigiTal Zwillings werden solche Anwendungen als "Teilzwillinge" 
+            bezeichnet.) Im Unterschied zu den Kartenebenen werden die Teilzwillinge nicht der 
+            Kartenansicht des Geoportals hinzugefügt, sondern in einer neuen Karteikarte Ihres 
+            Browsers geöffnet. Der Bereich {" "}<FontAwesomeIcon icon={faMapPin} />{" "} 
+            <strong>Sensoren</strong>{" "} befindet sich im Aufbau, er ist daher noch deaktiviert. 
+            Hier werden Sie zukünftig die Smart-City-Sensoren der Stadt Wuppertal 
+            finden, die Sie als dynamischen Kartenebenen in das Geoportal integrieren können.  
+          </p>
           <p className="hide-on-small-screens">
             <Link
               onClick={() => {
-                showOverlayFromOutside("MENU");
+                showOverlayFromOutside("MENULEISTE");
               }}
             >
               zur Hilfefolie
