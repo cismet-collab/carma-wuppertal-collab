@@ -5,3 +5,4 @@ export { KartendarstellungDerFachobjekte } from "./docBlocks/KartendarstellungDe
 export { InKartePositionieren } from "./docBlocks/InKartePositionieren";
 export { GenericHelpTextForMyLocation } from "./docBlocks/GenericHelpTextForMyLocation";
 export { Einstellungen } from "./docBlocks/Einstellungen";
+export { default as GTMComponentDictionary } from "./additionalComponents";
