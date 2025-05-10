@@ -41,7 +41,8 @@ export const MenuBarText = () => {
             <b>Karteninhalte hinzufügen</b> - Dialog für Suche, Vorschau und
             Laden von Karteninhalten im DigiTal Zwilling | zum Laden externer
             Kartendienste Adresse (WMS-Capabilities-URL) markieren und in das
-            Kartenfenster ziehen
+            Kartenfenster ziehen {" "}<Link section="karteninhalte">weitere 
+            Informationen</Link>
           </td>
         </tr>
         <tr>

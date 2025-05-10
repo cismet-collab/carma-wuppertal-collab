@@ -9,6 +9,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import { faMapPin } from "@fortawesome/free-solid-svg-icons";
+import { faList } from "@fortawesome/free-solid-svg-icons";
 
 const Component = ({ showOverlayFromOutside }) => {
   return (
@@ -59,7 +60,10 @@ const Component = ({ showOverlayFromOutside }) => {
             Browsers geöffnet. Der Bereich {" "}<FontAwesomeIcon icon={faMapPin} />{" "} 
             <strong>Sensoren</strong>{" "} befindet sich im Aufbau, er ist daher noch deaktiviert. 
             Hier werden Sie zukünftig die Smart-City-Sensoren der Stadt Wuppertal 
-            finden, die Sie als dynamische Kartenebenen in das Geoportal integrieren können.  
+            finden, die Sie als dynamische Kartenebenen in das Geoportal integrieren können. Unter 
+            {" "}<FontAwesomeIcon icon={faList} />{" "} <strong>Entdecken</strong> stellen wir 
+            Ihnen Karten (Kombinationen von Kartenebenen) mit konkreten Verwendungszwecken zur Verfügung, 
+            die sich zur Beantwortung wiederkehrender Fragen bewährt haben.  
           </p>
           <p className="hide-on-small-screens">
             <Link
