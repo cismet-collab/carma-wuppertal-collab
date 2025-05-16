@@ -1,10 +1,11 @@
 import Section from "react-cismap/topicmaps/menu/Section";
 
-export const Menu20MeinKassenzeichen = () => {
+export const Menu20MeinKassenzeichen = ({ showOpened = false }) => {
   return (
     <Section
       key="meinKassenzeichen"
       sectionKey="meinKassenzeichen"
+      {...(showOpened ? { activeSectionKey: "meinKassenzeichen" } : {})}
       sectionTitle="Mein Kassenzeichen"
       sectionBsStyle="warning"
       sectionContent={

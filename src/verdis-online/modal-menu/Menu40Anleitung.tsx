@@ -1,11 +1,12 @@
 import Section from "react-cismap/topicmaps/menu/Section";
 import Icon from "react-cismap/commons/Icon";
 
-export const Menu40Anleitung = () => {
+export const Menu40Anleitung = ({ showOpened = false }) => {
   return (
     <Section
       key="anleitung"
       sectionKey="anleitung"
+      {...(showOpened ? { activeSectionKey: "anleitung" } : {})}
       sectionTitle="Kurzanleitung"
       sectionBsStyle="success"
       sectionContent={

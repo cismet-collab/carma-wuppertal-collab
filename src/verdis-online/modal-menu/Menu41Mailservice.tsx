@@ -1,10 +1,11 @@
 import Section from "react-cismap/topicmaps/menu/Section";
 
-export const Menu41Mailservice = () => {
+export const Menu41Mailservice = ({ showOpened = false }) => {
   return (
     <Section
       key="mailservice"
       sectionKey="mailservice"
+      {...(showOpened ? { activeSectionKey: "mailservice" } : {})}
       sectionTitle="Mailservice"
       sectionBsStyle="info"
       sectionContent={

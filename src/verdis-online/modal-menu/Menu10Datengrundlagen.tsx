@@ -1,10 +1,11 @@
 import Section from "react-cismap/topicmaps/menu/Section";
 
-export const Menu10Datengrundlagen = () => {
+export const Menu10Datengrundlagen = ({ showOpened = false }) => {
   return (
     <Section
       key="datengrundlage"
       sectionKey="datengrundlage"
+      {...(showOpened ? { activeSectionKey: "datengrundlage" } : {})}
       sectionTitle="Grundlagen der Datenerhebung"
       sectionBsStyle="warning"
       sectionContent={

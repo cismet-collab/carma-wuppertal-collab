@@ -52,26 +52,62 @@ export const MenuModalIntroduction: StoryObj = {
   },
 };
 
-export const ModalMenu: StoryObj = {
+export const ModalClosedMenu: StoryObj = {
   render: () => {
+    const showOpened = false;
     return (
       <TopicMapContextProvider appKey="storybook-appkey">
         <ModalApplicationMenu
           menuSections={[
-            <Menu10Datengrundlagen />,
-            <Menu20MeinKassenzeichen />,
+            <Menu10Datengrundlagen showOpened={showOpened} />,
+            <Menu20MeinKassenzeichen showOpened={showOpened} />,
             <Section
               key="kartenhintergruende"
               sectionKey="kartenhintergruende"
+              {...(showOpened
+                ? { activeSectionKey: "kartenhintergruende" }
+                : {})}
               sectionTitle="Hintergrundkarten"
               sectionBsStyle="info"
               sectionContent={<Menu30KartenhintergruendeText />}
             />,
-            <Menu40Anleitung />,
-            <Menu41Mailservice />,
-            <Menu42Aenderungen />,
-            <Menu50FAQ />,
-            <Menu60Datenschutz />,
+            <Menu40Anleitung showOpened={showOpened} />,
+            <Menu41Mailservice showOpened={showOpened} />,
+            <Menu42Aenderungen showOpened={showOpened} />,
+            <Menu50FAQ showOpened={showOpened} />,
+            <Menu60Datenschutz showOpened={showOpened} />,
+          ]}
+          visible={true}
+        />
+      </TopicMapContextProvider>
+    );
+  },
+};
+
+export const ModalOpenedMenu: StoryObj = {
+  render: () => {
+    const showOpened = true;
+    return (
+      <TopicMapContextProvider appKey="storybook-appkey">
+        <ModalApplicationMenu
+          menuSections={[
+            <Menu10Datengrundlagen showOpened={showOpened} />,
+            <Menu20MeinKassenzeichen showOpened={showOpened} />,
+            <Section
+              key="kartenhintergruende"
+              sectionKey="kartenhintergruende"
+              {...(showOpened
+                ? { activeSectionKey: "kartenhintergruende" }
+                : {})}
+              sectionTitle="Hintergrundkarten"
+              sectionBsStyle="info"
+              sectionContent={<Menu30KartenhintergruendeText />}
+            />,
+            <Menu40Anleitung showOpened={showOpened} />,
+            <Menu41Mailservice showOpened={showOpened} />,
+            <Menu42Aenderungen showOpened={showOpened} />,
+            <Menu50FAQ showOpened={showOpened} />,
+            <Menu60Datenschutz showOpened={showOpened} />,
           ]}
           visible={true}
         />

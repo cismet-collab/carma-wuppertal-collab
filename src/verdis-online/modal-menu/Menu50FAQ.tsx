@@ -1,11 +1,12 @@
 import ConfigurableDocBlocks from "react-cismap/topicmaps/ConfigurableDocBlocks";
 import Section from "react-cismap/topicmaps/menu/Section";
 
-export const Menu50FAQ = () => {
+export const Menu50FAQ = ({ showOpened = false }) => {
   return (
     <Section
       key="faq"
       sectionKey="faq"
+      {...(showOpened ? { activeSectionKey: "faq" } : {})}
       sectionTitle="Häufig gestellte Fragen"
       sectionBsStyle="success"
       sectionContent={

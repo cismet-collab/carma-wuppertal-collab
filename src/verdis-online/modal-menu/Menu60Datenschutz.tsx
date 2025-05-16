@@ -1,10 +1,11 @@
 import Section from "react-cismap/topicmaps/menu/Section";
 
-export const Menu60Datenschutz = () => {
+export const Menu60Datenschutz = ({ showOpened = false }) => {
   return (
     <Section
       key="datenschutz"
       sectionKey="datenschutz"
+      {...(showOpened ? { activeSectionKey: "datenschutz" } : {})}
       sectionTitle="Datenschutz"
       sectionBsStyle="danger"
       sectionContent={
