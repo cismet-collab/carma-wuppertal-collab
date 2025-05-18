@@ -83,9 +83,9 @@ const Component = ({ showOverlayFromOutside }) => {
             Textelemente aus der erweiterten Info-Ansicht und die Schlüsselwörter aus der Fußzeile dieser Ansicht. 
             Neben den Kategorie-Symbolen werden unmittelbar Zahlen eingeblendet, welche die Anzahl der Treffer in der 
             jeweiligen Kategorie anzeigen. Sobald Ihre Suche Treffer ergibt, wird unten in der vertikalen Gliederung 
-            das Symbol {" "}<FontAwesomeIcon icon={faSearch} />{" "} <strong>Suchergebnisse</strong>aktiviert. Hier 
-            werden Ihnen alle Treffer Ihrer Suche auf einer Seite zusammengestellt. Die Kategorien, in denen die 
-            Karteninhalte gefunden wurden, finden Sie hier in den jeweiligen Überschriften. Wenn Sie Ihre Texteingabe 
+            das Symbol {" "}<FontAwesomeIcon icon={faSearch} />{" "} <strong>Suchergebnisse</strong> aktiviert. Hier 
+            werden Ihnen alle Treffer Ihrer Suche auf einer Seite zusammengestellt. Die Kategoriekombinationen, in denen 
+            die Karteninhalte gefunden wurden, finden Sie hier in den jeweiligen Überschriften. Wenn Sie Ihre Texteingabe 
             im Suchfeld mit der Eingabetaste ("return") abschließen, wird automatisch zu den Suchergebnissen gewechselt.
           </p>
           <p className="hide-on-small-screens">
