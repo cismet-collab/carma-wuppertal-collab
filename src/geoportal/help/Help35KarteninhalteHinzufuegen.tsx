@@ -10,6 +10,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 import { faMapPin } from "@fortawesome/free-solid-svg-icons";
 import { faList } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 
 const Component = ({ showOverlayFromOutside }) => {
   return (
@@ -72,6 +74,19 @@ const Component = ({ showOverlayFromOutside }) => {
             {" "}<FontAwesomeIcon icon={faList} />{" "} <strong>Entdecken</strong> stellen wir 
             Ihnen Karten (Kombinationen von Kartenebenen) mit konkreten Verwendungszwecken zur Verfügung, 
             die sich zur Beantwortung wiederkehrender Fragen bewährt haben.  
+          </p>
+          <p>
+            Der schnellste Weg zur Recherche nach Karteninhalten ist die Verwendung der Suche. Wenn Sie 
+            oben in der Eingabezeile "Suchbegriff eingeben" einen Text eingeben (probieren Sie es mal mit "Kita"), 
+            wird auf alle vertikalen und horizontalen Kategorien eine Filterung nach diesem Begriff angewendet. 
+            Dabei werden nicht nur die Bezeichnungen der Karteninhalte ausgewertet, sondern auch die beschreibenden 
+            Textelemente aus der erweiterten Info-Ansicht und die Schlüsselwörter aus der Fußzeile dieser Ansicht. 
+            Neben den Kategorie-Symbolen werden unmittelbar Zahlen eingeblendet, welche die Anzahl der Treffer in der 
+            jeweiligen Kategorie anzeigen. Sobald Ihre Suche Treffer ergibt, wird unten in der vertikalen Gliederung 
+            das Symbol {" "}<FontAwesomeIcon icon={faSearch} />{" "} <strong>Suchergebnisse</strong>aktiviert. Hier 
+            werden Ihnen alle Treffer Ihrer Suche auf einer Seite zusammengestellt. Die Kategorien, in denen die 
+            Karteninhalte gefunden wurden, finden Sie hier in den jeweiligen Überschriften. Wenn Sie Ihre Texteingabe 
+            im Suchfeld mit der Eingabetaste ("return") abschließen, wird automatisch zu den Suchergebnissen gewechselt.
           </p>
           <p className="hide-on-small-screens">
             <Link
