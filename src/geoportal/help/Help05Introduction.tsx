@@ -3,9 +3,15 @@ import { Link } from "../../helper-overlay/components/Link";
 const Help05Introduction = ({ showOverlayFromOutside }) => {
   return (
     <span>
-      Wählen Sie eine der folgenden farbigen Schaltflächen, um sich weitere
-      Bedienungs- und Hintergrundinformationen zu dem entsprechenden Thema
-      anzeigen zu lassen.
+      An dieser Stelle entsteht bis Ende 2026 in einem mehrstufigen 
+      Entwicklungsprozess die Portalkomponente zum Urbanen Digitalen 
+      Zwilling der Stadt Wuppertal („DigiTal Zwilling / Geoportal“). 
+      Die vorliegende Ausbaustufe 1 hat ihren Schwerpunkt noch bei der 
+      klassischen Aufgabe eines kommunalen Geoportals, einen digitalen 
+      Kartenatlas der Stadt in Form eines Baukastens kombinierbarer 
+      Kartenebenen bereitzustellen. Wählen Sie eine der folgenden farbigen 
+      Schaltflächen, um sich weitere Bedienungs- und Hintergrundinformationen 
+      zu dem entsprechenden Thema anzeigen zu lassen.
       <p className="hide-on-small-screens">
         Als alternative Unterstützung steht Ihnen auch eine{" "}
         <Link
