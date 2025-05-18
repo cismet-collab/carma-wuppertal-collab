@@ -73,7 +73,15 @@ const Component = ({ showOverlayFromOutside }) => {
             finden, die Sie als dynamische Kartenebenen in das Geoportal integrieren können. Unter 
             {" "}<FontAwesomeIcon icon={faList} />{" "} <strong>Entdecken</strong> stellen wir 
             Ihnen Karten (Kombinationen von Kartenebenen) mit konkreten Verwendungszwecken zur Verfügung, 
-            die sich zur Beantwortung wiederkehrender Fragen bewährt haben.  
+            die sich zur Beantwortung wiederkehrender Fragen bewährt haben. <strong>Profi-Tipp</strong>: 
+            Es gibt zwar noch keinen Dialog zum Hinzufügen von WMS-Kartendiensten, die nicht von der Stadt 
+            Wuppertal bereitgestellt werden (Realisierung in Folgestufe). Die Funktionalität ist aber schon 
+            vorhanden. Markieren Sie dazu einfach einen WMS-Capabilities-Link z. B. in der Adresszeile Ihres 
+            Browsers und ziehen Sie ihn mit gedrückter linker Maustaste in das Kartenfeld. Der Dialog 
+            "Karteninhalte hinzufügen" öffnet sich dann mit den Kartenebenen dieses Dienstes in der 
+            zusätzlichen thematischen Kategorie "Externe Dienste". Sie können diese Kartenebenen genau 
+            wie die von der Stadt Wuppertal bereitgestellten Ihrer aktuellen Kartenansicht hinzufügen 
+            oder favorisieren.  
           </p>
           <p>
             Der schnellste Weg zur Recherche nach Karteninhalten ist die Verwendung der Suche. Wenn Sie 
