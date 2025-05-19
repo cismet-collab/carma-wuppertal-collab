@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import data from "./_emob-sim.data";
-console.log("data", data);
-
+import Sim from "./EMobSIM";
 const meta: Meta = {
   title: "E-Auto Ladestationskarte",
   argTypes: {
     Beispiele: {
       control: { type: "select" },
-      options: ["Hardt / Elisenhöhe"],
+      options: ["Hardt / Elisenhöhe", "Parkhaus HofaueCity"],
     },
     Feature: {
       control: { type: "object" },
@@ -24,14 +23,21 @@ type Args = { filter: string };
 
 export const SecondaryInfo: StoryObj<Args> = {
   args: {
-    filter: "",
+    Beispiele: "Hardt / Elisenhöhe",
+    Feature: undefined,
   },
-  render: ({}) => {
+  render: ({ Beispiele, Feature: feature }) => {
     const modalBodyStyle: React.CSSProperties = {};
 
+    let _feature;
+    if (feature !== undefined && JSON.stringify(feature) !== "{}") {
+      _feature = feature;
+    } else {
+      _feature = data[Beispiele];
+    }
     return (
       <div id="myMenu" style={modalBodyStyle}>
-        xxx
+        <Sim feature={_feature} setOpen={(x) => {}} versionString="myVersion" />
       </div>
     );
   },
