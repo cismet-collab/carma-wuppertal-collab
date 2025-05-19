@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { SecondaryInfo as XAndRide } from "./_x-and-ride-sim.stories";
+import XAndRideStory, {
+  SecondaryInfo as XAndRide,
+} from "./_x-and-ride-sim.stories";
+import EbikeStory, { SecondaryInfo as Ebikes } from "./_ebikes-sim.stories";
 
 const meta: Meta = {
   title: "SecondaryInfo Modals",
@@ -7,14 +10,8 @@ const meta: Meta = {
 
 export default meta;
 
-XAndRide.argTypes = {
-  Beispiele: {
-    control: { type: "select" },
-    options: ["Pestalozzistrasse"],
-  },
-  Feature: {
-    control: { type: "object" },
-    description: "Paste your JSON here",
-  },
-};
+XAndRide.argTypes = XAndRideStory.argTypes;
 export { XAndRide };
+
+Ebikes.argTypes = EbikeStory.argTypes;
+export { Ebikes };

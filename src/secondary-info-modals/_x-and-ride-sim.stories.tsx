@@ -8,7 +8,7 @@ const meta: Meta = {
   argTypes: {
     Beispiele: {
       control: { type: "select" },
-      options: ["Pestalozzistrasse"],
+      options: ["Pestalozzistrasse", "Zoo/Stadion"],
     },
     Feature: {
       control: { type: "object" },
@@ -23,17 +23,18 @@ type Args = { feature: object };
 
 export const SecondaryInfo: StoryObj<Args> = {
   args: {
-    Beispiele: undefined,
+    Beispiele: "Pestalozzistrasse",
     Feature: undefined,
   },
   render: ({ Beispiele, Feature: feature }) => {
     const modalBodyStyle: React.CSSProperties = {};
+    console.log("Beispiele", Beispiele);
 
     let _feature;
     if (feature !== undefined && JSON.stringify(feature) !== "{}") {
       _feature = feature;
     } else {
-      _feature = data["Pestalozzistrasse"];
+      _feature = data[Beispiele];
     }
     console.log("feature", feature);
 
