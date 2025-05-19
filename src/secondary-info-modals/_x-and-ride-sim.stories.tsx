@@ -1,20 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Sim from "./XandRideSIM";
-import data from "./_x-and-ride-data";
-import React, { useEffect, useState } from "react";
-const DATA_URL =
-  "https://wupp-digitaltwin-assets.cismet.de/data/prbr.data.json";
+import data from "./_x-and-ride.data";
+import React from "react";
 
 const meta: Meta = {
   title: "X-And-Ride",
   argTypes: {
-    feature: {
+    Beispiele: {
+      control: { type: "select" },
+      options: ["Pestalozzistrasse"],
+    },
+    Feature: {
       control: { type: "object" },
       description: "Paste your JSON here",
-    },
-    beispielFeatures: {
-      control: { type: "select" },
-      options: ["Pestalozzistrasse", "b", "c"],
     },
   },
 };
@@ -25,9 +23,10 @@ type Args = { feature: object };
 
 export const SecondaryInfo: StoryObj<Args> = {
   args: {
-    feature: undefined,
+    Beispiele: undefined,
+    Feature: undefined,
   },
-  render: ({ feature }) => {
+  render: ({ Beispiele, Feature: feature }) => {
     const modalBodyStyle: React.CSSProperties = {};
 
     let _feature;

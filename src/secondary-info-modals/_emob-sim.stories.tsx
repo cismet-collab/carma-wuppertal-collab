@@ -1,8 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import data from "./_emob-sim.data";
+console.log("data", data);
 
 const meta: Meta = {
   title: "E-Auto Ladestationskarte",
-  argTypes: {},
+  argTypes: {
+    Beispiele: {
+      control: { type: "select" },
+      options: ["Hardt / Elisenhöhe"],
+    },
+    Feature: {
+      control: { type: "object" },
+      description: "Paste your JSON here",
+    },
+  },
 };
 
 export default meta;

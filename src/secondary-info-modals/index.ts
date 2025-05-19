@@ -7,7 +7,8 @@ for (const path in modules) {
   // Skip this file if it matches index.tsx/js/jsx or any .stories.tsx/js/jsx file
   if (
     /index\.(tsx|jsx|js)$/.test(path) ||
-    /\.stories\.(tsx|jsx|js)$/.test(path)
+    /\.stories\.(tsx|jsx|js)$/.test(path) ||
+    /\.data\.(tsx|jsx|js)$/.test(path)
   )
     continue;
   // Extract the filename without extension, e.g. './HelpTextDemo.tsx' -> 'HelpTextDemo'
