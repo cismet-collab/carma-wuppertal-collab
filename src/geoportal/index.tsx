@@ -8,9 +8,12 @@ import Help40KarteninhalteUntersuchen from "./help/Help40KarteninhalteUntersuche
 import Help45KartenDrucken from "./help/Help45KartenDrucken";
 import Help50MeinStandort from "./help/Help50MeinStandort";
 import Help90Haftungsausschluss from "./help/Help90Haftungsausschluss";
+import extServiceBackgroundImage from "./assets/extServiceBackground.jpg";
 import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
 import { Footer } from "./Footer";
 export { tooltipText } from "./tooltips";
+export { extServiceText } from "./ExtService";
+export { extServiceBackgroundImage };
 export { searchTextPlaceholder } from "./searchTextPlaceholder";
 export { mobileInfo } from "./mobileInfo";
 export { elements as geoElements } from "./elements";
@@ -54,9 +57,9 @@ const getCollabedHelpComponentConfig = ({
       showOverlayFromOutside={showOverlayFromOutside}
       key="InKartePositionieren"
     />,
-    <Help35KarteninhalteHinzufuegen 
+    <Help35KarteninhalteHinzufuegen
       showOverlayFromOutside={showOverlayFromOutside}
-      key="KarteninhalteHinzufuegen" 
+      key="KarteninhalteHinzufuegen"
     />,
     <Help40KarteninhalteUntersuchen key="KarteninhalteUntersuchen" />,
     <Help45KartenDrucken key="KartenDrucken" />,
