@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import data from "./_luftmessstationen-sim.data";
-console.log("data", data);
+import Sim from "./LuftmessstationenSIM";
 
 const meta: Meta = {
   title: "Luftmessstationen",
@@ -19,20 +19,33 @@ const meta: Meta = {
 export default meta;
 
 import React from "react";
+import TopicMapContextProvider from "react-cismap/contexts/TopicMapContextProvider";
 
 type Args = { filter: string };
 
 export const SecondaryInfo: StoryObj<Args> = {
   args: {
-    filter: "",
+    Beispiele: "Hofkamp 86",
+    Feature: undefined,
   },
-  render: ({}) => {
+  render: ({ Beispiele, Feature: feature }) => {
     const modalBodyStyle: React.CSSProperties = {};
-
+    let _feature;
+    if (feature !== undefined && JSON.stringify(feature) !== "{}") {
+      _feature = feature;
+    } else {
+      _feature = data[Beispiele];
+    }
     return (
-      <div id="myMenu" style={modalBodyStyle}>
-        xxx
-      </div>
+      <TopicMapContextProvider>
+        <div id="myMenu" style={modalBodyStyle}>
+          <Sim
+            feature={_feature}
+            setOpen={(x) => {}}
+            versionString="myVersion"
+          />
+        </div>
+      </TopicMapContextProvider>
     );
   },
 };
