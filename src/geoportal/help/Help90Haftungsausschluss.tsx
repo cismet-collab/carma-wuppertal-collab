@@ -8,14 +8,15 @@ const Component = () => {
       sectionBsStyle="danger"
       sectionContent={
         <div>
-          Could now she how in was sleep dropped in by back shall come into
-          needed wild that picture they to have would by her succeeding, hair a
-          with the I first should expected line of so got her solitary the and
-          that coffee that omens, treble-range are quitting for high line text,
-          parts else. A have the unprofitable both the leather at neighbours in
-          on each written and assignment. When me the his degree read. She that
-          the equation, of by hand. Select picture spare not got in social and
-          parameters absolutely he and that if the alphabet carpeting of.
+          Alle hier veröffentlichten Informationen wurden mit der bestmöglichen Sorgfalt 
+          zusammengestellt und kontrolliert. Dennoch sind Fehler nie ausgeschlossen, sodass 
+          für die Richtigkeit und damit auch Nutzbarkeit der Informationen keine Gewähr 
+          übernommen werden kann. Die Anwendung "DigiTal Zwilling / Geoportal" ermöglicht 
+          zudem das Hinzuladen standardisierter Kartendienste anderer Herausgeber, für deren 
+          Inhalt die Stadt Wuppertal naturgemäß keine Verantwortung übernehmen kann. Eine 
+          Haftung für Schäden, die sich aus der Nutzung der hier bereitgestellten oder 
+          zugänglich gemachten Informationen ergeben, wird daher ausgeschlossen. Dem stimmen 
+          Sie mit der Nutzung der Daten zu.
         </div>
       }
     />
