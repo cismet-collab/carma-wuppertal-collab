@@ -16,7 +16,7 @@ const Component = () => {
           zu allen Datenquellen des DigiTal Zwillings und allen allgemeinen 
           Visualisierungsmethoden und Funktionen, die für eine größere Anzahl von 
           Datenquellen und Anwendungssituationen von Nutzen sind. Zum DigiTal Zwilling 
-          gehören auch die sog. Teilzwillinge. Dies sind Anwendungen, die einen 
+          gehören auch die sogenannten Teilzwillinge. Dies sind Anwendungen, die einen 
           themenspezifischen Ausschnitt aus den Daten und Methoden des DigiTal Zwillings 
           für einen spezifischen Anwendungsfall darstellen, z. B. die{" "} 
           <a target="_legal" href="https://digital-twin-wuppertal-live.github.io/rainhazardmap/">
@@ -25,7 +25,7 @@ const Component = () => {
           verfügbaren Teilzwillingen gelangen Sie über den{" "} 
           <a 
               className="renderAsLink" 
-              onClick={() => setAppMenuActiveMenuSection("karteninhalte")}>
+              onClick={() => setAppMenuActiveMenuSection("KarteninhalteHinzufuegen")}>
                 Dialog Karteninhalte hinzufügen
           </a>. 
         </>
