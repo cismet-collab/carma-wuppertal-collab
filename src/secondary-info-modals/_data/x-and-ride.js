@@ -155,36 +155,40 @@ const data = {
         }
     },
     "PR: Adlerbrücke (Schwebebahn-Haltestelle) (VT)": {
-        "id": 35,
-        "name": "Adlerbrücke (Schwebebahn-Haltestelle)",
-        "foto": "https://www.wuppertal.de/geoportal/prbr/fotos/foto_adler_bruecke_2.jpg",
-        "beschreibung": "Die Anlage befindet sich südlich der Schwebebahn-Haltestelle und ist über die Straße Unterdörnen sowie die Friedrich-Engels-Allee zu erreichen.",
-        "is_in_uwz": "innerhalb",
-        "ueberdachung": "nicht vorhanden",
-        "anzahl_plaetze": 34,
-        "haltestelle": "Wuppertal, Adlerbrücke",
-        "anbindung_schwebebahn": "vorhanden",
-        "buslinien": "NE 5, 640, 611",
-        "bahnlinien": "keine Anbindung an den Bahnverkehr",
-        "topicmap": "https://wunda-geoportal.cismet.de/#xandride?title",
-        "typ": "P",
-        "vectorId": 14
+        properties: {
+            "id": 35,
+            "name": "Adlerbrücke (Schwebebahn-Haltestelle)",
+            "foto": "https://www.wuppertal.de/geoportal/prbr/fotos/foto_adler_bruecke_2.jpg",
+            "beschreibung": "Die Anlage befindet sich südlich der Schwebebahn-Haltestelle und ist über die Straße Unterdörnen sowie die Friedrich-Engels-Allee zu erreichen.",
+            "is_in_uwz": "innerhalb",
+            "ueberdachung": "nicht vorhanden",
+            "anzahl_plaetze": 34,
+            "haltestelle": "Wuppertal, Adlerbrücke",
+            "anbindung_schwebebahn": "vorhanden",
+            "buslinien": "NE 5, 640, 611",
+            "bahnlinien": "keine Anbindung an den Bahnverkehr",
+            "topicmap": "https://wunda-geoportal.cismet.de/#xandride?title",
+            "typ": "P",
+            "vectorId": 14
+        }
     },
     "BR: Adlerbrücke (Schwebebahn-Haltestelle) (VT)": {
-        "id": 29,
-        "name": "Adlerbrücke (Schwebebahn-Haltestelle)",
-        "foto": "https://www.wuppertal.de/geoportal/prbr/fotos/foto_adler_bruecke.jpg",
-        "beschreibung": "Die Anlage befindet sich südlich der Schwebebahn-Haltestelle und ist über die Straße Unterdörnen sowie die Friedrich-Engels-Allee zu erreichen.",
-        "is_in_uwz": "innerhalb",
-        "ueberdachung": "nicht vorhanden",
-        "anzahl_plaetze": 10,
-        "haltestelle": "Wuppertal, Adlerbrücke",
-        "anbindung_schwebebahn": "vorhanden",
-        "buslinien": "NE 5, 611",
-        "bahnlinien": "keine Anbindung an den Bahnverkehr",
-        "topicmap": "https://wunda-geoportal.cismet.de/#xandride?title",
-        "typ": "B",
-        "vectorId": 45
+        properties: {
+            "id": 29,
+            "name": "Adlerbrücke (Schwebebahn-Haltestelle)",
+            "foto": "https://www.wuppertal.de/geoportal/prbr/fotos/foto_adler_bruecke.jpg",
+            "beschreibung": "Die Anlage befindet sich südlich der Schwebebahn-Haltestelle und ist über die Straße Unterdörnen sowie die Friedrich-Engels-Allee zu erreichen.",
+            "is_in_uwz": "innerhalb",
+            "ueberdachung": "nicht vorhanden",
+            "anzahl_plaetze": 10,
+            "haltestelle": "Wuppertal, Adlerbrücke",
+            "anbindung_schwebebahn": "vorhanden",
+            "buslinien": "NE 5, 611",
+            "bahnlinien": "keine Anbindung an den Bahnverkehr",
+            "topicmap": "https://wunda-geoportal.cismet.de/#xandride?title",
+            "typ": "B",
+            "vectorId": 45
+        }
     }
 
 }
