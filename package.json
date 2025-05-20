@@ -1,7 +1,7 @@
 {
   "name": "carma-wuppertal-collab-vite",
   "private": true,
-  "version": "0.105.14",
+  "version": "0.106.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -30,7 +30,7 @@
     "react-dom": "18.2.0",
     "tslib": "^2.3.0",
     "ua-parser-js": "^1.0.40"
-    },
+  },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
     "@nx/react": "^19.5.4",
