@@ -7,6 +7,7 @@ import EMobStory, { SecondaryInfo as EMob } from "./_emob-sim.stories";
 import LuftmessstationenStory, {
   SecondaryInfo as Luftmessstationen,
 } from "./_luftmessstationen-sim.stories";
+import SIMComponentDictionary from ".";
 
 
 const meta: Meta = {
@@ -14,6 +15,22 @@ const meta: Meta = {
 };
 
 export default meta;
+
+// Story that prints out all prop keys of SIMComponentDictionary
+export const SIMDictionaryKeys = () => {
+  const keys = Object.keys(SIMComponentDictionary);
+  return (
+    <div>
+      <h3>SIMComponentDictionary Keys</h3>
+      <pre>
+        {keys.map((key) => (
+          <li key={key}>{key}</li>
+        ))}
+      </pre>
+    </div>
+  );
+};
+
 
 XAndRide.argTypes = XAndRideStory.argTypes;
 export { XAndRide };
