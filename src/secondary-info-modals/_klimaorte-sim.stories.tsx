@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import data from "./_klimaorte-sim.data";
+import data from "./_data/klimaorte";
 console.log("data", data);
 
 const meta: Meta = {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import data from "./_luftmessstationen-sim.data";
+import data from "./_data/luftmessstationen";
 import Sim from "./LuftmessstationenSIM";
 
 const meta: Meta = {
@@ -18,8 +18,6 @@ const meta: Meta = {
 
 export default meta;
 
-import React from "react";
-import TopicMapContextProvider from "react-cismap/contexts/TopicMapContextProvider";
 
 type Args = { filter: string };
 
@@ -37,7 +35,6 @@ export const SecondaryInfo: StoryObj<Args> = {
       _feature = data[Beispiele];
     }
     return (
-      <TopicMapContextProvider>
         <div id="myMenu" style={modalBodyStyle}>
           <Sim
             feature={_feature}
@@ -45,7 +42,6 @@ export const SecondaryInfo: StoryObj<Args> = {
             versionString="myVersion"
           />
         </div>
-      </TopicMapContextProvider>
     );
   },
 };

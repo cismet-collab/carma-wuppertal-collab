@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import data from "./secondary-info-modals/_luftmessstationen-sim.data";
+import data from "./secondary-info-modals/_data/luftmessstationen";
 import Sim from "./secondary-info-modals/LuftmessstationenSIM";
 import TopicMapContextProvider from "react-cismap/contexts/TopicMapContextProvider";
 

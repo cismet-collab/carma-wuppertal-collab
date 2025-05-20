@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Sim from "./XandRideSIM";
-import data from "./_x-and-ride.data";
+import data from "./_data/x-and-ride";
 import React from "react";
 
 const meta: Meta = {

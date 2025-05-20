@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import data from "./_emob-sim.data";
+import data from "./_data/emob";
 import Sim from "./EMobSIM";
 const meta: Meta = {
   title: "E-Auto Ladestationskarte",
