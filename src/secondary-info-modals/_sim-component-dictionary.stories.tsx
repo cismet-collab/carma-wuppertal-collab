@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import XAndRideStory, {
   SecondaryInfo as XAndRide,
 } from "./_x-and-ride-sim.stories";

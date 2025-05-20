@@ -9,10 +9,19 @@ import { Button, Modal, Accordion, Card } from "react-bootstrap";
 // import { SecondaryInfoFooter } from "@carma-collab/wuppertal/e-bikes";
 import { SecondaryInfoFooter } from "../e-bikes";
 
+interface FeatureType {
+  properties?: any;
+  [key: string]: any;
+}
+
 const SecondaryInfoModal = ({
   feature = {},
-  setOpen = (x) => {},
+  setOpen = () => {},
   versionString = "???",
+}: {
+  feature?: FeatureType;
+  setOpen?: (open: boolean) => void;
+  versionString?: string;
 }) => {
   const close = () => {
     setOpen(false);

@@ -19,14 +19,14 @@ const meta: Meta = {
 export default meta;
 
 
-type Args = { filter: string };
+type Args = { Beispiele: string; Feature?: any; filter?: string };
 
 export const SecondaryInfo: StoryObj<Args> = {
   args: {
     Beispiele: Object.keys(data)[0],
     Feature: undefined,
   },
-  render: ({ Beispiele, Feature: feature }) => {
+  render: ({ Beispiele, Feature: feature }: Args) => {
     const modalBodyStyle: React.CSSProperties = {};
     let _feature;
     if (feature !== undefined && JSON.stringify(feature) !== "{}") {
@@ -38,7 +38,7 @@ export const SecondaryInfo: StoryObj<Args> = {
         <div id="myMenu" style={modalBodyStyle}>
           <Sim
             feature={_feature}
-            setOpen={(x) => {}}
+            setOpen={() => {}}
             versionString="myVersion"
           />
         </div>

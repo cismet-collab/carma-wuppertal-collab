@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <div id="myMenu">
           <Sim
             feature={data["Hofkamp 86"]}
-            setOpen={(x) => {}}
+            setOpen={() => {}}
             versionString="myVersion"
           />
         </div>
