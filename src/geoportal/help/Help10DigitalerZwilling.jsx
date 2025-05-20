@@ -21,11 +21,11 @@ const Component = () => {
           für einen spezifischen Anwendungsfall darstellen, z. B. die{" "} 
           <a target="_legal" href="https://digital-twin-wuppertal-live.github.io/rainhazardmap/">
           Starkregengefahrenkarte</a>. In den Teilzwillingen finden Sie weitergehende, spezielle 
-          Visualisierungsmethoden und Funktionen, die wir imGeoportal nicht anbieten. Zu den 
+          Visualisierungsmethoden und Funktionen, die wir im Geoportal nicht anbieten. Zu den 
           verfügbaren Teilzwillingen gelangen Sie über den{" "} 
           <a 
               className="renderAsLink" 
-              onClick={() => setAppMenuActiveMenuSection("KarteninhalteHinzufuegen")}>
+              onClick={() => setAppMenuActiveMenuSection("karteninhalte")}>
                 Dialog Karteninhalte hinzufügen
           </a>. 
         </>
