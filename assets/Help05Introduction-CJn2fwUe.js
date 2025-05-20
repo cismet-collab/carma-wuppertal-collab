@@ -1,1 +1,0 @@
-import{R as e}from"./index-CTjT7uj6.js";const t=()=>e.createElement("span",null,"Bitte wählen Sie eine der folgenden farbigen Schaltflächen, um sich weitere Informationen zu dem entsprechenden Thema anzeigen zu lassen:");export{t as S};
