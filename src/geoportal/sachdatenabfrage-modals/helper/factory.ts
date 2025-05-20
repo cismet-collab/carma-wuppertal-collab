@@ -1,6 +1,7 @@
 import EMobiModal from "../EMobiModal";
 import EMobiRadModal from "../EMobiRadModal";
 import TrinkwasserModal from "../TrinkwasserModal";
+import SIMComponentDictionary from "../../../secondary-info-modals/";
 
 export const additionalInfoFactory = (id: string) => {
   switch (id) {
@@ -11,6 +12,6 @@ export const additionalInfoFactory = (id: string) => {
     case "trinkwasser":
       return TrinkwasserModal;
     default:
-      return null;
+      return SIMComponentDictionary[id] || null;
   }
 };
