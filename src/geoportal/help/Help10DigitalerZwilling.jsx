@@ -11,7 +11,7 @@ const Component = () => {
       sectionContent=<GenericDigitalTwinReferenceTextComponent pretext={
         <>
           Willkommen in der Portalkomponente zum <strong>DigiTal Zwilling</strong>, 
-          dem{" "}  <a href="https://smart.wuppertal.de/projekte/digital-zwilling.php">
+          dem{" "} <a href="https://smart.wuppertal.de/projekte/digital-zwilling.php">
           Urbanen Digitalen Zwilling der Stadt Wuppertal!</a>{" "} Hier haben Sie Zugang 
           zu allen Datenquellen des DigiTal Zwillings und allen allgemeinen 
           Visualisierungsmethoden und Funktionen, die für eine größere Anzahl von 
