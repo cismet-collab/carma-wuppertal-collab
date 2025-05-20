@@ -3,19 +3,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Modal, Accordion, Card } from "react-bootstrap";
 import { SecondaryInfoFooter } from "../x-and-ride";
 import logo_vrr from "./assets/logo-vrr.png";
+import { convertVTEntryToFeatureProperties } from "./helper/xandride";
 
 const SecondaryInfoModal = ({
   feature = {},
   setOpen = (x) => {},
   versionString = "???",
 }) => {
+  let _feature;
+  if (feature.type !== "Feature") {
+    _feature = convertVTEntryToFeatureProperties(feature);
+  } else {
+    _feature = feature;
+  }
+  console.log("feature", _feature);
+
   const close = () => {
     setOpen(false);
   };
   let urlPrefix = window.location.origin + window.location.pathname;
-  console.log("xxx feature", feature);
+  console.log("xxx feature", _feature);
 
-  const properties = feature.properties;
+  const properties = _feature.properties;
   const groupingFunction = (obj) => {
     if (obj.schluessel === "P") {
       return "P+R";
