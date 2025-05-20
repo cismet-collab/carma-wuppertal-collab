@@ -1,11 +1,17 @@
-import React from "react";
+import React, { type ReactNode } from "react";
 import Logo_DigiTalZwilling from "./assets/Logo_DigiTalZwilling.png";
 import KFW_Logo from "./assets/KFW_Logo.jpg";
 import BMWSB_Logo from "./assets/BMWSB_Logo.png";
 
+interface GenericDigitalTwinReferenceTextComponentProps {
+  preText?: string | ReactNode;
+}
+
 const imageStyle = { height: "120px" };
 
-const GenericDigitalTwinReferenceTextComponent: React.FC = () => {
+const GenericDigitalTwinReferenceTextComponent: React.FC = ({
+  preText,
+}: GenericDigitalTwinReferenceTextComponentProps) => {
   return (
     <div>
       <p>
@@ -20,21 +26,25 @@ const GenericDigitalTwinReferenceTextComponent: React.FC = () => {
           height="120"
           src={Logo_DigiTalZwilling}
         />
-        <div>
-          Diese Anwendung basiert auf dem <b>DigiTal Zwilling</b>, dem{" "}
-          <a
-            href="https://smart.wuppertal.de/projekte/digital-zwilling.php"
-            title="DigiTal Zwilling"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Urbanen Digitalen Zwilling der Stadt Wuppertal
-          </a>
-          . Im Konzept des DigiTal Zwillings implementiert die Anwendung einen{" "}
-          <b>Teilzwilling</b>, also einen themenspezifischen Ausschnitt aus den
-          Daten und Methoden des DigiTal Zwillings für einen spezifischen
-          Anwendungsfall.
-        </div>
+        {preText ? (
+          preText
+        ) : (
+          <div>
+            Diese Anwendung basiert auf dem <b>DigiTal Zwilling</b>, dem{" "}
+            <a
+              href="https://smart.wuppertal.de/projekte/digital-zwilling.php"
+              title="DigiTal Zwilling"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Urbanen Digitalen Zwilling der Stadt Wuppertal
+            </a>
+            . Im Konzept des DigiTal Zwillings implementiert die Anwendung einen{" "}
+            <b>Teilzwilling</b>, also einen themenspezifischen Ausschnitt aus
+            den Daten und Methoden des DigiTal Zwillings für einen spezifischen
+            Anwendungsfall.
+          </div>
+        )}
       </p>
       <p>
         Der Aufbau des DigiTal Zwillings ist eines der drei großen
@@ -45,7 +55,6 @@ const GenericDigitalTwinReferenceTextComponent: React.FC = () => {
           title="Eine Smart City Strategie für Wuppertal"
           target="_blank"
           rel="noopener noreferrer"
-
         >
           smart.wuppertal
         </a>
