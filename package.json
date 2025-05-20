@@ -24,15 +24,14 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@swc/helpers": "~0.5.2",
     "antd": "^5.19.4",
-    "chart.js": "^4.4.3",
+    "chart.js": "2.9.4",
     "leaflet": "^1.9.4",
     "react-bootstrap": "^1.6.8",
     "react-cismap": "^2.5.9",
     "react-dom": "18.2.0",
     "tslib": "^2.3.0",
-    "ua-parser-js": "^1.0.40",
-    "react-chartjs-2": "^5.2.0"
-  },
+    "ua-parser-js": "^1.0.40"
+    },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
     "@nx/react": "^19.5.4",

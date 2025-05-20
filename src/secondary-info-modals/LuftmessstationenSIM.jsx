@@ -12,10 +12,8 @@ import { Chart } from "chart.js";
 import ReactChartkick, { ColumnChart } from "react-chartkick";
 import Color from "color";
 import Icon from "react-cismap/commons/Icon";
-import { Doughnut } from "react-chartjs-2";
 
 import { SecondaryInfoFooter } from "../luftmessstationen";
-import "chart.js/auto";
 ReactChartkick.addAdapter(Chart);
 
 const InfoPanel = ({
