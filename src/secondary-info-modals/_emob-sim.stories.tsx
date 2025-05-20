@@ -6,7 +6,7 @@ const meta: Meta = {
   argTypes: {
     Beispiele: {
       control: { type: "select" },
-      options: ["Hardt / Elisenhöhe", "Parkhaus HofaueCity"],
+      options: Object.keys(data),
     },
     Feature: {
       control: { type: "object" },
@@ -23,7 +23,7 @@ type Args = { filter: string };
 
 export const SecondaryInfo: StoryObj<Args> = {
   args: {
-    Beispiele: "Hardt / Elisenhöhe",
+    Beispiele: Object.keys(data)[0],
     Feature: undefined,
   },
   render: ({ Beispiele, Feature: feature }) => {

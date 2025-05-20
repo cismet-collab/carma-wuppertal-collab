@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import data from "./_data/klimaorte";
-console.log("data", data);
 
 const meta: Meta = {
   title: "Klimaorte",
   argTypes: {
     Beispiele: {
       control: { type: "select" },
-      options: ["Berufskolleg am Haspel"],
+      options: Object.keys(data),
     },
     Feature: {
       control: { type: "object" },
