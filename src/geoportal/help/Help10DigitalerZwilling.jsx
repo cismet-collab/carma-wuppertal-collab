@@ -22,7 +22,7 @@ const Component = () => {
           <a href="https://digital-twin-wuppertal-live.github.io/rainhazardmap/">Starkregengefahrenkarte</a>. 
           In den Teilzwillingen finden Sie weitergehende, spezielle Visualisierungsmethoden 
           und Funktionen, die wir Geoportal nicht anbieten. Zu den verfügbaren Teilzwillingen 
-          gelangen Sie über den Dialog Karteninhalte hinzufügen.
+          gelangen Sie über den Dialog Karteninhalte hinzufügen. 
         </>
         } 
       />
