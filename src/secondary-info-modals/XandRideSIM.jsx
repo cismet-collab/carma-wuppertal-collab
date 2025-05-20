@@ -12,7 +12,7 @@ const SecondaryInfoModal = ({
 }) => {
   let _feature;
   if (feature.type !== "Feature") {
-    _feature = convertVTEntryToFeatureProperties(feature);
+    _feature = convertVTEntryToFeatureProperties(feature.properties);
   } else {
     _feature = feature;
   }
