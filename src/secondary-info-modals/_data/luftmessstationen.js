@@ -906,6 +906,33 @@ const data = {
       "foto": "https://www.wuppertal.de/geoportal/luftmessstationen/fotos/MP05.jpeg"
     },
     "id": 30
+  },
+  "Friedrich-Engels-Allee 308 (VT)": {
+    "mp": 38,
+    "adresse": "Friedrich-Engels-Allee 308",
+    "bild": "https://www.wuppertal.de/geoportal/luftmessstationen/fotos/MP38.jpeg",
+    "zusatzinfo": "Mittelgrünstreifen",
+    "hoehe": 151,
+    "von": "2008-01-01",
+    "signatur": "svg-signaturen/Luft_Icon_Messstation_unauffaellig_farbig.svg",
+    "status": "Diese Station ist seit dem 01.01.2008 aktiv.",
+    "beschriftung": "Friedrich-Engels-Allee 308 (Mittelgrünstreifen)",
+    "schrift": "#194761",
+    "signatur_geoportal": "unauffällig",
+    "vectorId": 20
+  },
+  "Schönebecker Str. 81 (VT)": {
+    "mp": 14,
+    "adresse": "Schönebecker Str. 81",
+    "bild": "https://www.wuppertal.de/geoportal/luftmessstationen/fotos/MP14.jpeg",
+    "hoehe": 189,
+    "von": "2006-01-01",
+    "signatur": "svg-signaturen/Luft_Icon_Messstation_unauffaellig_farbig.svg",
+    "status": "Diese Station ist seit dem 01.01.2006 aktiv.",
+    "beschriftung": "Schönebecker Str. 81",
+    "schrift": "#194761",
+    "signatur_geoportal": "unauffällig",
+    "vectorId": 34
   }
 };
 export default data;
