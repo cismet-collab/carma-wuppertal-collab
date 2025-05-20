@@ -8,7 +8,7 @@ const Component = () => {
       sectionKey="zwilling"
       sectionTitle="Urbaner Digitaler Zwilling"
       sectionBsStyle="warning"
-      sectionContent={<GenericDigitalTwinReferenceTextComponent />}
+      sectionContent={<GenericDigitalTwinReferenceTextComponent pretext={"Willkommen in der Portalkomponente zum DigiTal Zwilling, dem Urbanen Digitalen Zwilling der Stadt Wuppertal!"}/>}
     />
   );
 };

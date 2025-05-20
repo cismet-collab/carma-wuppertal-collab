@@ -25,6 +25,7 @@ const Help05Introduction = ({ showOverlayFromOutside }) => {
         einzelnen Bedienungselemente des Portals erforschen können.
       </span>
     </span>
+    <br/>
   );
 };
 
