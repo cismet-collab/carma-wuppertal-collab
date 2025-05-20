@@ -4,13 +4,13 @@ import KFW_Logo from "./assets/KFW_Logo.jpg";
 import BMWSB_Logo from "./assets/BMWSB_Logo.png";
 
 interface GenericDigitalTwinReferenceTextComponentProps {
-  preText?: string | ReactNode;
+  pretext?: string | ReactNode;
 }
 
 const imageStyle = { height: "120px" };
 
 const GenericDigitalTwinReferenceTextComponent: React.FC = ({
-  preText,
+  pretext,
 }: GenericDigitalTwinReferenceTextComponentProps) => {
   return (
     <div>
@@ -26,8 +26,8 @@ const GenericDigitalTwinReferenceTextComponent: React.FC = ({
           height="120"
           src={Logo_DigiTalZwilling}
         />
-        {preText ? (
-          preText
+        {pretext ? (
+          pretext
         ) : (
           <div>
             Diese Anwendung basiert auf dem <b>DigiTal Zwilling</b>, dem{" "}
