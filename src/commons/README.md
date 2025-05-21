@@ -8,9 +8,9 @@ Die Verlinkung auf einen weiteren Abschnitt der Kompaktanleitung kann in 3 Schri
 2. Verlinken des Textes mit der Link Komponente
 3. `setAppMenuActiveMenuSection` Funktion als Property übergeben
 
-Hier jetzt eine genauere Beschreibund des Ablaufs:
+Hier jetzt eine genauere Beschreibung des Ablaufs:
 
-Um eine Verknüpfung zwischen einem Textabschnitt und einem Abschnitt der Kompaktanleitung herzustellen, muss man anstelle des normalen `<a></a>` Tags das `<Link></Link>` Tag aus react-scroll verwenden.
+Um eine Verknüpfung zwischen einem Textabschnitt und einem Abschnitt der Kompaktanleitung herzustellen, muss man anstelle des normalen `<a></a>` Tags, den `<Link></Link>` Tag aus react-scroll verwenden.
 Dafür muss die Link Komponente wie folgt am Anfang der Datei importiert werden:
 
 ```tsx
