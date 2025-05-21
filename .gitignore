@@ -31,3 +31,7 @@ storybook-static/*
 .githash
 .gitdescribe
 .npmrc
+makeHotlinkForDeveloping.sh
+🚨🚨🚨-probably-linked-to-carma🚨🚨🚨
+.gitignore
+unlinkingHotlinkForDeveloping.sh
