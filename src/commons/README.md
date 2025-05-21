@@ -78,14 +78,55 @@ const MenuSections = () => {
 
 ## Link zum Hilfe Overlay
 
-Der Link zum Hilfe-Overlay funktioniert im Grunde wie der Link zu einem Abschnitt der Kompaktanleitung. Es wird auch hier wieder die <Link></Link> Komponente aus react-scroll verwendet. Der einzige Unterschied ist diesmal, dass wir anstatt der `setAppMenuActiveMenuSection`-Funktion die `showOverlayFromOutside`-Funktion aufrufen. Diese muss aber aus Carma kommen und muss hier nur entsprechend als Property angegeben werden.
+Der Link zum Hilfe-Overlay wird über die <HelpOverlayLink></HelpOverlayLink> Komponente genutzt. Dies ist eine eigene Link Komponente die von uns erstellt wurde um die Verlinkung zwischen der Kompaktanleitung und dem Hilfe-Overlay zu ermöglichen.
+Auch diese muss als erstes importiert werden. Dafür gibt es aber keinen Import Code der immer funktioniert, da diese Komponente im Collab Projekt definiert wurde und dadurch einen relativen Pfad bekommt. Ein Beispiel dazu aus den Hilfetexten des Geoportals:
+
+```tsx
+import { HelpOverlayLink } from "../../helper-overlay/components/Link";
+```
+
+Dieser Link benötigt nun anstatt `setAppMenuActiveMenuSection` wie vorher die Funktion `showOverlayFromOutside` als Property. Dies sieht dann wie folgt aus:
 
 ```tsx
 const Component = ({ showOverlayFromOutside }) => {};
 ```
 
+Diese Funktion kann entweder ohne Parameter aufgerufen werden und würde dadurch einfach nur das Hilfe-Overlay öffnen ohne einen bestimmten Abschnitt zu aktivieren.
+
+```tsx
+<HelpOverlayLink onClick={() => showOverlayFromOutside()}>
+  Hilfefolie
+</HelpOverlayLink>
+```
+
+Um einen bestimmten Abschnitt zu aktivieren muss der entsprechende Key dazu übergeben werden. Die Keys können in der [elements.tsx](../geoportal/elements.tsx) Datei gefunden werden. Wenn man nun bspw. auf die Gazetteer Suche verlinkt, sieht das dann so aus:
+
+```tsx
+<HelpOverlayLink onClick={() => showOverlayFromOutside("GAZETTEER_SUCHE")}>
+  Gazetteer Suche
+</HelpOverlayLink>
+```
+
 Da das Hilfe-Overlay auf kleinen Bildschirmen aktuell nicht zur Verfügung steht, gibt es die Möglichkeit, die entsprechenden Verweise im Hilfetext auf kleinen Bildschirmen zu verstecken. Dafür wird nur die Klasse `hide-on-small-screens` benötigt. Diese wird wie folgt angewendet:
 
 ```tsx
-<Link className="hide-on-small-screens">Link zur Hilfefolie</Link>
+<HelpOverlayLink className="hide-on-small-screens">
+  Link zur Hilfefolie
+</HelpOverlayLink>
+```
+
+Dieser Link kann aber auch als Verlinkung innerhalb des Hilfe-Overlays genutzt werden. Auch hierfür wird wieder der Key aus der elements.tsx Datei benötigt. Dieser wird jetzt aber einfach nur als target angegeben und dadurch automatisch vom Hilfe-Overlay erkannt und aktiviert.
+
+```tsx
+<HelpOverlayLink target="GAZETTEER_SUCHE">
+  Link zur Gazetteer Suche
+</HelpOverlayLink>
+```
+
+Dann gibt es auch noch eine Verlinkung aus dem Hilfe-Overlay zu verschiedenen Abschnitten in der Kompaktanleitung. Dafür werden wieder die `sectionKeys` der Menüabschnitte benötigt. Diese werden dann wie folgt angegeben:
+
+```tsx
+<HelpOverlayLink section="positionieren">
+  Link zur Kompaktanleitung
+</HelpOverlayLink>
 ```
