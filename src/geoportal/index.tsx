@@ -47,34 +47,42 @@ const getCollabedHelpComponentConfig = ({
   );
   const menuIcon = "info";
   const menuTitle = "Kompaktanleitung und Hintergrundinformationen";
-  const menuSections = [
-    <Help10DigitalerZwilling key="zwilling" />,
-    <Help20HintergrundkarteAuswaehlen
-      showOverlayFromOutside={showOverlayFromOutside}
-      key="HintergrundkarteAuswaehlen"
-    />,
-    <Help30InKartePositionieren
-      showOverlayFromOutside={showOverlayFromOutside}
-      key="InKartePositionieren"
-    />,
-    <Help35KarteninhalteHinzufuegen
-      showOverlayFromOutside={showOverlayFromOutside}
-      key="KarteninhalteHinzufuegen"
-    />,
-    <Help40KarteninhalteUntersuchen key="KarteninhalteUntersuchen" />,
-    <Help45KartenDrucken key="KartenDrucken" />,
-    <Help50MeinStandort
-      showOverlayFromOutside={showOverlayFromOutside}
-      key="MeinStandort"
-    />,
-    <Help90Haftungsausschluss key="Haftungsausschluss" />,
-  ];
+  const MenuSections = () => {
+    const { setAppMenuActiveMenuSection } =
+      useContext<typeof UIDispatchContext>(UIDispatchContext);
+
+    return [
+      <Help10DigitalerZwilling
+        setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
+        key="zwilling"
+      />,
+      <Help20HintergrundkarteAuswaehlen
+        showOverlayFromOutside={showOverlayFromOutside}
+        key="HintergrundkarteAuswaehlen"
+      />,
+      <Help30InKartePositionieren
+        showOverlayFromOutside={showOverlayFromOutside}
+        key="InKartePositionieren"
+      />,
+      <Help35KarteninhalteHinzufuegen
+        showOverlayFromOutside={showOverlayFromOutside}
+        key="KarteninhalteHinzufuegen"
+      />,
+      <Help40KarteninhalteUntersuchen key="KarteninhalteUntersuchen" />,
+      <Help45KartenDrucken key="KartenDrucken" />,
+      <Help50MeinStandort
+        showOverlayFromOutside={showOverlayFromOutside}
+        key="MeinStandort"
+      />,
+      <Help90Haftungsausschluss key="Haftungsausschluss" />,
+    ];
+  };
 
   return {
     menuIntroduction,
     menuIcon,
     menuTitle,
-    menuSections,
+    menuSections: <MenuSections />,
     menuFooter: <MyFooter />,
   };
 };
