@@ -7,7 +7,7 @@ import {
   LOOKUP,
   MONTHS,
   opendataLinkSections,
-} from "./helper/luftmessstationen";
+} from "../luftmessstationen/helper";
 import { Chart } from "chart.js";
 import ReactChartkick, { ColumnChart } from "react-chartkick";
 import Color from "color";
