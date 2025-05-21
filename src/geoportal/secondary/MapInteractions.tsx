@@ -5,7 +5,7 @@ import TouchPanning from "./assets/MouseTouchPics/TouchPanning.png";
 import TouchRotate from "./assets/MouseTouchPics/TouchRotate.png";
 import TouchTilt from "./assets/MouseTouchPics/TouchTilt.png";
 import TouchZoom from "./assets/MouseTouchPics/TouchZoom.png";
-import { Link } from "../../helper-overlay/components/Link";
+import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 
 export const MapInteractionsUI = () => {
   return (
@@ -48,32 +48,34 @@ export const MapInteractionsUI = () => {
           <td>
             <img src={TouchPanning} style={{ height: "40px" }} />
           </td>
-          <td>{" "}Ausschnitt verschieben</td>
+          <td> Ausschnitt verschieben</td>
         </tr>
         <tr>
           <td>
             <img src={TouchRotate} style={{ height: "40px" }} />
           </td>
-          <td>{" "}Zoom in / Zoom out (Pinch-Geste)</td>
+          <td> Zoom in / Zoom out (Pinch-Geste)</td>
         </tr>
         <tr>
           <td>
             <img src={TouchTilt} style={{ height: "40px" }} />
           </td>
-          <td>{" "}3D-Ansicht kippen</td>
+          <td> 3D-Ansicht kippen</td>
         </tr>
         <tr>
           <td>
             <img src={TouchZoom} style={{ height: "40px" }} />
           </td>
-          <td>{" "}3D-Ansicht drehen</td>
+          <td> 3D-Ansicht drehen</td>
         </tr>
         <tr>
           <td colSpan={2}>&nbsp;</td>
         </tr>
         <tr>
           <td colSpan={2} style={{ textAlign: "center" }}>
-            <Link section="positionieren">weitere Informationen</Link>{" "}
+            <HelpOverlayLink section="positionieren">
+              weitere Informationen
+            </HelpOverlayLink>{" "}
           </td>
         </tr>
       </table>

@@ -10,7 +10,12 @@ interface LinkProps {
   onClick?: () => void;
 }
 
-export const Link = ({ children, target, section, onClick }: LinkProps) => {
+export const HelpOverlayLink = ({
+  children,
+  target,
+  section,
+  onClick,
+}: LinkProps) => {
   const { setSecondaryWithKey } =
     useContext<OverlayTourContextSettings>(OverlayTourContext);
   const { setAppMenuActiveMenuSection, setAppMenuVisible } =

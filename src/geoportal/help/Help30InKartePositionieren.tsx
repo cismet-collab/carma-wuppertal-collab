@@ -1,7 +1,7 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { InKartePositionierenText } from "../../commons";
 import Icon from "react-cismap/commons/Icon";
-import { Link } from "../../helper-overlay/components/Link";
+import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import FuzzySearchParagraph from "../../commons/FuzzySearchParagraph";
 import CompassNeedle from "../../commons/CompassNeedle";
 
@@ -28,13 +28,13 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   Touchscreen-Gesten zur Verfügung{" "}
                   <span className="hide-on-small-screens">
                     (
-                    <Link
+                    <HelpOverlayLink
                       onClick={() => {
                         showOverlayFromOutside("CENTER");
                       }}
                     >
                       Übersicht auf der Hilfefolie
-                    </Link>
+                    </HelpOverlayLink>
                     ).
                   </span>{" "}
                   Im 3D-Modus wird zusätzlich ein Spezialwerkzeug zur Steuerung
@@ -73,13 +73,13 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
             }
             posttext={
               <p className="hide-on-small-screens">
-                <Link
+                <HelpOverlayLink
                   onClick={() => {
                     showOverlayFromOutside("GAZETTEER_SUCHE");
                   }}
                 >
                   zur Hilfefolie
-                </Link>
+                </HelpOverlayLink>
               </p>
             }
           />

@@ -44,7 +44,6 @@ const Component = ({ setAppMenuActiveMenuSection }: DigitalTwinProps) => {
               Dialog{" "}
               <Link
                 className="renderAsLink"
-                containerId="myMenu"
                 smooth={true}
                 delay={100}
                 onClick={() => setAppMenuActiveMenuSection("karteninhalte")}

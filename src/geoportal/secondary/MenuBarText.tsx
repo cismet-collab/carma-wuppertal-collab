@@ -1,7 +1,7 @@
 import focusOn from "./assets/focus-on.png";
 import focusOff from "./assets/focus-off.png";
 import addLayers from "./assets/add-layers.png";
-import { Link } from "../../helper-overlay/components/Link";
+import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
@@ -25,7 +25,9 @@ export const MenuBarText = () => {
           </td>
           <td>
             <b>Aktualisieren</b> - Erneutes Laden aller nicht ausgeblendeten{" "}
-            <Link target="LAYERBUTTONS">Kartenebenen</Link>
+            <HelpOverlayLink target="LAYERBUTTONS">
+              Kartenebenen
+            </HelpOverlayLink>
           </td>
         </tr>
         <tr>
@@ -41,9 +43,11 @@ export const MenuBarText = () => {
             <b>Karteninhalte hinzufügen</b> - Dialog für Suche, Vorschau und
             Laden von Karteninhalten im DigiTal Zwilling | zum Laden externer
             Kartendienste Adresse (WMS-Capabilities-URL) markieren und in das
-            Kartenfenster ziehen<br/>
-            {" "}<Link section="karteninhalte">weitere 
-            Informationen</Link>
+            Kartenfenster ziehen
+            <br />{" "}
+            <HelpOverlayLink section="karteninhalte">
+              weitere Informationen
+            </HelpOverlayLink>
           </td>
         </tr>
         <tr>
@@ -59,7 +63,10 @@ export const MenuBarText = () => {
           <td>
             <b>Hintergrundkarte abschwächen / zurücksetzen</b> - Wechselschalter
             zum Abschwächen (starke Transparenz) und Zurücksetzen (keine
-            Transparenz) der <Link target="HINTERGRUND">Hintergrundkarte</Link>{" "}
+            Transparenz) der{" "}
+            <HelpOverlayLink target="HINTERGRUND">
+              Hintergrundkarte
+            </HelpOverlayLink>{" "}
             | Einstellung des starken Transparenzwertes im
             Hintergrund-Steuerelement
           </td>
@@ -75,8 +82,9 @@ export const MenuBarText = () => {
           </td>
           <td>
             <b>Bedienelemente ausblenden ("Zen-Modus")</b> - Anzeige von
-            Objektinformationen in der <Link target="INFOBOX">Info-Box</Link>{" "}
-            wird unterstützt | Bedienelemente wieder einblenden mit Werkzeug{" "}
+            Objektinformationen in der{" "}
+            <HelpOverlayLink target="INFOBOX">Info-Box</HelpOverlayLink> wird
+            unterstützt | Bedienelemente wieder einblenden mit Werkzeug{" "}
             <FontAwesomeIcon icon="eye-slash" /> an selber Stelle
           </td>
         </tr>
@@ -121,9 +129,9 @@ export const MenuBarText = () => {
             <FontAwesomeIcon icon={faShareNodes} />
           </td>
           <td>
-            <b>Teilen</b> - Dialog für das Erzeugen eines Links auf das Geoportal
-            mit aktuellen Karteninhalten und aktuellem Kartenausschnitt | 
-            Link wird in Zwischenablage kopiert
+            <b>Teilen</b> - Dialog für das Erzeugen eines Links auf das
+            Geoportal mit aktuellen Karteninhalten und aktuellem
+            Kartenausschnitt | Link wird in Zwischenablage kopiert
           </td>
         </tr>
       </table>

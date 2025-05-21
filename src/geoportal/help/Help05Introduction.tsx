@@ -1,4 +1,4 @@
-import { Link } from "../../helper-overlay/components/Link";
+import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 
 const Help05Introduction = ({ showOverlayFromOutside }) => {
   return (
@@ -14,17 +14,17 @@ const Help05Introduction = ({ showOverlayFromOutside }) => {
       anzeigen zu lassen.{" "}
       <span className="hide-on-small-screens">
         Als alternative Unterstützung steht Ihnen auch eine{" "}
-        <Link
+        <HelpOverlayLink
           onClick={() => {
             showOverlayFromOutside();
           }}
         >
           Hilfefolie
-        </Link>{" "}
+        </HelpOverlayLink>{" "}
         zur Verfügung, mit der Sie gezielt die Nutzung und Funktionsweise der
         einzelnen Bedienungselemente des Portals erforschen können.
       </span>
-      <br/>
+      <br />
     </span>
   );
 };
