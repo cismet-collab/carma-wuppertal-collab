@@ -21,7 +21,8 @@ const InfoPanel = ({
   setOpen = (x) => {},
   versionString = "???",
   reactCismapVersion = "???",
-  windowSize = { width: 900, height: 600 },
+  inStorybook = false,
+  windowSize,
 }) => {
   const selectedFeature = feature;
   const station = selectedFeature?.properties;
@@ -416,9 +417,10 @@ const InfoPanel = ({
 
     return (
       <SecondaryInfo
-        visible={true}
-        defaultContextValues={{ windowSize: windowSize }}
-        uiHeight={800}
+        visible={inStorybook ? true : undefined}
+        defaultContextValues={
+          inStorybook ? { windowSize: { width: 800, height: 1000 } } : {}
+        }
         titleIconName="info-circle"
         title={"Datenblatt: Messstation für Stickstoffdioxid (NO₂)"}
         mainSection={

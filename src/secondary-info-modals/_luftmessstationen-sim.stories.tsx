@@ -18,7 +18,6 @@ const meta: Meta = {
 
 export default meta;
 
-
 type Args = { Beispiele: string; Feature?: any; filter?: string };
 
 export const SecondaryInfo: StoryObj<Args> = {
@@ -35,13 +34,14 @@ export const SecondaryInfo: StoryObj<Args> = {
       _feature = data[Beispiele];
     }
     return (
-        <div id="myMenu" style={modalBodyStyle}>
-          <Sim
-            feature={_feature}
-            setOpen={() => {}}
-            versionString="myVersion"
-          />
-        </div>
+      <div id="myMenu" style={modalBodyStyle}>
+        <Sim
+          feature={_feature}
+          setOpen={() => {}}
+          versionString="myVersion"
+          inStorybook={true}
+        />
+      </div>
     );
   },
 };
