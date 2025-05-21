@@ -1,17 +1,17 @@
-import React, { type ReactNode } from "react";
+import React from "react";
 import Logo_DigiTalZwilling from "./assets/Logo_DigiTalZwilling.png";
 import KFW_Logo from "./assets/KFW_Logo.jpg";
 import BMWSB_Logo from "./assets/BMWSB_Logo.png";
 
 interface GenericDigitalTwinReferenceTextComponentProps {
-  pretext?: string | ReactNode;
+  pretext?: string | JSX.Element;
 }
 
 const imageStyle = { height: "120px" };
 
-const GenericDigitalTwinReferenceTextComponent: React.FC = ({
-  pretext,
-}: GenericDigitalTwinReferenceTextComponentProps) => {
+const GenericDigitalTwinReferenceTextComponent: React.FC<
+  GenericDigitalTwinReferenceTextComponentProps
+> = ({ pretext }) => {
   return (
     <div>
       <p>
