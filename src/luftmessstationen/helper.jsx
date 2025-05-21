@@ -3,7 +3,7 @@ const hasValues = (item) => {
   return values !== undefined && JSON.stringify(values) !== "{}";
 };
 
-const getLastMeasurement = (item) => {
+export const getLastMeasurement = (item) => {
   const lym = getLastYearMeasurements(item);
 
   if (lym) {
