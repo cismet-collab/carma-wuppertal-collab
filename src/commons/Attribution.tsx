@@ -3,16 +3,19 @@ import React from "react";
 type AttributionProps = {
   applicationName: string;
   applicationVersion: string;
+  skipTeilzwilling?: boolean;
 };
 
 export const Attribution: React.FC<AttributionProps> = ({
   applicationName = document.title,
   applicationVersion,
+  skipTeilzwilling = false,
 }) => {
   return (
     <div>
       <b>
-        Teilzwilling {applicationName} {applicationVersion}
+        {!skipTeilzwilling && <span>Teilzwilling </span>}
+        {applicationName} {applicationVersion}
       </b>{" "}
       powered by{" "}
       <a href="https://cismet.de/" target="_cismet">
