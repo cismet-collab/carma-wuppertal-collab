@@ -19,6 +19,7 @@ ReactChartkick.addAdapter(Chart);
 const InfoPanel = ({
   feature = {},
   setOpen = (x) => {},
+  Footer = SecondaryInfoFooter,
   versionString = "???",
   reactCismapVersion = "???",
   inStorybook = false,
@@ -466,7 +467,7 @@ const InfoPanel = ({
           </div>
         }
         subSections={subSections}
-        footer={<SecondaryInfoFooter version={versionString} />}
+        footer={<Footer version={versionString} />}
       />
     );
   } else {

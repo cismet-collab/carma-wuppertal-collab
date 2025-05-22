@@ -9,6 +9,7 @@ const SecondaryInfoModal = ({
   feature = {},
   setOpen = (x) => {},
   versionString = "???",
+  Footer = SecondaryInfoFooter,
 }) => {
   let _feature;
   if (feature.type !== "Feature") {
@@ -184,7 +185,7 @@ const SecondaryInfoModal = ({
         </Accordion>
       </Modal.Body>
       <Modal.Footer>
-        <SecondaryInfoFooter close={close} version={versionString} />
+        <Footer close={close} version={versionString} />
       </Modal.Footer>
     </Modal>
   );

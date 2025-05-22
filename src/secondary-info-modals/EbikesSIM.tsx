@@ -18,10 +18,12 @@ const SecondaryInfoModal = ({
   feature = {},
   setOpen = () => {},
   versionString = "???",
+  Footer = SecondaryInfoFooter,
 }: {
   feature?: FeatureType;
   setOpen?: (open: boolean) => void;
   versionString?: string;
+  Footer?: React.ComponentType<any>;
 }) => {
   const close = () => {
     setOpen(false);
@@ -319,7 +321,7 @@ const SecondaryInfoModal = ({
         </Accordion>
       </Modal.Body>
       <Modal.Footer>
-        <SecondaryInfoFooter close={close} version={versionString} />
+        <Footer close={close} version={versionString} />
       </Modal.Footer>
     </Modal>
   );
