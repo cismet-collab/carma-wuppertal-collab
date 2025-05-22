@@ -1,6 +1,7 @@
 import Section from "react-cismap/topicmaps/menu/Section";
 
 export const Menu60Datenschutz = ({ showOpened = false }) => {
+  const baseUrl = window.location.origin + window.location.pathname;
   return (
     <Section
       key="datenschutz"
@@ -12,7 +13,7 @@ export const Menu60Datenschutz = ({ showOpened = false }) => {
         <div>
           <p>
             Die Informationen zum Datenschutz finden Sie in diesem{" "}
-            <a href="/docs/102.23.-.Regengeld.pdf" target="_more">
+            <a href={baseUrl + "docs/102.23.-.Regengeld.pdf"} target="_more">
               Dokument
             </a>
             .
