@@ -5,9 +5,11 @@ import Logo_DigiTalZwilling from "./assets/Logo_DigiTalZwilling.png";
 interface MenuFooterProps {
   title?: string;
   version: string;
-  setAppMenuActiveMenuSection: (arg: string) => void;
+  setAppMenuActiveMenuSection?: (arg: string) => void;
   hintergrundkarten?: string | JSX.Element;
   sectionKey?: string;
+  skipHintergrundkarten?: boolean;
+  skipTeilzwilling?: boolean;
 }
 const MenuFooter: React.FC<MenuFooterProps> = ({
   title = document.title,
@@ -15,6 +17,8 @@ const MenuFooter: React.FC<MenuFooterProps> = ({
   setAppMenuActiveMenuSection,
   hintergrundkarten = "Stadtkarte 2.0 © RVR | True Orthophoto 2024 © Stadt Wuppertal",
   sectionKey = "help",
+  skipHintergrundkarten = false,
+  skipTeilzwilling = false,
 }: MenuFooterProps) => {
   return (
     <div
@@ -25,18 +29,30 @@ const MenuFooter: React.FC<MenuFooterProps> = ({
       }}
     >
       <div>
-        <b>Hintergrundkarten</b>: {hintergrundkarten}{" "}
-        <a
-          className="pleaseRenderAsLink"
-          onClick={() => {
-            setAppMenuActiveMenuSection(sectionKey);
-            scroller.scrollTo("Datengrundlage", { containerId: "myMenu" });
-          }}
-        >
-          (Details und Nutzungsbedingungen)
-        </a>
-        <br />
-        <Attribution applicationName={title} applicationVersion={version} />
+        {!skipHintergrundkarten && (
+          <>
+            <b>Hintergrundkarten</b>: {hintergrundkarten}{" "}
+            <a
+              className="pleaseRenderAsLink"
+              onClick={() => {
+                if (setAppMenuActiveMenuSection) {
+                  setAppMenuActiveMenuSection(sectionKey);
+                  scroller.scrollTo("Datengrundlage", {
+                    containerId: "myMenu",
+                  });
+                }
+              }}
+            >
+              (Details und Nutzungsbedingungen)
+            </a>
+            <br />
+          </>
+        )}
+        <Attribution
+          skipTeilzwilling={skipTeilzwilling}
+          applicationName={title}
+          applicationVersion={version}
+        />
       </div>
 
       <img
