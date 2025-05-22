@@ -11,7 +11,9 @@ interface ModalProps {
   Footer?: ReactNode;
 }
 
-export const additionalInfoFactory = (id: string): ComponentType<ModalProps> => {
+export const additionalInfoFactory = (
+  id: string
+): React.ComponentType<any> | null => {
   switch (id) {
     case "emob":
       return EMobiModal;
