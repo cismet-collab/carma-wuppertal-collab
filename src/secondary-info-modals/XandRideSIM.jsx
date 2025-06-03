@@ -48,6 +48,7 @@ const SecondaryInfoModal = ({
       style={{
         zIndex: 2900000000,
       }}
+      dialogClassName="modal-dialog-scrollable"
       height="100%"
       size="lg"
       show={true}

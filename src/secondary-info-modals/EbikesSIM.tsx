@@ -142,6 +142,7 @@ const SecondaryInfoModal = ({
       show={true}
       onHide={close}
       keyboard={false}
+      dialogClassName="modal-dialog-scrollable"
     >
       <Modal.Header>
         <Modal.Title>
