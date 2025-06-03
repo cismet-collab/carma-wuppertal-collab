@@ -92,6 +92,7 @@ const EMobiModal = ({ feature, setOpen }) => {
       show={true}
       onHide={close}
       keyboard={false}
+      dialogClassName="modal-dialog-scrollable"
     >
       <Modal.Header>
         <Modal.Title>
