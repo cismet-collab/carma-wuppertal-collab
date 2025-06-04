@@ -1,3 +1,4 @@
+import React from "react";
 import {
   faFaucetDrip,
   faSquareArrowUpRight,
@@ -6,9 +7,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal, Accordion, Card } from "react-bootstrap";
 import { normalizeInput } from "./helper/trinkwasserHelper";
 import CustomAccordionToggle from "../../commons/CustomAccordionToggle";
-//import type { ReactElement, JSXElementConstructor, ReactNode } from "react";
+import GenericFooter from "./GenericFooter";
+import type { GenericFooterProps } from "./GenericFooter";
 
-const TrinkwasserModal = ({ feature, setOpen }) => {
+interface TrinkwasserModalProps {
+  feature: { properties: any };
+  setOpen: (open: boolean) => void;
+  versionString?: string;
+  Footer?: React.ComponentType<GenericFooterProps>;
+}
+
+const TrinkwasserModal: React.FC<TrinkwasserModalProps> = ({
+  feature,
+  setOpen,
+  versionString = "???",
+  Footer = GenericFooter,
+}) => {
   const close = () => {
     setOpen(false);
   };
@@ -176,6 +190,9 @@ const TrinkwasserModal = ({ feature, setOpen }) => {
             </Card>
           </Accordion>
         </Modal.Body>
+        <Modal.Footer>
+          <Footer close={close} version={versionString} />
+        </Modal.Footer>
       </Modal>
     );
   }
