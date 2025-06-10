@@ -27,7 +27,6 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   verändern (z. B. Drehen und Kippen einer 3D-Ansicht). Eine 
                   Übersicht dieser Bedienmöglichkeiten finden Sie auf der {" "}
                   <span className="hide-on-small-screens">
-                    (
                     <HelpOverlayLink
                       onClick={() => {
                         showOverlayFromOutside("CENTER");
@@ -35,7 +34,7 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                     >
                       Hilfefolie
                     </HelpOverlayLink>
-                    ).
+                    .
                   </span>{" "}
                   Im 3D-Modus wird außerdem ein spezielles Steuerwerkzeug eingeblendet: 
                   eine Kompassnadel{" "}<CompassNeedle /> oberhalb des Schalters zum 
