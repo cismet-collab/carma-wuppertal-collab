@@ -1,0 +1,15 @@
+const headerText = "Hinweis";
+const bodyText = `BelIS-Online ist derzeit ausschließlich für die Nutzung auf
+              Desktop-Computern optimiert. Bei der Verwendung eines mobilen
+              Endgeräts kann es zu Funktionseinschränkungen kommen. Wir arbeiten
+              aktiv an einer mobilen Version und danken Ihnen für Ihr
+              Verständnis.`;
+const confirmButtonText = "Verstanden";
+const isHardMode = false;
+
+export const mobileInfo = {
+  headerText,
+  bodyText,
+  confirmButtonText,
+  isHardMode,
+};
