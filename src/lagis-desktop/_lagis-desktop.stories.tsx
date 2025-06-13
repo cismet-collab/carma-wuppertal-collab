@@ -378,7 +378,9 @@ export const MobileInfo: StoryObj = {
         closable={false}
         closeIcon={false}
         footer={[
-          <Button type="primary">{mobileInfo.confirmButtonText}</Button>,
+          <Button disabled={mobileInfo.isHardMode} type="primary">
+            {mobileInfo.confirmButtonText}
+          </Button>,
         ]}
       >
         <p>{mobileInfo.bodyText}</p>

@@ -5,5 +5,11 @@ const bodyText = `LagIS-Desktop ist derzeit ausschließlich für die Nutzung auf
               aktiv an einer mobilen Version und danken Ihnen für Ihr
               Verständnis.`;
 const confirmButtonText = "Verstanden";
+const isHardMode = true;
 
-export const mobileInfo = { headerText, bodyText, confirmButtonText };
+export const mobileInfo = {
+  headerText,
+  bodyText,
+  confirmButtonText,
+  isHardMode,
+};
