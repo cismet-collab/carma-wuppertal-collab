@@ -29,3 +29,4 @@ export { Kontaktinformationen } from "./Kontaktinformationen";
 export { VersionNumberLoginPage } from "./VersionNumberLoginPage";
 export { KompaktanleitungFooter } from "./KompaktanleitungFooter";
 export { tooltips } from "./tooltips";
+export { mobileInfo } from "./mobileInfo";

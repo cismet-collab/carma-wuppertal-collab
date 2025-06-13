@@ -31,11 +31,13 @@ import {
   tooltips,
   VersionNumberLoginPage,
   KompaktanleitungFooter,
+  mobileInfo,
 } from ".";
 import TopicMapContextProvider from "react-cismap/contexts/TopicMapContextProvider";
 import ModalApplicationMenu from "react-cismap/topicmaps/menu/ModalApplicationMenu";
 import Section from "react-cismap/topicmaps/menu/Section";
 import { Alert } from "react-bootstrap";
+import { Button, Modal } from "antd";
 
 const meta: Meta = {
   title: "Verdis-online",
@@ -251,6 +253,26 @@ export const Tooltips: StoryObj = {
           {ansprechpartner.ausblenden} - {ansprechpartner.einblenden}
         </p>
       </div>
+    );
+  },
+};
+
+export const MobileInfo: StoryObj = {
+  render: () => {
+    return (
+      <Modal
+        title={mobileInfo.headerText}
+        open={true}
+        closable={false}
+        closeIcon={false}
+        footer={[
+          <Button disabled={mobileInfo.isHardMode} type="primary">
+            {mobileInfo.confirmButtonText}
+          </Button>,
+        ]}
+      >
+        <p>{mobileInfo.bodyText}</p>
+      </Modal>
     );
   },
 };
