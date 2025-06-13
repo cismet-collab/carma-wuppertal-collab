@@ -1,11 +1,7 @@
 const headerText = "Hinweis";
-const bodyText = `VerDIS-Online ist derzeit ausschließlich für die Nutzung auf
-              Desktop-Computern optimiert. Bei der Verwendung eines mobilen
-              Endgeräts kann es zu Funktionseinschränkungen kommen. Wir arbeiten
-              aktiv an einer mobilen Version und danken Ihnen für Ihr
-              Verständnis.`;
+const bodyText = `VerDIS-Online funktioniert derzeit am besten auf Tablets und Desktop-Computern. Auf kleineren Bildschirmen kann es zu Einschränkungen kommen.`;
 const confirmButtonText = "Verstanden";
-const isHardMode = true;
+const isHardMode = false;
 
 export const mobileInfo = {
   headerText,
