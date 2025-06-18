@@ -21,6 +21,8 @@ export { demoElements } from "./demoElements";
 export { backgroundSettings } from "./backgroundSettings";
 export { additionalInfoFactory } from "./sachdatenabfrage-modals/helper/factory";
 import "./geoportal.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faKey } from "@fortawesome/free-solid-svg-icons";
 
 interface CollabedHelpComponentProps {
   versionString: string;
@@ -46,7 +48,19 @@ const getCollabedHelpComponentConfig = ({
     <Help05Introduction showOverlayFromOutside={showOverlayFromOutside} />
   );
   const menuIcon = "info";
-  const menuTitle = "Kompaktanleitung und Hintergrundinformationen";
+  const menuTitle = (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+      }}
+    >
+      <span>Kompaktanleitung und Hintergrundinformationen</span>
+      <FontAwesomeIcon icon={faKey} />
+    </div>
+  );
   const MenuSections = () => {
     const { setAppMenuActiveMenuSection } =
       useContext<typeof UIDispatchContext>(UIDispatchContext);
@@ -84,6 +98,12 @@ const getCollabedHelpComponentConfig = ({
     menuTitle,
     menuSections: <MenuSections />,
     menuFooter: <MyFooter />,
+    modalTitleStyle: {
+      display: "flex",
+      width: "100%",
+      alignItems: "center",
+      gap: "4px",
+    },
   };
 };
 
