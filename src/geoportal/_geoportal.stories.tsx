@@ -10,6 +10,7 @@ import {
   extServiceText,
 } from ".";
 import { Button, Modal } from "antd";
+import { useState } from "react";
 
 const meta: Meta = {
   title: "Geoportal",
@@ -19,12 +20,15 @@ export default meta;
 
 export const KompletterModalerDialog: StoryObj = {
   render: () => {
+    const [showLoginForm, setShowLoginForm] = useState(false);
     const versionString = "xyz";
     return (
       <TopicMapContextProvider appKey="storybook-appkey">
         <ModalApplicationMenu
           {...getCollabedHelpComponentConfig({
             versionString,
+            loginFormToggle: () => setShowLoginForm(!showLoginForm),
+            isLoginFormVisible: showLoginForm,
           })}
           visible={true}
         />

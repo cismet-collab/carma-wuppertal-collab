@@ -23,15 +23,22 @@ export { additionalInfoFactory } from "./sachdatenabfrage-modals/helper/factory"
 import "./geoportal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "antd";
 
 interface CollabedHelpComponentProps {
   versionString: string;
-  showOverlayFromOutside?: (key: string) => void;
+  showOverlayFromOutside?: (key?: string) => void;
+  loginFormToggle?: () => void;
+  isLoginFormVisible?: boolean;
+  loginForm?: React.ComponentType<{ helpText?: string }>;
 }
 
 const getCollabedHelpComponentConfig = ({
   versionString,
   showOverlayFromOutside = () => {},
+  loginFormToggle = () => {},
+  isLoginFormVisible = false,
+  loginForm,
 }: CollabedHelpComponentProps) => {
   const MyFooter = () => {
     const { setAppMenuActiveMenuSection } =
@@ -45,7 +52,11 @@ const getCollabedHelpComponentConfig = ({
   };
 
   const menuIntroduction = (
-    <Help05Introduction showOverlayFromOutside={showOverlayFromOutside} />
+    <Help05Introduction
+      showOverlayFromOutside={showOverlayFromOutside}
+      isLoginFormVisible={isLoginFormVisible}
+      loginForm={loginForm}
+    />
   );
   const menuIcon = "info";
   const menuTitle = (
@@ -58,7 +69,11 @@ const getCollabedHelpComponentConfig = ({
       }}
     >
       <span>Kompaktanleitung und Hintergrundinformationen</span>
-      <FontAwesomeIcon icon={faKey} />
+      {loginForm && (
+        <Button type="text" onClick={loginFormToggle}>
+          <FontAwesomeIcon icon={faKey} size="lg" />
+        </Button>
+      )}
     </div>
   );
   const MenuSections = () => {
