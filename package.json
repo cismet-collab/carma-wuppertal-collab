@@ -32,7 +32,6 @@
     "ua-parser-js": "^1.0.40"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^4.0.0",
     "@nx/react": "^19.5.4",
     "@storybook/addon-essentials": "^8.2.6",
     "@storybook/addon-interactions": "^8.2.6",
