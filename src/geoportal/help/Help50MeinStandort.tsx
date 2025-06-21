@@ -20,6 +20,31 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
       sectionContent={
         <div>
           <p>
+            Der DigiTal Zwilling / Geoportal ist für die Benutzung mit einem Desktop-PC 
+            entwickelt worden. An einem solchen Endgerät mit einem großen Bildschirm 
+            haben Sie daher die beste Benutzerfreundlichkeit. Die vorliegende Ausbaustufe 1 
+            des Geoportals verfügt aber bereits über ein grundlegendes "Responsives Design", 
+            sodass Sie die Anwendung auch auf mobilen Endgeräten mit entsprechend kleineren 
+            Bildschirmen nutzen können. Auf einem Tablet-PC werden Ihnen noch alle Elemente 
+            der graphischen Oberfläche wie am Desktop-Rechner angeboten, allerdings müssen 
+            Sie bei der Nutzung etwas öfter scrollen. Auf einem Smartphone stehen Ihnen 
+            dagegen zwei Elemente nicht mehr zur Verfügung: die Hilfefolie entfällt ersatzlos, 
+            weil ein Smartphone-Bildschirm für die dort angebotenen Textinformationen einfach 
+            zu klein ist. Außerdem wird nicht mehr für jede Kartenebene ein eigenes{" "}
+            <Link
+              className="renderAsLink"
+              smooth={true}
+              delay={100}
+              onClick={() => setAppMenuActiveMenuSection("karteninhalte")}
+              >
+                Ebenen-Steuerelement
+            </Link>{" "}
+            angezeigt. Es wird nur noch das Hintergrund-Steuerelement ausgeprägt, über das 
+            Sie auch die Darstellung und Darstellungsreihenfolge aller hinzugeladenen Kartenebenen 
+            steuern können. Das Responsive Design des Geoportals ist noch nicht perfekt. Wir werden 
+            es bis zum Ende des Entwicklungsprozesses kontinuierlich verbessern.
+          </p>
+          <p>
             Das Werkzeug &quot;Mein Standort&quot;{" "}
             <FontAwesomeIcon icon={faLocationArrow} /> funktioniert so wie hier
             beschrieben nur auf mobilen Endgeräten wie Smartphones und
