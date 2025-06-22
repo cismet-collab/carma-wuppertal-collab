@@ -34,7 +34,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             angezeigt. Es wird nur noch das Hintergrund-Steuerelement ausgeprägt, über das 
             Sie auch die Darstellung und Darstellungsreihenfolge aller hinzugeladenen Kartenebenen 
             steuern können. Das Responsive Design des Geoportals ist noch nicht perfekt. Wir werden 
-            es bis zum Ende des Entwicklungsprozesses kontinuierlich verbessern.
+            es bis zum Ende des Entwicklungsprozesses kontinuierlich verbessern. 
           </p>
           <p>
             Die 3D-Darstellungen, vor allem im Modus Luftbild, stellen hohe Anforderungen an 
