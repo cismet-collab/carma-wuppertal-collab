@@ -23,17 +23,16 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             Der DigiTal Zwilling / Geoportal ist für die Benutzung mit einem Desktop-PC 
             entwickelt worden. An einem solchen Endgerät mit einem großen Bildschirm 
             haben Sie daher die beste Benutzerfreundlichkeit. Die vorliegende Ausbaustufe 1 
-            des Geoportals verfügt aber bereits über ein grundlegendes "Responsives Design", 
+            des Geoportals verfügt aber bereits über ein grundlegendes "Responsiv Design", 
             sodass Sie die Anwendung auch auf mobilen Endgeräten mit entsprechend kleineren 
             Bildschirmen nutzen können. Auf einem Tablet-PC werden Ihnen noch alle Elemente 
             der graphischen Oberfläche wie am Desktop-Rechner angeboten, allerdings müssen 
             Sie bei der Nutzung etwas öfter scrollen. Auf einem Smartphone stehen Ihnen 
-            dagegen zwei Elemente nicht mehr zur Verfügung: die Hilfefolie entfällt ersatzlos, 
-            weil ein Smartphone-Bildschirm für die dort angebotenen Textinformationen einfach 
-            zu klein ist. Außerdem wird nicht mehr für jede Kartenebene ein eigenes Ebenen-Steuerelement
+            dagegen zwei Elemente nicht mehr zur Verfügung: die Hilfefolie entfällt ersatzlos. 
+            Außerdem wird nicht mehr für jede Kartenebene ein eigenes Ebenen-Steuerelement
             angezeigt. Es wird nur noch das Hintergrund-Steuerelement ausgeprägt, über das 
             Sie auch die Darstellung und Darstellungsreihenfolge aller hinzugeladenen Kartenebenen 
-            steuern können. Das Responsive Design des Geoportals ist noch nicht perfekt. Wir werden 
+            steuern können. Das Responsiv Design des Geoportals ist noch nicht perfekt. Wir werden 
             es bis zum Ende des Entwicklungsprozesses kontinuierlich verbessern. 
           </p>
           <p>
@@ -45,47 +44,29 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             zu stellen. 
           </p>
           <p>
-            Das Werkzeug &quot;Mein Standort&quot;{" "}
-            <FontAwesomeIcon icon={faLocationArrow} /> funktioniert so wie hier
-            beschrieben nur auf mobilen Endgeräten wie Smartphones und
-            Tablet-PC&#39;s, die i. d. R. mit einem GNSS-Empfänger als
-            Positionssensor ausgestattet sind (GNSS steht für Global Navigation
-            Satellite Systems, z.B.{" "}
-            <a
-              target="_info"
-              href="https://dvw.de/sites/default/files/landesverein-bayern/VeroeffentlichungenMitteilungen1996_4/DVW_1996_4_Schlie%C3%9Fer_GPS_Systemgrundlagen.pdf"
-            >
-              GPS
-            </a>
-            ). Mit dem ersten Antippen dieses Werkzeugs aktivieren Sie den
-            &quot;Follow me&quot;-Modus, erkennbar an der orangefarbigen
-            Darstellung des Werkzeug-Symbols. Ggf. werden Sie vom Browser bzw.
-            dem Betriebssystem Ihres Endgerätes zur Freigabe der Lokalisierung
-            aufgefordert. Die Karte wird auf Ihren aktuellen Standort zentriert,
-            der mit einem blauen Kreissymbol{" "}
+            Auf mobilen Endgeräten wird ihnen auf der linken Seite der zusätzliche Wechselschalter 
+            "Mein Standort"{" "}<FontAwesomeIcon icon={faLocationArrow} />{" "}zur Aktivierung bzw. 
+            Deaktivierung der Standort- und Blickrichtungsanzeige angeboten. Mit dem ersten Antippen 
+            dieses Werkzeugs aktivieren Sie den "Follow me"-Modus (orangefarbiges Werkzeug-Symbol). 
+            Ggf. werden Sie zunächst zur Freigabe der Lokalisierung aufgefordert. Die Karte wird auf 
+            Ihren aktuellen Standort zentriert, der mit einem blauen Kreissymbol{" "}
             <img
               alt="MeinStandpunktMarker"
               src={meinStandpunktMarkerMitKompass}
             />{" "}
-            markiert wird. Das kleine blaue Dreieck am Rand dieses
-            Standortsymbols zeigt Ihre aktuelle Blickrichtung an (genauer: die
-            Richtung, in die Ihr Endgerät zeigt). Das Standortsymbol ist umgeben
-            von einem zweiten Kreis mit transparenter, blauer Füllung, dessen
-            Radius die Unsicherheit der Positionsbestimmung angibt{" "}
+            markiert wird. Das kleine blaue Dreieck am Rand dieses Standortsymbols zeigt ihre Blickrichtung an. 
+            Wenn Sie sich mit Ihrem Endgerät bewegen, wird Ihre aktuelle Position in schneller Folge neu bestimmt 
+            und stets in der Mitte der Karte angezeigt. Die Karte wird dazu automatisiert nachgeführt. Das 
+            Standortsymbol ist umgeben von einem zweiten Kreis mit transparenter, blauer Füllung, dessen Radius 
+            die Unsicherheit der Positionsbestimmung angibt{" "}
             <img
               alt="MeinStandpunktMarkerDoppel"
               src={meinStandpunktMarkerDoppel}
-            />
-            . Durch Antippen des inneren Kreises können Sie einen Texthinweis
-            mit einer konkreten Angabe der aktuellen Positionsgenauigkeit
-            einblenden. Dieser Hinweis kann durch das Antippen einer beliebigen
-            Stelle außerhalb seines Textfeldes geschlossen werden. Wenn Sie sich
-            mit Ihrem Endgerät bewegen (z. B. bei einer Wanderung), wird Ihre
-            aktuelle Position im &quot;Follow me&quot;-Modus in schneller Folge
-            neu bestimmt und stets in der Mitte der Karte angezeigt. Die Karte
-            wird dazu automatisiert nachgeführt. Ein weiteres Antippen von
-            &quot;Mein Standort&quot; schaltet die Anzeige Ihrer Position wieder
-            ab (schwarzes Werkzeug-Symbol).{" "}
+            />. 
+            Durch Antippen des inneren Kreises können Sie einen Texthinweis mit einer konkreten Angabe der aktuellen 
+            Positionsgenauigkeit einblenden. Dieser Hinweis kann durch das Antippen einer beliebigen Stelle außerhalb 
+            seines Textfeldes geschlossen werden. Ein weiteres Antippen von "Mein Standort" schaltet die Anzeige Ihrer 
+            Position wieder ab (schwarzes Werkzeug-Symbol). 
           </p>
           <p>
             Wenn Sie die Karte im aktivierten &quot;Follow me&quot;-Modus
