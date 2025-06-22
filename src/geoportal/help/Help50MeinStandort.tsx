@@ -30,19 +30,19 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             Sie bei der Nutzung etwas öfter scrollen. Auf einem Smartphone stehen Ihnen 
             dagegen zwei Elemente nicht mehr zur Verfügung: die Hilfefolie entfällt ersatzlos, 
             weil ein Smartphone-Bildschirm für die dort angebotenen Textinformationen einfach 
-            zu klein ist. Außerdem wird nicht mehr für jede Kartenebene ein eigenes{" "}
-            <Link
-              className="renderAsLink"
-              smooth={true}
-              delay={100}
-              onClick={() => setAppMenuActiveMenuSection("karteninhalte")}
-              >
-                Ebenen-Steuerelement
-            </Link>{" "}
+            zu klein ist. Außerdem wird nicht mehr für jede Kartenebene ein eigenes Ebenen-Steuerelement
             angezeigt. Es wird nur noch das Hintergrund-Steuerelement ausgeprägt, über das 
             Sie auch die Darstellung und Darstellungsreihenfolge aller hinzugeladenen Kartenebenen 
             steuern können. Das Responsive Design des Geoportals ist noch nicht perfekt. Wir werden 
             es bis zum Ende des Entwicklungsprozesses kontinuierlich verbessern.
+          </p>
+          <p>
+            Die 3D-Darstellungen, vor allem im Modus Luftbild, stellen hohe Anforderungen an 
+            den Arbeitsspeicher des von Ihnen verwendeten Endgerätes. Insbesondere auf älteren 
+            Smartphones mit schwächerer Speicherausstattung kann es daher zu Abstürzen beim Wechsel 
+            in die 3D-Betrachtung kommen. Für die folgenden Ausbaustufen untersuchen wir daher die 
+            Möglichkeiten, dem Geoportal die 3D-Modelle in einem kompakteren Format zur Verfügung 
+            zu stellen.
           </p>
           <p>
             Das Werkzeug &quot;Mein Standort&quot;{" "}
