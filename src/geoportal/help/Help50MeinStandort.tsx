@@ -37,7 +37,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             es bis zum Ende des Entwicklungsprozesses kontinuierlich verbessern. 
           </p>
           <p>
-            Die 3D-Darstellungen, vor allem im Modus Luftbild, stellen hohe Anforderungen an 
+            Die 3D-Darstellungen stellen vor allem im Modus "Luftbild" hohe Anforderungen an 
             den Arbeitsspeicher des von Ihnen verwendeten Endgerätes. Insbesondere auf älteren 
             Smartphones mit schwächerer Speicherausstattung kann es daher zu Abstürzen beim Wechsel 
             in die 3D-Betrachtung kommen. Für die folgenden Ausbaustufen untersuchen wir daher die 
