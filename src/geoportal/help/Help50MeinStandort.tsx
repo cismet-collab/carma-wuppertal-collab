@@ -42,7 +42,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             Smartphones mit schwächerer Speicherausstattung kann es daher zu Abstürzen beim Wechsel 
             in die 3D-Betrachtung kommen. Für die folgenden Ausbaustufen untersuchen wir daher die 
             Möglichkeiten, dem Geoportal die 3D-Modelle in einem kompakteren Format zur Verfügung 
-            zu stellen.
+            zu stellen. 
           </p>
           <p>
             Das Werkzeug &quot;Mein Standort&quot;{" "}
