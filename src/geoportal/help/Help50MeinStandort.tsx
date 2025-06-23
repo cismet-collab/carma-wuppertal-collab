@@ -68,24 +68,14 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             Angabe der aktuellen Positionsgenauigkeit einblenden. Dieser Hinweis kann durch das 
             Antippen einer beliebigen Stelle außerhalb seines Textfeldes geschlossen werden. Ein 
             weiteres Antippen von "Mein Standort" schaltet die Anzeige Ihrer Position wieder ab 
-            (schwarzes Werkzeug-Symbol). 
-          </p>
-          <p>
-            Wenn Sie die Karte im aktivierten &quot;Follow me&quot;-Modus
-            manuell verschieben, wird der &quot;Follow me&quot;-Modus
-            unterbrochen, erkennbar an einer blauen Darstellung des
-            Werkzeug-Symbols. Ihr aktueller Standort wird weiterhin angezeigt
-            und in schneller Folge aktualisiert. Der Kartenausschnitt wird jetzt
-            aber nicht mehr automatisch an den aktuellen Standort angepasst. Bei
-            fortgesetzter Bewegung in eine Richtung wird das Standortsymbol
-            daher vom Zentrum zum Rand des Kartenfensters wandern und dann
-            verschwinden - Ihr Standort liegt jetzt nicht mehr im aktuell
-            eingestellten Kartenausschnitt. In diesem Fall führt ein erneutes
-            Antippen von &quot;Mein Standort&quot; dazu, dass wieder in den
-            &quot;Follow me&quot;-Modus zurückgewechselt wird. Wenn Ihr
-            aktueller Standort dagegen noch in der Karte sichtbar ist, wird
-            durch diese Aktion die Anzeige der Position abgeschaltet (schwarzes
-            Werkzeug-Symbol).
+            (schwarzes Werkzeug-Symbol).<br/>
+            Sie können den "Follow me"-Modus unterbrechen, indem Sie die Karte manuell verschieben 
+            (blaues Werkzeug-Symbol). Ihr aktueller Standort wird dann weiterhin angezeigt, der 
+            Kartenausschnitt aber festgehalten. Bei fortgesetzter Bewegung in eine Richtung wandert 
+            das Standortsymbol daher vom Zentrum zum Rand des Kartenfensters und verschwindet schließlich. 
+            In diesem Fall kehren Sie durch erneutes Antippen von "Mein Standort" zurück in den "Follow me"-Modus. 
+            Ist Ihr aktueller Standort dagegen noch in der Karte sichtbar, wird hierdurch die Anzeige der Position 
+            abgeschaltet (schwarzes Werkzeug-Symbol). 
           </p>
           <p
             style={{
