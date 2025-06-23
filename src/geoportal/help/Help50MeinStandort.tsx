@@ -29,7 +29,16 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             der graphischen Oberfläche wie am Desktop-Rechner angeboten, allerdings müssen 
             Sie bei der Nutzung etwas öfter scrollen. Auf einem Smartphone stehen Ihnen 
             dagegen zwei Elemente nicht mehr zur Verfügung. Die Hilfefolie entfällt ersatzlos. 
-            Außerdem wird nicht mehr für jede Kartenebene ein eigenes Ebenen-Steuerelement
+            Außerdem wird nicht mehr für jede Kartenebene ein eigenes{" "}
+            <span className="hide-on-small-screens">
+              <HelpOverlayLink
+                onClick={() => {
+                  showOverlayFromOutside("LAYERBUTTONS");
+                }}
+              >
+                Ebenen-Steuerelement
+              </HelpOverlayLink>
+            </span>{" "}   
             angezeigt. Es wird nur noch das Hintergrund-Steuerelement ausgeprägt, über das 
             Sie auch die Darstellung und Darstellungsreihenfolge aller hinzugeladenen Kartenebenen 
             steuern können. Das Responsive Design des Geoportals ist noch nicht perfekt. Wir werden 
