@@ -33,8 +33,7 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                     >
                       (s. Hilfefolie)
                     </HelpOverlayLink>
-                    .
-                  </span>{" "}
+                  </span>.{" "}
                   Im 3D-Modus wird außerdem ein spezielles Steuerwerkzeug eingeblendet: 
                   eine Kompassnadel{" "}<CompassNeedle /> oberhalb des Schalters zum 
                   Wechsel zwischen 2D- und 3D-Ansicht. Wenn Sie auf dieses Symbol mit 
