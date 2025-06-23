@@ -20,7 +20,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
       sectionContent={
         <div>
           <p>
-            Der DigiTal Zwilling / Geoportal ist für die Benutzung mit einem Desktop-PC 
+            Das Geoportal ist für die Benutzung mit einem Desktop-PC 
             entwickelt worden. An einem solchen Endgerät mit einem großen Bildschirm 
             haben Sie daher die beste Benutzerfreundlichkeit. Die vorliegende Ausbaustufe 1 
             des Geoportals verfügt aber bereits über ein grundlegendes "Responsive Design", 
