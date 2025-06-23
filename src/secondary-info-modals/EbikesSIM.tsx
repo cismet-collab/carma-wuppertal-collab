@@ -5,9 +5,10 @@ import {
   faSquareEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Modal, Accordion, Card } from "react-bootstrap";
+import { Modal, Accordion } from "react-bootstrap";
 // import { SecondaryInfoFooter } from "@carma-collab/wuppertal/e-bikes";
 import { SecondaryInfoFooter } from "../e-bikes";
+import Panel from "react-cismap/commons/Panel";
 
 interface FeatureType {
   properties?: any;
@@ -215,110 +216,90 @@ const SecondaryInfoModal = ({
           </div>
         </div>
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"0"}>
-          <Card style={{ backgroundColor: "#bce8f1" }}>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                {ladestation.typ === "Verleihstation"
-                  ? "Verleih"
-                  : "Lademöglichkeit verfügbar"}
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body style={{ backgroundColor: "white" }}>
-                {ladestation.typ === "Verleihstation" ? (
-                  <>
-                    <div style={{ marginBottom: 6 }}>
-                      <b>Pedelecs:</b> {ladestation.anzahl_pedelec}
-                    </div>
-                    <div style={{ marginBottom: 6 }}>
-                      <b>Speed-Pedelecs:</b> {ladestation.anzahl_spedelec}
-                    </div>
-                    <div style={{ marginBottom: 6 }}>
-                      <b>E-Bikes:</b> {ladestation.anzahl_ebike}
-                    </div>
-                    <div style={{ marginBottom: 6 }}>
-                      <b>Lastenräder:</b> {ladestation.anzahl_lastenrad}
-                    </div>
-                    <div>
-                      <b>Leihgebühr:</b> {ladestation.leihgebuehr}
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div style={{ marginBottom: 16 }}>
-                      Es kann keine Aussage darüber getroffen werden, ob die
-                      Station momentan besetzt ist.
-                    </div>
-                    <div style={{ marginBottom: 16 }}>
-                      <b>Ladepunkte:</b> {ladestation.anzahl_plaetze}
-                    </div>
-                    <div>
-                      <b>Steckerverbindungen:</b>
-                      {ladestation.stecker.map((stecker) => {
-                        return `${stecker.typ} (${stecker.leistung}kW, ${stecker.strom}A, ${stecker.spannung}V)`;
-                      })}
-                    </div>
-                  </>
-                )}
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
+          <Panel
+            header={
+              ladestation.typ === "Verleihstation"
+                ? "Verleih"
+                : "Lademöglichkeit verfügbar"
+            }
+            eventKey="2"
+            bsStyle="info"
+          >
+            {ladestation.typ === "Verleihstation" ? (
+              <>
+                <div style={{ marginBottom: 6 }}>
+                  <b>Pedelecs:</b> {ladestation.anzahl_pedelec}
+                </div>
+                <div style={{ marginBottom: 6 }}>
+                  <b>Speed-Pedelecs:</b> {ladestation.anzahl_spedelec}
+                </div>
+                <div style={{ marginBottom: 6 }}>
+                  <b>E-Bikes:</b> {ladestation.anzahl_ebike}
+                </div>
+                <div style={{ marginBottom: 6 }}>
+                  <b>Lastenräder:</b> {ladestation.anzahl_lastenrad}
+                </div>
+                <div>
+                  <b>Leihgebühr:</b> {ladestation.leihgebuehr}
+                </div>
+              </>
+            ) : (
+              <>
+                <div style={{ marginBottom: 16 }}>
+                  Es kann keine Aussage darüber getroffen werden, ob die Station
+                  momentan besetzt ist.
+                </div>
+                <div style={{ marginBottom: 16 }}>
+                  <b>Ladepunkte:</b> {ladestation.anzahl_plaetze}
+                </div>
+                <div>
+                  <b>Steckerverbindungen:</b>
+                  {ladestation.stecker.map((stecker) => {
+                    return `${stecker.typ} (${stecker.leistung}kW, ${stecker.strom}A, ${stecker.spannung}V)`;
+                  })}
+                </div>
+              </>
+            )}
+          </Panel>
         </Accordion>
         {ladestation.typ !== "Verleihstation" && (
           <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"1"}>
-            <Card style={{ backgroundColor: "#faebcc" }}>
-              <Card.Header>
-                <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                  Bezahlen
-                </Accordion.Toggle>
-              </Card.Header>
-              <Accordion.Collapse eventKey="1">
-                <Card.Body style={{ backgroundColor: "white" }}>
-                  <div>
-                    <b>Authentifizierung:</b>{" "}
-                    {ladestation.zugangsarten.join(" / ")}
-                  </div>
-                  <div>
-                    <b>Ladekosten:</b> {ladestation.ladekosten}
-                  </div>
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
+            <Panel header="Bezahlen" eventKey="1" bsStyle="warning">
+              <div>
+                <b>Authentifizierung:</b> {ladestation.zugangsarten.join(" / ")}
+              </div>
+              <div>
+                <b>Ladekosten:</b> {ladestation.ladekosten}
+              </div>
+            </Panel>
           </Accordion>
         )}
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
-          <Card style={{ backgroundColor: "#d6e9c6" }}>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                {ladestation.betreiber ? "Betreiber" : "Kontakt"}
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="2">
-              <Card.Body style={{ backgroundColor: "white" }}>
-                <div
-                  style={{
-                    paddingLeft: 10,
-                    paddingRight: 10,
-                    float: "right",
-                    paddingBottom: "5px",
-                  }}
-                >
-                  {links}
-                </div>
-                <div>
-                  {ladestation?.betreiber?.name || ladestation.standort}
-                </div>
-                <div>
-                  {ladestation?.betreiber?.strasse || ladestation.strasse}{" "}
-                  {ladestation?.betreiber?.hausnummer || ladestation.hausnummer}
-                </div>
-                <div>
-                  {ladestation?.betreiber?.plz} {ladestation?.betreiber?.ort}
-                </div>
-                <br />
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
+          <Panel
+            header={ladestation.betreiber ? "Betreiber" : "Kontakt"}
+            eventKey="2"
+            bsStyle="success"
+          >
+            <div
+              style={{
+                paddingLeft: 10,
+                paddingRight: 10,
+                float: "right",
+                paddingBottom: "5px",
+              }}
+            >
+              {links}
+            </div>
+            <div>{ladestation?.betreiber?.name || ladestation.standort}</div>
+            <div>
+              {ladestation?.betreiber?.strasse || ladestation.strasse}{" "}
+              {ladestation?.betreiber?.hausnummer || ladestation.hausnummer}
+            </div>
+            <div>
+              {ladestation?.betreiber?.plz} {ladestation?.betreiber?.ort}
+            </div>
+            <br />
+          </Panel>
         </Accordion>
       </Modal.Body>
       <Modal.Footer>
