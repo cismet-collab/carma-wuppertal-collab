@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import SecondaryInfoModal from "./sachdatenabfrage-modals/EMobiModal";
 import SecondaryInfoModalRad from "./sachdatenabfrage-modals/EMobiRadModal";
 import SecondaryInfoModalTrinkwasser from "./sachdatenabfrage-modals/TrinkwasserModal";

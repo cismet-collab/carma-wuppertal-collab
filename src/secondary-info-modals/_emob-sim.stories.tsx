@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import data from "./_data/emob";
 import Sim from "./EMobSIM";
 const meta: Meta = {

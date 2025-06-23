@@ -28,12 +28,14 @@
     "verbatimModuleSyntax": true,
     /* Legacy Allow remove eventually*/
     "noImplicitAny": false,
-    /* similiar as carma nx based monorepo */
+    /* similiar as carma nx based monorepo, needs nx as a dev dependency */
     "types": [
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts",
       "@nx/react/typings/styled-jsx.d.ts"
     ],
+    /* import helpers needs tslib a dependency */
+    "importHelpers": true,
   },
   "include": [
     "src"

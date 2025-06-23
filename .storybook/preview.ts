@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "leaflet/dist/leaflet.css";
 import "react-cismap/topicMaps.css";

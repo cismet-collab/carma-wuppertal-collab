@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { geoElements, backgroundSettings, demoElements } from ".";
 import {
   getCollabedHelpComponentConfig as getCollabedHelpElementsConfig,
