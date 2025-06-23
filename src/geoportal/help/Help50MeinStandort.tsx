@@ -39,7 +39,8 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
                 (Hilfefolie)
               </HelpOverlayLink>
             </span>{" "}   
-            angezeigt. Es wird nur noch das Hintergrund-Steuerelement ausgeprägt, über das 
+            angezeigt. Es wird nur noch das Hintergrund-Steuerelement{" "}
+            <FontAwesomeIcon icon={faLayerGroup} />{" "}ausgeprägt, über das 
             Sie auch die Darstellung und Darstellungsreihenfolge aller hinzugeladenen Kartenebenen 
             steuern können. Das Responsive Design des Geoportals ist noch nicht perfekt. Wir werden 
             es bis zum Ende des Entwicklungsprozesses kontinuierlich verbessern. 
@@ -91,7 +92,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
               display: isMobile ? "block" : "none",
             }}
             className="hide-on-small-screens"
-          >
+          > 
             <HelpOverlayLink
               onClick={() => {
                 showOverlayFromOutside("MEINE_POSITION");

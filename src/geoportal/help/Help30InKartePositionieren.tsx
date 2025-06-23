@@ -24,15 +24,14 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   Steuerungsmöglichkeiten zur Verfügung: Mit der Maus (z. B. Klicken 
                   und Ziehen, Scrollen) oder durch Touch-Gesten auf dem Bildschirm 
                   können Sie den Kartenausschnitt verschieben oder die Ansicht 
-                  verändern (z. B. Drehen und Kippen einer 3D-Ansicht). Eine 
-                  Übersicht dieser Bedienmöglichkeiten finden Sie auf der {" "}
+                  verändern, z. B. eine 3D-Ansicht drehen und kippen{" "}
                   <span className="hide-on-small-screens">
                     <HelpOverlayLink
                       onClick={() => {
                         showOverlayFromOutside("CENTER");
                       }}
                     >
-                      Hilfefolie
+                      (s. Hilfefolie)
                     </HelpOverlayLink>
                     .
                   </span>{" "}
