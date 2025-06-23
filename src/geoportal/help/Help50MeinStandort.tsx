@@ -80,7 +80,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             fortgesetzter Bewegung in eine Richtung wird das Standortsymbol
             daher vom Zentrum zum Rand des Kartenfensters wandern und dann
             verschwinden - Ihr Standort liegt jetzt nicht mehr im aktuell
-            eingestellten Kartenausschnitt! In diesem Fall führt ein erneutes
+            eingestellten Kartenausschnitt. In diesem Fall führt ein erneutes
             Antippen von &quot;Mein Standort&quot; dazu, dass wieder in den
             &quot;Follow me&quot;-Modus zurückgewechselt wird. Wenn Ihr
             aktueller Standort dagegen noch in der Karte sichtbar ist, wird
