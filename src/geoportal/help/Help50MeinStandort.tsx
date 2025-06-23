@@ -1,6 +1,7 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
+import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 import meinStandpunktMarkerMitKompass from "./assets/MeinStandpunktMarkerMitKompass.jpg";
 import meinStandpunktMarkerDoppel from "./assets/meinStandpunktMarkerDoppel.jpg";
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
