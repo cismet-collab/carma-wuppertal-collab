@@ -23,16 +23,16 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             Der DigiTal Zwilling / Geoportal ist für die Benutzung mit einem Desktop-PC 
             entwickelt worden. An einem solchen Endgerät mit einem großen Bildschirm 
             haben Sie daher die beste Benutzerfreundlichkeit. Die vorliegende Ausbaustufe 1 
-            des Geoportals verfügt aber bereits über ein grundlegendes "Responsiv Design", 
+            des Geoportals verfügt aber bereits über ein grundlegendes "Responsive Design", 
             sodass Sie die Anwendung auch auf mobilen Endgeräten mit entsprechend kleineren 
             Bildschirmen nutzen können. Auf einem Tablet-PC werden Ihnen noch alle Elemente 
             der graphischen Oberfläche wie am Desktop-Rechner angeboten, allerdings müssen 
             Sie bei der Nutzung etwas öfter scrollen. Auf einem Smartphone stehen Ihnen 
-            dagegen zwei Elemente nicht mehr zur Verfügung: die Hilfefolie entfällt ersatzlos. 
+            dagegen zwei Elemente nicht mehr zur Verfügung. Die Hilfefolie entfällt ersatzlos. 
             Außerdem wird nicht mehr für jede Kartenebene ein eigenes Ebenen-Steuerelement
             angezeigt. Es wird nur noch das Hintergrund-Steuerelement ausgeprägt, über das 
             Sie auch die Darstellung und Darstellungsreihenfolge aller hinzugeladenen Kartenebenen 
-            steuern können. Das Responsiv Design des Geoportals ist noch nicht perfekt. Wir werden 
+            steuern können. Das Responsive Design des Geoportals ist noch nicht perfekt. Wir werden 
             es bis zum Ende des Entwicklungsprozesses kontinuierlich verbessern. 
           </p>
           <p>
@@ -66,7 +66,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             />. 
             Durch Antippen des inneren Kreises können Sie einen Texthinweis mit einer konkreten 
             Angabe der aktuellen Positionsgenauigkeit einblenden. Dieser Hinweis kann durch das 
-            ntippen einer beliebigen Stelle außerhalb seines Textfeldes geschlossen werden. Ein 
+            Antippen einer beliebigen Stelle außerhalb seines Textfeldes geschlossen werden. Ein 
             weiteres Antippen von "Mein Standort" schaltet die Anzeige Ihrer Position wieder ab 
             (schwarzes Werkzeug-Symbol). 
           </p>
