@@ -195,12 +195,14 @@ const SecondaryInfoModal = ({
               </>
             )}
             <br />
-            {ladestation.bemerkung && (
+            {(ladestation.bemerkung || ladestation.zusatzinfo) && (
               <>
                 <div>
                   <b>Bemerkung:</b>
                 </div>
-                <div>{ladestation.bemerkung}</div>
+
+                {ladestation.bemerkung && <div>{ladestation.bemerkung}</div>}
+                {ladestation.zusatzinfo && <div>{ladestation.zusatzinfo}</div>}
                 <br />
               </>
             )}
@@ -222,23 +224,31 @@ const SecondaryInfoModal = ({
                 ? "Verleih"
                 : "Lademöglichkeit verfügbar"
             }
-            eventKey="2"
+            eventKey="0"
             bsStyle="info"
           >
             {ladestation.typ === "Verleihstation" ? (
               <>
-                <div style={{ marginBottom: 6 }}>
-                  <b>Pedelecs:</b> {ladestation.anzahl_pedelec}
-                </div>
-                <div style={{ marginBottom: 6 }}>
-                  <b>Speed-Pedelecs:</b> {ladestation.anzahl_spedelec}
-                </div>
-                <div style={{ marginBottom: 6 }}>
-                  <b>E-Bikes:</b> {ladestation.anzahl_ebike}
-                </div>
-                <div style={{ marginBottom: 6 }}>
-                  <b>Lastenräder:</b> {ladestation.anzahl_lastenrad}
-                </div>
+                {ladestation.anzahl_pedelec !== 0 && (
+                  <div style={{ marginBottom: 6 }}>
+                    <b>Pedelecs:</b> {ladestation.anzahl_pedelec}
+                  </div>
+                )}
+                {ladestation.anzahl_spedelec !== 0 && (
+                  <div style={{ marginBottom: 6 }}>
+                    <b>Speed-Pedelecs:</b> {ladestation.anzahl_spedelec}
+                  </div>
+                )}
+                {ladestation.anzahl_ebike !== 0 && (
+                  <div style={{ marginBottom: 6 }}>
+                    <b>E-Bikes:</b> {ladestation.anzahl_ebike}
+                  </div>
+                )}
+                {ladestation.anzahl_lastenrad !== 0 && (
+                  <div style={{ marginBottom: 6 }}>
+                    <b>Lastenräder:</b> {ladestation.anzahl_lastenrad}
+                  </div>
+                )}
                 <div>
                   <b>Leihgebühr:</b> {ladestation.leihgebuehr}
                 </div>
@@ -250,14 +260,63 @@ const SecondaryInfoModal = ({
                   momentan besetzt ist.
                 </div>
                 <div style={{ marginBottom: 16 }}>
-                  <b>Ladepunkte:</b> {ladestation.anzahl_plaetze}
+                  <b>Ladepunkte:</b> {ladestation.anzahl_ladepunkte}
                 </div>
                 <div>
-                  <b>Steckerverbindungen:</b>
+                  <b>Steckerverbindungen: </b>
                   {ladestation.stecker.map((stecker) => {
                     return `${stecker.typ} (${stecker.leistung}kW, ${stecker.strom}A, ${stecker.spannung}V)`;
                   })}
                 </div>
+                <div>
+                  <b>Öko-Strom:</b>{" "}
+                  {ladestation.gruener_strom === true ? "Ja" : "Nein"}
+                </div>
+                {ladestation.ladebox_zu && (
+                  <div>
+                    {(() => {
+                      const hasFaecher =
+                        ladestation.anzahl_schliessfaecher &&
+                        ladestation.anzahl_fach_steckdosen;
+                      const coins = Array.isArray(ladestation.ladebox_pfand)
+                        ? ladestation.ladebox_pfand
+                        : Array.isArray(ladestation.pfand)
+                        ? ladestation.pfand
+                        : undefined;
+                      const hasCoins =
+                        coins || ladestation.ladebox_pfand || ladestation.pfand;
+                      if (!hasFaecher && !hasCoins) return null;
+                      return (
+                        <table style={{ border: "none", margin: 0, padding: 0 }}>
+                          <tbody>
+                            {hasFaecher && (
+                              <tr>
+                                <td style={{ fontWeight: "bold", paddingRight: 8, verticalAlign: "top" }}>
+                                  Ladebox:
+                                </td>
+                                <td>
+                                  Es sind {ladestation.anzahl_schliessfaecher} Schließfächer mit jeweils{" "}
+                                  {ladestation.anzahl_fach_steckdosen} Steckdosen vorhanden.
+                                </td>
+                              </tr>
+                            )}
+                            {hasCoins && (
+                              <tr>
+                                <td></td>
+                                <td>
+                                  Sie benötigen eine der folgenden Münzen:{" "}
+                                  {coins
+                                    ? coins.map((value: number) => `${value}€`).join(", ")
+                                    : ladestation.ladebox_pfand || ladestation.pfand || ""}
+                                </td>
+                              </tr>
+                            )}
+                          </tbody>
+                        </table>
+                      );
+                    })()}
+                  </div>
+                )}
               </>
             )}
           </Panel>
