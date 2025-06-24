@@ -4,7 +4,7 @@ import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 interface Help05IntroductionProps {
   showOverlayFromOutside: () => void;
   isLoginFormVisible?: boolean;
-  loginForm?: React.ComponentType<{ helpText?: string }>;
+  loginForm?: React.ReactNode;
 }
 
 const Help05Introduction = ({
@@ -14,7 +14,7 @@ const Help05Introduction = ({
 }: Help05IntroductionProps) => {
   return (
     <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-      {isLoginFormVisible && loginForm && React.createElement(loginForm, { helpText: undefined })}
+      {isLoginFormVisible && loginForm && loginForm}
       <span>
         An dieser Stelle entsteht bis Ende 2026 in einem mehrstufigen
         Entwicklungsprozess die Portalkomponente zum Urbanen Digitalen Zwilling

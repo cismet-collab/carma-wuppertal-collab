@@ -30,7 +30,8 @@ interface CollabedHelpComponentProps {
   showOverlayFromOutside?: (key?: string) => void;
   loginFormToggle?: () => void;
   isLoginFormVisible?: boolean;
-  loginForm?: React.ComponentType<{ helpText?: string }>;
+  loginForm?: React.ReactNode;
+  loginFormTrigger?: React.ReactNode;
 }
 
 const getCollabedHelpComponentConfig = ({
