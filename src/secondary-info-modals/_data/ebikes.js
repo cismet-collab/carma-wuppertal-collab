@@ -187,9 +187,33 @@ const data = {
       }
     }
   },
-  "Skaterhalle Wicked Woods (VT)": {
+  "Skaterhalle Wicked Woods (VT-Verleihstation)": {
+    properties: {
+      "id": 2,
+      "typ": "Verleihstation",
+      "station": "Skaterhalle Wicked Woods",
+      "adresse": "Langobardenstraße 65",
+      "versatz": 1,
+      "bezirk": "6 - Oberbarmen",
+      "telefon": "+49-202-9806550",
+      "email": "team@wickedwoods.de",
+      "homepage": "https://wickedwoods.de/html/d/10/Verleih",
+      "oeffnungszeiten": "Mo, Di, Fr 14.30-21.30 Uhr | Mi 14.30-23.00 Uhr | Sa, So 11.30-21.30 Uhr",
+      "zusatzinfo": "Die Leihstation befindet sich an der Nordbahntrasse.",
+      "weitereinfo": "Eine  Akku-Ladestation mit zwei abschließbaren Boxen (pro Box zwei Ladepunkte) ist vorhanden.",
+      "bemerkung": "Mit Gastronomieangebot.",
+      "anzahl_pedelec": 10,
+      "anzahl_spedelec": 0,
+      "anzahl_ebike": 0,
+      "anzahl_lastenrad": 0,
+      "leihgebuehr": "http://www.wickedwoods.de/Pedelec-Verleih",
+      "vectorId": 3
+    }
+  },
+  "Skaterhalle Wicked Woods (VT-Ladestation)": {
     properties: {
       "id": 6,
+      "typ": "Ladestation",
       "standort": "Skaterhalle Wicked Woods",
       "versatz": 2,
       "adresse": "Langobardenstraße 65",
@@ -230,6 +254,7 @@ const data = {
   "Fertighauswelt Wuppertal (VT)": {
     properties: {
       "id": 1,
+      "typ": "Ladestation",
       "standort": "Fertighauswelt Wuppertal",
       "versatz": 1,
       "adresse": "Fertighauswelt 1",
