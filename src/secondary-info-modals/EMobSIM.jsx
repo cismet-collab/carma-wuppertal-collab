@@ -7,7 +7,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Modal, Accordion, Card, Table } from "react-bootstrap";
-import { getConnectorImageUrl } from "./helper/emob";
+import {
+  getConnectorImageUrl,
+  convertVTEntryToFeatureProperties,
+} from "./helper/emob";
 import { SecondaryInfoFooter } from "../e-auto-ladestation";
 import Panel from "react-cismap/commons/Panel";
 
@@ -17,11 +20,17 @@ const SecondaryInfoModal = ({
   versionString = "???",
   Footer = SecondaryInfoFooter,
 }) => {
+  let _feature;
+  if (feature.type !== "Feature") {
+    _feature = convertVTEntryToFeatureProperties(feature.properties);
+  } else {
+    _feature = feature;
+  }
   const close = () => {
     setOpen(false);
   };
 
-  const ladestation = feature.properties;
+  const ladestation = _feature.properties;
   let foto;
   if (ladestation.foto !== undefined) {
     foto = ladestation.foto;
