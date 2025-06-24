@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Modal, Accordion, Card, Table } from "react-bootstrap";
 import { getConnectorImageUrl } from "./helper/emob";
 import { SecondaryInfoFooter } from "../e-auto-ladestation";
+import Panel from "react-cismap/commons/Panel";
 
 const SecondaryInfoModal = ({
   feature = {},
@@ -160,111 +161,84 @@ const SecondaryInfoModal = ({
           </div>
         </div>
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"0"}>
-          <Card style={{ backgroundColor: "#bce8f1" }}>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                {ladestation.online === true
-                  ? "Lademöglichkeit verfügbar (online)"
-                  : "Lademöglichkeit momentan nicht verfügbar (offline)"}
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body style={{ backgroundColor: "white" }}>
-                <div>
-                  <b>Ladepunkte:</b> {ladestation.ladeplaetze}
-                </div>
-                <div>
-                  <b>Steckerverbindungen:</b>
-                  <Table
-                    striped
-                    bordered
-                    condensed
-                    hover
-                    style={{ marginTop: 8 }}
-                  >
-                    <tbody>{steckerverbindungenTableArr}</tbody>
-                  </Table>
-                  <div style={{ textAlign: "right" }}>
-                    <a
-                      href="https://github.com/cismet/wupp-topic-maps/blob/feature/039-winter-2019-dev-sprint/public/images/emob/"
-                      target="_license"
-                    >
-                      Bildnachweis
-                    </a>
-                  </div>
-                </div>
-                <div>
-                  <b>Strom:</b> {ladestation.stromart}
-                </div>
-                <div>
-                  <b>Schnellladestation:</b>{" "}
-                  {ladestation.schnellladestation === true ? "Ja" : "Nein"}
-                </div>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
+          <Panel
+            header={
+              ladestation.online === true
+                ? "Lademöglichkeit verfügbar (online)"
+                : "Lademöglichkeit momentan nicht verfügbar (offline)"
+            }
+            eventKey="0"
+            bsStyle="info"
+          >
+            <div>
+              <b>Ladepunkte:</b> {ladestation.ladeplaetze}
+            </div>
+            <div>
+              <b>Steckerverbindungen:</b>
+              <Table striped bordered condensed hover style={{ marginTop: 8 }}>
+                <tbody>{steckerverbindungenTableArr}</tbody>
+              </Table>
+              <div style={{ textAlign: "right" }}>
+                <a
+                  href="https://github.com/cismet/wupp-topic-maps/blob/feature/039-winter-2019-dev-sprint/public/images/emob/"
+                  target="_license"
+                >
+                  Bildnachweis
+                </a>
+              </div>
+            </div>
+            <div>
+              <b>Strom:</b> {ladestation.stromart}
+            </div>
+            <div>
+              <b>Schnellladestation:</b>{" "}
+              {ladestation.schnellladestation === true ? "Ja" : "Nein"}
+            </div>
+          </Panel>
         </Accordion>
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"1"}>
-          <Card style={{ backgroundColor: "#faebcc" }}>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                Bezahlen
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="1">
-              <Card.Body style={{ backgroundColor: "white" }}>
-                <div>
-                  <b>Authentifizierung:</b>{" "}
-                  {ladestation.authentifizierung.join(" / ")}
-                </div>
-                <div>
-                  <b>Ladekosten:</b>{" "}
-                  {ladestation.ladekosten.startsWith("http") ? (
-                    <a href={ladestation.ladekosten} target="_ladekosten">
-                      in anderem Fenster anschauen
-                    </a>
-                  ) : (
-                    ladestation.ladekosten
-                  )}
-                </div>
-                <div>
-                  <b>Parkgebühr:</b> {ladestation.parkgebuehr}
-                </div>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
+          <Panel header={"Bezahlen"} eventKey="1" bsStyle="warning">
+            <div>
+              <b>Authentifizierung:</b>{" "}
+              {ladestation.authentifizierung.join(" / ")}
+            </div>
+            <div>
+              <b>Ladekosten:</b>{" "}
+              {ladestation.ladekosten.startsWith("http") ? (
+                <a href={ladestation.ladekosten} target="_ladekosten">
+                  in anderem Fenster anschauen
+                </a>
+              ) : (
+                ladestation.ladekosten
+              )}
+            </div>
+            <div>
+              <b>Parkgebühr:</b> {ladestation.parkgebuehr}
+            </div>
+          </Panel>
         </Accordion>
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
-          <Card style={{ backgroundColor: "#d6e9c6" }}>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                Betreiber
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="2">
-              <Card.Body style={{ backgroundColor: "white" }}>
-                <div
-                  style={{
-                    paddingLeft: 10,
-                    paddingRight: 10,
-                    float: "right",
-                    paddingBottom: "5px",
-                  }}
-                >
-                  {links}
-                </div>
-                <div>{ladestation?.betreiber?.name}</div>
-                <div>
-                  {ladestation?.betreiber?.strasse}{" "}
-                  {ladestation?.betreiber?.hausnummer}
-                </div>
-                <div>
-                  {ladestation?.betreiber?.plz} {ladestation?.betreiber?.ort}
-                </div>
-                <br />
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
+          <Panel header={"Betreiber"} eventKey="2" bsStyle="success">
+            <div
+              style={{
+                paddingLeft: 10,
+                paddingRight: 10,
+                float: "right",
+                paddingBottom: "5px",
+              }}
+            >
+              {links}
+            </div>
+            <div>{ladestation?.betreiber?.name}</div>
+            <div>
+              {ladestation?.betreiber?.strasse}{" "}
+              {ladestation?.betreiber?.hausnummer}
+            </div>
+            <div>
+              {ladestation?.betreiber?.plz} {ladestation?.betreiber?.ort}
+            </div>
+            <br />
+          </Panel>
         </Accordion>
       </Modal.Body>
       <Modal.Footer>

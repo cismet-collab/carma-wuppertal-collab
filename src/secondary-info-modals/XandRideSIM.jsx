@@ -4,6 +4,7 @@ import { Button, Modal, Accordion, Card } from "react-bootstrap";
 import { SecondaryInfoFooter } from "../x-and-ride";
 import logo_vrr from "./assets/logo-vrr.png";
 import { convertVTEntryToFeatureProperties } from "./helper/xandride";
+import Panel from "react-cismap/commons/Panel";
 
 const SecondaryInfoModal = ({
   feature = {},
@@ -105,84 +106,64 @@ const SecondaryInfoModal = ({
         {(properties.bahnlinien.length > 0 ||
           properties.buslinien.length > 0) && (
           <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"0"}>
-            <Card style={{ backgroundColor: "#bce8f1" }}>
-              <Card.Header>
-                <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                  ÖPNV
-                </Accordion.Toggle>
-              </Card.Header>
-              <Accordion.Collapse eventKey="0">
-                <Card.Body style={{ backgroundColor: "white" }}>
-                  {properties.bahnlinien.length > 0 && (
-                    <div style={{ marginBottom: 6, fontSize: 20 }}>
-                      <b>Bahnlinien</b>
-                    </div>
-                  )}
-                  {properties.bahnlinien.map((linie) => {
-                    return <p style={{ marginBottom: 0 }}>{linie}</p>;
-                  })}
-                  {properties.buslinien.length > 0 && (
-                    <div
-                      style={{ marginBottom: 6, fontSize: 20, marginTop: 6 }}
-                    >
-                      <b>Buslinien</b>
-                    </div>
-                  )}
-                  {properties.buslinien.map((linie, i) => {
-                    return (
-                      <span style={{ marginBottom: 0 }}>
-                        {linie}
-                        {i !== properties.buslinien.length - 1 && ", "}
-                      </span>
-                    );
-                  })}
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
+            <Panel header={"ÖPNV"} eventKey="0" bsStyle="info">
+              {properties.bahnlinien.length > 0 && (
+                <div style={{ marginBottom: 6, fontSize: 20 }}>
+                  <b>Bahnlinien</b>
+                </div>
+              )}
+              {properties.bahnlinien.map((linie) => {
+                return <p style={{ marginBottom: 0 }}>{linie}</p>;
+              })}
+              {properties.buslinien.length > 0 && (
+                <div style={{ marginBottom: 6, fontSize: 20, marginTop: 6 }}>
+                  <b>Buslinien</b>
+                </div>
+              )}
+              {properties.buslinien.map((linie, i) => {
+                return (
+                  <span style={{ marginBottom: 0 }}>
+                    {linie}
+                    {i !== properties.buslinien.length - 1 && ", "}
+                  </span>
+                );
+              })}
+            </Panel>
           </Accordion>
         )}
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
-          <Card style={{ backgroundColor: "#d6e9c6" }}>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="2">
-                Fahrplanauskunft
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="2">
-              <Card.Body style={{ backgroundColor: "white" }}>
-                <a
-                  style={{ textDecoration: "none" }}
-                  href={`http://efa.vrr.de/wswstd/XSLT_TRIP_REQUEST2?language=de&sessionID=0&odvMacro=true&commonMacro=true&lineRestriction=403&SpEncId=0&type_origin=any&type_destination=any&useRealtime=1&nameInfo_origin=invalid&nameInfo_destination=invalid&name_origin=${properties.haltestellenname}&name_destination=`}
-                  target="_fahrplanauskunft"
-                >
-                  <table style={{ width: "100%" }}>
-                    <tbody>
-                      <tr>
-                        <td
-                          style={{
-                            textAlign: "left",
-                            verticalAlign: "top",
-                            paddingRight: 10,
-                          }}
-                        >
-                          <h4>
-                            Mit einem Klick die Fahrplanauskunft des VRR zu
-                            dieser Haltestelle öffnen.
-                          </h4>
-                          <img
-                            alt="Bild"
-                            style={{ paddingBottom: "5px" }}
-                            src={logo_vrr}
-                            width="80"
-                          />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </a>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
+          <Panel header={"Fahrplanauskunft"} eventKey="1" bsStyle="success">
+            <a
+              style={{ textDecoration: "none" }}
+              href={`http://efa.vrr.de/wswstd/XSLT_TRIP_REQUEST2?language=de&sessionID=0&odvMacro=true&commonMacro=true&lineRestriction=403&SpEncId=0&type_origin=any&type_destination=any&useRealtime=1&nameInfo_origin=invalid&nameInfo_destination=invalid&name_origin=${properties.haltestellenname}&name_destination=`}
+              target="_fahrplanauskunft"
+            >
+              <table style={{ width: "100%" }}>
+                <tbody>
+                  <tr>
+                    <td
+                      style={{
+                        textAlign: "left",
+                        verticalAlign: "top",
+                        paddingRight: 10,
+                      }}
+                    >
+                      <h4>
+                        Mit einem Klick die Fahrplanauskunft des VRR zu dieser
+                        Haltestelle öffnen.
+                      </h4>
+                      <img
+                        alt="Bild"
+                        style={{ paddingBottom: "5px" }}
+                        src={logo_vrr}
+                        width="80"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </a>
+          </Panel>
         </Accordion>
       </Modal.Body>
       <Modal.Footer>
