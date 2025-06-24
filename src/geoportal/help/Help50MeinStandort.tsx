@@ -50,7 +50,7 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
             Die 3D-Darstellungen stellen vor allem im Modus "Luftbild" hohe Anforderungen an 
             den Arbeitsspeicher des von Ihnen verwendeten Endgerätes. Insbesondere auf älteren 
             Smartphones mit schwächerer Speicherausstattung kann es daher zu Abstürzen beim Wechsel 
-            in die 3D-Betrachtung kommen. Für die folgenden Ausbaustufen untersuchen wir daher die 
+            in die 3D-Betrachtung kommen. Für die folgenden Ausbaustufen untersuchen wir deswegen die 
             Möglichkeiten, dem Geoportal die 3D-Modelle in einem kompakteren Format zur Verfügung 
             zu stellen. 
           </p>
