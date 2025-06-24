@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Modal } from ".";
 import { InfoBoxText, Footer } from ".";
 import TopicMapContextProvider from "react-cismap/contexts/TopicMapContextProvider";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import type { CSSProperties } from "react";
 
 const meta: Meta = {

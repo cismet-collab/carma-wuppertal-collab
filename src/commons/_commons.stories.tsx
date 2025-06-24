@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Attribution, GenericDigitalTwinReferenceSection } from ".";
 import { GenericDigitalTwinReferenceTextComponent } from ".";
 import { MenuFooter } from ".";
@@ -7,7 +7,7 @@ import { StadtplanTagNachtText } from ".";
 import { LuftbildkarteText } from ".";
 import { InKartePositionierenText } from ".";
 import { wuppertalCollabProjectVersion } from "..";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import TopicMapContextProvider from "react-cismap/contexts/TopicMapContextProvider";
 import { Link } from "react-scroll";
 import Icon from "react-cismap/commons/Icon";

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
   InfoBoxTextContent,
   InfoBoxTextTitle,
@@ -11,7 +11,7 @@ import TopicMapContextProvider from "react-cismap/contexts/TopicMapContextProvid
 import { KompaktanleitungSection } from ".";
 import { MenuTitle } from ".";
 import type { CSSProperties } from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import Section from "react-cismap/topicmaps/menu/Section";
 import {
   FilterStyle,
