@@ -9,7 +9,7 @@ import { Modal, Accordion } from "react-bootstrap";
 // import { SecondaryInfoFooter } from "@carma-collab/wuppertal/e-bikes";
 import { SecondaryInfoFooter } from "../e-bikes";
 import Panel from "react-cismap/commons/Panel";
-
+import { convertVTEntryToFeatureProperties } from "./helper/ebikes";
 interface FeatureType {
   properties?: any;
   [key: string]: any;
@@ -29,22 +29,30 @@ const SecondaryInfoModal = ({
   const close = () => {
     setOpen(false);
   };
+  let _feature;
+  if (feature.type !== "Feature") {
+    _feature = convertVTEntryToFeatureProperties(feature.properties);
+  } else {
+    _feature = feature;
+  }
+  console.log("xxx _feature", _feature);
 
-  const ladestation = feature.properties;
-  const isVerleih = ladestation.typ === "Verleihstation";
+  const station = _feature.properties; //can be a ladestation or a verleihstation
+
+  const isVerleih = station.typ === "Verleihstation";
   let foto;
-  if (ladestation.foto !== undefined) {
-    foto = ladestation.foto;
+  if (station.foto !== undefined) {
+    foto = station.foto;
   }
 
   let links: any = [];
 
-  if (ladestation.betreiber) {
-    if (ladestation?.betreiber?.telefon) {
+  if (station.betreiber) {
+    if (station?.betreiber?.telefon) {
       links.push(
         <a
-          title="Beitreiber anrufen"
-          href={"tel:" + ladestation?.betreiber?.telefon}
+          title="Betreiber anrufen"
+          href={"tel:" + station?.betreiber?.telefon}
         >
           <FontAwesomeIcon
             icon={faPhoneFlip}
@@ -54,10 +62,10 @@ const SecondaryInfoModal = ({
         </a>
       );
     }
-    if (ladestation?.betreiber?.email || ladestation.email) {
-      const mail = ladestation?.betreiber?.email
-        ? ladestation?.betreiber?.email
-        : ladestation.email;
+    if (station?.betreiber?.email || station.email) {
+      const mail = station?.betreiber?.email
+        ? station?.betreiber?.email
+        : station.email;
       links.push(
         <a
           title="E-Mail an den Betreiber schreiben"
@@ -72,11 +80,11 @@ const SecondaryInfoModal = ({
         </a>
       );
     }
-    if (ladestation?.betreiber?.web) {
+    if (station?.betreiber?.web) {
       links.push(
         <a
           title="Betreiberwebseite"
-          href={ladestation?.betreiber?.web}
+          href={station?.betreiber?.web}
           target="_blank"
         >
           <FontAwesomeIcon
@@ -88,9 +96,9 @@ const SecondaryInfoModal = ({
       );
     }
   } else {
-    if (ladestation.telefon) {
+    if (station.telefon) {
       links.push(
-        <a title="Beitreiber anrufen" href={"tel:" + ladestation?.telefon}>
+        <a title="Beitreiber anrufen" href={"tel:" + station?.telefon}>
           <FontAwesomeIcon
             icon={faPhoneFlip}
             style={{ color: "grey", width: "26px", textAlign: "center" }}
@@ -100,11 +108,11 @@ const SecondaryInfoModal = ({
       );
     }
 
-    if (ladestation.email) {
+    if (station.email) {
       links.push(
         <a
           title="E-Mail an den Betreiber schreiben"
-          href={"mailto:" + ladestation?.email}
+          href={"mailto:" + station?.email}
           target="_blank"
         >
           <FontAwesomeIcon
@@ -116,13 +124,9 @@ const SecondaryInfoModal = ({
       );
     }
 
-    if (ladestation.homepage) {
+    if (station.homepage) {
       links.push(
-        <a
-          title="Betreiberwebseite"
-          href={ladestation?.homepage}
-          target="_blank"
-        >
+        <a title="Betreiberwebseite" href={station?.homepage} target="_blank">
           <FontAwesomeIcon
             icon={faSquareArrowUpRight}
             style={{ color: "grey", width: "26px", textAlign: "center" }}
@@ -132,7 +136,6 @@ const SecondaryInfoModal = ({
       );
     }
   }
-
   return (
     <Modal
       style={{
@@ -148,7 +151,9 @@ const SecondaryInfoModal = ({
       <Modal.Header>
         <Modal.Title>
           <FontAwesomeIcon icon={faBicycle} />
-          {` Datenblatt: ${ladestation.typ} ${ladestation.standort}`}
+          {` Datenblatt: ${station.typ ? station.typ : "Ladestation"} ${
+            station.standort || station.station
+          }`}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body id="myMenu" key={"prbr.secondaryInfo"}>
@@ -171,16 +176,16 @@ const SecondaryInfoModal = ({
               <b>Adresse:</b>
             </div>
             <div>
-              {ladestation.strasse} {ladestation.hausnummer}
+              {station.strasse} {station.hausnummer}
             </div>
             {isVerleih ? (
               <>
-                {ladestation.weitereinfo && (
+                {station.weitereinfo && (
                   <>
                     <br />
                     <div>
                       <b>Weitere Informationen:</b>
-                      <div>{ladestation.weitereinfo}</div>
+                      <div>{station.weitereinfo}</div>
                     </div>
                   </>
                 )}
@@ -191,28 +196,28 @@ const SecondaryInfoModal = ({
                 <div>
                   <b>Detailinformation:</b>
                 </div>
-                <div>{ladestation.detailbeschreibung}</div>
+                <div>{station.detailbeschreibung}</div>
               </>
             )}
             <br />
-            {(ladestation.bemerkung || ladestation.zusatzinfo) && (
+            {(station.bemerkung || station.zusatzinfo) && (
               <>
                 <div>
                   <b>Bemerkung:</b>
                 </div>
 
-                {ladestation.bemerkung && <div>{ladestation.bemerkung}</div>}
-                {ladestation.zusatzinfo && <div>{ladestation.zusatzinfo}</div>}
+                {station.bemerkung && <div>{station.bemerkung}</div>}
+                {station.zusatzinfo && <div>{station.zusatzinfo}</div>}
                 <br />
               </>
             )}
             <div>
-              <b>Öffnungszeiten:</b> {ladestation.oeffnungszeiten}
+              <b>Öffnungszeiten:</b> {station.oeffnungszeiten}
             </div>
             <br />
             {!isVerleih && (
               <div>
-                <b>Stellplätze:</b> {ladestation.anzahl_plaetze}
+                <b>Stellplätze:</b> {station.anzahl_plaetze}
               </div>
             )}
           </div>
@@ -220,37 +225,37 @@ const SecondaryInfoModal = ({
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"0"}>
           <Panel
             header={
-              ladestation.typ === "Verleihstation"
+              station.typ === "Verleihstation"
                 ? "Verleih"
                 : "Lademöglichkeit verfügbar"
             }
             eventKey="0"
             bsStyle="info"
           >
-            {ladestation.typ === "Verleihstation" ? (
+            {station.typ === "Verleihstation" ? (
               <>
-                {ladestation.anzahl_pedelec !== 0 && (
+                {station.anzahl_pedelec !== 0 && (
                   <div style={{ marginBottom: 6 }}>
-                    <b>Pedelecs:</b> {ladestation.anzahl_pedelec}
+                    <b>Pedelecs:</b> {station.anzahl_pedelec}
                   </div>
                 )}
-                {ladestation.anzahl_spedelec !== 0 && (
+                {station.anzahl_spedelec !== 0 && (
                   <div style={{ marginBottom: 6 }}>
-                    <b>Speed-Pedelecs:</b> {ladestation.anzahl_spedelec}
+                    <b>Speed-Pedelecs:</b> {station.anzahl_spedelec}
                   </div>
                 )}
-                {ladestation.anzahl_ebike !== 0 && (
+                {station.anzahl_ebike !== 0 && (
                   <div style={{ marginBottom: 6 }}>
-                    <b>E-Bikes:</b> {ladestation.anzahl_ebike}
+                    <b>E-Bikes:</b> {station.anzahl_ebike}
                   </div>
                 )}
-                {ladestation.anzahl_lastenrad !== 0 && (
+                {station.anzahl_lastenrad !== 0 && (
                   <div style={{ marginBottom: 6 }}>
-                    <b>Lastenräder:</b> {ladestation.anzahl_lastenrad}
+                    <b>Lastenräder:</b> {station.anzahl_lastenrad}
                   </div>
                 )}
                 <div>
-                  <b>Leihgebühr:</b> {ladestation.leihgebuehr}
+                  <b>Leihgebühr:</b> {station.leihgebuehr}
                 </div>
               </>
             ) : (
@@ -260,55 +265,75 @@ const SecondaryInfoModal = ({
                   momentan besetzt ist.
                 </div>
                 <div style={{ marginBottom: 16 }}>
-                  <b>Ladepunkte:</b> {ladestation.anzahl_ladepunkte}
+                  <b>Ladepunkte:</b> {station.anzahl_ladepunkte}
                 </div>
                 <div>
                   <b>Steckerverbindungen: </b>
-                  {ladestation.stecker.map((stecker) => {
+                  {station.stecker.map((stecker) => {
                     return `${stecker.typ} (${stecker.leistung}kW, ${stecker.strom}A, ${stecker.spannung}V)`;
                   })}
                 </div>
                 <div>
                   <b>Öko-Strom:</b>{" "}
-                  {ladestation.gruener_strom === true ? "Ja" : "Nein"}
+                  {station.gruener_strom === true ? "Ja" : "Nein"}
                 </div>
-                {ladestation.ladebox_zu && (
+                {station.ladebox_zu && (
                   <div>
                     {(() => {
                       const hasFaecher =
-                        ladestation.anzahl_schliessfaecher &&
-                        ladestation.anzahl_fach_steckdosen;
-                      const coins = Array.isArray(ladestation.ladebox_pfand)
-                        ? ladestation.ladebox_pfand
-                        : Array.isArray(ladestation.pfand)
-                        ? ladestation.pfand
+                        station.anzahl_schliessfaecher &&
+                        station.anzahl_fach_steckdosen;
+                      const coins = Array.isArray(station.ladebox_pfand)
+                        ? station.ladebox_pfand
+                        : Array.isArray(station.pfand)
+                        ? station.pfand
                         : undefined;
                       const hasCoins =
-                        coins || ladestation.ladebox_pfand || ladestation.pfand;
-                      if (!hasFaecher && !hasCoins) return null;
+                        coins || station.ladebox_pfand || station.pfand;
+                      const ladeboxAnz = station.ladebox_anz;
+                      const coinsArr = Array.isArray(station.ladebox_pfand)
+                        ? station.ladebox_pfand
+                        : Array.isArray(station.pfand)
+                        ? station.pfand
+                        : undefined;
+                      const coinsText =
+                        coinsArr && coinsArr.length
+                          ? `Sie benötigen eine der folgenden Münzen: ${coinsArr
+                              .map((v) => `${v}€`)
+                              .join(", ")}`
+                          : typeof station.ladebox_pfand === "string"
+                          ? station.ladebox_pfand
+                          : typeof station.pfand === "string"
+                          ? station.pfand
+                          : "";
+                      if (!ladeboxAnz && !coinsText) return null;
                       return (
-                        <table style={{ border: "none", margin: 0, padding: 0 }}>
+                        <table
+                          style={{ border: "none", margin: 0, padding: 0 }}
+                        >
                           <tbody>
-                            {hasFaecher && (
-                              <tr>
-                                <td style={{ fontWeight: "bold", paddingRight: 8, verticalAlign: "top" }}>
-                                  Ladebox:
-                                </td>
-                                <td>
-                                  Es sind {ladestation.anzahl_schliessfaecher} Schließfächer mit jeweils{" "}
-                                  {ladestation.anzahl_fach_steckdosen} Steckdosen vorhanden.
-                                </td>
-                              </tr>
-                            )}
-                            {hasCoins && (
+                            <tr>
+                              <td
+                                style={{
+                                  fontWeight: "bold",
+                                  paddingRight: 8,
+                                  verticalAlign: "top",
+                                }}
+                              >
+                                Ladebox:
+                              </td>
+                              <td>
+                                {ladeboxAnz
+                                  ? ladeboxAnz
+                                  : hasFaecher
+                                  ? `Es sind ${station.anzahl_schliessfaecher} Schließfächer mit jeweils ${station.anzahl_fach_steckdosen} Steckdosen vorhanden.`
+                                  : ""}
+                              </td>
+                            </tr>
+                            {coinsText && (
                               <tr>
                                 <td></td>
-                                <td>
-                                  Sie benötigen eine der folgenden Münzen:{" "}
-                                  {coins
-                                    ? coins.map((value: number) => `${value}€`).join(", ")
-                                    : ladestation.ladebox_pfand || ladestation.pfand || ""}
-                                </td>
+                                <td>{coinsText}</td>
                               </tr>
                             )}
                           </tbody>
@@ -321,21 +346,21 @@ const SecondaryInfoModal = ({
             )}
           </Panel>
         </Accordion>
-        {ladestation.typ !== "Verleihstation" && (
+        {station.typ !== "Verleihstation" && (
           <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"1"}>
             <Panel header="Bezahlen" eventKey="1" bsStyle="warning">
               <div>
-                <b>Authentifizierung:</b> {ladestation.zugangsarten.join(" / ")}
+                <b>Authentifizierung:</b> {station.zugangsarten.join(" / ")}
               </div>
               <div>
-                <b>Ladekosten:</b> {ladestation.ladekosten}
+                <b>Ladekosten:</b> {station.ladekosten}
               </div>
             </Panel>
           </Accordion>
         )}
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
           <Panel
-            header={ladestation.betreiber ? "Betreiber" : "Kontakt"}
+            header={station.betreiber ? "Betreiber" : "Kontakt"}
             eventKey="2"
             bsStyle="success"
           >
@@ -349,13 +374,15 @@ const SecondaryInfoModal = ({
             >
               {links}
             </div>
-            <div>{ladestation?.betreiber?.name || ladestation.standort}</div>
             <div>
-              {ladestation?.betreiber?.strasse || ladestation.strasse}{" "}
-              {ladestation?.betreiber?.hausnummer || ladestation.hausnummer}
+              {station?.betreiber?.name || station.standort || station.station}
             </div>
             <div>
-              {ladestation?.betreiber?.plz} {ladestation?.betreiber?.ort}
+              {station?.betreiber?.strasse || station.strasse}{" "}
+              {station?.betreiber?.hausnummer || station.hausnummer}
+            </div>
+            <div>
+              {station?.betreiber?.plz} {station?.betreiber?.ort}
             </div>
             <br />
           </Panel>
