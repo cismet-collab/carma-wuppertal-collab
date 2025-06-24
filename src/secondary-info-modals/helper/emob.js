@@ -42,9 +42,9 @@ export function convertVTEntryToFeatureProperties(vtEntry) {
                         anzahl: parseInt(match[1]),
                         steckdosentyp: match[2].trim(),
                         steckdosentypkey: (() => {
-    const typeMatch = match[2].trim().match(/Typ\s*2|Schuko|CHAdeMO|CCS|Tesla Supercharger|Drehstrom/i);
-    return typeMatch ? typeMatch[0].replace(/\s+/g, ' ').trim() : match[2].trim().split(' ')[0];
-})(),
+                            const typeMatch = match[2].trim().match(/Typ\s*2|Schuko|CHAdeMO|CCS|Tesla Supercharger|Drehstrom/i);
+                            return typeMatch ? typeMatch[0].replace(/\s+/g, ' ').trim() : match[2].trim().split(' ')[0];
+                        })(),
                         leistung: parseFloat(match[3]),
                         strom: 0,
                         spannung: 0,
@@ -61,9 +61,9 @@ export function convertVTEntryToFeatureProperties(vtEntry) {
                         anzahl: parseInt(match[1]),
                         steckdosentyp: match[2].trim(),
                         steckdosentypkey: (() => {
-    const typeMatch = match[2].trim().match(/Typ\s*2|Schuko|CHAdeMO|CCS|Tesla Supercharger|Drehstrom/i);
-    return typeMatch ? typeMatch[0].replace(/\s+/g, ' ').trim() : match[2].trim().split(' ')[0];
-})(),
+                            const typeMatch = match[2].trim().match(/Typ\s*2|Schuko|CHAdeMO|CCS|Tesla Supercharger|Drehstrom/i);
+                            return typeMatch ? typeMatch[0].replace(/\s+/g, ' ').trim() : match[2].trim().split(' ')[0];
+                        })(),
                         leistung: parseFloat(match[3]),
                         strom: 0,
                         spannung: 0,
