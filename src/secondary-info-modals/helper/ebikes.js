@@ -1,6 +1,5 @@
 export function convertVTEntryToFeatureProperties(vt) {
     if (!vt) return;
-    console.log("xxx vt", vt);
 
     // Normalize stecker field to array of objects
     let steckerArr = [];
