@@ -283,13 +283,7 @@ const SecondaryInfoModal = ({
                       const hasFaecher =
                         station.anzahl_schliessfaecher &&
                         station.anzahl_fach_steckdosen;
-                      const coins = Array.isArray(station.ladebox_pfand)
-                        ? station.ladebox_pfand
-                        : Array.isArray(station.pfand)
-                        ? station.pfand
-                        : undefined;
-                      const hasCoins =
-                        coins || station.ladebox_pfand || station.pfand;
+
                       const ladeboxAnz = station.ladebox_anz;
                       const coinsArr = Array.isArray(station.ladebox_pfand)
                         ? station.ladebox_pfand
