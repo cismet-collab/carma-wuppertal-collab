@@ -194,6 +194,10 @@ const SecondaryInfoModal = ({
               <b>Schnellladestation:</b>{" "}
               {ladestation.schnellladestation === true ? "Ja" : "Nein"}
             </div>
+            <div>
+              <b>Öko-Strom:</b>{" "}
+              {ladestation.gruener_strom === true ? "Ja" : "Nein"}
+            </div>
           </Panel>
         </Accordion>
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"1"}>
