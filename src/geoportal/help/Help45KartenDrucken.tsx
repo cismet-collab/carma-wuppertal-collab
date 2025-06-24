@@ -8,14 +8,11 @@ const Component = () => {
       sectionBsStyle="info"
       sectionContent={
         <div>
-          Could now she how in was sleep dropped in by back shall come into
-          needed wild that picture they to have would by her succeeding, hair a
-          with the I first should expected line of so got her solitary the and
-          that coffee that omens, treble-range are quitting for high line text,
-          parts else. A have the unprofitable both the leather at neighbours in
-          on each written and assignment. When me the his degree read. She that
-          the equation, of by hand. Select picture spare not got in social and
-          parameters absolutely he and that if the alphabet carpeting of.
+          Dr. Scott in a shimmer of disturbed space-time gazed in wild surmise at the figure reclining before him, all six legs 
+          curled in comfortable relaxation, faceted eyes staring. "Hallucination, of course," he told himself dizzily. "Of course, 
+          of course, of course...." He turned his head for the reassuring sight of his own office around him and his eyes fell 
+          upon the sky-slit and the view beyond. The first glimmers of awful conviction began to dawn. He had never seen a 
+          Quatt Wunkery before.
         </div>
       }
     />
