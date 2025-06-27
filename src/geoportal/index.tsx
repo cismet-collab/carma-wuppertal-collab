@@ -40,6 +40,7 @@ const getCollabedHelpComponentConfig = ({
   loginFormToggle = () => {},
   isLoginFormVisible = false,
   loginForm,
+  loginFormTrigger,
 }: CollabedHelpComponentProps) => {
   const MyFooter = () => {
     const { setAppMenuActiveMenuSection } =
@@ -70,11 +71,13 @@ const getCollabedHelpComponentConfig = ({
       }}
     >
       <span>Kompaktanleitung und Hintergrundinformationen</span>
-      {loginForm && (
-        <Button type="text" onClick={loginFormToggle}>
-          <FontAwesomeIcon icon={faKey} size="lg" />
-        </Button>
-      )}
+      {loginForm && loginFormTrigger
+        ? loginFormTrigger
+        : loginForm && (
+            <Button type="text" onClick={loginFormToggle}>
+              <FontAwesomeIcon icon={faKey} size="lg" />
+            </Button>
+          )}
     </div>
   );
   const MenuSections = () => {
