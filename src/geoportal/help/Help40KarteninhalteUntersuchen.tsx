@@ -1,4 +1,6 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
+import Icon from "react-cismap/commons/Icon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Component = () => {
   return (
@@ -8,16 +10,28 @@ const Component = () => {
       sectionBsStyle="info"
       sectionContent={
         <div>
-          The aircar rocketed them at speeds in excess of R17 through the steel 
-          tunnels that lead out onto the appalling surface of the planet which was 
-          now in the grip of yet another drear morning twilight. Ghastly grey lights 
-          congealed on the land. R is a velocity measure, defined as a reasonable speed 
-          of travel that is consistent with health, mental wellbeing and not being more 
-          than say five minutes late. It is therefore clearly an almost infinitely variable 
-          figure according to circumstances, since the first two factors vary not only with 
-          speed taken as an absolute, but also with awareness of the third factor. Unless 
-          handled with tranquility this equation can result in considerable stress, ulcers 
-          and even death. R17 is not a fixed velocity, but it is clearly far too fast.
+          Viele unserer Kartenebenen stellen wir nicht nur über einen normierten 
+          Rasterdatendienst (Web Map Service - WMS) zur Verfügung, sondern auch als 
+          Vektor-Kartenebene. Technisch geschieht das  über Mapbox-konforme Vector-Tiles-Services. 
+          Sofern verfügbar, verwendet das Geoportal für die Kartendarstellung immer die Vektordaten. 
+          Bei einer vollständig konfigurierten Vektor-Kartenebene können Sie die Objekte in der 
+          Karte per Mausklick direkt selektieren, jedoch immer nur genau ein Objekt. Die 
+          Darstellung des selektierten Objektes wird dann betont, i. d. R. durch eine blaue Umrandung. 
+          Probieren Sie das einmal mit den Kartenebenen "Kindertagesstätten" (Punkte) und "Wohnlagen 2025" 
+          (Flächen) aus! Wenn Sie mehrere Vektor-Kartenebenen geladen haben und selektierbare Objekte 
+          übereinander liegen, können Sie an diesen Stellen nur die Objekte der obersten Kartenebene 
+          anklicken. Schieben Sie sofern erforderlich einfach das Kartensteuerelement der Ebene, 
+          deren Objekte Sie abfragen wollen, ganz nach rechts. Sollten für das selektierte Objekt weitere 
+          Sachinformationen verfügbar sein, werden diese sofort rechts unten in der Info-Box angezeigt. 
+          In der Info-Box gibt es wenig Platz, deswegen beschränken wir uns dort auf die wichtigsten 
+          Informationen und bieten Ihnen über das Symbol (i-icon rund) eine graphisch gestaltete 
+          Datenblattansicht oder über (i-icon eckig) eine tabellarische Darstellung der vollständigen 
+          Objektinformationen an. In der Info-Box finden Sie außerdem weitere nützliche Funktionen und 
+          Links: Mit dem Lupensymbol {" "}<FontAwesomeIcon icon={faSearchLocation} />{" "}wird die 
+          Karte auf das selektierte Objekt zentriert und gleichzeitig ein großer Betrachtungsmaßstab 
+          eingestellt. Zusätzlich werden Ihnen ggf. weiterführende (Kommunikations-) Links angezeigt 
+          (<Icon name="phone" />{" "}Telefon, {" "}<Icon name="envelope-square" />{" "}E-Mail und 
+          {" "}<Icon name="external-link-square" />{" "}Internet).
         </div>
       }
     />
