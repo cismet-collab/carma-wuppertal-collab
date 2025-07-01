@@ -3,6 +3,7 @@ import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import Icon from "react-cismap/commons/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
+import FeatureInfoIcon from "../../commons/FeatureInfoIcon";
 
 const Help40KarteninhalteUntersuchen = ({ showOverlayFromOutside }) => {
   return (
@@ -37,7 +38,7 @@ const Help40KarteninhalteUntersuchen = ({ showOverlayFromOutside }) => {
           </span>{" "} angezeigt. In der Info-Box gibt es wenig Platz, deswegen beschränken wir 
           uns dort auf die wichtigsten Informationen und bieten Ihnen über das Symbol 
           {" "}<Icon name="info" />{" "}eine graphisch gestaltete Datenblattansicht oder über 
-          (i-icon eckig) eine tabellarische 
+          {" "}<FeatureInfoIcon />{" "}eine tabellarische 
           Darstellung der vollständigen Objektinformationen an. In der Info-Box finden Sie außerdem 
           weitere nützliche Funktionen und Links: Mit dem Lupensymbol 
           {" "}<FontAwesomeIcon icon={faSearchLocation} />{" "}wird die 
