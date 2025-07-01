@@ -101,7 +101,10 @@ const getCollabedHelpComponentConfig = ({
         showOverlayFromOutside={showOverlayFromOutside}
         key="KarteninhalteHinzufuegen"
       />,
-      <Help40KarteninhalteUntersuchen key="KarteninhalteUntersuchen" />,
+      <Help40KarteninhalteUntersuchen
+        showOverlayFromOutside={showOverlayFromOutside} 
+        key="KarteninhalteUntersuchen" 
+      />,
       <Help45KartenDrucken key="KartenDrucken" />,
       <Help50MeinStandort
         showOverlayFromOutside={showOverlayFromOutside}
