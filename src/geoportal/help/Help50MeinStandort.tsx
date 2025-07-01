@@ -7,7 +7,7 @@ import meinStandpunktMarkerDoppel from "./assets/meinStandpunktMarkerDoppel.jpg"
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import UAParser from "ua-parser-js";
 
-const Help40MeinStandort = ({ showOverlayFromOutside }) => {
+const Help50MeinStandort = ({ showOverlayFromOutside }) => {
   let parser = new UAParser();
   const isMobile =
     parser.getDevice().type === "mobile" ||
@@ -107,4 +107,4 @@ const Help40MeinStandort = ({ showOverlayFromOutside }) => {
     />
   );
 };
-export default Help40MeinStandort;
+export default Help50MeinStandort;
