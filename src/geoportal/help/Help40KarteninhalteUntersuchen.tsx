@@ -4,7 +4,7 @@ import Icon from "react-cismap/commons/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 
-const Component = () => {
+const Help40KarteninhalteUntersuchen = ({ showOverlayFromOutside }) => {
   return (
     <GenericModalMenuSection
       sectionKey="untersuchen"
