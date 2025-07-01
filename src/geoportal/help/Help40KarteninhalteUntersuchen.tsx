@@ -49,4 +49,4 @@ const Help40KarteninhalteUntersuchen = ({ showOverlayFromOutside }) => {
     />
   );
 };
-export default Component;
+export default Help40KarteninhalteUntersuchen;
