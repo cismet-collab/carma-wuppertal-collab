@@ -32,11 +32,12 @@ const Help40KarteninhalteUntersuchen = ({ showOverlayFromOutside }) => {
                 showOverlayFromOutside("INFOBOX");
               }}
             >
-              (siehe Hilfefolie)
+              (s. Hilfefolie)
             </HelpOverlayLink>
-          </span>.{" "} angezeigt. In der Info-Box gibt es wenig Platz, deswegen beschränken wir 
-          uns dort auf die wichtigsten Informationen und bieten Ihnen über das Symbol (i-icon rund) 
-          eine graphisch gestaltete Datenblattansicht oder über (i-icon eckig) eine tabellarische 
+          </span>{" "} angezeigt. In der Info-Box gibt es wenig Platz, deswegen beschränken wir 
+          uns dort auf die wichtigsten Informationen und bieten Ihnen über das Symbol 
+          {" "}<Icon name="info" />{" "}eine graphisch gestaltete Datenblattansicht oder über 
+          (i-icon eckig) eine tabellarische 
           Darstellung der vollständigen Objektinformationen an. In der Info-Box finden Sie außerdem 
           weitere nützliche Funktionen und Links: Mit dem Lupensymbol 
           {" "}<FontAwesomeIcon icon={faSearchLocation} />{" "}wird die 
