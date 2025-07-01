@@ -23,12 +23,22 @@ const Component = () => {
           übereinander liegen, können Sie an diesen Stellen nur die Objekte der obersten Kartenebene 
           anklicken. Schieben Sie sofern erforderlich einfach das Kartensteuerelement der Ebene, 
           deren Objekte Sie abfragen wollen, ganz nach rechts. Sollten für das selektierte Objekt weitere 
-          Sachinformationen verfügbar sein, werden diese sofort rechts unten in der Info-Box angezeigt. 
-          In der Info-Box gibt es wenig Platz, deswegen beschränken wir uns dort auf die wichtigsten 
-          Informationen und bieten Ihnen über das Symbol (i-icon rund) eine graphisch gestaltete 
-          Datenblattansicht oder über (i-icon eckig) eine tabellarische Darstellung der vollständigen 
-          Objektinformationen an. In der Info-Box finden Sie außerdem weitere nützliche Funktionen und 
-          Links: Mit dem Lupensymbol {" "}<FontAwesomeIcon icon={faSearchLocation} />{" "}wird die 
+          Sachinformationen verfügbar sein, werden diese sofort rechts unten in der Info-Box
+          <span className="hide-on-small-screens">
+            {" "}
+            <HelpOverlayLink
+              onClick={() => {
+                showOverlayFromOutside("INFOBOX");
+              }}
+            >
+              (s. Hilfefolie)
+            </HelpOverlayLink>
+          </span>.{" "} angezeigt. In der Info-Box gibt es wenig Platz, deswegen beschränken wir 
+          uns dort auf die wichtigsten Informationen und bieten Ihnen über das Symbol (i-icon rund) 
+          eine graphisch gestaltete Datenblattansicht oder über (i-icon eckig) eine tabellarische 
+          Darstellung der vollständigen Objektinformationen an. In der Info-Box finden Sie außerdem 
+          weitere nützliche Funktionen und Links: Mit dem Lupensymbol 
+          {" "}<FontAwesomeIcon icon={faSearchLocation} />{" "}wird die 
           Karte auf das selektierte Objekt zentriert und gleichzeitig ein großer Betrachtungsmaßstab 
           eingestellt. Zusätzlich werden Ihnen ggf. weiterführende (Kommunikations-) Links angezeigt 
           (<Icon name="phone" />{" "}Telefon, {" "}<Icon name="envelope-square" />{" "}E-Mail und 
