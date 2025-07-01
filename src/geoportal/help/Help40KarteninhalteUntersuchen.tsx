@@ -1,4 +1,5 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
+import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import Icon from "react-cismap/commons/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
