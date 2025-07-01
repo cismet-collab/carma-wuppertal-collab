@@ -32,7 +32,7 @@ const Help40KarteninhalteUntersuchen = ({ showOverlayFromOutside }) => {
                 showOverlayFromOutside("INFOBOX");
               }}
             >
-              (s. Hilfefolie)
+              (siehe Hilfefolie)
             </HelpOverlayLink>
           </span>.{" "} angezeigt. In der Info-Box gibt es wenig Platz, deswegen beschränken wir 
           uns dort auf die wichtigsten Informationen und bieten Ihnen über das Symbol (i-icon rund) 
