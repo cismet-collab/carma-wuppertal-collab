@@ -1,5 +1,4 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
-import { Link } from "react-scroll";
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import Icon from "react-cismap/commons/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,16 +19,7 @@ const Help40KarteninhalteUntersuchen = ({ showOverlayFromOutside }) => {
             (s. Abschnitt "Karteninhalte hinzufügen") wird rechts vom Hintergrund-Steuerelement 
             {" "}<FontAwesomeIcon icon={faLayerGroup} />{" "}ein Ebenen-Steuerelement als zusätzliches 
             Kartensteuerelement angezeigt (nicht auf bei sehr kleinen Fenster- oder Bildschirmgrößen, 
-            vgl. Abschnitt{" "}
-            <Link
-              className="renderAsLink"
-              smooth={true}
-              delay={100}
-              onClick={() => setAppMenuActiveMenuSection("standort")}
-            >
-                Nutzung auf mobilen Geräten
-            </Link>
-            ). Die Kartensteuerelemente repräsentieren von 
+            vgl. Abschnitt "Nutzung auf mobilen Geräten"). Die Kartensteuerelemente repräsentieren von 
             links (= unten) bis rechts (= oben) den angezeigten "Kartenebenen-Stapel". Das 
             Hintergrund-Steuerelement bleibt natürlich immer links, den Rest des Stapels können Sie 
             aber durch Ziehen mit der linken Maustaste nach Ihren Wünschen umsortieren und damit die 

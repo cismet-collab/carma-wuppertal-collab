@@ -102,7 +102,6 @@ const getCollabedHelpComponentConfig = ({
         key="KarteninhalteHinzufuegen"
       />,
       <Help40KarteninhalteUntersuchen
-        setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
         showOverlayFromOutside={showOverlayFromOutside} 
         key="KarteninhalteUntersuchen" 
       />,
