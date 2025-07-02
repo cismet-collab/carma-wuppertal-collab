@@ -17,8 +17,18 @@ const Help40KarteninhalteUntersuchen = ({ showOverlayFromOutside }) => {
           <p>
             Für jede Kartenebene, die Sie als Überlagerung der Hintergrundkarte hinzugeladen haben 
             (s. Abschnitt "Karteninhalte hinzufügen") wird rechts vom Hintergrund-Steuerelement 
-            {" "}<FontAwesomeIcon icon={faLayerGroup} />{" "}ein Ebenen-Steuerelement als zusätzliches 
-            Kartensteuerelement angezeigt (nicht auf bei sehr kleinen Fenster- oder Bildschirmgrößen, 
+            {" "}<FontAwesomeIcon icon={faLayerGroup} />{" "}ein Ebenen-Steuerelement als zusätzliches
+            <span className="hide-on-small-screens">
+              {" "}
+              <HelpOverlayLink
+                onClick={() => {
+                  showOverlayFromOutside("LAYERBUTTONS");
+                }}
+              >
+                Kartensteuerelement
+              </HelpOverlayLink>
+            </span>{" "}
+            angezeigt (nicht auf bei sehr kleinen Fenster- oder Bildschirmgrößen, 
             vgl. Abschnitt "Nutzung auf mobilen Geräten"). Die Kartensteuerelemente repräsentieren von 
             links (= unten) bis rechts (= oben) den angezeigten "Kartenebenen-Stapel". Das 
             Hintergrund-Steuerelement bleibt natürlich immer links, den Rest des Stapels können Sie 
