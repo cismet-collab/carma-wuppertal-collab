@@ -197,51 +197,32 @@ export const KompaktanleitungSection = ({
                         pretext={
                           <>
                             <p>
-                              Um direkt zu einer Ladestation zu gelangen, geben
-                              Sie den Namen dieser Ladestation im Eingabefeld
-                              links unten ein. In der inkrementellen
-                              Auswahlliste werden Ihnen schon nach der Eingabe
-                              des ersten Buchstabens passende Treffer angeboten.
-                              (Wenn Sie weitere Zeichen eingeben, wird der
-                              Inhalt der Auswahlliste angepasst.) Sie können
-                              auch andere Suchbegriffe eingeben, nämlich
-                              Stadtteil (Stadtbezirk oder Quartier), Adresse,
-                              Straßenname oder den Namen eines interessanten
-                              Ortes (Point of Interest, kurz POI). Durch das in
-                              der Auswahlliste vorangestellte Symbol erkennen
-                              Sie, ob es sich bei einem Treffer um eine{" "}
-                              <Icon name="charging-station" /> Ladestation,
-                              einen <Icon name="circle" /> Stadtbezirk, ein{" "}
+                              Um in der Karte direkt zu einer bestimmten Adresse
+                              zu gelangen, geben Sie den Anfang des betreffenden
+                              Straßennamens im Eingabefeld links unten ein
+                              (mindestens 2 Zeichen). In der inkrementellen
+                              Auswahlliste werden Ihnen passende Treffer
+                              angeboten. (Wenn Sie weitere Zeichen eingeben,
+                              wird der Inhalt der Auswahlliste angepasst.) Sie
+                              können auch andere Suchbegriffe eingeben, nämlich
+                              Stadtteil (Stadtbezirk oder Quartier), Straßenname
+                              (bei Straßen ohne zugeordnete Hausnummern) oder
+                              "Point of Interest" (interessanter Ort, kurz als
+                              POI bezeichnet).
+                            </p>
+                            <p>
+                              Durch das in der Auswahlliste vorangestellte
+                              Symbol erkennen Sie, ob es sich bei einem Treffer
+                              um einen <Icon name="circle" /> Stadtbezirk, ein{" "}
                               <Icon name="pie-chart" /> Quartier, eine{" "}
                               <Icon name="home" /> Adresse, eine{" "}
-                              <Icon name="road" /> Straße ohne zugeordnete
-                              Hausnummern, einen <Icon name="tag" /> POI, die{" "}
+                              <Icon name="road" /> Straße ohne Hausnummern,
+                              einen <Icon name="tag" /> POI, die{" "}
                               <Icon name="tags" /> alternative Bezeichnung eines
-                              POI, eine <Icon name="child" />{" "}
-                              Kindertageseinrichtung oder eine{" "}
-                              <Icon name="graduation-cap" /> Schule handelt.
+                              POI.
                             </p>
                             <FuzzySearchParagraph />
                           </>
-                        }
-                        punktgeometrie="(Ladestation, Adresse, Straße, POI)"
-                        posttext={
-                          <p>
-                            Wenn Sie die Karte wie oben beschrieben auf eine
-                            Ladestation positionieren, erhält diese sofort den
-                            Fokus, sodass die zugehörigen Informationen direkt
-                            in der Info-Box angezeigt werden. Voraussetzung
-                            dafür ist, dass die aktuellen{" "}
-                            <Link
-                              to="MeinThemenstadtplan"
-                              className="useAClassNameToRenderProperLink"
-                              containerId="myMenu"
-                            >
-                              Filtereinstellungen
-                            </Link>{" "}
-                            die Darstellung der Ladestation in der Karte
-                            erlauben.
-                          </p>
                         }
                       />
                     ),
@@ -256,86 +237,6 @@ export const KompaktanleitungSection = ({
                   },
                 },
                 {
-                  title: "Filtern",
-                  bsStyle: "info",
-                  contentBlockConf: {
-                    type: "REACTCOMP",
-                    content: (
-                      <div>
-                        {" "}
-                        <p>
-                          Im Bereich "<b>Filter</b>" können Sie im
-                          Anwendungsmenü <Icon name="bars" /> die in der Karte
-                          angezeigten Ladestationen so ausdünnen, dass nur die
-                          für Sie interessanten Stationen übrig bleiben.
-                          Standardmäßig sind die Einstellungen hier so gesetzt,
-                          dass alle Ladestationen angezeigt werden.
-                        </p>
-                        <p>
-                          Mit den Optionsgruppen "
-                          <b>
-                            <i>Verfügbarkeit</i>
-                          </b>
-                          ", "
-                          <b>
-                            <i>Öffnungszeiten</i>
-                          </b>
-                          ", "
-                          <b>
-                            <i>Ökostrom</i>
-                          </b>
-                          " und "
-                          <b>
-                            <i>Schnelllader</i>
-                          </b>
-                          " können Sie die Kartenanzeige auf Ladestationen
-                          beschränken, die aktuell verfügbar (online) sind, die
-                          durchgehend (jeweils 24 Stunden an 7 Tagen die Woche)
-                          erreichbar sind, die ökologisch erzeugten Strom
-                          bereitstellen oder bei denen es sich um
-                          Schnell-Ladestationen handelt. Mit der in jeder dieser
-                          Gruppen verfügbaren Option "<i>alle Ladestationen</i>"
-                          wird das jeweilige Filterkriterium nicht ausgewertet.
-                          In der Optionsgruppe "
-                          <b>
-                            <i>Steckertypen</i>
-                          </b>
-                          " können Sie die für ihre Ladekabel passenden
-                          Steckertypen auswählen. Damit grenzen Sie die
-                          Kartenanzeige auf diejenigen Stationen ein, die
-                          mindestens eine entsprechende Anschlussmöglichkeit
-                          besitzen. Alle Filterkriterien werden mit einem
-                          logischen "und" kombiniert: Wenn Sie z. B. unter "
-                          <b>
-                            <i>Öffnungszeiten</i>
-                          </b>
-                          " den Wert "<i>24/7</i>" wählen und unter "
-                          <b>
-                            <i>Ökostrom</i>
-                          </b>
-                          " den Wert "<i>nur Ökostrom-Ladestationen</i>", werden
-                          alle Stationen angezeigt, die durchgehend erreichbar
-                          sind <b>und</b> ökologisch erzeugten Strom
-                          bereitstellen.
-                        </p>
-                        <p>
-                          Ihre Einstellungen werden direkt in der blauen
-                          Titelzeile des Bereichs "<b>Filter</b>" und in dem
-                          Donut-Diagramm, das Sie rechts neben oder unter den
-                          Filteroptionen finden, ausgewertet. Die Titelzeile
-                          zeigt die Gesamtanzahl der Ladestationen, die den von
-                          Ihnen gesetzten Filterbedingungen entsprechen. Das
-                          Donut-Diagramm zeigt zusätzlich die Verteilung auf die
-                          beiden Kategorien verfügbare Ladestationen (online)
-                          und nicht verfügbare Ladestationen (offline). Bewegen
-                          Sie dazu den Mauszeiger auf eines der farbigen
-                          Segmente des Diagramms.
-                        </p>
-                      </div>
-                    ),
-                  },
-                },
-                {
                   title: "Einstellungen",
                   bsStyle: "info",
                   contentBlockConf: {
@@ -344,29 +245,9 @@ export const KompaktanleitungSection = ({
                       <div>
                         <p>
                           Unter "<strong>Einstellungen</strong>" können Sie im
-                          Anwendungsmenü <Icon name="bars" /> festlegen, wie die
-                          Ladestationen und die Hintergrundkarte angezeigt
-                          werden sollen.
-                        </p>
-                        <p>
-                          Zu den Ladestationen können Sie unter "
-                          <b>
-                            <i>Ladestation-Einstellungen</i>
-                          </b>
-                          " auswählen, ob Ihre unter "<b>Filter</b>"
-                          festgelegten Filterbedingungen in einer Titelzeile
-                          ausgeprägt werden oder nicht. Weiter können Sie dort
-                          festlegen, ob räumlich nah beieinander liegende
-                          Ladestationen maßstabsabhängig zu einem Punktsymbol
-                          zusammengefasst werden oder nicht. Unter "
-                          <b>
-                            <i>Symbolgröße</i>
-                          </b>
-                          " können Sie in Abhängigkeit von Ihrer
-                          Bildschirmauflösung und Ihrem Sehvermögen auswählen,
-                          ob die Ladestationen mit kleinen (35 Pixel), mittleren
-                          (45 Pixel) oder großen (55 Pixel) Symbolen angezeigt
-                          werden.
+                          Anwendungsmenü festlegen, wie die Hintergrundkarte und
+                          die Fachobjekte des Kartenthemas angezeigt werden
+                          sollen.
                         </p>
                         <p>
                           Unter "
@@ -385,14 +266,21 @@ export const KompaktanleitungSection = ({
                           CSS3-Filtereffekte unterstützt, also z. B. nicht beim
                           Microsoft Internet Explorer. Die Nacht-Karte erzeugt
                           einen deutlicheren Kontrast mit den farbigen Symbolen
-                          der Ladestationen, die unterschiedlichen
-                          Flächennutzungen in der Hintergrundkarte lassen sich
-                          aber nicht mehr so gut unterscheiden wie in der
-                          Tag-Karte. Als dritte Möglichkeit steht eine{" "}
-                          <i>Luftbildkarte</i> zur Verfügung, die die
-                          Anschaulichkeit des Luftbildes mit der Eindeutigkeit
-                          des Stadtplans (Kartenschrift, durchscheinende Linien)
-                          verbindet.
+                          für die Fachobjekte des Kartenthemas, die
+                          unterschiedlichen Flächennutzungen in der
+                          Hintergrundkarte lassen sich aber nicht mehr so gut
+                          unterscheiden wie in der Tag-Karte. Als dritte
+                          Möglichkeit steht eine Luftbildkarte zur Verfügung,
+                          die die Anschaulichkeit des Luftbildes mit der
+                          Eindeutigkeit des Stadtplans (Kartenschrift,
+                          durchscheinende Linien) verbindet.
+                        </p>
+                        <p>
+                          Unter <strong>"Symbolgröße"</strong> können Sie in
+                          Abhängigkeit von Ihrer Bildschirmauflösung und Ihrem
+                          Sehvermögen auswählen, ob die Fachobjekte mit kleinen
+                          (25 Pixel), mittleren (35 Pixel) oder großen (45
+                          Pixel) Symbolen angezeigt werden.
                         </p>
 
                         <p>
@@ -404,21 +292,6 @@ export const KompaktanleitungSection = ({
                           einem fest eingestellten Kartenausschnitt.
                         </p>
                       </div>
-                    ),
-                  },
-                },
-                {
-                  title: "Personalisierung",
-                  bsStyle: "info",
-                  contentBlockConf: {
-                    type: "REACTCOMP",
-                    content: (
-                      <p>
-                        Ihre Einstellungen bleiben auch nach einem Neustart der
-                        Anwendung erhalten. (Es sei denn, Sie löschen den
-                        Browser-Verlauf einschließlich der gehosteten
-                        App-Daten.)
-                      </p>
                     ),
                   },
                 },
