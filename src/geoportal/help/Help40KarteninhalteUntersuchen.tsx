@@ -1,11 +1,12 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
+import { Link } from "react-scroll";
 import Icon from "react-cismap/commons/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 import FeatureInfoIcon from "../../commons/FeatureInfoIcon";
-import { Link } from "react-scroll";
+
 
 const Help40KarteninhalteUntersuchen = ({
   showOverlayFromOutside,
@@ -20,8 +21,16 @@ const Help40KarteninhalteUntersuchen = ({
         <div>
           <p>
             Für jede Kartenebene, die Sie als Überlagerung der Hintergrundkarte
-            hinzugeladen haben (s. Abschnitt "Karteninhalte hinzufügen") wird
-            rechts vom Hintergrund-Steuerelement{" "}
+            hinzugeladen haben (s.{" "} 
+            <Link
+              className="renderAsLink"
+              smooth={true}
+              delay={100}
+              onClick={() => setAppMenuActiveMenuSection("karteninhalte")}
+            >
+              Karteninhalte hinzufügen
+            </Link>
+            ) wird rechts vom Hintergrund-Steuerelement{" "}
             <FontAwesomeIcon icon={faLayerGroup} /> ein Ebenen-Steuerelement als
             zusätzliches
             <span className="hide-on-small-screens">
@@ -35,7 +44,7 @@ const Help40KarteninhalteUntersuchen = ({
               </HelpOverlayLink>
             </span>{" "}
             angezeigt (nicht auf bei sehr kleinen Fenster- oder
-            Bildschirmgrößen, vgl. Abschnitt{" "}
+            Bildschirmgrößen, s.{" "}
             <Link
               className="renderAsLink"
               smooth={true}

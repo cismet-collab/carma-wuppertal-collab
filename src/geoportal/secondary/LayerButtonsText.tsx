@@ -1,4 +1,5 @@
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
+import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 
 export const LayerButtonsText = () => {
   return (
@@ -8,8 +9,8 @@ export const LayerButtonsText = () => {
     >
       <div>
         <b>
-          Festes Hintergrund-Steuerelement, dazu variabel für jede weitere
-          geladene Kartenebene ein Ebenen-Steuerelement (2D)
+          Festes Hintergrund-Steuerelement{" "}<FontAwesomeIcon icon={faLayerGroup} />, 
+          dazu variabel für jede weitere geladene Kartenebene ein Ebenen-Steuerelement (2D)
         </b>
         <br />
         horizontales Verschieben der Ebenen-Steuerelemente zur Änderung der
