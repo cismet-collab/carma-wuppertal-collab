@@ -1,5 +1,5 @@
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
-import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const LayerButtonsText = () => {
   return (
