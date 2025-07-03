@@ -110,9 +110,7 @@ export const KompaktanleitungSection = ({
                           Datenblattfunktion <Icon name="info" /> anzeigen
                           lassen. Die Kommunikationslinks umfassen i. d. R.{" "}
                           <Icon name="phone" /> Telefon,{" "}
-                          <Icon name="envelope-square" /> E-Mail und{" "}
-                          <Icon name="external-link-square" />{" "}
-                          Internet-Homepage.
+                          <Icon name="envelope-square" /> E-Mail.
                         </p>
                         <p>
                           Wenn Sie noch kein Fachobjekt im aktuellen
@@ -193,38 +191,48 @@ export const KompaktanleitungSection = ({
                   contentBlockConf: {
                     type: "REACTCOMP",
                     content: (
-                      <InKartePositionierenText
-                        pretext={
-                          <>
-                            <p>
-                              Um in der Karte direkt zu einer bestimmten Adresse
-                              zu gelangen, geben Sie den Anfang des betreffenden
-                              Straßennamens im Eingabefeld links unten ein
-                              (mindestens 2 Zeichen). In der inkrementellen
-                              Auswahlliste werden Ihnen passende Treffer
-                              angeboten. (Wenn Sie weitere Zeichen eingeben,
-                              wird der Inhalt der Auswahlliste angepasst.) Sie
-                              können auch andere Suchbegriffe eingeben, nämlich
-                              Stadtteil (Stadtbezirk oder Quartier), Straßenname
-                              (bei Straßen ohne zugeordnete Hausnummern) oder
-                              "Point of Interest" (interessanter Ort, kurz als
-                              POI bezeichnet).
-                            </p>
-                            <p>
-                              Durch das in der Auswahlliste vorangestellte
-                              Symbol erkennen Sie, ob es sich bei einem Treffer
-                              um einen <Icon name="circle" /> Stadtbezirk, ein{" "}
-                              <Icon name="pie-chart" /> Quartier, eine{" "}
-                              <Icon name="home" /> Adresse, eine{" "}
-                              <Icon name="road" /> Straße ohne Hausnummern,
-                              einen <Icon name="tag" /> POI, die{" "}
-                              <Icon name="tags" /> alternative Bezeichnung eines
-                              POI.
-                            </p>
-                            <FuzzySearchParagraph />
-                          </>
-                        }
-                      />
+                      <div>
+                        <p>
+                          Um in der Karte direkt zu einer bestimmten Adresse zu
+                          gelangen, geben Sie den Anfang des betreffenden
+                          Straßennamens im Eingabefeld links unten ein
+                          (mindestens 2 Zeichen). In der inkrementellen
+                          Auswahlliste werden Ihnen passende Treffer angeboten.
+                          (Wenn Sie weitere Zeichen eingeben, wird der Inhalt
+                          der Auswahlliste angepasst.) Sie können auch andere
+                          Suchbegriffe eingeben, nämlich Vorhabenname,
+                          Straßenname (bei Straßen ohne zugeordnete Hausnummern)
+                          oder "Point of Interest" (interessanter Ort, kurz als
+                          POI bezeichnet).
+                        </p>
+                        <p>
+                          Durch das in der Auswahlliste vorangestellte Symbol
+                          erkennen Sie, ob es sich bei einem Treffer um ein{" "}
+                          <Icon name="bookmark" /> Vorhaben, eine{" "}
+                          <Icon name="home" /> Adresse, eine{" "}
+                          <Icon name="road" /> Straße ohne Hausnummern, einen{" "}
+                          <Icon name="tag" /> POI oder die <Icon name="tags" />{" "}
+                          alternative Bezeichnung eines POI.
+                        </p>
+                        <FuzzySearchParagraph />
+                        <p>
+                          Nach der Auswahl eines Treffers aus der Liste wird die
+                          Karte auf die zugehörige Position zentriert. Bei
+                          Suchbegriffen mit Punktgeometrie (Adresse, POI) wird
+                          außerdem ein großer Maßstab (Zoomstufe 14) eingestellt
+                          und ein Marker <Icon name="map-marker" /> auf der
+                          Zielposition platziert. Bei Suchbegriffen mit
+                          Flächengeometrie oder Liniengeometrie wird der Maßstab
+                          so eingestellt, dass die Fläche bzw. Linie vollständig
+                          dargestellt werden kann.
+                        </p>
+                        <p>
+                          Durch Anklicken des Werkzeugs <Icon name="times" />{" "}
+                          links neben dem Eingabefeld können Sie die Suche
+                          zurücksetzen (Entfernung von Marker bzw. Abdunklung,
+                          Löschen des Textes im Eingabefeld).
+                        </p>
+                      </div>
                     ),
                   },
                 },
