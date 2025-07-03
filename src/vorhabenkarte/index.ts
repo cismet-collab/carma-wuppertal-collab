@@ -8,3 +8,6 @@ export {
   KompaktAnleitungTitle,
   KompaktAnleitungStyle,
 } from "./SectionTitles";
+export { InfoBoxTextTitle } from "./InfoBoxTextTitle";
+// export { searchTextPlaceholder } from "./SearchTextPlaceholder";
+export { InfoBoxTextContent } from "./InfoBoxTextContent";

@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { KompaktanleitungSection } from ".";
+import {
+  InfoBoxTextContent,
+  InfoBoxTextTitle,
+  KompaktanleitungSection,
+} from ".";
 import { MenuIntroduction, Footer, SecondaryInfoFooter } from ".";
 import TopicMapContextProvider from "react-cismap/contexts/TopicMapContextProvider";
 import type { CSSProperties } from "react";
@@ -81,5 +85,16 @@ export const SecionTitles: StoryObj = {
         />
       </div>
     );
+  },
+};
+
+export const TextInInfoBoxTitle: StoryObj = {
+  render: () => {
+    return <InfoBoxTextTitle />;
+  },
+};
+export const TextInInfoBoxContent: StoryObj = {
+  render: () => {
+    return <InfoBoxTextContent />;
   },
 };
