@@ -33,11 +33,11 @@ export const HelpOverlayLink = ({
     }
   };
   return (
-    <span
+    <a
       onClick={onClick ? onClick : showSecondaryWithKeyHandler}
-      style={{ cursor: "pointer", color: "#4493F8" }}
+      className="renderAsLink"
     >
-      <u>{children}</u>
-    </span>
+      {children}
+    </a>
   );
 };
