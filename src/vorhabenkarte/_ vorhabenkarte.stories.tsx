@@ -4,6 +4,8 @@ import {
   InfoBoxTextContent,
   InfoBoxTextTitle,
   KompaktanleitungSection,
+  MenuTooltip,
+  searchTextPlaceholder,
 } from ".";
 import { MenuIntroduction, Footer, SecondaryInfoFooter } from ".";
 import TopicMapContextProvider from "react-cismap/contexts/TopicMapContextProvider";
@@ -21,6 +23,17 @@ const meta: Meta = {
 };
 
 export default meta;
+export const TextInSearchPlaceholder: StoryObj = {
+  render: () => {
+    return <div>{searchTextPlaceholder}</div>;
+  },
+};
+
+export const menuTooltipString: StoryObj = {
+  render: () => {
+    return <MenuTooltip />;
+  },
+};
 
 export const MenuEinleitung: StoryObj = {
   render: () => {
