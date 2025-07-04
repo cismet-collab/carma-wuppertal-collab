@@ -93,12 +93,8 @@ export const KompaktanleitungSection = ({
                           den Namen des jeweiligen Fachobjektes anzeigen zu
                           lassen. Ein Klick auf das Symbol setzt den Fokus auf
                           dieses Fachobjekt. Es wird dann blau hinterlegt und
-                          die zugehörigen Informationen (i. d. R. Name, Straße
-                          und Hausnummer, Kurzinformation) werden unten rechts
-                          in der Info-Box angezeigt. (Auf einem Tablet-PC wird
-                          der Fokus durch das erste Antippen des
-                          Fachobjekt-Symbols gesetzt, das zweite Antippen
-                          blendet den Namen ein.) Außerdem werden Ihnen in der
+                          die zugehörigen Informationen werden unten rechts in
+                          der Info-Box angezeigt. Außerdem werden Ihnen in der
                           Info-Box weiterführende Funktionen und
                           Kommunikationslinks zu diesem Fachobjekt angeboten.
                           Mit der Lupenfunktion <Icon name="search" /> wird die
@@ -108,8 +104,7 @@ export const KompaktanleitungSection = ({
                           Fachobjekten gibt, als in der Info-Box dargestellt
                           werden können, können Sie sich diese über die
                           Datenblattfunktion <Icon name="info" /> anzeigen
-                          lassen. Die Kommunikationslinks umfassen i. d. R.{" "}
-                          <Icon name="phone" /> Telefon,{" "}
+                          lassen. Die Kommunikationslinks umfassen{" "}
                           <Icon name="envelope-square" /> E-Mail.
                         </p>
                         <p>
