@@ -4,6 +4,7 @@ import {
   InfoBoxTextContent,
   InfoBoxTextTitle,
   KompaktanleitungSection,
+  MenuTitle,
   MenuTooltip,
   searchTextPlaceholder,
 } from ".";
@@ -23,6 +24,12 @@ const meta: Meta = {
 };
 
 export default meta;
+export const TitleMenu: StoryObj = {
+  render: () => {
+    return <MenuTitle />;
+  },
+};
+
 export const TextInSearchPlaceholder: StoryObj = {
   render: () => {
     return <div>{searchTextPlaceholder}</div>;
