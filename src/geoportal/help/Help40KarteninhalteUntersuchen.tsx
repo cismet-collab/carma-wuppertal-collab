@@ -32,7 +32,7 @@ const Help40KarteninhalteUntersuchen = ({
             </Link>
             ) wird rechts vom Hintergrund-Steuerelement{" "}
             <FontAwesomeIcon icon={faLayerGroup} /> ein Ebenen-Steuerelement als
-            zusätzliches
+            zusätzliches Kartensteuerelement
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
@@ -40,7 +40,7 @@ const Help40KarteninhalteUntersuchen = ({
                   showOverlayFromOutside("LAYERBUTTONS");
                 }}
               >
-                Kartensteuerelement
+                (s. Hilfefolie)
               </HelpOverlayLink>
             </span>{" "}
             angezeigt (nicht auf bei sehr kleinen Fenster- oder
@@ -58,7 +58,10 @@ const Help40KarteninhalteUntersuchen = ({
             Hintergrund-Steuerelement bleibt natürlich immer links, den Rest des
             Stapels können Sie aber durch Ziehen mit der linken Maustaste nach
             Ihren Wünschen umsortieren und damit die Darstellungsreihenfolge
-            festlegen.
+            festlegen. Wenn Sie ein Kartensteuerelement anklicken, wird eine 
+            Zeile mit Bedienelementen zur Steuerung von Sichtbarkeit{" "}
+            <FontAwesomeIcon icon="eye" />{" "}
+            und Transparenz der zugehörigen Kartenebene eingeblendet.
           </p>
           <p>
             Viele unserer Kartenebenen stellen wir nicht nur über einen
