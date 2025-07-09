@@ -62,8 +62,8 @@ const Help40KarteninhalteUntersuchen = ({
             Zeile mit Bedienelementen zur Steuerung von Sichtbarkeit{" "}
             <FontAwesomeIcon icon="eye" />{" "}
             und Transparenz der zugehörigen Kartenebene eingeblendet. Mit den 
-            Pfeiltasten{" "}<FontAwesomeIcon icon="faChevronLeft" />{" "}und
-            {" "}<FontAwesomeIcon icon="faChevronRight" />{" "}können Sie zum 
+            Pfeiltasten{" "}<FontAwesomeIcon icon="faChevronDown" />{" "}und
+            {" "}<FontAwesomeIcon icon="faChevronUp" />{" "}können Sie zum 
             jeweils benachbarten Kartensteuerelement wechseln.
           </p>
           <p>
