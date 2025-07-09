@@ -83,7 +83,17 @@ const Help40KarteninhalteUntersuchen = ({
               Karteninhalte hinzufügen
             </Link>
             {" "}angeboten worden sind (Kurzbeschreibung, Legende, Inhaltsverzeichnis 
-            des Kartendienstes, ggf. Link zum Open-Data-Angebot).
+            des Kartendienstes, ggf. Link zum Open-Data-Angebot). Sofern vorhanden wird 
+            Ihnen zusätzlich die Kurzbeschreibung der Datenquelle, auf der die Kartenebene 
+            basiert, aus dem Metadatenkatalog{" "}
+            <a
+              target="_legal"
+              href="https://www.geoportal.nrw/?activetab=portal"
+            >
+              GEOkatalog.NRW
+            </a> 
+            , zusammen mit einem  Link auf ein PDF-Dokument mit dem vollständigen dort 
+            geführten Metadatensatz.
           </p>
           <p>
             Viele unserer Kartenebenen stellen wir nicht nur über einen
