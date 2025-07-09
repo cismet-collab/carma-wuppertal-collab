@@ -92,8 +92,8 @@ const Help40KarteninhalteUntersuchen = ({
             >
               GEOkatalog.NRW
             </a> 
-            , zusammen mit einem  Link auf ein PDF-Dokument mit dem vollständigen dort 
-            geführten Metadatensatz.
+            {" "}angezeigt, zusammen mit einem  Link auf ein PDF-Dokument mit dem 
+            vollständigen dort geführten Metadatensatz.
           </p>
           <p>
             Viele unserer Kartenebenen stellen wir nicht nur über einen
