@@ -7,7 +7,10 @@ import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import FeatureInfoIcon from "../../commons/FeatureInfoIcon";
+import type { AmKanalAngeschlossen } from "../../verdis-online";
 
 
 const Help40KarteninhalteUntersuchen = ({
@@ -66,7 +69,22 @@ const Help40KarteninhalteUntersuchen = ({
             und Transparenz der zugehörigen Kartenebene eingeblendet. Mit den 
             Pfeiltasten{" "}<FontAwesomeIcon icon={faChevronLeft} />{" "}und
             {" "}<FontAwesomeIcon icon={faChevronRight} />{" "}können Sie zum 
-            jeweils benachbarten Kartensteuerelement wechseln.
+            jeweils benachbarten Kartensteuerelement wechseln. Mit dem Wechselschalter 
+            {" "}<FontAwesomeIcon icon={faChevronDown} />{" "}/{" "}
+            <FontAwesomeIcon icon={faChevronUp />{" "} können Sie einen 
+            Bereich mit weiteren Informationen zur Kartenebene auf- bzw. 
+            zuklappen. Dort finden Sie dieselben Inhalte, die Ihnen auch schon im 
+            Dialog{" "} 
+            <Link
+              className="renderAsLink"
+              smooth={true}
+              delay={100}
+              onClick={() => setAppMenuActiveMenuSection("karteninhalte")}
+            >
+              Karteninhalte hinzufügen
+            </Link>
+            {" "}angeboten worden sind (Kurzbeschreibung, Legende, Inhaltsverzeichnis 
+            des Kartendienstes, ggf. Link zum Open-Data-Angebot).
           </p>
           <p>
             Viele unserer Kartenebenen stellen wir nicht nur über einen
