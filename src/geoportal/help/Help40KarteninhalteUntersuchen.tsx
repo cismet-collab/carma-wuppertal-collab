@@ -10,7 +10,6 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import FeatureInfoIcon from "../../commons/FeatureInfoIcon";
-import type { AmKanalAngeschlossen } from "../../verdis-online";
 
 
 const Help40KarteninhalteUntersuchen = ({
