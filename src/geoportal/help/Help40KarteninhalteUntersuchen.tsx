@@ -71,7 +71,7 @@ const Help40KarteninhalteUntersuchen = ({
             {" "}<FontAwesomeIcon icon={faChevronRight} />{" "}können Sie zum 
             jeweils benachbarten Kartensteuerelement wechseln. Mit dem Wechselschalter 
             {" "}<FontAwesomeIcon icon={faChevronDown} />{" "}/{" "}
-            <FontAwesomeIcon icon={faChevronUp />{" "} können Sie einen 
+            <FontAwesomeIcon icon={faChevronUp} />{" "} können Sie einen 
             Bereich mit weiteren Informationen zur Kartenebene auf- bzw. 
             zuklappen. Dort finden Sie dieselben Inhalte, die Ihnen auch schon im 
             Dialog{" "} 
