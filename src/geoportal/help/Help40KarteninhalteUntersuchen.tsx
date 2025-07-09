@@ -5,6 +5,8 @@ import Icon from "react-cismap/commons/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import FeatureInfoIcon from "../../commons/FeatureInfoIcon";
 
 
@@ -62,8 +64,8 @@ const Help40KarteninhalteUntersuchen = ({
             Zeile mit Bedienelementen zur Steuerung von Sichtbarkeit{" "}
             <FontAwesomeIcon icon="eye" />{" "}
             und Transparenz der zugehörigen Kartenebene eingeblendet. Mit den 
-            Pfeiltasten{" "}<FontAwesomeIcon icon="faChevronDown" />{" "}und
-            {" "}<FontAwesomeIcon icon="faChevronUp" />{" "}können Sie zum 
+            Pfeiltasten{" "}<FontAwesomeIcon icon={faChevronLeft} />{" "}und
+            {" "}<FontAwesomeIcon icon={faChevronRight} />{" "}können Sie zum 
             jeweils benachbarten Kartensteuerelement wechseln.
           </p>
           <p>
