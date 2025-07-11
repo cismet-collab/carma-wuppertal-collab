@@ -43,35 +43,21 @@ const MeinStandortText = () => {
         bewegen (z. B. bei einer Wanderung), wird Ihre aktuelle Position im
         &quot;Follow me&quot;-Modus in schneller Folge neu bestimmt und stets in
         der Mitte der Karte angezeigt. Die Karte wird dazu automatisiert
-        nachgeführt. Ein weiteres Antippen von &quot;Mein Standort&quot;
-        schaltet die Anzeige Ihrer Position wieder ab (schwarzes
-        Werkzeug-Symbol).{" "}
+        nachgeführt.
       </p>
       <p>
         Wenn Sie die Karte im aktivierten &quot;Follow me&quot;-Modus manuell
-        verschieben, wird der &quot;Follow me&quot;-Modus unterbrochen,
+        verschieben, wird der &quot;Follow me&quot;-Modus verlassen,
         erkennbar an einer blauen Darstellung des Werkzeug-Symbols. Ihr
         aktueller Standort wird weiterhin angezeigt und in schneller Folge
         aktualisiert. Der Kartenausschnitt wird jetzt aber nicht mehr
         automatisch an den aktuellen Standort angepasst. Bei fortgesetzter
         Bewegung in eine Richtung wird das Standortsymbol daher vom Zentrum zum
         Rand des Kartenfensters wandern und dann verschwinden - Ihr Standort
-        liegt jetzt nicht mehr im aktuell eingestellten Kartenausschnitt! In
-        diesem Fall führt ein erneutes Antippen von &quot;Mein Standort&quot;
-        dazu, dass wieder in den &quot;Follow me&quot;-Modus zurückgewechselt
-        wird. Wenn Ihr aktueller Standort dagegen noch in der Karte sichtbar
-        ist, wird durch diese Aktion die Anzeige der Position abgeschaltet
-        (schwarzes Werkzeug-Symbol). Sie können die Unterbrechung des
-        &quot;Follow me&quot;-Modus bei einer Wanderung o. ä. nutzen, wenn Sie
-        sich die vor Ihnen liegende Strecke in der Karte anschauen wollen.
-        Verschieben Sie dazu den Kartenausschnitt manuell auf den Abschnitt
-        Ihres Interesses. Ihr aktueller Standort wird dann zumeist nicht mehr
-        dargestellt werden können. Der &quot;Follow me&quot;-Modus wird
-        unterbrochen (blaues Werkzeug-Symbol). Wenn Sie sich ausreichend über
-        den weiteren Streckenverlauf informiert haben, reaktivieren Sie durch
-        erneutes Antippen von &quot;Mein Standort&quot; den &quot;Follow
-        me&quot;-Modus und setzen die Karte damit wieder auf Ihren aktuellen
-        Standort zurück.{" "}
+        liegt jetzt nicht mehr im aktuell eingestellten Kartenausschnitt! 
+        Das Nachführen der Karte müssen Sie in diesem Modus per Hand erledigen. 
+        Ein weiteres Antippen von &quot;Mein Standort&quot; schaltet die Anzeige 
+        Ihrer Position wieder ab (schwarzes Werkzeug-Symbol).
       </p>
       <p>
         Noch ein Hinweis zur Genauigkeit: Die Richtigkeit der Positionsanzeige
