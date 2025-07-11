@@ -77,16 +77,13 @@ const Help50MeinStandort = ({ showOverlayFromOutside }) => {
             />. 
             Durch Antippen des inneren Kreises können Sie einen Texthinweis mit einer konkreten 
             Angabe der aktuellen Positionsgenauigkeit einblenden. Dieser Hinweis kann durch das 
-            Antippen einer beliebigen Stelle außerhalb seines Textfeldes geschlossen werden. Ein 
-            weiteres Antippen von "Mein Standort" schaltet die Anzeige Ihrer Position wieder ab 
-            (schwarzes Werkzeug-Symbol).<br/>
-            Sie können den "Follow me"-Modus unterbrechen, indem Sie die Karte manuell verschieben 
+            Antippen einer beliebigen Stelle außerhalb seines Textfeldes geschlossen werden. 
+            Sie können den "Follow me"-Modus verlassen, indem Sie die Karte manuell verschieben 
             (blaues Werkzeug-Symbol). Ihr aktueller Standort wird dann weiterhin angezeigt, der 
             Kartenausschnitt aber festgehalten. Bei fortgesetzter Bewegung in eine Richtung wandert 
-            das Standortsymbol daher vom Zentrum zum Rand des Kartenfensters und verschwindet schließlich. 
-            In diesem Fall kehren Sie durch erneutes Antippen von "Mein Standort" zurück in den "Follow me"-Modus. 
-            Ist Ihr aktueller Standort dagegen noch in der Karte sichtbar, wird hierdurch die Anzeige der Position 
-            abgeschaltet (schwarzes Werkzeug-Symbol). 
+            das Standortsymbol daher vom Zentrum zum Rand des Kartenfensters und verschwindet schließlich.
+            Das Nachführen der Karte müssen Sie in diesem Modus per Hand erledigen. Ein weiteres Antippen 
+            von "Mein Standort" schaltet die Anzeige Ihrer Position wieder ab (schwarzes Werkzeug-Symbol). 
           </p>
           <p
             style={{
