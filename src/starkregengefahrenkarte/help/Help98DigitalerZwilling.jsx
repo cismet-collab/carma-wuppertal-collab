@@ -47,16 +47,10 @@ const Component = ({ email }) => {
             >
               smart.wuppertal
             </a>
-            . Das Projekt wird im Rahmen der dritten Session des Förderprogramms{" "}
-            <a
-              href="https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/stadt-wohnen/staedtebau/smart-cities/smart-cities-node.html"
-              title={""}
-            >
-              Smart Cities made in Germany
-            </a>{" "}
-            vom Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen
-            gefördert. Als Projektträger fungiert die Kreditanstalt für
-            Wiederaufbau KfW.
+            . Das Projekt wird im Rahmen der dritten Session des Förderprogramms
+            "Smart Cities made in Germany" vom Bundesministerium für Wohnen, 
+            Stadtentwicklung und Bauwesen gefördert. Als Projektträger fungiert 
+            die Kreditanstalt für Wiederaufbau KfW.
           </p>
 
           <table width="100%" style={{ marginTop: 10 }}>
