@@ -58,17 +58,9 @@ const GenericDigitalTwinReferenceTextComponent: React.FC<
         >
           smart.wuppertal
         </a>
-        . Das Projekt wird im Rahmen der dritten Session des Förderprogramms{" "}
-        <a
-          href="https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/stadt-wohnen/staedtebau/smart-cities/smart-cities-node.html"
-          title="Smart Cities: Stadtentwicklung im digitalen Zeitalter"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Smart Cities made in Germany
-        </a>{" "}
-        vom Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen
-        gefördert. Als Projektträger fungiert die Kreditanstalt für Wiederaufbau
+        . Das Projekt wird im Rahmen der dritten Session des Förderprogramms
+        "Smart Cities made in Germany" vom Bundesministerium für Wohnen, Stadtentwicklung 
+        und Bauwesen gefördert. Als Projektträger fungiert die Kreditanstalt für Wiederaufbau
         KfW.
       </p>
 
