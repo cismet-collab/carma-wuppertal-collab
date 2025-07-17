@@ -8,13 +8,13 @@ import {
   MONTHS,
   opendataLinkSections,
 } from "../luftmessstationen/helper";
-import { Chart } from "chart.js";
-import ReactChartkick, { ColumnChart } from "react-chartkick";
+
 import Color from "color";
 import Icon from "react-cismap/commons/Icon";
 
 import { SecondaryInfoFooter } from "../luftmessstationen";
-ReactChartkick.addAdapter(Chart);
+import { Bar } from "react-chartjs-2";
+import "chart.js/auto";
 
 const InfoPanel = ({
   feature = {},
@@ -144,10 +144,6 @@ const InfoPanel = ({
           new Color(LOOKUP[getStatus4Value(avgs[year])].color).fade(0.5)
         );
       }
-
-      for (const year of Object.keys(avgs)) {
-        avgsChartData.push([year, avgs[year]]);
-      }
     }
 
     const subSections = [];
@@ -182,25 +178,33 @@ const InfoPanel = ({
         >
           <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
             {legend}
-            <ColumnChart
-              legend={false}
-              data={[
-                {
-                  data: last12ChartData,
-                  library: {
-                    backgroundColor: last12Colors,
-                    borderColor: last12Colors,
-                    hoverBackgroundColor: last12Colors,
-                    hoverBorderColor: last12Colors,
-                    legend: {
-                      display: false,
-                      labels: {
-                        fontColor: "rgb(255, 99, 132)",
-                      },
-                    },
+            <Bar
+              data={{
+                labels: last12ChartData.map((item) => item[0]),
+                datasets: [
+                  {
+                    data: last12ChartData.map((item) => item[1]),
+                    backgroundColor: last12Colors.map((color) =>
+                      color ? color.rgb().alpha(0.5).string() : null
+                    ),
+                    borderColor: last12Colors.map((color) =>
+                      color ? color.rgb().alpha(0.5).string() : null
+                    ),
+                  },
+                ],
+              }}
+              options={{
+                plugins: {
+                  legend: {
+                    display: false,
                   },
                 },
-              ]}
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
+                },
+              }}
             />
           </div>
         </SecondaryInfoPanelSection>
@@ -215,19 +219,28 @@ const InfoPanel = ({
         >
           <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
             {legend}
-            <ColumnChart
-              legend={false}
-              data={[
-                {
-                  data: avgsChartData,
-                  library: {
-                    backgroundColor: avgsColors,
-                    borderColor: avgsColors,
-                    hoverBackgroundColor: avgsColors,
-                    hoverBorderColor: avgsColors,
+            <Bar
+              data={{
+                labels: avgsChartData.map((item) => item[0]),
+                datasets: [
+                  {
+                    data: avgsChartData.map((item) => item[1][0]),
+                    backgroundColor: avgsColors.map((color) =>
+                      color.rgb().alpha(0.5).string()
+                    ),
+                    borderColor: avgsColors.map((color) =>
+                      color.rgb().alpha(0.5).string()
+                    ),
+                  },
+                ],
+              }}
+              options={{
+                plugins: {
+                  legend: {
+                    display: false,
                   },
                 },
-              ]}
+              }}
             />
             {/* <pre>{JSON.stringify(avgs, null, 2)}</pre> */}
           </div>
