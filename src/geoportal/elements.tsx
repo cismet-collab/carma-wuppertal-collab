@@ -276,7 +276,7 @@ export const elements: Record<string, ElementType> = {
     key: "RATHAUS",
     content: (
       <div>
-        <b>Zum Ausgangspunkt</b>
+        <b>Zum Rathaus Barmen</b>
       </div>
     ),
     containerPos: "center",
