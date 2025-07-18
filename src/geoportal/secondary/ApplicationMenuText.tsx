@@ -7,9 +7,11 @@ export const ApplicationMenuText = () => {
       style={{ margin: "0", paddingLeft: "20px", maxWidth: "600px" }}
     >
       <div>
-        <b>Bedienungsanleitung und Hintergrundinformationen (2D und 3D)</b>
-        <br /> kompaktes Akkordeon-Design | diverse Verknüpfungen mit{" "}
-        <HelpOverlayLink target="HILFE_OVERLAY">Hilfefolie</HelpOverlayLink>
+        <b>Bedienungsanleitung und An-/Abmeldung (2D und 3D)</b>
+        <br /> kompaktes Akkordeon-Design für Bedienungs- und Hintergrundinformationen 
+        | diverse Verknüpfungen mit{" "}
+        <HelpOverlayLink target="HILFE_OVERLAY">Hilfefolie</HelpOverlayLink>{" "}| An- und Abmeldung 
+        für Nutzer/innen mit erweiterten Rechten (Funktionen und Inhalte)
       </div>
     </ul>
   );
