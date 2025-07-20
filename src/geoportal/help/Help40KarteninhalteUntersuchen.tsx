@@ -33,7 +33,7 @@ const Help40KarteninhalteUntersuchen = ({
             >
               Karteninhalte hinzufügen
             </Link>
-            ) wird rechts neben dem Hintergrund-Steuerelement{" "}
+            ), wird rechts neben dem Hintergrund-Steuerelement{" "}
             <FontAwesomeIcon icon={faLayerGroup} /> ein eigenes Ebenen-Steuerelement 
             als zusätzliches Kartensteuerelement
             <span className="hide-on-small-screens">
@@ -56,23 +56,21 @@ const Help40KarteninhalteUntersuchen = ({
             >
               Nutzung auf mobilen Geräten
             </Link>
-            ). Die Kartensteuerelemente repräsentieren von links (= unten) bis
-            rechts (= oben) den angezeigten "Kartenebenen-Stapel". Das
-            Hintergrund-Steuerelement bleibt natürlich immer links, den Rest des
-            Stapels können Sie aber durch Ziehen mit der linken Maustaste nach
-            Ihren Wünschen umsortieren und damit die Darstellungsreihenfolge
-            festlegen. Wenn Sie ein Kartensteuerelement anklicken, wird eine 
-            Zeile mit Bedienelementen zur Steuerung von Sichtbarkeit{" "}
-            <FontAwesomeIcon icon="eye" />{" "}
-            und Transparenz der zugehörigen Kartenebene eingeblendet. Mit den 
-            Pfeiltasten{" "}<FontAwesomeIcon icon={faChevronLeft} />{" "}und
-            {" "}<FontAwesomeIcon icon={faChevronRight} />{" "}können Sie zum 
-            jeweils benachbarten Kartensteuerelement wechseln. Mit dem Wechselschalter 
+            ). Die Kartensteuerelemente stellen von links nach rechts den angezeigten
+            "Kartenebenen-Stapel" dar: links (= unten) die Hintergrundkarte, 
+            rechts (= oben) die darüberliegenden Ebenen. Während das Hintergrund-Steuerelement 
+            fest an erster Stelle bleibt, können Sie die Reihenfolge der übrigen Ebenen individuell 
+            anpassen – ziehen Sie dazu das entsprechende Steuerelement mit der linken Maustaste 
+            an die gewünschte Position. So beeinflussen Sie die Reihenfolge, in der die Ebenen 
+            in der Karte dargestellt werden. Ein Klick auf ein Kartensteuerelement öffnet eine 
+            Bedienzeile zur Steuerung von Sichtbarkeit{" "}<FontAwesomeIcon icon="eye" />{" "} 
+            und Transparenz der zugehörigen Kartenebene. Mit den Pfeiltasten{" "}
+            <FontAwesomeIcon icon={faChevronLeft} />{" "}und{" "}<FontAwesomeIcon icon={faChevronRight} />{" "}
+            wechseln Sie schnell zwischen benachbarten Steuerelementen. Der Wechselschalter 
             {" "}<FontAwesomeIcon icon={faChevronDown} />{" "}/{" "}
-            <FontAwesomeIcon icon={faChevronUp} />{" "} können Sie einen 
-            Bereich mit weiteren Informationen zur Kartenebene auf- bzw. 
-            zuklappen. Dort finden Sie dieselben Inhalte, die Ihnen auch schon im 
-            Dialog{" "} 
+            <FontAwesomeIcon icon={faChevronUp} />{" "} ermöglicht es Ihnen, einen Informationsbereich 
+            zur gewählten Ebene auf- bzw. wieder zuzuklappen. Dieser Bereich enthält dieselben Angaben, 
+            die Ihnen auch im Dialog{" "} 
             <Link
               className="renderAsLink"
               smooth={true}
@@ -81,18 +79,19 @@ const Help40KarteninhalteUntersuchen = ({
             >
               Karteninhalte hinzufügen
             </Link>
-            {" "}angeboten worden sind (Kurzbeschreibung, Legende, Inhaltsverzeichnis 
-            des Kartendienstes, ggf. Link zum Open-Data-Angebot). Sofern vorhanden wird 
-            Ihnen zusätzlich die Kurzbeschreibung der Datenquelle, auf der die Kartenebene 
-            basiert, aus dem Metadatenkatalog{" "}
+            {" "}angeboten werden: eine Kurzbeschreibung, die Legende, 
+            das Inhaltsverzeichnis des zugrundeliegenden Kartendienstes sowie 
+            – falls verfügbar – einen Link zum zugehörigen Open-Data-Angebot.
+            Ergänzend wird, sofern vorhanden, die Kurzbeschreibung der Datenquelle, 
+            auf der die Kartenebene basiert, aus dem Metadatenkatalog{" "}
             <a
               target="_legal"
               href="https://www.geoportal.nrw/?activetab=portal"
             >
               GEOkatalog.NRW
             </a> 
-            {" "}angezeigt, zusammen mit einem  Link auf ein PDF-Dokument mit dem 
-            vollständigen dort geführten Metadatensatz.
+            {" "}angezeigt, inklusive eines Links zu einem PDF-Dokument mit dem 
+            vollständigen Metadatensatz.
           </p>
           <p>
             Viele unserer Kartenebenen stellen wir nicht nur über einen
