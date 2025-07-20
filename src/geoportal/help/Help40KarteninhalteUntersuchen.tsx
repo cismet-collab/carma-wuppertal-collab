@@ -24,8 +24,7 @@ const Help40KarteninhalteUntersuchen = ({
       sectionContent={
         <div>
           <p>
-            Für jede Kartenebene, die Sie als Überlagerung der Hintergrundkarte
-            hinzugeladen haben (s.{" "} 
+            Für jede Kartenebene, die Sie zusätzlich zur Hintergrundkarte geladen haben (s.{" "} 
             <Link
               className="renderAsLink"
               smooth={true}
@@ -34,9 +33,9 @@ const Help40KarteninhalteUntersuchen = ({
             >
               Karteninhalte hinzufügen
             </Link>
-            ) wird rechts vom Hintergrund-Steuerelement{" "}
-            <FontAwesomeIcon icon={faLayerGroup} /> ein Ebenen-Steuerelement als
-            zusätzliches Kartensteuerelement
+            ) wird rechts neben dem Hintergrund-Steuerelement{" "}
+            <FontAwesomeIcon icon={faLayerGroup} /> ein eigenes Ebenen-Steuerelement 
+            als zusätzliches Kartensteuerelement
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
@@ -47,8 +46,8 @@ const Help40KarteninhalteUntersuchen = ({
                 (s. Hilfefolie)
               </HelpOverlayLink>
             </span>{" "}
-            angezeigt (nicht auf bei sehr kleinen Fenster- oder
-            Bildschirmgrößen, s.{" "}
+            eingeblendet. Dies gilt allerdings nicht bei sehr kleinen Fenster- oder 
+            Bildschirmgrößen (s.{" "}
             <Link
               className="renderAsLink"
               smooth={true}
