@@ -29,6 +29,36 @@ const InfoPanel = ({
   const station = selectedFeature?.properties;
   console.log("station", station);
 
+  const chartOptions = {
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        displayColors: false,
+        callbacks: {
+          label: function (context) {
+            return `${context.formattedValue}`;
+          },
+        },
+      },
+    },
+    scales: {
+      y: {
+        ticks: {
+          maxTicksLimit: 4,
+        },
+        beginAtZero: true,
+      },
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+    },
+  };
+
   const footer = (
     <div style={{ fontSize: "11px" }}>
       <div>
@@ -178,34 +208,31 @@ const InfoPanel = ({
         >
           <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
             {legend}
-            <Bar
-              data={{
-                labels: last12ChartData.map((item) => item[0]),
-                datasets: [
-                  {
-                    data: last12ChartData.map((item) => item[1]),
-                    backgroundColor: last12Colors.map((color) =>
-                      color ? color.rgb().alpha(0.5).string() : null
-                    ),
-                    borderColor: last12Colors.map((color) =>
-                      color ? color.rgb().alpha(0.5).string() : null
-                    ),
-                  },
-                ],
+            <div
+              style={{
+                height: "300px",
+                lineHeight: "300px",
+                width: "100%",
               }}
-              options={{
-                plugins: {
-                  legend: {
-                    display: false,
-                  },
-                },
-                scales: {
-                  y: {
-                    beginAtZero: true,
-                  },
-                },
-              }}
-            />
+            >
+              <Bar
+                data={{
+                  labels: last12ChartData.map((item) => item[0]),
+                  datasets: [
+                    {
+                      data: last12ChartData.map((item) => item[1]),
+                      backgroundColor: last12Colors.map((color) =>
+                        color ? color.rgb().alpha(0.5).string() : null
+                      ),
+                      borderColor: last12Colors.map((color) =>
+                        color ? color.rgb().alpha(0.5).string() : null
+                      ),
+                    },
+                  ],
+                }}
+                options={chartOptions}
+              />
+            </div>
           </div>
         </SecondaryInfoPanelSection>
       );
@@ -219,29 +246,31 @@ const InfoPanel = ({
         >
           <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
             {legend}
-            <Bar
-              data={{
-                labels: avgsChartData.map((item) => item[0]),
-                datasets: [
-                  {
-                    data: avgsChartData.map((item) => item[1][0]),
-                    backgroundColor: avgsColors.map((color) =>
-                      color.rgb().alpha(0.5).string()
-                    ),
-                    borderColor: avgsColors.map((color) =>
-                      color.rgb().alpha(0.5).string()
-                    ),
-                  },
-                ],
+            <div
+              style={{
+                height: "300px",
+                lineHeight: "300px",
+                width: "100%",
               }}
-              options={{
-                plugins: {
-                  legend: {
-                    display: false,
-                  },
-                },
-              }}
-            />
+            >
+              <Bar
+                data={{
+                  labels: avgsChartData.map((item) => item[0]),
+                  datasets: [
+                    {
+                      data: avgsChartData.map((item) => item[1][0]),
+                      backgroundColor: avgsColors.map((color) =>
+                        color.rgb().alpha(0.5).string()
+                      ),
+                      borderColor: avgsColors.map((color) =>
+                        color.rgb().alpha(0.5).string()
+                      ),
+                    },
+                  ],
+                }}
+                options={chartOptions}
+              />
+            </div>
             {/* <pre>{JSON.stringify(avgs, null, 2)}</pre> */}
           </div>
         </SecondaryInfoPanelSection>
