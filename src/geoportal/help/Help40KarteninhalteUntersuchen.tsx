@@ -128,7 +128,7 @@ const Help40KarteninhalteUntersuchen = ({
             Datenblattansicht oder über <FeatureInfoIcon /> eine tabellarische
             Darstellung der vollständigen Objektinformationen öffnen. 
             Die Info-Box bietet darüber hinaus weitere nützliche Funktionen: 
-            Ein Klick auf das Lupensymbol <FontAwesomeIcon icon={faSearchLocation} /> 
+            Ein Klick auf das Lupensymbol{" "}<FontAwesomeIcon icon={faSearchLocation} />{" "} 
             zentriert die Karte auf das ausgewählte Objekt und stellt automatisch 
             einen großen Ansichtsmaßstab ein. Falls vorhanden, werden zudem weiterführende 
             Kommunikationslinks eingeblendet (<Icon name="phone" /> Telefon, 
