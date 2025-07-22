@@ -121,18 +121,19 @@ const Help40KarteninhalteUntersuchen = ({
                 (s. Hilfefolie)
               </HelpOverlayLink>
             </span>{" "}
-            angezeigt. In der Info-Box gibt es wenig Platz, deswegen beschränken
-            wir uns dort auf die wichtigsten Informationen und bieten Ihnen über
+            angezeigt. Da dort nur begrenzt Platz zur Verfügung steht, werden 
+            dort nur die wichtigsten Angaben eingeblendet. Falls darüber hinaus
+            weitere Informationen verfügbar sind, können Sie über
             das Symbol <Icon name="info" /> eine graphisch gestaltete
             Datenblattansicht oder über <FeatureInfoIcon /> eine tabellarische
-            Darstellung der vollständigen Objektinformationen an. In der
-            Info-Box finden Sie außerdem weitere nützliche Funktionen und Links:
-            Mit dem Lupensymbol <FontAwesomeIcon icon={faSearchLocation} /> wird
-            die Karte auf das selektierte Objekt zentriert und gleichzeitig ein
-            großer Betrachtungsmaßstab eingestellt. Zusätzlich werden Ihnen ggf.
-            weiterführende (Kommunikations-) Links angezeigt (
-            <Icon name="phone" /> Telefon, <Icon name="envelope-square" />{" "}
-            E-Mail und <Icon name="external-link-square" /> Internet).
+            Darstellung der vollständigen Objektinformationen öffnen. 
+            Die Info-Box bietet darüber hinaus weitere nützliche Funktionen: 
+            Ein Klick auf das Lupensymbol <FontAwesomeIcon icon={faSearchLocation} /> 
+            zentriert die Karte auf das ausgewählte Objekt und stellt automatisch 
+            einen großen Ansichtsmaßstab ein. Falls vorhanden, werden zudem weiterführende 
+            Kommunikationslinks eingeblendet (<Icon name="phone" /> Telefon, 
+            {" "}<Icon name="envelope-square" />{" "} E-Mail und 
+            {" "}<Icon name="external-link-square" /> Internet).
           </p>
         </div>
       }
