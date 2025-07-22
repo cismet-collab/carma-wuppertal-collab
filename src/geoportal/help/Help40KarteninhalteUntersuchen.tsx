@@ -94,24 +94,23 @@ const Help40KarteninhalteUntersuchen = ({
             vollständigen Metadatensatz.
           </p>
           <p>
-            Viele unserer Kartenebenen stellen wir nicht nur über einen
-            normierten Rasterdatendienst (Web Map Service - WMS) zur Verfügung,
-            sondern auch als Vektor-Kartenebene. Technisch geschieht das über
-            Mapbox-konforme Vector-Tiles-Services. Sofern verfügbar, verwendet
-            das Geoportal für die Kartendarstellung immer die Vektordaten. Bei
-            einer vollständig konfigurierten Vektor-Kartenebene können Sie die
-            Objekte in der Karte per Mausklick direkt selektieren, jedoch immer
-            nur genau ein Objekt. Die Darstellung des selektierten Objektes wird
-            dann betont, i. d. R. durch eine blaue Umrandung. Probieren Sie das
-            einmal mit den Kartenebenen "Kindertagesstätten" (Punkte) und
-            "Wohnlagen 2025" (Flächen) aus! Wenn Sie mehrere Vektor-Kartenebenen
-            geladen haben und selektierbare Objekte übereinander liegen, können
-            Sie an diesen Stellen nur die Objekte der obersten Kartenebene
-            anklicken. Schieben Sie sofern erforderlich einfach das
-            Kartensteuerelement der Ebene, deren Objekte Sie abfragen wollen,
-            ganz nach rechts. Sollten für das selektierte Objekt weitere
-            Sachinformationen verfügbar sein, werden diese sofort rechts unten
-            in der Info-Box
+            Viele unserer Kartenebenen stehen nicht nur als Rasterdaten über einen 
+            Web Map Service (WMS) zur Verfügung, sondern auch als Vektor-Kartenebenen. 
+            Diese basieren technisch auf Mapbox-konformen Vector-Tiles-Services. 
+            Wenn für eine Ebene Vektordaten vorhanden sind, nutzt das Geoportal 
+            bevorzugt diese, da sie interaktiver und schneller darstellbar sind. 
+            Bei vollständig konfigurierten Vektor-Kartenebenen können Sie einzelne 
+            Objekte direkt per Mausklick in der Karte selektieren – allerdings 
+            jeweils nur ein Objekt zur gleichen Zeit. Das gewählte Objekt wird 
+            dabei deutlich hervorgehoben, in der Regel durch eine blaue Umrandung.
+            Probieren Sie diese Funktion zum Beispiel mit den Kartenebenen "Kindertagesstätten" 
+            (Punkte) oder "Wohnlagen 2025" (Flächen) aus! Wenn mehrere Vektor-Kartenebenen 
+            gleichzeitig aktiv sind und sich selektierbare Objekte überlagern, 
+            lässt sich an diesen Stellen immer nur das Objekt der obersten Kartenebene 
+            auswählen. Falls Sie ein Objekt aus einer anderen Ebene untersuchen möchten, 
+            schieben Sie einfach das zugehörige Kartensteuerelement ganz nach rechts, 
+            um es in der Darstellung nach oben zu holen. Wenn zum gewählten Objekt 
+            zusätzliche Informationen vorliegen, werden diese rechts unten in der Info-Box 
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
