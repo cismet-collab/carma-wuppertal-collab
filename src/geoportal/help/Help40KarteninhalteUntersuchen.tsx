@@ -149,7 +149,22 @@ const Help40KarteninhalteUntersuchen = ({
             Sachdaten sowohl für die Flurstücke als auch die Gebäude. Zusätzlich wird in diesem Modus auch immer eine 
             Info-Box "Position" mit den Koordinaten des Fadenkreuz-Zentrums ausgeprägt (geographische Breite und Länge 
             in Dezimalgrad im Bezugssystem ETRS89). Mehrfache Info-Boxen werden überlappend in Form eines Stapels von 
-            Info-Boxen dargestellt.
+            Info-Boxen dargestellt. Mehrfache Info-Boxen werden überlappend in Form eines Stapels von Info-Boxen 
+            dargestellt. Mit einem Klick auf den Titelbalken einer hinteren Info-Box wird diese in den Vordergrund 
+            geholt und damit aktiviert. Dazu werden einfach die Positionen der angeklickten und der bisher oben 
+            liegenden Info-Box getauscht. Nach Möglichkeit wird das Objekt, das zu der aktiven Info-Box gehört, 
+            in der Karte durch eine blaue Umrandung hervorgehoben (setzt eine vollständig konfigurierte Vektor-Kartenebenen 
+            mit Zeichenvorschrift für die betonte Darstellung voraus). 
+            <span className="hide-on-small-screens">
+              {" "}
+              <HelpOverlayLink
+                onClick={() => {
+                  showOverlayFromOutside("SACHDATENABFRAGE");
+                }}
+              >
+                (s. Hilfefolie)
+              </HelpOverlayLink>
+            </span>{" "}
           </p>
         </div>
       }
