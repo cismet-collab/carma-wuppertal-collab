@@ -135,6 +135,22 @@ const Help40KarteninhalteUntersuchen = ({
             {" "}<Icon name="envelope-square" />{" "} E-Mail und 
             {" "}<Icon name="external-link-square" /> Internet).
           </p>
+          <p>
+            Mit dem Wechselschalter <FeatureInfoIcon /> im unteren Bereich der Werkzeugleiste auf der linken 
+            Seite können Sie den Multi-Sachdatenabfragemodus ein- bzw. ausschalten. In diesem Modus 
+            verwandelt ein Mausklick den Mauszeiger in ein Fadenkreuz und es wird eine Sachdatenabfrage 
+            auf allen aktuell sichtbaren Kartenebenen durchgeführt, die solche Abfragen grundsätzlich 
+            entgegennehmen ("thematischer Durchstich"). Diese "abfragbaren Kartenebenen" erkennt man 
+            an einem blauen Strich unter dem zugehörigen Ebenen-Steuerelement. Im Multi-Sachdatenabfragemodus 
+            können Sie auch solche Kartenebenen abfragen, die als Rasterdaten über einen WMS bereitgestellt 
+            werden und deren Objekte nicht per Mausklick selektierbar sind. Zu jedem Ergebnis einer 
+            Multi-Sachdatenabfrage wird eine separate Info-Box angezeigt. Einige Kartenebenen liefern 
+            mehrere Ergebnisse, z. B. erhält man über die Kartenebenen "ALKIS Flurstücke / Gebäude (schwarz bzw. gelb)" 
+            Sachdaten sowohl für die Flurstücke als auch die Gebäude. Zusätzlich wird in diesem Modus auch immer eine 
+            Info-Box "Position" mit den Koordinaten des Fadenkreuz-Zentrums ausgeprägt (geographische Breite und Länge 
+            in Dezimalgrad im Bezugssystem ETRS89). Mehrfache Info-Boxen werden überlappend in Form eines Stapels von 
+            Info-Boxen dargestellt.
+          </p>
         </div>
       }
     />
