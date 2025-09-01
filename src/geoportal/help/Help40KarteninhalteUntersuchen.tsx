@@ -10,6 +10,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import FeatureInfoIcon from "../../commons/FeatureInfoIcon";
+import MeasureIcon from "../../commons/assets/measure.png";
 
 const Help40KarteninhalteUntersuchen = ({
   showOverlayFromOutside,
@@ -171,7 +172,7 @@ const Help40KarteninhalteUntersuchen = ({
             aktiven Info-Box gehört, in der Karte durch eine blaue Umrandung
             hervorgehoben (setzt eine vollständig konfigurierte
             Vektor-Kartenebenen mit Zeichenvorschrift für die betonte
-            Darstellung voraus).
+            Darstellung voraus) .
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
@@ -182,6 +183,11 @@ const Help40KarteninhalteUntersuchen = ({
                 (s. Hilfefolie)
               </HelpOverlayLink>
             </span>{" "}
+          </p>
+          <p>
+            Mit dem Wechselschalter{" "}
+            <img alt="Logo KFW" height="20" src={MeasureIcon} /> kann der
+            Messmodus eingeschaltet werden.
           </p>
         </div>
       }
