@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 
-interface SecondaryInfoFooterProps {
+export interface SecondaryInfoFooterProps {
   close: () => void;
   version: string;
 }
@@ -27,7 +27,9 @@ export const SecondaryInfoFooter = ({
             <div>
               <span style={{ fontSize: "11px" }}>
                 <div>
-                  <b>Teilzwilling E-Auto-Ladestationskarte Wuppertal #{version}</b>{" "}
+                  <b>
+                    Teilzwilling E-Auto-Ladestationskarte Wuppertal #{version}
+                  </b>{" "}
                   powered by{" "}
                   <a href="https://cismet.de/" target="_cismet">
                     cismet GmbH
@@ -41,21 +43,21 @@ export const SecondaryInfoFooter = ({
                     carma
                   </a>{" "}
                   |{" "}
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://cismet.de/datenschutzerklaerung.html"
-                     >
-                      Datenschutzerklärung
-                    </a>{" "}
-                    |{" "} 
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://cismet.de/impressum.html"
-                    >
-                      Impressum
-                    </a>{" "}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://cismet.de/datenschutzerklaerung.html"
+                  >
+                    Datenschutzerklärung
+                  </a>{" "}
+                  |{" "}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://cismet.de/impressum.html"
+                  >
+                    Impressum
+                  </a>{" "}
                 </div>
               </span>
             </div>
