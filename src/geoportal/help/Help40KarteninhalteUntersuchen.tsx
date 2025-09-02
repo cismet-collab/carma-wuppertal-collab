@@ -187,7 +187,14 @@ const Help40KarteninhalteUntersuchen = ({
           <p>
             Mit dem Wechselschalter{" "}
             <img alt="Messmodus" height={20} width={20} src={MeasureIcon} />{" "}
-            kann der Messmodus eingeschaltet werden.
+            links unten in der Werkzeugleiste können Sie den Messungsmodus ein- bzw. 
+            ausschalten. In diesem Modus legen Sie durch Ihre Mausklicks Messgeometrien 
+            in Form von Linienzügen oder geschlossenen Flächen an. Einen Linienzug beenden 
+            Sie durch erneutes Anklicken des letzten Punktes oder einfach durch einen Doppelklick. 
+            Eine Fläche schließen Sie durch erneutes Anklicken des Startpunktes. Die 
+            Messungsergebnisse (Strecken bei den Linienzügen, Strecken und Flächeninhalte bei den 
+            geschlossenen Flächen) werden bereits während des Anlegens der Messgeometrie laufend 
+            in der Info-Box angezeigt.
           </p>
         </div>
       }
