@@ -207,6 +207,19 @@ const Help40KarteninhalteUntersuchen = ({
               n Messungen verfügbar
             </a>{" "}den Kartenausschnitt so anpassen, dass alle Messgeometrien angezeigt werden. 
             Wenn Sie den Cache-Speicher löschen, verschwinden auch die dort gespeicherten Messgeometrien.
+            <b>Zuletzt noch einige Hinweise zur Genauigkeit der Streckenmessung</b>: Die Dehnung der 
+            Strecken und Flächen durch die Abbildung der gekrümmten Erdoberfläche in eine ebene 
+            Kartendarstellung (wir verwenden dazu die in der Web-Kartographie übliche Abbildung 
+            "Web Mercator (Auxiliary Sphere)" mit dem Code "EPSG:3857") wird korrigiert, die Messungen 
+            entsprechen daher in sehr guter Annäherung den realen Verhältnissen. Wir geben die auf die 
+            Erdoberfläche projizierten Strecken an, diese können deutlich kürzer sein als die schrägen 
+            Strecken, die Sie z. B. entlang der Oberfläche einer der steilen Wuppertaler Straßen messen 
+            würden. Wegen einiger kartographischer und rechentechnischer Vereinfachungen und der begrenzten 
+            geometrischen Genauigkeit sowohl des Karteninhalts als auch der Messgeometrien sind die Messungsergebnisse 
+            nicht perfekt, aber für die meisten Fragestellungen völlig ausreichend. Bei kurzen Segmenten ist die 
+            Genauigkeit besser als +/- 50 cm, die auf volle Meter gerundete Streckenlänge ist daher sicher. Bei 
+            Segmenten mit einer Länge von mehreren Kilometern wird die Genauigkeit mit +/- 5 m etwas schlechter, 
+            hier ist also die auf 10 Meter gerundete Streckenlänge sicher.
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
