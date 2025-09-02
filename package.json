@@ -1,7 +1,7 @@
 {
   "name": "carma-wuppertal-collab-vite",
   "private": true,
-  "version": "0.108.38",
+  "version": "0.108.39",
   "type": "module",
   "scripts": {
     "dev": "vite",
