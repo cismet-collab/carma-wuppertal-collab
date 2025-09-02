@@ -207,7 +207,7 @@ const Help40KarteninhalteUntersuchen = ({
               n Messungen verfügbar
             </a>{" "}den Kartenausschnitt so anpassen, dass alle Messgeometrien angezeigt werden. 
             Wenn Sie den Cache-Speicher löschen, verschwinden auch die dort gespeicherten Messgeometrien.
-            <b>Zuletzt noch einige Hinweise zur Genauigkeit der Streckenmessung</b>: Die Dehnung der 
+            {" "}<b>Zuletzt noch einige Hinweise zur Genauigkeit der Streckenmessung</b>: Die Dehnung der 
             Strecken und Flächen durch die Abbildung der gekrümmten Erdoberfläche in eine ebene 
             Kartendarstellung (wir verwenden dazu die in der Web-Kartographie übliche Abbildung 
             "Web Mercator (Auxiliary Sphere)" mit dem Code "EPSG:3857") wird korrigiert, die Messungen 
