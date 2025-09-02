@@ -180,7 +180,7 @@ const Help40KarteninhalteUntersuchen = ({
                   showOverlayFromOutside("SACHDATENABFRAGE");
                 }}
               >
-                (s. Hilfefolie)
+                s. Hilfefolie
               </HelpOverlayLink>
             </span>{" "}
           </p>
