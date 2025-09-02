@@ -145,7 +145,7 @@ const Help40KarteninhalteUntersuchen = ({
             E-Mail und <Icon name="external-link-square" /> Internet).
           </p>
           <p>
-            Mit dem Wechselschalter <FontAwesomeIcon icon={faInfo} /> im unteren
+            Mit dem Wechselschalter <img alt="Sachdatenabfrage" height="20" src={FeatureInfoIcon} /> im unteren
             Bereich der Werkzeugleiste auf der linken Seite können Sie den
             Multi-Sachdatenabfragemodus ein- bzw. ausschalten. In diesem Modus
             verwandelt ein Mausklick den Mauszeiger in ein Fadenkreuz und es
@@ -184,11 +184,7 @@ const Help40KarteninhalteUntersuchen = ({
               </HelpOverlayLink>
             </span>{" "}
           </p>
-          <p>
-            Mit dem Wechselschalter{" "}
-            <img alt="Logo KFW" height="20" src={MeasureIcon} /> kann der
-            Messmodus eingeschaltet werden.
-          </p>
+          
         </div>
       }
     />
