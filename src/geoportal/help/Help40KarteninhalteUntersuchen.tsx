@@ -194,7 +194,29 @@ const Help40KarteninhalteUntersuchen = ({
             Eine Fläche schließen Sie durch erneutes Anklicken des Startpunktes. Die 
             Messungsergebnisse (Strecken bei den Linienzügen, Strecken und Flächeninhalte bei den 
             geschlossenen Flächen) werden bereits während des Anlegens der Messgeometrie laufend 
-            in der Info-Box angezeigt.
+            in der Info-Box angezeigt. Die Messgeometrien werden im Cache-Speicher Ihres Browsers 
+            abgelegt. Dadurch können Sie in der Info-Box mit den Pfeiltasten{" "}           
+            <a className="useAClassNameToRenderProperLink">
+              &lt;&lt;
+            </a>{" "}und{" "}
+            <a className="useAClassNameToRenderProperLink">
+              &gt;&gt;
+            </a>{" "}durch die 
+            Messgeometrien im aktuellen Kartenausschnitt wandern und mit dem Link{" "}  
+            <a className="useAClassNameToRenderProperLink">
+              n Messungen verfügbar
+            </a>{" "}den Kartenausschnitt so anpassen, dass alle Messgeometrien angezeigt werden. 
+            Wenn Sie den Cache-Speicher löschen, verschwinden auch die dort gespeicherten Messgeometrien.
+            <span className="hide-on-small-screens">
+              {" "}
+              <HelpOverlayLink
+                onClick={() => {
+                  showOverlayFromOutside("MESSUNGEN");
+                }}
+              >
+                s. Hilfefolie
+              </HelpOverlayLink>
+            </span>{" "}
           </p>
         </div>
       }
