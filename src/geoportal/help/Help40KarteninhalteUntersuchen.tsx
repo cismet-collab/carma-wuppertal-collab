@@ -186,8 +186,8 @@ const Help40KarteninhalteUntersuchen = ({
           </p>
           <p>
             Mit dem Wechselschalter{" "}
-            <img alt="Messmodus" height="10" src={MeasureIcon} />{" "}kann der
-            Messmodus eingeschaltet werden.
+            <img alt="Messmodus" height={20} width={20} src={MeasureIcon} />{" "}
+            kann der Messmodus eingeschaltet werden.
           </p>
         </div>
       }
