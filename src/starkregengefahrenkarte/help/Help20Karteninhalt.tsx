@@ -52,7 +52,7 @@ const Component: React.FC<Help20KarteninhaltProps> = ({ simulationsklammer }) =>
             auf der rechten Seite der Titelzeile können Sie zwischen den
             Kartenansichten wechseln.
           </p>
-
+          
           <p>
             In der rechten unteren Ecke der Anwendung (bei kleinen Displays
             unten direkt über dem Eingabefeld) finden Sie das{" "}
@@ -100,6 +100,28 @@ const Component: React.FC<Help20KarteninhaltProps> = ({ simulationsklammer }) =>
               Datengrundlagen
             </a>
             .
+          </p>
+          <p>
+            Unter <b>Animation</b> finden Sie einen Wechselschalter zum An- und
+            Ausschalten einer animierten Darstellung des Fließgeschehens
+            (Strömungsdarstellung), die aber nur im Modus "Maximalwerte"
+            verfügbar und hier standardmäßig aktiviert ist. Die
+            Strömungsdarstellung basiert auf den Maximalbeträgen der
+            Geschwindigkeitsvektoren, die für jede 1x1 m-Rasterzelle im Verlauf
+            einer Simulationsberechnung bestimmt wurden. Es wird der Abfluss in
+            die Richtung animiert, in der sich die größte Geschwindigkeit
+            einstellt. Die Animation vermittelt ein besonders anschauliches Bild
+            des komplexen Abflussgeschehens bei einem Starkregenereignis. Die
+            Animation steht nur bei der Betrachtung der Starkregengefahrenkarte
+            in einem Detailmaßstab (Zoomstufen 17 bis 22) zur Verfügung, in den
+            Übersichtsmaßstäben (Zoomstufen 16 und kleiner) wird sie automatisch
+            ausgeblendet. Die Animation wird für jede Kartenansicht neu online
+            berechnet, sodass die Anzeigegeschwindigkeit von der
+            Internetübertragung abhängt. Wenn die Animation nicht angezeigt
+            wird, blenden wir in der Kartenansicht "max. Fließgeschwindigkeiten"
+            in Detailmaßstäben (hier bis zur Zoomstufe 16) statische
+            Fließrichtungspfeile ein, um die Hauptrichtungen des
+            Regenwasserabflusses zu visualisieren.
           </p>
           <p>
             Am oberen Rand des Kontrollfeldes befindet sich eine platzsparende
