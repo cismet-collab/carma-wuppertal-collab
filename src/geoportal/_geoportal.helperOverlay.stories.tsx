@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { geoElements, backgroundSettings, demoElements } from ".";
 import {
   getCollabedHelpComponentConfig as getCollabedHelpElementsConfig,
   LibHelperOverlay as DisplayContentHelper,
   useOverlayHelper,
-} from "../helper-overlay/index";
+} from "../helper-overlay";
+import { geoElements, backgroundSettings, demoElements } from ".";
 
 const meta: Meta = {
   title: "Geoportal/Helper-Overlay",
