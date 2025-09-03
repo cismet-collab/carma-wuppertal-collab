@@ -25,7 +25,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
+    "allowJs": true,
     /* Legacy Allow remove eventually*/
     "noImplicitAny": false,
     /* similiar as carma nx based monorepo */

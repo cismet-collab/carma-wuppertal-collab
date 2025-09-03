@@ -4,7 +4,7 @@ import {
   getCollabedHelpComponentConfig,
   searchTextPlaceholder,
   tooltipText,
-} from ".";
+} from "./";
 import ModalApplicationMenu from "react-cismap/topicmaps/menu/ModalApplicationMenu";
 
 const meta: Meta = {

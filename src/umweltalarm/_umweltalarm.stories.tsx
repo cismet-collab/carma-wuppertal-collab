@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import TopicMapContextProvider from "react-cismap/contexts/TopicMapContextProvider";
-import {
-  getCollabedHelpComponentConfig,
-  searchTextPlaceholder,
-  tooltipText,
-} from ".";
-import ModalApplicationMenu from "react-cismap/topicmaps/menu/ModalApplicationMenu";
 
+import ModalApplicationMenu from "react-cismap/topicmaps/menu/ModalApplicationMenu";
+import {
+  tooltipText,
+  searchTextPlaceholder,
+  getCollabedHelpComponentConfig,
+} from "./";
 const meta: Meta = {
   title: "Umweltalarm",
 };

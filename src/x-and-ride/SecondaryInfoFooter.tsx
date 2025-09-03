@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 
-interface SecondaryInfoFooterProps {
+export interface SecondaryInfoFooterProps {
   close: () => void;
   version: string;
 }
