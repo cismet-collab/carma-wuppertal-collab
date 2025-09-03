@@ -3,7 +3,6 @@ import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 
 const Help45KartenDrucken = ({
   showOverlayFromOutside,
-  setAppMenuActiveMenuSection,
 }) => {
   return (
     <GenericModalMenuSection
