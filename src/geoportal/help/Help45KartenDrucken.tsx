@@ -29,8 +29,9 @@ const Help45KartenDrucken = ({
             Wenn Sie dort auf das Symbol{" "}<FontAwesomeIcon icon="file-export" />{" "}<b>Karte speichern</b> klicken, 
             öffnet sich ein kleiner Dialog zum Speichern der aktuell zusammengestellten Kartenebenen unter einem frei 
             von Ihnen wählbaren Titel. Wenn Sie möchten, können Sie sich im Eingabefeld "<b>Inhalt</b>" notieren, um 
-            welche Kartenebenen es sich handelt. Die Karte wird im Cache-Speicher Ihres Browsers abgelegt. Die Funktion 
-            ist daher zzt. eher zum kurzfristigen Sichern eines Bearbeitungsstandes gedacht als zum langfristigen Aufbau 
+            welche Kartenebenen es sich handelt. Die Karte wird im Cache-Speicher Ihres Browsers abgelegt. Wenn Sie  
+            diesen Speicher löschen, verschwinden auch ihre dort zuvor gespeicherten Karten. Die Funktion ist daher 
+            zzt. eher zum kurzfristigen Sichern eines Bearbeitungsstandes gedacht als zum langfristigen Aufbau 
             einer Kartensammlung.
           </p>
         </div>
