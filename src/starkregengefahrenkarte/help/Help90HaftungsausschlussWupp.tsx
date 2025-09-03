@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-const Component = ({ appName }) => {
-  const { setAppMenuActiveMenuSection } = useContext(UIDispatchContext);
+const Component = (_props: { appName?: any }) => {
+  const { setAppMenuActiveMenuSection } = useContext(
+    UIDispatchContext as any
+  ) as any;
 
   return (
     <GenericModalMenuSection
@@ -18,7 +20,7 @@ const Component = ({ appName }) => {
             zusammengestellt und kontrolliert. Dennoch sind Fehler nie ausgeschlossen, sodass für
             die Richtigkeit und damit auch Nutzbarkeit der Informationen keine Gewähr übernommen
             werden kann (vgl. auch Abschnitt{" "}
-            <a class='renderAsLink' onClick={() => setAppMenuActiveMenuSection("aussagekraft")}>
+            <a className='renderAsLink' onClick={() => setAppMenuActiveMenuSection("aussagekraft")}>
               Aussagekraft der Simulationen
             </a>{" "}
             zu den beim heutigen Stand der Technik unvermeidbaren Unschärfen und Fehlern von

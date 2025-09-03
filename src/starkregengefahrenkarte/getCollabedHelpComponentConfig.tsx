@@ -36,9 +36,9 @@ export const getCollabedHelpComponentConfig = ({
   email,
 }: HelpComponentConfigProps) => {
   const MyFooter = () => {
-    const { setAppMenuActiveMenuSection } = useContext(
-      UIDispatchContext as any
-    ) as any;
+    const { setAppMenuActiveMenuSection } = useContext<typeof UIDispatchContext>(
+      UIDispatchContext
+    );
     return (
       <HelpFooter
         version={versionString}

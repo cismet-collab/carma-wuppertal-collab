@@ -1,8 +1,6 @@
-import React, { useContext } from "react";
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 
-
-const Component = () => {
+const Component = ({}: { email?: string }) => {
   return (
     <GenericModalMenuSection
       sectionKey="modellfehlermelden"
