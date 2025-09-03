@@ -1,4 +1,5 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
+import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 
 const Component = () => {
   return (
@@ -8,11 +9,25 @@ const Component = () => {
       sectionBsStyle="info"
       sectionContent={
         <div>
-          Dr. Scott in a shimmer of disturbed space-time gazed in wild surmise at the figure reclining before him, all six legs 
-          curled in comfortable relaxation, faceted eyes staring. "Hallucination, of course," he told himself dizzily. "Of course, 
-          of course, of course...." He turned his head for the reassuring sight of his own office around him and his eyes fell 
-          upon the sky-slit and the view beyond. The first glimmers of awful conviction began to dawn. He had never seen a 
-          Quatt Wunkery before.
+          <p>
+            In der 
+            <span className="hide-on-small-screens">
+              {" "}
+              <HelpOverlayLink
+                onClick={() => {
+                  showOverlayFromOutside("MENU");
+                }}
+              >
+                Menüleiste
+              </HelpOverlayLink>
+            </span>{" "}Menüleiste finden Sie einige Funktionen, mit denen Sie die Ergebnisse ihrer Arbeit mit dem 
+            DigiTal Zwilling festhalten oder mit anderen teilen können.
+          </p>
+          <p>
+            Wenn Sie dort auf das Symbol <b>Karte speichern</b> klicken, öffnet sich ein kleiner Dialog zum Speichern 
+            der aktuell zusammengestellten Kartenebenen unter einem frei von Ihnen wählbaren Titel. Wenn Sie möchten, 
+            können Sie sich im Eingabefeld <b>Inhalt</b> notieren, um welche Kartenebenen es sich handelt.
+          </p>
         </div>
       }
     />
