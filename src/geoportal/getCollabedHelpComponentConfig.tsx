@@ -96,7 +96,11 @@ export const getCollabedHelpComponentConfig = ({
         setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
         key="KarteninhalteUntersuchen"
       />,
-      <Help45KartenDrucken key="KartenDrucken" />,
+      <Help45KartenDrucken
+        showOverlayFromOutside={showOverlayFromOutside}
+        setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
+        key="KarteninhalteDrucken"
+      />,
       <Help50MeinStandort
         showOverlayFromOutside={showOverlayFromOutside}
         key="MeinStandort"

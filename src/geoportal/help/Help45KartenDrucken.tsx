@@ -1,7 +1,9 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 
-const Component = () => {
+const Help45KartenDrucken = ({
+  showOverlayFromOutside,
+}) => {
   return (
     <GenericModalMenuSection
       sectionKey="drucken"
@@ -33,4 +35,4 @@ const Component = () => {
     />
   );
 };
-export default Component;
+export default Help45KartenDrucken;
