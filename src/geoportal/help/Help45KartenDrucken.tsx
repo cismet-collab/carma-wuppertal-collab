@@ -12,23 +12,23 @@ const Help45KartenDrucken = ({
       sectionContent={
         <div>
           <p>
-            In der 
+            In der{" "}
             <span className="hide-on-small-screens">
-              {" "}
               <HelpOverlayLink
                 onClick={() => {
-                  showOverlayFromOutside("MENU");
+                  showOverlayFromOutside("MENULEISTE");
                 }}
               >
                 Menüleiste
               </HelpOverlayLink>
-            </span>{" "}Menüleiste finden Sie einige Funktionen, mit denen Sie die Ergebnisse ihrer Arbeit mit dem 
+            </span>{" "}finden Sie einige Funktionen, mit denen Sie die Ergebnisse ihrer Arbeit mit dem 
             DigiTal Zwilling festhalten oder mit anderen teilen können.
           </p>
           <p>
             Wenn Sie dort auf das Symbol <b>Karte speichern</b> klicken, öffnet sich ein kleiner Dialog zum Speichern 
             der aktuell zusammengestellten Kartenebenen unter einem frei von Ihnen wählbaren Titel. Wenn Sie möchten, 
-            können Sie sich im Eingabefeld <b>Inhalt</b> notieren, um welche Kartenebenen es sich handelt.
+            können Sie sich im Eingabefeld "<b>Inhalt</b>" notieren, um welche Kartenebenen es sich handelt. Die Karte 
+            wird im Cache-Speicher Ihres Browsers abgelegt.
           </p>
         </div>
       }
