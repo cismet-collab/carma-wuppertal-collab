@@ -44,12 +44,20 @@ const Help45KartenDrucken = ({
             einen Minimaldialog, der nur die Schaltfläche{" "}
             <a className="useAClassNameToRenderProperLink">
               Link kopieren
-            </a>{" "}umfasst. Hierüber erzeugen Sie einen kompakten Link, mit dem das Geoportal genau in dem Zustand 
+            </a>{" "}umfasst. Hierüber erzeugen Sie einen kompakten Hyperlink, mit dem das Geoportal genau in dem Zustand 
             geöffnet wird, den Sie in diesem Moment sehen. Dieser Zustand umfasst den Kartenausschnitt, die geladenen 
             Kartenebenen und ggf. auch eine Ortsbezeichnung im Eingabefeld links unten zusammen mit dem Marker auf der 
             Zielposition bzw. dem Spotlight auf der Zielfläche. Damit haben Sie eine elegante Möglichkeit, Lage und 
             Informationen zu einem Treffpunkt oder einer Sehenswürdigkeit in Wuppertal über einen Geoportal-Link zu teilen. 
-            Als Beispiel hier ein solcher Link zur Historischen Stadthalle.         
+            Als Beispiel hier ein solcher Link zur 
+            <a
+                target="_legal"
+                href="https://digital-twin-wuppertal-live.github.io/geoportal/#/?lat=51.2529646&lng=7.1429801&zoom=18&&config=b658e1ea278cf602&appKey=sharedurl"
+              >
+                Historischen Stadthalle
+              </a>. Die dazu berechtigten Mitarbeiter/innen des Wuppertaler Geodatenzentrums benutzen übrigens nach ihrem Login  
+              eine erweiterte Variante des Teilen-Dialogs. Damit werden die Karten konfiguriert, die wir Ihnen unter
+              Karteninhalte hinzufügen / Entdecken anbieten.              
           </p>
         </div>
       }
