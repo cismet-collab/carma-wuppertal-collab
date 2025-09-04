@@ -1,6 +1,7 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import addLayers from "../secondary/assets/add-layers.png";
 
 const Help45KartenDrucken = ({
   showOverlayFromOutside,
@@ -32,7 +33,10 @@ const Help45KartenDrucken = ({
             welche Kartenebenen es sich handelt. Die Karte wird im Cache-Speicher Ihres Browsers abgelegt. Wenn Sie  
             diesen Speicher löschen, verschwinden auch ihre dort zuvor gespeicherten Karten. Die Funktion ist daher 
             zzt. eher zum kurzfristigen Sichern eines Bearbeitungsstandes gedacht als zum langfristigen Aufbau 
-            einer Kartensammlung.
+            einer Kartensammlung. Laden können Sie eine gespeicherte Karte im Dialog "Karteninhalte hinzufügen" 
+            (Symbol{" "}<img src={addLayers} style={{ height: "18px" }} /> in der Menüleiste) unter 
+            Favoriten / Meine Karten. Das dort angezeigte Vorschaubild wird automatisch als Collage aus den 
+            einzelnen Kartenebenen erzeugt.
           </p>
         </div>
       }
