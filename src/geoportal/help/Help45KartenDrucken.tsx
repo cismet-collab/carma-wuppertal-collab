@@ -49,7 +49,7 @@ const Help45KartenDrucken = ({
             Kartenebenen und ggf. auch eine Ortsbezeichnung im Eingabefeld links unten zusammen mit dem Marker auf der 
             Zielposition bzw. dem Spotlight auf der Zielfläche. Damit haben Sie eine elegante Möglichkeit, Lage und 
             Informationen zu einem Treffpunkt oder einer Sehenswürdigkeit in Wuppertal über einen Geoportal-Link zu teilen. 
-            Als Beispiel hier ein solcher Link zur 
+            Als Beispiel hier ein solcher Link zur{" "} 
             <a
                 target="_legal"
                 href="https://digital-twin-wuppertal-live.github.io/geoportal/#/?lat=51.2529646&lng=7.1429801&zoom=18&&config=b658e1ea278cf602&appKey=sharedurl"
