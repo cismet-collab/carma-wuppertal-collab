@@ -2,6 +2,7 @@ import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import addLayers from "../secondary/assets/add-layers.png";
+import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
 
 const Help45KartenDrucken = ({
   showOverlayFromOutside,
@@ -37,6 +38,18 @@ const Help45KartenDrucken = ({
             (Symbol{" "}<img src={addLayers} style={{ height: "18px" }} /> in der Menüleiste) unter 
             Favoriten / Meine Karten. Das dort angezeigte Vorschaubild wird automatisch als Collage aus den 
             einzelnen Kartenebenen erzeugt.
+          </p>
+          <p>
+            Durch Anklicken des Symbols{" "}<FontAwesomeIcon icon={faShareNodes} />{" "}<b>Teilen</b> öffnen Sie 
+            einen Minimaldialog, der nur die Schaltfläche{" "}
+            <a className="useAClassNameToRenderProperLink">
+              Link kopieren
+            </a>{" "}umfasst. Hierüber erzeugen Sie einen kompakten Link, mit dem das Geoportal genau in dem Zustand 
+            geöffnet wird, den Sie in diesem Moment sehen. Dieser Zustand umfasst den Kartenausschnitt, die geladenen 
+            Kartenebenen und ggf. auch eine Ortsbezeichnung im Eingabefeld links unten zusammen mit dem Marker auf der 
+            Zielposition bzw. dem Spotlight auf der Zielfläche. Damit haben Sie eine elegante Möglichkeit, Lage und 
+            Informationen zu einem Treffpunkt oder einer Sehenswürdigkeit in Wuppertal über einen Geoportal-Link zu teilen. 
+            Als Beispiel hier ein solcher Link zur Historischen Stadthalle.         
           </p>
         </div>
       }
