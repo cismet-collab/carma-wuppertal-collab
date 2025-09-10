@@ -150,7 +150,7 @@ const Help40KarteninhalteUntersuchen = ({
             Multi-Sachdatenabfragemodus ein- bzw. ausschalten. In diesem Modus
             verwandelt ein Mausklick den Mauszeiger in ein Fadenkreuz und es
             wird eine Sachdatenabfrage auf allen aktuell sichtbaren Kartenebenen
-            durchgeführt, die solche Abfragen grundsätzlich entgegennehmen
+            durchgeführt, die solche Abfragen unterstützen
             ("thematischer Durchstich"). Diese "abfragbaren Kartenebenen"
             erkennen Sie an einem blauen Strich unter dem zugehörigen
             Ebenen-Steuerelement. Im Multi-Sachdatenabfragemodus können Sie auch
@@ -187,31 +187,30 @@ const Help40KarteninhalteUntersuchen = ({
             Mit dem Wechselschalter{" "}
             <img alt="Messmodus" height={20} width={20} src={MeasureIcon} />{" "}
             links unten in der Werkzeugleiste können Sie den Messungsmodus ein- bzw. 
-            ausschalten. In diesem Modus legen Sie durch Ihre Mausklicks Messgeometrien 
-            in Form von Linienzügen oder geschlossenen Flächen an. Einen Linienzug beenden 
+            ausschalten. In diesem Modus erzeugen Sie durch Ihre Mausklicks Messgeometrien 
+            in Form von Linienzügen oder geschlossenen Flächen. Einen Linienzug beenden 
             Sie durch erneutes Anklicken des letzten Punktes oder einfach durch einen Doppelklick. 
-            Eine Fläche schließen Sie durch erneutes Anklicken des Startpunktes. Die 
-            Messungsergebnisse (Strecken bei den Linienzügen, Strecken und Flächeninhalte bei den 
-            geschlossenen Flächen) werden bereits während des Anlegens der Messgeometrie laufend 
-            in der Info-Box angezeigt. Die Messgeometrien werden im Cache-Speicher Ihres Browsers 
-            abgelegt. Dadurch können Sie in der Info-Box mit den Pfeiltasten{" "}           
+            Eine Fläche schließen Sie, indem Sie wieder auf den Startpunkt klicken. Die 
+            Messergebnisse (bei Linienzügen die Streckenlänge, bei Flächen zusätzlich der Flächeninhalt) 
+            werden bereits während des Anlegens der Messgeometrie laufend in der Info-Box angezeigt. 
+            Die Messgeometrien werden im Cache-Speicher Ihres Browsers 
+            gespeichert. Dadurch können Sie in der Info-Box mit den Pfeiltasten{" "}           
             <a className="useAClassNameToRenderProperLink">
               &lt;&lt;
             </a>{" "}und{" "}
             <a className="useAClassNameToRenderProperLink">
               &gt;&gt;
             </a>{" "}durch die 
-            Messgeometrien im aktuellen Kartenausschnitt wandern und mit dem Link{" "}  
+            Messgeometrien im aktuellen Kartenausschnitt wandern. Über den Link{" "}  
             <a className="useAClassNameToRenderProperLink">
               n Messungen verfügbar
-            </a>{" "}den Kartenausschnitt so anpassen, dass alle Messgeometrien angezeigt werden. 
-            Wenn Sie den Cache-Speicher löschen, verschwinden auch die dort gespeicherten Messgeometrien.
-            {" "}<b>Zuletzt noch einige Hinweise zur Genauigkeit der Streckenmessung</b>: Die Dehnung der 
-            Strecken und Flächen durch die Abbildung der gekrümmten Erdoberfläche in eine ebene 
-            Kartendarstellung (wir verwenden dazu die in der Web-Kartographie übliche Abbildung 
-            "Web Mercator (Auxiliary Sphere)" mit dem Code "EPSG:3857") wird korrigiert, die Messungen 
-            entsprechen daher in sehr guter Annäherung den realen Verhältnissen. Wir geben die auf die 
-            Erdoberfläche projizierten Strecken an, diese können deutlich kürzer sein als die schrägen 
+            </a>{" "}lässt sich der Kartenausschnitt zudem so einstellen, dass alle Messgeometrien sichtbar 
+            sind. Wenn Sie den Cache-Speicher löschen, gehen auch die gespeicherten Messungen verloren.
+            {" "}<b>Zuletzt noch einige Hinweise zur Genauigkeit der Messungen</b>: Die Dehnungen der Strecken 
+            und Flächen, die durch die Abbildung der gekrümmten Erdoberfläche in eine ebene Kartendarstellung entstehen
+            (hier durch die in der Webkartographie übliche Abbildung "Web Mercator (Auxiliary Sphere)", EPSG:3857), 
+            werden korrigiert. Die Messergebnisse entsprechen daher in sehr guter Annäherung den realen Verhältnissen. 
+            Wir geben die auf die Erdoberfläche projizierten Strecken an. Diese können deutlich kürzer sein als die schrägen 
             Strecken, die Sie z. B. entlang der Oberfläche einer der steilen Wuppertaler Straßen messen 
             würden. Wegen einiger kartographischer und rechentechnischer Vereinfachungen und der begrenzten 
             geometrischen Genauigkeit sowohl des Karteninhalts als auch der Messgeometrien sind die Messungsergebnisse 
