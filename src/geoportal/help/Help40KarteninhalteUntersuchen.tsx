@@ -152,27 +152,26 @@ const Help40KarteninhalteUntersuchen = ({
             wird eine Sachdatenabfrage auf allen aktuell sichtbaren Kartenebenen
             durchgeführt, die solche Abfragen grundsätzlich entgegennehmen
             ("thematischer Durchstich"). Diese "abfragbaren Kartenebenen"
-            erkennt man an einem blauen Strich unter dem zugehörigen
+            erkennen Sie an einem blauen Strich unter dem zugehörigen
             Ebenen-Steuerelement. Im Multi-Sachdatenabfragemodus können Sie auch
             solche Kartenebenen abfragen, die als Rasterdaten über einen WMS
             bereitgestellt werden und deren Objekte nicht per Mausklick
             selektierbar sind. Zu jedem Ergebnis einer Multi-Sachdatenabfrage
-            wird eine separate Info-Box angezeigt. Einige Kartenebenen liefern
-            mehrere Ergebnisse, z. B. erhält man über die Kartenebenen "ALKIS
-            Flurstücke / Gebäude (schwarz bzw. gelb)" Sachdaten sowohl für die
-            Flurstücke als auch die Gebäude. Zusätzlich wird in diesem Modus
-            auch immer eine Info-Box "Position" mit den Koordinaten des
-            Fadenkreuz-Zentrums ausgeprägt (geographische Breite und Länge in
-            Dezimalgrad im Bezugssystem ETRS89). Mehrfache Info-Boxen werden
-            überlappend in Form eines Stapels von Info-Boxen dargestellt. Mit
-            einem Klick auf den Titelbalken einer hinteren Info-Box wird diese
-            in den Vordergrund geholt und damit aktiviert. Dazu werden einfach
+            wird eine separate Info-Box angezeigt. Manche Kartenebenen liefern
+            gleich mehrere Ergebnisse. So erhalten Sie beispielsweise in den 
+            Kartenebenen "ALKIS Flurstücke / Gebäude (schwarz bzw. gelb)" Sachdaten 
+            sowohl zu den Flurstücken als auch den Gebäuden. Zusätzlich wird in diesem Modus
+            auch immer eine Info-Box "Position" angezeigt, die die Koordinaten des 
+            Fadenkreuz-Zentrums enthält (geographische Breite und Länge in Dezimalgrad 
+            im Bezugssystem ETRS89). Mehrere Info-Boxen werden
+            überlappend in Form eines Stapels von Info-Boxen dargestellt. Ein Klick 
+            auf den Titelbalken einer weiter hinten liegenden Box holt diese nach 
+            vorn und macht sie damit aktiv. Dabei werden einfach
             die Positionen der angeklickten und der bisher oben liegenden
-            Info-Box getauscht. Nach Möglichkeit wird das Objekt, das zu der
-            aktiven Info-Box gehört, in der Karte durch eine blaue Umrandung
-            hervorgehoben (setzt eine vollständig konfigurierte
-            Vektor-Kartenebenen mit Zeichenvorschrift für die betonte
-            Darstellung voraus) .
+            Info-Box getauscht. Falls möglich wird das zur aktiven Info-Box gehörende 
+            Objekt in der Karte durch eine blaue Umrandung hervorgehoben 
+            (dies setzt eine vollständig konfigurierte Vektor-Kartenebene mit 
+            entsprechender Zeichenvorschrift voraus).
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
