@@ -3,6 +3,7 @@ import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import addLayers from "../secondary/assets/add-layers.png";
 import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
+import { faArrowsAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Help45KartenDrucken = ({
   showOverlayFromOutside,
@@ -44,8 +45,8 @@ const Help45KartenDrucken = ({
             Dialog für den Ausdruck ihrer aktuell zusammengestellten Kartenebenen als PDF-Datei mit dem Druckformat DIN A4. 
             Sie können hier die Ausrichtung (Hochkant- oder Querformat), den Maßstab und die Auflösung festlegen. Klicken 
             Sie dann auf die Schaltfläche <b>Vorschau</b>, um sich im Kartenfenster den entsprechenden Druckvorschaubereich 
-            anzeigen zu lassen, den Sie mit gedrückter Maustaste noch verschieben können. Mit dem Symbol{" "}<FontAwesomeIcon icon="maximize" />{" "}, je nach 
-            Betrachtungsmaßstab links oben oder in der Mitte des Druckvorschaubereichs, können Sie auf den Druckvorschaubereich 
+            anzeigen zu lassen, den Sie mit gedrückter Maustaste noch verschieben können. Mit dem Symbol{" "}<FontAwesomeIcon icon={faArrowsAlt} />{" "}, 
+            je nach Betrachtungsmaßstab links oben oder in der Mitte des Druckvorschaubereichs, können Sie auf den Druckvorschaubereich 
             zoomen. Klicken Sie abschließend auf die Schaltfläche <b>Drucken</b> rechts unten in der Druckvorschau, um 
             die PDF-Datei zu erzeugen, die in einem separaten Fenster geöffnet wird. In dieser Ausbaustufe des Geoportals 
             ist die Druckfunktion recht einfach gehalten, die PDF-Druckdatei umfasst daher weder Legenden noch weiterführende 
