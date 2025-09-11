@@ -11,9 +11,10 @@ export const Footer = ({
 }: FooterProps) => {
   return (
     <MenuFooter
-      title="Geoportal"
+      title="DigiTal Zwilling / Geoportal"
       version={version}
       setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
+      skipTeilzwilling={true}
     />
   );
 };
