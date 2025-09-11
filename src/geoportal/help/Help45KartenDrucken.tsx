@@ -15,14 +15,14 @@ const Help45KartenDrucken = ({
       sectionContent={
         <div>
           <p>
-            In der{" "}
+            In der Menüzeile{" "}
             <span className="hide-on-small-screens">
               <HelpOverlayLink
                 onClick={() => {
                   showOverlayFromOutside("MENULEISTE");
                 }}
               >
-                Menüleiste
+                (s. Hilfefolie)
               </HelpOverlayLink>
             </span>{" "}finden Sie einige Funktionen, mit denen Sie die Ergebnisse ihrer Arbeit mit dem 
             DigiTal Zwilling festhalten oder mit anderen teilen können.
@@ -38,6 +38,21 @@ const Help45KartenDrucken = ({
             (Symbol{" "}<img src={addLayers} style={{ height: "18px" }} /> in der Menüleiste) unter 
             Favoriten / Meine Karten. Das dort angezeigte Vorschaubild wird automatisch als Collage aus den 
             einzelnen Kartenebenen erzeugt.
+          </p>
+          <p>
+            Über das Symbol{" "}<FontAwesomeIcon icon="print" />{" "}<b>Drucken</b> öffnen Sie einen kompakten 
+            Dialog für den Ausdruck ihrer aktuell zusammengestellten Kartenebenen als PDF-Datei mit dem Druckformat DIN A4. 
+            Sie können hier die Ausrichtung (Hochkant- oder Querformat), den Maßstab und die Auflösung festlegen. Klicken 
+            Sie dann auf die Schaltfläche <b>Vorschau</b>, um sich im Kartenfenster den entsprechenden Druckvorschaubereich 
+            anzeigen zu lassen, den Sie mit gedrückter Maustaste noch verschieben können. Mit dem Symbol (icon), je nach 
+            Betrachtungsmaßstab links oben oder in der Mitte des Druckvorschaubereichs, können Sie auf den Druckvorschaubereich 
+            zoomen. Klicken Sie abschließend auf die Schaltfläche <b>Drucken</b> rechts unten in der Druckvorschau, um 
+            die PDF-Datei zu erzeugen, die in einem separaten Fenster geöffnet wird. In dieser Ausbaustufe des Geoportals 
+            ist die Druckfunktion recht einfach gehalten, die PDF-Druckdatei umfasst daher weder Legenden noch weiterführende 
+            Informationen zu den Kartenebenen. Noch ein Hinweis zur Auflösung: Die Zeichenvorschriften für alle Kartenebenen sind 
+            für die Bildschirmpräsentation gemacht, die Größen von Symbolen und Schriften sowie die Breite von Linien 
+            sind daher in Bildschirmpixeln definiert. Je höher die von Ihnen gewählte Auflösung ist, desto kleiner werden 
+            die Symbole und Schriften im Ausdruck. Die Linien werden entsprechend immer dünner.
           </p>
           <p>
             Durch Anklicken des Symbols{" "}<FontAwesomeIcon icon={faShareNodes} />{" "}<b>Teilen</b> öffnen Sie 
