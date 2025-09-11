@@ -15,7 +15,7 @@ const Help45KartenDrucken = ({
       sectionContent={
         <div>
           <p>
-            In der Menüzeile{" "}
+            In der Menüleiste{" "}
             <span className="hide-on-small-screens">
               <HelpOverlayLink
                 onClick={() => {
@@ -49,10 +49,11 @@ const Help45KartenDrucken = ({
             zoomen. Klicken Sie abschließend auf die Schaltfläche <b>Drucken</b> rechts unten in der Druckvorschau, um 
             die PDF-Datei zu erzeugen, die in einem separaten Fenster geöffnet wird. In dieser Ausbaustufe des Geoportals 
             ist die Druckfunktion recht einfach gehalten, die PDF-Druckdatei umfasst daher weder Legenden noch weiterführende 
-            Informationen zu den Kartenebenen. Noch ein Hinweis zur Auflösung: Die Zeichenvorschriften für alle Kartenebenen sind 
-            für die Bildschirmpräsentation gemacht, die Größen von Symbolen und Schriften sowie die Breite von Linien 
-            sind daher in Bildschirmpixeln definiert. Je höher die von Ihnen gewählte Auflösung ist, desto kleiner werden 
-            die Symbole und Schriften im Ausdruck. Die Linien werden entsprechend immer dünner.
+            Informationen zu den Kartenebenen. Noch ein Hinweis zur Auflösung: Die Zeichenvorschriften für die meisten Kartenebenen 
+            sind für die Bildschirmpräsentation gemacht, die Größen von Symbolen und Schriften sowie die Breite von Linien sind 
+            daher in Bildschirmpixeln definiert. Je höher die von Ihnen gewählte Auflösung ist, desto kleiner werden die Symbole 
+            und Schriften im Ausdruck. Die Linien werden entsprechend immer dünner. In diesen Fällen führt deswegen eine eher 
+            niedrige Auflösung von 100 dpi zum besten Druckergebnis.
           </p>
           <p>
             Durch Anklicken des Symbols{" "}<FontAwesomeIcon icon={faShareNodes} />{" "}<b>Teilen</b> öffnen Sie 
