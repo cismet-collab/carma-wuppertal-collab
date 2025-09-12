@@ -41,17 +41,17 @@ const Component = ({ showOverlayFromOutside }) => {
             Sie auch Schaltflächen zum Hinzufügen und Favorisieren der Kartenebene.  
             Alternativ können Sie diese Funktionen auch direkt über die Symbole{" "}
             <FontAwesomeIcon icon={faPlus} /> und{" "}
-            <FontAwesomeIcon icon={faStar} /> im Vorschaubild auslösen. "Hinzufügen"
-            bewirkt, dass diese Kartenebene im Geoportal direkt geladen und
-            angezeigt wird. Außerdem wird für sie ein weiteres
-            Ebenen-Steuerelement rechts neben dem Hintergrund-Steuerelement
-            ergänzt. Durch "Favorisieren" wird die Kartenebene in Ihrem
-            Favoriten-Bereich unter "Meine Kartenebenen" gespeichert. Zu Ihren
-            Favoriten gelangen Sie, indem Sie oben im Navigationsbereich auf{" "}
-            <FontAwesomeIcon icon={faStar} /> <strong>Favoriten</strong>{" "}
-            klicken. Das Speichen der Favoriten benutzt den Cache-Speicher Ihres
-            Browsers. Wenn Sie diesen Speicher löschen, verschwinden auch die
-            dort gespeicherten Karteninhalte.
+            <FontAwesomeIcon icon={faStar} /> im Vorschaubild auslösen. Mit "Hinzufügen"
+            wird die gewählte Kartenebene sofort in die aktuelle Kartenansicht geladen und 
+            rechts neben dem Hintergrund-Steuerelement als neues Ebenen-Steuerelement 
+            angezeigt. Mit "Favorisieren" speichern Sie die Kartenebene in Ihrem persönlichen
+            Bereich "Favoriten" unter "Meine Kartenebenen". Zu Ihren Favoriten gelangen Sie, 
+            indem Sie im linken Navigationsbereich auf das oberste Symbol{" "}
+            <FontAwesomeIcon icon={faStar} /> <strong>Favoriten</strong>{" "}klicken.
+            Das Speichen der Favoriten benutzt den Cache-Speicher Ihres
+            Browsers. Beachten Sie dabei: Ihre Favoriten werden im Zwischenspeicher 
+            (Cache) Ihres Browsers gespeichert. Wenn Sie diesen Speicher leeren, 
+            gehen auch Ihre Favoriten verloren.
           </p>
           <p>
             In der erweiterten Info-Ansicht einer Kartenebene finden Sie auch
