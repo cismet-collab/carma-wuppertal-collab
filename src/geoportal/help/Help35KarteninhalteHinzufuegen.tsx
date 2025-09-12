@@ -22,28 +22,26 @@ const Component = ({ showOverlayFromOutside }) => {
         <div>
           <p>
             Das Herzstück des Geoportals ist der Dialog "Karteninhalte
-            hinzufügen" (Symbol{" "}
+            hinzufügen" (erreichbar über das Symbol{" "}
             <img src={addLayers} style={{ height: "18px" }} /> in der
-            Menüleiste), mit dem Sie das gesamte Datenangebot des DigiTal
-            Zwillings durchsuchen und für Sie interessante Inhalte als
-            Kartenebene hinzufügen können. Um Ihnen die Orientierung in dem
-            umfangreichen Angebot zu erleichtern, sind die Karteninhalte in
-            vertikaler Richtung nach Art und in horizontaler Richtung nach Thema
-            geordnet. Wenn Sie also im Navigationsbereich auf der linken Seite
-            z. B. auf <FontAwesomeIcon icon={faMap} />{" "}
-            <strong>Kartenebenen</strong> klicken, werden Vorschaubilder zu
-            allen Kartenebenen in den Hauptbereich des Dialogs geladen. Wenn Sie
-            dann in der horizontalen Navigationsleiste im Kopfbereich z. B. auf
-            "Planung" klicken, wird im Hauptbereich auf den Beginn des Blocks
-            der Kartenebenen zum Thema "Planung" positioniert. Ausgehend von
-            einem Vorschaubild können Sie entweder durch Anklicken des
-            Wechselschalters <FontAwesomeIcon icon={faChevronDown} /> bzw.{" "}
-            <FontAwesomeIcon icon={faChevronUp} /> einen Bereich mit
-            Informationen zu der Kartenebene auf- bzw. zuklappen, der auch
-            Schaltflächen zum Hinzufügen und Favorisieren dieser Kartenebene
-            enthält. Oder Sie benutzen hierfür direkt die Symbole{" "}
+            Menüleiste). Hier können Sie das gesamte Datenangebot des 
+            DigiTal Zwillings durchsuchen und die für Sie interessanten Inhalte 
+            als weitere Kartenebenen zur Kartenansicht hinzufügen. Damit Sie sich 
+            im umfangreichen Angebot besser zurechtfinden, sind die Inhalte 
+            übersichtlich sortiert: vertikal nach ihrer Art (z. B. Kartenebenen, 
+            Teilzwillinge) und horizontal nach Themen (z. B. Planung, Umwelt, Verkehr). 
+            Wenn Sie im linken Navigationsbereich z. B. auf <FontAwesomeIcon icon={faMap} />{" "}
+            <strong>Kartenebenen</strong> klicken, erscheinen im Hauptbereich Vorschaubilder 
+            aller verfügbaren Kartenebenen. Klicken Sie zusätzlich oben auf ein Thema wie z. B.
+            "Planung", wird zum entsprechenden Themenblock innerhalb der Kartenebenen 
+            gesprungen. Jedes Vorschaubild enthält nützliche Funktionen: Mit einem Klick auf den 
+            Wechselschalter <FontAwesomeIcon icon={faChevronDown} /> bzw.{" "}
+            <FontAwesomeIcon icon={faChevronUp} /> können Sie weitere Informationen zur 
+            jeweiligen Kartenebenebene auf- bzw. zuklappen. Im Informationsbereich finden 
+            Sie auch Schaltflächen zum Hinzufügen und Favorisieren der Kartenebene.  
+            Alternativ können Sie diese Funktionen auch direkt über die Symbole{" "}
             <FontAwesomeIcon icon={faPlus} /> und{" "}
-            <FontAwesomeIcon icon={faStar} /> im Vorschaubild. "Hinzufügen"
+            <FontAwesomeIcon icon={faStar} /> im Vorschaubild auslösen. "Hinzufügen"
             bewirkt, dass diese Kartenebene im Geoportal direkt geladen und
             angezeigt wird. Außerdem wird für sie ein weiteres
             Ebenen-Steuerelement rechts neben dem Hintergrund-Steuerelement
