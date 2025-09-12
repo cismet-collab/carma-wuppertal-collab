@@ -54,15 +54,14 @@ const Component = ({ showOverlayFromOutside }) => {
             gehen auch Ihre Favoriten verloren.
           </p>
           <p>
-            In der erweiterten Info-Ansicht einer Kartenebene finden Sie auch
-            eine Vorschau-Schaltfläche, mit der Sie schnell überprüfen können,
-            welche Inhalte diese Kartenebene im aktuell eingestellten
-            Kartenausschnitt liefert. Der Dialog "Karteninhalte hinzufügen" wird
-            dazu so weit nach unten geschoben, dass Sie das Kartenfenster fast
-            vollständig sehen können. Wenn Sie den Dialog durch Anklicken von
-            "x" schließen, wird die Kartenebene geladen und angezeigt. Mit einem
-            Klick irgendwo in das Kartenfeld oder mit der Taste "esc" beenden
-            Sie die Vorschau.
+            In der erweiterten Infoansicht einer Kartenebene finden Sie zusätzlich 
+            eine Vorschau-Schaltfläche. Damit können Sie schnell sehen, welche 
+            Inhalte diese Kartenebene im aktuellen Kartenausschnitt bietet. Der 
+            Dialog "Karteninhalte hinzufügen" wird dafür so weit nach unten geschoben, 
+            dass der Kartenausschnitt fast vollständig sichtbar ist. Wenn Sie die Vorschau 
+            beenden möchten, genügt ein Klick ins Kartenfenster oder das Drücken der Esc-Taste. 
+            Wenn Sie hingegen den Dialog mit "x" schließen, wird die Kartenebene übernommen und 
+            angezeigt.
           </p>
           <p>
             Wenn Sie im Navigationsbereich auf <FontAwesomeIcon icon={faBook} />{" "}
