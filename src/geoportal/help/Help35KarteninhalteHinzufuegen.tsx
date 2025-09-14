@@ -76,15 +76,15 @@ const Component = ({ showOverlayFromOutside }) => {
             sich aktuell noch im Aufbau. Zukünftig werden Sie hier Smart-City-Sensoren 
             der Stadt Wuppertal finden, die Sie als dynamische Kartenebenen hinzufügen 
             können. Unter{" "}<FontAwesomeIcon icon={faList} />{" "}<strong>Entdecken</strong> 
-            stehen Ihnen vordefinierte Karten (Kombinationen von Kartenebenen) für typische 
-            Fragestellungen zur Verfügung, die sich in der Praxis bewährt haben. 
-            <strong>Profi-Tipp</strong>: Zwar gibt es aktuell noch keinen eigenen Dialog zum 
+            {" "}stehen Ihnen vordefinierte Karten (Kombinationen von Kartenebenen) für typische 
+            Fragestellungen zur Verfügung, die sich in der Praxis bewährt haben.
+            {" "}<strong>Profi-Tipp</strong>: Zwar gibt es aktuell noch keinen eigenen Dialog zum 
             Hinzufügen externer WMS-Dienste (also Kartendienste, die nicht von der Stadt 
             Wuppertal stammen), die Funktion dafür ist aber bereits integriert. Wenn Sie 
             einen WMS-Capabilities-Link z. B. in der Adresszeile Ihres Browsers markieren 
             und mit gedrückter linker Maustaste ins Kartenfenster ziehen, öffnet sich 
-            automatisch der Dialog „Karteninhalte hinzufügen“ – diesmal mit den Kartenebenen 
-            dieses Dienstes unter der zusätzlichen thematischen Kategorie „Externe Dienste“. 
+            automatisch der Dialog "Karteninhalte hinzufügen" – diesmal mit den Kartenebenen 
+            dieses Dienstes unter der zusätzlichen thematischen Kategorie "Externe Dienste". 
             Diese Kartenebenen können Sie wie gewohnt zur Karte hinzufügen oder favorisieren.
           </p>
           <p>
