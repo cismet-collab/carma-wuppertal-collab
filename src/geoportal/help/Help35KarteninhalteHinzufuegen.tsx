@@ -64,35 +64,28 @@ const Component = ({ showOverlayFromOutside }) => {
             angezeigt.
           </p>
           <p>
-            Wenn Sie im Navigationsbereich auf <FontAwesomeIcon icon={faBook} />{" "}
-            <strong>Teilzwillinge</strong> klicken, werden im Hauptbereich
-            Vorschaubilder für Kartenanwendungen angezeigt, die jeweils einen
-            themenspezifischen Ausschnitt aus den Daten und Methoden des DigiTal
-            Zwillings für einen konkreten Anwendungsfall umfassen. (Im Konzept
-            des DigiTal Zwillings werden solche Anwendungen als "Teilzwillinge"
-            bezeichnet.) Im Unterschied zu den Kartenebenen werden die
-            Teilzwillinge nicht der Kartenansicht des Geoportals hinzugefügt,
-            sondern in einer neuen Karteikarte Ihres Browsers geöffnet. Der
-            Bereich <FontAwesomeIcon icon={faMapPin} />{" "}
-            <strong>Sensoren</strong> befindet sich im Aufbau, er ist daher noch
-            deaktiviert. Hier werden Sie zukünftig die Smart-City-Sensoren der
-            Stadt Wuppertal finden, die Sie als dynamische Kartenebenen in das
-            Geoportal integrieren können. Unter{" "}
-            <FontAwesomeIcon icon={faList} /> <strong>Entdecken</strong> stellen
-            wir Ihnen Karten (Kombinationen von Kartenebenen) mit konkreten
-            Verwendungszwecken zur Verfügung, die sich zur Beantwortung
-            wiederkehrender Fragen bewährt haben. <strong>Profi-Tipp</strong>:
-            Es gibt zwar noch keinen Dialog zum Hinzufügen von
-            WMS-Kartendiensten, die nicht von der Stadt Wuppertal bereitgestellt
-            werden (Realisierung in Folgestufe). Die Funktionalität ist aber
-            schon vorhanden. Markieren Sie dazu einfach einen
-            WMS-Capabilities-Link z. B. in der Adresszeile Ihres Browsers und
-            ziehen Sie ihn mit gedrückter linker Maustaste in das Kartenfeld.
-            Der Dialog "Karteninhalte hinzufügen" öffnet sich dann mit den
-            Kartenebenen dieses Dienstes in der zusätzlichen thematischen
-            Kategorie "Externe Dienste". Sie können diese Kartenebenen genau wie
-            die von der Stadt Wuppertal bereitgestellten Ihrer aktuellen
-            Kartenansicht hinzufügen oder favorisieren.
+            Ein weiterer Bereich im Dialog "Karteninhalte hinzufügen" ist{" "}
+            <FontAwesomeIcon icon={faBook} />{" "}<strong>Teilzwillinge</strong>.
+            Hier werden im Hauptbereich Vorschaubilder für die themenspezifischen 
+            Kartenanwendungen angezeigt, die zum DigiTal Zwilling gehören. Diese 
+            sogenannten Teilzwillinge stellen jeweils einen bestimmten Ausschnitt 
+            aus den Daten und Methoden des DigiTal Zwillings für spezielle 
+            Anwendungsfälle bereit. Sie öffnen sich nicht innerhalb des Geoportals, 
+            sondern in einem neuen Browser-Tab. Der Bereich{" "}
+            <FontAwesomeIcon icon={faMapPin} />{" "}<strong>Sensoren</strong> befindet 
+            sich aktuell noch im Aufbau. Zukünftig werden Sie hier Smart-City-Sensoren 
+            der Stadt Wuppertal finden, die Sie als dynamische Kartenebenen hinzufügen 
+            können. Unter{" "}<FontAwesomeIcon icon={faList} />{" "}<strong>Entdecken</strong> 
+            stehen Ihnen vordefinierte Karten (Kombinationen von Kartenebenen) für typische 
+            Fragestellungen zur Verfügung, die sich in der Praxis bewährt haben. 
+            <strong>Profi-Tipp</strong>: Zwar gibt es aktuell noch keinen eigenen Dialog zum 
+            Hinzufügen externer WMS-Dienste (also Kartendienste, die nicht von der Stadt 
+            Wuppertal stammen), die Funktion dafür ist aber bereits integriert. Wenn Sie 
+            einen WMS-Capabilities-Link z. B. in der Adresszeile Ihres Browsers markieren 
+            und mit gedrückter linker Maustaste ins Kartenfenster ziehen, öffnet sich 
+            automatisch der Dialog „Karteninhalte hinzufügen“ – diesmal mit den Kartenebenen 
+            dieses Dienstes unter der zusätzlichen thematischen Kategorie „Externe Dienste“. 
+            Diese Kartenebenen können Sie wie gewohnt zur Karte hinzufügen oder favorisieren.
           </p>
           <p>
             Der schnellste Weg zur Recherche nach Karteninhalten ist die
