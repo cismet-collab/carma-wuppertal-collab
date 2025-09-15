@@ -88,24 +88,17 @@ const Component = ({ showOverlayFromOutside }) => {
             Diese Kartenebenen können Sie wie gewohnt zur Karte hinzufügen oder favorisieren.
           </p>
           <p>
-            Der schnellste Weg zur Recherche nach Karteninhalten ist die
-            Verwendung der Suche. Wenn Sie oben in der Eingabezeile "Suchbegriff
-            eingeben" einen Text eingeben (probieren Sie es mal mit "Kita"),
-            wird auf alle vertikalen und horizontalen Kategorien eine Filterung
-            nach diesem Begriff angewendet. Dabei werden nicht nur die
-            Bezeichnungen der Karteninhalte ausgewertet, sondern auch die
-            beschreibenden Textelemente aus der erweiterten Info-Ansicht und die
-            Schlüsselwörter aus der Fußzeile dieser Ansicht. Neben den
-            Kategorie-Symbolen werden unmittelbar Zahlen eingeblendet, welche
-            die Anzahl der Treffer in der jeweiligen Kategorie anzeigen. Sobald
-            Ihre Suche Treffer ergibt, wird unten in der vertikalen Gliederung
-            das Symbol <FontAwesomeIcon icon={faSearch} />{" "}
-            <strong>Suchergebnisse</strong> aktiviert. Hier werden Ihnen alle
-            Treffer Ihrer Suche auf einer Seite zusammengestellt. Die
-            Kategoriekombinationen, in denen die Karteninhalte gefunden wurden,
-            finden Sie hier in den jeweiligen Überschriften. Wenn Sie Ihre
-            Texteingabe im Suchfeld mit der Eingabetaste ("return") abschließen,
-            wird automatisch zu den Suchergebnissen gewechselt.
+            Der schnellste Weg, passende Karteninhalte zu finden, ist die Suchfunktion ganz 
+            oben im Dialog. Geben Sie einfach einen Begriff ein (z. B. "Kita") und das System 
+            filtert alle Kategorien gleichzeitig nach diesem Begriff. Dabei werden nicht nur die 
+            Titel der Karteninhalte durchsucht, sondern auch die Beschreibungstexte in der 
+            erweiterten Info-Ansicht und die Schlüsselwörter in deren Fußzeile. Neben den 
+            Kategorie-Symbolen erscheinen dabei Zahlen, die angeben, wie viele Treffer es 
+            in den jeweiligen Kategorien gibt. Sobald Treffer gefunden wurden, wird im linken 
+            Navigationsbereich das Symbol{" "}<FontAwesomeIcon icon={faSearch} />{" "}
+            <strong>Suchergebnisse</strong> aktiviert. Dort finden Sie alle gefundenen 
+            Karteninhalte auf einen Blick, nach Themen gruppiert. Wenn Sie Ihre Eingabe mit 
+            der Enter-Taste abschließen, gelangen Sie automatisch zu den Suchergebnissen. 
           </p>
           <p className="hide-on-small-screens">
             <HelpOverlayLink
