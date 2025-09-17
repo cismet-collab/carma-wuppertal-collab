@@ -46,7 +46,7 @@ const Help45KartenDrucken = ({ showOverlayFromOutside }) => {
             öffnen Sie einen Dialog, mit dem Sie Ihre aktuell zusammengestellten 
             Kartenebenen als PDF-Datei im DIN-A4-Format ausgeben können. Sie können 
             hier die Ausrichtung (Hochkant- oder Querformat), den Maßstab und die 
-            Auflösung festlegen. Mit einem Klick auf die Schaltfläche <b>Vorschau</b> 
+            Auflösung festlegen. Mit einem Klick auf die Schaltfläche <b>Vorschau</b>{" "} 
             wird im Kartenfenster der entsprechende Druckvorschaubereich angezeigt, 
             den Sie mit gedrückter Maustaste noch verschieben können. Über das Symbol{" "}
             <FontAwesomeIcon
@@ -67,19 +67,18 @@ const Help45KartenDrucken = ({ showOverlayFromOutside }) => {
             von 100 dpi das beste Ergebnis.
           </p>
           <p>
-            Durch Anklicken des Symbols <FontAwesomeIcon icon={faShareNodes} />{" "}
-            <b>Teilen</b> öffnen Sie einen Minimaldialog, der nur die
+            Mit dem Symbol{" "}<FontAwesomeIcon icon={faShareNodes} />{" "}
+            <b>Teilen</b> öffnen Sie einen schlanken Dialog, der nur die
             Schaltfläche{" "}
             <a className="useAClassNameToRenderProperLink">Link kopieren</a>{" "}
-            umfasst. Hierüber erzeugen Sie einen kompakten Hyperlink, mit dem
-            das Geoportal genau in dem Zustand geöffnet wird, den Sie in diesem
-            Moment sehen. Dieser Zustand umfasst den Kartenausschnitt, die
-            geladenen Kartenebenen und ggf. auch eine Ortsbezeichnung im
-            Eingabefeld links unten zusammen mit dem Marker auf der Zielposition
-            bzw. dem Spotlight auf der Zielfläche. Damit haben Sie eine elegante
-            Möglichkeit, Lage und Informationen zu einem Treffpunkt oder einer
-            Sehenswürdigkeit in Wuppertal über einen Geoportal-Link zu teilen.
-            Als Beispiel hier ein solcher Link zur{" "}
+            enthält. 
+            
+            Hierüber erzeugen Sie einen kompakten Hyperlink, der das Geoportal exakt 
+            in dem Zustand öffnet, den Sie gerade sehen: mit dem aktuellen Kartenausschnitt, 
+            den geladenen Kartenebenen und – falls eingetragen – einer Ortsbezeichnung 
+            im Eingabefeld links unten samt Marker auf der Zielposition bzw. Spotlight auf 
+            der Zielfläche. So können Sie ganz einfach Treffpunkte oder Sehenswürdigkeiten 
+            in Wuppertal über einen Geoportal-Link teilen. Als Beispiel hier ein solcher Link zur{" "}
             <a
               target="_legal"
               href="https://digital-twin-wuppertal-live.github.io/geoportal/#/?lat=51.2529646&lng=7.1429801&zoom=18&&config=b658e1ea278cf602&appKey=sharedurl"
@@ -88,8 +87,8 @@ const Help45KartenDrucken = ({ showOverlayFromOutside }) => {
             </a>
             . Die dazu berechtigten Mitarbeiter/innen des Wuppertaler
             Geodatenzentrums benutzen übrigens nach ihrem Login eine erweiterte
-            Variante des Teilen-Dialogs. Damit werden die Karten konfiguriert,
-            die wir Ihnen unter Karteninhalte hinzufügen / Entdecken anbieten.
+            Variante des Teilen-Dialogs. Damit werden die Karten vorbereitet,
+            die wir Ihnen im Bereich "Karteninhalte hinzufügen / Entdecken" anbieten.
           </p>
         </div>
       }
