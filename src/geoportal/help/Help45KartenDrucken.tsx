@@ -30,7 +30,7 @@ const Help45KartenDrucken = ({ showOverlayFromOutside }) => {
             Wenn Sie dort auf das Symbol <FontAwesomeIcon icon="file-export" />{" "}
             <b>Karte speichern</b> klicken, öffnet sich ein kleiner Dialog. Hier können 
             Sie die aktuell zusammengestellten Kartenebenen unter einem frei von Ihnen 
-            wählbaren Titel speichern. Optional können Sie im Feld "<b>Inhalt</b>" eine 
+            wählbaren Titel speichern. Optional können Sie im Feld "Inhalt" eine 
             Notiz anlegen, um diese Kartenebenen zu beschreiben. Die Karte 
             wird im Cache-Speicher Ihres Browsers abgelegt. Beachten Sie: Wenn Sie den 
             Cache löschen, gehen auch Ihre gespeicherten Karten verloren. Die Funktion 
@@ -38,37 +38,33 @@ const Help45KartenDrucken = ({ showOverlayFromOutside }) => {
             Bearbeitungsstandes, nicht für den langfristigen Aufbau einer Kartensammlung.
             Gespeicherte Karten können Sie im Dialog "Karteninhalte hinzufügen" (Symbol{" "}
             <img src={addLayers} style={{ height: "18px" }} /> in der Menüleiste) im Bereich 
-            Favoriten / Meine Karten wieder aufrufen. Das dort angezeigte Vorschaubild wird 
+            "Favoriten / Meine Karten" wieder aufrufen. Das dort angezeigte Vorschaubild wird 
             automatisch als Collage aus den enthaltenen Kartenebenen erzeugt.
           </p>
           <p>
-            Über das Symbol <FontAwesomeIcon icon="print" /> <b>Drucken</b>{" "}
-            öffnen Sie einen kompakten Dialog für den Ausdruck ihrer aktuell
-            zusammengestellten Kartenebenen als PDF-Datei mit dem Druckformat
-            DIN A4. Sie können hier die Ausrichtung (Hochkant- oder Querformat),
-            den Maßstab und die Auflösung festlegen. Klicken Sie dann auf die
-            Schaltfläche <b>Vorschau</b>, um sich im Kartenfenster den
-            entsprechenden Druckvorschaubereich anzeigen zu lassen, den Sie mit
-            gedrückter Maustaste noch verschieben können. Mit dem Symbol{" "}
+            Über das Symbol <FontAwesomeIcon icon="print" /> <b>Drucken</b>{" "} 
+            öffnen Sie einen Dialog, mit dem Sie Ihre aktuell zusammengestellten 
+            Kartenebenen als PDF-Datei im DIN-A4-Format ausgeben können. Sie können 
+            hier die Ausrichtung (Hochkant- oder Querformat), den Maßstab und die 
+            Auflösung festlegen. Mit einem Klick auf die Schaltfläche <b>Vorschau</b> 
+            wird im Kartenfenster der entsprechende Druckvorschaubereich angezeigt, 
+            den Sie mit gedrückter Maustaste noch verschieben können. Über das Symbol{" "}
             <FontAwesomeIcon
               style={{ transform: "rotate(45deg)" }}
               icon={faArrowsAlt}
-            />
-            , je nach Betrachtungsmaßstab links oben oder in der Mitte des
-            Druckvorschaubereichs, können Sie auf den Druckvorschaubereich
-            zoomen. Klicken Sie abschließend auf die Schaltfläche <b>Drucken</b>{" "}
-            rechts unten in der Druckvorschau, um die PDF-Datei zu erzeugen, die
-            in einem separaten Fenster geöffnet wird. In dieser Ausbaustufe des
-            Geoportals ist die Druckfunktion recht einfach gehalten, die
-            PDF-Druckdatei umfasst daher weder Legenden noch weiterführende
-            Informationen zu den Kartenebenen. Noch ein Hinweis zur Auflösung:
-            Die Zeichenvorschriften für die meisten Kartenebenen sind für die
-            Bildschirmpräsentation gemacht, die Größen von Symbolen und
-            Schriften sowie die Breite von Linien sind daher in Bildschirmpixeln
-            definiert. Je höher die von Ihnen gewählte Auflösung ist, desto
-            kleiner werden die Symbole und Schriften im Ausdruck. Die Linien
-            werden entsprechend immer dünner. In diesen Fällen führt deswegen
-            eine eher niedrige Auflösung von 100 dpi zum besten Druckergebnis.
+            />, 
+            je nach Betrachtungsmaßstab links oben oder in der Mitte des Druckvorschaubereichs, 
+            können Sie auf den Druckvorschaubereich zoomen. Klicken Sie abschließend auf die 
+            Schaltfläche <b>Drucken</b>{" "} rechts unten in der Druckvorschau, um die PDF-Datei 
+            zu erzeugen. Diese öffnet sich in einem separaten Fenster. Die Druckfunktion ist in 
+            dieser Ausbaustufe des Geoportals bewusst einfach gehalten: Die PDF-Datei enthält 
+            weder Legenden noch zusätzliche Informationen zu den Kartenebenen. Noch ein Hinweis 
+            zur Auflösung: Die meisten Kartenebenen sind für die Bildschirmdarstellung optimiert. 
+            Die Größen von Symbolen und Schriften sowie die Breite von Linien sind daher in 
+            Bildschirmpixeln definiert. Je höher die von Ihnen gewählte Auflösung ist, desto
+            kleiner werden die Symbole und Schriften im Ausdruck. Die Linien werden entsprechend 
+            immer dünner. Für viele Ausdrucke liefert daher eine vergleichsweise niedrige Auflösung 
+            von 100 dpi das beste Ergebnis.
           </p>
           <p>
             Durch Anklicken des Symbols <FontAwesomeIcon icon={faShareNodes} />{" "}
