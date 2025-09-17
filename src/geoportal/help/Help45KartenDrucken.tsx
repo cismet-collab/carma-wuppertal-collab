@@ -23,26 +23,23 @@ const Help45KartenDrucken = ({ showOverlayFromOutside }) => {
                 (s. Hilfefolie)
               </HelpOverlayLink>
             </span>{" "}
-            finden Sie einige Funktionen, mit denen Sie die Ergebnisse ihrer
-            Arbeit mit dem DigiTal Zwilling festhalten oder mit anderen teilen
-            können.
+            finden Sie verschiedene Funktionen, mit denen Sie Ihre Arbeitsergebnisse
+            im DigiTal Zwilling festhalten oder mit anderen teilen können.
           </p>
           <p>
             Wenn Sie dort auf das Symbol <FontAwesomeIcon icon="file-export" />{" "}
-            <b>Karte speichern</b> klicken, öffnet sich ein kleiner Dialog zum
-            Speichern der aktuell zusammengestellten Kartenebenen unter einem
-            frei von Ihnen wählbaren Titel. Wenn Sie möchten, können Sie sich im
-            Eingabefeld "<b>Inhalt</b>" notieren, um welche Kartenebenen es sich
-            handelt. Die Karte wird im Cache-Speicher Ihres Browsers abgelegt.
-            Wenn Sie diesen Speicher löschen, verschwinden auch ihre dort zuvor
-            gespeicherten Karten. Die Funktion ist daher zzt. eher zum
-            kurzfristigen Sichern eines Bearbeitungsstandes gedacht als zum
-            langfristigen Aufbau einer Kartensammlung. Laden können Sie eine
-            gespeicherte Karte im Dialog "Karteninhalte hinzufügen" (Symbol{" "}
-            <img src={addLayers} style={{ height: "18px" }} /> in der
-            Menüleiste) unter Favoriten / Meine Karten. Das dort angezeigte
-            Vorschaubild wird automatisch als Collage aus den einzelnen
-            Kartenebenen erzeugt.
+            <b>Karte speichern</b> klicken, öffnet sich ein kleiner Dialog. Hier können 
+            Sie die aktuell zusammengestellten Kartenebenen unter einem frei von Ihnen 
+            wählbaren Titel speichern. Optional können Sie im Feld "<b>Inhalt</b>" eine 
+            Notiz anlegen, um diese Kartenebenen zu beschreiben. Die Karte 
+            wird im Cache-Speicher Ihres Browsers abgelegt. Beachten Sie: Wenn Sie den 
+            Cache löschen, gehen auch Ihre gespeicherten Karten verloren. Die Funktion 
+            eignet sich daher zurzeit vor allem für die kurzfristige Sicherung eines 
+            Bearbeitungsstandes, nicht für den langfristigen Aufbau einer Kartensammlung.
+            Gespeicherte Karten können Sie im Dialog "Karteninhalte hinzufügen" (Symbol{" "}
+            <img src={addLayers} style={{ height: "18px" }} /> in der Menüleiste) im Bereich 
+            Favoriten / Meine Karten wieder aufrufen. Das dort angezeigte Vorschaubild wird 
+            automatisch als Collage aus den enthaltenen Kartenebenen erzeugt.
           </p>
           <p>
             Über das Symbol <FontAwesomeIcon icon="print" /> <b>Drucken</b>{" "}
