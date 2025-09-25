@@ -53,16 +53,22 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
           Impressum
         </a>{" "}
       </div>
-      <img
-        style={{
-          marginBottom: 0,
-          marginLeft: 20,
-          float: "right",
-          height: "60px",
-        }}
-        alt="Logo DigiTal Zwilling"
-        src={Logo_DigiTalZwilling}
-      />
+      <a
+        href="https://smart.wuppertal.de/projekte/digital-zwilling.php"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          style={{
+            marginBottom: 0,
+            marginLeft: 20,
+            float: "right",
+            height: "60px",
+          }}
+          alt="Logo DigiTal Zwilling"
+          src={Logo_DigiTalZwilling}
+        />
+      </a>
     </div>
   );
 };
