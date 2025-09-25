@@ -1,5 +1,3 @@
-import { Attribution } from "../../commons";
-// import { scroller } from "react-scroll";
 import Logo_DigiTalZwilling from "./assets/Logo_DigiTalZwilling.png";
 
 interface HelpFooterProps {
@@ -11,7 +9,6 @@ interface HelpFooterProps {
 const HelpFooter: React.FC<HelpFooterProps> = ({
   title = "DigiTal Zwilling / Geoportal",
   version,
-  setAppMenuActiveMenuSection,
 }) => {
   return (
     <div
