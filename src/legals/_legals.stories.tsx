@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Impressum from "./Impressum";
-import Datenschutzerklärung from "./Datenschutzerklärung";
+import { Impressum } from "./Impressum";
+import { Datenschutzerklärung } from "./Datenschutzerklärung";
 
 const meta: Meta = {
   title: "Legals",

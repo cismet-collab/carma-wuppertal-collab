@@ -2,7 +2,7 @@ import Markdown from "react-markdown";
 import Page from "./commons/Page";
 import DatenschutzMd from "./content/Datenschutzerklärung.md";
 
-const Datenschutzerklärung = () => {
+export const Datenschutzerklärung = () => {
   return (
     <div
       style={{
@@ -20,5 +20,3 @@ const Datenschutzerklärung = () => {
     </div>
   );
 };
-
-export default Datenschutzerklärung;

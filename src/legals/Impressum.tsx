@@ -2,7 +2,7 @@ import Markdown from "react-markdown";
 import Page from "./commons/Page";
 import ImpressumMd from "./content/Impressum.md";
 
-const Impressum = () => {
+export const Impressum = () => {
   return (
     <div
       style={{
@@ -20,5 +20,3 @@ const Impressum = () => {
     </div>
   );
 };
-
-export default Impressum;
