@@ -34,6 +34,7 @@ const Page = ({ children, currentPage, totalPages }: PageProps) => {
           padding: "60px",
           paddingLeft: "clamp(20px, 5%, 90px)",
           paddingRight: "clamp(20px, 5%, 90px)",
+          boxSizing: "border-box",
         }}
       >
         {children}
