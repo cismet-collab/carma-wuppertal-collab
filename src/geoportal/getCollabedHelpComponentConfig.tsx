@@ -9,7 +9,7 @@ import Help45KartenDrucken from "./help/Help45KartenDrucken";
 import Help50MeinStandort from "./help/Help50MeinStandort";
 import Help90Haftungsausschluss from "./help/Help90Haftungsausschluss";
 import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
-import { Footer } from "./Footer";
+import Footer from "./help/HelpFooter";
 import "./geoportal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faKey } from "@fortawesome/free-solid-svg-icons";

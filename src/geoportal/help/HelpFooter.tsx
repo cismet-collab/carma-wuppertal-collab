@@ -9,7 +9,7 @@ interface HelpFooterProps {
 }
 
 const HelpFooter: React.FC<HelpFooterProps> = ({
-  title = document.title,
+  title = "DigiTal Zwilling / Geoportal",
   version,
   setAppMenuActiveMenuSection,
 }) => {
@@ -18,36 +18,44 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
       style={{
         fontSize: "11px",
         display: "flex",
-        lineHeight: "17,5px",
+        alignItems: "center",
+        lineHeight: "17.5px",
       }}
     >
       <div>
-        <b>Hintergrundkarten</b>: True Orthophoto 2022, Amtliche Basiskarte
-        (ABK), Hillshade © Stadt Wuppertal | Stadtkarte 2.0 © RVR | basemap.de
-        web Vektor © GeoBasis-DE / BKG{" "}
-        <a
-          className="pleaseRenderAsLink"
-          onClick={() => {
-            setAppMenuActiveMenuSection("datengrundlage");
-          }}
-        >
-          (Details und Nutzungsbedingungen)
-        </a>
+        <b>
+          {title} {version}
+        </b>{" "}
+        powered by{" "}
+        <a href="https://cismet.de/" target="_cismet">
+          cismet GmbH
+        </a>{" "}
+        auf Basis von{" "}
+        <a href="http://leafletjs.com/" target="_cismet">
+          Leaflet
+        </a>{" "}
+        und{" "}
+        <a href="https://github.com/cismet/carma" target="_cismet">
+          carma
+        </a>{" "}
         <br />
-        <b>Modellierung</b>:{" "}
+        <b>Herausgeber Stadt Wuppertal:</b>{" "}
         <a
-          className="pleaseRenderAsLink"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.gis-rest.nrw.de/atomFeed/rest/atom/182925c1-879f-4054-bd69-b6f28e05b270.html"
+          href="https://digital-twin-wuppertal-live.github.io/legals/#/Datenschutzerklaerung_DigiTal-Zwilling_Geoportal"
         >
-          Land NRW{" "}
-        </a>
-        (2. Umsetzungszyklus der EU-HWRM-RL 12/2019)
-        <br />
-        <Attribution applicationName={title} applicationVersion={version} />
+          Datenschutzerklärung
+        </a>{" "}
+        |{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://digital-twin-wuppertal-live.github.io/legals/#/Impressum_DigiTal-Zwilling_Geoportal"
+        >
+          Impressum
+        </a>{" "}
       </div>
-
       <img
         style={{ marginBottom: 0, marginLeft: 20, float: "right" }}
         alt="Logo DigiTal Zwilling"
