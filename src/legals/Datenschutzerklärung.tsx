@@ -8,7 +8,6 @@ export const Datenschutzerklärung = () => {
       style={{
         backgroundColor: "#f0f0f0",
         minHeight: "100vh",
-        padding: "20px",
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",

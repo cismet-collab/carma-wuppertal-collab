@@ -21,6 +21,8 @@ const Page = ({ children, currentPage, totalPages }: PageProps) => {
         paddingTop: "clamp(15px, 3%, 30px)",
         paddingLeft: "clamp(15px, 3%, 40px)",
         paddingRight: "clamp(15px, 3%, 40px)",
+        marginTop: "15px",
+        marginBottom: "15px",
         boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
         display: "flex",
         flexDirection: "column",
