@@ -54,9 +54,13 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
         </a>{" "}
       </div>
       <img
-        style={{ marginBottom: 0, marginLeft: 20, float: "right" }}
+        style={{
+          marginBottom: 0,
+          marginLeft: 20,
+          float: "right",
+          height: "60px",
+        }}
         alt="Logo DigiTal Zwilling"
-        height="60"
         src={Logo_DigiTalZwilling}
       />
     </div>
