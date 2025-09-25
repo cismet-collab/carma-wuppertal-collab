@@ -6,7 +6,7 @@ Ihre Daten werden von uns weder veröffentlicht, noch unberechtigt an Dritte wei
 
 Im Folgenden erläutern wir, welche Daten während Ihres Besuches auf unseren Webseiten erfasst und wie genau diese verwendet werden.
 
-## 1. <u>Name und Anschrift des Verantwortlichen</u>
+<h2 style="margin-left: 26px;">1. <u>Name und Anschrift des Verantwortlichen</u></h2>
 
 Der Verantwortliche im Sinne der Datenschutz-Grundverordnung und anderer nationaler Datenschutzgesetze der Mitgliedsstaaten sowie sonstiger datenschutzrechtlicher Bestimmungen ist die:
 
@@ -20,7 +20,7 @@ Telefon: +49 202 563 0
 Telefax: +49 202 563 8199  
 E-Mail: [internet@stadt.wuppertal.de](mailto:internet@stadt.wuppertal.de)
 
-## 2. <u>Datenschutzbeauftragter</u>
+<h2 style="margin-left: 26px;">2. <u>Datenschutzbeauftragter</u></h2>
 
 Beauftragter für Datenschutz  
 bei der Stadt Wuppertal
@@ -30,7 +30,7 @@ Johannes-Rau-Platz 1
 
 E-Mail: [datenschutz@stadt.wuppertal.de](mailto:datenschutz@stadt.wuppertal.de)
 
-## 3. <u>Umfang der Datenverarbeitung</u>
+<h2 style="margin-left: 26px;">3. <u>Umfang der Datenverarbeitung</u></h2>
 
 Wir erheben oder verarbeiten bei der Bereitstellung dieser Website keinerlei personenbezogene Daten:
 
@@ -39,7 +39,7 @@ Wir erheben oder verarbeiten bei der Bereitstellung dieser Website keinerlei per
 - Die Statistik-Software Matomo arbeitet im anonymen und cookiefreien Modus.
 - Eine Anmeldung oder Registrierung ist nicht möglich.
 
-## 4. <u>Rechte der betroffenen Person</u>
+<h2 style="margin-left: 26px;">4. <u>Rechte der betroffenen Person</u></h2>
 
 Obwohl keine personenbezogenen Daten von Ihnen verarbeitet werden, weisen wir Sie der Vollständigkeit halber und für den Fall einer abweichenden Rechtsauffassung auf die Betroffenenrechte i.S.d. DSGVO hin:
 
