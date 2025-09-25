@@ -39,7 +39,7 @@ Cecilienallee 2
 40474 Düsseldorf  
 Telefon: +49 211 475-0
 
-Internet: [www.bezreg-duesseldorf.nrw.de](https://www.bezreg-duesseldorf.nrw.de)
+Internet: [www.bezreg-duesseldorf.nrw.de](https://www.brd.nrw.de/)
 
 <br />
 <br />
