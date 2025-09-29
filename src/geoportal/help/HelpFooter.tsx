@@ -54,6 +54,9 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
         </a>{" "}
       </div>
       <a
+        style={{
+          float: "right",
+        }}
         href="https://smart.wuppertal.de/projekte/digital-zwilling.php"
         target="_blank"
         rel="noopener noreferrer"
