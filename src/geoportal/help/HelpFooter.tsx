@@ -56,6 +56,7 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
       <a
         href="https://smart.wuppertal.de/projekte/digital-zwilling.php"
         target="_blank"
+        style={{ flexShrink: "0" }}
         rel="noopener noreferrer"
       >
         <img
