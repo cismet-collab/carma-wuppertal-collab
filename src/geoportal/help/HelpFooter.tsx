@@ -54,9 +54,6 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
         </a>{" "}
       </div>
       <a
-        style={{
-          float: "right",
-        }}
         href="https://smart.wuppertal.de/projekte/digital-zwilling.php"
         target="_blank"
         rel="noopener noreferrer"
@@ -67,6 +64,7 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
             marginLeft: 20,
             float: "right",
             height: "60px",
+            width: "60px",
           }}
           alt="Logo DigiTal Zwilling"
           src={Logo_DigiTalZwilling}
