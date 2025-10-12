@@ -21,7 +21,7 @@ const InKartePositionierenText = ({
         auf die zugehörige Position zentriert. Handelt es sich um einen Ort mit 
         Punktgeometrie{" "}{punktgeometrie}, wird stark hineingezoomt (Zoomstufe {zoomstufe}) 
         und ein Marker{" "}<Icon name="map-marker" />{" "}auf der Zielposition platziert. 
-        Bei Suchbegriffen mit Flächengeometrie{" "}{flachengeometrie}{" "}wird der Maßstab so gewählt, 
+        Bei Orten mit Flächengeometrie{" "}{flachengeometrie}{" "}wird der Maßstab so gewählt, 
         dass die gesamte Fläche sichtbar ist. Zusätzlich wird die Umgebung außerhalb dieser Fläche 
         abgedunkelt (Spotlight-Effekt).
       </p>
