@@ -1,14 +1,12 @@
 import Icon from "react-cismap/commons/Icon";
 interface InKartePositionierenTextProps {
   pretext: React.ReactNode;
-  zoomstufe?: number;
   punktgeometrie?: string;
   flachengeometrie?: string;
   posttext?: React.ReactNode;
 }
 const InKartePositionierenText = ({
   pretext,
-  zoomstufe = 14,
   punktgeometrie = "(Adresse, Straße, POI)",
   flachengeometrie = "(Stadtbezirk, Quartier)",
   posttext,
