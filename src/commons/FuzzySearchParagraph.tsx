@@ -1,18 +1,16 @@
 const FuzzySearchParagraph = () => {
   return (
     <p>
-      Die Suche im Verzeichnis der Ortsnamen erfolgt "unscharf". Sie müssen den
-      Ortsnamen also nicht exakt so schreiben, wie wir ihn in unserer Datenbank
-      führen. Wenn Sie z. B. "Weierbush" oder "buscht" eintippen, wird trotzdem
-      der Weyerbuschturm gefunden und als bester Treffer angeboten. Bei der
-      unscharfen Suche wird für jeden Ort ein individueller Zahlenwert
-      berechnet, der die Übereinstimmung mit dem Suchtext beschreibt. Wir bilden
-      daraus Trefferklassen (Perfekte, Sehr gute, Gute, Befriedigende und
-      Ausreichende Treffer), die als Überschriften in der Trefferliste angezeigt
-      werden. <b>Achtung</b>: Bei sehr langen Texteingaben mit vielen
-      Leerzeichen liefert die unscharfe Suche bisweilen unplausible Treffer. Wir
-      versuchen dieses Problem bei der Weiterentwicklung des DigiTal Zwillings
-      abzustellen.
+      Die Suche funktioniert auch dann, wenn die Schreibweise nicht exakt stimmt. 
+      Das System erkennt ähnlich geschriebene Begriffe und ordnet sie nach 
+      Übereinstimmung – zum Beispiel führt auch „Weierbush“ oder „buscht“ zuverlässig 
+      zum Weyerbuschturm. Die Treffergenauigkeit wird intern bewertet und in fünf 
+      Kategorien eingeteilt: perfekte, sehr gute, gute, befriedigende und ausreichende 
+      Treffer. Diese "Trefferklassen" werden als Überschriften in der Trefferliste 
+      angezeigt. Bitte beachten Sie: Wenn sehr lange Begriffe mit vielen Leerzeichen 
+      eingegeben werden, kann es vorkommen, dass die Trefferliste unplausible Ergebnisse 
+      enthält. Wir arbeiten daran, dieses Verhalten in zukünftigen Versionen des 
+      DigiTal Zwillings zu verbessern.
     </p>
   );
 };
