@@ -1,12 +1,14 @@
 import Icon from "react-cismap/commons/Icon";
 interface InKartePositionierenTextProps {
   pretext: React.ReactNode;
+  zoomstufe?: number;
   punktgeometrie?: string;
   flachengeometrie?: string;
   posttext?: React.ReactNode;
 }
 const InKartePositionierenText = ({
   pretext,
+  zoomstufe = 14,
   punktgeometrie = "(Adresse, Straße, POI)",
   flachengeometrie = "(Stadtbezirk, Quartier)",
   posttext,
@@ -17,8 +19,8 @@ const InKartePositionierenText = ({
       <p>
         Wenn Sie einen Treffer aus der Liste auswählen, wird die Karte automatisch 
         auf die zugehörige Position zentriert. Handelt es sich um einen Ort mit 
-        Punktgeometrie{" "}{punktgeometrie}, wird stark hineingezoomt und ein 
-        Marker{" "}<Icon name="map-marker" />{" "}auf der Zielposition platziert. 
+        Punktgeometrie{" "}{punktgeometrie}, wird stark hineingezoomt (Zoomstufe {zoomstufe}) 
+        und ein Marker{" "}<Icon name="map-marker" />{" "}auf der Zielposition platziert. 
         Bei Suchbegriffen mit Flächengeometrie{" "}{flachengeometrie}{" "}wird der Maßstab so gewählt, 
         dass die gesamte Fläche sichtbar ist. Zusätzlich wird die Umgebung außerhalb dieser Fläche 
         abgedunkelt (Spotlight-Effekt).
