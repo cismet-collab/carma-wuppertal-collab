@@ -29,7 +29,7 @@ const InKartePositionierenText = ({
         Sie können die Suche jederzeit zurücksetzen, indem Sie auf das 
         Symbol{" "}<Icon name="times" />{" "}links neben dem Eingabefeld klicken. 
         Dadurch wird der Marker entfernt bzw. die Abdunklung aufgehoben, außerdem 
-        wird der eingegebene Text gelöscht.
+        wird der eingegebene Text gelöscht. 
       </p>
       {posttext && posttext}
     </div>
