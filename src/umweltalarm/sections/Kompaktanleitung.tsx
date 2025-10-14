@@ -73,6 +73,7 @@ export const Kompaktanleitung = () => {
                     type: "REACTCOMP",
                     content: (
                       <InKartePositionierenText
+                        zoomstufe={18}
                         pretext={
                           <>
                             <p>
