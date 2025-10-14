@@ -36,7 +36,6 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                       (s. Hilfefolie)
                     </HelpOverlayLink>
                   </span>
-                  .
                 </p>
                 <p>
                   Im 3D-Modus wird außerdem ein spezielles Steuerwerkzeug
