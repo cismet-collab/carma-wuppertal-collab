@@ -35,6 +35,11 @@
       "@nx/react/typings/image.d.ts",
       "@nx/react/typings/styled-jsx.d.ts"
     ],
+    /* Path aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
     "src"
