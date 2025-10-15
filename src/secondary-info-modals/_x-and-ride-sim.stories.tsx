@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Sim from "./XandRideSIM";
 import data from "./_data/x-and-ride";
 import React from "react";
+import { genericSecondaryInfoFooterFactory } from "@/commons";
 
 const meta: Meta = {
   title: "X-And-Ride",
@@ -40,7 +41,15 @@ export const SecondaryInfo: StoryObj<Args> = {
 
     return (
       <div id="myMenu" style={modalBodyStyle}>
-        <Sim feature={_feature} setOpen={() => {}} versionString="myVersion" />
+        <Sim
+          feature={_feature}
+          Footer={genericSecondaryInfoFooterFactory({
+            skipTeilzwilling: true,
+            applicationName: "Teilzwilling Park+Ride-Karte Wuppertal",
+          })}
+          setOpen={() => {}}
+          versionString="myVersion"
+        />
       </div>
     );
   },

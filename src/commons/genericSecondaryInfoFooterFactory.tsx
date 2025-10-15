@@ -8,6 +8,7 @@ interface SecondaryInfoFooterProps {
   hintergrundKartenAttribution?: string | JSX.Element;
   applicationName?: string;
   skipTeilzwilling?: boolean;
+  skipCloseButton?: boolean;
 }
 
 const SecondaryInfoFooter = ({
@@ -16,6 +17,7 @@ const SecondaryInfoFooter = ({
   hintergrundKartenAttribution,
   applicationName = document.title,
   skipTeilzwilling = false,
+  skipCloseButton = false,
 }: SecondaryInfoFooterProps) => {
   return (
     <table
@@ -53,15 +55,17 @@ const SecondaryInfoFooter = ({
               </span>
             </div>
           </td>
-          <td>
-            <Button
-              id="cmdCloseModalApplicationMenu"
-              type="submit"
-              onClick={close}
-            >
-              Ok
-            </Button>
-          </td>
+          {!skipCloseButton && (
+            <td>
+              <Button
+                id="cmdCloseModalApplicationMenu"
+                type="submit"
+                onClick={close}
+              >
+                Ok
+              </Button>
+            </td>
+          )}
         </tr>
       </tbody>
     </table>

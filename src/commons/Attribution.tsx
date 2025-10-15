@@ -1,4 +1,5 @@
 import React from "react";
+import LegalsFooter from "./LegalsFooter";
 
 type AttributionProps = {
   applicationName: string;
@@ -29,22 +30,8 @@ export const Attribution: React.FC<AttributionProps> = ({
       <a href="https://github.com/cismet/carma" target="_cismet">
         carma
       </a>{" "}
-      |{" "}
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://cismet.de/datenschutzerklaerung.html"
-      >
-        Datenschutzerklärung
-      </a>{" "}
-      |{" "}
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://cismet.de/impressum.html"
-      >
-        Impressum
-      </a>{" "}
+      <br />
+      <LegalsFooter />{" "}
     </div>
   );
 };

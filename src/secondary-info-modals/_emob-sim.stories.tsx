@@ -18,6 +18,7 @@ const meta: Meta = {
 export default meta;
 
 import React from "react";
+import { genericSecondaryInfoFooterFactory } from "@/commons";
 
 type Args = { Beispiele: string; Feature?: any; filter?: string };
 
@@ -37,7 +38,15 @@ export const SecondaryInfo: StoryObj<Args> = {
     }
     return (
       <div id="myMenu" style={modalBodyStyle}>
-        <Sim feature={_feature} setOpen={() => {}} versionString="myVersion" />
+        <Sim
+          feature={_feature}
+          Footer={genericSecondaryInfoFooterFactory({
+            skipTeilzwilling: true,
+            applicationName: "Teilzwilling E-Auto-Ladestationskarte Wuppertal",
+          })}
+          setOpen={() => {}}
+          versionString="myVersion"
+        />
       </div>
     );
   },

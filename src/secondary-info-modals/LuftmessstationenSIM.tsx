@@ -20,7 +20,13 @@ import "chart.js/auto";
 
 type WindowSize = { width: number; height: number };
 
-type FooterProps = { version: string };
+type FooterProps = {
+  close: () => void;
+  version: string;
+  hintergrundKartenAttribution?: string | JSX.Element;
+  applicationName?: string;
+  skipTeilzwilling?: boolean;
+};
 
 type InfoPanelProps = {
   feature?: unknown;
@@ -30,6 +36,7 @@ type InfoPanelProps = {
   reactCismapVersion?: string;
   inStorybook?: boolean;
   windowSize?: WindowSize;
+  close?: () => void;
 };
 
 
@@ -41,6 +48,7 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
   reactCismapVersion = "???",
   inStorybook = false,
   windowSize,
+  close = () => {},
 }) => {
   const selectedFeature = feature as { properties?: any };
   const station = selectedFeature?.properties as any;
@@ -521,7 +529,7 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
           </div>
         }
         subSections={subSections}
-        footer={<Footer version={versionString} />}
+        footer={<Footer version={versionString} close={close} />}
       />
     );
   } else {

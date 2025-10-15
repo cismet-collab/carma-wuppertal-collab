@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import data from "./_data/luftmessstationen";
 import Sim from "./LuftmessstationenSIM";
+import { genericSecondaryInfoFooterFactory } from "@/commons";
 
 const meta: Meta = {
   title: "Luftmessstationen",
@@ -38,6 +39,11 @@ export const SecondaryInfo: StoryObj<Args> = {
         <Sim
           feature={_feature}
           setOpen={() => {}}
+          Footer={genericSecondaryInfoFooterFactory({
+            skipTeilzwilling: true,
+            applicationName: "Teilzwilling Luftmessstationskarte",
+            skipCloseButton: true,
+          })}
           versionString="myVersion"
           inStorybook={true}
         />
