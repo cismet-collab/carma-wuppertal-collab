@@ -4,18 +4,14 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2022",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2022",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "preserve",
     "skipLibCheck": true,
     "sourceMap": true,
     /* Bundler mode */
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
-    "moduleResolution":"node",
+    "moduleResolution": "node",
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
@@ -34,14 +30,7 @@
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts",
       "@nx/react/typings/styled-jsx.d.ts"
-    ],
-    /* Path aliases */
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    ]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

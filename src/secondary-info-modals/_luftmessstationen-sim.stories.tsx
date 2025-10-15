@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import data from "./_data/luftmessstationen";
 import Sim from "./LuftmessstationenSIM";
-import { genericSecondaryInfoFooterFactory } from "@/commons";
+import { genericSecondaryInfoFooterFactory } from "../commons";
 
 const meta: Meta = {
   title: "Luftmessstationen",
