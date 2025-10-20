@@ -34,72 +34,48 @@ export function convertVTEntryToFeatureProperties(vtEntry) {
 
   // Helper: Convert steckerverbindungen from VT to array of objects
   function parseSteckerverbindungen(vt) {
-    // VT may have stecker1, stecker2, ... or a combined field
-    const result = [];
-    if (vt.stecker1) {
-      const [desc, countAndType] = vt.stecker1.split("!").map((s) => s.trim());
-      if (countAndType) {
-        const match = countAndType.match(/(\d+) x ([^()]+)\s*\(([^)]+)\)/);
-        if (match) {
-          const powerString = match[3];
-          const kwMatch = powerString.match(/([\d.]+)\s*kW/);
-          const aMatch = powerString.match(/([\d.]+)\s*A/);
-          const vMatch = powerString.match(/([\d.]+)\s*V/);
-
-          result.push({
-            anzahl: parseInt(match[1]),
-            steckdosentyp: match[2].trim(),
-            steckdosentypkey: (() => {
-              const typeMatch = match[2]
-                .trim()
-                .match(
-                  /Typ\s*2|Schuko|CHAdeMO|CCS|Tesla Supercharger|Drehstrom/i
-                );
-              return typeMatch
-                ? typeMatch[0].replace(/\s+/g, " ").trim()
-                : match[2].trim().split(" ")[0];
-            })(),
-            leistung: kwMatch ? parseFloat(kwMatch[1]) : 0,
-            strom: aMatch ? parseFloat(aMatch[1]) : 0,
-            spannung: vMatch ? parseFloat(vMatch[1]) : 0,
-          });
-        }
-      }
-    }
-    if (vt.stecker2) {
-      const [desc, countAndType] = vt.stecker2.split("!").map((s) => s.trim());
-      if (countAndType) {
-        const match = countAndType.match(/(\d+) x ([^()]+)\s*\(([^)]+)\)/);
-        if (match) {
-          const powerString = match[3];
-          const kwMatch = powerString.match(/([\d.]+)\s*kW/);
-          const aMatch = powerString.match(/([\d.]+)\s*A/);
-          const vMatch = powerString.match(/([\d.]+)\s*V/);
-
-          result.push({
-            anzahl: parseInt(match[1]),
-            steckdosentyp: match[2].trim(),
-            steckdosentypkey: (() => {
-              const typeMatch = match[2]
-                .trim()
-                .match(
-                  /Typ\s*2|Schuko|CHAdeMO|CCS|Tesla Supercharger|Drehstrom/i
-                );
-              return typeMatch
-                ? typeMatch[0].replace(/\s+/g, " ").trim()
-                : match[2].trim().split(" ")[0];
-            })(),
-            leistung: kwMatch ? parseFloat(kwMatch[1]) : 0,
-            strom: aMatch ? parseFloat(aMatch[1]) : 0,
-            spannung: vMatch ? parseFloat(vMatch[1]) : 0,
-          });
-        }
-      }
-    }
     // If the normal array exists, use that
     if (Array.isArray(vt.steckerverbindungen)) {
       return vt.steckerverbindungen;
     }
+
+    // VT may have stecker1, stecker2, ... or a combined field
+    const result = [];
+    const steckerKeys = Object.keys(vt)
+      .filter((key) => key.startsWith("stecker") && vt[key])
+      .sort();
+
+    for (const key of steckerKeys) {
+      const [desc, countAndType] = vt[key].split("!").map((s) => s.trim());
+      if (countAndType) {
+        const match = countAndType.match(/(\d+) x ([^()]+)\s*\(([^)]+)\)/);
+        if (match) {
+          const powerString = match[3];
+          const kwMatch = powerString.match(/([\d.]+)\s*kW/);
+          const aMatch = powerString.match(/([\d.]+)\s*A/);
+          const vMatch = powerString.match(/([\d.]+)\s*V/);
+
+          result.push({
+            anzahl: parseInt(match[1]),
+            steckdosentyp: match[2].trim(),
+            steckdosentypkey: (() => {
+              const typeMatch = match[2]
+                .trim()
+                .match(
+                  /Typ\s*2|Schuko|CHAdeMO|CCS|Tesla Supercharger|Drehstrom/i
+                );
+              return typeMatch
+                ? typeMatch[0].replace(/\s+/g, " ").trim()
+                : match[2].trim().split(" ")[0];
+            })(),
+            leistung: kwMatch ? parseFloat(kwMatch[1]) : 0,
+            strom: aMatch ? parseFloat(aMatch[1]) : 0,
+            spannung: vMatch ? parseFloat(vMatch[1]) : 0,
+          });
+        }
+      }
+    }
+
     return result;
   }
 
