@@ -100,8 +100,12 @@ export function convertVTEntryToFeatureProperties(vtEntry) {
     zusatzinfo: vtEntry.zusatzinfo ?? "",
     online: vtEntry.status ?? vtEntry.online ?? false,
     detailbeschreibung: vtEntry.bemerkung ?? vtEntry.detailbeschreibung ?? "",
-    strasse: vtEntry.adresse?.split(" ")[0] ?? vtEntry.strasse ?? "",
-    hausnummer: vtEntry.adresse?.split(" ")[1] ?? vtEntry.hausnummer ?? "",
+    strasse:
+      vtEntry.adresse?.split(" ").slice(0, -1).join(" ") ||
+      vtEntry.strasse ||
+      "",
+    hausnummer:
+      vtEntry.adresse?.split(" ").slice(-1)[0] ?? vtEntry.hausnummer ?? "",
     foto: vtEntry.foto ?? "",
     oeffnungszeiten:
       vtEntry.oeffnungszeiten ??
