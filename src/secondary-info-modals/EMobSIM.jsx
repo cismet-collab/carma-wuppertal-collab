@@ -140,7 +140,7 @@ const SecondaryInfoModal = ({
       </Modal.Header>
       <Modal.Body id="myMenu" key={"prbr.secondaryInfo"}>
         <div style={{ width: "100%", minHeight: 250 }}>
-          {foto !== undefined && (
+          {foto && (
             <img
               alt="Bild"
               style={{
