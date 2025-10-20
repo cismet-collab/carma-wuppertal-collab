@@ -151,7 +151,10 @@ export function convertVTEntryToFeatureProperties(vtEntry) {
     ladeplaetze: vtEntry.anzahl ?? vtEntry.ladeplaetze ?? 0,
     parkgebuehr: vtEntry.parkgebuehr ?? "",
     parkhaus: vtEntry.parkhaus ?? false,
-    schnellladestation: vtEntry.schnellladestation ?? false,
+    schnellladestation:
+      vtEntry.schnellladestation ??
+      (vtEntry.laden && /schnellladen/i.test(vtEntry.laden)) ??
+      false,
     wasserstoff: vtEntry.wasserstoff ?? false,
     betreiber: {
       id: vtEntry.betreiberid ?? null,
