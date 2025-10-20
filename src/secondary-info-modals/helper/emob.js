@@ -114,9 +114,19 @@ export function convertVTEntryToFeatureProperties(vtEntry) {
       })(),
     stromart: vtEntry.strom ?? vtEntry.stromart ?? "",
     authentifizierung: parseArray(
-      vtEntry.zugang1 && vtEntry.zugang2 && vtEntry.zugang3
-        ? [vtEntry.zugang1, vtEntry.zugang2, vtEntry.zugang3].join(" / ")
-        : vtEntry.authentifizierung
+      (() => {
+        const zugangValues = Object.keys(vtEntry)
+          .filter((key) => key.startsWith("zugang") && vtEntry[key])
+          .sort()
+          .map((key) => vtEntry[key]);
+        if (zugangValues.length > 1) {
+          const last = zugangValues.pop();
+          zugangValues.unshift(last);
+        }
+        return zugangValues.length > 0
+          ? zugangValues.join(" / ")
+          : vtEntry.authentifizierung;
+      })()
     ),
     steckerverbindungen: parseSteckerverbindungen(vtEntry),
     ladekosten: vtEntry.abrechnung ?? vtEntry.ladekosten ?? "",
