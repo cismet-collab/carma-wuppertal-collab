@@ -41,6 +41,11 @@ export function convertVTEntryToFeatureProperties(vtEntry) {
       if (countAndType) {
         const match = countAndType.match(/(\d+) x ([^()]+)\s*\(([^)]+)\)/);
         if (match) {
+          const powerString = match[3];
+          const kwMatch = powerString.match(/([\d.]+)\s*kW/);
+          const aMatch = powerString.match(/([\d.]+)\s*A/);
+          const vMatch = powerString.match(/([\d.]+)\s*V/);
+
           result.push({
             anzahl: parseInt(match[1]),
             steckdosentyp: match[2].trim(),
@@ -54,9 +59,9 @@ export function convertVTEntryToFeatureProperties(vtEntry) {
                 ? typeMatch[0].replace(/\s+/g, " ").trim()
                 : match[2].trim().split(" ")[0];
             })(),
-            leistung: parseFloat(match[3]),
-            strom: 0,
-            spannung: 0,
+            leistung: kwMatch ? parseFloat(kwMatch[1]) : 0,
+            strom: aMatch ? parseFloat(aMatch[1]) : 0,
+            spannung: vMatch ? parseFloat(vMatch[1]) : 0,
           });
         }
       }
@@ -66,6 +71,11 @@ export function convertVTEntryToFeatureProperties(vtEntry) {
       if (countAndType) {
         const match = countAndType.match(/(\d+) x ([^()]+)\s*\(([^)]+)\)/);
         if (match) {
+          const powerString = match[3];
+          const kwMatch = powerString.match(/([\d.]+)\s*kW/);
+          const aMatch = powerString.match(/([\d.]+)\s*A/);
+          const vMatch = powerString.match(/([\d.]+)\s*V/);
+
           result.push({
             anzahl: parseInt(match[1]),
             steckdosentyp: match[2].trim(),
@@ -79,9 +89,9 @@ export function convertVTEntryToFeatureProperties(vtEntry) {
                 ? typeMatch[0].replace(/\s+/g, " ").trim()
                 : match[2].trim().split(" ")[0];
             })(),
-            leistung: parseFloat(match[3]),
-            strom: 0,
-            spannung: 0,
+            leistung: kwMatch ? parseFloat(kwMatch[1]) : 0,
+            strom: aMatch ? parseFloat(aMatch[1]) : 0,
+            spannung: vMatch ? parseFloat(vMatch[1]) : 0,
           });
         }
       }
