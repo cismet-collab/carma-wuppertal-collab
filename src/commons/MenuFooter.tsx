@@ -10,6 +10,7 @@ interface MenuFooterProps {
   sectionKey?: string;
   skipHintergrundkarten?: boolean;
   skipTeilzwilling?: boolean;
+  isTopicMap?: boolean;
 }
 const MenuFooter: React.FC<MenuFooterProps> = ({
   title = document.title,
@@ -19,6 +20,7 @@ const MenuFooter: React.FC<MenuFooterProps> = ({
   sectionKey = "help",
   skipHintergrundkarten = false,
   skipTeilzwilling = false,
+  isTopicMap = true,
 }: MenuFooterProps) => {
   return (
     <div
@@ -52,6 +54,7 @@ const MenuFooter: React.FC<MenuFooterProps> = ({
           skipTeilzwilling={skipTeilzwilling}
           applicationName={title}
           applicationVersion={version}
+          isTopicMap={isTopicMap}
         />
       </div>
 

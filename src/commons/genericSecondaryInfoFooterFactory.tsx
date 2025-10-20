@@ -9,6 +9,7 @@ interface SecondaryInfoFooterProps {
   applicationName?: string;
   skipTeilzwilling?: boolean;
   skipCloseButton?: boolean;
+  isTopicMap?: boolean;
 }
 
 const SecondaryInfoFooter = ({
@@ -18,6 +19,7 @@ const SecondaryInfoFooter = ({
   applicationName = document.title,
   skipTeilzwilling = false,
   skipCloseButton = false,
+  isTopicMap = true,
 }: SecondaryInfoFooterProps) => {
   return (
     <table
@@ -50,6 +52,7 @@ const SecondaryInfoFooter = ({
                     }
                     skipTeilzwilling={skipTeilzwilling}
                     version={version}
+                    isTopicMap={isTopicMap}
                   />
                 </div>
               </span>

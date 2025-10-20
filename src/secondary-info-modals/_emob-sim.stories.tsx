@@ -43,6 +43,7 @@ export const SecondaryInfo: StoryObj<Args> = {
           Footer={genericSecondaryInfoFooterFactory({
             skipTeilzwilling: true,
             applicationName: "Teilzwilling E-Auto-Ladestationskarte Wuppertal",
+            isTopicMap: false,
           })}
           setOpen={() => {}}
           versionString="myVersion"

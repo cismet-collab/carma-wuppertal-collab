@@ -43,6 +43,7 @@ export const SecondaryInfo: StoryObj<Args> = {
             skipTeilzwilling: true,
             applicationName: "Teilzwilling Luftmessstationskarte",
             skipCloseButton: true,
+            isTopicMap: false,
           })}
           versionString="myVersion"
           inStorybook={true}

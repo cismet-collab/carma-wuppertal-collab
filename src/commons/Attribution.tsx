@@ -5,12 +5,14 @@ type AttributionProps = {
   applicationName: string;
   applicationVersion: string;
   skipTeilzwilling?: boolean;
+  isTopicMap?: boolean;
 };
 
 export const Attribution: React.FC<AttributionProps> = ({
   applicationName = document.title,
   applicationVersion,
   skipTeilzwilling = false,
+  isTopicMap = true,
 }) => {
   return (
     <div>
@@ -31,7 +33,7 @@ export const Attribution: React.FC<AttributionProps> = ({
         carma
       </a>{" "}
       <br />
-      <LegalsFooter />{" "}
+      <LegalsFooter isTopicMap={isTopicMap} />{" "}
     </div>
   );
 };
