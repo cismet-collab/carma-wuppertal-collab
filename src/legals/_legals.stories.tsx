@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Impressum } from "./Impressum";
-import { Datenschutzerklärung } from "./Datenschutzerklärung";
+import { Impressum as ImpressumGeoportal } from "./ImpressumGeoportal";
+import { Datenschutzerklärung as DatenschutzerklärungGeoportal } from "./DatenschutzerklärungGeoportal";
+import { Impressum as ImpressumTopicMaps } from "./ImpressumTopicMaps";
+import { Datenschutzerklärung as DatenschutzerklärungTopicMaps } from "./DatenschutzerklärungTopicMaps";
 
 const meta: Meta = {
   title: "Legals",
@@ -8,14 +10,26 @@ const meta: Meta = {
 
 export default meta;
 
-export const ImpressumMarkdown: StoryObj = {
+export const ImpressumGeoportalMarkdown: StoryObj = {
   render: () => {
-    return <Impressum />;
+    return <ImpressumGeoportal />;
   },
 };
 
-export const DatenschutzerklärungMarkdown: StoryObj = {
+export const DatenschutzerklärungGeoportalMarkdown: StoryObj = {
   render: () => {
-    return <Datenschutzerklärung />;
+    return <DatenschutzerklärungGeoportal />;
+  },
+};
+
+export const ImpressumTopicMapsMarkdown: StoryObj = {
+  render: () => {
+    return <ImpressumTopicMaps />;
+  },
+};
+
+export const DatenschutzerklärungTopicMapsMarkdown: StoryObj = {
+  render: () => {
+    return <DatenschutzerklärungTopicMaps />;
   },
 };

@@ -1,8 +1,8 @@
 import Markdown from "react-markdown";
 import Page from "./commons/Page";
-import DatenschutzMd from "./content/Datenschutzerklärung.md";
+import ImpressumMd from "./content/topicmaps/Impressum.md";
 
-export const Datenschutzerklärung = () => {
+export const Impressum = () => {
   return (
     <div
       style={{
@@ -14,7 +14,7 @@ export const Datenschutzerklärung = () => {
       }}
     >
       <Page>
-        <Markdown allowDangerousHtml={true}>{DatenschutzMd}</Markdown>
+        <Markdown allowDangerousHtml={true}>{ImpressumMd}</Markdown>
       </Page>
     </div>
   );

@@ -1,6 +1,6 @@
 import Markdown from "react-markdown";
 import Page from "./commons/Page";
-import ImpressumMd from "./content/Impressum.md";
+import ImpressumMd from "./content/geoportal/Impressum.md";
 
 export const Impressum = () => {
   return (
