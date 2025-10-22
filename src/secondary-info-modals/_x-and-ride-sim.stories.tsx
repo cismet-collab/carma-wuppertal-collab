@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Sim from "./XandRideSIM";
 import data from "./_data/x-and-ride";
 import React from "react";
-import { genericSecondaryInfoFooterFactory } from "../commons";
 
 const meta: Meta = {
   title: "X-And-Ride",

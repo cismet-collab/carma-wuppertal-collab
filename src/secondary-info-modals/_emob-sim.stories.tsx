@@ -18,7 +18,6 @@ const meta: Meta = {
 export default meta;
 
 import React from "react";
-import { genericSecondaryInfoFooterFactory } from "../commons";
 
 type Args = { Beispiele: string; Feature?: any; filter?: string };
 
