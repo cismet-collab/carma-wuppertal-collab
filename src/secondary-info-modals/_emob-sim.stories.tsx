@@ -38,16 +38,7 @@ export const SecondaryInfo: StoryObj<Args> = {
     }
     return (
       <div id="myMenu" style={modalBodyStyle}>
-        <Sim
-          feature={_feature}
-          Footer={genericSecondaryInfoFooterFactory({
-            skipTeilzwilling: true,
-            applicationName: "Teilzwilling E-Auto-Ladestationskarte Wuppertal",
-            isTopicMap: false,
-          })}
-          setOpen={() => {}}
-          versionString="myVersion"
-        />
+        <Sim feature={_feature} setOpen={() => {}} versionString="myVersion" />
       </div>
     );
   },

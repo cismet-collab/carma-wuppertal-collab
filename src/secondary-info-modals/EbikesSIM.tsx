@@ -7,9 +7,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal, Accordion } from "react-bootstrap";
 // import { SecondaryInfoFooter } from "@carma-collab/wuppertal/e-bikes";
-import { SecondaryInfoFooter } from "../e-bikes";
 import Panel from "react-cismap/commons/Panel";
 import { convertVTEntryToFeatureProperties } from "./helper/ebikes";
+import { genericSecondaryInfoFooterFactory } from "../commons";
 interface FeatureType {
   properties?: any;
   [key: string]: any;
@@ -19,7 +19,7 @@ const SecondaryInfoModal = ({
   feature = {},
   setOpen = () => {},
   versionString = "???",
-  Footer = SecondaryInfoFooter,
+  Footer = genericSecondaryInfoFooterFactory({ skipTeilzwilling: true }),
 }: {
   feature?: FeatureType;
   setOpen?: (open: boolean) => void;

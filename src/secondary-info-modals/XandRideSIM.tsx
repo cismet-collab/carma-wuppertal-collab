@@ -2,12 +2,12 @@ import React from "react";
 import { faBicycle, faCar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal, Accordion } from "react-bootstrap";
-import { SecondaryInfoFooter } from "../x-and-ride";
 import type { SecondaryInfoFooterProps } from "../x-and-ride/SecondaryInfoFooter";
 
 import logo_vrr from "./assets/logo-vrr.png";
 import { convertVTEntryToFeatureProperties } from "./helper/xandride";
 import Panel from "react-cismap/commons/Panel";
+import { genericSecondaryInfoFooterFactory } from "../commons";
 
 type Feature = {
   type?: string;
@@ -27,7 +27,7 @@ const SecondaryInfoModal = ({
   feature = {},
   setOpen = () => {},
   versionString = "???",
-  Footer = SecondaryInfoFooter,
+  Footer = genericSecondaryInfoFooterFactory({ skipTeilzwilling: true }),
 }: SecondaryInfoModalProps) => {
   let _feature;
   if (feature.type !== "Feature") {

@@ -39,12 +39,6 @@ export const SecondaryInfo: StoryObj<Args> = {
         <Sim
           feature={_feature}
           setOpen={() => {}}
-          Footer={genericSecondaryInfoFooterFactory({
-            skipTeilzwilling: true,
-            applicationName: "Teilzwilling Luftmessstationskarte",
-            skipCloseButton: true,
-            isTopicMap: false,
-          })}
           versionString="myVersion"
           inStorybook={true}
         />

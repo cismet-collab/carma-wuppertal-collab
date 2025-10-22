@@ -11,14 +11,14 @@ import {
   getConnectorImageUrl,
   convertVTEntryToFeatureProperties,
 } from "./helper/emob";
-import { SecondaryInfoFooter } from "../e-auto-ladestation";
+import { genericSecondaryInfoFooterFactory } from "../commons";
 import Panel from "react-cismap/commons/Panel";
 
 const SecondaryInfoModal = ({
   feature = {},
   setOpen = (x) => {},
   versionString = "???",
-  Footer = SecondaryInfoFooter,
+  Footer = genericSecondaryInfoFooterFactory({ skipTeilzwilling: true }),
 }) => {
   let _feature;
   if (feature.type !== "Feature") {

@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 
 import MenuFooter from "./MenuFooter";
 
-interface SecondaryInfoFooterProps {
+export interface SecondaryInfoFooterProps {
   close: () => void;
   version: string;
   hintergrundKartenAttribution?: string | JSX.Element;

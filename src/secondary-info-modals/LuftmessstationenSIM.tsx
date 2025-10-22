@@ -14,9 +14,9 @@ import {
 import Color from "color";
 import Icon from "react-cismap/commons/Icon";
 
-import { SecondaryInfoFooter } from "../luftmessstationen";
 import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
+import { genericSecondaryInfoFooterFactory } from "../commons";
 
 type WindowSize = { width: number; height: number };
 
@@ -39,11 +39,10 @@ type InfoPanelProps = {
   close?: () => void;
 };
 
-
 const InfoPanel: React.FC<InfoPanelProps> = ({
   feature = {},
   //setOpen = (b: boolean) => undefined,
-  Footer = SecondaryInfoFooter,
+  Footer = genericSecondaryInfoFooterFactory({ skipTeilzwilling: true }),
   versionString = "???",
   reactCismapVersion = "???",
   inStorybook = false,
@@ -145,7 +144,9 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
       }
     }
 
-    let last12: Array<{ year: number; index: number; value: number | -9999 }> | undefined;
+    let last12:
+      | Array<{ year: number; index: number; value: number | -9999 }>
+      | undefined;
 
     if (station?.werte && Object.keys(station?.werte).length > 0) {
       // --- measurements of the last 12 months
@@ -158,7 +159,8 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
         station as unknown as any
       ) as number[] | undefined;
 
-      const twoYearVals: Array<{ year: number; index: number; value: number }> = [];
+      const twoYearVals: Array<{ year: number; index: number; value: number }> =
+        [];
       if (lastYearM1Values) {
         let index = 0;
         for (const value of lastYearM1Values) {
@@ -193,7 +195,9 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
         const key = `${entry.year} ${MONTHS[entry.index].shortname}`;
         if (entry.value !== -9999) {
           last12ChartData.push([key, entry.value]);
-          last12Colors.push(new Color(LOOKUP[getStatus4Value(entry.value)].color).fade(0.5));
+          last12Colors.push(
+            new Color(LOOKUP[getStatus4Value(entry.value)].color).fade(0.5)
+          );
         } else {
           last12ChartData.push([key, null]);
           last12Colors.push(null);
@@ -203,7 +207,9 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
       for (const year of Object.keys(avgs)) {
         avgsChartData.push([year, avgs[year]]);
         const firstVal = avgs[year]?.[0] ?? 0;
-        avgsColors.push(new Color(LOOKUP[getStatus4Value(firstVal)].color).fade(0.5));
+        avgsColors.push(
+          new Color(LOOKUP[getStatus4Value(firstVal)].color).fade(0.5)
+        );
       }
     }
 
@@ -290,8 +296,12 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
                   datasets: [
                     {
                       data: avgsChartData.map((item) => item[1][0]),
-                      backgroundColor: avgsColors.map((c) => c.rgb().alpha(0.5).string()) as any,
-                      borderColor: avgsColors.map((c) => c.rgb().alpha(0.5).string()) as any,
+                      backgroundColor: avgsColors.map((c) =>
+                        c.rgb().alpha(0.5).string()
+                      ) as any,
+                      borderColor: avgsColors.map((c) =>
+                        c.rgb().alpha(0.5).string()
+                      ) as any,
                     },
                   ],
                 }}
@@ -497,12 +507,14 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
               >
                 <img
                   alt="Bild"
-                  style={{
-                    paddingLeft: 10,
-                    paddingRight: 10,
-                    horizontalAlignment: "center",
-                    paddingBottom: "5px",
-                  } as any}
+                  style={
+                    {
+                      paddingLeft: 10,
+                      paddingRight: 10,
+                      horizontalAlignment: "center",
+                      paddingBottom: "5px",
+                    } as any
+                  }
                   src={foto}
                   width="250"
                 />
@@ -529,7 +541,9 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
           </div>
         }
         subSections={subSections}
-        footer={<Footer version={versionString} close={close} />}
+        footer={
+          <Footer version={versionString} close={close} skipCloseButton />
+        }
       />
     );
   } else {
