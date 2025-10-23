@@ -1,6 +1,6 @@
 import { Attribution } from "../../commons";
+import DigitalTwinLogoWithLink from "../../commons/DigitalTwinLogoWithLink";
 // import { scroller } from "react-scroll";
-import Logo_DigiTalZwilling from "./assets/Logo_DigiTalZwilling.png";
 
 interface HelpFooterProps {
   title?: string;
@@ -22,9 +22,9 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
       }}
     >
       <div>
-        <b>Hintergrundkarten</b>: True Orthophoto und 3D-Mesh 2024, Amtliche Basiskarte
-        (ABK), Hillshade © Stadt Wuppertal | Stadtkarte 2.0 © RVR | basemap.de
-        web Vektor © GeoBasis-DE / BKG{" "}
+        <b>Hintergrundkarten</b>: True Orthophoto und 3D-Mesh 2024, Amtliche
+        Basiskarte (ABK), Hillshade © Stadt Wuppertal | Stadtkarte 2.0 © RVR |
+        basemap.de web Vektor © GeoBasis-DE / BKG{" "}
         <a
           className="pleaseRenderAsLink"
           onClick={() => {
@@ -48,12 +48,7 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
         <Attribution applicationName={title} applicationVersion={version} />
       </div>
 
-      <img
-        style={{ marginBottom: 0, marginLeft: 20, float: "right" }}
-        alt="Logo DigiTal Zwilling"
-        height="60"
-        src={Logo_DigiTalZwilling}
-      />
+      <DigitalTwinLogoWithLink />
     </div>
   );
 };

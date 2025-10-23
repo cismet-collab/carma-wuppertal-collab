@@ -1,5 +1,5 @@
-import Logo_DigiTalZwilling from "./assets/Logo_DigiTalZwilling.png";
 import { Attribution } from "../commons";
+import DigitalTwinLogoWithLink from "../commons/DigitalTwinLogoWithLink";
 
 interface FooterProps {
   title?: string;
@@ -53,12 +53,7 @@ export const Footer = ({
         <Attribution applicationName={title} applicationVersion={version} />
       </div>
 
-      <img
-        style={{ marginBottom: 0, marginLeft: 20, float: "right" }}
-        alt="Logo DigiTal Zwilling"
-        height="60"
-        src={Logo_DigiTalZwilling}
-      />
+      <DigitalTwinLogoWithLink />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { Attribution } from "../../commons";
+import DigitalTwinLogoWithLink from "../../commons/DigitalTwinLogoWithLink";
 // import { scroller } from "react-scroll";
-import Logo_DigiTalZwilling from "./assets/Logo_DigiTalZwilling.png";
 
 interface HelpFooterProps {
   title?: string;
@@ -59,11 +59,7 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
         <Attribution applicationName={title} applicationVersion={version} />
       </div>
 
-      <img
-        style={{ marginBottom: 0, marginLeft: 20, float: "right", height: 60 }}
-        alt="Logo DigiTal Zwilling"
-        src={Logo_DigiTalZwilling}
-      />
+      <DigitalTwinLogoWithLink />
     </div>
   );
 };
