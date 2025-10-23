@@ -1,3 +1,5 @@
+import { MenuFooter } from "../commons";
+
 interface SecondaryInfoFooterProps {
   version: string;
 }
@@ -20,27 +22,19 @@ export const SecondaryInfoFooter = ({ version }: SecondaryInfoFooterProps) => {
           >
             <div>
               <span style={{ fontSize: "11px" }}>
-                <div>
-                  <b>Teilzwilling Klimaortkarte #{version}:</b>{" "}
-                  <a href="https://cismet.de/" target="_cismet">
-                    cismet GmbH
-                  </a>{" "}
-                  auf Basis von{" "}
-                  <a href="http://leafletjs.com/" target="_more">
-                    Leaflet
-                  </a>{" "}
-                  und{" "}
-                  <a href="https://cismet.de/#refs" target="_cismet">
-                    cids | WuNDa
-                  </a>{" "}
-                  |{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://cismet.de/datenschutzerklaerung.html"
-                  >
-                    Datenschutzerklärung (Privacy Policy)
-                  </a>
+                <div
+                  style={{
+                    fontSize: "11px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <MenuFooter
+                    title={"Teilzwilling Klimaortkarte"}
+                    skipHintergrundkarten={true}
+                    skipTeilzwilling={true}
+                    version={version}
+                  />
                 </div>
               </span>
             </div>
