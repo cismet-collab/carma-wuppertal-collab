@@ -293,9 +293,9 @@ Im Folgenden erläutern wir, welche Daten während Ihres Besuches auf unseren We
 
 Der Verantwortliche im Sinne der Datenschutz-Grundverordnung und anderer nationaler Datenschutzgesetze der Mitgliedsstaaten sowie sonstiger datenschutzrechtlicher Bestimmungen ist die:
 
-Stadt Wuppertal, vertreten durch den Oberbürgermeister
+Stadt Wuppertal, vertreten durch die Oberbürgermeisterin
 
-Prof. Dr. Uwe Schneidewind  
+Melanie Scherff  
 Johannes-Rau-Platz 1  
 42275 Wuppertal
 
