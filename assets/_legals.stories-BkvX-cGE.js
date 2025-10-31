@@ -243,8 +243,8 @@ Angaben gemäß § 5 DDG:
 
 Stadt Wuppertal, vertreten durch die Oberbürgermeisterin
 
-Melanie Scherff
-Johannes-Rau-Platz 1  
+Melanie Scherff  
+Johannes-Rau-Platz 1 
 42275 Wuppertal
 
 Telefon: +49 202 563-0  
