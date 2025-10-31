@@ -6,9 +6,9 @@ Angaben gemäß § 5 DDG:
 
 ### Herausgeber
 
-Stadt Wuppertal, vertreten durch den Oberbürgermeister
+Stadt Wuppertal, vertreten durch die Oberbürgermeisterin
 
-Prof. Dr. Uwe Schneidewind  
+Melanie Scherff
 Johannes-Rau-Platz 1  
 42275 Wuppertal
 
