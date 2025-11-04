@@ -89,15 +89,12 @@ const SecondaryInfoModal = ({
   setOpen?: (open: boolean) => void;
   versionString?: string;
 }) => {
-  const [vorhabenData, setVorhabenData] = useState<any>();
   const [feature, setFeature] = useState<FeatureType | undefined>();
   const [completeFeature, setCompleteFeature] = useState<boolean | undefined>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   //check whether the feature is fully equipped or if it is a basefeature from a vectorlayer
 
   useEffect(() => {
-    console.log("xxx featureInput", featureInput);
-
     if (featureInput.layer) {
       // Vector tile feature - need to fetch data
       setCompleteFeature(false);
@@ -114,28 +111,23 @@ const SecondaryInfoModal = ({
   useEffect(() => {
     if (completeFeature === false) {
       // load the data from DAQ Server
-      console.log("xxx loading data from DAQ Server");
       md5FetchJSON("VorhabenkarteWuppertal2025", daqUrl).then((data) => {
         // run over the array and store the stuff in an object where fid is the key
         const vorhabenDataMap = data.reduce((acc, vorhaben) => {
           acc[vorhaben.id] = vorhaben;
           return acc;
         }, {});
-        console.log("xxx vorhabenData", vorhabenDataMap);
-        setVorhabenData(vorhabenDataMap);
 
         // Get the fid from the vector tile feature
         const fid =
           featureInput.properties?.fid ||
           featureInput.properties?.targetProperties?.fid;
         const item = vorhabenDataMap[fid];
-        console.log("xxx looking for fid", fid, "found:", item);
 
         if (item) {
           // Wrap the DAQ data in a properties object to match the expected structure
           const text = item.titel;
 
-          console.log("xxx fotos", item.fotos);
           if (
             item.fotos &&
             item.fotos.length > 0 &&
@@ -207,7 +199,6 @@ const SecondaryInfoModal = ({
 
   if (feature) {
     const plan = feature.properties;
-    console.log("xxx plan", plan);
     const districtNames =
       plan?.stadtbezirke && plan?.stadtbezirke.length > 0
         ? plan?.stadtbezirke.map((s) => s.replace(/^\d+\s*-\s*/, "")).join(", ")

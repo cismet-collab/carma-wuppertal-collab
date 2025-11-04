@@ -1,5 +1,3 @@
-import React from "react";
-
 const PhotoGallery = ({ photos, handleImgClick }) => {
   const MAX_DISPLAY = 4;
   const hasMore = photos.length > MAX_DISPLAY;

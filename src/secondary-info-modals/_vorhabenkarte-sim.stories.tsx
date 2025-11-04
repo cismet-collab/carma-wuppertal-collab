@@ -3,7 +3,6 @@ import Sim from "./VorhabenkarteSIM";
 import data from "./_data/vorhabenkarte";
 import React from "react";
 import { TopicMapContextProvider } from "react-cismap/contexts/TopicMapContextProvider";
-import PhotoLightbox from "react-cismap/topicmaps/PhotoLightbox";
 
 const meta: Meta = {
   title: "Vorhabenkarte",
