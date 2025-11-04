@@ -89,6 +89,7 @@ const SecondaryInfoModal = ({
   feature?: FeatureType;
   setOpen?: (open: boolean) => void;
   versionString?: string;
+  Footer?: React.ComponentType<any>;
 }) => {
   const [feature, setFeature] = useState<FeatureType | undefined>();
   const [completeFeature, setCompleteFeature] = useState<boolean | undefined>();
