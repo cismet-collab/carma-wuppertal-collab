@@ -7,6 +7,9 @@ import EMobStory, { SecondaryInfo as EMob } from "./_emob-sim.stories";
 import LuftmessstationenStory, {
   SecondaryInfo as Luftmessstationen,
 } from "./_luftmessstationen-sim.stories";
+import VorhabenkarteStory, {
+  SecondaryInfo as Vorhabenkarte,
+} from "./_vorhabenkarte-sim.stories";
 import SIMComponentDictionary from ".";
 
 
@@ -44,3 +47,6 @@ export { EMob };
 Luftmessstationen.argTypes =
   LuftmessstationenStory.argTypes;
 export { Luftmessstationen };
+
+Vorhabenkarte.argTypes = VorhabenkarteStory.argTypes;
+export { Vorhabenkarte };

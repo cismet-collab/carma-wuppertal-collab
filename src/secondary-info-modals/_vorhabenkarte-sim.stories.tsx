@@ -1,0 +1,56 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import Sim from "./VorhabenkarteSIM";
+import data from "./_data/vorhabenkarte";
+import React from "react";
+import { TopicMapContextProvider } from "react-cismap/contexts/TopicMapContextProvider";
+import PhotoLightbox from "react-cismap/topicmaps/PhotoLightbox";
+
+const meta: Meta = {
+  title: "Vorhabenkarte",
+  argTypes: {
+    Beispiele: {
+      control: { type: "select" },
+      options: Object.keys(data),
+    },
+    Feature: {
+      control: { type: "object" },
+      description: "Paste your JSON here",
+    },
+  },
+};
+
+export default meta;
+
+type Args = { Beispiele: string; Feature?: any; feature?: object };
+
+export const SecondaryInfo: StoryObj<Args> = {
+  args: {
+    Beispiele: Object.keys(data)[0],
+    Feature: undefined,
+  },
+  render: ({ Beispiele, Feature: feature }: Args) => {
+    const modalBodyStyle: React.CSSProperties = {};
+    console.log("Beispiele", Beispiele);
+
+    let _feature;
+    if (feature !== undefined && JSON.stringify(feature) !== "{}") {
+      _feature = feature;
+    } else {
+      _feature = data[Beispiele];
+    }
+    console.log("feature", feature);
+
+    return (
+      <TopicMapContextProvider>
+        <div id="myMenu" style={modalBodyStyle}>
+          <Sim
+            feature={_feature}
+            setOpen={() => {}}
+            versionString="myVersion"
+          />
+        </div>
+      </TopicMapContextProvider>
+    );
+  },
+};
+77777444;
