@@ -95,7 +95,7 @@ const SecondaryInfoModal = ({
   //check whether the feature is fully equipped or if it is a basefeature from a vectorlayer
 
   useEffect(() => {
-    if (featureInput.layer) {
+    if (featureInput?.properties?.fid) {
       // Vector tile feature - need to fetch data
       setCompleteFeature(false);
       setFeature(undefined);
@@ -226,6 +226,15 @@ const SecondaryInfoModal = ({
     const linksArray = plan?.links || [];
 
     const handleImgClick = (idx) => {
+      console.log("xxx handleImgClick", { idx, planinfo: plan.info });
+      close();
+      const photos = plan.originalPhotos;
+      const urls = plan.fotos;
+      const titleArr = photos.map((p) => p.anzeige);
+      lightBoxDispatchContext.setPhotoUrls(urls);
+      lightBoxDispatchContext.setCaptions(titleArr);
+      lightBoxDispatchContext.setIndex(0);
+
       lightBoxDispatchContext.setIndex(idx);
       lightBoxDispatchContext.setTitle(plan.info.title);
       lightBoxDispatchContext.setVisible(true);

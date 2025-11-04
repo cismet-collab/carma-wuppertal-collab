@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Sim from "./VorhabenkarteSIM";
 import data from "./_data/vorhabenkarte";
-import React from "react";
+import React, { useState } from "react";
 import { TopicMapContextProvider } from "react-cismap/contexts/TopicMapContextProvider";
+import PhotoLightbox from "react-cismap/topicmaps/PhotoLightbox";
 
 const meta: Meta = {
   title: "Vorhabenkarte",
@@ -28,6 +29,7 @@ export const SecondaryInfo: StoryObj<Args> = {
     Feature: undefined,
   },
   render: ({ Beispiele, Feature: feature }: Args) => {
+    const [isOpen, setOpen] = useState(true);
     const modalBodyStyle: React.CSSProperties = {};
     console.log("Beispiele", Beispiele);
 
@@ -41,15 +43,28 @@ export const SecondaryInfo: StoryObj<Args> = {
 
     return (
       <TopicMapContextProvider>
+        <PhotoLightbox />
         <div id="myMenu" style={modalBodyStyle}>
-          <Sim
-            feature={_feature}
-            setOpen={() => {}}
-            versionString="myVersion"
-          />
+          {isOpen && (
+            <Sim
+              feature={_feature}
+              setOpen={setOpen}
+              versionString="myVersion"
+            />
+          )}
+          {!isOpen && (
+            <div>
+              <button
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
+                open again
+              </button>
+            </div>
+          )}
         </div>
       </TopicMapContextProvider>
     );
   },
 };
-77777444;
