@@ -15,8 +15,8 @@ import { LightBoxDispatchContext } from "react-cismap/contexts/LightBoxContextPr
 import Panel from "react-cismap/commons/Panel";
 import PhotoGallery from "../vorhabenkarte/PhotoGallery";
 import Contacts from "../vorhabenkarte/Contacts";
-import { SecondaryInfoFooter } from "../vorhabenkarte";
 import { md5FetchJSON } from "react-cismap/tools/fetching";
+import { genericSecondaryInfoFooterFactory } from "../commons";
 
 interface FeatureType {
   properties?: any;
@@ -84,6 +84,7 @@ const SecondaryInfoModal = ({
   feature: featureInput = {},
   setOpen = () => {},
   versionString = "???",
+  Footer = genericSecondaryInfoFooterFactory({ skipTeilzwilling: true }),
 }: {
   feature?: FeatureType;
   setOpen?: (open: boolean) => void;
@@ -467,7 +468,7 @@ const SecondaryInfoModal = ({
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <SecondaryInfoFooter close={close} version={versionString} />
+          <Footer close={close} version={versionString} />
         </Modal.Footer>
       </Modal>
     );
