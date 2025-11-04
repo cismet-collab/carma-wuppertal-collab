@@ -8,7 +8,7 @@ Angaben gemäß § 5 DDG:
 
 Stadt Wuppertal, vertreten durch die Oberbürgermeisterin
 
-Melanie Scherff  
+Miriam Scherff  
 Johannes-Rau-Platz 1 
 42275 Wuppertal
 
