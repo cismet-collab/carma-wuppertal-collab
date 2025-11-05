@@ -13,7 +13,8 @@ export const MeasurementsText = () => {
       <div>
         <b>Wechselschalter zum Ein-/Ausschalten des Messungsmodus (2D)</b>
         <br />
-        in Karte klicken zum Zeichnen von Messgeometrien | Linienzüge beenden
+        in Karte klicken zum Zeichnen von Messgeometrien | Stützpunkte von 
+        Vektorlayern werden eingefangen ("Snapping") | Linienzüge beenden
         mit Doppelklick, Flächen schließen durch erneutes Anklicken des
         Startpunktes | Ergebnisanzeige und Verwalten mehrerer Messgeometrien in
         der <HelpOverlayLink target="INFOBOX">Info-Box</HelpOverlayLink> |
