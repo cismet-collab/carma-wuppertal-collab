@@ -188,7 +188,10 @@ const Help40KarteninhalteUntersuchen = ({
             <img alt="Messmodus" height={20} width={20} src={MeasureIcon} />{" "}
             links unten in der Werkzeugleiste können Sie den Messungsmodus ein- bzw. 
             ausschalten. In diesem Modus erzeugen Sie durch Ihre Mausklicks Messgeometrien 
-            in Form von Linienzügen oder geschlossenen Flächen. Einen Linienzug beenden 
+            in Form von Linienzügen oder geschlossenen Flächen. Dabei werden Stützpunkte der Geometrien 
+            von Vektor-Kartenebenen eingefangen, eine Funktion, die als "Snapping" bezeichnet wird. Bei 
+            einem Gerät mit externer Tastatur können Sie das Snapping unterdrücken, indem Sie beim Anlegen 
+            der Messgeometrie die ALT-Taste gedrückt halten. Einen Linienzug beenden 
             Sie durch erneutes Anklicken des letzten Punktes oder einfach durch einen Doppelklick. 
             Eine Fläche schließen Sie, indem Sie wieder auf den Startpunkt klicken. Die 
             Messergebnisse (bei Linienzügen die Streckenlänge, bei Flächen zusätzlich der Flächeninhalt) 
