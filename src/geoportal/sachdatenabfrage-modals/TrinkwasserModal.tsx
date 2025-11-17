@@ -9,6 +9,7 @@ import { normalizeInput } from "./helper/trinkwasserHelper";
 import CustomAccordionToggle from "../../commons/CustomAccordionToggle";
 import GenericFooter from "./GenericFooter";
 import type { GenericFooterProps } from "./GenericFooter";
+import { updateUrl } from "../../commons/imageUrlManipulation";
 
 interface TrinkwasserModalProps {
   feature: { properties: any };
@@ -114,7 +115,7 @@ const TrinkwasserModal: React.FC<TrinkwasserModalProps> = ({
                     float: "right",
                     paddingBottom: "5px",
                   }}
-                  src={foto}
+                  src={updateUrl(foto)}
                 />
               )}
               <div
@@ -156,7 +157,7 @@ const TrinkwasserModal: React.FC<TrinkwasserModalProps> = ({
                       paddingRight: 5,
                       paddingBottom: "5px",
                     }}
-                    src={frei}
+                    src={updateUrl(frei)}
                     width="50"
                   />
                 )}
