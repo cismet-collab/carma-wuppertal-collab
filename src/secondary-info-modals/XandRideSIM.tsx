@@ -8,6 +8,7 @@ import logo_vrr from "./assets/logo-vrr.png";
 import { convertVTEntryToFeatureProperties } from "./helper/xandride";
 import Panel from "react-cismap/commons/Panel";
 import { genericSecondaryInfoFooterFactory } from "../commons";
+import { updateUrl } from "../commons/imageUrlManipulation";
 
 type Feature = {
   type?: string;
@@ -90,7 +91,7 @@ const SecondaryInfoModal = ({
                 float: "right",
                 paddingBottom: "5px",
               }}
-              src={foto}
+              src={updateUrl(foto)}
               width="250"
             />
           )}

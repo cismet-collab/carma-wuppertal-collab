@@ -17,6 +17,7 @@ import Icon from "react-cismap/commons/Icon";
 import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import { genericSecondaryInfoFooterFactory } from "../commons";
+import { updateUrl } from "../commons/imageUrlManipulation";
 
 type WindowSize = { width: number; height: number };
 
@@ -515,7 +516,7 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
                       paddingBottom: "5px",
                     } as any
                   }
-                  src={foto}
+                  src={updateUrl(foto)}
                   width="250"
                 />
               </div>

@@ -13,6 +13,7 @@ import {
 } from "./helper/emob";
 import { genericSecondaryInfoFooterFactory } from "../commons";
 import Panel from "react-cismap/commons/Panel";
+import { updateUrl } from "../commons/imageUrlManipulation";
 
 const SecondaryInfoModal = ({
   feature = {},
@@ -149,7 +150,7 @@ const SecondaryInfoModal = ({
                 float: "right",
                 paddingBottom: "5px",
               }}
-              src={foto}
+              src={updateUrl(foto)}
               width="250"
             />
           )}

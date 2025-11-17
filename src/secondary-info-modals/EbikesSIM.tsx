@@ -10,6 +10,7 @@ import { Modal, Accordion } from "react-bootstrap";
 import Panel from "react-cismap/commons/Panel";
 import { convertVTEntryToFeatureProperties } from "./helper/ebikes";
 import { genericSecondaryInfoFooterFactory } from "../commons";
+import { updateUrl } from "../commons/imageUrlManipulation";
 interface FeatureType {
   properties?: any;
   [key: string]: any;
@@ -167,7 +168,7 @@ const SecondaryInfoModal = ({
                 float: "right",
                 paddingBottom: "5px",
               }}
-              src={foto}
+              src={updateUrl(foto)}
               width="250"
             />
           )}
