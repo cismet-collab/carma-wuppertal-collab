@@ -11,7 +11,7 @@ import VorhabenkarteStory, {
   SecondaryInfo as Vorhabenkarte,
 } from "./_vorhabenkarte-sim.stories";
 import SIMComponentDictionary from ".";
-
+import { PI_VALUES } from "@carma/math";
 
 const meta: Meta = {
   title: "SecondaryInfo Modals",
@@ -30,10 +30,23 @@ export const SIMDictionaryKeys = () => {
           <li key={key}>{key}</li>
         ))}
       </pre>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h3>Test @carma imports</h3>
+
+      <pre>
+        {'import {PI_VALUES} from "@carma/math";'}
+        <br />
+        <br />
+        # Example:
+        <br />
+        -pi: {PI_VALUES.MINUS_PI}
+      </pre>
     </div>
   );
 };
-
 
 XAndRide.argTypes = XAndRideStory.argTypes;
 export { XAndRide };
@@ -44,8 +57,7 @@ export { Ebikes };
 EMob.argTypes = EMobStory.argTypes;
 export { EMob };
 
-Luftmessstationen.argTypes =
-  LuftmessstationenStory.argTypes;
+Luftmessstationen.argTypes = LuftmessstationenStory.argTypes;
 export { Luftmessstationen };
 
 Vorhabenkarte.argTypes = VorhabenkarteStory.argTypes;
