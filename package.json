@@ -4,12 +4,12 @@
   "version": "0.113.36",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint . --report-unused-disable-directives",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "dev": "nx serve",
+    "build": "nx vite:build",
+    "lint": "nx eslint:lint",
+    "preview": "nx vite:preview",
+    "storybook": "nx serve:storybook",
+    "build-storybook": "nx build:storybook",
     "serve-storybook": "http-server ./storybook-static -p 6006",
     "watch-storybook-coder": "nodemon --watch src --ext js,jsx,ts,tsx --ignore storybook-static --exec \"npm run build-storybook -- --quiet --test && npm run serve-storybook\"",
     "postversion": "echo Postversionhook && rm -f .version ; rm -f .githash ; rm -f .gitdescribe; sed '/^.*\"version\":.*$/d' package.json > .package.json.without.version && echo $npm_package_version && echo $npm_package_version > .version && git rev-parse HEAD > .githash && echo $(git describe --always --tags) | sed 's/^v//' > .gitdescribe"
@@ -24,18 +24,26 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@swc/helpers": "~0.5.2",
     "antd": "^5.19.4",
+    "chart.js": "^4.4.3",
     "leaflet": "^1.9.4",
     "react-bootstrap": "^1.6.8",
+    "react-chartjs-2": "^5.2.0",
+    "react": "18.2.0",
     "react-cismap": "^2.9.4",
     "react-dom": "18.2.0",
     "tslib": "^2.3.0",
-    "ua-parser-js": "^1.0.40",
-    "chart.js": "^4.4.3",
-    "react-chartjs-2": "^5.2.0"
+    "ua-parser-js": "^1.0.40"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
-    "@nx/react": "^19.5.4",
+    "@nx/eslint": "20.4.0",
+    "@nx/eslint-plugin": "20.4.0",
+    "@nx/js": "20.4.0",
+    "@nx/react": "20.4.0",
+    "@nx/storybook": "20.4.0",
+    "@nx/vite": "20.4.0",
+    "@nx/web": "20.4.0",
+    "@nx/workspace": "20.4.0",
     "@storybook/addon-essentials": "^8.2.6",
     "@storybook/addon-interactions": "^8.2.6",
     "@storybook/addon-links": "^8.2.6",
@@ -56,9 +64,11 @@
     "eslint-plugin-storybook": "^0.8.0",
     "http-server": "^14.1.1",
     "nodemon": "^3.1.4",
+    "nx": "20.4.0",
     "storybook": "^8.2.6",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.0",
     "vite": "^5.3.5"
-  }
+  },
+  "nx": {}
 }
