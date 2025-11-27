@@ -14,7 +14,11 @@
     "update-carma": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "cd _carma_monorepo && git fetch --all && git reset --hard origin/dev"
+        "commands": [
+          "cd _carma_monorepo && git fetch --all && git reset --hard origin/dev",
+          "node scripts/sync-carma-paths.cjs"
+        ],
+        "parallel": false
       }
     }
   }
