@@ -3,5 +3,19 @@
   "$schema": "./node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "src",
   "projectType": "application",
-  "tags": []
+  "tags": [],
+  "targets": {
+    "init-carma": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "git clone git@github.com:cismet/carma.git _carma_monorepo"
+      }
+    },
+    "update-carma": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd _carma_monorepo && git fetch --all && git reset --hard origin/dev"
+      }
+    }
+  }
 }

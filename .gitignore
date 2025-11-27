@@ -37,3 +37,4 @@ makeHotlinkForDeveloping.sh
 unlinkingHotlinkForDeveloping.sh
 .nx/
 
+_carma_monorepo/
