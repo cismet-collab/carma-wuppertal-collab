@@ -4,7 +4,8 @@
     "description": "Dependencies to exclude when syncing from monorepo",
     "dependencies": [
       "react-leaflet",
-      "@cismet-dev/react-cismap-envirometrics-maps"
+      "@cismet-dev/react-cismap-envirometrics-maps",
+      "storybook"
     ],
     "devDependencies": [
       "@nx-tools/container-metadata",

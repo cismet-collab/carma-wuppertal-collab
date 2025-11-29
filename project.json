@@ -16,7 +16,30 @@
       "options": {
         "commands": [
           "cd _carma_monorepo && git fetch --all && git reset --hard origin/dev",
-          "node scripts/sync-carma-paths.cjs"
+          "node scripts/sync-carma-paths.cjs",
+          "node scripts/sync-carma-packages.cjs"
+        ],
+        "parallel": false
+      }
+    },
+    "sync-paths": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-carma-paths.cjs"
+      }
+    },
+    "sync-packages": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-carma-packages.cjs"
+      }
+    },
+    "sync": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "node scripts/sync-carma-paths.cjs",
+          "node scripts/sync-carma-packages.cjs"
         ],
         "parallel": false
       }
