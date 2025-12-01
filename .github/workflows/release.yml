@@ -134,6 +134,8 @@ jobs:
         with:
           clean: true
           ref: dev # Checkout the dev branch initially
+      - name: Clone carma monorepo
+        run: git clone --depth 1 --branch dev https://github.com/cismet/carma.git _carma_monorepo
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
