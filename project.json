@@ -1,0 +1,48 @@
+{
+  "name": "carma-wuppertal-collab",
+  "$schema": "./node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "init-carma": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "git clone git@github.com:cismet/carma.git _carma_monorepo"
+      }
+    },
+    "update-carma": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "cd _carma_monorepo && git fetch --all && git reset --hard origin/dev",
+          "node scripts/sync-carma-paths.cjs",
+          "node scripts/sync-carma-packages.cjs"
+        ],
+        "parallel": false
+      }
+    },
+    "sync-paths": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-carma-paths.cjs"
+      }
+    },
+    "sync-packages": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/sync-carma-packages.cjs"
+      }
+    },
+    "sync": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "node scripts/sync-carma-paths.cjs",
+          "node scripts/sync-carma-packages.cjs"
+        ],
+        "parallel": false
+      }
+    }
+  }
+}

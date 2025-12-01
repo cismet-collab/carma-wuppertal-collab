@@ -35,3 +35,6 @@ makeHotlinkForDeveloping.sh
 🚨🚨🚨-probably-linked-to-carma🚨🚨🚨
 .gitignore
 unlinkingHotlinkForDeveloping.sh
+.nx/
+
+_carma_monorepo/

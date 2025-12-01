@@ -1,0 +1,38 @@
+{
+  "description": "Rules for syncing package.json with carma monorepo",
+  "skip": {
+    "description": "Dependencies to exclude when syncing from monorepo",
+    "dependencies": [
+      "react-leaflet",
+      "@cismet-dev/react-cismap-envirometrics-maps",
+      "storybook"
+    ],
+    "devDependencies": [
+      "@nx-tools/container-metadata",
+      "@nx-tools/nx-container",
+      "@nx/esbuild",
+      "@nx/jest",
+      "@nx/node",
+      "@nx/playwright",
+      "@playwright/test",
+      "@storybook/test-runner",
+      "@testing-library/react",
+      "@vitest/coverage-v8",
+      "@vitest/ui",
+      "esbuild",
+      "jest",
+      "jest-environment-jsdom",
+      "jest-environment-node",
+      "jsdom",
+      "ts-jest",
+      "vitest"
+    ]
+  },
+  "additional": {
+    "description": "Dependencies to add that are not in monorepo (or need explicit version)",
+    "dependencies": {
+      "immer": "^8.0.1"
+    },
+    "devDependencies": {}
+  }
+}

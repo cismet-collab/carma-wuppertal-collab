@@ -1,36 +1,19 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2022",
-    "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "preserve",
-    "skipLibCheck": true,
-    "sourceMap": true,
-    /* Bundler mode */
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "verbatimModuleSyntax": false,
+    "allowJs": true,
     /* Linting */
-    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "verbatimModuleSyntax": false,
-    "allowJs": true,
-    /* Legacy Allow remove eventually*/
-    "noImplicitAny": false,
-    /* similiar as carma nx based monorepo */
-    "types": [
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts",
-      "@nx/react/typings/styled-jsx.d.ts"
-    ]
+    /* Legacy Allow remove eventually */
+    "noImplicitAny": false
   },
   "include": ["src"]
 }
