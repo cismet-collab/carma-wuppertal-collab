@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "init:carma": "git clone git@github.com:cismet/carma.git _carma_monorepo",
+    "init:carma": "git clone https://github.com/cismet/carma.git _carma_monorepo",
     "sync:paths": "node scripts/sync-carma-paths.cjs",
     "sync:packages": "node scripts/sync-carma-packages.cjs",
     "sync:carma": "cd _carma_monorepo && git fetch --all && git reset --hard origin/dev",
