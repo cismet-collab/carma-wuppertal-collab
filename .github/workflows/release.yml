@@ -144,7 +144,14 @@ jobs:
         run: |
           git config --global user.email "902348742+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: node-modules-${{ runner.os }}-node-20-${{ hashFiles('package-lock.json') }}
       - name: Install Packages
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
       # Step 1: Put the state from dev to main
       - name: Checkout main branch and reset to dev
