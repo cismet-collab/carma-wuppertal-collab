@@ -100,6 +100,7 @@ const data = {
         "flurnummer": 117,
         "zaehler": 59,
         "nutzungen": "[{\"typ\":\"AX_IndustrieUndGewerbeflaeche\",\"funktion\":\"Handel und Dienstleistung\",\"percentage\":1},{\"typ\":\"AX_IndustrieUndGewerbeflaeche\",\"funktion\":\"Handel und Dienstleistung\",\"percentage\":2},{\"typ\":\"AX_FlaecheBesondererFunktionalerPraegung\",\"funktion\":\"Verwaltung\",\"percentage\":31},{\"typ\":\"AX_FlaecheBesondererFunktionalerPraegung\",\"funktion\":\"Verwaltung\",\"percentage\":6},{\"typ\":\"AX_Platz\",\"funktion\":\"Parkplatz\",\"percentage\":58},{\"typ\":\"AX_Strassenverkehr\",\"percentage\":1}]",
+        "baulast_status": 3,
         "adresse": "Johannes-Rau-Platz 1 u. a.",
         "flur_flst_nr": "117/59",
         "flaeche_m2": 13130,

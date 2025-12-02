@@ -67,8 +67,7 @@ interface FlurstueckProperties {
   zeitpunktderentstehung?: string;
   bounds?: string;
   grundbuchblatt?: string;
-  baulast_belastet?: boolean;
-  baulast_beguenstigt?: boolean;
+  baulast_status?: number; // 1: begünstigt, 2: belastet, 3: belastet/begünstigt
 }
 
 // Gemarkung mapping (can be extended)
@@ -385,7 +384,21 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
 const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
   const gemarkungName = getGemarkungName(props.gemarkungsnummer);
   const nutzungen = parseNutzungen(props.nutzungen);
-  const hasBaulast = props.baulast_belastet || props.baulast_beguenstigt;
+  const hasBaulast = props.baulast_status !== undefined && props.baulast_status > 0;
+
+  // Get baulast description based on status
+  const getBaulastText = () => {
+    switch (props.baulast_status) {
+      case 1:
+        return "Dieses Flurstück wird durch Baulasten begünstigt.";
+      case 2:
+        return "Dieses Flurstück wird durch Baulasten belastet.";
+      case 3:
+        return "Dieses Flurstück wird durch Baulasten belastet und begünstigt.";
+      default:
+        return "";
+    }
+  };
 
   // Build form URLs with prefilled Flurstück data
   const formParams = {
@@ -640,7 +653,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
           <Panel header="Baulastnachweis" eventKey="2" bsStyle="success">
             <div style={{ marginBottom: 10 }}>
               <span style={{ marginRight: 8 }}>⚠</span>
-              Dieses Flurstück wird durch Baulasten belastet und begünstigt.
+              {getBaulastText()}
             </div>
             <div style={{ marginBottom: 10 }}>
               <span style={{ marginRight: 8 }}>🗺</span>
