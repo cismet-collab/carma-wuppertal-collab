@@ -11,6 +11,7 @@ import { genericSecondaryInfoFooterFactory } from "../commons";
 import {
   buildLiegenschaftskarteUrl,
   buildAbkAuszugUrl,
+  buildBuchauszugUrl,
 } from "./helper/alkis";
 
 interface FeatureType {
@@ -396,6 +397,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
   };
   const liegenschaftskarteUrl = buildLiegenschaftskarteUrl(formParams);
   const abkAuszugUrl = buildAbkAuszugUrl(formParams);
+  const buchauszugUrl = buildBuchauszugUrl(formParams);
 
   return (
     <>
@@ -598,7 +600,13 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                     icon={faLink}
                     style={{ marginRight: 8, color: "#666" }}
                   />
-                  <span style={{ color: "#999" }}>Buchauszug</span>
+                  <a
+                    href={buchauszugUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Buchauszug
+                  </a>
                 </td>
                 <td>
                   <a href="#" onClick={(e) => e.preventDefault()}>

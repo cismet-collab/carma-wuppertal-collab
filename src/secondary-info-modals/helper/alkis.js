@@ -7,6 +7,7 @@ const RELEASE_ORG_ID = "05124000-0001";
 const ASSISTANTS = {
   LIEGENSCHAFTSKARTE: "KFAS_KF600200",
   ABK_AUSZUG: "KFAS_KF600300",
+  BUCHAUSZUG: "KFAS_KF600204",
 };
 
 /**
@@ -58,5 +59,15 @@ export function buildAbkAuszugUrl(flurstueckProps) {
   return buildFormUrl({
     ...flurstueckProps,
     assistant: ASSISTANTS.ABK_AUSZUG,
+  });
+}
+
+/**
+ * Generates URL for Buchauszug order form
+ */
+export function buildBuchauszugUrl(flurstueckProps) {
+  return buildFormUrl({
+    ...flurstueckProps,
+    assistant: ASSISTANTS.BUCHAUSZUG,
   });
 }
