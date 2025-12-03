@@ -10,6 +10,7 @@ import LuftmessstationenStory, {
 import VorhabenkarteStory, {
   SecondaryInfo as Vorhabenkarte,
 } from "./_vorhabenkarte-sim.stories";
+import AlkisStory, { SecondaryInfo as Alkis } from "./_alkis-sim.stories";
 import SIMComponentDictionary from ".";
 import { PI_VALUES } from "@carma/math";
 
@@ -62,3 +63,6 @@ export { Luftmessstationen };
 
 Vorhabenkarte.argTypes = VorhabenkarteStory.argTypes;
 export { Vorhabenkarte };
+
+Alkis.argTypes = AlkisStory.argTypes;
+export { Alkis };
