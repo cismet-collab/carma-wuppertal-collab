@@ -19,6 +19,7 @@ const data = {
         "bounds": "[7.199014,51.271686,7.20089,51.272596]",
         "baudenkmal": true,
         "baudenkmalnummer": 1707,
+        "baudenkmal_vid": "6564",
         "gemarkungsnummer": 3001,
         "carmaInfo": {
             "selectionForwardingTo": [
@@ -67,6 +68,7 @@ const data = {
             "bounds": "[7.199014,51.271686,7.20089,51.272596]",
             "baudenkmal": true,
             "baudenkmalnummer": 1707,
+            "baudenkmal_vid": "7080",
             "gemarkungsnummer": 3001
         },
         "vectorId": 1431
