@@ -1,29 +1,20 @@
-// Form constants
-const RELEASE_ID = "5587cff10cf2ac88b8a11a72";
-const RELEASE_USER_ID = "05124000-0001-0005";
-const RELEASE_ORG_ID = "05124000-0001";
-
-// Assistant IDs for different products
-const ASSISTANTS = {
-  LIEGENSCHAFTSKARTE: "KFAS_KF600200",
-  ABK_AUSZUG: "KFAS_KF600300",
-  BUCHAUSZUG: "KFAS_KF600204",
+// URL prefixes for different products (includes /sid/assistant/{releaseId})
+const URL_PREFIXES = {
+  LIEGENSCHAFTSKARTE:
+    "https://formulare.wuppertal.de/metaform/Form-Solutions/sid/assistant/5587cff10cf2ac88b8a11a72",
+  ABK_AUSZUG:
+    "https://formulare.wuppertal.de/metaform/Form-Solutions/sid/assistant/58889f4d0cf2eaa36591d5b7",
+  BUCHAUSZUG:
+    "https://formulare.wuppertal.de/metaform/Form-Solutions/sid/assistant/61385565d17ea336555a761f", // TODO: get correct release ID
+  BAULASTEN:
+    "https://formulare.wuppertal.de/metaform/Form-Solutions/sid/assistant/5ebbe662c2dcb513e136d4e8"
 };
 
 /**
  * Generates a URL for ordering cadastral products (Liegenschaftskarte, ABK, etc.)
  * with prefilled Flurstück data
  */
-export function buildFormUrl({
-  gemarkungName,
-  gemarkungsnummer,
-  flurnummer,
-  zaehler,
-  nenner,
-  assistant,
-}) {
-  const baseUrl = "https://formulare.wuppertal.de/metaform/Form-Solutions/";
-
+function buildFormUrl({ gemarkungName, gemarkungsnummer, flurnummer, zaehler, nenner, urlPrefix }) {
   const gemarkungValue = `${gemarkungName} (${gemarkungsnummer})`;
   const flurstueckValue = nenner ? `${zaehler}/${nenner}` : String(zaehler);
 
@@ -32,14 +23,8 @@ export function buildFormUrl({
   params.set("Antragsteller.Daten.GeoLocation2.Gemarkung", gemarkungValue);
   params.set("Antragsteller.Daten.GeoLocation2.Flurnummer", String(flurnummer));
   params.set("Antragsteller.Daten.GeoLocation2.Flurstück", flurstueckValue);
-  params.set("releaseUserId", RELEASE_USER_ID);
-  params.set("releaseID", RELEASE_ID);
-  params.set("releaseOrganizationID", RELEASE_ORG_ID);
-  params.set("assistant", assistant);
-  params.set("oID", RELEASE_ORG_ID);
-  params.set("kdnr", RELEASE_ORG_ID);
 
-  return `${baseUrl}?${params.toString()}`;
+  return `${urlPrefix}?${params.toString()}`;
 }
 
 /**
@@ -48,7 +33,7 @@ export function buildFormUrl({
 export function buildLiegenschaftskarteUrl(flurstueckProps) {
   return buildFormUrl({
     ...flurstueckProps,
-    assistant: ASSISTANTS.LIEGENSCHAFTSKARTE,
+    urlPrefix: URL_PREFIXES.LIEGENSCHAFTSKARTE,
   });
 }
 
@@ -58,7 +43,7 @@ export function buildLiegenschaftskarteUrl(flurstueckProps) {
 export function buildAbkAuszugUrl(flurstueckProps) {
   return buildFormUrl({
     ...flurstueckProps,
-    assistant: ASSISTANTS.ABK_AUSZUG,
+    urlPrefix: URL_PREFIXES.ABK_AUSZUG,
   });
 }
 
@@ -68,6 +53,16 @@ export function buildAbkAuszugUrl(flurstueckProps) {
 export function buildBuchauszugUrl(flurstueckProps) {
   return buildFormUrl({
     ...flurstueckProps,
-    assistant: ASSISTANTS.BUCHAUSZUG,
+    urlPrefix: URL_PREFIXES.BUCHAUSZUG,
+  });
+}
+
+/**
+ * Generates URL for Baulastbescheinigung order form
+ */
+export function buildBaulastenUrl(flurstueckProps) {
+  return buildFormUrl({
+    ...flurstueckProps,
+    urlPrefix: URL_PREFIXES.BAULASTEN,
   });
 }
