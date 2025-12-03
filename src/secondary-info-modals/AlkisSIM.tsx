@@ -3,6 +3,8 @@ import {
   faLandmark,
   faSquare,
   faLink,
+  faShoppingCart,
+  faPlusSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal, Accordion } from "react-bootstrap";
@@ -48,6 +50,7 @@ interface GebaeudeProperties {
   baudenkmal?: boolean;
   baujahr?: number;
   baudenkmal_nr?: string;
+  baudenkmalnummer?: string;
   baudenkmal_eintragung?: string;
   gemarkung?: string;
   gemarkungsnummer?: number;
@@ -223,101 +226,95 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
 
   return (
     <>
-      <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"0"}>
-        <Panel
-          header="Liegenschaftskataster (ALKIS)"
-          eventKey="0"
-          bsStyle="info"
-        >
-          <table>
-            <tbody>
+      <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
+        <table>
+          <tbody>
+            <tr>
+              <td
+                style={{
+                  whiteSpace: "nowrap",
+                  paddingRight: "15px",
+                  verticalAlign: "top",
+                }}
+              >
+                <b>Gemarkung (Gemarkungskennzeichen):</b>
+              </td>
+              <td>
+                {gemarkungName}{" "}
+                {props.gemarkungsnummer ? `(${props.gemarkungsnummer})` : ""}
+              </td>
+            </tr>
+            <tr>
+              <td
+                style={{
+                  whiteSpace: "nowrap",
+                  paddingRight: "15px",
+                  verticalAlign: "top",
+                }}
+              >
+                <b>Adresse (Straßenschlüssel):</b>
+              </td>
+              <td>
+                {mainStreet} {mainHausnr}
+                {mainStrschl ? ` (${mainStrschl})` : ""}
+              </td>
+            </tr>
+            {weitereHausnummern.length > 0 && (
               <tr>
-                <td
-                  style={{
-                    whiteSpace: "nowrap",
-                    paddingRight: "15px",
-                    verticalAlign: "top",
-                  }}
-                >
-                  <b>Gemarkung (Gemarkungskennzeichen):</b>
-                </td>
+                <td></td>
                 <td>
-                  {gemarkungName}{" "}
-                  {props.gemarkungsnummer ? `(${props.gemarkungsnummer})` : ""}
+                  {mainStreet} {weitereHausnummern.join(", ")} ({mainStrschl})
                 </td>
               </tr>
-              <tr>
-                <td
-                  style={{
-                    whiteSpace: "nowrap",
-                    paddingRight: "15px",
-                    verticalAlign: "top",
-                  }}
-                >
-                  <b>Adresse (Straßenschlüssel):</b>
-                </td>
+            )}
+            {otherGroups.map((group, idx) => (
+              <tr key={idx}>
+                <td></td>
                 <td>
-                  {mainStreet} {mainHausnr}
-                  {mainStrschl ? ` (${mainStrschl})` : ""}
+                  Straße ({group.strschl}): {group.hausnummern.join(", ")}
                 </td>
               </tr>
-              {weitereHausnummern.length > 0 && (
-                <tr>
-                  <td></td>
-                  <td>
-                    {mainStreet} {weitereHausnummern.join(", ")} ({mainStrschl})
-                  </td>
-                </tr>
-              )}
-              {otherGroups.map((group, idx) => (
-                <tr key={idx}>
-                  <td></td>
-                  <td>
-                    Straße ({group.strschl}): {group.hausnummern.join(", ")}
-                  </td>
-                </tr>
-              ))}
-              <tr>
-                <td style={{ verticalAlign: "top" }}>
-                  <b>Gebäudetyp:</b>
-                </td>
-                <td>{props.geb_typ?.trim() || "-"}</td>
-              </tr>
-              <tr>
-                <td style={{ verticalAlign: "top" }}>
-                  <b>Funktion:</b>
-                </td>
-                <td>{props.geb_fkt || "-"}</td>
-              </tr>
-              <tr>
-                <td style={{ verticalAlign: "top" }}>
-                  <b>Obergeschosse:</b>
-                </td>
-                <td>{props.og_geschosse ?? "-"}</td>
-              </tr>
-              <tr>
-                <td style={{ verticalAlign: "top" }}>
-                  <b>Grundfläche:</b>
-                </td>
-                <td>
-                  {props.flaeche
-                    ? `${props.flaeche.toLocaleString("de-DE")} m²`
-                    : "-"}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          {props.oeffentl === "1" && (
-            <div style={{ marginTop: 10 }}>
-              <FontAwesomeIcon
-                icon={faLandmark}
-                style={{ marginRight: 8, color: "#666" }}
-              />
-              Öffentliches Gebäude
-            </div>
-          )}
-        </Panel>
-      </Accordion>
+            ))}
+            <tr>
+              <td style={{ verticalAlign: "top" }}>
+                <b>Gebäudetyp:</b>
+              </td>
+              <td>{props.geb_typ?.trim() || "-"}</td>
+            </tr>
+            <tr>
+              <td style={{ verticalAlign: "top" }}>
+                <b>Funktion:</b>
+              </td>
+              <td>{props.geb_fkt || "-"}</td>
+            </tr>
+            <tr>
+              <td style={{ verticalAlign: "top" }}>
+                <b>Obergeschosse:</b>
+              </td>
+              <td>{props.og_geschosse ?? "-"}</td>
+            </tr>
+            <tr>
+              <td style={{ verticalAlign: "top" }}>
+                <b>Grundfläche:</b>
+              </td>
+              <td>
+                {props.flaeche
+                  ? `${props.flaeche.toLocaleString("de-DE")} m²`
+                  : "-"}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        {props.oeffentl === "1" && (
+          <div style={{ marginTop: 10 }}>
+            <FontAwesomeIcon
+              icon={faLandmark}
+              style={{ marginRight: 8, color: "#666" }}
+            />
+            Öffentliches Gebäude
+          </div>
+        )}
+      </div>
 
       {props.baujahr && (
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"1"}>
@@ -343,18 +340,22 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
       {props.baudenkmal && (
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
           <Panel header="Denkmalliste" eventKey="2" bsStyle="success">
+            <img
+              src="https://tiles.cismet.de/alkis/assets/baudenkmale.svg"
+              alt="Baudenkmal"
+              style={{
+                float: "right",
+                width: 50,
+                height: 50,
+                marginLeft: 10,
+              }}
+            />
             <div style={{ marginBottom: 10 }}>
-              <FontAwesomeIcon
-                icon={faLandmark}
-                style={{ marginRight: 8, color: "#666" }}
-              />
-              Dieses Gebäude ist ein eingetragenes Baudenkmal.
+              Dieses Gebäude ist ein eingetragenes Baudenkmal
+              {(props.baudenkmalnummer || props.baudenkmal_nr) &&
+                ` (Nr. ${props.baudenkmalnummer || props.baudenkmal_nr})`}
+              .
             </div>
-            {props.baudenkmal_nr && (
-              <div>
-                <b>Baudenkmal-Nr.:</b> {props.baudenkmal_nr}
-              </div>
-            )}
             {props.baudenkmal_eintragung && (
               <div>
                 <b>Eintragungsdatum:</b> {props.baudenkmal_eintragung}
@@ -384,7 +385,8 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
 const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
   const gemarkungName = getGemarkungName(props.gemarkungsnummer);
   const nutzungen = parseNutzungen(props.nutzungen);
-  const hasBaulast = props.baulast_status !== undefined && props.baulast_status > 0;
+  const hasBaulast =
+    props.baulast_status !== undefined && props.baulast_status > 0;
 
   // Get baulast description based on status
   const getBaulastText = () => {
@@ -552,12 +554,26 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
 
       <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"1"}>
         <Panel header="Bestellformulare" eventKey="1" bsStyle="warning">
-          <table style={{ width: "100%", marginBottom: 10 }}>
+          <table style={{ marginBottom: 10, borderCollapse: "collapse" }}>
             <thead>
               <tr>
-                <th style={{ textAlign: "left", paddingBottom: 8 }}>Produkt</th>
-                <th style={{ textAlign: "left", paddingBottom: 8 }}>
-                  Beschreibung
+                <th
+                  style={{
+                    textAlign: "left",
+                    paddingBottom: 8,
+                    paddingRight: 20,
+                  }}
+                >
+                  Produktbeschreibung
+                </th>
+                <th
+                  style={{
+                    textAlign: "center",
+                    paddingBottom: 8,
+                    paddingRight: 20,
+                  }}
+                >
+                  Zur Bestellung
                 </th>
                 <th style={{ textAlign: "left", paddingBottom: 8 }}>
                   Hinweise
@@ -566,76 +582,53 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
             </thead>
             <tbody>
               <tr>
-                <td>
-                  <FontAwesomeIcon
-                    icon={faLink}
-                    style={{ marginRight: 8, color: "#666" }}
-                  />
+                <td style={{ paddingRight: 20 }}>Liegenschaftskarte</td>
+                <td style={{ paddingRight: 20, textAlign: "center" }}>
                   <a
                     href={liegenschaftskarteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Liegenschaftskarte
+                    <FontAwesomeIcon icon={faShoppingCart} />
                   </a>
                 </td>
-                <td>
-                  <a href="#" onClick={(e) => e.preventDefault()}>
-                    Produktinfo
-                  </a>
-                </td>
-                <td>⚠ *</td>
+                <td style={{ fontSize: "11px" }}>1</td>
               </tr>
               <tr>
-                <td>
-                  <FontAwesomeIcon
-                    icon={faLink}
-                    style={{ marginRight: 8, color: "#666" }}
-                  />
+                <td style={{ paddingRight: 20 }}>Amtliche Basiskarte</td>
+                <td style={{ paddingRight: 20, textAlign: "center" }}>
                   <a
                     href={abkAuszugUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    ABK-Auszug
+                    <FontAwesomeIcon icon={faShoppingCart} />
                   </a>
                 </td>
-                <td>
-                  <a href="#" onClick={(e) => e.preventDefault()}>
-                    Produktinfo
-                  </a>
-                </td>
-                <td>⚠ *</td>
+                <td style={{ fontSize: "11px" }}>1</td>
               </tr>
               <tr>
-                <td>
-                  <FontAwesomeIcon
-                    icon={faLink}
-                    style={{ marginRight: 8, color: "#666" }}
-                  />
+                <td style={{ paddingRight: 20 }}>Buchnachweis</td>
+                <td style={{ paddingRight: 20, textAlign: "center" }}>
                   <a
                     href={buchauszugUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Buchauszug
+                    <FontAwesomeIcon icon={faShoppingCart} />
                   </a>
                 </td>
-                <td>
-                  <a href="#" onClick={(e) => e.preventDefault()}>
-                    Produktinfo
-                  </a>
-                </td>
-                <td>⚠ * **</td>
+                <td style={{ fontSize: "11px" }}>1, 2</td>
               </tr>
             </tbody>
           </table>
           <hr style={{ margin: "10px 0" }} />
           <div style={{ fontSize: "11px" }}>
-            * Karten-Download abends/Wochenende verzögert (ALKIS-Aktualisierung)
+            1: Karten-Download abends/Wochenende verzögert
+            (ALKIS-Aktualisierung)
           </div>
           <div style={{ fontSize: "11px" }}>
-            ** Datenschutzprüfung des berechtigten Interesses erforderlich
+            2: Datenschutzprüfung des berechtigten Interesses erforderlich
           </div>
           <div style={{ marginTop: 10 }}>
             <b>Gebühren je Dokument:</b>
@@ -651,24 +644,33 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
       {hasBaulast && (
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
           <Panel header="Baulastnachweis" eventKey="2" bsStyle="success">
+            <div style={{ marginBottom: 10 }}>{getBaulastText()}</div>
             <div style={{ marginBottom: 10 }}>
-              <span style={{ marginRight: 8 }}>⚠</span>
-              {getBaulastText()}
-            </div>
-            <div style={{ marginBottom: 10 }}>
-              <span style={{ marginRight: 8 }}>🗺</span>
+              <FontAwesomeIcon icon={faPlusSquare} style={{ marginRight: 8 }} />
               <a href="#" onClick={(e) => e.preventDefault()}>
                 Kartenebene "Baulastnachweis" laden
               </a>
             </div>
-            <table style={{ width: "100%", marginBottom: 10 }}>
+            <table style={{ marginBottom: 10, borderCollapse: "collapse" }}>
               <thead>
                 <tr>
-                  <th style={{ textAlign: "left", paddingBottom: 8 }}>
-                    Produkt
+                  <th
+                    style={{
+                      textAlign: "left",
+                      paddingBottom: 8,
+                      paddingRight: 20,
+                    }}
+                  >
+                    Produktbeschreibung
                   </th>
-                  <th style={{ textAlign: "left", paddingBottom: 8 }}>
-                    Beschreibung
+                  <th
+                    style={{
+                      textAlign: "center",
+                      paddingBottom: 8,
+                      paddingRight: 20,
+                    }}
+                  >
+                    Zur Bestellung
                   </th>
                   <th style={{ textAlign: "left", paddingBottom: 8 }}>
                     Hinweise
@@ -677,32 +679,30 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    <FontAwesomeIcon
-                      icon={faLink}
-                      style={{ marginRight: 8, color: "#666" }}
-                    />
+                  <td style={{ paddingRight: 20 }}>Baulastbescheinigung</td>
+                  <td style={{ paddingRight: 20, textAlign: "center" }}>
                     <a href="#" onClick={(e) => e.preventDefault()}>
-                      Baulastnachweis
+                      <FontAwesomeIcon icon={faShoppingCart} />
                     </a>
                   </td>
-                  <td>
-                    <a href="#" onClick={(e) => e.preventDefault()}>
-                      Produktinfo
-                    </a>
-                  </td>
-                  <td>⚠ *</td>
+                  <td style={{ fontSize: "11px" }}>1, 2</td>
                 </tr>
               </tbody>
             </table>
             <hr style={{ margin: "10px 0" }} />
             <div style={{ fontSize: "11px" }}>
-              * Datenschutzprüfung des berechtigten Interesses erforderlich
+              1: Karten-Download abends/Wochenende verzögert
+              (ALKIS-Aktualisierung)
+            </div>
+            <div style={{ fontSize: "11px" }}>
+              2: Datenschutzprüfung des berechtigten Interesses erforderlich
             </div>
             <div style={{ marginTop: 10 }}>
-              <b>Gebühren je Dokument:</b>
-              <br />
-              15,00 € als PDF-Download | 25,00 € als Ausdruck
+              <b>Gebühren:</b>
+              <ul style={{ margin: "5px 0", paddingLeft: 20 }}>
+                <li>Wenn Baulasten vorhanden sind: je Grundstück 50 – 75 €</li>
+                <li>Wenn keine Baulasten vorhanden sind: je Grundstück 30 €</li>
+              </ul>
             </div>
             <div style={{ marginTop: 10 }}>
               <b>Zahlungsarten:</b> PayPal, Kreditkarte, SEPA Lastschrift

@@ -18,6 +18,8 @@ const data = {
         "flaeche": 4232.1,
         "bounds": "[7.199014,51.271686,7.20089,51.272596]",
         "baudenkmal": true,
+        "baudenkmalnummer": 1707,
+        "gemarkungsnummer": 3001,
         "carmaInfo": {
             "selectionForwardingTo": [
                 "building",
@@ -63,7 +65,9 @@ const data = {
             "oeffentl": "1",
             "flaeche": 4232.1,
             "bounds": "[7.199014,51.271686,7.20089,51.272596]",
-            "baudenkmal": true
+            "baudenkmal": true,
+            "baudenkmalnummer": 1707,
+            "gemarkungsnummer": 3001
         },
         "vectorId": 1431
     },
@@ -100,11 +104,11 @@ const data = {
         "flurnummer": 117,
         "zaehler": 59,
         "nutzungen": "[{\"typ\":\"AX_IndustrieUndGewerbeflaeche\",\"funktion\":\"Handel und Dienstleistung\",\"percentage\":1},{\"typ\":\"AX_IndustrieUndGewerbeflaeche\",\"funktion\":\"Handel und Dienstleistung\",\"percentage\":2},{\"typ\":\"AX_FlaecheBesondererFunktionalerPraegung\",\"funktion\":\"Verwaltung\",\"percentage\":31},{\"typ\":\"AX_FlaecheBesondererFunktionalerPraegung\",\"funktion\":\"Verwaltung\",\"percentage\":6},{\"typ\":\"AX_Platz\",\"funktion\":\"Parkplatz\",\"percentage\":58},{\"typ\":\"AX_Strassenverkehr\",\"percentage\":1}]",
-        "baulast_status": 3,
         "adresse": "Johannes-Rau-Platz 1 u. a.",
         "flur_flst_nr": "117/59",
         "flaeche_m2": 13130,
         "zeitpunktderentstehung": "19790101  ",
+        "baulast_status": 3,
         "bounds": "[7.198982,51.271738,7.201523,51.273114]",
         "carmaInfo": {
             "skipSnapping": true,
@@ -152,12 +156,17 @@ const data = {
             "flur_flst_nr": "117/59",
             "flaeche_m2": 13130,
             "zeitpunktderentstehung": "19790101  ",
+            "baulast_status": 3,
             "bounds": "[7.198982,51.271738,7.201523,51.273114]"
         },
         "vectorId": 3001011700590000
     },
     "fstck3viaArrow": {
-        "fid": 3001012801020000,
+        "fid": 3001012801130000,
+        "gem": 3001,
+        "fln": 128,
+        "zae": 113,
+        "text_anchor": "right",
         "carmaInfo": {
             "skipSnapping": true,
             "selectionForwardingTo": [
@@ -166,26 +175,31 @@ const data = {
                 "landparcel_arrows",
                 "landparcel_arrows_tips"
             ],
+            "hidingForwardingTo": [
+                "landparcel_arrows",
+                "landparcel_arrows_tips",
+                "landparcel_arrows_tips_selected"
+            ],
             "propertyTarget": "alkis_data.landparcel",
-            "sourceLayer": "landparcel_arrows"
+            "sourceLayer": "landparcel_point"
         },
         "targetProperties": {
-            "fid": 3001012801020000,
-            "flurstueck_kz_voll": "05300112800102______",
+            "fid": 3001012801130000,
+            "flurstueck_kz_voll": "05300112800113______",
             "gemarkungsnummer": 3001,
             "flurnummer": 128,
-            "zaehler": 102,
-            "nutzungen": "[{\"typ\":\"AX_FlaecheGemischterNutzung\",\"funktion\":\"Gebäude- und Freifläche, Mischnutzung mit Wohnen\",\"percentage\":100}]",
+            "zaehler": 113,
+            "nutzungen": "[{\"typ\":\"AX_IndustrieUndGewerbeflaeche\",\"funktion\":\"Handel und Dienstleistung\",\"percentage\":100}]",
             "adresse": "Werth ",
-            "flur_flst_nr": "128/102",
-            "flaeche_m2": 6,
-            "zeitpunktderentstehung": "19730101  ",
-            "bounds": "[7.202555,51.271471,7.202676,51.271487]"
+            "flur_flst_nr": "128/113",
+            "flaeche_m2": 11,
+            "zeitpunktderentstehung": "19900101  ",
+            "bounds": "[7.204286,51.272023,7.20436,51.272128]"
         },
-        "vectorId": 3001012801020000
+        "vectorId": 3001012801130000
     }, "fstck3viaArrowTip": {
-        "fid": 3001012801020000,
-        "angle": 329.9541629897994,
+        "fid": 3001012801130000,
+        "angle": 86.42449565850286,
         "carmaInfo": {
             "skipSnapping": true,
             "selectionForwardingTo": [
@@ -198,19 +212,19 @@ const data = {
             "sourceLayer": "landparcel_arrows_tips"
         },
         "targetProperties": {
-            "fid": 3001012801020000,
-            "flurstueck_kz_voll": "05300112800102______",
+            "fid": 3001012801130000,
+            "flurstueck_kz_voll": "05300112800113______",
             "gemarkungsnummer": 3001,
             "flurnummer": 128,
-            "zaehler": 102,
-            "nutzungen": "[{\"typ\":\"AX_FlaecheGemischterNutzung\",\"funktion\":\"Gebäude- und Freifläche, Mischnutzung mit Wohnen\",\"percentage\":100}]",
+            "zaehler": 113,
+            "nutzungen": "[{\"typ\":\"AX_IndustrieUndGewerbeflaeche\",\"funktion\":\"Handel und Dienstleistung\",\"percentage\":100}]",
             "adresse": "Werth ",
-            "flur_flst_nr": "128/102",
-            "flaeche_m2": 6,
-            "zeitpunktderentstehung": "19730101  ",
-            "bounds": "[7.202555,51.271471,7.202676,51.271487]"
+            "flur_flst_nr": "128/113",
+            "flaeche_m2": 11,
+            "zeitpunktderentstehung": "19900101  ",
+            "bounds": "[7.204286,51.272023,7.20436,51.272128]"
         },
-        "vectorId": 3001012801020000
+        "vectorId": 3001012801130000
     }
 
 };
