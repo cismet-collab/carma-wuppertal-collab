@@ -14,6 +14,7 @@ import {
   buildLiegenschaftskarteUrl,
   buildAbkAuszugUrl,
   buildBuchauszugUrl,
+  buildBaulastenUrl,
 } from "./helper/alkis";
 
 interface FeatureType {
@@ -51,6 +52,7 @@ interface GebaeudeProperties {
   baujahr?: number;
   baudenkmal_nr?: string;
   baudenkmalnummer?: string;
+  baudenkmal_vid?: string;
   baudenkmal_eintragung?: string;
   gemarkung?: string;
   gemarkungsnummer?: number;
@@ -237,7 +239,7 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
                   verticalAlign: "top",
                 }}
               >
-                <b>Gemarkung (Gemarkungskennzeichen):</b>
+                <b>Gemarkung:</b>
               </td>
               <td>
                 {gemarkungName}{" "}
@@ -252,29 +254,31 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
                   verticalAlign: "top",
                 }}
               >
-                <b>Adresse (Straßenschlüssel):</b>
+                <b>Adresse:</b>
               </td>
               <td>
                 {mainStreet} {mainHausnr}
-                {mainStrschl ? ` (${mainStrschl})` : ""}
               </td>
             </tr>
-            {weitereHausnummern.length > 0 && (
+            {(weitereHausnummern.length > 0 || otherGroups.length > 0) && (
               <tr>
-                <td></td>
+                <td style={{ verticalAlign: "top", paddingRight: "15px" }}>
+                  weitere Adressen:
+                </td>
                 <td>
-                  {mainStreet} {weitereHausnummern.join(", ")} ({mainStrschl})
+                  {weitereHausnummern.length > 0 && (
+                    <div>
+                      {mainStreet} {weitereHausnummern.join(", ")}
+                    </div>
+                  )}
+                  {otherGroups.map((group, idx) => (
+                    <div key={idx}>
+                      Straße ({group.strschl}): {group.hausnummern.join(", ")}
+                    </div>
+                  ))}
                 </td>
               </tr>
             )}
-            {otherGroups.map((group, idx) => (
-              <tr key={idx}>
-                <td></td>
-                <td>
-                  Straße ({group.strschl}): {group.hausnummern.join(", ")}
-                </td>
-              </tr>
-            ))}
             <tr>
               <td style={{ verticalAlign: "top" }}>
                 <b>Gebäudetyp:</b>
@@ -361,19 +365,22 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
                 <b>Eintragungsdatum:</b> {props.baudenkmal_eintragung}
               </div>
             )}
-            <div style={{ marginTop: 10 }}>
-              <FontAwesomeIcon
-                icon={faLink}
-                style={{ marginRight: 8, color: "#666" }}
-              />
-              <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
-                style={{ color: "#337ab7" }}
-              >
-                weitere Informationen zum Baudenkmal einsehen
-              </a>
-            </div>
+            {props.baudenkmal_vid && (
+              <div style={{ marginTop: 10 }}>
+                <FontAwesomeIcon
+                  icon={faLink}
+                  style={{ marginRight: 8, color: "#666" }}
+                />
+                <a
+                  href={`https://www.wuppertal.de/denkmalliste-online/Detail/Show/${props.baudenkmal_vid}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#337ab7" }}
+                >
+                  weitere Informationen zum Baudenkmal einsehen
+                </a>
+              </div>
+            )}
           </Panel>
         </Accordion>
       )}
@@ -413,6 +420,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
   const liegenschaftskarteUrl = buildLiegenschaftskarteUrl(formParams);
   const abkAuszugUrl = buildAbkAuszugUrl(formParams);
   const buchauszugUrl = buildBuchauszugUrl(formParams);
+  const baulastenUrl = buildBaulastenUrl(formParams);
 
   return (
     <>
@@ -421,7 +429,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
           <tbody>
             <tr>
               <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
-                <b>Gemarkung (Gemarkungskennzeichen):</b>
+                <b>Gemarkung:</b>
               </td>
               <td>
                 {gemarkungName}{" "}
@@ -459,12 +467,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                   : "-"}
               </td>
             </tr>
-            <tr>
-              <td>
-                <b>Entstehung:</b>
-              </td>
-              <td>{formatDate(props.zeitpunktderentstehung)}</td>
-            </tr>
+
             {props.grundbuchblatt && (
               <tr>
                 <td>
@@ -618,7 +621,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                     <FontAwesomeIcon icon={faShoppingCart} />
                   </a>
                 </td>
-                <td style={{ fontSize: "11px" }}>1, 2</td>
+                <td style={{ fontSize: "11px" }}>1, 2, 3</td>
               </tr>
             </tbody>
           </table>
@@ -629,6 +632,10 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
           </div>
           <div style={{ fontSize: "11px" }}>
             2: Datenschutzprüfung des berechtigten Interesses erforderlich
+          </div>
+          <div style={{ fontSize: "11px" }}>
+            3: Flurstückinformationen werden momentan noch nicht ins Formular
+            übernommen
           </div>
           <div style={{ marginTop: 10 }}>
             <b>Gebühren je Dokument:</b>
@@ -681,11 +688,15 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                 <tr>
                   <td style={{ paddingRight: 20 }}>Baulastbescheinigung</td>
                   <td style={{ paddingRight: 20, textAlign: "center" }}>
-                    <a href="#" onClick={(e) => e.preventDefault()}>
+                    <a
+                      href={baulastenUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FontAwesomeIcon icon={faShoppingCart} />
                     </a>
                   </td>
-                  <td style={{ fontSize: "11px" }}>1, 2</td>
+                  <td style={{ fontSize: "11px" }}>1, 2, 3</td>
                 </tr>
               </tbody>
             </table>
@@ -696,6 +707,10 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
             </div>
             <div style={{ fontSize: "11px" }}>
               2: Datenschutzprüfung des berechtigten Interesses erforderlich
+            </div>
+            <div style={{ fontSize: "11px" }}>
+              3: Flurstückinformationen werden momentan noch nicht ins Formular
+              übernommen
             </div>
             <div style={{ marginTop: 10 }}>
               <b>Gebühren:</b>
