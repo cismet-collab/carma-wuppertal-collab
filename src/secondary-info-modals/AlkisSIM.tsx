@@ -437,13 +437,13 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
               </td>
             </tr>
             <tr>
-              <td>
+              <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
                 <b>Flur:</b>
               </td>
               <td>{props.flurnummer}</td>
             </tr>
             <tr>
-              <td>
+              <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
                 <b>Flurstück:</b>
               </td>
               <td>
@@ -452,13 +452,13 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
               </td>
             </tr>
             <tr>
-              <td>
+              <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
                 <b>Lage:</b>
               </td>
               <td>{props.adresse || "-"}</td>
             </tr>
             <tr>
-              <td>
+              <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
                 <b>Amtliche Fläche:</b>
               </td>
               <td>
@@ -470,7 +470,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
 
             {props.grundbuchblatt && (
               <tr>
-                <td>
+                <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
                   <b>Grundbuchblatt:</b>
                 </td>
                 <td>{props.grundbuchblatt}</td>
