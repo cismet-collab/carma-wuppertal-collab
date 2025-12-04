@@ -19,6 +19,7 @@ const meta: Meta = {
 export default meta;
 
 import React from "react";
+import { CarmaMapAPIProvider } from "@carma-appframeworks/portals";
 
 type Args = { Beispiele: string; Feature?: any };
 
@@ -37,9 +38,11 @@ export const SecondaryInfo: StoryObj<Args> = {
       _feature = data[Beispiele];
     }
     return (
-      <div id="myMenu" style={modalBodyStyle}>
-        <Sim feature={_feature} setOpen={() => {}} versionString="v0.10.5" />
-      </div>
+      <CarmaMapAPIProvider>
+        <div id="myMenu" style={modalBodyStyle}>
+          <Sim feature={_feature} setOpen={() => {}} versionString="v0.10.5" />
+        </div>
+      </CarmaMapAPIProvider>
     );
   },
 };
