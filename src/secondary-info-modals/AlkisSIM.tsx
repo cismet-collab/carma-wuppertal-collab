@@ -16,6 +16,11 @@ import {
   buildBuchauszugUrl,
   buildBaulastenUrl,
 } from "./helper/alkis";
+import {
+  createLayerSelectors,
+  useCarmaMapAPIActions,
+  useCarmaMapAPISelector,
+} from "@carma-appframeworks/portals";
 
 interface FeatureType {
   properties?: any;
@@ -205,6 +210,12 @@ function parseAdressen(
 const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
   const gemarkungName = getGemarkungName(props.gemarkungsnummer);
 
+  const baudenkmalLayerID = "wuppPlanung:baudenkmale";
+  const { addLayerById } = useCarmaMapAPIActions();
+  const containsBaudenkmalLayer = useCarmaMapAPISelector(
+    createLayerSelectors.hasLayerById(baudenkmalLayerID)
+  );
+
   // Parse all addresses grouped by street
   const addressGroups = parseAdressen(
     props.adressen,
@@ -365,6 +376,28 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
                 <b>Eintragungsdatum:</b> {props.baudenkmal_eintragung}
               </div>
             )}
+            <div style={{ marginBottom: 10 }}>
+              <FontAwesomeIcon icon={faPlusSquare} style={{ marginRight: 8 }} />
+              {containsBaudenkmalLayer ? (
+                <span>
+                  Kartenebene "Baudenkmäler" befindet sich in der Karte
+                </span>
+              ) : (
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    try {
+                      addLayerById(baudenkmalLayerID);
+                    } catch (e) {
+                      console.error("Error adding layer", e);
+                    }
+                  }}
+                >
+                  Kartenebene "Baudenkmäler" laden
+                </a>
+              )}
+            </div>
             {props.baudenkmal_vid && (
               <div style={{ marginTop: 10 }}>
                 <FontAwesomeIcon
@@ -394,6 +427,12 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
   const nutzungen = parseNutzungen(props.nutzungen);
   const hasBaulast =
     props.baulast_status !== undefined && props.baulast_status > 0;
+
+  const baulastLayerID = "wuppPlanung:baul";
+  const { addLayerById } = useCarmaMapAPIActions();
+  const containsBaulastLayer = useCarmaMapAPISelector(
+    createLayerSelectors.hasLayerById(baulastLayerID)
+  );
 
   // Get baulast description based on status
   const getBaulastText = () => {
@@ -654,9 +693,25 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
             <div style={{ marginBottom: 10 }}>{getBaulastText()}</div>
             <div style={{ marginBottom: 10 }}>
               <FontAwesomeIcon icon={faPlusSquare} style={{ marginRight: 8 }} />
-              <a href="#" onClick={(e) => e.preventDefault()}>
-                Kartenebene "Baulastnachweis" laden
-              </a>
+              {containsBaulastLayer ? (
+                <span>
+                  Kartenebene "Baulastnachweis" befindet sich in der Karte
+                </span>
+              ) : (
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    try {
+                      addLayerById(baulastLayerID);
+                    } catch (e) {
+                      console.error("Error adding layer", e);
+                    }
+                  }}
+                >
+                  Kartenebene "Baulastnachweis" laden
+                </a>
+              )}
             </div>
             <table style={{ marginBottom: 10, borderCollapse: "collapse" }}>
               <thead>
