@@ -274,7 +274,7 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
             {(weitereHausnummern.length > 0 || otherGroups.length > 0) && (
               <tr>
                 <td style={{ verticalAlign: "top", paddingRight: "15px" }}>
-                  weitere Adressen:
+                  <b>Weitere Adressen:</b>
                 </td>
                 <td>
                   {weitereHausnummern.length > 0 && (
@@ -650,7 +650,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                 <td style={{ fontSize: "11px" }}>1</td>
               </tr>
               <tr>
-                <td style={{ paddingRight: 20 }}>Buchnachweis</td>
+                <td style={{ paddingRight: 20 }}>Liegenschaftsbuch</td>
                 <td style={{ paddingRight: 20, textAlign: "center" }}>
                   <a
                     href={buchauszugUrl}
