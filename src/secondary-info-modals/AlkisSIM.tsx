@@ -20,7 +20,7 @@ import {
   createLayerSelectors,
   useCarmaMapAPIActions,
   useCarmaMapAPISelector,
-} from "@carma-appframeworks/portals";
+} from "@carma-mapping/carma-map-api";
 
 interface FeatureType {
   properties?: any;

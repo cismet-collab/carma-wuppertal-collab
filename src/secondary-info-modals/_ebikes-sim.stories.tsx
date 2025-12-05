@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import data from "./_data/ebikes";
 import Sim from "./EbikesSIM";
+import React from "react";
 
 const meta: Meta = {
   title: "E-Bikes",
@@ -17,8 +18,6 @@ const meta: Meta = {
 };
 
 export default meta;
-
-import React from "react";
 
 type Args = { Beispiele: string; Feature?: any };
 

@@ -3,7 +3,11 @@
   "compilerOptions": {
     "target": "ES2022",
     "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "preserve",
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
@@ -25,26 +29,36 @@
       "@carma-appframeworks/*": [
         "_carma_monorepo/libraries/appframeworks/*/src/index.ts"
       ],
-      "@carma-commons/*": ["_carma_monorepo/libraries/commons/*/src/index.ts"],
+      "@carma-commons/*": [
+        "_carma_monorepo/libraries/commons/*/src/index.ts"
+      ],
       "@carma-commons/utils/*": [
         "_carma_monorepo/libraries/commons/utils/src/lib/*/index.ts"
       ],
-      "@carma-mapping/*": ["_carma_monorepo/libraries/mapping/*/src/index.ts"],
+      "@carma-mapping/*": [
+        "_carma_monorepo/libraries/mapping/*/src/index.ts"
+      ],
       "@carma-providers/*": [
         "_carma_monorepo/libraries/providers/*/src/index.ts"
       ],
-      "@carma/types": ["_carma_monorepo/libraries/types/src/index.d.ts"],
+      "@carma/types": [
+        "_carma_monorepo/libraries/types/src/index.d.ts"
+      ],
       "@carma/cesium": [
         "_carma_monorepo/libraries/mapping/engines/cesium/api/src/index.ts"
       ],
       "@carma/leaflet": [
         "_carma_monorepo/libraries/mapping/engines/leaflet/src/index.ts"
       ],
-      "@carma/geo/*": ["_carma_monorepo/libraries/commons/geo/*/src/index.ts"],
+      "@carma/geo/*": [
+        "_carma_monorepo/libraries/commons/geo/*/src/index.ts"
+      ],
       "@carma/geo/types": [
         "_carma_monorepo/libraries/commons/geo/types/src/index.d.ts"
       ],
-      "@carma/math": ["_carma_monorepo/libraries/commons/math/src/index.ts"],
+      "@carma/math": [
+        "_carma_monorepo/libraries/commons/math/src/index.ts"
+      ],
       "@carma/units/helpers": [
         "_carma_monorepo/libraries/commons/units/helpers/src/index.ts"
       ],
@@ -53,8 +67,7 @@
       ],
       "@carma-mapping/engines/cesium": [
         "_carma_monorepo/libraries/mapping/engines/cesium/legacy/src/index.ts"
-      ],
-      "@carma-collab/wuppertal/*": ["src/*/index.ts"]
+      ]
     }
   }
 }
