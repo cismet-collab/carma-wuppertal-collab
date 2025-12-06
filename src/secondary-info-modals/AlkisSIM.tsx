@@ -538,7 +538,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                           minWidth: 50,
                         }}
                       >
-                        {n.percentage}%
+                        {n.percentage.toLocaleString()}%
                       </td>
                       <td style={{ width: "100%" }}>
                         <div
@@ -592,7 +592,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                             }}
                           >
                             {absoluteArea !== null
-                              ? `${absoluteArea.toLocaleString("de-DE")} m²`
+                              ? `${absoluteArea.toLocaleString()} m²`
                               : ""}
                           </span>
                         </div>
