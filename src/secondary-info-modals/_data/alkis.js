@@ -227,6 +227,30 @@ const data = {
             "bounds": "[7.204286,51.272023,7.20436,51.272128]"
         },
         "vectorId": 3001012801130000
+    }, "fstck4": {
+        "fid": 3135035900590000,
+        "flurstueck_kz_voll": "05313535900059______",
+        "gemarkungsnummer": 3135,
+        "flurnummer": 359,
+        "zaehler": 59,
+        "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0001359\"}]",
+        "nutzungen": "[{\"funktion\":\"Fläche besonderer funktionaler Prägung\",\"percentage\":99.8,\"flaeche_nutzung\":392.6},{\"funktion\":\"Fläche besonderer funktionaler Prägung / Parken\",\"percentage\":99.8,\"flaeche_nutzung\":392.6},{\"funktion\":\"Straßenverkehr\",\"percentage\":0.2,\"flaeche_nutzung\":0.9}]",
+        "adresse": "Luisenstraße ",
+        "flur_flst_nr": "359/59",
+        "flaeche_m2": 393,
+        "bounds": "[7.138585,51.257038,7.139082,51.257274]",
+        "carmaInfo": {
+            "skipSnapping": true,
+            "selectionForwardingTo": [
+                "landparcel",
+                "landparcel_point",
+                "landparcel_arrows",
+                "landparcel_arrows_tips"
+            ],
+            "staticProps": {},
+            "sourceLayer": "landparcel"
+        },
+        "vectorId": 3135035900590000
     }
 
 };

@@ -530,8 +530,15 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                     : null;
                   return (
                     <tr key={idx}>
-                      <td style={{ whiteSpace: "nowrap", paddingRight: 10 }}>
-                        {n.funktion}
+                      <td
+                        style={{
+                          whiteSpace: "nowrap",
+                          paddingRight: 10,
+                          textAlign: "right",
+                          minWidth: 50,
+                        }}
+                      >
+                        {n.percentage}%
                       </td>
                       <td style={{ width: "100%" }}>
                         <div
@@ -545,43 +552,48 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                             style={{
                               flex: 1,
                               backgroundColor: "#e0e0e0",
-                              height: 16,
+                              minHeight: 20,
                               borderRadius: 2,
                               position: "relative",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              padding: "2px 6px",
                             }}
                           >
                             <div
                               style={{
+                                position: "absolute",
+                                left: 0,
+                                top: 0,
+                                bottom: 0,
                                 width: `${n.percentage}%`,
                                 backgroundColor: "#666",
-                                height: "100%",
                                 borderRadius: 2,
                               }}
                             />
                             <span
                               style={{
-                                position: "absolute",
-                                left: "50%",
-                                top: "50%",
-                                transform: "translate(-50%, -50%)",
+                                position: "relative",
                                 fontSize: "11px",
                                 color: n.percentage > 50 ? "#fff" : "#333",
-                                fontWeight: "bold",
+                                textAlign: "center",
+                                lineHeight: 1.3,
                               }}
                             >
-                              {absoluteArea !== null
-                                ? `${absoluteArea.toLocaleString("de-DE")} m²`
-                                : ""}
+                              {n.funktion}
                             </span>
                           </div>
                           <span
                             style={{
                               whiteSpace: "nowrap",
-                              minWidth: 45,
+                              minWidth: 55,
                               textAlign: "right",
                             }}
                           >
-                            {n.percentage}%
+                            {absoluteArea !== null
+                              ? `${absoluteArea.toLocaleString("de-DE")} m²`
+                              : ""}
                           </span>
                         </div>
                       </td>
