@@ -531,21 +531,8 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
             <table style={{ width: "100%" }}>
               <tbody>
                 {nutzungen.map((n, idx) => {
-                  const absoluteArea = props.flaeche_m2
-                    ? Math.round((props.flaeche_m2 * n.percentage) / 100)
-                    : null;
                   return (
                     <tr key={idx}>
-                      <td
-                        style={{
-                          whiteSpace: "nowrap",
-                          paddingRight: 10,
-                          textAlign: "right",
-                          minWidth: 50,
-                        }}
-                      >
-                        {n.percentage.toLocaleString()}%
-                      </td>
                       <td style={{ width: "100%" }}>
                         <div
                           style={{
@@ -593,13 +580,11 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                           <span
                             style={{
                               whiteSpace: "nowrap",
-                              minWidth: 55,
+                              minWidth: 50,
                               textAlign: "right",
                             }}
                           >
-                            {absoluteArea !== null
-                              ? `${absoluteArea.toLocaleString()} m²`
-                              : ""}
+                            {n.percentage.toLocaleString()}%
                           </span>
                         </div>
                       </td>
