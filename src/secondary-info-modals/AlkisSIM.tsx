@@ -291,25 +291,31 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
               </tr>
             )}
             <tr>
-              <td style={{ verticalAlign: "top" }}>
+              <td style={{ verticalAlign: "top", paddingRight: "15px" }}>
                 <b>Gebäudetyp:</b>
               </td>
               <td>{props.geb_typ?.trim() || "-"}</td>
             </tr>
             <tr>
-              <td style={{ verticalAlign: "top" }}>
+              <td style={{ verticalAlign: "top", paddingRight: "15px" }}>
                 <b>Funktion:</b>
               </td>
               <td>{props.geb_fkt || "-"}</td>
             </tr>
             <tr>
-              <td style={{ verticalAlign: "top" }}>
-                <b>Obergeschosse:</b>
+              <td
+                style={{
+                  whiteSpace: "nowrap",
+                  paddingRight: "15px",
+                  verticalAlign: "top",
+                }}
+              >
+                <b>Anzahl der Geschosse:</b>
               </td>
               <td>{props.og_geschosse ?? "-"}</td>
             </tr>
             <tr>
-              <td style={{ verticalAlign: "top" }}>
+              <td style={{ verticalAlign: "top", paddingRight: "15px" }}>
                 <b>Grundfläche:</b>
               </td>
               <td>
