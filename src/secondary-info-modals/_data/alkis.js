@@ -21,6 +21,7 @@ const data = {
         "baudenkmalnummer": 1707,
         "baudenkmal_vid": "6564",
         "gemarkungsnummer": 3001,
+        "baujahr": 1972,
         "carmaInfo": {
             "selectionForwardingTo": [
                 "building",
@@ -69,7 +70,8 @@ const data = {
             "baudenkmal": true,
             "baudenkmalnummer": 1707,
             "baudenkmal_vid": "7080",
-            "gemarkungsnummer": 3001
+            "gemarkungsnummer": 3001,
+            "baujahr": 1972,
         },
         "vectorId": 1431
     },
