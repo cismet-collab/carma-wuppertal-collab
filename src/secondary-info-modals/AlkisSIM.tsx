@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   faBuilding,
   faLandmark,
@@ -63,6 +64,12 @@ interface GebaeudeProperties {
   gemarkungsnummer?: number;
 }
 
+interface Buchung {
+  buchungsart: string;
+  grundbuchbezirk: string;
+  grundbuchblattnummer: string;
+}
+
 interface FlurstueckProperties {
   fid: number;
   flurstueck_kz_voll?: string;
@@ -76,7 +83,7 @@ interface FlurstueckProperties {
   flaeche_m2?: number;
   zeitpunktderentstehung?: string;
   bounds?: string;
-  grundbuchblatt?: string;
+  buchungen?: string;
   baulast_status?: number; // 1: begünstigt, 2: belastet, 3: belastet/begünstigt
 }
 
@@ -173,6 +180,68 @@ function parseNutzungen(
       .sort((a, b) => b.percentage - a.percentage);
   } catch {
     return [];
+  }
+}
+
+// Helper to parse buchungen and group by Grundbuchbezirk, then by Buchungsart
+function parseBuchungen(buchungenStr?: string): {
+  grouped: Record<string, Record<string, string[]>>;
+  bezirkNames: string[];
+  totalCount: number;
+  // For single buchung case
+  firstBuchung?: { bezirk: string; blattnummer: string; buchungsart: string };
+} {
+  if (!buchungenStr) return { grouped: {}, bezirkNames: [], totalCount: 0 };
+  try {
+    const parsed: Buchung[] = JSON.parse(buchungenStr);
+    // Group by Bezirk -> Buchungsart -> Blattnummern
+    const grouped: Record<string, Record<string, string[]>> = {};
+
+    parsed.forEach((b) => {
+      const bezirkName =
+        getGemarkungName(Number(b.grundbuchbezirk)) || b.grundbuchbezirk;
+      if (!grouped[bezirkName]) {
+        grouped[bezirkName] = {};
+      }
+      if (!grouped[bezirkName][b.buchungsart]) {
+        grouped[bezirkName][b.buchungsart] = [];
+      }
+      // Remove leading zeros from blattnummer
+      const blattnummer = b.grundbuchblattnummer.replace(/^0+/, "") || "0";
+      grouped[bezirkName][b.buchungsart].push(blattnummer);
+    });
+
+    // Sort blattnummern numerically within each buchungsart
+    Object.values(grouped).forEach((buchungsarten) => {
+      Object.keys(buchungsarten).forEach((art) => {
+        buchungsarten[art].sort((a, b) => Number(a) - Number(b));
+      });
+    });
+
+    const bezirkNames = Object.keys(grouped);
+
+    // For single buchung case, extract first entry
+    let firstBuchung:
+      | { bezirk: string; blattnummer: string; buchungsart: string }
+      | undefined;
+    if (parsed.length === 1) {
+      const bezirk = bezirkNames[0];
+      const buchungsart = Object.keys(grouped[bezirk])[0];
+      firstBuchung = {
+        bezirk,
+        blattnummer: grouped[bezirk][buchungsart][0],
+        buchungsart,
+      };
+    }
+
+    return {
+      grouped,
+      bezirkNames,
+      totalCount: parsed.length,
+      firstBuchung,
+    };
+  } catch {
+    return { grouped: {}, bezirkNames: [], totalCount: 0 };
   }
 }
 
@@ -431,8 +500,13 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
 const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
   const gemarkungName = getGemarkungName(props.gemarkungsnummer);
   const nutzungen = parseNutzungen(props.nutzungen);
+  const buchungen = parseBuchungen(props.buchungen);
   const hasBaulast =
     props.baulast_status !== undefined && props.baulast_status > 0;
+  const hasBuchungen = buchungen.totalCount > 0;
+  const hasMultipleBuchungen = buchungen.totalCount > 1;
+
+  const [buchungenOpen, setBuchungenOpen] = useState(false);
 
   const baulastLayerID = "wuppPlanung:baul";
   const { addLayerById } = useCarmaMapAPIActions();
@@ -513,17 +587,105 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
               </td>
             </tr>
 
-            {props.grundbuchblatt && (
-              <tr>
-                <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
-                  <b>Grundbuchblatt:</b>
-                </td>
-                <td>{props.grundbuchblatt}</td>
-              </tr>
+            {hasBuchungen &&
+              !hasMultipleBuchungen &&
+              buchungen.firstBuchung && (
+                <>
+                  <tr>
+                    <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
+                      <b>Grundbuchbezirk:</b>
+                    </td>
+                    <td>{buchungen.firstBuchung.bezirk}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
+                      <b>Grundbuchblatt:</b>
+                    </td>
+                    <td>{buchungen.firstBuchung.blattnummer}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
+                      <b>Buchungsart:</b>
+                    </td>
+                    <td>{buchungen.firstBuchung.buchungsart}</td>
+                  </tr>
+                </>
+              )}
+            {hasMultipleBuchungen && (
+              <>
+                <tr>
+                  <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
+                    <b>
+                      {buchungen.bezirkNames.length > 1
+                        ? "Grundbuchbezirke:"
+                        : "Grundbuchbezirk:"}
+                    </b>
+                  </td>
+                  <td>{buchungen.bezirkNames.join(", ")}</td>
+                </tr>
+                <tr>
+                  <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
+                    <b>Grundbuchblätter:</b>
+                  </td>
+                  <td>
+                    <a
+                      href="#grundbuchblaetter"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setBuchungenOpen(true);
+                        setTimeout(() => {
+                          document
+                            .getElementById("grundbuchblaetter-panel")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                        }, 100);
+                      }}
+                    >
+                      {buchungen.totalCount} (klicken Sie hier, um die
+                      vollständige Liste anzuzeigen)
+                    </a>
+                  </td>
+                </tr>
+              </>
             )}
           </tbody>
         </table>
       </div>
+
+      {hasMultipleBuchungen && (
+        <Accordion
+          style={{ marginBottom: 6 }}
+          activeKey={buchungenOpen ? "grundbuch" : undefined}
+          onSelect={() => setBuchungenOpen(!buchungenOpen)}
+          id="grundbuchblaetter-panel"
+        >
+          <Panel
+            header="Grundbuchblätter"
+            eventKey="grundbuch"
+            bsStyle="default"
+          >
+            {buchungen.bezirkNames.map((bezirkName) => (
+              <div key={bezirkName} style={{ marginBottom: 15 }}>
+                <b>{bezirkName}</b>
+                {Object.entries(buchungen.grouped[bezirkName]).map(
+                  ([buchungsart, blattnummern]) => (
+                    <div
+                      key={buchungsart}
+                      style={{ marginLeft: 10, marginTop: 5 }}
+                    >
+                      <i>{buchungsart}</i>
+                      <ul style={{ margin: "3px 0 0 0", paddingLeft: 20 }}>
+                        {blattnummern.map((blatt) => (
+                          <li key={blatt}>{blatt}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )
+                )}
+              </div>
+            ))}
+          </Panel>
+        </Accordion>
+      )}
 
       {nutzungen.length > 0 && (
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"0"}>
