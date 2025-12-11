@@ -103,7 +103,7 @@ const GEMARKUNGEN: Record<number, string> = {
 
 function getGemarkungName(nummer?: number): string {
   if (!nummer) return "";
-  return GEMARKUNGEN[nummer] || `${nummer}`;
+  return GEMARKUNGEN[nummer] || "";
 }
 
 function determineAlkisType(feature: FeatureType): AlkisType {
@@ -207,13 +207,15 @@ function parseBuchungen(buchungenStr?: string): {
 
     parsed.forEach((b) => {
       const bezirkNummer = b.grundbuchbezirk;
-      const bezirkName =
-        getGemarkungName(Number(bezirkNummer)) || bezirkNummer;
+      const resolvedName = getGemarkungName(Number(bezirkNummer));
+      const bezirkName = resolvedName || bezirkNummer;
       // Use bezirkName as key for grouping
       if (!grouped[bezirkName]) {
         grouped[bezirkName] = {};
-        // Store display name with number
-        bezirkDisplayNames[bezirkName] = `${bezirkName} (${bezirkNummer})`;
+        // Store display name: "Name (nummer)" if name found, otherwise just nummer
+        bezirkDisplayNames[bezirkName] = resolvedName
+          ? `${resolvedName} (${bezirkNummer})`
+          : bezirkNummer;
       }
       if (!grouped[bezirkName][b.buchungsart]) {
         grouped[bezirkName][b.buchungsart] = [];
@@ -640,7 +642,11 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                         : "Grundbuchbezirk:"}
                     </b>
                   </td>
-                  <td>{buchungen.bezirkNames.join(", ")}</td>
+                  <td>
+                    {buchungen.bezirkNames
+                      .map((name) => buchungen.bezirkDisplayNames[name])
+                      .join(", ")}
+                  </td>
                 </tr>
                 <tr>
                   <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
