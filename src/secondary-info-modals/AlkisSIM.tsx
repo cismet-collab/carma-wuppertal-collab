@@ -103,7 +103,7 @@ const GEMARKUNGEN: Record<number, string> = {
 
 function getGemarkungName(nummer?: number): string {
   if (!nummer) return "";
-  return GEMARKUNGEN[nummer] || `Gemarkung ${nummer}`;
+  return GEMARKUNGEN[nummer] || `${nummer}`;
 }
 
 function determineAlkisType(feature: FeatureType): AlkisType {
@@ -186,22 +186,34 @@ function parseNutzungen(
 // Helper to parse buchungen and group by Grundbuchbezirk, then by Buchungsart
 function parseBuchungen(buchungenStr?: string): {
   grouped: Record<string, Record<string, string[]>>;
+  bezirkDisplayNames: Record<string, string>; // key -> "Name (nummer)"
   bezirkNames: string[];
   totalCount: number;
   // For single buchung case
   firstBuchung?: { bezirk: string; blattnummer: string; buchungsart: string };
 } {
-  if (!buchungenStr) return { grouped: {}, bezirkNames: [], totalCount: 0 };
+  if (!buchungenStr)
+    return {
+      grouped: {},
+      bezirkDisplayNames: {},
+      bezirkNames: [],
+      totalCount: 0,
+    };
   try {
     const parsed: Buchung[] = JSON.parse(buchungenStr);
     // Group by Bezirk -> Buchungsart -> Blattnummern
     const grouped: Record<string, Record<string, string[]>> = {};
+    const bezirkDisplayNames: Record<string, string> = {};
 
     parsed.forEach((b) => {
+      const bezirkNummer = b.grundbuchbezirk;
       const bezirkName =
-        getGemarkungName(Number(b.grundbuchbezirk)) || b.grundbuchbezirk;
+        getGemarkungName(Number(bezirkNummer)) || bezirkNummer;
+      // Use bezirkName as key for grouping
       if (!grouped[bezirkName]) {
         grouped[bezirkName] = {};
+        // Store display name with number
+        bezirkDisplayNames[bezirkName] = `${bezirkName} (${bezirkNummer})`;
       }
       if (!grouped[bezirkName][b.buchungsart]) {
         grouped[bezirkName][b.buchungsart] = [];
@@ -228,7 +240,7 @@ function parseBuchungen(buchungenStr?: string): {
       const bezirk = bezirkNames[0];
       const buchungsart = Object.keys(grouped[bezirk])[0];
       firstBuchung = {
-        bezirk,
+        bezirk: bezirkDisplayNames[bezirk],
         blattnummer: grouped[bezirk][buchungsart][0],
         buchungsart,
       };
@@ -236,43 +248,53 @@ function parseBuchungen(buchungenStr?: string): {
 
     return {
       grouped,
+      bezirkDisplayNames,
       bezirkNames,
       totalCount: parsed.length,
       firstBuchung,
     };
   } catch {
-    return { grouped: {}, bezirkNames: [], totalCount: 0 };
+    return {
+      grouped: {},
+      bezirkDisplayNames: {},
+      bezirkNames: [],
+      totalCount: 0,
+    };
   }
 }
 
 // Helper to parse addresses from "strschl_hausnr" format
-// Groups addresses by street and collects house numbers
+// Returns array of { streetName, hausnr } in order, first entry is main address
 function parseAdressen(
   adressen?: string,
-  mainStrschl?: string,
-  mainHausnr?: number
-): { strschl: string; hausnummern: string[] }[] {
+  strschlList?: string,
+  strnameList?: string
+): { streetName: string; hausnr: string }[] {
   if (!adressen) return [];
 
+  // Build mapping from strschl to strname
+  const strschlToName: Record<string, string> = {};
+  if (strschlList && strnameList) {
+    const codes = strschlList.split(",");
+    const names = strnameList.split(",");
+    codes.forEach((code, idx) => {
+      strschlToName[code.trim()] = names[idx]?.trim() || code.trim();
+    });
+  }
+
   const adressenParts = adressen.split(",");
-  const grouped: Record<string, string[]> = {};
-
-  adressenParts.forEach((a) => {
-    const parts = a.split("_");
-    const strschl = parts[0] || "";
-    const hausnr = parts[1] || "";
-    if (strschl && hausnr) {
-      if (!grouped[strschl]) {
-        grouped[strschl] = [];
+  return adressenParts
+    .map((a) => {
+      const parts = a.split("_");
+      const strschl = parts[0] || "";
+      const hausnr = parts[1] || "";
+      if (strschl && hausnr) {
+        const streetName = strschlToName[strschl] || strschl;
+        return { streetName, hausnr };
       }
-      grouped[strschl].push(hausnr);
-    }
-  });
-
-  return Object.entries(grouped).map(([strschl, hausnummern]) => ({
-    strschl,
-    hausnummern,
-  }));
+      return null;
+    })
+    .filter((a): a is { streetName: string; hausnr: string } => a !== null);
 }
 
 // Building Component
@@ -285,26 +307,26 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
     createLayerSelectors.hasLayerById(baudenkmalLayerID)
   );
 
-  // Parse all addresses grouped by street
-  const addressGroups = parseAdressen(
+  // Parse all addresses - first entry is main address, rest are weitere adressen
+  const allAddresses = parseAdressen(
     props.adressen,
     props.strschl,
-    props.hausnr
+    props.strname
   );
 
-  // Determine main address and additional addresses
-  const mainStreet = props.strname || "";
-  const mainHausnr = props.hausnr ? String(props.hausnr) : "";
-  const mainStrschl = props.strschl || "";
+  // First address is main, rest are weitere
+  const mainAddress = allAddresses[0];
+  const weitereAdressen = allAddresses.slice(1);
 
-  // Find the group for the main street
-  const mainGroup = addressGroups.find((g) => g.strschl === mainStrschl);
-  const otherGroups = addressGroups.filter((g) => g.strschl !== mainStrschl);
-
-  // Get additional house numbers for main street (excluding the primary one)
-  const weitereHausnummern = mainGroup
-    ? mainGroup.hausnummern.filter((h) => h !== mainHausnr)
-    : [];
+  // Group weitere adressen by street name
+  const weitereGrouped: Record<string, string[]> = {};
+  weitereAdressen.forEach((addr) => {
+    if (!weitereGrouped[addr.streetName]) {
+      weitereGrouped[addr.streetName] = [];
+    }
+    weitereGrouped[addr.streetName].push(addr.hausnr);
+  });
+  const weitereStreets = Object.keys(weitereGrouped);
 
   return (
     <>
@@ -337,23 +359,20 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
                 <b>Adresse:</b>
               </td>
               <td>
-                {mainStreet} {mainHausnr}
+                {mainAddress
+                  ? `${mainAddress.streetName} ${mainAddress.hausnr}`
+                  : "-"}
               </td>
             </tr>
-            {(weitereHausnummern.length > 0 || otherGroups.length > 0) && (
+            {weitereStreets.length > 0 && (
               <tr>
                 <td style={{ verticalAlign: "top", paddingRight: "15px" }}>
                   <b>Weitere Adressen:</b>
                 </td>
                 <td>
-                  {weitereHausnummern.length > 0 && (
-                    <div>
-                      {mainStreet} {weitereHausnummern.join(", ")}
-                    </div>
-                  )}
-                  {otherGroups.map((group, idx) => (
+                  {weitereStreets.map((streetName, idx) => (
                     <div key={idx}>
-                      Straße ({group.strschl}): {group.hausnummern.join(", ")}
+                      {streetName} {weitereGrouped[streetName].join(", ")}
                     </div>
                   ))}
                 </td>
@@ -406,7 +425,7 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
         )}
       </div>
 
-      {props.baujahr && (
+      {props.baujahr && props.baujahr !== 9999 && (
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"1"}>
           <Panel
             header="Gebäudedatei der Statistikstelle"
@@ -665,7 +684,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
           >
             {buchungen.bezirkNames.map((bezirkName) => (
               <div key={bezirkName} style={{ marginBottom: 15 }}>
-                <b>{bezirkName}</b>
+                <b>{buchungen.bezirkDisplayNames[bezirkName]}</b>
                 {Object.entries(buchungen.grouped[bezirkName]).map(
                   ([buchungsart, blattnummern]) => (
                     <div
@@ -979,8 +998,17 @@ const SecondaryInfoModal = ({
     } - ${props.zaehler || ""}${props.nenner ? `/${props.nenner}` : ""}`;
     icon = faSquare;
   } else {
-    const address = `${props.strname || ""} ${props.hausnr || ""}`.trim();
-    title = `Gebäude ${address}`;
+    const allAddresses = parseAdressen(
+      props.adressen,
+      props.strschl,
+      props.strname
+    );
+    const mainAddr = allAddresses[0];
+    const address = mainAddr
+      ? `${mainAddr.streetName} ${mainAddr.hausnr}`
+      : `${props.strname || ""} ${props.hausnr || ""}`.trim();
+    const suffix = allAddresses.length > 1 ? " (u.a.)" : "";
+    title = `Gebäude ${address}${suffix}`;
     icon = faBuilding;
   }
 
@@ -998,8 +1026,14 @@ const SecondaryInfoModal = ({
     >
       <Modal.Header>
         <Modal.Title>
-          <FontAwesomeIcon icon={icon} />
-          {` Datenblatt: ${title}`}
+          <div>
+            <FontAwesomeIcon icon={icon} />
+            {` Datenblatt: ${title}`}
+          </div>
+          <div style={{ fontSize: "70%", color: "#666", fontWeight: "normal" }}>
+            Registervorschau aus abgeleiteten Daten - ohne Gewähr - kein
+            amtlicher Auszug
+          </div>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body id="myMenu" key={"alkis.secondaryInfo"}>
