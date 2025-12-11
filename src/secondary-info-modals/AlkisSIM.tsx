@@ -79,6 +79,7 @@ interface FlurstueckProperties {
   nenner?: number;
   nutzungen?: string;
   adresse?: string;
+  weitere_adr?: string; // JSON array of additional addresses
   flur_flst_nr?: string;
   flaeche_m2?: number;
   zeitpunktderentstehung?: string;
@@ -591,12 +592,36 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                 {props.nenner ? `/${props.nenner}` : ""}
               </td>
             </tr>
-            <tr>
-              <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
-                <b>Lage:</b>
-              </td>
-              <td>{props.adresse || "-"}</td>
-            </tr>
+            {(() => {
+              let weitereAdressen: string[] = [];
+              if (props.weitere_adr) {
+                try {
+                  weitereAdressen = JSON.parse(props.weitere_adr);
+                } catch {
+                  // ignore parse errors
+                }
+              }
+              // Strip "u. a." or "u.a." from main address if weitere_adr exists
+              const mainAddress = weitereAdressen.length > 0
+                ? (props.adresse || "").replace(/\s*u\.\s*a\.\s*$/, "").trim()
+                : props.adresse;
+              return (
+                <>
+                  <tr>
+                    <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
+                      <b>Lage:</b>
+                    </td>
+                    <td>{mainAddress || "-"}</td>
+                  </tr>
+                  {weitereAdressen.map((addr, idx) => (
+                    <tr key={`weitere-${idx}`}>
+                      <td></td>
+                      <td>{addr}</td>
+                    </tr>
+                  ))}
+                </>
+              );
+            })()}
             <tr>
               <td style={{ whiteSpace: "nowrap", paddingRight: "15px" }}>
                 <b>Amtliche Fläche:</b>

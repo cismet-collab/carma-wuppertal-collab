@@ -419,6 +419,44 @@ const data = {
             "sourceLayer": "landparcel"
         },
         "vectorId": 3278000309310000
+    }, "fstck8": {
+        "fid": 3135033701490000,
+        "gem": 3135,
+        "fln": 337,
+        "zae": 149,
+        "text_anchor": "center",
+        "carmaInfo": {
+            "skipSnapping": true,
+            "selectionForwardingTo": [
+                "landparcel",
+                "landparcel_point",
+                "landparcel_arrows",
+                "landparcel_arrows_tips"
+            ],
+            "hidingForwardingTo": [
+                "landparcel_arrows",
+                "landparcel_arrows_tips",
+                "landparcel_arrows_tips_selected"
+            ],
+            "propertyTarget": "alkis_data.landparcel",
+            "sourceLayer": "landparcel_point"
+        },
+        "targetProperties": {
+            "fid": 3135033701490000,
+            "flurstueck_kz_voll": "05313533700149______",
+            "gemarkungsnummer": 3135,
+            "flurnummer": 337,
+            "zaehler": 149,
+            "adresse": "Armin-T.-Wegner-Platz 13 u. a.",
+            "weitere_adr": "[\"Armin-T.-Wegner-Platz 15, 7, 9\",\"Mäuerchen 23, 25, 27, 39, 43, 7\",\"Schloßbleiche 34, 40, 42, 42 a, 44, 46\",\"Wirmhof 18\"]",
+            "buchungen": "[{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022958\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022957\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022966\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022996\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022954\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022989\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022988\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0023002\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022952\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022969\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022986\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022953\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022970\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022999\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022992\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022984\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022979\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022977\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022980\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022995\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022981\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022961\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022994\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022963\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022975\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022993\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022964\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022956\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022962\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022968\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022960\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022972\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022998\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022951\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022959\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022991\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022974\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022987\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022971\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0023001\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022965\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022983\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022997\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022976\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0023000\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022982\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022985\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022955\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022967\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022973\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022990\"},{\"buchungsart\":\"Wohnungs-/Teilerbbaurecht\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0022978\"},{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0014138\"}]",
+            "nutzungen": "[{\"funktion\":\"Fläche gemischter Nutzung / Gebäude- und Freifläche, Mischnutzung mit Wohnen\",\"percentage\":100,\"flaeche_nutzung\":2390.2}]",
+            "flur_flst_nr": "337/149",
+            "flaeche_m2": 2389,
+            "baulast_status": 3,
+            "bounds": "[7.144628,51.255805,7.145725,51.256289]"
+        },
+        "vectorId": 3135033701490000
     }
 
 };
