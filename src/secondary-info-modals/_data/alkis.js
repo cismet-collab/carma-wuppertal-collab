@@ -31,7 +31,96 @@ const data = {
         },
         "vectorId": 1431
     },
-
+    "gebaeude2": {
+        "fid": 2294,
+        "id": "DENW29AL1000BXPv",
+        "gebaeudefunktion": 2010,
+        "geb_fkt": "Gebäude für Handel und Dienstleistungen",
+        "geb_typ": "Hauptgebäude                                      ",
+        "og_geschosse": 7,
+        "strname": "Bachstr.,Kleiner Werth,Kohlgarten",
+        "strschl": "00301,01858,01888",
+        "hausnr": 7,
+        "hnr": "mehrere",
+        "adressen": "00301_2,01858_30,01888_7",
+        "adr_zusatz": "    ",
+        "anz_adress": 3,
+        "ursprung": "AX_31001",
+        "oeffentl": "0",
+        "flaeche": 2302.6,
+        "bounds": "[7.205579,51.273369,7.20675,51.273994]",
+        "baudenkmal": false,
+        "gemarkungsnummer": 3001,
+        "baujahr": 2014,
+        "carmaInfo": {
+            "selectionForwardingTo": [
+                "building",
+                "adresses"
+            ],
+            "sourceLayer": "building"
+        },
+        "vectorId": 2294
+    },
+    "gebaeude3": {
+        "fid": 1200,
+        "id": "DENW29AL1P200009",
+        "gebaeudefunktion": 2010,
+        "geb_fkt": "Gebäude für Handel und Dienstleistungen",
+        "geb_typ": "Hauptgebäude                                      ",
+        "og_geschosse": 7,
+        "strname": "Armin-T.-Wegner-Platz,Mäuerchen,Schloßbleiche,Wirmhof",
+        "strschl": "00221,02204,03038,03678",
+        "hausnr": 23,
+        "hnr": "mehrere",
+        "adressen": "00221_13,00221_15,00221_7,00221_9,02204_23,02204_25,02204_27,02204_39,02204_43,02204_7,03038_34,03038_40,03038_42,03038_42 a,03038_44,03038_46,03678_18",
+        "adr_zusatz": "    ",
+        "anz_adress": 17,
+        "ursprung": "AX_31001",
+        "oeffentl": "0",
+        "flaeche": 2419.8,
+        "bounds": "[7.144628,51.255805,7.145732,51.256289]",
+        "baudenkmal": false,
+        "gemarkungsnummer": 3135,
+        "baujahr": 9999,
+        "carmaInfo": {
+            "selectionForwardingTo": [
+                "building",
+                "adresses"
+            ],
+            "sourceLayer": "building"
+        },
+        "vectorId": 1200
+    },
+    "gebaeude4": {
+        "fid": 1040,
+        "id": "DENW29AL1000GDa2",
+        "gebaeudefunktion": 1010,
+        "geb_fkt": "Wohnhaus",
+        "geb_typ": "Hauptgebäude                                      ",
+        "og_geschosse": 4,
+        "strname": "Weidenstr.",
+        "strschl": "03625",
+        "hausnr": 60,
+        "hnr": "mehrere",
+        "adressen": "03625_18,03625_20,03625_22,03625_24,03625_26,03625_28,03625_30,03625_32,03625_34,03625_36,03625_38,03625_40,03625_54,03625_56,03625_58,03625_60,03625_62,03625_64,03625_66,03625_68,03625_70,03625_72,03625_74,03625_76",
+        "adr_zusatz": "    ",
+        "anz_adress": 24,
+        "ursprung": "AX_31001",
+        "oeffentl": "0",
+        "flaeche": 633.4,
+        "bounds": "[7.141553,51.248177,7.142167,51.248639]",
+        "baudenkmal": false,
+        "gemarkungsnummer": 3135,
+        "baujahr": 1998,
+        "carmaInfo": {
+            "selectionForwardingTo": [
+                "building",
+                "adresses"
+            ],
+            "sourceLayer": "building"
+        },
+        "vectorId": 1040
+    },
     "gebaeude1viaNumber": {
         "fid": 1431,
         "gid": 28372,
