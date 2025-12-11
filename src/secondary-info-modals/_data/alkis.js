@@ -6,6 +6,7 @@ const data = {
         "geb_fkt": "Rathaus",
         "geb_typ": "Hauptgebäude                                      ",
         "og_geschosse": 6,
+        "main_address": "Johannes-Rau-Platz 1 (u.a.)",
         "strname": "Johannes-Rau-Platz",
         "strschl": "01730",
         "hausnr": 2,
@@ -21,7 +22,7 @@ const data = {
         "baudenkmalnummer": 1707,
         "baudenkmal_vid": "6564",
         "gemarkungsnummer": 3001,
-        "baujahr": 1972,
+        "baujahr": 1981,
         "carmaInfo": {
             "selectionForwardingTo": [
                 "building",
@@ -38,6 +39,7 @@ const data = {
         "geb_fkt": "Gebäude für Handel und Dienstleistungen",
         "geb_typ": "Hauptgebäude                                      ",
         "og_geschosse": 7,
+        "main_address": "Bachstr. 2 (u.a.)",
         "strname": "Bachstr.,Kleiner Werth,Kohlgarten",
         "strschl": "00301,01858,01888",
         "hausnr": 7,
@@ -68,6 +70,7 @@ const data = {
         "geb_fkt": "Gebäude für Handel und Dienstleistungen",
         "geb_typ": "Hauptgebäude                                      ",
         "og_geschosse": 7,
+        "main_address": "Armin-T.-Wegner-Platz 13 (u.a.)",
         "strname": "Armin-T.-Wegner-Platz,Mäuerchen,Schloßbleiche,Wirmhof",
         "strschl": "00221,02204,03038,03678",
         "hausnr": 23,
@@ -81,7 +84,7 @@ const data = {
         "bounds": "[7.144628,51.255805,7.145732,51.256289]",
         "baudenkmal": false,
         "gemarkungsnummer": 3135,
-        "baujahr": 9999,
+        "baujahr": 1985,
         "carmaInfo": {
             "selectionForwardingTo": [
                 "building",
@@ -98,6 +101,7 @@ const data = {
         "geb_fkt": "Wohnhaus",
         "geb_typ": "Hauptgebäude                                      ",
         "og_geschosse": 4,
+        "main_address": "Weidenstr. 18 (u.a.)",
         "strname": "Weidenstr.",
         "strschl": "03625",
         "hausnr": 60,
@@ -145,6 +149,7 @@ const data = {
             "geb_fkt": "Rathaus",
             "geb_typ": "Hauptgebäude                                      ",
             "og_geschosse": 6,
+            "main_address": "Johannes-Rau-Platz 1 (u.a.)",
             "strname": "Johannes-Rau-Platz",
             "strschl": "01730",
             "hausnr": 2,
@@ -160,7 +165,7 @@ const data = {
             "baudenkmalnummer": 1707,
             "baudenkmal_vid": "7080",
             "gemarkungsnummer": 3001,
-            "baujahr": 1972,
+            "baujahr": 1981
         },
         "vectorId": 1431
     },
@@ -170,9 +175,10 @@ const data = {
         "gemarkungsnummer": 3001,
         "flurnummer": 117,
         "zaehler": 36,
-        "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3001\",\"grundbuchblattnummer\":\"0001000\"}]",
-        "nutzungen": "[{\"funktion\":\"Fläche besonderer funktionaler Prägung / Verwaltung\",\"percentage\":18.6,\"flaeche_nutzung\":611.2},{\"funktion\":\"Platz / Fußgängerzone\",\"percentage\":63,\"flaeche_nutzung\":2069.9},{\"funktion\":\"Fläche besonderer funktionaler Prägung / Verwaltung\",\"percentage\":18.4,\"flaeche_nutzung\":603.1}]",
         "adresse": "Johannes-Rau-Platz 5 u. a.",
+        "weitere_adr": "[\"Johannes-Rau-Platz 7\",\"Werth 39, 49\"]",
+        "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3001\",\"grundbuchblattnummer\":\"0001000\"}]",
+        "nutzungen": "[{\"funktion\":\"Fläche besonderer funktionaler Prägung / Verwaltung\",\"percentage\":18.6,\"flaeche_nutzung\":611.2},{\"funktion\":\"Fläche besonderer funktionaler Prägung / Verwaltung\",\"percentage\":18.4,\"flaeche_nutzung\":603.1},{\"funktion\":\"Platz / Fußgängerzone\",\"percentage\":63,\"flaeche_nutzung\":2069.9}]",
         "flur_flst_nr": "117/36",
         "flaeche_m2": 3314,
         "bounds": "[7.199596,51.271363,7.201046,51.271962]",
@@ -196,9 +202,10 @@ const data = {
         "gemarkungsnummer": 3001,
         "flurnummer": 117,
         "zaehler": 59,
+        "adresse": "Johannes-Rau-Platz 1 u. a.",
+        "weitere_adr": "[\"Johannes-Rau-Platz 2, 3\"]",
         "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3001\",\"grundbuchblattnummer\":\"0001000\"}]",
         "nutzungen": "[{\"funktion\":\"Industrie- und Gewerbefläche / Handel und Dienstleistung\",\"percentage\":1.4,\"flaeche_nutzung\":190.3},{\"funktion\":\"Industrie- und Gewerbefläche / Handel und Dienstleistung\",\"percentage\":2.3,\"flaeche_nutzung\":297.8},{\"funktion\":\"Fläche besonderer funktionaler Prägung / Verwaltung\",\"percentage\":31.1,\"flaeche_nutzung\":4079},{\"funktion\":\"Fläche besonderer funktionaler Prägung / Verwaltung\",\"percentage\":6.4,\"flaeche_nutzung\":845.8},{\"funktion\":\"Platz / Parkplatz\",\"percentage\":58,\"flaeche_nutzung\":7609.4},{\"funktion\":\"Straßenverkehr\",\"percentage\":0.8,\"flaeche_nutzung\":102.4}]",
-        "adresse": "Johannes-Rau-Platz 1 u. a.",
         "flur_flst_nr": "117/59",
         "flaeche_m2": 13130,
         "baulast_status": 3,
@@ -244,9 +251,10 @@ const data = {
             "gemarkungsnummer": 3001,
             "flurnummer": 117,
             "zaehler": 59,
+            "adresse": "Johannes-Rau-Platz 1 u. a.",
+            "weitere_adr": "[\"Johannes-Rau-Platz 2, 3\"]",
             "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3001\",\"grundbuchblattnummer\":\"0001000\"}]",
             "nutzungen": "[{\"funktion\":\"Industrie- und Gewerbefläche / Handel und Dienstleistung\",\"percentage\":1.4,\"flaeche_nutzung\":190.3},{\"funktion\":\"Industrie- und Gewerbefläche / Handel und Dienstleistung\",\"percentage\":2.3,\"flaeche_nutzung\":297.8},{\"funktion\":\"Fläche besonderer funktionaler Prägung / Verwaltung\",\"percentage\":31.1,\"flaeche_nutzung\":4079},{\"funktion\":\"Fläche besonderer funktionaler Prägung / Verwaltung\",\"percentage\":6.4,\"flaeche_nutzung\":845.8},{\"funktion\":\"Platz / Parkplatz\",\"percentage\":58,\"flaeche_nutzung\":7609.4},{\"funktion\":\"Straßenverkehr\",\"percentage\":0.8,\"flaeche_nutzung\":102.4}]",
-            "adresse": "Johannes-Rau-Platz 1 u. a.",
             "flur_flst_nr": "117/59",
             "flaeche_m2": 13130,
             "baulast_status": 3,
@@ -255,11 +263,7 @@ const data = {
         "vectorId": 3001011700590000
     },
     "fstck3viaArrow": {
-        "fid": 3001012801130000,
-        "gem": 3001,
-        "fln": 128,
-        "zae": 113,
-        "text_anchor": "right",
+        "fid": 3001012101360000,
         "carmaInfo": {
             "skipSnapping": true,
             "selectionForwardingTo": [
@@ -268,31 +272,27 @@ const data = {
                 "landparcel_arrows",
                 "landparcel_arrows_tips"
             ],
-            "hidingForwardingTo": [
-                "landparcel_arrows",
-                "landparcel_arrows_tips",
-                "landparcel_arrows_tips_selected"
-            ],
             "propertyTarget": "alkis_data.landparcel",
-            "sourceLayer": "landparcel_point"
+            "sourceLayer": "landparcel_arrows"
         },
         "targetProperties": {
-            "fid": 3001012801130000,
-            "flurstueck_kz_voll": "05300112800113______",
+            "fid": 3001012101360000,
+            "flurstueck_kz_voll": "05300112100136______",
             "gemarkungsnummer": 3001,
-            "flurnummer": 128,
-            "zaehler": 113,
-            "nutzungen": "[{\"typ\":\"AX_IndustrieUndGewerbeflaeche\",\"funktion\":\"Handel und Dienstleistung\",\"percentage\":100}]",
-            "adresse": "Werth ",
-            "flur_flst_nr": "128/113",
-            "flaeche_m2": 11,
-            "zeitpunktderentstehung": "19900101  ",
-            "bounds": "[7.204286,51.272023,7.20436,51.272128]"
+            "flurnummer": 121,
+            "zaehler": 136,
+            "adresse": "Zwinglistraße 12",
+            "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3001\",\"grundbuchblattnummer\":\"0008696\"}]",
+            "nutzungen": "[{\"funktion\":\"Fläche gemischter Nutzung / Gebäude- und Freifläche, Mischnutzung mit Wohnen\",\"percentage\":100,\"flaeche_nutzung\":0.8}]",
+            "flur_flst_nr": "121/136",
+            "flaeche_m2": 1,
+            "baulast_status": 2,
+            "bounds": "[7.198012,51.271127,7.198097,51.271159]"
         },
-        "vectorId": 3001012801130000
+        "vectorId": 3001012101360000
     }, "fstck3viaArrowTip": {
-        "fid": 3001012801130000,
-        "angle": 86.42449565850286,
+        "fid": 3001012101360000,
+        "angle": 110.79293131253239,
         "carmaInfo": {
             "skipSnapping": true,
             "selectionForwardingTo": [
@@ -305,28 +305,29 @@ const data = {
             "sourceLayer": "landparcel_arrows_tips"
         },
         "targetProperties": {
-            "fid": 3001012801130000,
-            "flurstueck_kz_voll": "05300112800113______",
+            "fid": 3001012101360000,
+            "flurstueck_kz_voll": "05300112100136______",
             "gemarkungsnummer": 3001,
-            "flurnummer": 128,
-            "zaehler": 113,
-            "nutzungen": "[{\"typ\":\"AX_IndustrieUndGewerbeflaeche\",\"funktion\":\"Handel und Dienstleistung\",\"percentage\":100}]",
-            "adresse": "Werth ",
-            "flur_flst_nr": "128/113",
-            "flaeche_m2": 11,
-            "zeitpunktderentstehung": "19900101  ",
-            "bounds": "[7.204286,51.272023,7.20436,51.272128]"
+            "flurnummer": 121,
+            "zaehler": 136,
+            "adresse": "Zwinglistraße 12",
+            "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3001\",\"grundbuchblattnummer\":\"0008696\"}]",
+            "nutzungen": "[{\"funktion\":\"Fläche gemischter Nutzung / Gebäude- und Freifläche, Mischnutzung mit Wohnen\",\"percentage\":100,\"flaeche_nutzung\":0.8}]",
+            "flur_flst_nr": "121/136",
+            "flaeche_m2": 1,
+            "baulast_status": 2,
+            "bounds": "[7.198012,51.271127,7.198097,51.271159]"
         },
-        "vectorId": 3001012801130000
+        "vectorId": 3001012101360000
     }, "fstck4": {
         "fid": 3135035900590000,
         "flurstueck_kz_voll": "05313535900059______",
         "gemarkungsnummer": 3135,
         "flurnummer": 359,
         "zaehler": 59,
-        "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0001359\"}]",
-        "nutzungen": "[{\"funktion\":\"Fläche besonderer funktionaler Prägung\",\"percentage\":99.8,\"flaeche_nutzung\":392.6},{\"funktion\":\"Fläche besonderer funktionaler Prägung / Parken\",\"percentage\":99.8,\"flaeche_nutzung\":392.6}]",
         "adresse": "Luisenstraße ",
+        "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3135\",\"grundbuchblattnummer\":\"0001359\"}]",
+        "nutzungen": "[{\"funktion\":\"Fläche besonderer funktionaler Prägung\",\"percentage\":99.8,\"flaeche_nutzung\":392.6},{\"funktion\":\"Fläche besonderer funktionaler Prägung / Parken\",\"percentage\":99.8,\"flaeche_nutzung\":392.6},{\"funktion\":\"Straßenverkehr\",\"percentage\":0.2,\"flaeche_nutzung\":0.9}]",
         "flur_flst_nr": "359/59",
         "flaeche_m2": 393,
         "bounds": "[7.138585,51.257038,7.139082,51.257274]",
@@ -374,9 +375,9 @@ const data = {
         "gemarkungsnummer": 3487,
         "flurnummer": 537,
         "zaehler": 550,
+        "adresse": "Einern 126",
         "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"1329\",\"grundbuchblattnummer\":\"0000671\"}]",
         "nutzungen": "[{\"funktion\":\"Fläche gemischter Nutzung / Gebäude- und Freifläche Land- und Forstwirtschaft\",\"percentage\":100,\"flaeche_nutzung\":2641.9}]",
-        "adresse": "Einern 126",
         "flur_flst_nr": "537/550",
         "flaeche_m2": 2643,
         "baulast_status": 2,
@@ -393,6 +394,31 @@ const data = {
             "sourceLayer": "landparcel"
         },
         "vectorId": 3487053705500000
+    }, "fstck7": {
+        "fid": 3278000309310000,
+        "flurstueck_kz_voll": "05327800300931______",
+        "gemarkungsnummer": 3278,
+        "flurnummer": 3,
+        "zaehler": 931,
+        "adresse": "Rotdornweg 31",
+        "buchungen": "[{\"buchungsart\":\"Erbbaurecht\",\"grundbuchbezirk\":\"3278\",\"grundbuchblattnummer\":\"0001975\"},{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3278\",\"grundbuchblattnummer\":\"0002174\"}]",
+        "nutzungen": "[{\"funktion\":\"Wohnbaufläche\",\"percentage\":99.9,\"flaeche_nutzung\":622.1},{\"funktion\":\"Straßenverkehr\",\"percentage\":0.1,\"flaeche_nutzung\":0.9}]",
+        "flur_flst_nr": "3/931",
+        "flaeche_m2": 623,
+        "baulast_status": 1,
+        "bounds": "[7.155508,51.296345,7.156007,51.296673]",
+        "carmaInfo": {
+            "skipSnapping": true,
+            "selectionForwardingTo": [
+                "landparcel",
+                "landparcel_point",
+                "landparcel_arrows",
+                "landparcel_arrows_tips"
+            ],
+            "staticProps": {},
+            "sourceLayer": "landparcel"
+        },
+        "vectorId": 3278000309310000
     }
 
 };
