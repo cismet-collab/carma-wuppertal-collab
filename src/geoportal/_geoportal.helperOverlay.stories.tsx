@@ -36,6 +36,18 @@ export const HilfeOverlay: StoryObj = {
   },
 };
 
+export const Schrägluftbilder: StoryObj = {
+  render: () => {
+    const element = getCollabedHelpElementsConfig("OBLIQUE", geoElements);
+    const config = useOverlayHelper(element);
+    return (
+      <div>
+        <DisplayContentHelper config={config} />
+      </div>
+    );
+  },
+};
+
 export const LayerButtons: StoryObj = {
   render: () => {
     const element = getCollabedHelpElementsConfig("LAYERBUTTONS", geoElements);

@@ -16,6 +16,7 @@ import { BackgroundSelectionText } from "./secondary/BackgroundSelectionText";
 import { MenuBarText } from "./secondary/MenuBarText";
 import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourProvider";
 import { MapInteractionsUI } from "./secondary/MapInteractions";
+import { ObliqueText } from "./secondary/Oblique";
 
 export const elements: Record<string, ElementType> = {
   menu: {
@@ -346,6 +347,29 @@ export const elements: Record<string, ElementType> = {
         </OverlayTourProvider>
       ),
       secondaryPos: "top",
+    },
+  },
+  oblique: {
+    key: "OBLIQUE",
+    containerPos: "center",
+    contentPos: "center",
+    contentWidth: "145px",
+    content: (
+      <div style={{ textAlign: "center" }}>
+        <b>
+          Modus
+          <br />
+          Schrägluftbilder
+        </b>
+      </div>
+    ),
+    secondary: {
+      content: (
+        <OverlayTourProvider>
+          <ObliqueText />
+        </OverlayTourProvider>
+      ),
+      secondaryPos: "bottom",
     },
   },
 };
