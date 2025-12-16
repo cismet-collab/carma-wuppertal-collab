@@ -7,7 +7,7 @@ import Help35KarteninhalteHinzufuegen from "./help/Help35KarteninhalteHinzufuege
 import Help40KarteninhalteUntersuchen from "./help/Help40KarteninhalteUntersuchen";
 import Help45KartenDrucken from "./help/Help45KartenDrucken";
 import Help50MeinStandort from "./help/Help50MeinStandort";
-import Help60Funktionen3D from "./help/Help60Funktionen3D";
+import Help48Funktionen3D from "./help/Help48Funktionen3D";
 import Help90Haftungsausschluss from "./help/Help90Haftungsausschluss";
 import { UIDispatchContext } from "react-cismap/contexts/UIContextProvider";
 import Footer from "./help/HelpFooter";
@@ -101,11 +101,11 @@ export const getCollabedHelpComponentConfig = ({
         showOverlayFromOutside={showOverlayFromOutside}
         key="KarteninhalteDrucken"
       />,
+      <Help48Funktionen3D key="3D-Funktionen" />,
       <Help50MeinStandort
         showOverlayFromOutside={showOverlayFromOutside}
         key="MeinStandort"
       />,
-      <Help60Funktionen3D key="3D-Funktionen" />,
       <Help90Haftungsausschluss key="Haftungsausschluss" />,
     ];
   };
