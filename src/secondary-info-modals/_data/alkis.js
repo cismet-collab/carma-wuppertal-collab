@@ -169,6 +169,101 @@ const data = {
         },
         "vectorId": 1431
     },
+    "tiefgarage": {
+        "fid": 91156,
+        "id": "DENW29AL1000PpLe",
+        "gebaeudefunktion": 2465,
+        "geb_fkt": "Tiefgarage",
+        "geb_typ": "Nebengebäude                                      ",
+        "ug_geschosse": 2,
+        "main_address": "Ohligsmühle 1",
+        "strname": "Ohligsmühle",
+        "strschl": "02558",
+        "hausnr": 1,
+        "pnr": "1",
+        "adressen": "02558_1",
+        "adr_zusatz": "    ",
+        "anz_adress": 1,
+        "lfdnr": "1",
+        "ursprung": "AX_31001",
+        "oeffentl": "0",
+        "flaeche": 3183,
+        "bounds": "[7.142142,51.254819,7.143562,51.255306]",
+        "baudenkmal": false,
+        "gemarkungsnummer": 3135,
+        "carmaInfo": {
+            "selectionForwardingTo": [
+                "building",
+                "adresses"
+            ],
+            "sourceLayer": "building"
+        },
+        "vectorId": 91156
+    },
+    "geb_og_ug": {
+        "fid": 221,
+        "id": "DENW29AL10006lsj",
+        "gebaeudefunktion": 1010,
+        "geb_fkt": "Wohnhaus",
+        "geb_typ": "Hauptgebäude                                      ",
+        "og_geschosse": 2,
+        "ug_geschosse": 1,
+        "main_address": "Talsperrenstr. 102 (u.a.)",
+        "strname": "Talsperrenstr.",
+        "strschl": "03302",
+        "hausnr": 104,
+        "hnr": "mehrere",
+        "adressen": "03302_102,03302_102 a,03302_104",
+        "adr_zusatz": "    ",
+        "anz_adress": 3,
+        "ursprung": "AX_31001",
+        "oeffentl": "0",
+        "flaeche": 153.7,
+        "bounds": "[7.190887,51.220742,7.191185,51.220875]",
+        "baudenkmal": false,
+        "gemarkungsnummer": 3267,
+        "baujahr": 1960,
+        "carmaInfo": {
+            "selectionForwardingTo": [
+                "building",
+                "adresses"
+            ],
+            "sourceLayer": "building"
+        },
+        "vectorId": 221
+    },
+    "gebb_og_ug2": {
+        "fid": 98016,
+        "id": "DENW29AL1000BQs3",
+        "gebaeudefunktion": 2000,
+        "geb_fkt": "Gebäude für Wirtschaft oder Gewerbe",
+        "geb_typ": "Nebengebäude                                      ",
+        "og_geschosse": 2,
+        "ug_geschosse": 2,
+        "main_address": "Johannes-Rau-Platz 1",
+        "strname": "Johannes-Rau-Platz",
+        "strschl": "01730",
+        "hausnr": 1,
+        "pnr": "1",
+        "adressen": "01730_1",
+        "adr_zusatz": "    ",
+        "anz_adress": 1,
+        "lfdnr": "10",
+        "ursprung": "AX_31001",
+        "oeffentl": "0",
+        "flaeche": 30.4,
+        "bounds": "[7.19993,51.272991,7.200027,51.273055]",
+        "baudenkmal": false,
+        "gemarkungsnummer": 3001,
+        "carmaInfo": {
+            "selectionForwardingTo": [
+                "building",
+                "adresses"
+            ],
+            "sourceLayer": "building"
+        },
+        "vectorId": 98016
+    },
     "fstck1": {
         "fid": 3001011700360000,
         "flurstueck_kz_voll": "05300111700036______",

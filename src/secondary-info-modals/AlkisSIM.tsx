@@ -43,6 +43,7 @@ interface GebaeudeProperties {
   geb_fkt?: string;
   geb_typ?: string;
   og_geschosse?: number;
+  ug_geschosse?: number;
   strname?: string;
   strschl?: string;
   hausnr?: number;
@@ -403,7 +404,15 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
               >
                 <b>Anzahl der Geschosse:</b>
               </td>
-              <td>{props.og_geschosse ?? "-"}</td>
+              <td>
+                {props.og_geschosse && props.ug_geschosse
+                  ? `${props.og_geschosse} (zusätzlich ${props.ug_geschosse} unterirdische${props.ug_geschosse === 1 ? "s" : ""} Geschoss${props.ug_geschosse === 1 ? "" : "e"})`
+                  : props.og_geschosse
+                    ? props.og_geschosse
+                    : props.ug_geschosse
+                      ? `${props.ug_geschosse} (unterirdisch)`
+                      : "-"}
+              </td>
             </tr>
             <tr>
               <td style={{ verticalAlign: "top", paddingRight: "15px" }}>
