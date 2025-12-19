@@ -637,7 +637,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
               </td>
               <td>
                 {props.flaeche_m2
-                  ? `${props.flaeche_m2.toLocaleString("de-DE")} m²`
+                  ? `${(props.flaeche_m2 >= 0.5 ? Math.round(props.flaeche_m2) : props.flaeche_m2).toLocaleString("de-DE")} m²`
                   : "-"}
               </td>
             </tr>

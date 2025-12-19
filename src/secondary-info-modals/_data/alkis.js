@@ -275,7 +275,7 @@ const data = {
         "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3001\",\"grundbuchblattnummer\":\"0001000\"}]",
         "nutzungen": "[{\"funktion\":\"Fläche besonderer funktionaler Prägung / Verwaltung\",\"percentage\":18.6,\"flaeche_nutzung\":611.2},{\"funktion\":\"Fläche besonderer funktionaler Prägung / Verwaltung\",\"percentage\":18.4,\"flaeche_nutzung\":603.1},{\"funktion\":\"Platz / Fußgängerzone\",\"percentage\":63,\"flaeche_nutzung\":2069.9}]",
         "flur_flst_nr": "117/36",
-        "flaeche_m2": 3314,
+        "flaeche_m2": 3314.3,
         "bounds": "[7.199596,51.271363,7.201046,51.271962]",
         "carmaInfo": {
             "skipSnapping": true,
@@ -552,6 +552,41 @@ const data = {
             "bounds": "[7.144628,51.255805,7.145725,51.256289]"
         },
         "vectorId": 3135033701490000
+    }, "miniflurstueck": {
+        "fid": 3279000244620000,
+        "gem": 3279,
+        "fln": 2,
+        "zae": 4462,
+        "text_anchor": "top",
+        "carmaInfo": {
+            "skipSnapping": true,
+            "selectionForwardingTo": [
+                "landparcel",
+                "landparcel_point",
+                "landparcel_arrows",
+                "landparcel_arrows_tips"
+            ],
+            "hidingForwardingTo": [
+                "landparcel_arrows",
+                "landparcel_arrows_tips",
+                "landparcel_arrows_tips_selected"
+            ],
+            "propertyTarget": "alkis_data.landparcel",
+            "sourceLayer": "landparcel_point"
+        },
+        "targetProperties": {
+            "fid": 3279000244620000,
+            "flurstueck_kz_voll": "05327900204462______",
+            "gemarkungsnummer": 3279,
+            "flurnummer": 2,
+            "zaehler": 4462,
+            "adresse": "Harzstraße ",
+            "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"3279\",\"grundbuchblattnummer\":\"0000102\"}]",
+            "flur_flst_nr": "2/4462",
+            "flaeche_m2": 0.01,
+            "bounds": "[7.136016,51.22729,7.136026,51.227291]"
+        },
+        "vectorId": 3279000244620000
     }
 
 };
