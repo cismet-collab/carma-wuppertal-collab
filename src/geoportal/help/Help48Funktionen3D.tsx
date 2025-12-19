@@ -9,7 +9,17 @@ const Component = ({ showOverlayFromOutside }) => {
       sectionBsStyle="info"
       sectionContent={
         <div>
-          2bdone
+          <p>
+            Im 3D-Modus bieten wir Ihnen eine einfache und intuitiv bedienbare Funktion 
+            zum Einblenden und Herunterladen von <strong>Schrägluftbildern</strong> an. 
+            Das Angebot ist derzeit noch beschränkt auf unsere aktuellsten Luftbilder, 
+            die im März 2024 aufgenommen worden sind. Diese Bilder stehen in einer 
+            reduzierten Auflösung von 5 cm pro Pixel unter der Open-Data-Lizenz CC-BY-4.0. 
+            Diese Lizenz verpflichtet Sie, bei einer Veröffentlichung den Namen des 
+            Herausgebers zu nennen. Dazu haben wir in den Bilddateien links oben den 
+            Hinweis "CC-BY-4.0 - DigiTal Zwilling / Geoportal Wuppertal" eingeblendet, 
+            den Sie bei einer Publikaton nicht entfernen dürfen.
+          </p>
           <p className="hide-on-small-screens">
             <HelpOverlayLink
               onClick={() => {
