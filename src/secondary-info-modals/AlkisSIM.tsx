@@ -437,7 +437,7 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
         )}
       </div>
 
-      {props.baujahr && props.baujahr !== 9999 && (
+      {/* {props.baujahr && props.baujahr !== 9999 && (
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"1"}>
           <Panel
             header="Gebäudedatei der Statistikstelle"
@@ -456,7 +456,7 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
             </table>
           </Panel>
         </Accordion>
-      )}
+      )} */}
 
       {props.baudenkmal && (
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
