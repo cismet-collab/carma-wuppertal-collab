@@ -101,7 +101,10 @@ export const getCollabedHelpComponentConfig = ({
         showOverlayFromOutside={showOverlayFromOutside}
         key="KarteninhalteDrucken"
       />,
-      <Help48Funktionen3D key="3D-Funktionen" />,
+      <Help48Funktionen3D 
+        showOverlayFromOutside={showOverlayFromOutside}
+        key="3D-Funktionen" 
+      />,
       <Help50MeinStandort
         showOverlayFromOutside={showOverlayFromOutside}
         key="MeinStandort"
