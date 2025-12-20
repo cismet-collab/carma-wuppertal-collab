@@ -464,17 +464,17 @@ const data = {
         },
         "vectorId": 3135021301120000
     },
-    "fstck6": {
+    "einern126_anderes_amtsgericht": {
         "fid": 3487053705500000,
         "flurstueck_kz_voll": "05348753700550______",
         "gemarkungsnummer": 3487,
         "flurnummer": 537,
         "zaehler": 550,
+        "flaeche_m2": 2643,
         "adresse": "Einern 126",
-        "buchungen": "[{\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"1329\",\"grundbuchblattnummer\":\"0000671\"}]",
+        "buchungen": "[{\"amtsgericht\":\"Hattingen\",\"buchungsart\":\"Grundstück\",\"grundbuchbezirk\":\"1329\",\"buchungsblattbezirk\":\"Gennebreck\",\"grundbuchblattnummer\":\"0000671\"}]",
         "nutzungen": "[{\"funktion\":\"Fläche gemischter Nutzung / Gebäude- und Freifläche Land- und Forstwirtschaft\",\"percentage\":100,\"flaeche_nutzung\":2641.9}]",
         "flur_flst_nr": "537/550",
-        "flaeche_m2": 2643,
         "baulast_status": 2,
         "bounds": "[7.212293,51.301451,7.213289,51.301955]",
         "carmaInfo": {

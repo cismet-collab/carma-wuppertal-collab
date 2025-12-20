@@ -69,6 +69,8 @@ interface Buchung {
   buchungsart: string;
   grundbuchbezirk: string;
   grundbuchblattnummer: string;
+  amtsgericht?: string;
+  buchungsblattbezirk?: string;
 }
 
 interface FlurstueckProperties {
@@ -188,7 +190,7 @@ function parseNutzungen(
 // Helper to parse buchungen and group by Grundbuchbezirk, then by Buchungsart
 function parseBuchungen(buchungenStr?: string): {
   grouped: Record<string, Record<string, string[]>>;
-  bezirkDisplayNames: Record<string, string>; // key -> "Name (nummer)"
+  bezirkDisplayNames: Record<string, string>; // key -> "Name (nummer)" or "Name (nummer) - Amtsgericht X"
   bezirkNames: string[];
   totalCount: number;
   // For single buchung case
@@ -209,15 +211,22 @@ function parseBuchungen(buchungenStr?: string): {
 
     parsed.forEach((b) => {
       const bezirkNummer = b.grundbuchbezirk;
-      const resolvedName = getGemarkungName(Number(bezirkNummer));
+      // Use buchungsblattbezirk if available (for non-Wuppertal), otherwise try gemarkung mapping
+      const bezirkNameFromData = b.buchungsblattbezirk;
+      const resolvedName = bezirkNameFromData || getGemarkungName(Number(bezirkNummer));
       const bezirkName = resolvedName || bezirkNummer;
       // Use bezirkName as key for grouping
       if (!grouped[bezirkName]) {
         grouped[bezirkName] = {};
-        // Store display name: "Name (nummer)" if name found, otherwise just nummer
-        bezirkDisplayNames[bezirkName] = resolvedName
+        // Build display name: "Name (nummer)" or "Name (nummer) - Amtsgericht X" for non-Wuppertal
+        let displayName = resolvedName
           ? `${resolvedName} (${bezirkNummer})`
           : bezirkNummer;
+        // Add Amtsgericht info if present (only for non-Wuppertal cases)
+        if (b.amtsgericht) {
+          displayName += ` - Amtsgericht ${b.amtsgericht}`;
+        }
+        bezirkDisplayNames[bezirkName] = displayName;
       }
       if (!grouped[bezirkName][b.buchungsart]) {
         grouped[bezirkName][b.buchungsart] = [];
