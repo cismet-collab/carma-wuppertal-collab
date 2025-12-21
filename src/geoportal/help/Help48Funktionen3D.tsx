@@ -20,6 +20,17 @@ const Component = ({ showOverlayFromOutside }) => {
             Hinweis "CC-BY-4.0 - DigiTal Zwilling / Geoportal Wuppertal" eingeblendet, 
             den Sie bei einer Publikaton nicht entfernen dürfen.
           </p>
+          <p>
+            Aktivieren Sie zuerst mit dem Wechselschalter den Modus "Schrägluftbilder". 
+            Der Rand  desjenigen Schrägluftbildes, das die Mitte des aktuellen Modellausschnitts 
+            in Ihrer Blickrichtung am besten abbildet, wird jetzt stets mit einem weißen Band auf 
+            der Geländeoberfläche markiert. Zusätzlich werden einige spezielle Steuerelemente 
+            angezeigt. Mit der Schaltfläche "Flug zum Bild" wechseln Sie in die Aufnahmeperspektive 
+            dieses Schrägluftbilds, das dann direkt und unverzerrt als Rechteck eingeblendet wird. 
+            Mit den Schaltflächen **Bild öffnen** und **Herunterladen** können Sie das Bild direkt 
+            zur Betrachtung in einem neuen Reiter (Tab) Ihres Browsers öffnen oder zur Betrachtung 
+            ein einem Bildverarbeitungsprogramm auf Ihrem Rechner speichern (Dateigröße etwa 4,7 MByte). 
+          </p>
           <p className="hide-on-small-screens">
             <HelpOverlayLink
               onClick={() => {

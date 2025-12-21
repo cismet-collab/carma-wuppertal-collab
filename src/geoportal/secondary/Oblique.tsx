@@ -8,7 +8,7 @@ export const ObliqueText = () => {
     >
       <div>
         <b>Wechselschalter zum Ein-/Ausschalten des Schrägluftbildmodus (3D)</b><br/>
-        Fußabdruck des für die Mitte des eingestellten Kartenausschnitts besten 
+        Fußabdruck des für die Mitte des eingestellten Modellausschnitts besten 
         aktuellen Schrägluftbilds  wird markiert | Anzeige spezieller Steuerelemente | 
         "Flug zum Bild" wechselt in die Aufnahmeperspektive für unverzerrte Bildvorschau | 
         Bild im Browser öffnen oder herunterladen (ca. 4,7 MB) | Pfeiltasten zur Drehung 
