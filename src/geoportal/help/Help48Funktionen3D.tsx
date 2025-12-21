@@ -18,7 +18,7 @@ const Component = ({ showOverlayFromOutside }) => {
             Diese Lizenz verpflichtet Sie, bei einer Veröffentlichung den Namen des 
             Herausgebers zu nennen. Dazu haben wir in den Bilddateien links oben den 
             Hinweis "CC-BY-4.0 - DigiTal Zwilling / Geoportal Wuppertal" eingeblendet, 
-            den Sie bei einer Publikaton nicht entfernen dürfen.
+            den Sie bei einer Publikation nicht entfernen dürfen.
           </p>
           <p>
             Aktivieren Sie zuerst mit dem Wechselschalter den Modus "Schrägluftbilder". 
@@ -29,7 +29,7 @@ const Component = ({ showOverlayFromOutside }) => {
             wechseln Sie in die Aufnahmeperspektive dieses Schrägluftbilds, das dann direkt und unverzerrt 
             als Rechteck eingeblendet wird ("Bildvorschau"). Mit den Schaltflächen <strong>Bild 
             öffnen</strong>{" "}und <strong>Herunterladen</strong>{" "}können Sie das Bild direkt zur Betrachtung 
-            in einem neuen Reiter (Tab) Ihres Browsers öffnen oder zur Betrachtung in einem Bildverarbeitungsprogramm 
+            in einem neuen Reiter (Tab) Ihres Browsers öffnen oder zur Betrachtung in einem Bildbearbeitungsprogramm 
             auf Ihrem Rechner speichern (Dateigröße etwa 4,7 MByte). Mit den Pfeiltasten können Sie zum 
             jeweils benachbarten Schrägluftbild wechseln oder die Ansicht um 90 Grad in Pfeilrichtung drehen. 
             Die 4 angebotenen Blickrichtungen orientieren sich dabei an der nordwestlichen Ausrichtung der 
