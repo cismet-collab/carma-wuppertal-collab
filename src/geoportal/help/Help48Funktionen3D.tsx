@@ -24,16 +24,17 @@ const Component = ({ showOverlayFromOutside }) => {
             Aktivieren Sie zuerst mit dem Wechselschalter den Modus "Schrägluftbilder". 
             Der Rand  desjenigen Schrägluftbildes, das die Mitte des aktuellen Modellausschnitts 
             in Ihrer Blickrichtung am besten abbildet, wird jetzt stets mit einem weißen Band auf 
-            der Geländeoberfläche markiert. Zusätzlich werden einige spezielle Steuerelemente 
-            angezeigt. Mit der Schaltfläche "Flug zum Bild" wechseln Sie in die Aufnahmeperspektive 
-            dieses Schrägluftbilds, das dann direkt und unverzerrt als Rechteck eingeblendet wird. 
-            Mit den Schaltflächen <strong>Bild öffnen</strong> und <strong>Herunterladen</strong> 
-            können Sie das Bild direkt zur Betrachtung in einem neuen Reiter (Tab) Ihres Browsers 
-            öffnen oder zur Betrachtung ein einem Bildverarbeitungsprogramm auf Ihrem Rechner speichern 
-            (Dateigröße etwa 4,7 MByte). Mit den Pfeiltasten können Sie zum jeweils benachbarten 
-            Schrägluftbild wechseln oder die Ansicht um 90 Grad drehen. Die 4 angebotenen Blickrichtungen 
-            orientieren sich dabei an der nordwestlichenAusrichtung der Flugstreifen des Bildflugs, 
-            nicht an den Himmelsrichtungen. 
+            der Geländeoberfläche markiert ("Fußabdruck des Schrägluftbilds"). Zusätzlich werden 
+            einige spezielle Steuerelemente angezeigt. Mit der Schaltfläche <strong>Flug zum Bild</strong> 
+            wechseln Sie in die Aufnahmeperspektive dieses Schrägluftbilds, das dann direkt und unverzerrt 
+            als Rechteck eingeblendet wird ("Bildvorschau"). Mit den Schaltflächen <strong>Bild 
+            öffnen</strong> und <strong>Herunterladen</strong> können Sie das Bild direkt zur Betrachtung 
+            in einem neuen Reiter (Tab) Ihres Browsers öffnen oder zur Betrachtung ein einem Bildverarbeitungsprogramm 
+            auf Ihrem Rechner speichern (Dateigröße etwa 4,7 MByte). Mit den Pfeiltasten können Sie zum 
+            jeweils benachbarten Schrägluftbild wechseln oder die Ansicht um 90 Grad drehen. Die 4 
+            angebotenen Blickrichtungen orientieren sich dabei an der nordwestlichen Ausrichtung der 
+            Flugstreifen des Bildflugs, nicht an den Himmelsrichtungen. Die Bildwechsel mit den Pfeiltasten 
+            funktionieren sowohl bei der Anzeige der Fußabdrücke wie auch bei laufender Bildvorschau. 
           </p>
           <p className="hide-on-small-screens">
             <HelpOverlayLink
