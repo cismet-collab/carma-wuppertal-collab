@@ -6,7 +6,7 @@ const data = {
         "geb_fkt": "Rathaus",
         "geb_typ": "Hauptgebäude                                      ",
         "og_geschosse": 6,
-        "main_address": "Johannes-Rau-Platz 1 (u.a.)",
+        "main_address": "Johannes-Rau-Platz 1 (u. a.)",
         "strname": "Johannes-Rau-Platz",
         "strschl": "01730",
         "hausnr": 2,

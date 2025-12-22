@@ -213,7 +213,8 @@ function parseBuchungen(buchungenStr?: string): {
       const bezirkNummer = b.grundbuchbezirk;
       // Use buchungsblattbezirk if available (for non-Wuppertal), otherwise try gemarkung mapping
       const bezirkNameFromData = b.buchungsblattbezirk;
-      const resolvedName = bezirkNameFromData || getGemarkungName(Number(bezirkNummer));
+      const resolvedName =
+        bezirkNameFromData || getGemarkungName(Number(bezirkNummer));
       const bezirkName = resolvedName || bezirkNummer;
       // Use bezirkName as key for grouping
       if (!grouped[bezirkName]) {
@@ -415,12 +416,16 @@ const GebaeudeInfo = ({ props }: { props: GebaeudeProperties }) => {
               </td>
               <td>
                 {props.og_geschosse && props.ug_geschosse
-                  ? `${props.og_geschosse} (zusätzlich ${props.ug_geschosse} unterirdische${props.ug_geschosse === 1 ? "s" : ""} Geschoss${props.ug_geschosse === 1 ? "" : "e"})`
+                  ? `${props.og_geschosse} (zusätzlich ${
+                      props.ug_geschosse
+                    } unterirdische${
+                      props.ug_geschosse === 1 ? "s" : ""
+                    } Geschoss${props.ug_geschosse === 1 ? "" : "e"})`
                   : props.og_geschosse
-                    ? props.og_geschosse
-                    : props.ug_geschosse
-                      ? `${props.ug_geschosse} (unterirdisch)`
-                      : "-"}
+                  ? props.og_geschosse
+                  : props.ug_geschosse
+                  ? `${props.ug_geschosse} (unterirdisch)`
+                  : "-"}
               </td>
             </tr>
             <tr>
@@ -620,9 +625,10 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                 }
               }
               // Strip "u. a." or "u.a." from main address if weitere_adr exists
-              const mainAddress = weitereAdressen.length > 0
-                ? (props.adresse || "").replace(/\s*u\.\s*a\.\s*$/, "").trim()
-                : props.adresse;
+              const mainAddress =
+                weitereAdressen.length > 0
+                  ? (props.adresse || "").replace(/\s*u\.\s*a\.\s*$/, "").trim()
+                  : props.adresse;
               return (
                 <>
                   <tr>
@@ -646,7 +652,10 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
               </td>
               <td>
                 {props.flaeche_m2
-                  ? `${(props.flaeche_m2 >= 0.5 ? Math.round(props.flaeche_m2) : props.flaeche_m2).toLocaleString("de-DE")} m²`
+                  ? `${(props.flaeche_m2 >= 0.5
+                      ? Math.round(props.flaeche_m2)
+                      : props.flaeche_m2
+                    ).toLocaleString("de-DE")} m²`
                   : "-"}
               </td>
             </tr>
@@ -1056,7 +1065,7 @@ const SecondaryInfoModal = ({
     const address = mainAddr
       ? `${mainAddr.streetName} ${mainAddr.hausnr}`
       : `${props.strname || ""} ${props.hausnr || ""}`.trim();
-    const suffix = allAddresses.length > 1 ? " (u.a.)" : "";
+    const suffix = allAddresses.length > 1 ? " (u. a.)" : "";
     title = `Gebäude ${address}${suffix}`;
     icon = faBuilding;
   }
