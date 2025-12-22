@@ -49,6 +49,22 @@ const Component = ({ showOverlayFromOutside }) => {
             sowohl bei der Anzeige der Fußabdrücke wie auch bei laufender
             Bildvorschau.
           </p>
+          <p>
+            Vor unserer Entscheidung, die Schrägluftbilder öffentlich zugänglich 
+            zu machen, hat der Datenschutzbeauftragte der Stadt Wuppertal eine 
+            repräsentative Auswahl an Bildern untersucht. Er konnte in der angebotenen 
+            Auflösung der Bilder keine datenschutzrechtlich bedenkliche Personenerkennbarkeit 
+            feststellen. Falls Sie sich als Eigentümer eines Grundstücks durch die Publikation 
+            eines Schrägluftbildes in Ihren Rechten verletzt fühlen, können Sie über die 
+            Schaltfläche <strong>Rückmeldung</strong>{" "}ein Formular öffnen, mit dem Sie 
+            eine Überprüfung der datenschutzrechtlichen Zulässigkeit und ggf. eine 
+            Unkenntlichmachung Ihres Grundstücks beantragen können. Das Formular kann auch 
+            für alle anderen Rückmeldungen, die sich auf ein bestimmtes Luftbild beziehen, 
+            verwendet werden. Nach dem Ausfüllen des Formulars können Sie eine E-Mail erstellen, 
+            in die automatisch auch die technischen Informationen zur Identifikation des Bildes 
+            aufgenommen werden, auf das sich Ihre Rückmeldung bezieht. Erst durch das Absenden 
+            dieser E-Mail reichen Sie Ihren Antrag bei unserem Geodatenzentrum ein. 
+          </p>
           <p className="hide-on-small-screens">
             <HelpOverlayLink
               onClick={() => {
