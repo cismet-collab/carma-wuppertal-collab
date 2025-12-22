@@ -27,7 +27,7 @@ const Component = ({ showOverlayFromOutside }) => {
           </p>
           <p>
             Aktivieren Sie zuerst mit dem Wechselschalter{" "}
-            <ObliqueIcon size="small" /> den Modus "Schrägluftbilder". Der Rand
+            <ObliqueIcon size="small" />{" "}den Modus "Schrägluftbilder". Der Rand
             desjenigen Schrägluftbildes, das die Mitte des aktuellen
             Modellausschnitts in Ihrer Blickrichtung am besten abbildet, wird
             jetzt stets mit einem weißen Band auf der Geländeoberfläche markiert
