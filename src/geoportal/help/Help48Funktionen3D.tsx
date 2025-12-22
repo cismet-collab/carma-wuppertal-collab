@@ -54,7 +54,7 @@ const Component = ({ showOverlayFromOutside }) => {
             zu machen, hat der Datenschutzbeauftragte der Stadt Wuppertal eine 
             repräsentative Auswahl an Bildern untersucht. Er konnte in der angebotenen 
             Auflösung der Bilder keine datenschutzrechtlich bedenkliche Personenerkennbarkeit 
-            feststellen. Falls Sie sich als Eigentümer eines Grundstücks durch die Publikation 
+            feststellen. Falls Sie sich als Eigentümer/in eines Grundstücks durch die Publikation 
             eines Schrägluftbildes in Ihren Rechten verletzt fühlen, können Sie über die 
             Schaltfläche <strong>Rückmeldung</strong>{" "}ein Formular öffnen, mit dem Sie 
             eine Überprüfung der datenschutzrechtlichen Zulässigkeit und ggf. eine 
