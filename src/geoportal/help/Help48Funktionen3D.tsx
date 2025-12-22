@@ -1,7 +1,7 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faImages, faPlane } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faImages, faPlane } from "@fortawesome/free-solid-svg-icons";
 import ObliqueIcon from "../ObliqueIcon";
 
 const Component = ({ showOverlayFromOutside }) => {
@@ -27,14 +27,14 @@ const Component = ({ showOverlayFromOutside }) => {
           </p>
           <p>
             Aktivieren Sie zuerst mit dem Wechselschalter{" "}
-            <ObliqueIcon size="small" />{" "}den Modus "Schrägluftbilder". Der Rand
-            desjenigen Schrägluftbildes, das die Mitte des aktuellen
-            Modellausschnitts in Ihrer Blickrichtung am besten abbildet, wird
-            jetzt stets mit einem weißen Band auf der Geländeoberfläche markiert
-            ("Fußabdruck des Schrägluftbilds"). Zusätzlich werden einige
-            spezielle Steuerelemente angezeigt. Mit der Schaltfläche{" "}
-            <strong>Flug zum Bild</strong> wechseln Sie in die
-            Aufnahmeperspektive dieses Schrägluftbilds, das dann direkt und
+            <ObliqueIcon size="small" />{" "}in der Kopfzeile den Modus 
+            "Schrägluftbilder". Der Rand desjenigen Schrägluftbildes, das die 
+            Mitte des aktuellen Modellausschnitts in Ihrer Blickrichtung am 
+            besten abbildet, wird jetzt stets mit einem weißen Band auf der 
+            Geländeoberfläche markiert ("Fußabdruck des Schrägluftbilds"). 
+            Zusätzlich werden einige spezielle Steuerelemente angezeigt. Mit 
+            der Schaltfläche{" "}<strong>Flug zum Bild</strong> wechseln Sie in 
+            die Aufnahmeperspektive dieses Schrägluftbilds, das dann direkt und
             unverzerrt als Rechteck eingeblendet wird ("Bildvorschau"). Mit den
             Schaltflächen <strong>Bild öffnen</strong> und{" "}
             <strong>Herunterladen</strong> können Sie das Bild direkt zur
