@@ -32,6 +32,9 @@
       "@carma-commons/*": [
         "_carma_monorepo/libraries/commons/*/src/index.ts"
       ],
+      "@carma-commons/ui/shadcn": [
+        "_carma_monorepo/libraries/commons/ui/shadcn/src/index.ts"
+      ],
       "@carma-commons/utils/*": [
         "_carma_monorepo/libraries/commons/utils/src/lib/*/index.ts"
       ],
