@@ -837,7 +837,11 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
       )}
 
       <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"1"}>
-        <Panel header="Bestellformulare" eventKey="1" bsStyle="warning">
+        <Panel
+          header="Bestellformulare Katasterauszüge"
+          eventKey="1"
+          bsStyle="warning"
+        >
           <table style={{ marginBottom: 10, borderCollapse: "collapse" }}>
             <thead>
               <tr>
