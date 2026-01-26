@@ -914,10 +914,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
           <div style={{ fontSize: "11px" }}>
             2: Datenschutzprüfung des berechtigten Interesses erforderlich
           </div>
-          {/* <div style={{ fontSize: "11px" }}>
-            3: Flurstückinformationen werden momentan noch nicht ins Formular
-            übernommen
-          </div> */}
+
           <div style={{ marginTop: 10 }}>
             <b>Gebühren je Dokument:</b>
             <br />
@@ -993,7 +990,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
                       <FontAwesomeIcon icon={faShoppingCart} />
                     </a>
                   </td>
-                  <td style={{ fontSize: "11px" }}>1, 2, 3</td>
+                  <td style={{ fontSize: "11px" }}>1, 2</td>
                 </tr>
               </tbody>
             </table>
@@ -1005,10 +1002,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
             <div style={{ fontSize: "11px" }}>
               2: Datenschutzprüfung des berechtigten Interesses erforderlich
             </div>
-            <div style={{ fontSize: "11px" }}>
-              3: Flurstückinformationen werden momentan noch nicht ins Formular
-              übernommen
-            </div>
+
             <div style={{ marginTop: 10 }}>
               <b>Gebühren:</b>
               <ul style={{ margin: "5px 0", paddingLeft: 20 }}>
