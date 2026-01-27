@@ -1,0 +1,509 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:e069d8db-9f16-40eb-a812-842d91c3eacc",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:e069d8db-9f16-40eb-a812-842d91c3eacc",
+        "name": "Watermark-Bodenfeuchtesensor - Peter-Hansen-Platz - 04",
+        "Base64": "dgAAKqMAAB/OAAAdyQAAT3UIzyOACM9V8AFk",
+        "timeStamp": "2026-01-26T17:43:30.698303+00:00",
+        "timeStamp__observedAt": "2026-01-26T17:43:30.698Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2026-01-26T17:43:30.698Z",
+        "Batteriespannung": 3540,
+        "Batteriespannung__observedAt": "2026-01-26T17:43:30.698Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2026-01-26T17:43:30.698Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2026-01-26T17:43:30.698Z",
+        "Widerstand_Steckplatz_1": 1091.5,
+        "Widerstand_Steckplatz_1__observedAt": "2026-01-26T17:43:30.698Z",
+        "Widerstand_Steckplatz_2": 814.2,
+        "Widerstand_Steckplatz_2__observedAt": "2026-01-26T17:43:30.698Z",
+        "Widerstand_Steckplatz_3": 762.5,
+        "Widerstand_Steckplatz_3__observedAt": "2026-01-26T17:43:30.698Z",
+        "Widerstand_Steckplatz_4": 2034.1,
+        "Widerstand_Steckplatz_4__observedAt": "2026-01-26T17:43:30.698Z",
+        "Widerstand_Steckplatz_5": 14779276.8,
+        "Widerstand_Steckplatz_5__observedAt": "2026-01-26T17:43:30.698Z",
+        "Widerstand_Steckplatz_6": 14780568,
+        "Widerstand_Steckplatz_6__observedAt": "2026-01-26T17:43:30.698Z",
+        "dateCreated": "2022-04-04T05:17:26.050551Z",
+        "dateObserved": "2026-01-26T17:43:30.698Z",
+        "dateObserved__observedAt": "2026-01-26T17:43:30.698Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.21653,
+          51.27462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:085a8c5c-09fd-4469-afea-29862d3402e3",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:085a8c5c-09fd-4469-afea-29862d3402e3",
+        "name": "Watermark-Bodenfeuchtesensor - Peter-Hansen-Platz - 05",
+        "Base64": "dQAAMEIAACaqAAAnpwAAVNoHuVDQB8YGoAFk",
+        "timeStamp": "2026-01-26T12:58:34.033772+00:00",
+        "timeStamp__observedAt": "2026-01-26T12:58:34.033Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2026-01-26T12:58:34.033Z",
+        "Batteriespannung": 3510,
+        "Batteriespannung__observedAt": "2026-01-26T12:58:34.033Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2026-01-26T12:58:34.033Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2026-01-26T12:58:34.033Z",
+        "Widerstand_Steckplatz_1": 1235.4,
+        "Widerstand_Steckplatz_1__observedAt": "2026-01-26T12:58:34.033Z",
+        "Widerstand_Steckplatz_2": 989.8,
+        "Widerstand_Steckplatz_2__observedAt": "2026-01-26T12:58:34.033Z",
+        "Widerstand_Steckplatz_3": 1015.1,
+        "Widerstand_Steckplatz_3__observedAt": "2026-01-26T12:58:34.033Z",
+        "Widerstand_Steckplatz_4": 2172.2,
+        "Widerstand_Steckplatz_4__observedAt": "2026-01-26T12:58:34.033Z",
+        "Widerstand_Steckplatz_5": 12958536,
+        "Widerstand_Steckplatz_5__observedAt": "2026-01-26T12:58:34.033Z",
+        "Widerstand_Steckplatz_6": 13041833.6,
+        "Widerstand_Steckplatz_6__observedAt": "2026-01-26T12:58:34.033Z",
+        "dateCreated": "2022-04-04T05:18:15.425972Z",
+        "dateObserved": "2026-01-26T12:58:34.033Z",
+        "dateObserved__observedAt": "2026-01-26T12:58:34.033Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.21664,
+          51.27464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:d2dbe996-5cc4-4c80-aeda-6e76e5bfd6cf",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:d2dbe996-5cc4-4c80-aeda-6e76e5bfd6cf",
+        "name": "Watermark-Bodenfeuchtesensor - Peter-Hansen-Platz - 02",
+        "Base64": "cgAAWSQAACl2AAAvxgAAVTkHhxp4B4dO4AFk",
+        "timeStamp": "2026-01-26T18:44:02.722699+00:00",
+        "timeStamp__observedAt": "2026-01-26T18:44:02.722Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2026-01-26T18:44:02.722Z",
+        "Batteriespannung": 3420,
+        "Batteriespannung__observedAt": "2026-01-26T18:44:02.722Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2026-01-26T18:44:02.722Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2026-01-26T18:44:02.722Z",
+        "Widerstand_Steckplatz_1": 2282,
+        "Widerstand_Steckplatz_1__observedAt": "2026-01-26T18:44:02.722Z",
+        "Widerstand_Steckplatz_2": 1061.4,
+        "Widerstand_Steckplatz_2__observedAt": "2026-01-26T18:44:02.722Z",
+        "Widerstand_Steckplatz_3": 1223,
+        "Widerstand_Steckplatz_3__observedAt": "2026-01-26T18:44:02.722Z",
+        "Widerstand_Steckplatz_4": 2181.7,
+        "Widerstand_Steckplatz_4__observedAt": "2026-01-26T18:44:02.722Z",
+        "Widerstand_Steckplatz_5": 12629464.8,
+        "Widerstand_Steckplatz_5__observedAt": "2026-01-26T18:44:02.722Z",
+        "Widerstand_Steckplatz_6": 12630806.4,
+        "Widerstand_Steckplatz_6__observedAt": "2026-01-26T18:44:02.722Z",
+        "dateCreated": "2022-04-04T04:54:15.048636Z",
+        "dateObserved": "2026-01-26T18:44:02.722Z",
+        "dateObserved__observedAt": "2026-01-26T18:44:02.722Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.21659,
+          51.27477
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:b2079ff1-3982-4862-9d9e-6ea8fa50ab93",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:b2079ff1-3982-4862-9d9e-6ea8fa50ab93",
+        "name": "Watermark-Bodenfeuchtesensor - von der Heydt Platz - 04",
+        "Base64": "dwACN4YAAiWVAAIiVAACghACYloAAmJaAAFk",
+        "timeStamp": "2025-08-25T18:30:15.754893+00:00",
+        "timeStamp__observedAt": "2025-08-25T18:30:15.754Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2025-08-25T18:30:15.754Z",
+        "Batteriespannung": 3570,
+        "Batteriespannung__observedAt": "2025-08-25T18:30:15.754Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2025-08-25T18:30:15.754Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2025-08-25T18:30:15.754Z",
+        "Widerstand_Steckplatz_1": 14528.6,
+        "Widerstand_Steckplatz_1__observedAt": "2025-08-25T18:30:15.754Z",
+        "Widerstand_Steckplatz_2": 14069.3,
+        "Widerstand_Steckplatz_2__observedAt": "2025-08-25T18:30:15.754Z",
+        "Widerstand_Steckplatz_3": 13986,
+        "Widerstand_Steckplatz_3__observedAt": "2025-08-25T18:30:15.754Z",
+        "Widerstand_Steckplatz_4": 16436.8,
+        "Widerstand_Steckplatz_4__observedAt": "2025-08-25T18:30:15.754Z",
+        "Widerstand_Steckplatz_5": 4000000,
+        "Widerstand_Steckplatz_5__observedAt": "2025-08-25T18:30:15.754Z",
+        "Widerstand_Steckplatz_6": 4000000,
+        "Widerstand_Steckplatz_6__observedAt": "2025-08-25T18:30:15.754Z",
+        "dateCreated": "2022-04-04T05:23:35.627599Z",
+        "dateObserved": "2025-08-25T18:30:15.754Z",
+        "dateObserved__observedAt": "2025-08-25T18:30:15.754Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.14502,
+          51.25735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:f3bb9d14-8dee-49da-bb97-ad0127618093",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:f3bb9d14-8dee-49da-bb97-ad0127618093",
+        "name": "Watermark-Bodenfeuchtesensor - von der Heydt Platz - 01",
+        "Base64": "dAAAVvQAABDbAAAh2gAANOgHTZ/QB02oYAFk",
+        "timeStamp": "2026-01-26T16:47:05.80901+00:00",
+        "timeStamp__observedAt": "2026-01-26T16:47:05.809Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2026-01-26T16:47:05.809Z",
+        "Batteriespannung": 3480,
+        "Batteriespannung__observedAt": "2026-01-26T16:47:05.809Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2026-01-26T16:47:05.809Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2026-01-26T16:47:05.809Z",
+        "Widerstand_Steckplatz_1": 2226,
+        "Widerstand_Steckplatz_1__observedAt": "2026-01-26T16:47:05.809Z",
+        "Widerstand_Steckplatz_2": 431.5,
+        "Widerstand_Steckplatz_2__observedAt": "2026-01-26T16:47:05.809Z",
+        "Widerstand_Steckplatz_3": 866.6,
+        "Widerstand_Steckplatz_3__observedAt": "2026-01-26T16:47:05.809Z",
+        "Widerstand_Steckplatz_4": 1354.4,
+        "Widerstand_Steckplatz_4__observedAt": "2026-01-26T16:47:05.809Z",
+        "Widerstand_Steckplatz_5": 12252769.6,
+        "Widerstand_Steckplatz_5__observedAt": "2026-01-26T16:47:05.809Z",
+        "Widerstand_Steckplatz_6": 12252988.8,
+        "Widerstand_Steckplatz_6__observedAt": "2026-01-26T16:47:05.809Z",
+        "dateCreated": "2022-04-04T05:19:02.116616Z",
+        "dateObserved": "2026-01-26T16:47:05.809Z",
+        "dateObserved__observedAt": "2026-01-26T16:47:05.809Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.14521,
+          51.2573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:6a91868e-69f5-4ac3-b9a7-3ed0ec032b6c",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:6a91868e-69f5-4ac3-b9a7-3ed0ec032b6c",
+        "name": "Watermark-Bodenfeuchtesensor - Peter-Hansen-Platz - 01",
+        "Base64": "PgAAM6gAACgEAAC5IQAAVYwM4s2gDOFrEAFk",
+        "timeStamp": "2026-01-23T06:34:23.824585+00:00",
+        "timeStamp__observedAt": "2026-01-23T06:34:23.824Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2026-01-23T06:34:23.824Z",
+        "Batteriespannung": 1860,
+        "Batteriespannung__observedAt": "2026-01-23T06:34:23.824Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2026-01-23T06:34:23.824Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2026-01-23T06:34:23.824Z",
+        "Widerstand_Steckplatz_1": 1322.4,
+        "Widerstand_Steckplatz_1__observedAt": "2026-01-23T06:34:23.824Z",
+        "Widerstand_Steckplatz_2": 1024.4,
+        "Widerstand_Steckplatz_2__observedAt": "2026-01-23T06:34:23.824Z",
+        "Widerstand_Steckplatz_3": 4739.3,
+        "Widerstand_Steckplatz_3__observedAt": "2026-01-23T06:34:23.824Z",
+        "Widerstand_Steckplatz_4": 2190,
+        "Widerstand_Steckplatz_4__observedAt": "2026-01-23T06:34:23.824Z",
+        "Widerstand_Steckplatz_5": 21619036.8,
+        "Widerstand_Steckplatz_5__observedAt": "2026-01-23T06:34:23.824Z",
+        "Widerstand_Steckplatz_6": 21609960,
+        "Widerstand_Steckplatz_6__observedAt": "2026-01-23T06:34:23.824Z",
+        "dateCreated": "2022-04-04T04:53:20.959716Z",
+        "dateObserved": "2026-01-23T06:34:23.824Z",
+        "dateObserved__observedAt": "2026-01-23T06:34:23.824Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2167,
+          51.27479
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:fc4c5898-2bc1-4635-acb5-52e29e848dc9",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:fc4c5898-2bc1-4635-acb5-52e29e848dc9",
+        "name": "Watermark-Bodenfeuchtesensor - Berliner Straße - 01",
+        "Base64": "dwJiWgACYloAAmJaAAJiWgACYloAAmJaAAFk",
+        "timeStamp": "2025-09-10T07:15:08.796726+00:00",
+        "timeStamp__observedAt": "2025-09-10T07:15:08.796Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2025-09-10T07:15:08.796Z",
+        "Batteriespannung": 3570,
+        "Batteriespannung__observedAt": "2025-09-10T07:15:08.796Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2025-09-10T07:15:08.796Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2025-09-10T07:15:08.796Z",
+        "Widerstand_Steckplatz_1": 4000000,
+        "Widerstand_Steckplatz_1__observedAt": "2025-09-10T07:15:08.796Z",
+        "Widerstand_Steckplatz_2": 4000000,
+        "Widerstand_Steckplatz_2__observedAt": "2025-09-10T07:15:08.796Z",
+        "Widerstand_Steckplatz_3": 4000000,
+        "Widerstand_Steckplatz_3__observedAt": "2025-09-10T07:15:08.796Z",
+        "Widerstand_Steckplatz_4": 4000000,
+        "Widerstand_Steckplatz_4__observedAt": "2025-09-10T07:15:08.796Z",
+        "Widerstand_Steckplatz_5": 4000000,
+        "Widerstand_Steckplatz_5__observedAt": "2025-09-10T07:15:08.796Z",
+        "Widerstand_Steckplatz_6": 4000000,
+        "Widerstand_Steckplatz_6__observedAt": "2025-09-10T07:15:08.796Z",
+        "dateCreated": "2022-04-04T04:16:24.532993Z",
+        "dateObserved": "2025-09-10T07:15:08.796Z",
+        "dateObserved__observedAt": "2025-09-10T07:15:08.796Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.222794,
+          51.275513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:e277bdde-c03b-46c9-954c-b48bf7e8e079",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:e277bdde-c03b-46c9-954c-b48bf7e8e079",
+        "name": "Watermark-Bodenfeuchtesensor - Berliner Straße - 02",
+        "Base64": "dAAAUP0AAC4IAAA4QwAAT6sIUnYQCFnLgAFk",
+        "timeStamp": "2026-01-26T20:14:41.516894+00:00",
+        "timeStamp__observedAt": "2026-01-26T20:14:41.516Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2026-01-26T20:14:41.516Z",
+        "Batteriespannung": 3480,
+        "Batteriespannung__observedAt": "2026-01-26T20:14:41.516Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2026-01-26T20:14:41.516Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2026-01-26T20:14:41.516Z",
+        "Widerstand_Steckplatz_1": 2073.3,
+        "Widerstand_Steckplatz_1__observedAt": "2026-01-26T20:14:41.516Z",
+        "Widerstand_Steckplatz_2": 1178.4,
+        "Widerstand_Steckplatz_2__observedAt": "2026-01-26T20:14:41.516Z",
+        "Widerstand_Steckplatz_3": 1440.3,
+        "Widerstand_Steckplatz_3__observedAt": "2026-01-26T20:14:41.516Z",
+        "Widerstand_Steckplatz_4": 2039.5,
+        "Widerstand_Steckplatz_4__observedAt": "2026-01-26T20:14:41.516Z",
+        "Widerstand_Steckplatz_5": 13962190.4,
+        "Widerstand_Steckplatz_5__observedAt": "2026-01-26T20:14:41.516Z",
+        "Widerstand_Steckplatz_6": 14010252.8,
+        "Widerstand_Steckplatz_6__observedAt": "2026-01-26T20:14:41.516Z",
+        "dateCreated": "2022-04-04T04:18:32.454943Z",
+        "dateObserved": "2026-01-26T20:14:41.516Z",
+        "dateObserved__observedAt": "2026-01-26T20:14:41.516Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.222474,
+          51.275509
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:73ab6efa-9ddc-4927-9356-660626a433dd",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:73ab6efa-9ddc-4927-9356-660626a433dd",
+        "name": "Watermark-Bodenfeuchtesensor - von der Heydt Platz - 02",
+        "Base64": "cQAAKygAAErtAAA1GQAANzgHmr6gB6DAcAFk",
+        "timeStamp": "2026-01-26T16:37:58.063985+00:00",
+        "timeStamp__observedAt": "2026-01-26T16:37:58.063Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2026-01-26T16:37:58.063Z",
+        "Batteriespannung": 3390,
+        "Batteriespannung__observedAt": "2026-01-26T16:37:58.063Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2026-01-26T16:37:58.063Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2026-01-26T16:37:58.063Z",
+        "Widerstand_Steckplatz_1": 1104.8,
+        "Widerstand_Steckplatz_1__observedAt": "2026-01-26T16:37:58.063Z",
+        "Widerstand_Steckplatz_2": 1918.1,
+        "Widerstand_Steckplatz_2__observedAt": "2026-01-26T16:37:58.063Z",
+        "Widerstand_Steckplatz_3": 1359.3,
+        "Widerstand_Steckplatz_3__observedAt": "2026-01-26T16:37:58.063Z",
+        "Widerstand_Steckplatz_4": 1413.6,
+        "Widerstand_Steckplatz_4__observedAt": "2026-01-26T16:37:58.063Z",
+        "Widerstand_Steckplatz_5": 12758185.6,
+        "Widerstand_Steckplatz_5__observedAt": "2026-01-26T16:37:58.063Z",
+        "Widerstand_Steckplatz_6": 12797553.6,
+        "Widerstand_Steckplatz_6__observedAt": "2026-01-26T16:37:58.063Z",
+        "dateCreated": "2022-04-04T05:21:57.914676Z",
+        "dateObserved": "2026-01-26T16:37:58.063Z",
+        "dateObserved__observedAt": "2026-01-26T16:37:58.063Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.14517,
+          51.25739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:1238748a-1095-40f6-a4e8-75505d27438c",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:1238748a-1095-40f6-a4e8-75505d27438c",
+        "name": "Watermark-Bodenfeuchtesensor - Berliner Straße - 03",
+        "Base64": "dAAASQsAACjnAAAcnwAAeLYIldIgCIZf8AFk",
+        "timeStamp": "2026-01-26T20:37:40.077752+00:00",
+        "timeStamp__observedAt": "2026-01-26T20:37:40.077Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2026-01-26T20:37:40.077Z",
+        "Batteriespannung": 3480,
+        "Batteriespannung__observedAt": "2026-01-26T20:37:40.077Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2026-01-26T20:37:40.077Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2026-01-26T20:37:40.077Z",
+        "Widerstand_Steckplatz_1": 1869.9,
+        "Widerstand_Steckplatz_1__observedAt": "2026-01-26T20:37:40.077Z",
+        "Widerstand_Steckplatz_2": 1047.1,
+        "Widerstand_Steckplatz_2__observedAt": "2026-01-26T20:37:40.077Z",
+        "Widerstand_Steckplatz_3": 732.7,
+        "Widerstand_Steckplatz_3__observedAt": "2026-01-26T20:37:40.077Z",
+        "Widerstand_Steckplatz_4": 3090.2,
+        "Widerstand_Steckplatz_4__observedAt": "2026-01-26T20:37:40.077Z",
+        "Widerstand_Steckplatz_5": 14403638.4,
+        "Widerstand_Steckplatz_5__observedAt": "2026-01-26T20:37:40.077Z",
+        "Widerstand_Steckplatz_6": 14302411.2,
+        "Widerstand_Steckplatz_6__observedAt": "2026-01-26T20:37:40.077Z",
+        "dateCreated": "2022-04-04T04:19:59.284900Z",
+        "dateObserved": "2026-01-26T20:37:40.077Z",
+        "dateObserved__observedAt": "2026-01-26T20:37:40.077Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.221898,
+          51.275485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:eb900a34-4eb5-41f0-8fdf-c2007e6c07d4",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:eb900a34-4eb5-41f0-8fdf-c2007e6c07d4",
+        "name": "Watermark-Bodenfeuchtesensor - Berliner Straße - 05",
+        "Base64": "dAAAVQkAAD4YAAAqBAAAauYH6o9AB9cCwAFk",
+        "timeStamp": "2026-01-26T16:17:01.757308+00:00",
+        "timeStamp__observedAt": "2026-01-26T16:17:01.757Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2026-01-26T16:17:01.757Z",
+        "Batteriespannung": 3480,
+        "Batteriespannung__observedAt": "2026-01-26T16:17:01.757Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2026-01-26T16:17:01.757Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2026-01-26T16:17:01.757Z",
+        "Widerstand_Steckplatz_1": 2176.9,
+        "Widerstand_Steckplatz_1__observedAt": "2026-01-26T16:17:01.757Z",
+        "Widerstand_Steckplatz_2": 1589.6,
+        "Widerstand_Steckplatz_2__observedAt": "2026-01-26T16:17:01.757Z",
+        "Widerstand_Steckplatz_3": 1075.6,
+        "Widerstand_Steckplatz_3__observedAt": "2026-01-26T16:17:01.757Z",
+        "Widerstand_Steckplatz_4": 2736.6,
+        "Widerstand_Steckplatz_4__observedAt": "2026-01-26T16:17:01.757Z",
+        "Widerstand_Steckplatz_5": 13281260.8,
+        "Widerstand_Steckplatz_5__observedAt": "2026-01-26T16:17:01.757Z",
+        "Widerstand_Steckplatz_6": 13153145.6,
+        "Widerstand_Steckplatz_6__observedAt": "2026-01-26T16:17:01.757Z",
+        "dateCreated": "2022-04-04T04:21:56.514402Z",
+        "dateObserved": "2026-01-26T16:17:01.757Z",
+        "dateObserved__observedAt": "2026-01-26T16:17:01.757Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.21721,
+          51.27522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:2715d7ec-a045-4e3b-bf45-655aca4ce2f4",
+      "properties": {
+        "entityType": "ARBOR",
+        "id": "urn:ngsi-ld:2715d7ec-a045-4e3b-bf45-655aca4ce2f4",
+        "name": "Watermark-Bodenfeuchtesensor - Peter-Hansen-Platz - 03",
+        "Base64": "dQAAllkACaKlAAX/OgAzaDMDPTqsAaBfUgFk",
+        "timeStamp": "2026-01-25T17:55:59.564896+00:00",
+        "timeStamp__observedAt": "2026-01-25T17:55:59.564Z",
+        "Nachrichtentyp": 1,
+        "Nachrichtentyp__observedAt": "2026-01-25T17:55:59.564Z",
+        "Batteriespannung": 3510,
+        "Batteriespannung__observedAt": "2026-01-25T17:55:59.564Z",
+        "Firmwarerevision": 1,
+        "Firmwarerevision__observedAt": "2026-01-25T17:55:59.564Z",
+        "Hardwarerevision": 3,
+        "Hardwarerevision__observedAt": "2026-01-25T17:55:59.564Z",
+        "Widerstand_Steckplatz_1": 3848.9,
+        "Widerstand_Steckplatz_1__observedAt": "2026-01-25T17:55:59.564Z",
+        "Widerstand_Steckplatz_2": 63146.1,
+        "Widerstand_Steckplatz_2__observedAt": "2026-01-25T17:55:59.564Z",
+        "Widerstand_Steckplatz_3": 39301.8,
+        "Widerstand_Steckplatz_3__observedAt": "2026-01-25T17:55:59.564Z",
+        "Widerstand_Steckplatz_4": 336901.1,
+        "Widerstand_Steckplatz_4__observedAt": "2026-01-25T17:55:59.564Z",
+        "Widerstand_Steckplatz_5": 5434436.4,
+        "Widerstand_Steckplatz_5__observedAt": "2026-01-25T17:55:59.564Z",
+        "Widerstand_Steckplatz_6": 2728737.8,
+        "Widerstand_Steckplatz_6__observedAt": "2026-01-25T17:55:59.564Z",
+        "dateCreated": "2022-04-04T05:16:27.781375Z",
+        "dateObserved": "2026-01-25T17:55:59.564Z",
+        "dateObserved__observedAt": "2026-01-25T17:55:59.564Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.21646,
+          51.27474
+        ]
+      }
+    }
+  ]
+}
