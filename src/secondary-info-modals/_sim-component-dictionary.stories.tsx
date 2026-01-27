@@ -11,6 +11,9 @@ import VorhabenkarteStory, {
   SecondaryInfo as Vorhabenkarte,
 } from "./_vorhabenkarte-sim.stories";
 import AlkisStory, { SecondaryInfo as Alkis } from "./_alkis-sim.stories";
+import BodenfeuchteStory, {
+  SecondaryInfo as Bodenfeuchte,
+} from "./_bodenfeuchte-sim.stories";
 import SIMComponentDictionary from ".";
 import { PI_VALUES } from "@carma/math";
 
@@ -66,3 +69,6 @@ export { Vorhabenkarte };
 
 Alkis.argTypes = AlkisStory.argTypes;
 export { Alkis };
+
+Bodenfeuchte.argTypes = BodenfeuchteStory.argTypes;
+export { Bodenfeuchte };
