@@ -7,13 +7,113 @@ import sensorIoplantImage from "./sensor_ioplant.png";
 import {
   getSensorType,
   getLocationKey,
-  getSensorTypeLabel,
   getStandortbeschreibung,
   getBodenkundeprotokoll,
   getAllgemeineInformationen,
   type Bodenkundeprotokoll,
+  type SensorType,
 } from "./bodenfeuchteContent";
 import texts from "./_data/bodenfeuchteTexts.json";
+
+const fmtValue = (v: unknown, unit: string): string => {
+  if (typeof v !== "number" || v === 0) return "–";
+  return v.toFixed(1).replace(".", ",") + "\u00A0" + unit;
+};
+
+const fmtResistance = (v: unknown): string => {
+  if (typeof v !== "number" || v === 0) return "–";
+  if (v >= 1_000_000)
+    return (v / 1_000_000).toFixed(1).replace(".", ",") + "\u00A0MΩ";
+  if (v >= 1_000)
+    return (v / 1_000).toFixed(1).replace(".", ",") + "\u00A0kΩ";
+  return v.toFixed(1).replace(".", ",") + "\u00A0Ω";
+};
+
+const thLeft: React.CSSProperties = {
+  textAlign: "left",
+  padding: "3px 8px",
+  fontWeight: "bold",
+  whiteSpace: "nowrap",
+};
+const thRight: React.CSSProperties = { ...thLeft, textAlign: "right" };
+const tdLeft: React.CSSProperties = {
+  padding: "3px 8px",
+  whiteSpace: "nowrap",
+};
+const tdRight: React.CSSProperties = { ...tdLeft, textAlign: "right" };
+const tblStyle: React.CSSProperties = {
+  borderCollapse: "collapse",
+  fontSize: "100%",
+};
+
+const renderIoplantMeasurements = (sensor: Record<string, unknown>) => {
+  const rows = [
+    { d: "30 cm", m: sensor.soilMoisture_Percent_1, t: sensor.temperatureAtDepth_1 },
+    { d: "60 cm", m: sensor.soilMoisture_Percent_2, t: sensor.temperatureAtDepth_2 },
+    { d: "90 cm", m: sensor.soilMoisture_Percent_3, t: sensor.temperatureAtDepth_3 },
+  ];
+  return (
+    <table style={tblStyle}>
+      <thead>
+        <tr style={{ borderBottom: "1px solid #ccc" }}>
+          <th style={thLeft}>Tiefe</th>
+          <th style={thRight}>Feuchte</th>
+          <th style={thRight}>Temperatur</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((r) => (
+          <tr key={r.d} style={{ borderBottom: "1px solid #eee" }}>
+            <td style={tdLeft}>{r.d}</td>
+            <td style={tdRight}>{fmtValue(r.m, "%")}</td>
+            <td style={tdRight}>{fmtValue(r.t, "°C")}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+const renderWatermarkMeasurements = (sensor: Record<string, unknown>) => {
+  const slots = [1, 2, 3, 4, 5, 6].map((i) => ({
+    n: i,
+    val: fmtResistance(sensor[`Widerstand_Steckplatz_${i}`]),
+  }));
+  const renderGroup = (group: typeof slots) => (
+    <table style={tblStyle}>
+      <thead>
+        <tr style={{ borderBottom: "1px solid #ccc" }}>
+          <th style={thLeft}>Kanal</th>
+          <th style={thRight}>Widerstand</th>
+        </tr>
+      </thead>
+      <tbody>
+        {group.map((s) => (
+          <tr key={s.n} style={{ borderBottom: "1px solid #eee" }}>
+            <td style={tdLeft}>{s.n}</td>
+            <td style={tdRight}>{s.val}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+  return (
+    <div style={{ display: "flex", gap: 16 }}>
+      {renderGroup(slots.slice(0, 3))}
+      {renderGroup(slots.slice(3, 6))}
+    </div>
+  );
+};
+
+const renderMeasurements = (
+  sensor: Record<string, unknown>,
+  sensorType: SensorType,
+) => {
+  if (sensorType === "watermark") return renderWatermarkMeasurements(sensor);
+  if (sensorType === "tree" || sensorType === "dike")
+    return renderIoplantMeasurements(sensor);
+  return null;
+};
 
 type FooterProps = {
   close: () => void;
@@ -263,7 +363,6 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
 
   const name = (sensor.name as string) ?? "";
   const sensorType = getSensorType(name);
-  const sensorTypeLabel = getSensorTypeLabel(sensorType);
   const locationKey = getLocationKey(name, sensorType);
   const standort = getStandortbeschreibung(locationKey, sensorType);
   const isIoplant = sensorType === "tree" || sensorType === "dike";
@@ -367,18 +466,24 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
         inStorybook ? { windowSize: { width: 800, height: 1000 } } : {}
       }
       titleIconName="info-circle"
-      title={`Datenblatt: Bodenfeuchtesensor (${sensorTypeLabel})`}
+      title={`Datenblatt: ${name}`}
       mainSection={
-        <div style={{ width: "100%", minHeight: 180, overflow: "hidden" }}>
-          <div
-            style={{
-              textAlign: "center",
-              float: "right",
-              paddingLeft: 10,
-              paddingRight: 100,
-              paddingBottom: 10,
-            }}
-          >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 20,
+            padding: "10px",
+            paddingTop: 0,
+          }}
+        >
+          <div style={{ flex: "1 0 300px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+            {renderMeasurements(sensor, sensorType)}
+            <div style={{ color: "#666", fontSize: "90%", marginTop: 8 }}>
+              Letzte Messung: {formattedDate}
+            </div>
+          </div>
+          <div style={{ flex: "1 1 300px", minWidth: 0, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <img
               alt="Schematische Darstellung Bodenfeuchtesensor"
               src={
@@ -388,22 +493,6 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
               }
               height="180"
             />
-          </div>
-          <div
-            style={{
-              fontSize: "115%",
-              padding: "10px",
-              paddingTop: "0px",
-            }}
-          >
-            <div>
-              <b>Sensor:</b>
-              <p>{name}</p>
-            </div>
-            <div>
-              <b>Letzte Messung:</b>
-              <p>{formattedDate}</p>
-            </div>
           </div>
         </div>
       }
