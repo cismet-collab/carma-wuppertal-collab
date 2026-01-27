@@ -1,5 +1,5 @@
 import React, { type ComponentType } from "react";
-import type { ChartOptions } from "chart.js";
+
 import SecondaryInfoPanelSection from "react-cismap/topicmaps/SecondaryInfoPanelSection";
 import SecondaryInfo from "react-cismap/topicmaps/SecondaryInfo";
 import { opendataLinkSections } from "../luftmessstationen/OpendataLinkSections";

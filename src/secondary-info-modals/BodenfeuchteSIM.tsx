@@ -1,4 +1,7 @@
-import React, { type ComponentType } from "react";
+import React, { useState, useEffect, type ComponentType } from "react";
+import type { ChartOptions } from "chart.js";
+import { Line } from "react-chartjs-2";
+import "chart.js/auto";
 import SecondaryInfoPanelSection from "react-cismap/topicmaps/SecondaryInfoPanelSection";
 import SecondaryInfo from "react-cismap/topicmaps/SecondaryInfo";
 import { genericSecondaryInfoFooterFactory } from "../commons";
@@ -113,6 +116,190 @@ const renderMeasurements = (
   if (sensorType === "tree" || sensorType === "dike")
     return renderIoplantMeasurements(sensor);
   return null;
+};
+
+const HISTORICAL_BASE_URL =
+  "https://tiles.cismet.de/bodenfeuchtesensoren_historical";
+
+const SKIP_HISTORICAL_KEYS = new Set([
+  "id",
+  "type",
+  "name",
+  "dateCreated",
+  "dateObserved",
+  "timeStamp",
+  "location",
+  "ProtocolID",
+]);
+
+export interface HistoricalEntry {
+  type: string;
+  value: number | string;
+  instanceId: string;
+  observedAt: string;
+}
+
+export type HistoricalData = Record<string, unknown> & {
+  id?: string;
+  type?: string;
+};
+
+function getHistoricalUrl(entityId: string): string {
+  return `${HISTORICAL_BASE_URL}/${entityId.replace(/:/g, "_")}.json`;
+}
+
+function historicalDataToCsv(data: HistoricalData): string {
+  const attrs: string[] = [];
+  const attrEntries = new Map<string, HistoricalEntry[]>();
+
+  for (const [key, val] of Object.entries(data)) {
+    if (SKIP_HISTORICAL_KEYS.has(key)) continue;
+    if (!Array.isArray(val) || val.length === 0) continue;
+    if (!val[0]?.observedAt) continue;
+    attrs.push(key);
+    attrEntries.set(key, val as HistoricalEntry[]);
+  }
+  attrs.sort();
+
+  const tsRows = new Map<string, Map<string, number | string>>();
+  for (const attr of attrs) {
+    for (const entry of attrEntries.get(attr)!) {
+      if (!tsRows.has(entry.observedAt))
+        tsRows.set(entry.observedAt, new Map());
+      tsRows.get(entry.observedAt)!.set(attr, entry.value);
+    }
+  }
+
+  const sorted = [...tsRows.keys()].sort();
+  const header = ["timestamp", ...attrs].join(";");
+  const rows = sorted.map((ts) => {
+    const row = tsRows.get(ts)!;
+    const vals = attrs.map((a) => {
+      const v = row.get(a);
+      return v !== undefined && v !== null ? String(v) : "";
+    });
+    return [ts, ...vals].join(";");
+  });
+
+  return [header, ...rows].join("\n");
+}
+
+function triggerCsvDownload(csv: string, filename: string) {
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+const CHART_COLORS = [
+  "#1f77b4",
+  "#ff7f0e",
+  "#2ca02c",
+  "#d62728",
+  "#9467bd",
+  "#8c564b",
+];
+
+interface SeriesConfig {
+  attr: string;
+  label: string;
+}
+
+const IOPLANT_MOISTURE_SERIES: SeriesConfig[] = [
+  { attr: "soilMoisture_Percent_1", label: "30 cm" },
+  { attr: "soilMoisture_Percent_2", label: "60 cm" },
+  { attr: "soilMoisture_Percent_3", label: "90 cm" },
+];
+
+const IOPLANT_TEMP_SERIES: SeriesConfig[] = [
+  { attr: "temperatureAtDepth_1", label: "30 cm" },
+  { attr: "temperatureAtDepth_2", label: "60 cm" },
+  { attr: "temperatureAtDepth_3", label: "90 cm" },
+];
+
+const WATERMARK_SERIES: SeriesConfig[] = [
+  { attr: "Widerstand_Steckplatz_1", label: "Kanal 1" },
+  { attr: "Widerstand_Steckplatz_2", label: "Kanal 2" },
+  { attr: "Widerstand_Steckplatz_3", label: "Kanal 3" },
+  { attr: "Widerstand_Steckplatz_4", label: "Kanal 4" },
+  { attr: "Widerstand_Steckplatz_5", label: "Kanal 5" },
+  { attr: "Widerstand_Steckplatz_6", label: "Kanal 6" },
+];
+
+function buildLineChartData(
+  data: HistoricalData,
+  series: SeriesConfig[],
+) {
+  // Collect all unique timestamps across all series and sort them
+  const tsSet = new Set<string>();
+  for (const s of series) {
+    const entries = data[s.attr];
+    if (!Array.isArray(entries)) continue;
+    for (const e of entries) {
+      if (e?.observedAt) tsSet.add(e.observedAt);
+    }
+  }
+  const timestamps = [...tsSet].sort();
+
+  const labels = timestamps.map((ts) =>
+    new Date(ts).toLocaleDateString("de-DE", {
+      day: "2-digit",
+      month: "2-digit",
+    }),
+  );
+
+  const datasets = series
+    .map((s, i) => {
+      const entries = data[s.attr];
+      if (!Array.isArray(entries) || entries.length === 0) return null;
+      const valByTs = new Map<string, number | null>();
+      for (const e of entries) {
+        valByTs.set(
+          e.observedAt,
+          typeof e.value === "number" ? e.value : null,
+        );
+      }
+      return {
+        label: s.label,
+        data: timestamps.map((ts) => valByTs.get(ts) ?? null),
+        borderColor: CHART_COLORS[i % CHART_COLORS.length],
+        backgroundColor: CHART_COLORS[i % CHART_COLORS.length],
+        pointRadius: 0,
+        borderWidth: 1.5,
+        fill: false,
+        tension: 0.1,
+      };
+    })
+    .filter(Boolean);
+
+  return { labels, datasets };
+}
+
+const lineChartOptions: ChartOptions<"line"> = {
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: true,
+      position: "bottom",
+      labels: { boxWidth: 12, padding: 8, font: { size: 11 } },
+    },
+    tooltip: {
+      mode: "index",
+      intersect: false,
+    },
+  },
+  scales: {
+    x: {
+      ticks: { maxTicksLimit: 8, font: { size: 10 } },
+      grid: { display: false },
+    },
+    y: {
+      ticks: { maxTicksLimit: 6 },
+      beginAtZero: false,
+    },
+  },
 };
 
 type FooterProps = {
@@ -358,6 +545,32 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
 }) => {
   const selectedFeature = feature as { properties?: Record<string, unknown> };
   const sensor = selectedFeature?.properties;
+  const entityId = (sensor?.id as string) ?? "";
+
+  const [historicalData, setHistoricalData] = useState<HistoricalData | null>(
+    null,
+  );
+  const [historyLoading, setHistoryLoading] = useState(false);
+
+  useEffect(() => {
+    if (!entityId) return;
+    let cancelled = false;
+    setHistoryLoading(true);
+    fetch(getHistoricalUrl(entityId))
+      .then((res) => (res.ok ? res.json() : Promise.reject(res.statusText)))
+      .then((data) => {
+        if (!cancelled) setHistoricalData(data);
+      })
+      .catch(() => {
+        if (!cancelled) setHistoricalData(null);
+      })
+      .finally(() => {
+        if (!cancelled) setHistoryLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [entityId]);
 
   if (sensor === undefined) return null;
 
@@ -373,6 +586,20 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
   const formattedDate = dateObserved
     ? new Date(dateObserved).toLocaleString("de-DE")
     : "–";
+
+  const historicalDataPointCount = historicalData
+    ? (() => {
+        const ts = new Set<string>();
+        for (const [key, val] of Object.entries(historicalData)) {
+          if (SKIP_HISTORICAL_KEYS.has(key)) continue;
+          if (!Array.isArray(val)) continue;
+          for (const e of val) {
+            if (e?.observedAt) ts.add(e.observedAt);
+          }
+        }
+        return ts.size;
+      })()
+    : 0;
 
   const subSections: JSX.Element[] = [];
 
@@ -395,17 +622,74 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
   );
 
   // 2. Diagramm
-  subSections.push(
-    <SecondaryInfoPanelSection
-      key="diagramm"
-      bsStyle="success"
-      header="Diagramm"
-    >
-      <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
-        <p>tbd.</p>
-      </div>
-    </SecondaryInfoPanelSection>
-  );
+  if (historicalData && historicalDataPointCount > 0) {
+    if (sensorType === "tree" || sensorType === "dike") {
+      const moistureData = buildLineChartData(
+        historicalData,
+        IOPLANT_MOISTURE_SERIES,
+      );
+      const tempData = buildLineChartData(
+        historicalData,
+        IOPLANT_TEMP_SERIES,
+      );
+      subSections.push(
+        <SecondaryInfoPanelSection
+          key="diagramm-feuchte"
+          bsStyle="success"
+          header="Bodenfeuchte (%)"
+        >
+          <div style={{ padding: "10px", paddingTop: 0 }}>
+            <div style={{ height: 300, width: "100%" }}>
+              <Line data={moistureData as any} options={lineChartOptions} />
+            </div>
+          </div>
+        </SecondaryInfoPanelSection>,
+      );
+      subSections.push(
+        <SecondaryInfoPanelSection
+          key="diagramm-temp"
+          bsStyle="success"
+          header="Temperatur (°C)"
+        >
+          <div style={{ padding: "10px", paddingTop: 0 }}>
+            <div style={{ height: 300, width: "100%" }}>
+              <Line data={tempData as any} options={lineChartOptions} />
+            </div>
+          </div>
+        </SecondaryInfoPanelSection>,
+      );
+    } else if (sensorType === "watermark") {
+      const resistanceData = buildLineChartData(
+        historicalData,
+        WATERMARK_SERIES,
+      );
+      subSections.push(
+        <SecondaryInfoPanelSection
+          key="diagramm-widerstand"
+          bsStyle="success"
+          header="Widerstand (Ω)"
+        >
+          <div style={{ padding: "10px", paddingTop: 0 }}>
+            <div style={{ height: 300, width: "100%" }}>
+              <Line data={resistanceData as any} options={lineChartOptions} />
+            </div>
+          </div>
+        </SecondaryInfoPanelSection>,
+      );
+    }
+  } else if (historyLoading) {
+    subSections.push(
+      <SecondaryInfoPanelSection
+        key="diagramm"
+        bsStyle="success"
+        header="Diagramm"
+      >
+        <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
+          <p>Daten werden geladen…</p>
+        </div>
+      </SecondaryInfoPanelSection>,
+    );
+  }
 
   // 3. Datendownload
   subSections.push(
@@ -415,7 +699,30 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
       header="Datendownload"
     >
       <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
-        <p>tbd.</p>
+        <button
+          type="button"
+          className="btn btn-primary btn-sm"
+          disabled={historyLoading || historicalDataPointCount === 0}
+          onClick={() => {
+            if (!historicalData) return;
+            const csv = historicalDataToCsv(historicalData);
+            const filename = `${name.replace(/[^a-zA-Z0-9_\-]/g, "_")}.csv`;
+            triggerCsvDownload(csv, filename);
+          }}
+        >
+          <i
+            className="glyphicon glyphicon-download"
+            style={{ marginRight: 6 }}
+          />
+          {historyLoading
+            ? "Daten werden geladen…"
+            : "Messdaten herunterladen (CSV)"}
+        </button>
+        {!historyLoading && (
+          <span style={{ marginLeft: 10, color: "#666", fontSize: "85%" }}>
+            ({historicalDataPointCount} Datenpunkte)
+          </span>
+        )}
       </div>
     </SecondaryInfoPanelSection>
   );
