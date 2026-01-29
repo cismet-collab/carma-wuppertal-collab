@@ -16,7 +16,7 @@
       },
       "Kaiser Wilhelm Hain": {
         "text": "Hier liegt ein humoser, tonig-lehmiger Boden vor. Er speichert Wasser gut und trocknet nur langsam aus. Auch in längeren Trockenphasen bleibt Restfeuchte erhalten, was zu einer stabilen Verdunstungskühlung führt.",
-        "bodentyp": "Braunerde\u2013Parabraunerde"
+        "bodentyp": "Braunerde - Parabraunerde"
       },
       "Botanischer Garten": {
         "text": "Der Standort besteht aus einem künstlich aufgeschütteten Boden aus Lehm. Man findet hier auch alte Ziegelreste. Das lockere Material lässt Wasser schnell versickern und speichert es nur kurz. Die Bodenfeuchte reagiert sofort auf Regen und Trockenheit, und die Kühlwirkung ist gering.",
@@ -51,10 +51,38 @@
         { "tiefe": "-1 bis 0 cm", "horizont": "Of" }
       ],
       "mineralischerHorizont": [
-        { "tiefe": "30", "horizont": "Ah", "feinboden": "Ut3", "bodenfarbe": "dbn", "humus": "h4-", "bemerkungen": "" },
-        { "tiefe": "46", "horizont": "rAp", "feinboden": "Ut3", "bodenfarbe": "hbn", "humus": "h3", "bemerkungen": "" },
-        { "tiefe": "80", "horizont": "Sw", "feinboden": "Ut3", "bodenfarbe": "gr-bn", "humus": "", "bemerkungen": "40% eh oxidativ, rb reduktiv, Matrix leichte Bleichung" },
-        { "tiefe": "100", "horizont": "Cv", "feinboden": "Lu", "bodenfarbe": "rötl-gr-br", "humus": "", "bemerkungen": "eh oxidativ, rb reduktiv, Skelett x2, devonischer Tonstein" }
+        {
+          "tiefe": "30",
+          "horizont": "Ah",
+          "feinboden": "Ut3",
+          "bodenfarbe": "dbn",
+          "humus": "h4-",
+          "bemerkungen": ""
+        },
+        {
+          "tiefe": "46",
+          "horizont": "rAp",
+          "feinboden": "Ut3",
+          "bodenfarbe": "hbn",
+          "humus": "h3",
+          "bemerkungen": ""
+        },
+        {
+          "tiefe": "80",
+          "horizont": "Sw",
+          "feinboden": "Ut3",
+          "bodenfarbe": "gr-bn",
+          "humus": "",
+          "bemerkungen": "40% eh oxidativ, rb reduktiv, Matrix leichte Bleichung"
+        },
+        {
+          "tiefe": "100",
+          "horizont": "Cv",
+          "feinboden": "Lu",
+          "bodenfarbe": "rötl-gr-br",
+          "humus": "",
+          "bemerkungen": "eh oxidativ, rb reduktiv, Skelett x2, devonischer Tonstein"
+        }
       ]
     },
     "Nordpark (1)": {
@@ -71,10 +99,38 @@
         { "tiefe": "-0,5 bis 0 cm", "horizont": "Oh" }
       ],
       "mineralischerHorizont": [
-        { "tiefe": "18", "horizont": "Ah", "feinboden": "Ut3", "bodenfarbe": "dbn", "humus": "h4+", "bemerkungen": "Skelett x2" },
-        { "tiefe": "40", "horizont": "Bt", "feinboden": "Ut4", "bodenfarbe": "hbn", "humus": "h1", "bemerkungen": "Skelett x2, Grus, Bioturbation" },
-        { "tiefe": "75", "horizont": "Bv", "feinboden": "Ut3", "bodenfarbe": "gr-bn", "humus": "", "bemerkungen": "~5% ed oxidativ, rb reduktiv, Skelett x3-, Matrix gebleicht" },
-        { "tiefe": "98", "horizont": "Cv", "feinboden": "Lu", "bodenfarbe": "hbn", "humus": "", "bemerkungen": "~5% ed oxidativ, Skelett x3-" }
+        {
+          "tiefe": "18",
+          "horizont": "Ah",
+          "feinboden": "Ut3",
+          "bodenfarbe": "dbn",
+          "humus": "h4+",
+          "bemerkungen": "Skelett x2"
+        },
+        {
+          "tiefe": "40",
+          "horizont": "Bt",
+          "feinboden": "Ut4",
+          "bodenfarbe": "hbn",
+          "humus": "h1",
+          "bemerkungen": "Skelett x2, Grus, Bioturbation"
+        },
+        {
+          "tiefe": "75",
+          "horizont": "Bv",
+          "feinboden": "Ut3",
+          "bodenfarbe": "gr-bn",
+          "humus": "",
+          "bemerkungen": "~5% ed oxidativ, rb reduktiv, Skelett x3-, Matrix gebleicht"
+        },
+        {
+          "tiefe": "98",
+          "horizont": "Cv",
+          "feinboden": "Lu",
+          "bodenfarbe": "hbn",
+          "humus": "",
+          "bemerkungen": "~5% ed oxidativ, Skelett x3-"
+        }
       ]
     },
     "Nordpark (2)": {
@@ -90,9 +146,30 @@
         { "tiefe": "-1 bis 0 cm", "horizont": "Oh" }
       ],
       "mineralischerHorizont": [
-        { "tiefe": "10", "horizont": "Ah", "feinboden": "Ut3", "bodenfarbe": "dbn", "humus": "h4+", "bemerkungen": "Skelett x2, Grus" },
-        { "tiefe": "29", "horizont": "Al", "feinboden": "Ut2", "bodenfarbe": "hbn", "humus": "h1", "bemerkungen": "Skelett x2" },
-        { "tiefe": "96", "horizont": "Bt", "feinboden": "Lu/Ut4", "bodenfarbe": "beige", "humus": "", "bemerkungen": "Skelett x2" }
+        {
+          "tiefe": "10",
+          "horizont": "Ah",
+          "feinboden": "Ut3",
+          "bodenfarbe": "dbn",
+          "humus": "h4+",
+          "bemerkungen": "Skelett x2, Grus"
+        },
+        {
+          "tiefe": "29",
+          "horizont": "Al",
+          "feinboden": "Ut2",
+          "bodenfarbe": "hbn",
+          "humus": "h1",
+          "bemerkungen": "Skelett x2"
+        },
+        {
+          "tiefe": "96",
+          "horizont": "Bt",
+          "feinboden": "Lu/Ut4",
+          "bodenfarbe": "beige",
+          "humus": "",
+          "bemerkungen": "Skelett x2"
+        }
       ]
     },
     "Kaiser Wilhelm Hain": {
@@ -107,9 +184,30 @@
         { "tiefe": "-20 bis 0 cm", "horizont": "Oh" }
       ],
       "mineralischerHorizont": [
-        { "tiefe": "13", "horizont": "Ah", "feinboden": "Ut3", "bodenfarbe": "dbn", "humus": "h4+", "bemerkungen": "Skelett x2" },
-        { "tiefe": "57", "horizont": "Bt", "feinboden": "Ut4", "bodenfarbe": "hbn", "humus": "h1", "bemerkungen": "Skelett x2+" },
-        { "tiefe": "70", "horizont": "Cv", "feinboden": "Lu", "bodenfarbe": "beige", "humus": "h0", "bemerkungen": "Skelett x2+" }
+        {
+          "tiefe": "13",
+          "horizont": "Ah",
+          "feinboden": "Ut3",
+          "bodenfarbe": "dbn",
+          "humus": "h4+",
+          "bemerkungen": "Skelett x2"
+        },
+        {
+          "tiefe": "57",
+          "horizont": "Bt",
+          "feinboden": "Ut4",
+          "bodenfarbe": "hbn",
+          "humus": "h1",
+          "bemerkungen": "Skelett x2+"
+        },
+        {
+          "tiefe": "70",
+          "horizont": "Cv",
+          "feinboden": "Lu",
+          "bodenfarbe": "beige",
+          "humus": "h0",
+          "bemerkungen": "Skelett x2+"
+        }
       ]
     },
     "Botanischer Garten": {
@@ -120,8 +218,22 @@
       "bewuchs": "Grasnarbe",
       "anmerkungen": "Bohrkernverlust",
       "mineralischerHorizont": [
-        { "tiefe": "20", "horizont": "Ah", "feinboden": "Lu", "bodenfarbe": "hbn", "humus": "h4", "bemerkungen": "Skelett x2" },
-        { "tiefe": "20+", "horizont": "Dx", "feinboden": "Lu", "bodenfarbe": "hbn", "humus": "", "bemerkungen": "Skelett x2, rigolt, A+B-Boden gemischt, Ziegelbruch" }
+        {
+          "tiefe": "20",
+          "horizont": "Ah",
+          "feinboden": "Lu",
+          "bodenfarbe": "hbn",
+          "humus": "h4",
+          "bemerkungen": "Skelett x2"
+        },
+        {
+          "tiefe": "20+",
+          "horizont": "Dx",
+          "feinboden": "Lu",
+          "bodenfarbe": "hbn",
+          "humus": "",
+          "bemerkungen": "Skelett x2, rigolt, A+B-Boden gemischt, Ziegelbruch"
+        }
       ]
     },
     "Barmer Anlagen": {
@@ -137,10 +249,38 @@
         { "tiefe": "-3 bis 0 cm", "horizont": "Oh" }
       ],
       "mineralischerHorizont": [
-        { "tiefe": "13", "horizont": "Ah", "feinboden": "Ut3", "bodenfarbe": "dbn", "humus": "h4", "bemerkungen": "Skelett x2" },
-        { "tiefe": "23", "horizont": "IBv", "feinboden": "Ut3", "bodenfarbe": "hbn", "humus": "h1", "bemerkungen": "Skelett x2" },
-        { "tiefe": "70", "horizont": "IIBv/ICv", "feinboden": "Ut4", "bodenfarbe": "rötl-hbn", "humus": "", "bemerkungen": "Skelett x3" },
-        { "tiefe": "93", "horizont": "IICv", "feinboden": "Ut4", "bodenfarbe": "beige-hbn", "humus": "", "bemerkungen": "Skelett x4" }
+        {
+          "tiefe": "13",
+          "horizont": "Ah",
+          "feinboden": "Ut3",
+          "bodenfarbe": "dbn",
+          "humus": "h4",
+          "bemerkungen": "Skelett x2"
+        },
+        {
+          "tiefe": "23",
+          "horizont": "IBv",
+          "feinboden": "Ut3",
+          "bodenfarbe": "hbn",
+          "humus": "h1",
+          "bemerkungen": "Skelett x2"
+        },
+        {
+          "tiefe": "70",
+          "horizont": "IIBv/ICv",
+          "feinboden": "Ut4",
+          "bodenfarbe": "rötl-hbn",
+          "humus": "",
+          "bemerkungen": "Skelett x3"
+        },
+        {
+          "tiefe": "93",
+          "horizont": "IICv",
+          "feinboden": "Ut4",
+          "bodenfarbe": "beige-hbn",
+          "humus": "",
+          "bemerkungen": "Skelett x4"
+        }
       ]
     },
     "Leyerbach": {
@@ -150,11 +290,46 @@
       "beprobungstiefe": "140 cm",
       "auffaelligkeiten": "Gebüsch im Park",
       "mineralischerHorizont": [
-        { "tiefe": "10", "horizont": "jAh", "feinboden": "Ut3", "bodenfarbe": "dbn", "humus": "h3", "bemerkungen": "Skelett x1, kleine Ziegeleinschlüsse" },
-        { "tiefe": "40", "horizont": "IjAh", "feinboden": "Ut3", "bodenfarbe": "dbn-hbn", "humus": "h2", "bemerkungen": "Skelett x2, kleine Ziegeleinschlüsse" },
-        { "tiefe": "60", "horizont": "jD", "feinboden": "Tu3", "bodenfarbe": "rötl", "humus": "", "bemerkungen": "Skelett x4" },
-        { "tiefe": "135", "horizont": "jyD", "feinboden": "Ut2", "bodenfarbe": "hbn-dbn-rötl", "humus": "h1", "bemerkungen": "unregelm. ed/es 60% oxidativ, unregelm. rb 20% reduktiv, mineral. Fremdbestandteile 25%, Glasscherben, Asche, einzelne Aggregate, carbonatreich" },
-        { "tiefe": "135+", "horizont": "lC", "feinboden": "Uu", "bodenfarbe": "hbn", "humus": "", "bemerkungen": "Carbonat c3" }
+        {
+          "tiefe": "10",
+          "horizont": "jAh",
+          "feinboden": "Ut3",
+          "bodenfarbe": "dbn",
+          "humus": "h3",
+          "bemerkungen": "Skelett x1, kleine Ziegeleinschlüsse"
+        },
+        {
+          "tiefe": "40",
+          "horizont": "IjAh",
+          "feinboden": "Ut3",
+          "bodenfarbe": "dbn-hbn",
+          "humus": "h2",
+          "bemerkungen": "Skelett x2, kleine Ziegeleinschlüsse"
+        },
+        {
+          "tiefe": "60",
+          "horizont": "jD",
+          "feinboden": "Tu3",
+          "bodenfarbe": "rötl",
+          "humus": "",
+          "bemerkungen": "Skelett x4"
+        },
+        {
+          "tiefe": "135",
+          "horizont": "jyD",
+          "feinboden": "Ut2",
+          "bodenfarbe": "hbn-dbn-rötl",
+          "humus": "h1",
+          "bemerkungen": "unregelm. ed/es 60% oxidativ, unregelm. rb 20% reduktiv, mineral. Fremdbestandteile 25%, Glasscherben, Asche, einzelne Aggregate, carbonatreich"
+        },
+        {
+          "tiefe": "135+",
+          "horizont": "lC",
+          "feinboden": "Uu",
+          "bodenfarbe": "hbn",
+          "humus": "",
+          "bemerkungen": "Carbonat c3"
+        }
       ]
     }
   },
