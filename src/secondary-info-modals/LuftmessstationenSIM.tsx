@@ -15,6 +15,7 @@ import Color from "color";
 import Icon from "react-cismap/commons/Icon";
 
 import { Bar } from "react-chartjs-2";
+//import type { ChartOptions } from "chart.js";
 import "chart.js/auto";
 import { genericSecondaryInfoFooterFactory } from "../commons";
 import { updateUrl } from "../commons/imageUrlManipulation";

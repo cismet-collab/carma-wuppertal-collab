@@ -16,7 +16,7 @@ import {
   type Bodenkundeprotokoll,
   type SensorType,
 } from "./bodenfeuchteContent";
-import texts from "./_data/bodenfeuchteTexts.json";
+import texts from "./_data/bodenfeuchteTexts";
 
 const fmtValue = (v: unknown, unit: string): string => {
   if (typeof v !== "number" || v === 0) return "–";

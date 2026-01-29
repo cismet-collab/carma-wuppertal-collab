@@ -1,0 +1,359 @@
+export default {
+  experimentalPlaceholder:
+    "Bei diesem Standort werden gegenwärtig die Standortbedingungen untersucht. Eine nähere Standortbeschreibung sowie die Beschreibung des Bodentyps folgt sobald der Standort das experimentelle Stadium verlassen hat.",
+  standortbeschreibungen: {
+    tree: {
+      "Nasser Kamp": {
+        text: "Der Boden an diesem Standort besteht aus einem lehmigen Oberboden über dichtem Tonstein. Wasser sammelt sich daher nach Regen kurzzeitig an, kann aber kaum nach unten versickern. Der Boden trocknet anschließend schnell wieder aus und besitzt nur ein begrenztes Speichervermögen. Die Kühlwirkung durch Verdunstung ist gering bis mittel.",
+        bodentyp: "Braunerde-Pseudogley",
+      },
+      "Nordpark (1)": {
+        text: "Dieser sehr trockene Waldboden enthält viele kleine Gesteinsreste (Grus). Wasser versickert schnell, wird aber kaum gespeichert. Der Boden reagiert dadurch deutlich auf Regen und trocknet rasch wieder aus. Die Feuchte schwankt stark, die Kühlwirkung des Bodens ist gering.",
+        bodentyp: "Parabraunerde (erodiert)",
+      },
+      "Nordpark (2)": {
+        text: "Der Waldboden enthält viele kleine Gesteinsreste (Grus) und ist sehr durchlässig, jedoch etwas mächtiger als am Standort Nordpark (1). Wasser versickert schnell, bleibt aber etwas länger im Boden gespeichert. Die Feuchte ist dadurch stabiler als im oberen Nordpark, und die Kühlwirkung erreicht mittlere Werte.",
+        bodentyp: "Parabraunerde",
+      },
+      "Kaiser Wilhelm Hain": {
+        text: "Hier liegt ein humoser, tonig-lehmiger Boden vor. Er speichert Wasser gut und trocknet nur langsam aus. Auch in längeren Trockenphasen bleibt Restfeuchte erhalten, was zu einer stabilen Verdunstungskühlung führt.",
+        bodentyp: "Braunerde - Parabraunerde",
+      },
+      "Botanischer Garten": {
+        text: "Der Standort besteht aus einem künstlich aufgeschütteten Boden aus Lehm. Man findet hier auch alte Ziegelreste. Das lockere Material lässt Wasser schnell versickern und speichert es nur kurz. Die Bodenfeuchte reagiert sofort auf Regen und Trockenheit, und die Kühlwirkung ist gering.",
+        bodentyp: "Deposol (rigolierter Boden)",
+      },
+      "Barmer Anlagen": {
+        text: "Der tiefgründige, tonig-lehmige Waldboden kann Wasser gut aufnehmen und über längere Zeit speichern. Dadurch bleibt der Boden auch in Trockenphasen länger feucht und leistet im Sommer eine deutliche Verdunstungskühlung im Parkbereich.",
+        bodentyp: "Braunerde",
+      },
+      Leyerbach: {
+        text: "Der Boden ist stark von alten Auffüllungen geprägt und enthält Ziegel-, Asche- und Glasteile. Dadurch speichert er Wasser sehr unterschiedlich: manche Bereiche halten Feuchte gut, andere trocknen schnell aus. Insgesamt entsteht ein wechselhaftes Feuchteverhalten mit geringer Kühlwirkung.",
+        bodentyp: "Deposol (auffüllungsgeprägt)",
+      },
+    },
+    watermark: {
+      "von der Heydt Platz":
+        'Teilweise überbaute Baumquartiere. Die "offenen" Baumscheiben sind mit wassergebundener Decke abgedeckt, um auf dieser innerstädtischen Platzfläche der intensiven anthropogenen Belastung durch Fußgängerbetritt zu begegnen. An diesem Standort befinden sich fünf Japanische Schnurbäume (Styphnolobium japonicum), die im Rahmen der Pflanzperiode 2020/2021 gepflanzt wurden.',
+      "Peter-Hansen-Platz":
+        "Offene, relativ große, runde und v.a. offene Baumscheiben auf einer kleineren Platzfläche mit moderater Nutzung durch Außengastronomie. An diesem Standort befinden sich fünf Japanische Zierkirschen (Prunus spec. i. S.), die in der Pflanzperiode 2020/2021 gepflanzt wurden. Die Gehölze sind mit Rosen unterpflanzt.",
+      "Berliner Straße":
+        "Straßenbegleitgrün in offener Bauweise mit vergleichsweise großen bepflanzten Baumscheiben. An diesem Standort befinden sich ebenso fünf Japanische Schnurbäume (Styphnolobium japonicum), die in der Pflanzperiode 2021/2022 gepflanzt wurden. Als Unterpflanzung wurden auf bodenbedeckende Mahonien (Mahonia aquifolium) gesetzt.",
+    },
+  },
+  bodenkundeprotokolle: {
+    "Nasser Kamp": {
+      datum: "14.10.2025",
+      nutzung: "Grünland",
+      bodentyp: "Braunerde-Pseudogley",
+      beprobungstiefe: "100 cm",
+      auffaelligkeiten: "Hangquelle",
+      gelaendeform: "hügelig",
+      anmerkungen:
+        "Sondenkopf hat 6 cm Abstand zu Bodenoberkante (Tonstein im Untergrund)",
+
+      mineralischerHorizont: [
+        {
+          tiefe: "30",
+          horizont: "Ah",
+          feinboden: "Ut3",
+          bodenfarbe: "dbn",
+          humus: "h4-",
+          bemerkungen: "",
+        },
+        {
+          tiefe: "46",
+          horizont: "rAp",
+          feinboden: "Ut3",
+          bodenfarbe: "hbn",
+          humus: "h3",
+          bemerkungen: "",
+        },
+        {
+          tiefe: "80",
+          horizont: "Sw",
+          feinboden: "Ut3",
+          bodenfarbe: "gr-bn",
+          humus: "",
+          bemerkungen:
+            "40% eh oxidativ, rb reduktiv, Matrix leichte Bleichung",
+        },
+        {
+          tiefe: "100",
+          horizont: "Cv",
+          feinboden: "Lu",
+          bodenfarbe: "rötl-gr-br",
+          humus: "",
+          bemerkungen:
+            "eh oxidativ, rb reduktiv, Skelett x2, devonischer Tonstein",
+        },
+      ],
+    },
+    "Nordpark (1)": {
+      datum: "14.10.2025",
+      nutzung: "Nordpark, Wald",
+      bodentyp: "Parabraunerde erodiert",
+      beprobungstiefe: "100 cm",
+      auffaelligkeiten: "UB verhärtet, trocken",
+      bewuchs: "Eichen, Ahorn",
+      anmerkungen:
+        "Sondenkopf hat 6 cm Abstand zu Bodenoberkante; Humusform Mull; Skelett = Grus: sehr leicht zerfallendes Ton-Schluffgestein",
+      organischerHorizont: [
+        { tiefe: "-2 bis -1 cm", horizont: "L" },
+        { tiefe: "-1 bis -0,5 cm", horizont: "Of" },
+        { tiefe: "-0,5 bis 0 cm", horizont: "Oh" },
+      ],
+      mineralischerHorizont: [
+        {
+          tiefe: "18",
+          horizont: "Ah",
+          feinboden: "Ut3",
+          bodenfarbe: "dbn",
+          humus: "h4+",
+          bemerkungen: "Skelett x2",
+        },
+        {
+          tiefe: "40",
+          horizont: "Bt",
+          feinboden: "Ut4",
+          bodenfarbe: "hbn",
+          humus: "h1",
+          bemerkungen: "Skelett x2, Grus, Bioturbation",
+        },
+        {
+          tiefe: "75",
+          horizont: "Bv",
+          feinboden: "Ut3",
+          bodenfarbe: "gr-bn",
+          humus: "",
+          bemerkungen: "~5% ed oxidativ, rb reduktiv, Skelett x3-, Matrix gebleicht",
+        },
+        {
+          tiefe: "98",
+          horizont: "Cv",
+          feinboden: "Lu",
+          bodenfarbe: "hbn",
+          humus: "",
+          bemerkungen: "~5% ed oxidativ, Skelett x3-",
+        },
+      ],
+    },
+    "Nordpark (2)": {
+      datum: "14.10.2025",
+      nutzung: "Nordpark, Wald",
+      bodentyp: "Parabraunerde",
+      beprobungstiefe: "100 cm",
+      bewuchs: "Eichen, Buchen",
+      anmerkungen: "Sondenkopf hat 10 cm Abstand zu Bodenoberkante",
+      organischerHorizont: [
+        { tiefe: "-4 bis -2 cm", horizont: "L" },
+        { tiefe: "-2 bis -1 cm", horizont: "Of" },
+        { tiefe: "-1 bis 0 cm", horizont: "Oh" },
+      ],
+      mineralischerHorizont: [
+        {
+          tiefe: "10",
+          horizont: "Ah",
+          feinboden: "Ut3",
+          bodenfarbe: "dbn",
+          humus: "h4+",
+          bemerkungen: "Skelett x2, Grus",
+        },
+        {
+          tiefe: "29",
+          horizont: "Al",
+          feinboden: "Ut2",
+          bodenfarbe: "hbn",
+          humus: "h1",
+          bemerkungen: "Skelett x2",
+        },
+        {
+          tiefe: "96",
+          horizont: "Bt",
+          feinboden: "Lu/Ut4",
+          bodenfarbe: "beige",
+          humus: "",
+          bemerkungen: "Skelett x2",
+        },
+      ],
+    },
+    "Kaiser Wilhelm Hain": {
+      datum: "14.10.2025",
+      nutzung: "Park, Wald",
+      bodentyp: "Braunerde-Parabraunerde",
+      beprobungstiefe: "100 cm",
+      anmerkungen:
+        "Sondenkopf hat 13 cm Abstand zu Bodenoberkante; Oh-Mächtigkeit stark variabel 3–23 cm, Bohrloch in Senke",
+      organischerHorizont: [
+        { tiefe: "-30 bis -27 cm", horizont: "L" },
+        { tiefe: "-27 bis -20 cm", horizont: "Of" },
+        { tiefe: "-20 bis 0 cm", horizont: "Oh" },
+      ],
+      mineralischerHorizont: [
+        {
+          tiefe: "13",
+          horizont: "Ah",
+          feinboden: "Ut3",
+          bodenfarbe: "dbn",
+          humus: "h4+",
+          bemerkungen: "Skelett x2",
+        },
+        {
+          tiefe: "57",
+          horizont: "Bt",
+          feinboden: "Ut4",
+          bodenfarbe: "hbn",
+          humus: "h1",
+          bemerkungen: "Skelett x2+",
+        },
+        {
+          tiefe: "70",
+          horizont: "Cv",
+          feinboden: "Lu",
+          bodenfarbe: "beige",
+          humus: "h0",
+          bemerkungen: "Skelett x2+",
+        },
+      ],
+    },
+    "Botanischer Garten": {
+      datum: "14.10.2025",
+      nutzung: "Botanischer Garten",
+      bodentyp: "Deposol",
+      beprobungstiefe: "100 cm",
+      bewuchs: "Grasnarbe",
+      anmerkungen: "Bohrkernverlust",
+      mineralischerHorizont: [
+        {
+          tiefe: "20",
+          horizont: "Ah",
+          feinboden: "Lu",
+          bodenfarbe: "hbn",
+          humus: "h4",
+          bemerkungen: "Skelett x2",
+        },
+        {
+          tiefe: "20+",
+          horizont: "Dx",
+          feinboden: "Lu",
+          bodenfarbe: "hbn",
+          humus: "",
+          bemerkungen: "Skelett x2, rigolt, A+B-Boden gemischt, Ziegelbruch",
+        },
+      ],
+    },
+    "Barmer Anlagen": {
+      datum: "15.10.2025",
+      nutzung: "Parkanlage, Wald",
+      bodentyp: "Braunerde",
+      beprobungstiefe: "100 cm",
+      auffaelligkeiten: "sehr trocken im Untergrund",
+      bewuchs: "Buche, Ahorn, Eiche, Brombeere",
+      organischerHorizont: [
+        { tiefe: "-9 bis -6 cm", horizont: "L" },
+        { tiefe: "-6 bis -3 cm", horizont: "Of" },
+        { tiefe: "-3 bis 0 cm", horizont: "Oh" },
+      ],
+      mineralischerHorizont: [
+        {
+          tiefe: "13",
+          horizont: "Ah",
+          feinboden: "Ut3",
+          bodenfarbe: "dbn",
+          humus: "h4",
+          bemerkungen: "Skelett x2",
+        },
+        {
+          tiefe: "23",
+          horizont: "IBv",
+          feinboden: "Ut3",
+          bodenfarbe: "hbn",
+          humus: "h1",
+          bemerkungen: "Skelett x2",
+        },
+        {
+          tiefe: "70",
+          horizont: "IIBv/ICv",
+          feinboden: "Ut4",
+          bodenfarbe: "rötl-hbn",
+          humus: "",
+          bemerkungen: "Skelett x3",
+        },
+        {
+          tiefe: "93",
+          horizont: "IICv",
+          feinboden: "Ut4",
+          bodenfarbe: "beige-hbn",
+          humus: "",
+          bemerkungen: "Skelett x4",
+        },
+      ],
+    },
+    Leyerbach: {
+      datum: "15.10.2025",
+      nutzung: "Parkanlage",
+      bodentyp: "Deposol",
+      beprobungstiefe: "140 cm",
+      auffaelligkeiten: "Gebüsch im Park",
+      mineralischerHorizont: [
+        {
+          tiefe: "10",
+          horizont: "jAh",
+          feinboden: "Ut3",
+          bodenfarbe: "dbn",
+          humus: "h3",
+          bemerkungen: "Skelett x1, kleine Ziegeleinschlüsse",
+        },
+        {
+          tiefe: "40",
+          horizont: "IjAh",
+          feinboden: "Ut3",
+          bodenfarbe: "dbn-hbn",
+          humus: "h2",
+          bemerkungen: "Skelett x2, kleine Ziegeleinschlüsse",
+        },
+        {
+          tiefe: "60",
+          horizont: "jD",
+          feinboden: "Tu3",
+          bodenfarbe: "rötl",
+          humus: "",
+          bemerkungen: "Skelett x4",
+        },
+        {
+          tiefe: "135",
+          horizont: "jyD",
+          feinboden: "Ut2",
+          bodenfarbe: "hbn-dbn-rötl",
+          humus: "h1",
+          bemerkungen:
+            "unregelm. ed/es 60% oxidativ, unregelm. rb 20% reduktiv, mineral. Fremdbestandteile 25%, Glasscherben, Asche, einzelne Aggregate, carbonatreich",
+        },
+        {
+          tiefe: "135+",
+          horizont: "lC",
+          feinboden: "Uu",
+          bodenfarbe: "hbn",
+          humus: "",
+          bemerkungen: "Carbonat c3",
+        },
+      ],
+    },
+  },
+  allgemeineInformationen: {
+    tree: {
+      sensor:
+        "An diesem Standort wird ein Bodenfeuchtesensor des Typs ioplant-Tree eingesetzt. Der Sensor misst die Bodenfeuchte kapazitiv: Die elektrische Eigenschaft des Bodens verändert sich je nach Wassergehalt, daraus wird der Feuchtewert berechnet. Zusätzlich wird die Bodentemperatur erfasst. Die Messwerte werden mehrmals täglich per LoRaWAN übertragen, automatisch ausgewertet und im Geoportal dargestellt.",
+      kontext:
+        'Die Sensoren sind im Rahmen eines der drei großen Umsetzungsprojekte (DigiTal Zwilling) aus der bis Ende 2026 laufenden Phase B des Wuppertaler Smart-City-Projekts smart.wuppertal beschafft worden. Das Projekt wird im Rahmen der dritten Session des Förderprogramms "Smart Cities made in Germany" vom Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen gefördert. Als Projektträger fungiert die Kreditanstalt für Wiederaufbau KfW.',
+    },
+    dike: {
+      sensor:
+        "An diesem Standort wird ein Bodenfeuchtesensor des Typs ioplant-Dike eingesetzt. Der Sensor misst die Bodenfeuchte kapazitiv: Die elektrische Eigenschaft des Bodens verändert sich je nach Wassergehalt, daraus wird der Feuchtewert berechnet. Zusätzlich wird die Bodentemperatur erfasst. Die Messwerte werden mehrmals täglich per LoRaWAN übertragen, automatisch ausgewertet und im Geoportal dargestellt.",
+      kontext:
+        'Die Sensoren sind im Rahmen eines der drei großen Umsetzungsprojekte (DigiTal Zwilling) aus der bis Ende 2026 laufenden Phase B des Wuppertaler Smart-City-Projekts smart.wuppertal beschafft worden. Das Projekt wird im Rahmen der dritten Session des Förderprogramms "Smart Cities made in Germany" vom Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen gefördert. Als Projektträger fungiert die Kreditanstalt für Wiederaufbau KfW.',
+    },
+    watermark:
+      "Am 5. April 2022 wurden an insgesamt 15 Baumstandorten, aufgeteilt in drei repräsentative Gruppen, Bodenfeuchtesensoren des Typs WATERMARK installiert. Insgesamt kamen 60 Sensoren in definierten Tiefen von -30 cm, -60 cm, -90 cm sowie im Wurzelballen zum Einsatz. Die Baumquartiere zeichnen sich durch unterschiedliche Bauweisen (u.a. Baumsubstrate verschiedener Hersteller, unterpflanzt und nicht unterpflanzt bzw. als Betrittfläche) und eine verschiedenartige Gehölzverwendung aus. Das Ziel besteht in der Entwicklung einer bedarfsorientierten Bewässerung, die den Wasserverbrauch reduziert und dabei die unterschiedlichen Etablierungs- und Altersphasen der Gehölze sowie die Bauweisen der einzelnen Baumquartiere berücksichtigt. Die repräsentativ mit Sensoren ausgestatteten Gehölzgruppen sollen möglichst große Vergleichsmengen abbilden, um die Ergebnisse ökonomisch sinnvoll auf nicht instrumentierte Bäume mit vergleichbaren Bedingungen zu übertragen.",
+  },
+};

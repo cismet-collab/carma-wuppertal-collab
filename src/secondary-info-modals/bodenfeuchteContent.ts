@@ -1,4 +1,4 @@
-import texts from "./_data/bodenfeuchteTexts.json";
+import texts from "./_data/bodenfeuchteTexts";
 
 export type SensorType = "tree" | "dike" | "watermark" | "unknown";
 
