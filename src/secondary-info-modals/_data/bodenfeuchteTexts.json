@@ -46,10 +46,7 @@
       "auffaelligkeiten": "Hangquelle",
       "gelaendeform": "hügelig",
       "anmerkungen": "Sondenkopf hat 6 cm Abstand zu Bodenoberkante (Tonstein im Untergrund)",
-      "organischerHorizont": [
-        { "tiefe": "-2 bis -1 cm", "horizont": "L" },
-        { "tiefe": "-1 bis 0 cm", "horizont": "Of" }
-      ],
+
       "mineralischerHorizont": [
         {
           "tiefe": "30",
