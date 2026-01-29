@@ -1,9 +1,11 @@
-import React, { useState, useEffect, type ComponentType } from "react";
+import React, { useState, useEffect } from "react";
 import type { ChartOptions } from "chart.js";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
-import SecondaryInfoPanelSection from "react-cismap/topicmaps/SecondaryInfoPanelSection";
-import SecondaryInfo from "react-cismap/topicmaps/SecondaryInfo";
+import { Modal, Accordion } from "react-bootstrap";
+import Panel from "react-cismap/commons/Panel";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { genericSecondaryInfoFooterFactory } from "../commons";
 import sensorWatermarkImage from "./sensor_watermark.png";
 import sensorIoplantImage from "./sensor_ioplant.png";
@@ -302,19 +304,10 @@ const lineChartOptions: ChartOptions<"line"> = {
   },
 };
 
-type FooterProps = {
-  close: () => void;
-  version: string;
-};
-
-type InfoPanelProps = {
-  feature?: { properties?: Record<string, unknown>; [key: string]: unknown };
-  setOpen?: (open: boolean) => void;
-  Footer?: ComponentType<FooterProps>;
-  versionString?: string;
-  inStorybook?: boolean;
-  close?: () => void;
-};
+interface FeatureType {
+  properties?: Record<string, unknown>;
+  [key: string]: unknown;
+}
 
 const SMART_WUPPERTAL_URL =
   "https://smart.wuppertal.de/strategie/strategieprozess.php";
@@ -536,13 +529,21 @@ const renderProtokoll = (protokoll: Bodenkundeprotokoll) => {
   );
 };
 
-const InfoPanel: React.FC<InfoPanelProps> = ({
+const SecondaryInfoModal = ({
   feature = {},
-  Footer = genericSecondaryInfoFooterFactory({ skipTeilzwilling: true }),
+  setOpen = () => {},
   versionString = "???",
-  inStorybook = false,
-  close = () => {},
+  Footer = genericSecondaryInfoFooterFactory({ skipTeilzwilling: true }),
+}: {
+  feature?: FeatureType;
+  setOpen?: (open: boolean) => void;
+  versionString?: string;
+  Footer?: React.ComponentType<any>;
 }) => {
+  const close = () => {
+    setOpen(false);
+  };
+
   const selectedFeature = feature as { properties?: Record<string, unknown> };
   const sensor = selectedFeature?.properties;
   const entityId = (sensor?.id as string) ?? "";
@@ -601,196 +602,71 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
       })()
     : 0;
 
-  const subSections: JSX.Element[] = [];
+  // Build chart data if available
+  let moistureData: ReturnType<typeof buildLineChartData> | null = null;
+  let tempData: ReturnType<typeof buildLineChartData> | null = null;
+  let resistanceData: ReturnType<typeof buildLineChartData> | null = null;
 
-  // 1. Standortbeschreibung
-  subSections.push(
-    <SecondaryInfoPanelSection
-      key="standort"
-      bsStyle="info"
-      header="Standortbeschreibung"
-    >
-      <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
-        <p>{standort.text}</p>
-        {standort.bodentyp && (
-          <p>
-            <b>Dominanter Bodentyp:</b> {standort.bodentyp}
-          </p>
-        )}
-      </div>
-    </SecondaryInfoPanelSection>
-  );
-
-  // 2. Diagramm
   if (historicalData && historicalDataPointCount > 0) {
     if (sensorType === "tree" || sensorType === "dike") {
-      const moistureData = buildLineChartData(
-        historicalData,
-        IOPLANT_MOISTURE_SERIES,
-      );
-      const tempData = buildLineChartData(
-        historicalData,
-        IOPLANT_TEMP_SERIES,
-      );
-      subSections.push(
-        <SecondaryInfoPanelSection
-          key="diagramm-feuchte"
-          bsStyle="success"
-          header="Bodenfeuchte (%)"
-        >
-          <div style={{ padding: "10px", paddingTop: 0 }}>
-            <div style={{ height: 300, width: "100%" }}>
-              <Line data={moistureData as any} options={lineChartOptions} />
-            </div>
-          </div>
-        </SecondaryInfoPanelSection>,
-      );
-      subSections.push(
-        <SecondaryInfoPanelSection
-          key="diagramm-temp"
-          bsStyle="success"
-          header="Temperatur (°C)"
-        >
-          <div style={{ padding: "10px", paddingTop: 0 }}>
-            <div style={{ height: 300, width: "100%" }}>
-              <Line data={tempData as any} options={lineChartOptions} />
-            </div>
-          </div>
-        </SecondaryInfoPanelSection>,
-      );
+      moistureData = buildLineChartData(historicalData, IOPLANT_MOISTURE_SERIES);
+      tempData = buildLineChartData(historicalData, IOPLANT_TEMP_SERIES);
     } else if (sensorType === "watermark") {
-      const resistanceData = buildLineChartData(
-        historicalData,
-        WATERMARK_SERIES,
-      );
-      subSections.push(
-        <SecondaryInfoPanelSection
-          key="diagramm-widerstand"
-          bsStyle="success"
-          header="Widerstand (Ω)"
-        >
-          <div style={{ padding: "10px", paddingTop: 0 }}>
-            <div style={{ height: 300, width: "100%" }}>
-              <Line data={resistanceData as any} options={lineChartOptions} />
-            </div>
-          </div>
-        </SecondaryInfoPanelSection>,
-      );
+      resistanceData = buildLineChartData(historicalData, WATERMARK_SERIES);
     }
-  } else if (historyLoading) {
-    subSections.push(
-      <SecondaryInfoPanelSection
-        key="diagramm"
-        bsStyle="success"
-        header="Diagramm"
-      >
-        <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
-          <p>Daten werden geladen…</p>
-        </div>
-      </SecondaryInfoPanelSection>,
-    );
   }
-
-  // 3. Datendownload
-  subSections.push(
-    <SecondaryInfoPanelSection
-      key="download"
-      bsStyle="warning"
-      header="Datendownload"
-    >
-      <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
-        <button
-          type="button"
-          className="btn btn-primary btn-sm"
-          disabled={historyLoading || historicalDataPointCount === 0}
-          onClick={() => {
-            if (!historicalData) return;
-            const csv = historicalDataToCsv(historicalData);
-            const filename = `${name.replace(/[^a-zA-Z0-9_\-]/g, "_")}.csv`;
-            triggerCsvDownload(csv, filename);
-          }}
-        >
-          <i
-            className="glyphicon glyphicon-download"
-            style={{ marginRight: 6 }}
-          />
-          {historyLoading
-            ? "Daten werden geladen…"
-            : "Messdaten herunterladen (CSV)"}
-        </button>
-        {!historyLoading && (
-          <span style={{ marginLeft: 10, color: "#666", fontSize: "85%" }}>
-            ({historicalDataPointCount} Datenpunkte)
-          </span>
-        )}
-      </div>
-    </SecondaryInfoPanelSection>
-  );
-
-  // 4. Bodenkundeprotokolle (ioplant only)
-  if (isIoplant) {
-    subSections.push(
-      <SecondaryInfoPanelSection
-        key="bodenkunde"
-        bsStyle="default"
-        header="Bodenkundeprotokoll"
-      >
-        <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
-          {protokoll ? (
-            renderProtokoll(protokoll)
-          ) : (
-            <p>{texts.experimentalPlaceholder}</p>
-          )}
-        </div>
-      </SecondaryInfoPanelSection>
-    );
-  }
-
-  // 5. Allgemeine Informationen
-  subSections.push(
-    <SecondaryInfoPanelSection
-      key="allgemein"
-      bsStyle="default"
-      header="Allgemeine Informationen"
-    >
-      <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
-        <b>Sensor und Messverfahren</b>
-        <p>{allgemeineInfo.sensor}</p>
-        {allgemeineInfo.kontext && (
-          <>
-            <b>Kontextualisierung</b>
-            {renderKontextWithLink(allgemeineInfo.kontext)}
-          </>
-        )}
-      </div>
-    </SecondaryInfoPanelSection>
-  );
 
   return (
-    <SecondaryInfo
-      visible={inStorybook ? true : undefined}
-      defaultContextValues={
-        inStorybook ? { windowSize: { width: 800, height: 1000 } } : {}
-      }
-      titleIconName="info-circle"
-      title={`Datenblatt: ${name}`}
-      mainSection={
+    <Modal
+      style={{
+        zIndex: 2900000000,
+      }}
+      height="100%"
+      size="lg"
+      show={true}
+      onHide={close}
+      keyboard={false}
+      dialogClassName="modal-dialog-scrollable"
+    >
+      <Modal.Header>
+        <Modal.Title>
+          <FontAwesomeIcon icon={faInfoCircle} />
+          {` Datenblatt: ${name}`}
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body id="myMenu" key="bodenfeuchte.secondaryInfo">
+        {/* Main section with measurements and image */}
         <div
           style={{
             display: "flex",
-            alignItems: "flex-start",
-            gap: 20,
+            alignItems: "center",
             padding: "10px",
             paddingTop: 0,
+            marginBottom: 10,
           }}
         >
-          <div style={{ flex: "1 0 300px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <div
+            style={{
+              width: "50%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             {renderMeasurements(sensor, sensorType)}
             <div style={{ color: "#666", fontSize: "90%", marginTop: 8 }}>
               Letzte Messung: {formattedDate}
             </div>
           </div>
-          <div style={{ flex: "1 1 300px", minWidth: 0, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div
+            style={{
+              width: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <img
               alt="Schematische Darstellung Bodenfeuchtesensor"
               src={
@@ -798,15 +674,164 @@ const InfoPanel: React.FC<InfoPanelProps> = ({
                   ? sensorWatermarkImage
                   : sensorIoplantImage
               }
-              height="180"
+              style={{ height: 180, maxHeight: 180, width: "auto" }}
             />
           </div>
         </div>
-      }
-      subSections={subSections}
-      footer={<Footer version={versionString} close={close} skipCloseButton />}
-    />
+
+        {/* 1. Standortbeschreibung */}
+        <Accordion style={{ marginBottom: 6 }} defaultActiveKey="0">
+          <Panel header="Standortbeschreibung" eventKey="0" bsStyle="info">
+            <div
+              style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}
+            >
+              <p>{standort.text}</p>
+              {standort.bodentyp && (
+                <p>
+                  <b>Dominanter Bodentyp:</b> {standort.bodentyp}
+                </p>
+              )}
+            </div>
+          </Panel>
+        </Accordion>
+
+        {/* 2. Diagramme */}
+        {historicalData && historicalDataPointCount > 0 && (
+          <>
+            {(sensorType === "tree" || sensorType === "dike") && moistureData && (
+              <Accordion style={{ marginBottom: 6 }} defaultActiveKey="1">
+                <Panel header="Bodenfeuchte (%)" eventKey="1" bsStyle="success">
+                  <div style={{ padding: "10px", paddingTop: 0 }}>
+                    <div style={{ height: 300, width: "100%" }}>
+                      <Line
+                        data={moistureData as any}
+                        options={lineChartOptions}
+                      />
+                    </div>
+                  </div>
+                </Panel>
+              </Accordion>
+            )}
+            {(sensorType === "tree" || sensorType === "dike") && tempData && (
+              <Accordion style={{ marginBottom: 6 }} defaultActiveKey="2">
+                <Panel header="Temperatur (°C)" eventKey="2" bsStyle="success">
+                  <div style={{ padding: "10px", paddingTop: 0 }}>
+                    <div style={{ height: 300, width: "100%" }}>
+                      <Line
+                        data={tempData as any}
+                        options={lineChartOptions}
+                      />
+                    </div>
+                  </div>
+                </Panel>
+              </Accordion>
+            )}
+            {sensorType === "watermark" && resistanceData && (
+              <Accordion style={{ marginBottom: 6 }} defaultActiveKey="3">
+                <Panel header="Widerstand (Ω)" eventKey="3" bsStyle="success">
+                  <div style={{ padding: "10px", paddingTop: 0 }}>
+                    <div style={{ height: 300, width: "100%" }}>
+                      <Line
+                        data={resistanceData as any}
+                        options={lineChartOptions}
+                      />
+                    </div>
+                  </div>
+                </Panel>
+              </Accordion>
+            )}
+          </>
+        )}
+        {historyLoading && (
+          <Accordion style={{ marginBottom: 6 }} defaultActiveKey="1">
+            <Panel header="Diagramm" eventKey="1" bsStyle="success">
+              <div
+                style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}
+              >
+                <p>Daten werden geladen…</p>
+              </div>
+            </Panel>
+          </Accordion>
+        )}
+
+        {/* 3. Datendownload */}
+        <Accordion style={{ marginBottom: 6 }} defaultActiveKey="4">
+          <Panel header="Datendownload" eventKey="4" bsStyle="warning">
+            <div
+              style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}
+            >
+              <button
+                type="button"
+                className="btn btn-primary btn-sm"
+                disabled={historyLoading || historicalDataPointCount === 0}
+                onClick={() => {
+                  if (!historicalData) return;
+                  const csv = historicalDataToCsv(historicalData);
+                  const filename = `${name.replace(/[^a-zA-Z0-9_\-]/g, "_")}.csv`;
+                  triggerCsvDownload(csv, filename);
+                }}
+              >
+                <i
+                  className="glyphicon glyphicon-download"
+                  style={{ marginRight: 6 }}
+                />
+                {historyLoading
+                  ? "Daten werden geladen…"
+                  : "Messdaten herunterladen (CSV)"}
+              </button>
+              {!historyLoading && (
+                <span style={{ marginLeft: 10, color: "#666", fontSize: "85%" }}>
+                  ({historicalDataPointCount} Datenpunkte)
+                </span>
+              )}
+            </div>
+          </Panel>
+        </Accordion>
+
+        {/* 4. Bodenkundeprotokolle (ioplant only) */}
+        {isIoplant && (
+          <Accordion style={{ marginBottom: 6 }} defaultActiveKey="5">
+            <Panel header="Bodenkundeprotokoll" eventKey="5" bsStyle="default">
+              <div
+                style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}
+              >
+                {protokoll ? (
+                  renderProtokoll(protokoll)
+                ) : (
+                  <p>{texts.experimentalPlaceholder}</p>
+                )}
+              </div>
+            </Panel>
+          </Accordion>
+        )}
+
+        {/* 5. Allgemeine Informationen */}
+        <Accordion style={{ marginBottom: 6 }} defaultActiveKey="6">
+          <Panel
+            header="Allgemeine Informationen"
+            eventKey="6"
+            bsStyle="default"
+          >
+            <div
+              style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}
+            >
+              <b>Sensor und Messverfahren</b>
+              <p>{allgemeineInfo.sensor}</p>
+              {allgemeineInfo.kontext && (
+                <>
+                  <b>Kontextualisierung</b>
+                  {renderKontextWithLink(allgemeineInfo.kontext)}
+                </>
+              )}
+            </div>
+          </Panel>
+        </Accordion>
+      </Modal.Body>
+      <Modal.Footer>
+        <Footer close={close} version={versionString} />
+      </Modal.Footer>
+    </Modal>
   );
 };
 
-export default InfoPanel;
+export default SecondaryInfoModal;
