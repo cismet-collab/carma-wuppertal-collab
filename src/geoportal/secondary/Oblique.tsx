@@ -11,7 +11,7 @@ export const ObliqueText = () => {
         Fußabdruck des für die Mitte des eingestellten Modellausschnitts besten 
         aktuellen Schrägluftbilds  wird markiert | Anzeige spezieller Steuerelemente | 
         "Flug zum Bild" wechselt in die Aufnahmeperspektive für unverzerrte Bildvorschau | 
-        Bild im Browser öffnen oder herunterladen (ca. 4,7 MB) | Pfeiltasten zur Drehung 
+        Bild im Browser öffnen oder herunterladen (ca. 19 MB) | Pfeiltasten zur Drehung 
         oder für den Wechsel zum benachbarten Bild (Fußabdruck oder Vorschau)
         <br />
         <HelpOverlayLink section="3D-Funktionen">
