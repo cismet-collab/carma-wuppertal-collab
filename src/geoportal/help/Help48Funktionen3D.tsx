@@ -40,7 +40,7 @@ const Component = ({ showOverlayFromOutside }) => {
             <strong>Herunterladen</strong> können Sie das Bild direkt zur
             Betrachtung in einem neuen Reiter (Tab) Ihres Browsers öffnen oder
             zur Betrachtung in einem Bildbearbeitungsprogramm auf Ihrem Rechner
-            speichern (Dateigröße etwa 4,7 MByte). Mit den Pfeiltasten können
+            speichern (Dateigröße etwa 19 MByte). Mit den Pfeiltasten können
             Sie zum jeweils benachbarten Schrägluftbild wechseln oder die
             Ansicht um 90 Grad in Pfeilrichtung drehen. Die 4 angebotenen
             Blickrichtungen orientieren sich dabei an der nordwestlichen
