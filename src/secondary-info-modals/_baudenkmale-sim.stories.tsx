@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import data from "./_data/baudenkmale";
 import Sim from "./BaudenkmaleSIM";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useArgs } from "@storybook/core/preview-api";
 import { TopicMapContextProvider } from "react-cismap/contexts/TopicMapContextProvider";
 import PhotoLightbox from "react-cismap/topicmaps/PhotoLightbox";
 
@@ -15,6 +16,9 @@ const meta: Meta = {
     Feature: {
       control: { type: "object" },
       description: "Paste your JSON here",
+    },
+    "ℹ️ Ctrl+Shift+← → zum Blättern": {
+      control: false,
     },
   },
 };
@@ -30,6 +34,32 @@ export const SecondaryInfo: StoryObj<Args> = {
   },
   render: ({ Beispiele, Feature: feature }: Args) => {
     const [isOpen, setOpen] = useState(true);
+    const [, updateArgs] = useArgs<Args>();
+
+    const keys = Object.keys(data);
+    const currentIndex = keys.indexOf(Beispiele);
+
+    const handleKeyDown = useCallback(
+      (e: KeyboardEvent) => {
+        if (e.shiftKey && e.ctrlKey) {
+          if (e.key === "ArrowRight") {
+            e.preventDefault();
+            const next = (currentIndex + 1) % keys.length;
+            updateArgs({ Beispiele: keys[next] });
+          } else if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            const prev = (currentIndex - 1 + keys.length) % keys.length;
+            updateArgs({ Beispiele: keys[prev] });
+          }
+        }
+      },
+      [currentIndex, keys, updateArgs]
+    );
+
+    useEffect(() => {
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [handleKeyDown]);
 
     let _feature;
     if (feature !== undefined && JSON.stringify(feature) !== "{}") {
