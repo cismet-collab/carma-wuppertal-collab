@@ -1,22 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Sim from "./VorhabenkarteSIM";
 import data from "./_data/vorhabenkarte";
-import React, { useState } from "react";
+import { useState } from "react";
 import { TopicMapContextProvider } from "react-cismap/contexts/TopicMapContextProvider";
 import PhotoLightbox from "react-cismap/topicmaps/PhotoLightbox";
+import { useFeatureNavigation, simArgTypes } from "./_story-helpers";
+
+const dataKeys = Object.keys(data);
 
 const meta: Meta = {
   title: "Vorhabenkarte",
-  argTypes: {
-    Beispiele: {
-      control: { type: "select" },
-      options: Object.keys(data),
-    },
-    Feature: {
-      control: { type: "object" },
-      description: "Paste your JSON here",
-    },
-  },
+  argTypes: simArgTypes(dataKeys),
 };
 
 export default meta;
@@ -25,13 +19,12 @@ type Args = { Beispiele: string; Feature?: any; feature?: object };
 
 export const SecondaryInfo: StoryObj<Args> = {
   args: {
-    Beispiele: Object.keys(data)[0],
+    Beispiele: dataKeys[0],
     Feature: undefined,
   },
   render: ({ Beispiele, Feature: feature }: Args) => {
     const [isOpen, setOpen] = useState(true);
-    const modalBodyStyle: React.CSSProperties = {};
-    console.log("Beispiele", Beispiele);
+    useFeatureNavigation(dataKeys, Beispiele);
 
     let _feature;
     if (feature !== undefined && JSON.stringify(feature) !== "{}") {
@@ -39,12 +32,11 @@ export const SecondaryInfo: StoryObj<Args> = {
     } else {
       _feature = data[Beispiele];
     }
-    console.log("feature", feature);
 
     return (
       <TopicMapContextProvider>
         <PhotoLightbox />
-        <div id="myMenu" style={modalBodyStyle}>
+        <div id="myMenu">
           {isOpen && (
             <Sim
               feature={_feature}
@@ -54,13 +46,7 @@ export const SecondaryInfo: StoryObj<Args> = {
           )}
           {!isOpen && (
             <div>
-              <button
-                onClick={() => {
-                  setOpen(true);
-                }}
-              >
-                open again
-              </button>
+              <button onClick={() => setOpen(true)}>open again</button>
             </div>
           )}
         </div>

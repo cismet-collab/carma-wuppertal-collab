@@ -1,19 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import data from "./_data/luftmessstationen";
 import Sim from "./LuftmessstationenSIM";
+import { useFeatureNavigation, simArgTypes } from "./_story-helpers";
+
+const dataKeys = Object.keys(data);
 
 const meta: Meta = {
   title: "Luftmessstationen",
-  argTypes: {
-    Beispiele: {
-      control: { type: "select" },
-      options: Object.keys(data),
-    },
-    Feature: {
-      control: { type: "object" },
-      description: "Paste your JSON here",
-    },
-  },
+  argTypes: simArgTypes(dataKeys),
 };
 
 export default meta;
@@ -22,11 +16,12 @@ type Args = { Beispiele: string; Feature?: any; filter?: string };
 
 export const SecondaryInfo: StoryObj<Args> = {
   args: {
-    Beispiele: Object.keys(data)[0],
+    Beispiele: dataKeys[0],
     Feature: undefined,
   },
   render: ({ Beispiele, Feature: feature }: Args) => {
-    const modalBodyStyle: React.CSSProperties = {};
+    useFeatureNavigation(dataKeys, Beispiele);
+
     let _feature;
     if (feature !== undefined && JSON.stringify(feature) !== "{}") {
       _feature = feature;
@@ -34,7 +29,7 @@ export const SecondaryInfo: StoryObj<Args> = {
       _feature = data[Beispiele];
     }
     return (
-      <div id="myMenu" style={modalBodyStyle}>
+      <div id="myMenu">
         <Sim
           feature={_feature}
           setOpen={() => {}}
