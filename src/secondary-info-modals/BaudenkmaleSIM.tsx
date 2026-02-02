@@ -97,7 +97,7 @@ const SecondaryInfoModal = ({
       <Modal.Header>
         <Modal.Title>
           <FontAwesomeIcon icon={faLandmark} />
-          {` Datenblatt: ${bezeichnung}`}
+          {` Baudenkmal: ${bezeichnung}`}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body id="myMenu" key={"prbr.secondaryInfo"}>
@@ -117,9 +117,7 @@ const SecondaryInfoModal = ({
               onClick={handleImgClick}
             />
           )}
-          <div
-            style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}
-          >
+          <div style={{ fontSize: "115%", padding: "10px", paddingTop: "0px" }}>
             {strasse && (
               <div style={{ marginBottom: 6 }}>
                 <b>Adresse:</b> {strasse}
@@ -132,8 +130,7 @@ const SecondaryInfoModal = ({
             )}
             {(props.denkmalnr || props.denkmalnummer) && (
               <div style={{ marginBottom: 6 }}>
-                <b>Denkmalnummer:</b>{" "}
-                {props.denkmalnr || props.denkmalnummer}
+                <b>Denkmalnummer:</b> {props.denkmalnr || props.denkmalnummer}
               </div>
             )}
             {props.eintragungsdatum && (
@@ -151,10 +148,7 @@ const SecondaryInfoModal = ({
             </div>
           </div>
         </div>
-        <Accordion
-          style={{ marginBottom: 6 }}
-          defaultActiveKey={"0"}
-        >
+        <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"0"}>
           <Panel header="Beschreibung" eventKey="0" bsStyle="info">
             <div style={{ whiteSpace: "pre-line" }}>{props.beschreibung}</div>
           </Panel>
