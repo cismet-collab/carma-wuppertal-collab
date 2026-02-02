@@ -138,14 +138,14 @@ const SecondaryInfoModal = ({
                 <b>Eintragungsdatum:</b> {props.eintragungsdatum}
               </div>
             )}
+            <div style={{ marginBottom: 6 }}>
+              <b>Klassifizierung:</b> Denkmal
+            </div>
             {props.schutzumfang && (
               <div style={{ marginBottom: 6 }}>
                 <b>Schutzumfang:</b> {props.schutzumfang}
               </div>
             )}
-            <div style={{ marginBottom: 6 }}>
-              <b>Klassifizierung:</b> Denkmal
-            </div>
           </div>
         </div>
         <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"0"}>
@@ -164,6 +164,16 @@ const SecondaryInfoModal = ({
             </div>
             <div>Johannes-Rau-Platz 1</div>
             <div>42275 Wuppertal</div>
+            <br />
+            <div>
+              <a
+                href="https://www.wuppertal.de/denkmalliste-online/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Denkmalliste online
+              </a>
+            </div>
             <br />
             <div>
               <a
