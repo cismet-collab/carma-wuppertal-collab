@@ -135,9 +135,7 @@ const SKIP_HISTORICAL_KEYS = new Set([
 ]);
 
 export interface HistoricalEntry {
-  type: string;
   value: number | string;
-  instanceId: string;
   observedAt: string;
 }
 
@@ -145,6 +143,17 @@ export type HistoricalData = Record<string, unknown> & {
   id?: string;
   type?: string;
 };
+
+/** Extract entries from the new NGSI-LD temporal format:
+ *  { type: "Property", values: [ [value, timestamp], ... ] }
+ */
+function getAttrValues(val: unknown): HistoricalEntry[] {
+  const values = (val as any)?.values;
+  if (!Array.isArray(values)) return [];
+  return values
+    .filter((e: unknown) => Array.isArray(e) && e.length >= 2)
+    .map((e: any) => ({ value: e[0], observedAt: e[1] }));
+}
 
 function getHistoricalUrl(entityId: string): string {
   return `${HISTORICAL_BASE_URL}/${entityId.replace(/:/g, "_")}.json`;
@@ -156,10 +165,10 @@ function historicalDataToCsv(data: HistoricalData): string {
 
   for (const [key, val] of Object.entries(data)) {
     if (SKIP_HISTORICAL_KEYS.has(key)) continue;
-    if (!Array.isArray(val) || val.length === 0) continue;
-    if (!val[0]?.observedAt) continue;
+    const entries = getAttrValues(val);
+    if (entries.length === 0) continue;
     attrs.push(key);
-    attrEntries.set(key, val as HistoricalEntry[]);
+    attrEntries.set(key, entries);
   }
   attrs.sort();
 
@@ -237,10 +246,9 @@ function buildLineChartData(
   // Collect all unique timestamps across all series and sort them
   const tsSet = new Set<string>();
   for (const s of series) {
-    const entries = data[s.attr];
-    if (!Array.isArray(entries)) continue;
+    const entries = getAttrValues(data[s.attr]);
     for (const e of entries) {
-      if (e?.observedAt) tsSet.add(e.observedAt);
+      tsSet.add(e.observedAt);
     }
   }
   const timestamps = [...tsSet].sort();
@@ -254,8 +262,8 @@ function buildLineChartData(
 
   const datasets = series
     .map((s, i) => {
-      const entries = data[s.attr];
-      if (!Array.isArray(entries) || entries.length === 0) return null;
+      const entries = getAttrValues(data[s.attr]);
+      if (entries.length === 0) return null;
       const valByTs = new Map<string, number | null>();
       for (const e of entries) {
         valByTs.set(
@@ -593,9 +601,8 @@ const SecondaryInfoModal = ({
         const ts = new Set<string>();
         for (const [key, val] of Object.entries(historicalData)) {
           if (SKIP_HISTORICAL_KEYS.has(key)) continue;
-          if (!Array.isArray(val)) continue;
-          for (const e of val) {
-            if (e?.observedAt) ts.add(e.observedAt);
+          for (const e of getAttrValues(val)) {
+            ts.add(e.observedAt);
           }
         }
         return ts.size;
