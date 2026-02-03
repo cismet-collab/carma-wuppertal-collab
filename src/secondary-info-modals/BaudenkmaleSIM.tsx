@@ -13,6 +13,8 @@ interface FeatureType {
 
 const fotoUrlPrefix =
   "https://www.wuppertal.de/denkmalliste-online/Image?filename=";
+const denkmallisteUrlPrefix =
+  "https://www.wuppertal.de/denkmalliste-online/Detail/Show/";
 
 const getImageUrl = (imagePath: string) => {
   return fotoUrlPrefix + encodeURIComponent(imagePath);
@@ -167,7 +169,7 @@ const SecondaryInfoModal = ({
             <br />
             <div>
               <a
-                href="https://www.wuppertal.de/denkmalliste-online/"
+                href={denkmallisteUrlPrefix + props.objektnummer}
                 target="_blank"
                 rel="noopener noreferrer"
               >
