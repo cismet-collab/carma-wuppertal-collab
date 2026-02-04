@@ -912,7 +912,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
           </table>
           <hr style={{ margin: "10px 0" }} />
           <div style={{ fontSize: "11px" }}>
-            1: Karten-Download abends/Wochenende verzögert
+            1: Dokument-Download abends/Wochenende verzögert
             (ALKIS-Aktualisierung)
           </div>
           <div style={{ fontSize: "11px" }}>
@@ -1000,7 +1000,7 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
             </table>
             <hr style={{ margin: "10px 0" }} />
             <div style={{ fontSize: "11px" }}>
-              1: Karten-Download abends/Wochenende verzögert
+              1: Dokument-Download abends/Wochenende verzögert
               (ALKIS-Aktualisierung)
             </div>
             <div style={{ fontSize: "11px" }}>
