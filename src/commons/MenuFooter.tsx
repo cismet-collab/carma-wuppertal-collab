@@ -39,9 +39,11 @@ const MenuFooter: React.FC<MenuFooterProps> = ({
               onClick={() => {
                 if (setAppMenuActiveMenuSection) {
                   setAppMenuActiveMenuSection(sectionKey);
-                  scroller.scrollTo("Datengrundlage", {
-                    containerId: "myMenu",
-                  });
+                  setTimeout(() => {
+                    scroller.scrollTo("Datengrundlage", {
+                      containerId: "myMenu",
+                    });
+                  }, 0);
                 }
               }}
             >
