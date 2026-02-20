@@ -90,6 +90,7 @@ export const getCollabedHelpComponentConfig = ({
       />,
       <Help35KarteninhalteHinzufuegen
         showOverlayFromOutside={showOverlayFromOutside}
+        setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
         key="KarteninhalteHinzufuegen"
       />,
       <Help40KarteninhalteUntersuchen
