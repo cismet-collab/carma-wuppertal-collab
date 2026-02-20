@@ -71,11 +71,33 @@ const Component = ({ showOverlayFromOutside }) => {
             sogenannten Teilzwillinge stellen jeweils einen bestimmten Ausschnitt 
             aus den Daten und Methoden des DigiTal Zwillings für spezielle 
             Anwendungsfälle bereit. Sie öffnen sich nicht innerhalb des Geoportals, 
-            sondern in einem neuen Browser-Tab. Der Bereich{" "}
-            <FontAwesomeIcon icon={faMapPin} />{" "}<strong>Sensoren</strong> befindet 
-            sich aktuell noch im Aufbau. Zukünftig werden Sie hier Smart-City-Sensoren 
-            der Stadt Wuppertal finden, die Sie als dynamische Kartenebenen hinzufügen 
-            können. Unter{" "}<FontAwesomeIcon icon={faList} />{" "}<strong>Entdecken</strong> 
+            sondern in einem neuen Browser-Tab. Im Bereich{" "}
+            <FontAwesomeIcon icon={faMapPin} />{" "}<strong>Sensoren</strong> finden 
+            Sie dynamische Kartenebenen, die die Position und ggf. aktuelle Messwerte 
+            der Wuppertaler Smart-City-Sensoren visualisieren. Das Sensordatenangebot 
+            befindet sich noch in der Aufbauphase. Informationen zu den aktuellen 
+            Messwerten eines Sensors erhalten Sie rechts unten in der Infobox
+            <span className="hide-on-small-screens">
+              {" "}
+              <HelpOverlayLink
+                onClick={() => {
+                  showOverlayFromOutside("INFOBOX");
+                }}
+              >
+                (s. Hilfefolie)
+              </HelpOverlayLink>
+            </span>{" "}
+            und vollständig in der Datenblattansicht, s. 
+            <Link
+              className="renderAsLink"
+              smooth={true}
+              delay={100}
+              onClick={() => setAppMenuActiveMenuSection("untersuchen")}
+            >
+              Karteninhalte untersuchen
+            </Link>
+            .{" "} 
+            Unter{" "}<FontAwesomeIcon icon={faList} />{" "}<strong>Entdecken</strong> 
             {" "}stehen Ihnen vordefinierte Karten (Kombinationen von Kartenebenen) für typische 
             Fragestellungen zur Verfügung, die sich in der Praxis bewährt haben.
             {" "}<strong>Profi-Tipp</strong>: Zwar gibt es aktuell noch keinen eigenen Dialog zum 
