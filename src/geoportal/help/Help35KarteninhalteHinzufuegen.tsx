@@ -13,7 +13,10 @@ import { faMapPin } from "@fortawesome/free-solid-svg-icons";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Component = ({ showOverlayFromOutside }) => {
+const Component = ({ 
+  showOverlayFromOutside,
+  setAppMenuActiveMenuSection,
+}) => {
   return (
     <GenericModalMenuSection
       sectionKey="karteninhalte"
