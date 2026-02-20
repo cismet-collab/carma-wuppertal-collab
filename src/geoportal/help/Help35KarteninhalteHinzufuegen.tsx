@@ -91,7 +91,7 @@ const Component = ({
                 (s. Hilfefolie)
               </HelpOverlayLink>
             </span>{" "}
-            und vollständig in der Datenblattansicht, s. 
+            und vollständig in der Datenblattansicht, s.{" "}
             <Link
               className="renderAsLink"
               smooth={true}
