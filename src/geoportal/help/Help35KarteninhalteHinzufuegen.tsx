@@ -105,7 +105,38 @@ const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
             >
               Karteninhalte untersuchen
             </Link>
-            . Im Bereich <FontAwesomeIcon icon={faCubes} />{" "}
+            . Unter <FontAwesomeIcon icon={faCubes} />{" "}
+            <strong>Objekte</strong>{" "}finden sie zum einen Bestands- und 
+            Planungsobjekte, zum anderen Planungsareale, die sowohl in der 
+            2D- als auch in der 3D-Ansicht dargestellt werden können. Auch 
+            hier befinden wir uns noch in der inhaltlichen Aufbauphase. Als 
+            erstes Objekt bieten wir hier die zur Bundesgartenschau 2031 
+            geplante Hängebrücke an. Zu den Objekten finden sie in der 
+            Info-Box
+            <span className="hide-on-small-screens">
+              {" "}
+              <HelpOverlayLink
+                onClick={() => {
+                  showOverlayFromOutside("INFOBOX");
+                }}
+              >
+                (s. Hilfefolie)
+              </HelpOverlayLink>
+            </span>{" "}i. d. R. zusätzliche Dokumente und/oder Verknüpfungen 
+            mit speziellen Anwendungsprogrammen. Planungsareale in frühen 
+            Projektphasen sind zumeist nur für die direkten Projektbeteiligten 
+            nach Anmeldung
+            <span className="hide-on-small-screens">
+              {" "}
+              <HelpOverlayLink
+                onClick={() => {
+                  showOverlayFromOutside("MENU");
+                }}
+              >
+                (s. Hilfefolie)
+              </HelpOverlayLink>
+            </span>{" "}beim DigiTal Zwilling sichtbar.    
+            Im Bereich <FontAwesomeIcon icon={faCubes} />{" "}
             <strong>Objekte</strong> finden sie 3D-Objekte. Unter{" "}
             <FontAwesomeIcon icon={faList} /> <strong>Entdecken</strong> stehen
             Ihnen vordefinierte Karten (Kombinationen von Kartenebenen) für
