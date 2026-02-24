@@ -108,11 +108,11 @@ const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
             . Unter <FontAwesomeIcon icon={faCubes} />{" "}
             <strong>Objekte</strong>{" "}finden sie zum einen Bestands- und 
             Planungsobjekte, zum anderen Planungsareale, die sowohl in der 
-            2D- als auch in der 3D-Ansicht dargestellt werden können. Auch 
-            hier befinden wir uns noch in der inhaltlichen Aufbauphase. Als 
-            erstes Objekt bieten wir hier die zur Bundesgartenschau 2031 
-            geplante Hängebrücke an. Zu den Objekten finden sie in der 
-            Info-Box
+            2D- als auch in der 3D-Ansicht dargestellt werden können. Hier 
+            sind wir ebenfalls noch in der inhaltlichen Aufbauphase. 
+            Als erstes öffentlich zugängliches Objekt bieten wir die zur 
+            Bundesgartenschau 2031 geplante Hängebrücke an. Zu den Objekten 
+            finden sie in der Info-Box
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
@@ -136,11 +136,9 @@ const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
                 (s. Hilfefolie)
               </HelpOverlayLink>
             </span>{" "}beim DigiTal Zwilling sichtbar.    
-            Im Bereich <FontAwesomeIcon icon={faCubes} />{" "}
-            <strong>Objekte</strong> finden sie 3D-Objekte. Unter{" "}
-            <FontAwesomeIcon icon={faList} /> <strong>Entdecken</strong> stehen
-            Ihnen vordefinierte Karten (Kombinationen von Kartenebenen) für
-            typische Fragestellungen zur Verfügung, die sich in der Praxis
+            Unter{" "}<FontAwesomeIcon icon={faList} /> <strong>Entdecken</strong> 
+            {" "}stehen Ihnen vordefinierte Karten (Kombinationen von Kartenebenen) 
+            für typische Fragestellungen zur Verfügung, die sich in der Praxis
             bewährt haben. <strong>Profi-Tipp</strong>: Zwar gibt es aktuell
             noch keinen eigenen Dialog zum Hinzufügen externer WMS-Dienste (also
             Kartendienste, die nicht von der Stadt Wuppertal stammen), die
