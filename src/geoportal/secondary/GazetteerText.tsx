@@ -9,14 +9,14 @@ export const GazetteerText = () => {
       <div>
         <b>
           2-stufiges Eingabeelement für Positionierung über Ortsbezeichnungen, 
-          umschaltbar zwischen &quot;Adressen und Orte&quot; und &quot;Flurstücke&quot; (2D und 3D)
+          umschaltbar zwischen Adressen und Orte und Flurstücke (2D und 3D)
         </b>
         <br /> 
-            bei &quot;Adressen und Orte&quot; (voreingestellter Modus) Text eingeben für unscharfe Suche 
+            bei Adressen und Orte (voreingestellter Modus) Text eingeben für unscharfe Suche 
             im Verzeichnis der Ortsnamen | Treffer werden nach Grad der Übereinstimmung mit Suchtext 
             klassifiziert und gruppiert | Eintrag in Trefferliste anklicken zur Zentrierung der Karte 
             auf diesen Ort | Ortsmarkierung in Karte durch Placemark-Symbol oder (bei Flächen) 
-            Spotlight-Effekt | bei &quot;Flurstücke&quot; nacheinander Eintrag aus Vorschlagsliste auswählen 
+            Spotlight-Effekt | bei Flurstücke nacheinander Eintrag aus Vorschlagsliste auswählen 
             für Bestandteile Gemarkung, Flur und Flurstücksnummer des Flurstückskennzeichens, Suchtexte können 
             zur Verkürzung der Listen eingegeben werden (unscharfe Suche hier nur beim Gemarkungsnamen)
         <br />
