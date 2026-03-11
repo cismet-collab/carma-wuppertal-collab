@@ -16,7 +16,7 @@ export const GazetteerText = () => {
             im Verzeichnis der Ortsnamen | Treffer werden nach Grad der Übereinstimmung mit Suchtext 
             klassifiziert und gruppiert | Eintrag in Trefferliste anklicken zur Zentrierung der Karte 
             auf diesen Ort | Ortsmarkierung in Karte durch Placemark-Symbol oder (bei Flächen) 
-            Spotlight-Effekt | bei Flurstücke nacheinander Eintrag aus Vorschlagsliste auswählen 
+            Spotlight-Effekt | bei &quot;Flurstücke&quot; nacheinander Eintrag aus Vorschlagsliste auswählen 
             für Bestandteile Gemarkung, Flur und Flurstücksnummer des Flurstückskennzeichens, Suchtexte können 
             zur Verkürzung der Listen eingegeben werden (unscharfe Suche hier nur beim Gemarkungsnamen)
         <br />
