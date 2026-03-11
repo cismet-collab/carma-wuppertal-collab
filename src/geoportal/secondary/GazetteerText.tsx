@@ -8,8 +8,8 @@ export const GazetteerText = () => {
     >
       <div>
         <b>
-          2-stufiges Eingabeelement für Positionierung über Ortsbezeichnungen, 
-          umschaltbar zwischen Adressen und Orte und Flurstücke (2D und 3D)
+          2-stufiges Eingabeelement für Positionierung über Ortsbezeichnungen, umschaltbar 
+          zwischen &quot;Adressen und Orte&quot; und &quot;Flurstücke&quot; (2D und 3D)
         </b>
         <br /> 
             bei Adressen und Orte (voreingestellter Modus) Text eingeben für unscharfe Suche 
