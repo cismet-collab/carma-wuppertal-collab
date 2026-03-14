@@ -71,20 +71,21 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                 </p>
                   <FuzzySearchParagraph />
                 <p>
-                  Mit einem Klick auf das Symbol{" "}<Icon name="map-marker" />{" "}links neben dem Eingabefeld öffnen Sie eine 
-                  Auswahlliste für verschiedene Varianten der Positionierung über Ortsbegriffe. 
-                  Neben dem voreingestellten Modus &quot;Adressen und Orte&quot; (Beschreibung in den 
-                  vorigen 2 Absätzen) steht &quot;Flurstücke&quot; zur Auswahl. In diesem Modus können Sie 
-                  sich in der Karte auf ein bestimmtes Flurstück positionieren. Flurstücke sind die 
-                  Flächeneinheiten im Liegenschaftskataster. Jedes Flurstück besitzt ein eindeutiges 
-                  Flurstückskennzeichen, das sich aus den drei Bestandteilen Gemarkungsnummer, Flurnummer 
-                  und Flurstücksnummer zusammensetzt. Das Eingabefeld bietet Ihnen hierfür nacheinander 
-                  3 Auswahllisten an: zuerst für die Gemarkung, dann für die Fluren in der ausgewählten 
-                  Gemarkung, zuletzt für die Flurstücke in der gewählten Flur. Vor jeder Eingabe können 
-                  Sie einen Suchtext im Eingabefeld eingeben und den Inhalt der Auswahlliste damit ausdünnen. 
-                  Eine unscharfe Suche wird hier nur bei der Eingabe des Suchtextes für die Gemarkung 
-                  durchgeführt. Dort können Sie sowohl den Gemarkungsnamen (z. B. &quot;Barmen&quot;) als 
-                  auch die Gemarkungsnummer (im Beispiel &quot;3001&quot; für Barmen) eingeben.
+                  Mit einem Klick auf das Symbol{" "}<Icon name="map-marker" />{" "}links 
+                  neben dem Eingabefeld öffnen Sie eine Auswahlliste für verschiedene 
+                  Varianten der Positionierung über Ortsbegriffe. Neben dem voreingestellten Modus 
+                  &quot;Adressen und Orte&quot; (Beschreibung in den vorigen 2 Absätzen) steht 
+                  &quot;Flurstücke&quot; zur Auswahl. In diesem Modus können Sie sich in der Karte 
+                  auf ein bestimmtes Flurstück positionieren. Flurstücke sind die Flächeneinheiten 
+                  im Liegenschaftskataster. Jedes Flurstück besitzt ein eindeutiges Flurstückskennzeichen, 
+                  das sich aus den drei Bestandteilen Gemarkungsnummer, Flurnummer und Flurstücksnummer 
+                  zusammensetzt. Das Eingabefeld bietet Ihnen hierfür nacheinander 3 Auswahllisten an: 
+                  zuerst für die Gemarkung, dann für die Fluren in der ausgewählten Gemarkung, zuletzt 
+                  für die Flurstücke in der gewählten Flur. Vor jeder Auswahl können Sie einen Suchtext 
+                  im Eingabefeld eingeben und den Inhalt der Liste damit ausdünnen. Eine unscharfe Suche 
+                  wird hier nur bei der Gemarkung durchgeführt. Dort können Sie sowohl den Gemarkungsnamen 
+                  (z. B. &quot;Barmen&quot;) als auch die Gemarkungsnummer (im Beispiel &quot;3001&quot; 
+                  für Barmen) eingeben.
                 </p>
               </>
             }
