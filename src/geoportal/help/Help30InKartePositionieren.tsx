@@ -15,6 +15,7 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
         <div>
           <InKartePositionierenText
             zoomstufe={18}
+            punktgeometrie = "(Adresse, Straße, POI, Flurstück)"
             pretext={
               <>
                 <p>
@@ -67,12 +68,12 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   Kindertageseinrichtung oder eine{" "}
                   <Icon name="graduation-cap" /> Schule.
                 </p>
-                <FuzzySearchParagraph />
+                  <FuzzySearchParagraph />
                 <p>
                   Mit einem Klick auf das Symbol links neben dem Eingabefeld öffnen Sie eine 
                   Auswahlliste für verschiedene Varianten der Positionierung über Ortsbegriffe. 
                   Neben dem voreingestellten Modus &quot;Adressen und Orte&quot; (Beschreibung in den 
-                  vorigen 3 Absätzen) steht „Flurstücke“ zur Auswahl. In diesem Modus können Sie Sie 
+                  vorigen 2 Absätzen) steht &quot;Flurstücke&quot; zur Auswahl. In diesem Modus können Sie 
                   sich in der Karte auf ein bestimmtes Flurstück positionieren. Flurstücke sind die 
                   Flächeneinheiten im Liegenschaftskataster. Jedes Flurstück besitzt ein eindeutiges 
                   Flurstückskennzeichen, das sich aus den drei Bestandteilen Gemarkungsnummer, Flurnummer 
