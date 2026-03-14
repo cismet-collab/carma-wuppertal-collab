@@ -88,9 +88,6 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
               </>
             }
             posttext={
-              <p>
-                aaa
-              </p>
               <p className="hide-on-small-screens">
                 <HelpOverlayLink
                   onClick={() => {
