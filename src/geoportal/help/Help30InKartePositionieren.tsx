@@ -14,7 +14,7 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
       sectionContent={
         <div>
           <InKartePositionierenText
-            zoomstufe={18 oder bei Flurstücken Zoom auf Ausdehnung des Flurstücks}
+            zoomstufe={18}
             punktgeometrie = "(Adresse, Straße, POI, Flurstück)"
             pretext={
               <>
@@ -70,7 +70,7 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                 </p>
                   <FuzzySearchParagraph />
                 <p>
-                  Mit einem Klick auf das Symbol links neben dem Eingabefeld öffnen Sie eine 
+                  Mit einem Klick auf das Symbol{" "}<Icon name="map-marker" />{" "}links neben dem Eingabefeld öffnen Sie eine 
                   Auswahlliste für verschiedene Varianten der Positionierung über Ortsbegriffe. 
                   Neben dem voreingestellten Modus &quot;Adressen und Orte&quot; (Beschreibung in den 
                   vorigen 2 Absätzen) steht &quot;Flurstücke&quot; zur Auswahl. In diesem Modus können Sie 
