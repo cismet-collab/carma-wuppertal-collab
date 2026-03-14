@@ -82,7 +82,7 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   Sie einen Suchtext im Eingabefeld eingeben und den Inhalt der Auswahlliste damit ausdünnen. 
                   Eine unscharfe Suche wird hier nur bei der Eingabe des Suchtextes für die Gemarkung 
                   durchgeführt. Dort können Sie sowohl den Gemarkungsnamen (z. B. &quot;Barmen&quot;) als 
-                  auch die Gemarkungsnummer (im Beispiel &quot;3001&quot; für Barmen) eingeben. 
+                  auch die Gemarkungsnummer (im Beispiel &quot;3001&quot; für Barmen) eingeben.
                 </p>
               </>
             }
