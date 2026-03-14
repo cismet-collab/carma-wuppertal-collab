@@ -16,6 +16,7 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
           <InKartePositionierenText
             zoomstufe={18}
             punktgeometrie = "(Adresse, Straße, POI, Flurstück)"
+            flurstzoom = ", bei Flurstücken variabler Zoom auf deren gesamte Ausdehnung"
             pretext={
               <>
                 <p>
