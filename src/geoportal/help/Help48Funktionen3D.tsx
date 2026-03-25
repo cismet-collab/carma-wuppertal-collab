@@ -17,7 +17,14 @@ const Component = ({ showOverlayFromOutside }) => {
             Funktion zum Einblenden und Herunterladen von{" "}
             <strong>Schrägluftbildern</strong> an. Das Angebot ist derzeit noch
             beschränkt auf unsere aktuellsten Luftbilder, die im März 2024
-            aufgenommen worden sind. Diese Bilder stehen in einer reduzierten
+            aufgenommen worden sind{" "}(
+              <a
+                target="_legal"
+                href="https://offenedaten-wuppertal.de/dataset/schr%C3%A4gluftbilder-wuppertal-032024-fl%C3%A4chendeckend"
+              >
+                zur Datensatzbeschreibung im Wuppertaler Open-Data-Portal
+              </a>
+            ). Diese Bilder stehen in einer reduzierten
             Auflösung von 5 cm pro Pixel unter der Open-Data-Lizenz CC-BY-4.0.
             Diese Lizenz verpflichtet Sie, bei einer Veröffentlichung den Namen
             des Herausgebers zu nennen. Dazu haben wir in den Bilddateien links

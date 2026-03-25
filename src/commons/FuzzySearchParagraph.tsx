@@ -4,7 +4,7 @@ const FuzzySearchParagraph = () => {
       Die Suche funktioniert auch dann, wenn die Schreibweise nicht exakt stimmt. 
       Das System erkennt ähnlich geschriebene Begriffe und ordnet sie nach 
       Übereinstimmung – zum Beispiel führt auch „Weierbush“ oder „buscht“ zuverlässig 
-      zum Weyerbuschturm. Die Treffergenauigkeit wird intern bewertet und in fünf 
+      zum Weyerbuschturm ("unscharfe Suche"). Die Treffergenauigkeit wird intern bewertet und in fünf 
       Kategorien eingeteilt: perfekte, sehr gute, gute, befriedigende und ausreichende 
       Treffer. Diese "Trefferklassen" werden als Überschriften in der Trefferliste 
       angezeigt. Bitte beachten Sie: Wenn sehr lange Begriffe mit vielen Leerzeichen 

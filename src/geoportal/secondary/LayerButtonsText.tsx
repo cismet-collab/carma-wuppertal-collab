@@ -1,6 +1,6 @@
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
+import { faLayerGroup, faFilter } from "@fortawesome/free-solid-svg-icons";
 
 export const LayerButtonsText = () => {
   return (
@@ -10,14 +10,17 @@ export const LayerButtonsText = () => {
     >
       <div>
         <b>
-          Festes Hintergrund-Steuerelement{" "}<FontAwesomeIcon icon={faLayerGroup} />, 
-          dazu variabel für jede weitere geladene Kartenebene ein Ebenen-Steuerelement (2D)
+          Festes Hintergrund-Steuerelement{" "}
+          <FontAwesomeIcon icon={faLayerGroup} />, dazu variabel für jede
+          weitere geladene Kartenebene ein Ebenen-Steuerelement (2D)
         </b>
         <br />
         horizontales Verschieben der Ebenen-Steuerelemente zur Änderung der
-        Darstellungsreihenfolge | Klicken auf das Steuerelement zum Öffnen einer
-        Zeile für die Steuerung von Transparenz und Sichtbarkeit | Aufklappen
-        der Zeile zur Anzeige weiterer Informationen:
+        Darstellungsreihenfolge | Klicken auf{" "}
+        <FontAwesomeIcon icon={faFilter} /> zum Ein-/Ausblenden der jeweiligen
+        Filter | Klicken auf das Steuerelement zum Öffnen einer Zeile für die
+        Steuerung von Transparenz und Sichtbarkeit | Aufklappen der Zeile zur
+        Anzeige weiterer Informationen:
       </div>
       <li>
         <b>Hintergrund-Steuerelement</b>: Auswahl/Voreinstellung der{" "}

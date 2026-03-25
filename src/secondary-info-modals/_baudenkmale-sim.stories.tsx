@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Sim from "./VorhabenkarteSIM";
-import data from "./_data/vorhabenkarte";
+import data from "./_data/baudenkmale";
+import Sim from "./BaudenkmaleSIM";
 import { useState } from "react";
 import { TopicMapContextProvider } from "react-cismap/contexts/TopicMapContextProvider";
 import PhotoLightbox from "react-cismap/topicmaps/PhotoLightbox";
@@ -9,13 +9,13 @@ import { useFeatureNavigation, simArgTypes } from "./_story-helpers";
 const dataKeys = Object.keys(data);
 
 const meta: Meta = {
-  title: "Vorhabenkarte",
+  title: "Baudenkmale",
   argTypes: simArgTypes(dataKeys),
 };
 
 export default meta;
 
-type Args = { Beispiele: string; Feature?: any; feature?: object };
+type Args = { Beispiele: string; Feature?: any };
 
 export const SecondaryInfo: StoryObj<Args> = {
   args: {
@@ -32,7 +32,6 @@ export const SecondaryInfo: StoryObj<Args> = {
     } else {
       _feature = data[Beispiele];
     }
-
     return (
       <TopicMapContextProvider>
         <PhotoLightbox />

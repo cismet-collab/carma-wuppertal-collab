@@ -1,21 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
 import { CarmaMapAPIProvider } from "@carma-mapping/carma-map-api";
 import data from "./_data/alkis";
 import Sim from "./AlkisSIM";
+import { useFeatureNavigation, simArgTypes } from "./_story-helpers";
+
+const dataKeys = Object.keys(data);
 
 const meta: Meta = {
   title: "Alkis",
-  argTypes: {
-    Beispiele: {
-      control: { type: "select" },
-      options: Object.keys(data),
-    },
-    Feature: {
-      control: { type: "object" },
-      description: "Paste your JSON here",
-    },
-  },
+  argTypes: simArgTypes(dataKeys),
 };
 
 export default meta;
@@ -24,11 +17,11 @@ type Args = { Beispiele: string; Feature?: any };
 
 export const SecondaryInfo: StoryObj<Args> = {
   args: {
-    Beispiele: Object.keys(data)[0],
+    Beispiele: dataKeys[0],
     Feature: undefined,
   },
   render: ({ Beispiele, Feature: feature }: Args) => {
-    const modalBodyStyle: React.CSSProperties = {};
+    useFeatureNavigation(dataKeys, Beispiele);
 
     let _feature;
     if (feature !== undefined && JSON.stringify(feature) !== "{}") {
@@ -38,7 +31,7 @@ export const SecondaryInfo: StoryObj<Args> = {
     }
     return (
       <CarmaMapAPIProvider>
-        <div id="myMenu" style={modalBodyStyle}>
+        <div id="myMenu">
           <Sim feature={_feature} setOpen={() => {}} versionString="v0.10.5" />
         </div>
       </CarmaMapAPIProvider>

@@ -1,7 +1,7 @@
 {
   "name": "carma-wuppertal-collab-vite",
   "private": true,
-  "version": "1.1.30",
+  "version": "1.1.56",
   "type": "module",
   "scripts": {
     "init:carma": "git clone https://github.com/cismet/carma.git _carma_monorepo",
@@ -62,7 +62,7 @@
     "rxdb": "^15.29.0",
     "cesium": "^1.134.1",
     "resium": "^1.18.3",
-    "maplibre-gl": "^5.2.0",
+    "maplibre-gl": "^5.18.0",
     "@turf/turf": "^7.0.0",
     "proj4": "^2.19.4",
     "leaflet-draw": "^1.0.4",
@@ -126,7 +126,9 @@
     "tslib": "^2.8.1",
     "ua-parser-js": "^1.0.40",
     "@motis-project/motis-client": "^2.7.6",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "@geomatico/maplibre-cog-protocol": "^0.8.0",
+    "three": "^0.183.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
@@ -185,7 +187,8 @@
     "vite-plugin-static-copy": "^2.2.0",
     "@storybook/core-server": "8.5.3",
     "@swc/helpers": "0.5.15",
-    "@types/jest": "29.5.14"
+    "@types/jest": "29.5.14",
+    "@types/three": "^0.183.1"
   },
   "nx": {}
 }

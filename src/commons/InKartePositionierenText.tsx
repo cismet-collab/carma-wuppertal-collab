@@ -4,6 +4,7 @@ interface InKartePositionierenTextProps {
   zoomstufe?: number;
   punktgeometrie?: string;
   flachengeometrie?: string;
+  flurstzoom?: string;
   posttext?: React.ReactNode;
 }
 const InKartePositionierenText = ({
@@ -11,6 +12,7 @@ const InKartePositionierenText = ({
   zoomstufe = 14,
   punktgeometrie = "(Adresse, Straße, POI)",
   flachengeometrie = "(Stadtbezirk, Quartier)",
+  flurstzoom = "",
   posttext,
 }: InKartePositionierenTextProps) => {
   return (
@@ -19,7 +21,7 @@ const InKartePositionierenText = ({
       <p>
         Wenn Sie einen Treffer aus der Liste auswählen, wird die Karte automatisch 
         auf die zugehörige Position zentriert. Handelt es sich um einen Ort mit 
-        Punktgeometrie{" "}{punktgeometrie}, wird stark hineingezoomt (Zoomstufe {zoomstufe}) 
+        Punktgeometrie{" "}{punktgeometrie}, wird stark hineingezoomt (Zoomstufe {zoomstufe}{flurstzoom}) 
         und ein Marker{" "}<Icon name="map-marker" />{" "}auf der Zielposition platziert. 
         Bei Orten mit Flächengeometrie{" "}{flachengeometrie}{" "}wird der Maßstab so gewählt, 
         dass die gesamte Fläche sichtbar ist. Zusätzlich wird die Umgebung außerhalb dieser Fläche 
