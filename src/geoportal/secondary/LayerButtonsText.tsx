@@ -17,7 +17,7 @@ export const LayerButtonsText = () => {
         <br />
         horizontales Verschieben der Ebenen-Steuerelemente zur Änderung der
         Darstellungsreihenfolge | Klicken auf{" "}
-        <FontAwesomeIcon icon={faFilter} /> zum Ein-/Ausblenden der jeweiligen
+        <FontAwesomeIcon icon={faFilter} />{" "}zum Ein-/Ausblenden der jeweiligen
         Filter | Klicken auf das Steuerelement zum Öffnen einer Zeile für die
         Steuerung von Transparenz und Sichtbarkeit | Aufklappen der Zeile zur
         Anzeige weiterer Informationen:

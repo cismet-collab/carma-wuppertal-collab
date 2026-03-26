@@ -64,7 +64,17 @@ const Help40KarteninhalteUntersuchen = ({
             können Sie die Reihenfolge der übrigen Ebenen individuell anpassen –
             ziehen Sie dazu das entsprechende Steuerelement mit der linken
             Maustaste an die gewünschte Position. So beeinflussen Sie die
-            Reihenfolge, in der die Ebenen in der Karte dargestellt werden. Ein
+            Reihenfolge, in der die Ebenen in der Karte dargestellt werden. 
+            Kartenebenen mit dem Symbol {" "}<FontAwesomeIcon icon={faFilter} />{" "}
+            rechts neben dem Titel der Kartenebene verfügen über integrierte 
+            Filtermöglichkeiten. Durch Anklicken dieses Symbols blenden Sie die 
+            zugehörigen Filter ein bzw. aus. Anklicken eines Filters aktiviert 
+            (farbige Darstellung) bzw. deaktiviert ihn (Graustufendarstellung). 
+            In der Karte werden dann nur diejenigen Objekte angezeigt, die den 
+            jeweiligen Filterbedingungen genügen. Wenn Sie z. B. bei der Kartenebene 
+            "WC-Anlagen" die Filter "Kostenfrei" und "Rollstuhlgerecht" aktiviert 
+            haben, werden nur die kostenfreien und rollstuhlgerechten WC Anlagen 
+            dargestellt. Ein
             Klick auf ein Kartensteuerelement öffnet eine Bedienzeile zur
             Steuerung von Sichtbarkeit <FontAwesomeIcon icon="eye" /> und
             Transparenz der zugehörigen Kartenebene. Mit den Pfeiltasten{" "}
