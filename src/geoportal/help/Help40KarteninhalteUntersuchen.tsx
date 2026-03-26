@@ -5,6 +5,7 @@ import Icon from "react-cismap/commons/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo, faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
