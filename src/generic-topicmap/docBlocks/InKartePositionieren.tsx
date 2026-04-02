@@ -69,8 +69,8 @@ export const InKartePositionieren = ({
         Ortsbezeichnungen. Als erstes Beispiel wurde das für die Wohnlagenkarte umgesetzt, 
         in der Sie sich auch über die Eingabe eines Flurstückskennzeichens in der Karte 
         positionieren können. Die Umschaltmöglichkeit erkennen Sie an einer kleinen Pfeilspitze 
-        neben dem Symbol Placemark-Icon links neben dem Eingabefeld. Mit einem Klick auf 
-        das Placemark-Icon öffnen Sie in diesem Fall eine Auswahlliste für die verschiedenen 
+        neben dem Symbol{" "}<Icon name="map-marker" />{" "}links neben dem Eingabefeld. Mit einem Klick auf 
+        {" "}<Icon name="map-marker" />{" "}öffnen Sie in diesem Fall eine Auswahlliste für die verschiedenen 
         Varianten der Positionierung über Ortsbegriffe. Im Beispiel der Wohnlagenkarte steht 
         neben dem voreingestellten Modus "Adressen und Orte" (Beschreibung in den vorigen 2 Absätzen) 
         noch "Flurstücke" zur Auswahl. Jedes Flurstück besitzt ein eindeutiges Flurstückskennzeichen, 
