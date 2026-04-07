@@ -66,7 +66,7 @@ const Help40KarteninhalteUntersuchen = ({
             ziehen Sie dazu das entsprechende Steuerelement mit der linken
             Maustaste an die gewünschte Position. So beeinflussen Sie die
             Reihenfolge, in der die Ebenen in der Karte dargestellt werden. 
-            Kartenebenen mit dem Symbol {" "}<FontAwesomeIcon icon={faFilter} />{" "}
+            Kartenebenen mit dem Symbol{" "}<FontAwesomeIcon icon={faFilter} />{" "}
             rechts neben dem Titel der Kartenebene verfügen über integrierte 
             Filtermöglichkeiten. Durch Anklicken dieses Symbols blenden Sie die 
             zugehörigen Filter ein bzw. aus. Anklicken eines Filters aktiviert 
