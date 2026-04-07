@@ -61,17 +61,15 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   erscheint eine Auswahlliste mit passenden Treffern. Die
                   Trefferliste ändert sich und wird genauer, wenn Sie weitere
                   Zeichen eingeben. Ein Symbol vor jedem Treffer zeigt an, um
-                  welche Art von Ort es sich handelt: einen{" "}
-                  <Icon name="circle" /> Stadtbezirk, ein{" "}
-                  <Icon name="pie-chart" /> Quartier, eine <Icon name="home" />{" "}
-                  Adresse, eine <FontAwesomeIcon icon={faRestroom} /> Toilette,
-                  eine <Icon name="road" /> Straße ohne Hausnummern, einen{" "}
-                  <Icon name="tag" /> Interessanten Ort ("Point of Interest",
-                  kurz POI), eine <Icon name="tags" /> alternative
+                  welche Art von Ort es sich handelt: einen
+                  {" "}<Icon name="circle" />{" "}Stadtbezirk, ein
+                  {" "}<Icon name="pie-chart" />{" "}Quartier, eine{" "}<Icon name="home" />{" "}
+                  Adresse, eine{" "}<Icon name="road" />{" "}Straße ohne Hausnummern, einen
+                  {" "}<Icon name="tag" />{" "}Interessanten Ort ("Point of Interest",
+                  kurz POI), eine{" "}<Icon name="tags" />{" "}alternative
                   POI-Bezeichnung, ein{" "}<FontAwesomeIcon icon={faRestroom} />{" "}öffentlich zugängliches WC,
-                  eine <Icon name="child" />{" "}
-                  Kindertageseinrichtung oder eine{" "}
-                  <Icon name="graduation-cap" /> Schule.
+                  eine{" "}<Icon name="child" />{" "}Kindertageseinrichtung oder eine
+                  {" "}<Icon name="graduation-cap" />{" "}Schule.
                 </p>
                 <FuzzySearchParagraph />
                 <p>
