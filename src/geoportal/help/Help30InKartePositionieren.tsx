@@ -68,7 +68,8 @@ const Help30InKartePositionieren = ({ showOverlayFromOutside }) => {
                   eine <Icon name="road" /> Straße ohne Hausnummern, einen{" "}
                   <Icon name="tag" /> Interessanten Ort ("Point of Interest",
                   kurz POI), eine <Icon name="tags" /> alternative
-                  POI-Bezeichnung, eine <Icon name="child" />{" "}
+                  POI-Bezeichnung, ein{" "}<FontAwesomeIcon icon={faRestroom} />{" "}öffentlich zugängliches WC,
+                  eine <Icon name="child" />{" "}
                   Kindertageseinrichtung oder eine{" "}
                   <Icon name="graduation-cap" /> Schule.
                 </p>
