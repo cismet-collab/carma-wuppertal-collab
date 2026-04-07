@@ -25,10 +25,6 @@ export const InKartePositionieren = ({
       </NW>
       , eine{" "}
       <NW>
-        <FontAwesomeIcon icon={faRestroom} /> Toilette
-      </NW>
-      , eine{" "}
-      <NW>
         <Icon name="road" /> Straße ohne Hausnummern
       </NW>
       , einen{" "}
@@ -38,6 +34,10 @@ export const InKartePositionieren = ({
       , die{" "}
       <NW>
         <Icon name="tags" /> alternative Bezeichnung eines POI
+      </NW>
+      , ein{" "}
+      <NW>
+        <FontAwesomeIcon icon={faRestroom} /> öffentlich zugängliches WC (nur in der WC-Karte) 
       </NW>
       , eine{" "}
       <NW>
