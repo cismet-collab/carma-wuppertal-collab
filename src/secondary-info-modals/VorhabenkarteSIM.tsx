@@ -149,8 +149,7 @@ const SecondaryInfoModal = ({
             properties: {
               ...item,
               info: {
-                title: item.abgeschlossen ? text + " (abgeschlossen)" : text,
-
+                title: text,
                 header: item.thema.name,
               },
               tel: item.kontakt.telefon,
