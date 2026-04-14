@@ -97,7 +97,9 @@ const SecondaryInfoModal = ({
   //check whether the feature is fully equipped or if it is a basefeature from a vectorlayer
 
   useEffect(() => {
-    if (featureInput?.properties?.fid) {
+    const props =
+      featureInput?.targetProperties || featureInput?.properties || featureInput;
+    if (props?.fid) {
       // Vector tile feature - need to fetch data
       setCompleteFeature(false);
       setFeature(undefined);

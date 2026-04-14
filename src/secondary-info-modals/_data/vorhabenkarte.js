@@ -383,6 +383,35 @@ const data = {
         "state": {
             "selected": false
         }
+    },
+    "Neugestaltung Ankunftsort Adlerbrücke (forwarded icon selection)": {
+        "fid": 31,
+        "thema_signatur": "Icon_Mobilitaet",
+        "thema_farbe": "#3c6db5",
+        "bounds": "[7.188691,51.266122,7.191141,51.267209]",
+        "carmaInfo": {
+            "selectionForwardingTo": [
+                "vorhabenComplexGeoms",
+                "vorhabenPoints"
+            ],
+            "staticProps": {},
+            "propertyTarget": "vorhabenkarte_source.vorhabenComplexGeoms",
+            "sourceLayer": "vorhabenPoints"
+        },
+        "targetProperties": {
+            "fid": 31,
+            "titel": "Neugestaltung Ankunftsort Adlerbrücke",
+            "abgeschlossen": false,
+            "buergerbeteiligung": false,
+            "bounds": "[7.188691,51.266122,7.191141,51.267209]",
+            "beschreibung": "Die Neugestaltung des Ankunftsortes Adlerbrücke / Engelsquartier ist im Zeitraum von 2019 -2025 in Zusammenarbeit mit lokalen und städtischen Akteuren umgesetztes Aufwertungsprojekt des öffentlichen Raumes. Die Wiederherstellung der historischen Adlerbrücke, sowie die schaffung eines Ankunftsortes im sogenannnten Engelsquartier bilden die äußeren Anker des Projektes. Die Errichtung eines signalisierten Fußgängerweges konnte im Engelsjahr 2020 bereits eingeweiht werden. In diesem Zuge wurden auch die Gehwege neu plattiert und die Bushaltestellen ausgebaut.",
+            "thema_id": 1,
+            "thema_name": "Mobilität & Verkehr",
+            "thema_farbe": "#3c6db5",
+            "thema_signatur": "Icon_Mobilitaet",
+            "thema_fuellung": 30
+        },
+        "vectorId": 31
     }
 };
 
