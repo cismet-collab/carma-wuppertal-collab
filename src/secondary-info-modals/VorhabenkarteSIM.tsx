@@ -10,7 +10,7 @@ import {
 import { Tag } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal, Accordion } from "react-bootstrap";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { LightBoxDispatchContext } from "react-cismap/contexts/LightBoxContextProvider";
 import Panel from "react-cismap/commons/Panel";
 import PhotoGallery from "../vorhabenkarte/PhotoGallery";
@@ -81,7 +81,7 @@ export type LightboxDispatch = {
 };
 
 const SecondaryInfoModal = ({
-  feature: featureInput = {},
+  feature: rawFeatureInput = {},
   setOpen = () => {},
   versionString = "???",
   Footer = genericSecondaryInfoFooterFactory({ skipTeilzwilling: true }),
@@ -91,6 +91,23 @@ const SecondaryInfoModal = ({
   versionString?: string;
   Footer?: React.ComponentType<any>;
 }) => {
+  // Forwarded selections (vector-tile icons via selectionForwardingTo) arrive
+  // with the payload under `targetProperties` and no `.properties` wrapper.
+  // Normalize so downstream code can read `featureInput.properties.*`.
+  const featureInput = useMemo(
+    () =>
+      rawFeatureInput?.targetProperties
+        ? {
+            ...rawFeatureInput,
+            properties: {
+              ...rawFeatureInput.targetProperties,
+              ...rawFeatureInput.properties,
+            },
+          }
+        : rawFeatureInput,
+    [rawFeatureInput]
+  );
+
   const [feature, setFeature] = useState<FeatureType | undefined>();
   const [completeFeature, setCompleteFeature] = useState<boolean | undefined>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
