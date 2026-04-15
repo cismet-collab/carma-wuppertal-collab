@@ -384,7 +384,7 @@ const data = {
             "selected": false
         }
     },
-    "Neugestaltung Ankunftsort Adlerbrücke (forwarded icon selection)": {
+    "Neugestaltung Ankunftsort Adlerbrücke (forwarded selection)": {
         "fid": 31,
         "thema_signatur": "Icon_Mobilitaet",
         "thema_farbe": "#3c6db5",
@@ -412,6 +412,36 @@ const data = {
             "thema_fuellung": 30
         },
         "vectorId": 31
+    },
+    "Neugestaltung Kinderspielplatz Allensteiner Straße (forwarded selection)": {
+        "fid": 18,
+        "thema_signatur": "Icon_Kinder_und_Jugend",
+        "thema_farbe": "#835183",
+        "bounds": "[7.214842,51.284844,7.215958,51.285605]",
+        "carmaInfo": {
+            "selectionForwardingTo": [
+                "vorhabenComplexGeoms",
+                "vorhabenPoints"
+            ],
+            "staticProps": {},
+            "propertyTarget": "vorhabenkarte_source.vorhabenComplexGeoms",
+            "sourceLayer": "vorhabenPoints"
+        },
+        "targetProperties": {
+            "fid": 18,
+            "titel": "Neugestaltung Kinderspielplatz Allensteiner Straße",
+            "abgeschlossen": false,
+            "buergerbeteiligung": true,
+            "bounds": "[7.214842,51.284844,7.215958,51.285605]",
+            "fotos": "[{\"url\":\"KSP_Allensteinerstrasse__alt.jpg\",\"anzeige\":\"KSP Allensteiner Straße\"}]",
+            "beschreibung": "Der Spielplatz an der Allensteiner Straße wird neu gestaltet. Durch die Umnutzung des Bolzplatzes und die Erschließung einer dahinter liegenden Fläche wird die Nutzfläche deutlich erweitert und einer sinnvollen Nutzung für die Zielgruppe Kinder bis 14 Jahre zugeführt. Ziel ist es, in den dicht bebauten Bereichen eine hohe Qualität auf engem Raum anzubieten. Auf der Fläche sollen u.a. ein Basketballfeld, Tischtennisplatten, ein Panna-Feld und Klettergeräte entstehen.",
+            "thema_id": 3,
+            "thema_name": "Kinder & Jugend",
+            "thema_farbe": "#835183",
+            "thema_signatur": "Icon_Kinder_und_Jugend",
+            "thema_fuellung": 20
+        },
+        "vectorId": 18
     }
 };
 
