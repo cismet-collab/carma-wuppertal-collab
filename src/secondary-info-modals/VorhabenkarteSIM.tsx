@@ -455,7 +455,14 @@ const SecondaryInfoModal = ({
             {(documents.length > 0 || linksArray.length > 0) && (
               <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
                 <Panel header="Anhang" eventKey="2" bsStyle="warning">
-                  <ul style={{ marginLeft: "-22px" }}>
+                  <ul
+                    style={{
+                      listStyle: "disc",
+                      paddingLeft: 18,
+                      marginLeft: 0,
+                      marginBlock: "1em",
+                    }}
+                  >
                     {documents.map((res, idx) => {
                       return (
                         <li key={idx}>
