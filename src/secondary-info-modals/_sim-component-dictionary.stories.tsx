@@ -18,7 +18,7 @@ import BaudenkmaleStory, {
   SecondaryInfo as Baudenkmale,
 } from "./_baudenkmale-sim.stories";
 import SIMComponentDictionary from ".";
-import { PI_VALUES } from "@carma/math";
+import { PI_VALUES } from "@carma-commons/math";
 
 const meta: Meta = {
   title: "SecondaryInfo Modals",
@@ -44,7 +44,7 @@ export const SIMDictionaryKeys = () => {
       <h3>Test @carma imports</h3>
 
       <pre>
-        {'import {PI_VALUES} from "@carma/math";'}
+        {'import {PI_VALUES} from "@carma-commons/math";'}
         <br />
         <br />
         # Example:

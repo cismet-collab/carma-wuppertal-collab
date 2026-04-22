@@ -59,9 +59,6 @@
       "@carma/geo/types": [
         "_carma_monorepo/libraries/commons/geo/types/src/index.d.ts"
       ],
-      "@carma/math": [
-        "_carma_monorepo/libraries/commons/math/src/index.ts"
-      ],
       "@carma/units/helpers": [
         "_carma_monorepo/libraries/commons/units/helpers/src/index.ts"
       ],
