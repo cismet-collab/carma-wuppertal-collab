@@ -65,7 +65,17 @@ const Help40KarteninhalteUntersuchen = ({
             können Sie die Reihenfolge der übrigen Ebenen individuell anpassen –
             ziehen Sie dazu das entsprechende Steuerelement mit der linken
             Maustaste an die gewünschte Position. So beeinflussen Sie die
-            Reihenfolge, in der die Ebenen in der Karte dargestellt werden. 
+            Reihenfolge, in der die Ebenen in der Karte dargestellt werden.
+            Für einige Kartenebenen haben wir mehrere Kartenstile definiert. 
+            Kartenstile unterscheiden sich vor allem durch die kartographische 
+            Darstellung (Farben, Signaturen, Art der Flächenfüllungen etc.), 
+            aber auch durch die inhaltliche Tiefe (z. B. mit Schrift oder ohne). 
+            Bei diesen Kartenebenen können Sie im Steuerelement über das 
+            Symbol{" "}<FontAwesomeIcon icon={faChevronDown} />{" "}/
+            {" "}<FontAwesomeIcon icon={faChevronUp} />{" "}rechts neben 
+            der graphischen "Mini-Legende" eine Auswahlliste für die verfügbaren 
+            Kartenstile öffnen bzw. schließen. Probieren Sie das am besten mit 
+            der Kartenebene "ALKIS Flurstücke / Gebäude (variable Darstellung)". 
             Kartenebenen mit dem Symbol{" "}<FontAwesomeIcon icon={faFilter} />{" "}
             rechts neben dem Titel der Kartenebene verfügen über integrierte 
             Filtermöglichkeiten. Durch Anklicken dieses Symbols blenden Sie die 
