@@ -88,8 +88,14 @@ const Help40KarteninhalteUntersuchen = ({
             zugehörigen Filter ein bzw. aus. Anklicken eines Filters aktiviert 
             (farbige Darstellung) bzw. deaktiviert ihn (Graustufendarstellung). 
             In der Karte werden dann nur diejenigen Objekte angezeigt, die den 
-            jeweiligen Filterbedingungen genügen. Wenn Sie z. B. bei der Kartenebene 
-            "WC-Anlagen" die Filter "Kostenfrei" und "Rollstuhlgerecht" aktiviert 
+            jeweiligen Filterbedingungen genügen. Wenn Sie z. B. bei der Kartenebene{" "}
+            <a
+              target="_legal"
+              href="https://digital-twin-wuppertal-live.github.io/geoportal/#/?lat=51.2802614&lng=7.1862763&zoom=20&config=b5023931c6cf7ff8&appKey=sharedurl"
+            >
+              WC-Anlagen
+            </a>
+            {" "}die Filter "Kostenfrei" und "Rollstuhlgerecht" aktiviert 
             haben, werden nur die kostenfreien und rollstuhlgerechten WC Anlagen 
             dargestellt. Ein
             Klick auf ein Kartensteuerelement öffnet eine Bedienzeile zur
