@@ -75,7 +75,13 @@ const Help40KarteninhalteUntersuchen = ({
             {" "}<FontAwesomeIcon icon={faChevronUp} />{" "}rechts neben 
             der graphischen "Mini-Legende" eine Auswahlliste für die verfügbaren 
             Kartenstile öffnen bzw. schließen. Probieren Sie das am besten mit 
-            der Kartenebene "ALKIS Flurstücke / Gebäude (variable Darstellung)". 
+            der Kartenebene{" "}
+            <a
+              target="_legal"
+              href="https://digital-twin-wuppertal-live.github.io/geoportal/#/?lat=51.2605129&lng=7.1603742&zoom=20&config=1a21f2fc7a6fe203&appKey=sharedurl"
+            >
+              ALKIS Flurstücke / Gebäude (variable Darstellung)
+            </a>. 
             Kartenebenen mit dem Symbol{" "}<FontAwesomeIcon icon={faFilter} />{" "}
             rechts neben dem Titel der Kartenebene verfügen über integrierte 
             Filtermöglichkeiten. Durch Anklicken dieses Symbols blenden Sie die 
