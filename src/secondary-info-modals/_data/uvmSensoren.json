@@ -1,0 +1,131 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:W_ENV_AQMesh_1932",
+      "properties": {
+        "entityType": "AirQualityObserved",
+        "id": "urn:ngsi-ld:W_ENV_AQMesh_1932",
+        "pressure": 1011.9,
+        "no": -1.5,
+        "o3": 50.5,
+        "no2": 38.4,
+        "dateCreated": "2026-04-29 22:40:46+02:00",
+        "temperature": 17.2,
+        "dateObserved": "2026-04-29 19:30:00+02:00",
+        "relativeHumidity": 0.365,
+        "carmaInfo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.088338136672974, 51.235844918508235]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:W_ENV_AQMesh_1935",
+      "properties": {
+        "entityType": "AirQualityObserved",
+        "id": "urn:ngsi-ld:W_ENV_AQMesh_1935",
+        "pressure": 1006.5,
+        "no": -0.2,
+        "o3": 50.4,
+        "no2": 14.9,
+        "dateCreated": "2026-04-29 22:40:46+02:00",
+        "temperature": 18,
+        "dateObserved": "2026-04-29 19:30:00+02:00",
+        "relativeHumidity": 0.372,
+        "carmaInfo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.131457328796387, 51.25594599501676]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:W_ENV_AQMesh_1937",
+      "properties": {
+        "entityType": "AirQualityObserved",
+        "id": "urn:ngsi-ld:W_ENV_AQMesh_1937",
+        "pressure": 1007.9,
+        "no": -4.9,
+        "o3": 55.7,
+        "no2": 19.8,
+        "dateCreated": "2026-04-29 22:40:46+02:00",
+        "temperature": 17.1,
+        "dateObserved": "2026-04-29 19:30:00+02:00",
+        "relativeHumidity": 0.353,
+        "carmaInfo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.1473681926727295, 51.26076679772763]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:W_ENV_AQMesh_4485",
+      "properties": {
+        "entityType": "AirQualityObserved",
+        "id": "urn:ngsi-ld:W_ENV_AQMesh_4485",
+        "pressure": 1008.2,
+        "no": -13,
+        "o3": 41.6,
+        "no2": 23.5,
+        "dateCreated": "2026-04-29 22:40:46+02:00",
+        "temperature": 17.8,
+        "dateObserved": "2026-04-29 19:30:00+02:00",
+        "relativeHumidity": 0.315,
+        "carmaInfo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.1833741664886475, 51.264962767365546]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:W_ENV_AQMesh_1933",
+      "properties": {
+        "entityType": "AirQualityObserved",
+        "id": "urn:ngsi-ld:W_ENV_AQMesh_1933",
+        "pressure": 1005.8,
+        "no": -0.2,
+        "o3": 48.5,
+        "no2": 17.5,
+        "dateCreated": "2026-04-29 22:40:46+02:00",
+        "temperature": 17,
+        "dateObserved": "2026-04-29 19:30:00+02:00",
+        "relativeHumidity": 0.367,
+        "carmaInfo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.194103002548218, 51.272427289535074]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:W_ENV_AQMesh_1936",
+      "properties": {
+        "entityType": "AirQualityObserved",
+        "id": "urn:ngsi-ld:W_ENV_AQMesh_1936",
+        "pressure": 1001.8,
+        "no": -2.9,
+        "o3": 59,
+        "no2": 24.8,
+        "dateCreated": "2026-04-29 22:40:46+02:00",
+        "temperature": 17.4,
+        "dateObserved": "2026-04-29 19:30:00+02:00",
+        "relativeHumidity": 0.371,
+        "carmaInfo": {}
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.2067201137542725, 51.281487804776845]
+      }
+    }
+  ]
+}
