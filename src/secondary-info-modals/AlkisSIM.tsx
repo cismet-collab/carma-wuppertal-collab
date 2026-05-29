@@ -546,8 +546,6 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
   const gemarkungName = getGemarkungName(props.gemarkungsnummer);
   const nutzungen = parseNutzungen(props.nutzungen);
   const buchungen = parseBuchungen(props.buchungen);
-  const hasBaulast =
-    props.baulast_status !== undefined && props.baulast_status > 0;
   const hasBuchungen = buchungen.totalCount > 0;
   const hasMultipleBuchungen = buchungen.totalCount > 1;
 
@@ -930,96 +928,94 @@ const FlurstueckInfo = ({ props }: { props: FlurstueckProperties }) => {
         </Panel>
       </Accordion>
 
-      {hasBaulast && (
-        <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
-          <Panel header="Baulastnachweis" eventKey="2" bsStyle="success">
-            <div style={{ marginBottom: 10 }}>{getBaulastText()}</div>
-            <div style={{ marginBottom: 10 }}>
-              <FontAwesomeIcon icon={faPlusSquare} style={{ marginRight: 8 }} />
-              {containsBaulastLayer ? (
-                <span>
-                  Kartenebene "Baulastnachweis" befindet sich in der Karte
-                </span>
-              ) : (
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    try {
-                      addLayerById(baulastLayerID);
-                    } catch (e) {
-                      console.error("Error adding layer", e);
-                    }
+      <Accordion style={{ marginBottom: 6 }} defaultActiveKey={"2"}>
+        <Panel header="Baulastnachweis" eventKey="2" bsStyle="success">
+          <div style={{ marginBottom: 10 }}>{getBaulastText()}</div>
+          <div style={{ marginBottom: 10 }}>
+            <FontAwesomeIcon icon={faPlusSquare} style={{ marginRight: 8 }} />
+            {containsBaulastLayer ? (
+              <span>
+                Kartenebene "Baulastnachweis" befindet sich in der Karte
+              </span>
+            ) : (
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  try {
+                    addLayerById(baulastLayerID);
+                  } catch (e) {
+                    console.error("Error adding layer", e);
+                  }
+                }}
+              >
+                Kartenebene "Baulastnachweis" laden
+              </a>
+            )}
+          </div>
+          <table style={{ marginBottom: 10, borderCollapse: "collapse" }}>
+            <thead>
+              <tr>
+                <th
+                  style={{
+                    textAlign: "left",
+                    paddingBottom: 8,
+                    paddingRight: 20,
                   }}
                 >
-                  Kartenebene "Baulastnachweis" laden
-                </a>
-              )}
-            </div>
-            <table style={{ marginBottom: 10, borderCollapse: "collapse" }}>
-              <thead>
-                <tr>
-                  <th
-                    style={{
-                      textAlign: "left",
-                      paddingBottom: 8,
-                      paddingRight: 20,
-                    }}
+                  Produktbeschreibung
+                </th>
+                <th
+                  style={{
+                    textAlign: "center",
+                    paddingBottom: 8,
+                    paddingRight: 20,
+                  }}
+                >
+                  Zur Bestellung
+                </th>
+                <th style={{ textAlign: "left", paddingBottom: 8 }}>
+                  Hinweise
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={{ paddingRight: 20 }}>Baulastbescheinigung</td>
+                <td style={{ paddingRight: 20, textAlign: "center" }}>
+                  <a
+                    href={baulastenUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Produktbeschreibung
-                  </th>
-                  <th
-                    style={{
-                      textAlign: "center",
-                      paddingBottom: 8,
-                      paddingRight: 20,
-                    }}
-                  >
-                    Zur Bestellung
-                  </th>
-                  <th style={{ textAlign: "left", paddingBottom: 8 }}>
-                    Hinweise
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style={{ paddingRight: 20 }}>Baulastbescheinigung</td>
-                  <td style={{ paddingRight: 20, textAlign: "center" }}>
-                    <a
-                      href={baulastenUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FontAwesomeIcon icon={faShoppingCart} />
-                    </a>
-                  </td>
-                  <td style={{ fontSize: "11px" }}>1, 2</td>
-                </tr>
-              </tbody>
-            </table>
-            <hr style={{ margin: "10px 0" }} />
-            <div style={{ fontSize: "11px" }}>
-              1: Dokument-Download abends/Wochenende verzögert
-              (ALKIS-Aktualisierung)
-            </div>
-            <div style={{ fontSize: "11px" }}>
-              2: Datenschutzprüfung des berechtigten Interesses erforderlich
-            </div>
+                    <FontAwesomeIcon icon={faShoppingCart} />
+                  </a>
+                </td>
+                <td style={{ fontSize: "11px" }}>1, 2</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr style={{ margin: "10px 0" }} />
+          <div style={{ fontSize: "11px" }}>
+            1: Dokument-Download abends/Wochenende verzögert
+            (ALKIS-Aktualisierung)
+          </div>
+          <div style={{ fontSize: "11px" }}>
+            2: Datenschutzprüfung des berechtigten Interesses erforderlich
+          </div>
 
-            <div style={{ marginTop: 10 }}>
-              <b>Gebühren:</b>
-              <ul style={{ margin: "5px 0", paddingLeft: 20 }}>
-                <li>Wenn Baulasten vorhanden sind: je Grundstück 50 – 75 €</li>
-                <li>Wenn keine Baulasten vorhanden sind: je Grundstück 30 €</li>
-              </ul>
-            </div>
-            <div style={{ marginTop: 10 }}>
-              <b>Zahlungsarten:</b> PayPal, Kreditkarte, SEPA Lastschrift
-            </div>
-          </Panel>
-        </Accordion>
-      )}
+          <div style={{ marginTop: 10 }}>
+            <b>Gebühren:</b>
+            <ul style={{ margin: "5px 0", paddingLeft: 20 }}>
+              <li>Wenn Baulasten vorhanden sind: je Grundstück 50 – 75 €</li>
+              <li>Wenn keine Baulasten vorhanden sind: je Grundstück 30 €</li>
+            </ul>
+          </div>
+          <div style={{ marginTop: 10 }}>
+            <b>Zahlungsarten:</b> PayPal, Kreditkarte, SEPA Lastschrift
+          </div>
+        </Panel>
+      </Accordion>
     </>
   );
 };
