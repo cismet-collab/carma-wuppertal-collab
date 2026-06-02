@@ -7,7 +7,7 @@ export const MeasurementsText = () => {
       style={{ margin: "0", paddingLeft: "20px", maxWidth: "600px" }}
     >
       <div>
-        <b>Wechselschalter zum Ein-/Ausschalten des Messungsmodus</b>
+        <b>Wechselschalter zum Ein-/Ausschalten des Messungsmodus (2D und 3D)</b>
         <br />
         <HelpOverlayLink target="LAYERBUTTONS">Zeichnung-Steuerelement</HelpOverlayLink>{" "} 
         zur Arbeit mit allen im Browser gespeicherten 
@@ -17,9 +17,9 @@ export const MeasurementsText = () => {
         ("Snapping") | Linienzüge beenden mit Doppelklick, Flächen schließen 
         durch erneutes Anklicken des Startpunktes | Anzeige einer einzelnen 
         selektierten Messung und Durchwandern aller Messungen in der{" "} 
-        <HelpOverlayLink target="INFOBOX">Info-Box</HelpOverlayLink> | Speichern
-        über Zeichnung-Steuerelement als GeoJSON-Datei oder (nur 2D) im Geoportal
-        unter Objekte/Meine Messungen  
+        <HelpOverlayLink target="INFOBOX">Info-Box</HelpOverlayLink>{" "}| Speichern
+        über{" "}<HelpOverlayLink target="LAYERBUTTONS">Zeichnung-Steuerelement</HelpOverlayLink>{" "}
+        als GeoJSON-Datei oder (nur 2D) im Geoportal unter Objekte/Meine Messungen  
       </div>
     </ul>
   );

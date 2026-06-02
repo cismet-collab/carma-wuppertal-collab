@@ -296,7 +296,7 @@ export const elements: Record<string, ElementType> = {
     key: "MESSUNGEN",
     content: (
       <div>
-        <b>Modus Strecke/Fläche messen</b>
+        <b>Messungsmodus</b>
       </div>
     ),
     containerPos: "center",
