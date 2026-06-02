@@ -16,7 +16,7 @@ export const LayerButtonsText = () => {
           <FontAwesomeIcon icon={faLayerGroup} />{" "}, dazu 
           variabel für jeden weiteren Karteninhalt ein Ebenen-Steuerelement 
           (nur 2D) oder Objekt-Steuerelement | im Messungsmodus 
-          zusätzlich Zeichnungs-Steuerelement   
+          zusätzlich Zeichnung-Steuerelement   
         </b>
         <br />
         horizontales Verschieben der Ebenen- und Objektsteuerelemente zur Änderung der
@@ -40,7 +40,7 @@ export const LayerButtonsText = () => {
       </li>
       <li>
         <b>Objekt-Steuerelemente</b>: Beschreibung und ggf. Links bei 3D-Objekten und Planungsarealen | 
-        Inhalt, Datenquelle und Legende bei als Objekt abgelegten Messungen ("Messungs-Steuerelemente")
+        Inhalt, Datenquelle und Legende bei als Objekt abgelegten Messungen ("Messung-Steuerelemente")
       </li>
     </ul>
   );
