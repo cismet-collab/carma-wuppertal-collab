@@ -13,11 +13,12 @@ export const LayerButtonsText = () => {
       <div>
         <b>
           Festes Hintergrund-Steuerelement{" "}
-          <FontAwesomeIcon icon={faLayerGroup} />, dazu variabel für jede
-          weitere geladene Kartenebene ein Ebenen-Steuerelement (2D)
+          <FontAwesomeIcon icon={faLayerGroup} />{" "}(2D und 3D), dazu 
+          variabel für jeden weiteren Karteninhalt ein Ebenen-Steuerelement 
+          (2D) oder Objekt-Steuerelement (2D und 3D)
         </b>
         <br />
-        horizontales Verschieben der Ebenen-Steuerelemente zur Änderung der
+        horizontales Verschieben der Ebenen- und Objektsteuerelemente zur Änderung der
         Darstellungsreihenfolge | Optional: öffnen/schließen einer 
         Kartenstil-Auswahlliste mit{" "}<FontAwesomeIcon icon={faChevronDown} />{" "}/
         {" "}<FontAwesomeIcon icon={faChevronUp} />,{" "}<FontAwesomeIcon icon={faFilter} />{" "}
@@ -36,6 +37,9 @@ export const LayerButtonsText = () => {
         <b>Ebenen-Steuerelemente</b>: Kurzbeschreibung | Legende | Verknüpfungen
         mit Metadaten, Open Data etc.
       </li>
+      <li>
+        <b>Objekt-Steuerelemente</b>: Beschreibung und ggf. Links bei 3D-Objekten und Planungsarealen | 
+        Inhalt, Datenquelle und Legende bei als Objekt abgelegte Messungen (Messungs-Steuerelemente)
     </ul>
   );
 };
