@@ -7,11 +7,13 @@ export const InfoboxText = () => {
       style={{ margin: "0", paddingLeft: "20px", maxWidth: "600px" }}
     >
       <div>
-        <b>Modusabhängige Anzeige von Objektinformationen (2D)</b>
+        <b>Modusabhängige Anzeige von Objektinformationen (2D und 3D)</b>
         <br />
-        <HelpOverlayLink target="MESSUNGEN">
-          Modus Strecke/Fläche messen
-        </HelpOverlayLink>
+        <b>
+          <HelpOverlayLink target="MESSUNGEN">
+            Messungsmodus
+          </HelpOverlayLink>
+        </b>
         : Navigation in zuvor angelegten Messgeometrien, Anzeige der
         Messergebnisse, Löschen von Messgeometrien |{" "}
         <b>Modus Sachdatenabfrage</b>: Anzeige der wichtigsten
