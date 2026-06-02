@@ -13,9 +13,9 @@ export const LayerButtonsText = () => {
       <div>
         <b>
           Festes Hintergrund-Steuerelement{" "}
-          <FontAwesomeIcon icon={faLayerGroup} />{" "}(2D und 3D), dazu 
+          <FontAwesomeIcon icon={faLayerGroup} />{" "}, dazu 
           variabel für jeden weiteren Karteninhalt ein Ebenen-Steuerelement 
-          (2D) oder Objekt-Steuerelement (2D und 3D) | im Messungsmodus 
+          (nur 2D) oder Objekt-Steuerelement | im Messungsmodus 
           zusätzlich Zeichnungs-Steuerelement   
         </b>
         <br />
