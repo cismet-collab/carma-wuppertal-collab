@@ -11,7 +11,6 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import FeatureInfoIcon from "../../commons/FeatureInfoIcon";
-import MeasureIcon from "../../commons/assets/measure.png";
 
 const Help40KarteninhalteUntersuchen = ({
   showOverlayFromOutside,
@@ -210,55 +209,6 @@ const Help40KarteninhalteUntersuchen = ({
               <HelpOverlayLink
                 onClick={() => {
                   showOverlayFromOutside("SACHDATENABFRAGE");
-                }}
-              >
-                s. Hilfefolie
-              </HelpOverlayLink>
-            </span>{" "}
-          </p>
-          <p>
-            Mit dem Wechselschalter{" "}
-            <img alt="Messmodus" height={20} width={20} src={MeasureIcon} />{" "}
-            links unten in der Werkzeugleiste können Sie den Messungsmodus ein- bzw. 
-            ausschalten. In diesem Modus erzeugen Sie durch Ihre Mausklicks Messgeometrien 
-            in Form von Linienzügen oder geschlossenen Flächen. Dabei werden Stützpunkte der Geometrien 
-            von Vektor-Kartenebenen eingefangen, eine Funktion, die als "Snapping" bezeichnet wird. Bei 
-            einem Gerät mit externer Tastatur können Sie das Snapping unterdrücken, indem Sie beim Anlegen 
-            der Messgeometrie die ALT-Taste gedrückt halten. Einen Linienzug beenden 
-            Sie durch erneutes Anklicken des letzten Punktes oder einfach durch einen Doppelklick. 
-            Eine Fläche schließen Sie, indem Sie wieder auf den Startpunkt klicken. Die 
-            Messergebnisse (bei Linienzügen die Streckenlänge, bei Flächen zusätzlich der Flächeninhalt) 
-            werden bereits während des Anlegens der Messgeometrie laufend in der Info-Box angezeigt. 
-            Die Messgeometrien werden im Cache-Speicher Ihres Browsers 
-            gespeichert. Dadurch können Sie in der Info-Box mit den Pfeiltasten{" "}           
-            <a className="useAClassNameToRenderProperLink">
-              &lt;&lt;
-            </a>{" "}und{" "}
-            <a className="useAClassNameToRenderProperLink">
-              &gt;&gt;
-            </a>{" "}durch die 
-            Messgeometrien im aktuellen Kartenausschnitt wandern. Über den Link{" "}  
-            <a className="useAClassNameToRenderProperLink">
-              n Messungen verfügbar
-            </a>{" "}lässt sich der Kartenausschnitt zudem so einstellen, dass alle Messgeometrien sichtbar 
-            sind. Wenn Sie den Cache-Speicher löschen, gehen auch die gespeicherten Messungen verloren.
-            {" "}<b>Zuletzt noch einige Hinweise zur Genauigkeit der Messungen</b>: Die Dehnungen der Strecken 
-            und Flächen, die durch die Abbildung der gekrümmten Erdoberfläche in eine ebene Kartendarstellung entstehen
-            (hier durch die in der Webkartographie übliche Abbildung "Web Mercator (Auxiliary Sphere)", EPSG:3857), 
-            werden korrigiert. Die Messergebnisse entsprechen daher in sehr guter Annäherung den realen Verhältnissen. 
-            Wir geben die auf die Erdoberfläche projizierten Strecken an. Diese können deutlich kürzer sein als die schrägen 
-            Strecken, die Sie z. B. entlang der Oberfläche einer der steilen Wuppertaler Straßen messen 
-            würden. Wegen einiger kartographischer und rechentechnischer Vereinfachungen und der begrenzten 
-            geometrischen Genauigkeit sowohl des Karteninhalts als auch der Messgeometrien sind die Messungsergebnisse 
-            nicht perfekt, aber für die meisten Fragestellungen völlig ausreichend. Bei kurzen Segmenten ist die 
-            Genauigkeit besser als +/- 50 cm, die auf volle Meter gerundete Streckenlänge ist daher sicher. Bei 
-            Segmenten mit einer Länge von mehreren Kilometern wird die Genauigkeit mit +/- 5 m etwas schlechter, 
-            hier ist also die auf 10 Meter gerundete Streckenlänge sicher.
-            <span className="hide-on-small-screens">
-              {" "}
-              <HelpOverlayLink
-                onClick={() => {
-                  showOverlayFromOutside("MESSUNGEN");
                 }}
               >
                 s. Hilfefolie
