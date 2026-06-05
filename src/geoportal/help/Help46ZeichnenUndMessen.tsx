@@ -15,16 +15,30 @@ const Help46ZeichnenUndMessen = ({
           <p>
             Mit dem Wechselschalter{" "}
             <img alt="Messmodus" height={20} width={20} src={MeasureIcon} />{" "}
-            links unten in der Werkzeugleiste können Sie den Messungsmodus ein- bzw. 
-            ausschalten. In diesem Modus erzeugen Sie durch Ihre Mausklicks Messgeometrien 
-            in Form von Linienzügen oder geschlossenen Flächen. Dabei werden Stützpunkte der Geometrien 
-            von Vektor-Kartenebenen eingefangen, eine Funktion, die als "Snapping" bezeichnet wird. Bei 
-            einem Gerät mit externer Tastatur können Sie das Snapping unterdrücken, indem Sie beim Anlegen 
-            der Messgeometrie die ALT-Taste gedrückt halten. Einen Linienzug beenden 
-            Sie durch erneutes Anklicken des letzten Punktes oder einfach durch einen Doppelklick. 
-            Eine Fläche schließen Sie, indem Sie wieder auf den Startpunkt klicken. Die 
+            links unten in der Werkzeugleiste können Sie in 2D und 3D den Messungsmodus ein- bzw. 
+            ausschalten. Das Messen beginnt immer damit, dass sie einen Punkt, eine Strecke oder 
+            eine Fläche "zeichnen". Diese Messgeometrien werden auf einer eigenen Zeichnungsebene 
+            angelegt, die Sie über das <b>Zeichnung-Steuerelement</b>, stets ganz rechts in der Reihe der 
+            Kartensteuerelemente, ansprechen können. Die 2D- und die 3D-Ansicht verfügen dabei über 
+            unabhängige Zeichnungsebenen. Die Messgeometrien werden im Browser-Cache gespeichert, 
+            sie sind daher auch nach einem Neustart des Geoportals noch auf der Zeichnungsebene verfügbar. 
+            Über die Funktionen auf dem Zeichnung-Steuerelement können Sie den Kartenausschnitt so 
+            einstellen, dass alle Messungsgeometrien auf der Zeichnungsebene angezeigt werden. Außerdem 
+            können Sie hierüber alle Messungsgeometrien speichern (dazu unten mehr) oder löschen und 
+            auch hier den Messungsmodus beenden.  
+          </p>  
+          <p>
+            In der <b>2D-Betrachtung</b> gibt es nur einen Messungsmodus. Mit Ihren Mausklicks erzeugen Sie 
+            darin Messgeometrien in Form von Linienzügen oder geschlossenen Flächen. Dabei werden 
+            Stützpunkte der Geometrien von Vektor-Kartenebenen eingefangen, eine Funktion, die als 
+            "Snapping" bezeichnet wird. Bei einem Gerät mit externer Tastatur können Sie das Snapping 
+            unterdrücken, indem Sie beim Anlegen der Messgeometrie die ALT-Taste gedrückt halten. 
+            Einen Linienzug beenden Sie durch erneutes Anklicken des letzten Punktes oder einfach durch 
+            einen Doppelklick. Eine Fläche schließen Sie, indem Sie wieder auf den Startpunkt klicken. Die 
             Messergebnisse (bei Linienzügen die Streckenlänge, bei Flächen zusätzlich der Flächeninhalt) 
-            werden bereits während des Anlegens der Messgeometrie laufend in der Info-Box angezeigt. 
+            werden bereits während des Anlegens der Messgeometrie laufend in der Info-Box angezeigt.
+          </p>
+          <p> 
             Die Messgeometrien werden im Cache-Speicher Ihres Browsers 
             gespeichert. Dadurch können Sie in der Info-Box mit den Pfeiltasten{" "}           
             <a className="useAClassNameToRenderProperLink">
