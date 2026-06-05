@@ -50,6 +50,7 @@ const Help46ZeichnenUndMessen = ({
             Genauigkeit besser als +/- 50 cm, die auf volle Meter gerundete Streckenlänge ist daher sicher. Bei 
             Segmenten mit einer Länge von mehreren Kilometern wird die Genauigkeit mit +/- 5 m etwas schlechter, 
             hier ist also die auf 10 Meter gerundete Streckenlänge sicher.
+            <br/><br/>
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
@@ -57,7 +58,7 @@ const Help46ZeichnenUndMessen = ({
                   showOverlayFromOutside("MESSUNGEN");
                 }}
               >
-                s. Hilfefolie
+                zur Hilfefolie
               </HelpOverlayLink>
             </span>{" "}
           </p>
