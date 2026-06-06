@@ -20,7 +20,7 @@ const Help46ZeichnenUndMessen = ({
             eine Fläche "zeichnen". Diese Messgeometrien werden auf einer eigenen Zeichnungsebene 
             angelegt, die Sie über das <b>Zeichnung-Steuerelement</b>, stets ganz rechts in der Reihe der 
             Kartensteuerelemente, ansprechen können. Die 2D- und die 3D-Ansicht verfügen dabei über 
-            unabhängige Zeichnungsebenen. Die Messgeometrien werden im Browser-Cache gespeichert, 
+            unabhängige Zeichnungsebenen. Die Messgeaometrien werden im Browser-Cache gespeichert, 
             sie sind daher auch nach einem Neustart des Geoportals noch auf der Zeichnungsebene verfügbar. 
             Über die Funktionen auf dem Zeichnung-Steuerelement können Sie den Kartenausschnitt so 
             einstellen, dass alle Messungsgeometrien auf der Zeichnungsebene angezeigt werden. Außerdem 
@@ -28,19 +28,16 @@ const Help46ZeichnenUndMessen = ({
             auch hier den Messungsmodus beenden.  
           </p>  
           <p>
-            In der <b>2D-Betrachtung</b> gibt es nur einen Messungsmodus. Mit Ihren Mausklicks erzeugen Sie 
-            darin Messgeometrien in Form von Linienzügen oder geschlossenen Flächen. Dabei werden 
-            Stützpunkte der Geometrien von Vektor-Kartenebenen eingefangen, eine Funktion, die als 
+            In der <b>2D-Betrachtung</b> gibt es nur einen allgemeinen Modus für das Messen. Mit Ihren 
+            Mausklicks erzeugen Sie darin Messgeometrien in Form von Linienzügen oder geschlossenen Flächen. 
+            Dabei werden Stützpunkte der Geometrien von Vektor-Kartenebenen eingefangen, eine Funktion, die als 
             "Snapping" bezeichnet wird. Bei einem Gerät mit externer Tastatur können Sie das Snapping 
             unterdrücken, indem Sie beim Anlegen der Messgeometrie die ALT-Taste gedrückt halten. 
             Einen Linienzug beenden Sie durch erneutes Anklicken des letzten Punktes oder einfach durch 
             einen Doppelklick. Eine Fläche schließen Sie, indem Sie wieder auf den Startpunkt klicken. Die 
-            Messergebnisse (bei Linienzügen die Streckenlänge, bei Flächen zusätzlich der Flächeninhalt) 
-            werden bereits während des Anlegens der Messgeometrie laufend in der Info-Box angezeigt.
-          </p>
-          <p> 
-            Die Messgeometrien werden im Cache-Speicher Ihres Browsers 
-            gespeichert. Dadurch können Sie in der Info-Box mit den Pfeiltasten{" "}           
+            Messergebnisse zu einer einzelnen selektierten Messgeometrie (bei Linienzügen die Streckenlänge, 
+            bei Flächen zusätzlich der Flächeninhalt) werden in der Info-Box angezeigt, auch schon fortlaufend 
+            während des Anlegens der Messgeometrie. Dort können sie außerdem mit den Pfeiltasten{" "}           
             <a className="useAClassNameToRenderProperLink">
               &lt;&lt;
             </a>{" "}und{" "}
@@ -50,9 +47,11 @@ const Help46ZeichnenUndMessen = ({
             Messgeometrien im aktuellen Kartenausschnitt wandern. Über den Link{" "}  
             <a className="useAClassNameToRenderProperLink">
               n Messungen verfügbar
-            </a>{" "}lässt sich der Kartenausschnitt zudem so einstellen, dass alle Messgeometrien sichtbar 
-            sind. Wenn Sie den Cache-Speicher löschen, gehen auch die gespeicherten Messungen verloren.
-            {" "}<b>Zuletzt noch einige Hinweise zur Genauigkeit der Messungen</b>: Die Dehnungen der Strecken 
+            </a>{" "}lässt sich der Kartenausschnitt zuvor so einstellen, dass alle Messgeometrien sichtbar 
+            sind.
+          </p>
+          <p>  
+            <b>Zuletzt noch einige Hinweise zur Genauigkeit der Messungen</b>: Die Dehnungen der Strecken 
             und Flächen, die durch die Abbildung der gekrümmten Erdoberfläche in eine ebene Kartendarstellung entstehen
             (hier durch die in der Webkartographie übliche Abbildung "Web Mercator (Auxiliary Sphere)", EPSG:3857), 
             werden korrigiert. Die Messergebnisse entsprechen daher in sehr guter Annäherung den realen Verhältnissen. 
