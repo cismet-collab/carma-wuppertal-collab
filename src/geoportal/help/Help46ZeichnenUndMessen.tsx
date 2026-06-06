@@ -20,7 +20,7 @@ const Help46ZeichnenUndMessen = ({
             eine Fläche "zeichnen". Diese Messgeometrien werden auf einer eigenen Zeichnungsebene 
             angelegt, die Sie über das <b>Zeichnung-Steuerelement</b>, stets ganz rechts in der Reihe der 
             Kartensteuerelemente, ansprechen können. Die 2D- und die 3D-Ansicht verfügen dabei über 
-            unabhängige Zeichnungsebenen. Die Messgeaometrien werden im Browser-Cache gespeichert, 
+            unabhängige Zeichnungsebenen. Die Messgeometrien werden im Browser-Cache gespeichert, 
             sie sind daher auch nach einem Neustart des Geoportals noch auf der Zeichnungsebene verfügbar. 
             Über die Funktionen auf dem Zeichnung-Steuerelement können Sie den Kartenausschnitt so 
             einstellen, dass alle Messungsgeometrien auf der Zeichnungsebene angezeigt werden. Außerdem 
