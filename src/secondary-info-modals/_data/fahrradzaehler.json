@@ -1,0 +1,188 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:980d5aad-946a-4826-951f-d8bbdc2c4b39",
+      "properties": {
+        "entityType": "ParkingSpot,PMX_Counter",
+        "id": "urn:ngsi-ld:980d5aad-946a-4826-951f-d8bbdc2c4b39",
+        "header": "A2: Counter Payload V2",
+        "header__observedAt": "2026-06-08T11:50:05.180Z",
+        "timeStamp": "2026-06-08T11:50:05.180539+00:00",
+        "timeStamp__observedAt": "2026-06-08T11:50:05.180Z",
+        "dataCategory": 2,
+        "dataCategory__observedAt": "2026-06-08T11:50:05.180Z",
+        "Data_Category": 2,
+        "Data_Category__observedAt": "2026-05-06T10:00:11.340Z",
+        "leftCountClass0": 6,
+        "leftCountClass0__observedAt": "2026-06-08T11:50:05.180Z",
+        "rightCountClass0": 28,
+        "rightCountClass0__observedAt": "2026-06-08T11:50:05.180Z",
+        "intervalMeasureEnd": "11:50 UTC",
+        "intervalMeasureEnd__observedAt": "2026-06-08T11:50:05.180Z",
+        "leftSpeedAVRClass0": 16,
+        "leftSpeedAVRClass0__observedAt": "2026-06-08T11:50:05.180Z",
+        "rightSpeedAVRClass0": 23,
+        "rightSpeedAVRClass0__observedAt": "2026-06-08T11:50:05.180Z",
+        "name": "Nordbahntrasse: Viadukt Wichlinghausen",
+        "dateCreated": "2024-11-11T11:55:59.733737Z",
+        "dateObserved": "2026-06-08T11:50:05.180Z",
+        "dateObserved__observedAt": "2026-06-08T11:50:05.180Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.218348,
+          51.277838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:743b199f-ae18-4e52-b886-fba543ad4049",
+      "properties": {
+        "entityType": "ParkingSpot,PMX_Counter",
+        "id": "urn:ngsi-ld:743b199f-ae18-4e52-b886-fba543ad4049",
+        "header": "A2: Counter Payload V2",
+        "header__observedAt": "2026-06-08T11:50:08.111Z",
+        "timeStamp": "2026-06-08T11:50:08.111735+00:00",
+        "timeStamp__observedAt": "2026-06-08T11:50:08.111Z",
+        "dataCategory": 2,
+        "dataCategory__observedAt": "2026-06-08T11:50:08.111Z",
+        "Data_Category": 2,
+        "Data_Category__observedAt": "2026-05-06T10:00:07.028Z",
+        "leftCountClass0": 0,
+        "leftCountClass0__observedAt": "2026-06-08T11:50:08.111Z",
+        "rightCountClass0": 0,
+        "rightCountClass0__observedAt": "2026-06-08T11:50:08.111Z",
+        "intervalMeasureEnd": "11:50 UTC",
+        "intervalMeasureEnd__observedAt": "2026-06-08T11:50:08.111Z",
+        "leftSpeedAVRClass0": 0,
+        "leftSpeedAVRClass0__observedAt": "2026-06-08T11:50:08.111Z",
+        "rightSpeedAVRClass0": 0,
+        "rightSpeedAVRClass0__observedAt": "2026-06-08T11:50:08.111Z",
+        "name": "Hardtufer",
+        "dateCreated": "2024-11-11T12:03:19.906128Z",
+        "dateObserved": "2026-06-08T11:50:08.111Z",
+        "dateObserved__observedAt": "2026-06-08T11:50:08.111Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.165119,
+          51.26065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:18f572a5-2ae8-4594-bbfd-9ed0b65a605a",
+      "properties": {
+        "entityType": "ParkingSpot,PMX_Counter",
+        "id": "urn:ngsi-ld:18f572a5-2ae8-4594-bbfd-9ed0b65a605a",
+        "header": "A2: Counter Payload V2",
+        "header__observedAt": "2026-06-08T11:50:04.340Z",
+        "timeStamp": "2026-06-08T11:50:04.34031+00:00",
+        "timeStamp__observedAt": "2026-06-08T11:50:04.340Z",
+        "dataCategory": 2,
+        "dataCategory__observedAt": "2026-06-08T11:50:04.340Z",
+        "leftCountClass0": 0,
+        "leftCountClass0__observedAt": "2026-06-08T11:50:04.340Z",
+        "rightCountClass0": 0,
+        "rightCountClass0__observedAt": "2026-06-08T11:50:04.340Z",
+        "intervalMeasureEnd": "11:50 UTC",
+        "intervalMeasureEnd__observedAt": "2026-06-08T11:50:04.340Z",
+        "leftSpeedAVRClass0": 0,
+        "leftSpeedAVRClass0__observedAt": "2026-06-08T11:50:04.340Z",
+        "rightSpeedAVRClass0": 0,
+        "rightSpeedAVRClass0__observedAt": "2026-06-08T11:50:04.340Z",
+        "name": "Nordbahntrasse: Bahnhof Loh",
+        "dateCreated": "2024-11-11T11:28:53.158331Z",
+        "dateObserved": "2026-06-08T11:50:04.340Z",
+        "dateObserved__observedAt": "2026-06-08T11:50:04.340Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.174834,
+          51.269407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:768bdf5f-6848-4350-aa31-3b2f1893318b",
+      "properties": {
+        "entityType": "ParkingSpot,PMX_Counter",
+        "id": "urn:ngsi-ld:768bdf5f-6848-4350-aa31-3b2f1893318b",
+        "header": "A2: Counter Payload V2",
+        "header__observedAt": "2026-06-08T11:50:11.342Z",
+        "timeStamp": "2026-06-08T11:50:11.342625+00:00",
+        "timeStamp__observedAt": "2026-06-08T11:50:11.342Z",
+        "dataCategory": 2,
+        "dataCategory__observedAt": "2026-06-08T11:50:11.342Z",
+        "Data_Category": 2,
+        "Data_Category__observedAt": "2026-05-06T10:00:06.989Z",
+        "leftCountClass0": 1,
+        "leftCountClass0__observedAt": "2026-06-08T11:50:11.342Z",
+        "rightCountClass0": 13,
+        "rightCountClass0__observedAt": "2026-06-08T11:50:11.342Z",
+        "intervalMeasureEnd": "11:50 UTC",
+        "intervalMeasureEnd__observedAt": "2026-06-08T11:50:11.342Z",
+        "leftSpeedAVRClass0": 23,
+        "leftSpeedAVRClass0__observedAt": "2026-06-08T11:50:11.342Z",
+        "rightSpeedAVRClass0": 21,
+        "rightSpeedAVRClass0__observedAt": "2026-06-08T11:50:11.342Z",
+        "name": "Bachstr.",
+        "dateCreated": "2024-11-11T07:06:58.128885Z",
+        "dateObserved": "2026-06-08T11:50:11.342Z",
+        "dateObserved__observedAt": "2026-06-08T11:50:11.342Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.205139,
+          51.273859
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "urn:ngsi-ld:82378d79-79cc-4dc1-9623-c58a25a44c61",
+      "properties": {
+        "entityType": "ParkingSpot,PMX_Counter",
+        "id": "urn:ngsi-ld:82378d79-79cc-4dc1-9623-c58a25a44c61",
+        "header": "A2: Counter Payload V2",
+        "header__observedAt": "2026-06-08T11:50:09.168Z",
+        "timeStamp": "2026-06-08T11:50:09.168185+00:00",
+        "timeStamp__observedAt": "2026-06-08T11:50:09.168Z",
+        "dataCategory": 2,
+        "dataCategory__observedAt": "2026-06-08T11:50:09.168Z",
+        "Data_Category": 2,
+        "Data_Category__observedAt": "2026-05-06T10:00:05.441Z",
+        "leftCountClass0": 0,
+        "leftCountClass0__observedAt": "2026-06-08T11:50:09.168Z",
+        "rightCountClass0": 11,
+        "rightCountClass0__observedAt": "2026-06-08T11:50:09.168Z",
+        "intervalMeasureEnd": "11:50 UTC",
+        "intervalMeasureEnd__observedAt": "2026-06-08T11:50:09.168Z",
+        "leftSpeedAVRClass0": 0,
+        "leftSpeedAVRClass0__observedAt": "2026-06-08T11:50:09.168Z",
+        "rightSpeedAVRClass0": 24,
+        "rightSpeedAVRClass0__observedAt": "2026-06-08T11:50:09.168Z",
+        "name": "Hofkamp",
+        "dateCreated": "2024-11-12T06:55:05.074941Z",
+        "dateObserved": "2026-06-08T11:50:09.168Z",
+        "dateObserved__observedAt": "2026-06-08T11:50:09.168Z"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.155268,
+          51.25796
+        ]
+      }
+    }
+  ]
+}
