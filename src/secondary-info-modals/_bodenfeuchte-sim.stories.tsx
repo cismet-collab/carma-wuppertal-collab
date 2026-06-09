@@ -34,7 +34,7 @@ export const SecondaryInfo: StoryObj<Args> = {
           feature={_feature}
           setOpen={() => {}}
           versionString="myVersion"
-          inStorybook={true}
+          // inStorybook={true}
         />
       </div>
     );
