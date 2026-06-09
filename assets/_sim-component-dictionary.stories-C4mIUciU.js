@@ -1,0 +1,23 @@
+import{m as I,S as n,_ as v,a as u}from"./_alkis-sim.stories-DcSHSwHF.js";import{m as k,S as p,_ as j,a as M}from"./_baudenkmale-sim.stories-DjTox5JM.js";import{m as T,S as c,_ as $,a as E}from"./_bodenfeuchte-sim.stories-DA9tBwvq.js";import{m as A,S as d,_ as U,a as B}from"./_emob-sim.stories-ERz4l3qz.js";import{m as L,S as l,_ as P,a as D}from"./_ebikes-sim.stories-DeCd8SPC.js";import{m as V,S as b,_ as z,a as O}from"./_fahrradzaehler-sim.stories-CHXrX1Mv.js";import{m as C,S as y,_ as K,a as R}from"./_luftmessstationen-sim.stories-DERpSP5P.js";import{m as F,S as x,_ as X,a as N}from"./_uvm-sensoren-sim.stories-CcX3i6gr.js";import{m as w,S,_ as q,a as G}from"./_vorhabenkarte-sim.stories-dX0PMpZl.js";import{m as H,S as g,_ as J,a as Q}from"./_x-and-ride-sim.stories-BEtx0_EP.js";import{_ as W}from"./_klimaorte-sim.stories-POnEfrLx.js";import{j as s}from"./jsx-runtime-CCjYJYRa.js";import"./index-uubelm5h.js";import"./MeinStandpunktMarkerMitKompass-DGSAGxtv.js";import"./index-D3eZ-H7s.js";import"./Section-DMi6eDbB.js";import"./index-DcQjGrIY.js";import"./setPrototypeOf-Bdmw9Av6.js";import"./InKartePositionierenText-DsKm1x--.js";import"./genericSecondaryInfoFooterFactory-BZ9vQChV.js";import"./Modal-BG1p-O6g.js";import"./_story-helpers-CBV-penb.js";import"./TopicMapContextProvider-B4HSWEmu.js";import"./leaflet-src-ODJ4-auN.js";import"./ResponsiveTopicMapContextProvider-B01Rpp0I.js";import"./PhotoLightbox-DRxuk3NS.js";import"./auto-D-wgsU8j.js";import"./imageUrlManipulation-DVIo1G1U.js";import"./Table-BvLZNKae.js";import"./index-CfSZYJ7a.js";import"./index-CiIiCbtB.js";const Y=Math.PI,Z=-Y,ss={title:"SecondaryInfo Modals"},a=()=>{const e=Object.keys(f);return s.jsxs("div",{children:[s.jsx("h3",{children:"SIMComponentDictionary Keys"}),s.jsx("pre",{children:e.map(t=>s.jsx("li",{children:t},t))}),s.jsx("br",{}),s.jsx("br",{}),s.jsx("br",{}),s.jsx("br",{}),s.jsx("h3",{children:"Test @carma imports"}),s.jsxs("pre",{children:['import {PI_VALUES} from "@carma-commons/math";',s.jsx("br",{}),s.jsx("br",{}),"# Example:",s.jsx("br",{}),"-pi: ",Z]})]})};g.argTypes=H.argTypes;l.argTypes=L.argTypes;d.argTypes=A.argTypes;y.argTypes=C.argTypes;S.argTypes=w.argTypes;n.argTypes=I.argTypes;c.argTypes=T.argTypes;p.argTypes=k.argTypes;x.argTypes=F.argTypes;b.argTypes=V.argTypes;a.__docgenInfo={description:"",methods:[],displayName:"SIMDictionaryKeys"};var o,i,_;a.parameters={...a.parameters,docs:{...(o=a.parameters)==null?void 0:o.docs,source:{originalSource:`() => {
+  const keys = Object.keys(SIMComponentDictionary);
+  return <div>
+      <h3>SIMComponentDictionary Keys</h3>
+      <pre>
+        {keys.map(key => <li key={key}>{key}</li>)}
+      </pre>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h3>Test @carma imports</h3>
+
+      <pre>
+        {'import {PI_VALUES} from "@carma-commons/math";'}
+        <br />
+        <br />
+        # Example:
+        <br />
+        -pi: {PI_VALUES.MINUS_PI}
+      </pre>
+    </div>;
+}`,...(_=(i=a.parameters)==null?void 0:i.docs)==null?void 0:_.source}}};const es=["SIMDictionaryKeys","XAndRide","Ebikes","EMob","Luftmessstationen","Vorhabenkarte","Alkis","Bodenfeuchte","Baudenkmale","UvmSensoren","Fahrradzaehler"],ts=Object.freeze(Object.defineProperty({__proto__:null,Alkis:n,Baudenkmale:p,Bodenfeuchte:c,EMob:d,Ebikes:l,Fahrradzaehler:b,Luftmessstationen:y,SIMDictionaryKeys:a,UvmSensoren:x,Vorhabenkarte:S,XAndRide:g,__namedExportsOrder:es,default:ss},Symbol.toStringTag,{value:"Module"})),r=Object.assign({"./AlkisSIM.tsx":u,"./BaudenkmaleSIM.tsx":M,"./BodenfeuchteSIM.tsx":E,"./EMobSIM.jsx":B,"./EbikesSIM.tsx":D,"./FahrradzaehlerSIM.tsx":O,"./LuftmessstationenSIM.tsx":R,"./UvmSensorenSIM.tsx":N,"./VorhabenkarteSIM.tsx":G,"./XandRideSIM.tsx":Q,"./_alkis-sim.stories.tsx":v,"./_baudenkmale-sim.stories.tsx":j,"./_bodenfeuchte-sim.stories.tsx":$,"./_ebikes-sim.stories.tsx":P,"./_emob-sim.stories.tsx":U,"./_fahrradzaehler-sim.stories.tsx":z,"./_klimaorte-sim.stories.tsx":W,"./_luftmessstationen-sim.stories.tsx":K,"./_sim-component-dictionary.stories.tsx":ts,"./_uvm-sensoren-sim.stories.tsx":X,"./_vorhabenkarte-sim.stories.tsx":q,"./_x-and-ride-sim.stories.tsx":J}),f={};var m;for(const e in r){if(/index\.(tsx|jsx|js)$/.test(e)||/\.stories\.(tsx|jsx|js)$/.test(e)||/\.data\.(tsx|jsx|js)$/.test(e))continue;const t=e.match(/\.\/(.*)\.(tsx|jsx|js)$/);if(t&&((m=r[e])!=null&&m.default)){const h=t[1].charAt(0).toLowerCase()+t[1].slice(1);f[h]=r[e].default}}export{n as Alkis,p as Baudenkmale,c as Bodenfeuchte,d as EMob,l as Ebikes,b as Fahrradzaehler,y as Luftmessstationen,a as SIMDictionaryKeys,x as UvmSensoren,S as Vorhabenkarte,g as XAndRide,es as __namedExportsOrder,ss as default};

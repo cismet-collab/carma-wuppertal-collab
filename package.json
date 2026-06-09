@@ -11,6 +11,8 @@
     "sync": "npm run sync:carma && npm run sync:paths && npm run sync:packages",
     "dev": "nx serve",
     "build": "nx vite:build",
+    "typecheck": "node scripts/typecheck-src.cjs",
+    "typecheck:all": "tsc --noEmit --composite false -p tsconfig.app.json",
     "lint": "nx eslint:lint",
     "preview": "nx vite:preview",
     "storybook": "nx serve:storybook",
