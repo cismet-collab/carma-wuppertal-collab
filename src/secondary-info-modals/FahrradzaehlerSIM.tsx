@@ -123,26 +123,26 @@ interface ChartPanel {
 const CHART_PANELS: ChartPanel[] = [
   {
     key: "leftCount",
-    header: "Zählerstand Fahrtrichtung Links (Gesamt)",
-    series: { attr: "leftCountClass0", label: "Zählerstand Links" },
+    header: "Zählerstand Fahrtrichtung Ost (Gesamt)",
+    series: { attr: "leftCountClass0", label: "Zählerstand Ost" },
     color: "#1f77b4",
   },
   {
     key: "rightCount",
-    header: "Zählerstand Fahrtrichtung Rechts (Gesamt)",
-    series: { attr: "rightCountClass0", label: "Zählerstand Rechts" },
+    header: "Zählerstand Fahrtrichtung West (Gesamt)",
+    series: { attr: "rightCountClass0", label: "Zählerstand West" },
     color: "#ff7f0e",
   },
   {
     key: "leftSpeed",
-    header: "Durchschnittsgeschwindigkeit Links (km/h)",
-    series: { attr: "leftSpeedAVRClass0", label: "Ø-Geschw. Links" },
+    header: "Durchschnittsgeschwindigkeit Ost (km/h)",
+    series: { attr: "leftSpeedAVRClass0", label: "Ø-Geschw. Ost" },
     color: "#2ca02c",
   },
   {
     key: "rightSpeed",
-    header: "Durchschnittsgeschwindigkeit Rechts (km/h)",
-    series: { attr: "rightSpeedAVRClass0", label: "Ø-Geschw. Rechts" },
+    header: "Durchschnittsgeschwindigkeit West (km/h)",
+    series: { attr: "rightSpeedAVRClass0", label: "Ø-Geschw. West" },
     color: "#d62728",
   },
 ];
@@ -220,9 +220,9 @@ const renderCurrentValues = (sensor: Record<string, unknown>) => (
           borderRight: "1px solid rgba(255,255,255,0.3)",
         }}
       >
-        Zählerstand Links
+        Zählerstand Ost
       </div>
-      <div style={{ padding: "2px 6px" }}>Zählerstand Rechts</div>
+      <div style={{ padding: "2px 6px" }}>Zählerstand West</div>
     </div>
     <div
       style={{
@@ -255,9 +255,9 @@ const renderCurrentValues = (sensor: Record<string, unknown>) => (
           borderRight: "1px solid rgba(0,0,0,0.1)",
         }}
       >
-        Ø-Geschw. Links
+        Ø-Geschw. Ost
       </div>
-      <div style={{ padding: "2px 6px" }}>Ø-Geschw. Rechts</div>
+      <div style={{ padding: "2px 6px" }}>Ø-Geschw. West</div>
     </div>
     <div
       style={{
