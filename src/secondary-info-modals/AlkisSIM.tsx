@@ -148,19 +148,6 @@ function getProperties(feature: FeatureType): any {
   return feature?.properties || feature;
 }
 
-function formatDate(dateStr?: string): string {
-  if (!dateStr) return "";
-  // Handle format like "19790101  " or "18000101"
-  const cleaned = dateStr.trim();
-  if (cleaned.length >= 8) {
-    const year = cleaned.substring(0, 4);
-    const month = cleaned.substring(4, 6);
-    const day = cleaned.substring(6, 8);
-    return `${day}.${month}.${year}`;
-  }
-  return cleaned;
-}
-
 function parseNutzungen(
   nutzungenStr?: string
 ): Array<{ typ: string; funktion?: string; percentage: number }> {
