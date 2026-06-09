@@ -1,11 +1,10 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import MeasureIcon from "../../commons/assets/measure.png";
-import { faShareNodes, faArrowsAlt } from "@fortawesome/free-solid-svg-icons";
+import { faShareNodes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Help46ZeichnenUndMessen = ({
-  showOverlayFromOutside
-}) => {
+const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
   return (
     <GenericModalMenuSection
       sectionKey="messen"
@@ -16,71 +15,95 @@ const Help46ZeichnenUndMessen = ({
           <p>
             Mit dem Wechselschalter{" "}
             <img alt="Messmodus" height={20} width={20} src={MeasureIcon} />{" "}
-            links unten in der Werkzeugleiste können Sie in 2D und 3D den Messungsmodus ein- bzw. 
-            ausschalten. Das Messen beginnt immer damit, dass sie einen Punkt, eine Strecke oder 
-            eine Fläche "zeichnen". Diese Messgeometrien werden auf einer eigenen Zeichnungsebene 
-            angelegt, die Sie über das <b>Zeichnung-Steuerelement</b>, stets ganz rechts in der Reihe der 
-            Kartensteuerelemente, ansprechen können. Die 2D- und die 3D-Ansicht verfügen dabei über 
-            unabhängige Zeichnungsebenen. Die Messgeometrien werden im Browser-Cache gespeichert, 
-            sie sind daher auch nach einem Neustart des Geoportals noch auf der Zeichnungsebene verfügbar. 
-            Über die Funktionen auf dem Zeichnung-Steuerelement können Sie den Kartenausschnitt so 
-            einstellen, dass alle Messungsgeometrien auf der Zeichnungsebene angezeigt werden. Außerdem 
-            können Sie hierüber alle Messungsgeometrien speichern (dazu unten mehr) oder löschen und 
-            auch hier den Messungsmodus beenden.  
-          </p>  
+            links unten in der Werkzeugleiste können Sie in 2D und 3D den
+            Messungsmodus ein- bzw. ausschalten. Das Messen beginnt immer damit,
+            dass sie einen Punkt, eine Strecke oder eine Fläche "zeichnen".
+            Diese Messgeometrien werden auf einer eigenen Zeichnungsebene
+            angelegt, die Sie über das <b>Zeichnung-Steuerelement</b>, stets
+            ganz rechts in der Reihe der Kartensteuerelemente, ansprechen
+            können. Die 2D- und die 3D-Ansicht verfügen dabei über unabhängige
+            Zeichnungsebenen. Die Messgeometrien werden im Browser-Cache
+            gespeichert, sie sind daher auch nach einem Neustart des Geoportals
+            noch auf der Zeichnungsebene verfügbar. Über die Funktionen auf dem
+            Zeichnung-Steuerelement können Sie den Kartenausschnitt so
+            einstellen, dass alle Messungsgeometrien auf der Zeichnungsebene
+            angezeigt werden. Außerdem können Sie hierüber alle
+            Messungsgeometrien speichern (dazu unten mehr) oder löschen und auch
+            hier den Messungsmodus beenden.
+          </p>
           <p>
-            In der <b>2D-Betrachtung</b> gibt es nur einen allgemeinen Modus für das Messen. Mit Ihren 
-            Mausklicks erzeugen Sie darin Messgeometrien in Form von Linienzügen oder geschlossenen Flächen. 
-            Dabei werden Stützpunkte der Geometrien von Vektor-Kartenebenen eingefangen, eine Funktion, die als 
-            "Snapping" bezeichnet wird. Bei einem Gerät mit externer Tastatur können Sie das Snapping 
-            unterdrücken, indem Sie beim Anlegen der Messgeometrie die ALT-Taste gedrückt halten. 
-            Einen Linienzug beenden Sie durch erneutes Anklicken des letzten Punktes oder einfach durch 
-            einen Doppelklick. Eine Fläche schließen Sie, indem Sie wieder auf den Startpunkt klicken. Die 
-            Messergebnisse zu einer einzelnen selektierten Messgeometrie (bei Linienzügen die Streckenlänge, 
-            bei Flächen zusätzlich der Flächeninhalt) werden in der Info-Box angezeigt, auch schon fortlaufend 
-            während des Anlegens der Messgeometrie. Dort können sie außerdem mit den Pfeiltasten{" "}           
-            <a className="useAClassNameToRenderProperLink">
-              &lt;&lt;
-            </a>{" "}und{" "}
-            <a className="useAClassNameToRenderProperLink">
-              &gt;&gt;
-            </a>{" "}durch die 
-            Messgeometrien im aktuellen Kartenausschnitt wandern. Über den Link{" "}  
+            In der <b>2D-Betrachtung</b> gibt es nur einen allgemeinen Modus für
+            das Messen. Mit Ihren Mausklicks erzeugen Sie darin Messgeometrien
+            in Form von Linienzügen oder geschlossenen Flächen. Dabei werden
+            Stützpunkte der Geometrien von Vektor-Kartenebenen eingefangen, eine
+            Funktion, die als "Snapping" bezeichnet wird. Bei einem Gerät mit
+            externer Tastatur können Sie das Snapping unterdrücken, indem Sie
+            beim Anlegen der Messgeometrie die ALT-Taste gedrückt halten. Einen
+            Linienzug beenden Sie durch erneutes Anklicken des letzten Punktes
+            oder einfach durch einen Doppelklick. Eine Fläche schließen Sie,
+            indem Sie wieder auf den Startpunkt klicken. Die Messergebnisse zu
+            einer einzelnen selektierten Messgeometrie (bei Linienzügen die
+            Streckenlänge, bei Flächen zusätzlich der Flächeninhalt) werden in
+            der Info-Box angezeigt, auch schon fortlaufend während des Anlegens
+            der Messgeometrie. Dort können sie außerdem mit den Pfeiltasten{" "}
+            <a className="useAClassNameToRenderProperLink">&lt;&lt;</a> und{" "}
+            <a className="useAClassNameToRenderProperLink">&gt;&gt;</a> durch
+            die Messgeometrien im aktuellen Kartenausschnitt wandern. Über den
+            Link{" "}
             <a className="useAClassNameToRenderProperLink">
               n Messungen verfügbar
-            </a>{" "}lässt sich der Kartenausschnitt zuvor so einstellen, dass alle Messgeometrien sichtbar 
-            sind.
+            </a>{" "}
+            lässt sich der Kartenausschnitt zuvor so einstellen, dass alle
+            Messgeometrien sichtbar sind.
           </p>
           <p>
-            Zum <b>Speichern</b> aller Messungen auf der Zeichnungsebene klicken Sie im Zeichnung-Steuerelement 
-            auf das Diskettensymbol. In der 2D-Betrachtung öffnen Sie darüber einen Dialog, in dem Sie die 
-            abzuspeichernden Messungen kurz mit Titel und Inhalt beschreiben können. Danach haben Sie 2 Möglichkeiten: 
-            Entweder speichern Sie die Messungen über "Datei Speichern" im GeoJSON-Format in Ihrem Download-Verzeichnis 
-            ab. Oder Sie wählen "Im Portal Speichern", um die Messungen als Objekt unter "Objekte / Meine Messungen" 
-            abzuspeichern. Nach dem Speichern als Objekt wird automatisch ein spezifisches Objekt-Steuerelement für 
-            die Messungen angezeigt, das wir auch als "Messung-Steuerelement" bezeichnen. Ihre gespeicherten Messungen 
-            erreichen Sie über den Dialog "Karteninhalte hinzufügen". Messungen, die Sie als Objekt gespeichert und 
-            dann wieder zur Kartenansicht hinzugefügt haben, können Sie über die{" "}<FontAwesomeIcon icon={faShareNodes} />{" "}
-            Teilen-Funktion auch anderen Personen zur Verfügung stellen. Um eine gespeicherte Datei mit Messungen zu laden, 
-            können Sie diese mit der Maus in das Kartenfenster ziehen. Dadurch wird wie beim Speichern als Objekt ein 
-            entsprechendes Messung-Steuerelement erzeugt. In der 3D-Betrachtung wird zzt. nur das Speichern als GeoJSON-Datei 
-            unter dem festen Dateinamen "annotations.geojson" unterstützt. Entsprechend wird diese Aktion direkt ausgeführt, 
-            ohne dass sich zuvor ein Dialog öffnet. (Das Speichern von 3D-Messungen ist noch in der Entwicklung). 
+            Zum <b>Speichern</b> aller Messungen auf der Zeichnungsebene klicken
+            Sie im Zeichnung-Steuerelement auf das Diskettensymbol. In der
+            2D-Betrachtung öffnen Sie darüber einen Dialog, in dem Sie die
+            abzuspeichernden Messungen kurz mit Titel und Inhalt beschreiben
+            können. Danach haben Sie 2 Möglichkeiten: Entweder speichern Sie die
+            Messungen über "Datei Speichern" im GeoJSON-Format in Ihrem
+            Download-Verzeichnis ab. Oder Sie wählen "Im Portal Speichern", um
+            die Messungen als Objekt unter "Objekte / Meine Messungen"
+            abzuspeichern. Nach dem Speichern als Objekt wird automatisch ein
+            spezifisches Objekt-Steuerelement für die Messungen angezeigt, das
+            wir auch als "Messung-Steuerelement" bezeichnen. Ihre gespeicherten
+            Messungen erreichen Sie über den Dialog "Karteninhalte hinzufügen".
+            Messungen, die Sie als Objekt gespeichert und dann wieder zur
+            Kartenansicht hinzugefügt haben, können Sie über die{" "}
+            <FontAwesomeIcon icon={faShareNodes} /> Teilen-Funktion auch anderen
+            Personen zur Verfügung stellen. Um eine gespeicherte Datei mit
+            Messungen zu laden, können Sie diese mit der Maus in das
+            Kartenfenster ziehen. Dadurch wird wie beim Speichern als Objekt ein
+            entsprechendes Messung-Steuerelement erzeugt. In der 3D-Betrachtung
+            wird zzt. nur das Speichern als GeoJSON-Datei unter dem festen
+            Dateinamen "annotations.geojson" unterstützt. Entsprechend wird
+            diese Aktion direkt ausgeführt, ohne dass sich zuvor ein Dialog
+            öffnet. (Das Speichern von 3D-Messungen ist noch in der
+            Entwicklung).
           </p>
-          <p>  
-            <b>Zuletzt noch einige Hinweise zur Genauigkeit der Messungen</b>: Die Dehnungen der Strecken 
-            und Flächen, die durch die Abbildung der gekrümmten Erdoberfläche in eine ebene Kartendarstellung entstehen
-            (hier durch die in der Webkartographie übliche Abbildung "Web Mercator (Auxiliary Sphere)", EPSG:3857), 
-            werden korrigiert. Die Messergebnisse entsprechen daher in sehr guter Annäherung den realen Verhältnissen. 
-            Wir geben die auf die Erdoberfläche projizierten Strecken an. Diese können deutlich kürzer sein als die schrägen 
-            Strecken, die Sie z. B. entlang der Oberfläche einer der steilen Wuppertaler Straßen messen 
-            würden. Wegen einiger kartographischer und rechentechnischer Vereinfachungen und der begrenzten 
-            geometrischen Genauigkeit sowohl des Karteninhalts als auch der Messgeometrien sind die Messungsergebnisse 
-            nicht perfekt, aber für die meisten Fragestellungen völlig ausreichend. Bei kurzen Segmenten ist die 
-            Genauigkeit besser als +/- 50 cm, die auf volle Meter gerundete Streckenlänge ist daher sicher. Bei 
-            Segmenten mit einer Länge von mehreren Kilometern wird die Genauigkeit mit +/- 5 m etwas schlechter, 
-            hier ist also die auf 10 Meter gerundete Streckenlänge sicher.
-            <br/><br/>
+          <p>
+            <b>Zuletzt noch einige Hinweise zur Genauigkeit der Messungen</b>:
+            Die Dehnungen der Strecken und Flächen, die durch die Abbildung der
+            gekrümmten Erdoberfläche in eine ebene Kartendarstellung entstehen
+            (hier durch die in der Webkartographie übliche Abbildung "Web
+            Mercator (Auxiliary Sphere)", EPSG:3857), werden korrigiert. Die
+            Messergebnisse entsprechen daher in sehr guter Annäherung den realen
+            Verhältnissen. Wir geben die auf die Erdoberfläche projizierten
+            Strecken an. Diese können deutlich kürzer sein als die schrägen
+            Strecken, die Sie z. B. entlang der Oberfläche einer der steilen
+            Wuppertaler Straßen messen würden. Wegen einiger kartographischer
+            und rechentechnischer Vereinfachungen und der begrenzten
+            geometrischen Genauigkeit sowohl des Karteninhalts als auch der
+            Messgeometrien sind die Messungsergebnisse nicht perfekt, aber für
+            die meisten Fragestellungen völlig ausreichend. Bei kurzen Segmenten
+            ist die Genauigkeit besser als +/- 50 cm, die auf volle Meter
+            gerundete Streckenlänge ist daher sicher. Bei Segmenten mit einer
+            Länge von mehreren Kilometern wird die Genauigkeit mit +/- 5 m etwas
+            schlechter, hier ist also die auf 10 Meter gerundete Streckenlänge
+            sicher.
+            <br />
+            <br />
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
