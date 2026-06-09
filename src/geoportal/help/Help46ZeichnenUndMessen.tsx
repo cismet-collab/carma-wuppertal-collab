@@ -1,6 +1,7 @@
 import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import MeasureIcon from "../../commons/assets/measure.png";
+import { faShareNodes, faArrowsAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Help46ZeichnenUndMessen = ({
   showOverlayFromOutside
@@ -58,13 +59,13 @@ const Help46ZeichnenUndMessen = ({
             ab. Oder Sie wählen "Im Portal Speichern", um die Messungen als Objekt unter "Objekte / Meine Messungen" 
             abzuspeichern. Nach dem Speichern als Objekt wird automatisch ein spezifisches Objekt-Steuerelement für 
             die Messungen angezeigt, das wir auch als "Messung-Steuerelement" bezeichnen. Ihre gespeicherten Messungen 
-            erreichen Sie über den Dialog „Karteninhalte hinzufügen“. Messungen, die Sie als Objekt gespeichert und 
-            dann wieder zur Kartenansicht hinzugefügt haben, können Sie über die Teilen-Funktion auch anderen Personen 
-            zur Verfügung stellen. Um eine gespeicherte Datei mit Messungen zu laden, können Sie diese mit der Maus 
-            in das Kartenfenster ziehen. Dadurch wird wie beim Speichern als Objekt ein entsprechendes Messung-Steuerelement 
-            erzeugt. In der 3D-Betrachtung wird zzt. nur das Speichern als GeoJSON-Datei unter dem festen Dateinamen 
-            "annotations.geojson" unterstützt. Entsprechend wird diese Aktion direkt ausgeführt, ohne dass sich zuvor 
-            ein Dialog öffnet. (Das Speichern von 3D-Messungen ist noch in der Entwicklung). 
+            erreichen Sie über den Dialog "Karteninhalte hinzufügen". Messungen, die Sie als Objekt gespeichert und 
+            dann wieder zur Kartenansicht hinzugefügt haben, können Sie über die{" "}<FontAwesomeIcon icon={faShareNodes} />{" "}
+            Teilen-Funktion auch anderen Personen zur Verfügung stellen. Um eine gespeicherte Datei mit Messungen zu laden, 
+            können Sie diese mit der Maus in das Kartenfenster ziehen. Dadurch wird wie beim Speichern als Objekt ein 
+            entsprechendes Messung-Steuerelement erzeugt. In der 3D-Betrachtung wird zzt. nur das Speichern als GeoJSON-Datei 
+            unter dem festen Dateinamen "annotations.geojson" unterstützt. Entsprechend wird diese Aktion direkt ausgeführt, 
+            ohne dass sich zuvor ein Dialog öffnet. (Das Speichern von 3D-Messungen ist noch in der Entwicklung). 
           </p>
           <p>  
             <b>Zuletzt noch einige Hinweise zur Genauigkeit der Messungen</b>: Die Dehnungen der Strecken 
