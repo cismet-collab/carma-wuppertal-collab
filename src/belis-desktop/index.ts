@@ -1,0 +1,1 @@
+export { getCollabedHelpComponentConfig } from "./getCollabedHelpComponentConfig";
