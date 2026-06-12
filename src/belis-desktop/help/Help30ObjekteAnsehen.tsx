@@ -71,8 +71,9 @@ const Component = () => {
           <p>
             <strong>Auswahl-Block.</strong> Sind Highlights aktiv und Sie klicken
             einen noch nicht hervorgehobenen <strong>Standort</strong> oder eine{" "}
-            <strong>Leuchte</strong> an, erscheint ein „Auswahl"-Block mit diesem
-            Objekt und den zugehörigen (ein Standort mit allen seinen Leuchten
+            <strong>Leuchte</strong> an, erscheint in der{" "}
+            <strong>Seitenleiste</strong> ein „Auswahl"-Block mit diesem Objekt
+            und den zugehörigen (ein Standort mit allen seinen Leuchten
             bzw. eine Leuchte mit ihrem Standort und den Geschwister-Leuchten).{" "}
             <strong>Alt</strong> halten blendet Schnell-Hinzufügen-Schaltflächen
             ein: in der Standort-Zeile <strong>+</strong> („Standort hinzufügen")

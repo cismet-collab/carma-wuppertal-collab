@@ -44,6 +44,24 @@ const Component = () => {
             administrativen Referenzdaten). Die einzelnen Schaltflächen dieses
             Dialogs erläutern die jeweiligen Arbeitsschritte im Detail.
           </p>
+          <p>
+            Im Bereich Arbeitsaufträge begegnen Ihnen zwei zentrale Begriffe:
+          </p>
+          <ul>
+            <li>
+              <strong>Arbeitsauftrag (AA)</strong> &ndash; <code>AA-{"{Nr}"}</code>.
+              Bündelt zusammengehörige Außendiensttätigkeiten und enthält ein oder
+              mehrere Protokolle. Jedes hervorgehobene Fachobjekt wird beim Anlegen
+              zu einem Protokoll des Auftrags.
+            </li>
+            <li>
+              <strong>Arbeitsprotokoll (AP)</strong> &ndash; <code>#{"{Nr}"}</code>.
+              Erfasst die an einem einzelnen Fachobjekt (Leuchte, Mast,
+              Schaltstelle &hellip;) innerhalb eines Arbeitsauftrags geleistete
+              Arbeit &ndash; mit Monteur, Datum, Status, Material, Bemerkung und den
+              ausgeführten Aktionen.
+            </li>
+          </ul>
         </div>
       }
     />

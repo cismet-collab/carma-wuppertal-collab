@@ -78,12 +78,6 @@ const Component = () => {
             <strong>Angelegt am</strong> und <strong>Angelegt von</strong>. Die
             Treffer füllen die Arbeitsauftragsliste (ohne Karten-Hervorhebung).
           </p>
-          <p>
-            <strong>Layer-Filter.</strong> Schalten Sie die Layer Standorte,
-            Leuchten, Leitungen, Schaltstellen, Abzweigdosen und Mauerlaschen
-            einzeln um. Bei aktivierten <strong>Leitungen</strong> lässt sich
-            zusätzlich nach <strong>Leitungstyp</strong> eingrenzen.
-          </p>
         </div>
       }
     />
