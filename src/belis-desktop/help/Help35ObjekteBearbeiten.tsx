@@ -70,7 +70,11 @@ const Component = () => {
             Abzweigdose beginnen stets leer. Die grüne{" "}
             <strong>„+"-Schaltfläche</strong> in der Formularkopfzeile legt einen
             neuen Datensatz mit den aktuellen Werten an (bei einer Leuchte samt
-            ihrem Standort). Über <strong>Einstellungen → Gemerkte Felder
+            ihrem Standort). Im <strong>Leuchten</strong>-Formular blenden Sie mit
+            gehaltener <strong>Alt</strong>-Taste zusätzlich eine grüne{" "}
+            <strong>„Werte merken"</strong>-Schaltfläche ein; ein Klick speichert
+            die aktuellen Werte der Leuchte als gemerkte Vorlage für die nächste
+            neue Leuchte. Über <strong>Einstellungen → Gemerkte Felder
             zurücksetzen</strong> leeren Sie den Speicher.
           </p>
           <p>
