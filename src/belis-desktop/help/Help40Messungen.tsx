@@ -5,7 +5,7 @@ const Component = () => {
     <GenericModalMenuSection
       sectionKey="messungen"
       sectionTitle="Messungen"
-      sectionBsStyle="info"
+      sectionBsStyle="success"
       sectionContent={
         <div>
           <p>

@@ -5,12 +5,11 @@ const Component = () => {
     <GenericModalMenuSection
       sectionKey="objekte-bearbeiten"
       sectionTitle="Objekte erstellen & bearbeiten"
-      sectionBsStyle="info"
+      sectionBsStyle="success"
       sectionContent={
         <div>
           <p>
-            <strong>So funktionieren Entwürfe.</strong> Während Sie etwas
-            erstellen oder bearbeiten, wird jedes Objekt als{" "}
+            Während Sie etwas erstellen oder bearbeiten, wird jedes Objekt als{" "}
             <strong>Entwurf</strong> gehalten und im Reiter{" "}
             <strong>Entwürfe</strong> aufgelistet &ndash; Sie können mehrere
             gleichzeitig offen haben.
