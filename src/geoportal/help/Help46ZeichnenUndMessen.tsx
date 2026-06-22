@@ -83,7 +83,7 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             und herzuschalten. Mit der Funktion 
             {" "}<FontAwesomeIcon icon={faArrowsDownToLine} />{" "}"Als Referenzhöhe 
             setzen" in der Info-Box eines Messpunktes können Sie diesen als 
-            Bezugspunkt für die relativen Höhenangaben festlegen. Im Modus 
+            Bezugspunkt für alle relativen Höhenangaben festlegen. Im Modus 
             {" "}<FontAwesomeIcon icon={faRuler} />{" "}"Distanz messen" können
             Sie schräge Strecken auf der Geländeoberfläche messen. Dabei wird
             automatisch ein rechtwinkliges Hilfsdreieck konstruiert, das Ihnen
