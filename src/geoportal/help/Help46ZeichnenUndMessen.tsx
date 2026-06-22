@@ -3,10 +3,10 @@ import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import MeasureIcon from "../../commons/assets/measure.png";
 import {
   faShareNodes,
-  faArrowsDownToLine,
-  faArrowPointer,
-  faLocationDot,
-  faRuler,
+  // faArrowsDownToLine,
+  // faArrowPointer,
+  // faLocationDot,
+  // faRuler,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
