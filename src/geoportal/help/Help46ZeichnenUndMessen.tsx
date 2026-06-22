@@ -62,7 +62,21 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             Messgeometrien sichtbar sind.
           </p>
           <p>
-            In der <b>3D-Betrachtung</b> ...
+            In der <b>3D-Betrachtung</b> gibt es unterschiedliche Messmodi. Wenn Sie
+            auf den weißen Hintergrund des Zeichnung-Steuerelements klicken, wird 
+            ihnen dazu ein Auswahlmenü angeboten. Mit der Funktion "Punkt messen" 
+            können Sie Punkte auf der Oberfläche des 3D-Modells anlegen und deren 
+            dreidimensionale Koordinaten einschließlich der Höhe ermitteln. Wechseln
+            Sie in den Modus "Messung auswählen" und klicken Sie auf die Beschriftung 
+            eines Messpunktes in der Karte, um zwischen der Anzeige seiner absoluten und
+            seiner relativen Höhe hin- und herzuschalten. Mit der Funktion "Als Referenzhöhe 
+            setzen" in der Info-Box eines Messpunktes können Sie diesen als Bezugspunkt für
+            die relativen Höhenangaben festlegen. Im Modus "Distanz messen" könne Sie schräge 
+            Strecken auf der Geländeoberfläche messen. Dabei wird automatisch ein rechtwinkliges 
+            Hilfsdreieck konstruiert, das Ihnen neben der schrägen Strecke auch den Höherunterschied
+            und die ebene (projizierte) Strecke anzeigt. So können Sie z. B. eine Gebäudefassade 
+            ausmessen, indem Sie einfach die Diagonale bestimmen. Das Hilfsdreieck gibt dann 
+            sofort Höhe und Breite der Fassade an.
           </p>
           <p>
             Zum <b>Speichern</b> aller Messungen auf der Zeichnungsebene klicken
@@ -108,8 +122,7 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             geringer, insbesondere wenn die Messungen auf der Grundlage des 
             3D-Mesh durchgeführt werden. Hier setzt man die Messmarke auf ein 
             zwangsläufig etwas vereinfachtes Dreiecksmodell des Geländes auf, 
-            was die Messgenauigkeit beeinträchtigt.
-            das ein      
+            was die Messgenauigkeit beeinträchtigt.     
             <br />
             <br />
             <span className="hide-on-small-screens">
