@@ -13,7 +13,9 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
       sectionContent={
         <div>
           <p>
-            Mit dem Wechselschalter{" "}
+            <b>Ein Hinweis vorab: Die Messfunktionen werden in der aktuellen Version
+            des Geoportals nicht auf Geräten mit Touch-Bildschirm wie Smartphones 
+            oder Tablet-PC's angeboten.</b> Mit dem Wechselschalter{" "}
             <img alt="Messmodus" height={20} width={20} src={MeasureIcon} />{" "}
             links unten in der Werkzeugleiste können Sie in 2D und 3D den
             Messungsmodus ein- bzw. ausschalten. Das Messen beginnt immer damit,
@@ -58,12 +60,11 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
           </p>
           <p>
             Zum <b>Speichern</b> aller Messungen auf der Zeichnungsebene klicken
-            Sie im Zeichnung-Steuerelement auf das Diskettensymbol. In der
-            2D-Betrachtung öffnen Sie darüber einen Dialog, in dem Sie die
-            abzuspeichernden Messungen kurz mit Titel und Inhalt beschreiben
-            können. Danach haben Sie 2 Möglichkeiten: Entweder speichern Sie die
-            Messungen über "Datei Speichern" im GeoJSON-Format in Ihrem
-            Download-Verzeichnis ab. Oder Sie wählen "Im Portal Speichern", um
+            Sie im Zeichnung-Steuerelement auf das Diskettensymbol. Sie öffnen 
+            darüber einen Dialog, in dem Sie die abzuspeichernden Messungen kurz 
+            mit Titel und Inhalt beschreiben können. Danach haben Sie 2 Möglichkeiten: 
+            Entweder speichern Sie die Messungen über "Datei Speichern" im GeoJSON-Format 
+            in Ihrem Download-Verzeichnis ab. Oder Sie wählen "Im Portal Speichern", um
             die Messungen als Objekt unter "Objekte / Meine Messungen"
             abzuspeichern. Nach dem Speichern als Objekt wird automatisch ein
             spezifisches Objekt-Steuerelement für die Messungen angezeigt, das
@@ -75,12 +76,7 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             Personen zur Verfügung stellen. Um eine gespeicherte Datei mit
             Messungen zu laden, können Sie diese mit der Maus in das
             Kartenfenster ziehen. Dadurch wird wie beim Speichern als Objekt ein
-            entsprechendes Messung-Steuerelement erzeugt. In der 3D-Betrachtung
-            wird zzt. nur das Speichern als GeoJSON-Datei unter dem festen
-            Dateinamen "annotations.geojson" unterstützt. Entsprechend wird
-            diese Aktion direkt ausgeführt, ohne dass sich zuvor ein Dialog
-            öffnet. (Das Speichern von 3D-Messungen ist noch in der
-            Entwicklung).
+            entsprechendes Messung-Steuerelement erzeugt.
           </p>
           <p>
             <b>Zuletzt noch einige Hinweise zur Genauigkeit der Messungen</b>:

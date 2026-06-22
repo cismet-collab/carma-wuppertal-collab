@@ -19,7 +19,7 @@ export const MeasurementsText = () => {
         selektierten Messung und Durchwandern aller Messungen in der{" "} 
         <HelpOverlayLink target="INFOBOX">Info-Box</HelpOverlayLink>{" "}| Speichern
         über{" "}<HelpOverlayLink target="LAYERBUTTONS">Zeichnung-Steuerelement</HelpOverlayLink>{" "}
-        als GeoJSON-Datei oder (nur 2D) im Geoportal unter Objekte/Meine Messungen
+        als GeoJSON-Datei oder im Geoportal unter Objekte/Meine Messungen
         <br />
         <HelpOverlayLink section="messen">
           weitere Informationen
