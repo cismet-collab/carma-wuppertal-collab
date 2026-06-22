@@ -15,7 +15,10 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
           <p>
             <b>Ein Hinweis vorab: Die Messfunktionen werden in der aktuellen Version
             des Geoportals nicht auf Geräten mit Touch-Bildschirm wie Smartphones 
-            oder Tablet-PC's angeboten.</b> Mit dem Wechselschalter{" "}
+            oder Tablet-PC's angeboten.</b> 
+          </p>
+          <p>
+            Mit dem Wechselschalter{" "}
             <img alt="Messmodus" height={20} width={20} src={MeasureIcon} />{" "}
             links unten in der Werkzeugleiste können Sie in 2D und 3D den
             Messungsmodus ein- bzw. ausschalten. Das Messen beginnt immer damit,
@@ -59,6 +62,9 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             Messgeometrien sichtbar sind.
           </p>
           <p>
+            In der <b>3D-Betrachtung</b> ...
+          </p>
+          <p>
             Zum <b>Speichern</b> aller Messungen auf der Zeichnungsebene klicken
             Sie im Zeichnung-Steuerelement auf das Diskettensymbol. Sie öffnen 
             darüber einen Dialog, in dem Sie die abzuspeichernden Messungen kurz 
@@ -80,16 +86,17 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
           </p>
           <p>
             <b>Zuletzt noch einige Hinweise zur Genauigkeit der Messungen</b>:
-            Die Dehnungen der Strecken und Flächen, die durch die Abbildung der
-            gekrümmten Erdoberfläche in eine ebene Kartendarstellung entstehen
-            (hier durch die in der Webkartographie übliche Abbildung "Web
-            Mercator (Auxiliary Sphere)", EPSG:3857), werden korrigiert. Die
+            In der <b>2D-Betrachtung</b> werden die Dehnungen der Strecken und Flächen 
+            korrigiert, die durch die Abbildung der gekrümmten Erdoberfläche in 
+            eine ebene Kartendarstellung entstehen (hier durch die in der Webkartographie 
+            übliche Abbildung "Web Mercator (Auxiliary Sphere)", EPSG:3857). Die
             Messergebnisse entsprechen daher in sehr guter Annäherung den realen
             Verhältnissen. Wir geben die auf die Erdoberfläche projizierten
             Strecken an. Diese können deutlich kürzer sein als die schrägen
             Strecken, die Sie z. B. entlang der Oberfläche einer der steilen
-            Wuppertaler Straßen messen würden. Wegen einiger kartographischer
-            und rechentechnischer Vereinfachungen und der begrenzten
+            Wuppertaler Straßen messen würden. (Schräge <b>und</b> projizierte 
+            Strecken können Sie in der 3D-Betrachtung messen.) Wegen einiger 
+            kartographischer und rechentechnischer Vereinfachungen und der begrenzten
             geometrischen Genauigkeit sowohl des Karteninhalts als auch der
             Messgeometrien sind die Messungsergebnisse nicht perfekt, aber für
             die meisten Fragestellungen völlig ausreichend. Bei kurzen Segmenten
@@ -97,7 +104,12 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             gerundete Streckenlänge ist daher sicher. Bei Segmenten mit einer
             Länge von mehreren Kilometern wird die Genauigkeit mit +/- 5 m etwas
             schlechter, hier ist also die auf 10 Meter gerundete Streckenlänge
-            sicher.
+            sicher. In der <b>3D-Betrachtung</b> ist die Genauigkeit noch etwas 
+            geringer, insbesondere wenn die Messungen auf der Grundlage des 
+            3D-Mesh durchgeführt werden. Hier setzt man die Messmarke auf ein 
+            zwangsläufig etwas vereinfachtes Dreiecksmodell des Geländes auf, 
+            was die Messgenauigkeit beeinträchtigt.
+            das ein      
             <br />
             <br />
             <span className="hide-on-small-screens">
