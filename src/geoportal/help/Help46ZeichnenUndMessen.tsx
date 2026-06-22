@@ -3,10 +3,10 @@ import { HelpOverlayLink } from "../../helper-overlay/components/Link";
 import MeasureIcon from "../../commons/assets/measure.png";
 import {
   faShareNodes,
-  // faArrowsDownToLine,
-  // faArrowPointer,
-  // faLocationDot,
-  // faRuler,
+  faArrowsDownToLine,
+  faArrowPointer,
+  faLocationDot,
+  faRuler,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -72,18 +72,22 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
           <p>
             In der <b>3D-Betrachtung</b> gibt es unterschiedliche Messmodi. Wenn
             Sie auf den weißen Hintergrund des Zeichnung-Steuerelements klicken,
-            wird ihnen dazu ein Auswahlmenü angeboten. Mit der Funktion "Punkt
+            wird ihnen dazu ein Auswahlmenü angeboten. Mit der Funktion 
+            {" "}<FontAwesomeIcon icon={faLocationDot} />{" "}"Punkt
             messen" können Sie Punkte auf der Oberfläche des 3D-Modells anlegen
             und deren dreidimensionale Koordinaten einschließlich der Höhe
-            ermitteln. Wechseln Sie in den Modus "Messung auswählen" und klicken
-            Sie auf die Beschriftung eines Messpunktes in der Karte, um zwischen
-            der Anzeige seiner absoluten und seiner relativen Höhe hin- und
-            herzuschalten. Mit der Funktion "Als Referenzhöhe setzen" in der
-            Info-Box eines Messpunktes können Sie diesen als Bezugspunkt für die
-            relativen Höhenangaben festlegen. Im Modus "Distanz messen" könne
+            ermitteln. Wechseln Sie in den Modus 
+            {" "}<FontAwesomeIcon icon={faArrowPointer} />{" "}"Messung auswählen" 
+            und klicken Sie auf die Beschriftung eines Messpunktes in der Karte, 
+            um zwischen der Anzeige seiner absoluten und seiner relativen Höhe hin- 
+            und herzuschalten. Mit der Funktion 
+            {" "}<FontAwesomeIcon icon={faArrowsDownToLine} />{" "}"Als Referenzhöhe 
+            setzen" in der Info-Box eines Messpunktes können Sie diesen als 
+            Bezugspunkt für die relativen Höhenangaben festlegen. Im Modus 
+            {" "}<FontAwesomeIcon icon={faRuler} />{" "}"Distanz messen" können
             Sie schräge Strecken auf der Geländeoberfläche messen. Dabei wird
             automatisch ein rechtwinkliges Hilfsdreieck konstruiert, das Ihnen
-            neben der schrägen Strecke auch den Höherunterschied und die ebene
+            neben der schrägen Strecke auch den Höhenunterschied und die ebene
             (projizierte) Strecke anzeigt. So können Sie z. B. eine
             Gebäudefassade ausmessen, indem Sie einfach die Diagonale bestimmen.
             Das Hilfsdreieck gibt dann sofort Höhe und Breite der Fassade an.
@@ -102,7 +106,7 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             bezeichnen. Ihre gespeicherten Messungen erreichen Sie über den
             Dialog "Karteninhalte hinzufügen". Messungen, die Sie als Objekt
             gespeichert und dann wieder zur Kartenansicht hinzugefügt haben,
-            können Sie über die <FontAwesomeIcon icon={faShareNodes} />{" "}
+            können Sie über die{" "}<FontAwesomeIcon icon={faShareNodes} />{" "}
             Teilen-Funktion auch anderen Personen zur Verfügung stellen. Um eine
             gespeicherte Datei mit Messungen zu laden, können Sie diese mit der
             Maus in das Kartenfenster ziehen. Dadurch wird wie beim Speichern
