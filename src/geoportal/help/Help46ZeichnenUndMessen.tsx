@@ -90,8 +90,12 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             neben der schrägen Strecke auch den Höhenunterschied und die ebene
             (projizierte) Strecke anzeigt. So können Sie z. B. eine
             Gebäudefassade ausmessen, indem Sie einfach die Diagonale bestimmen.
-            Das Hilfsdreieck gibt dann sofort Höhe und Breite der Fassade an.
-          </p>
+            Das Hilfsdreieck gibt dann sofort Höhe und Breite der Fassade an. Sowohl 
+            bei Punkt- wie auch bei Streckenmessungen wird rund um das Fadenkreuz eine
+            tellerförmige Messmarke ausgeprägt. Durch die perspektivische Darstellung 
+            dieser Marke können Sie erkennen, wie Sie das Fadenkreuz auf die
+            das digitale Modell der Oberfläche aufgesetzt haben.  
+          </p> 
           <p>
             Zum <b>Speichern</b> aller Messungen auf der Zeichnungsebene klicken
             Sie im Zeichnung-Steuerelement auf das Diskettensymbol. Sie öffnen
