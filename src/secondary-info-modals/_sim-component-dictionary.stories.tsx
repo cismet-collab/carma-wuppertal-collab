@@ -23,6 +23,9 @@ import UvmSensorenStory, {
 import FahrradzaehlerStory, {
   SecondaryInfo as Fahrradzaehler,
 } from "./_fahrradzaehler-sim.stories";
+import PotenzialflaechenStory, {
+  SecondaryInfo as Potenzialflaechen,
+} from "./_potenzialflaechen-sim.stories";
 import SIMComponentDictionary from ".";
 import { PI_VALUES } from "@carma-commons/math";
 
@@ -90,3 +93,6 @@ export { UvmSensoren };
 
 Fahrradzaehler.argTypes = FahrradzaehlerStory.argTypes;
 export { Fahrradzaehler };
+
+Potenzialflaechen.argTypes = PotenzialflaechenStory.argTypes;
+export { Potenzialflaechen };
