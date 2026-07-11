@@ -76,11 +76,12 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             {" "}<FontAwesomeIcon icon={faLocationDot} />{" "}"Punkt
             messen" können Sie Punkte auf der Oberfläche des 3D-Modells anlegen
             und deren dreidimensionale Koordinaten einschließlich der Höhe
-            ermitteln. Wechseln Sie in den Modus 
+            ermitteln. Wechseln Sie in den Selektionsmodus 
             {" "}<FontAwesomeIcon icon={faArrowPointer} />{" "}"Messung auswählen" 
-            und klicken Sie auf die Beschriftung eines Messpunktes in der Karte, 
-            um zwischen der Anzeige seiner absoluten und seiner relativen Höhe hin- 
-            und herzuschalten. Mit der Funktion 
+            und klicken Sie auf den Messpunkt oder (einfacher) auf seine Beschriftung,
+            um den Messpunkt auszuwählen. Klicken Sie dann erneut auf seine Beschriftung, 
+            um zwischen der Anzeige der absoluten und der relativen Höhe des Messpunktes 
+            hin- und herzuschalten. Mit der Funktion 
             {" "}<FontAwesomeIcon icon={faArrowsDownToLine} />{" "}"Als Referenzhöhe 
             setzen" in der Info-Box eines Messpunktes können Sie diesen als 
             Bezugspunkt für alle relativen Höhenangaben festlegen. Im Modus 
@@ -94,7 +95,12 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             bei Punkt- wie auch bei Streckenmessungen wird rund um das Fadenkreuz eine
             tellerförmige Messmarke ausgeprägt. Durch die perspektivische Darstellung 
             dieser Marke können Sie erkennen, wie Sie das Fadenkreuz auf die
-            das digitale Modell der Oberfläche aufgesetzt haben.  
+            das digitale Modell der Oberfläche aufgesetzt haben. Wenn Sie Im 
+            Selektionsmodus eine Messung ausgewählt haben, können Sie durch einen langen
+            Klick auf einen Punkt in den Bearbeitungsmodus für diesen Punkt wechseln.
+            Sie können ihn auf der Oberfläche des 3D-Modells verschieben, in einer Ebene 
+            gleicher Höhe oder entlang der Höhenachse. In der Info-Box finden Sie die 
+            konkreten Bedienungshinweise zu diesen Möglichkeiten.     
           </p> 
           <p>
             Zum <b>Speichern</b> aller Messungen auf der Zeichnungsebene klicken
