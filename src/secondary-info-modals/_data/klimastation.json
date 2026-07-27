@@ -1,0 +1,172 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 104,
+      "properties": {
+        "stationId": 104,
+        "stationName": "DE_104_UPS_Wuppertal",
+        "name": "Klimastation Wuppertal (Ganztagsgymnasium Johannes Rau)",
+        "label": "Wuppertal",
+        "url": "https://klima.rgeo.de/stations/de_104_ups_wuppertal/",
+        "altitude": 326,
+        "dateObserved": "2026-07-27T16:20:00",
+        "lastReadingInMinutes": 16,
+        "firstReading": "2022-03-10T12:50:00",
+        "sensors": [
+          {
+            "id": 1,
+            "name": "Luft_Temperatur",
+            "label": "Lufttemperatur",
+            "unit": "°C",
+            "value": 21.2,
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "standard"
+          },
+          {
+            "id": 2,
+            "name": "Luft_Feuchte",
+            "label": "Luftfeuchte",
+            "unit": "%",
+            "value": 56.1,
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "standard"
+          },
+          {
+            "id": 3,
+            "name": "Niederschlag_Menge",
+            "label": "Niederschlag",
+            "unit": "mm",
+            "value": 0,
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "standard"
+          },
+          {
+            "id": 4,
+            "name": "Wind_Geschwindigkeit",
+            "label": "Windgeschwindigkeit",
+            "unit": "m/s",
+            "value": 1.1,
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "standard"
+          },
+          {
+            "id": 5,
+            "name": "Wind_Richtung",
+            "label": "Windrichtung",
+            "unit": "°",
+            "value": "340° NNW",
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "standard"
+          },
+          {
+            "id": 6,
+            "name": "Luft_Druck",
+            "label": "Luftdruck",
+            "unit": "hPa",
+            "value": 980,
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "standard"
+          },
+          {
+            "id": 10,
+            "name": "Strahlung_Global",
+            "label": "Globalstrahlung",
+            "unit": "W/m²",
+            "value": 231,
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "extra"
+          },
+          {
+            "id": 25,
+            "name": "Oberflaeche_Temperatur_1",
+            "label": "Oberflächentemperatur (Boden)",
+            "unit": "°C",
+            "value": 24.9,
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "extra"
+          },
+          {
+            "id": 15,
+            "name": "Boden_Temperatur_20cm",
+            "label": "Bodentemperatur (20 cm)",
+            "unit": "°C",
+            "value": 19.9,
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "extra"
+          },
+          {
+            "id": 53,
+            "name": "Luft_Druck_QNH",
+            "label": "Luftdruck (QNH-korrigiert)",
+            "unit": "hPa",
+            "value": 981,
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "extra"
+          },
+          {
+            "id": 33,
+            "name": "Stromversorgung_Spannung_Batterie",
+            "label": "Batteriespannung",
+            "unit": "V",
+            "value": 13.6,
+            "timestamp": "2026-07-27T16:20:00",
+            "ageInMinutes": 16,
+            "category": "extra"
+          }
+        ],
+        "Luft_Temperatur": 21.2,
+        "Luft_Temperatur__unit": "°C",
+        "Luft_Temperatur__timestamp": "2026-07-27T16:20:00",
+        "Luft_Feuchte": 56.1,
+        "Luft_Feuchte__unit": "%",
+        "Luft_Feuchte__timestamp": "2026-07-27T16:20:00",
+        "Niederschlag_Menge": 0,
+        "Niederschlag_Menge__unit": "mm",
+        "Niederschlag_Menge__timestamp": "2026-07-27T16:20:00",
+        "Wind_Geschwindigkeit": 1.1,
+        "Wind_Geschwindigkeit__unit": "m/s",
+        "Wind_Geschwindigkeit__timestamp": "2026-07-27T16:20:00",
+        "Wind_Richtung": "340° NNW",
+        "Wind_Richtung__unit": "°",
+        "Wind_Richtung__timestamp": "2026-07-27T16:20:00",
+        "Luft_Druck": 980,
+        "Luft_Druck__unit": "hPa",
+        "Luft_Druck__timestamp": "2026-07-27T16:20:00",
+        "Strahlung_Global": 231,
+        "Strahlung_Global__unit": "W/m²",
+        "Strahlung_Global__timestamp": "2026-07-27T16:20:00",
+        "Oberflaeche_Temperatur_1": 24.9,
+        "Oberflaeche_Temperatur_1__unit": "°C",
+        "Oberflaeche_Temperatur_1__timestamp": "2026-07-27T16:20:00",
+        "Boden_Temperatur_20cm": 19.9,
+        "Boden_Temperatur_20cm__unit": "°C",
+        "Boden_Temperatur_20cm__timestamp": "2026-07-27T16:20:00",
+        "Luft_Druck_QNH": 981,
+        "Luft_Druck_QNH__unit": "hPa",
+        "Luft_Druck_QNH__timestamp": "2026-07-27T16:20:00",
+        "Stromversorgung_Spannung_Batterie": 13.6,
+        "Stromversorgung_Spannung_Batterie__unit": "V",
+        "Stromversorgung_Spannung_Batterie__timestamp": "2026-07-27T16:20:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.15083333333333,
+          51.23
+        ]
+      }
+    }
+  ]
+}

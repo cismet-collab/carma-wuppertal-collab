@@ -26,6 +26,9 @@ import FahrradzaehlerStory, {
 import PotenzialflaechenStory, {
   SecondaryInfo as Potenzialflaechen,
 } from "./_potenzialflaechen-sim.stories";
+import KlimastationStory, {
+  SecondaryInfo as Klimastation,
+} from "./_klimastation-sim.stories";
 import SIMComponentDictionary from ".";
 import { PI_VALUES } from "@carma-commons/math";
 
@@ -96,3 +99,6 @@ export { Fahrradzaehler };
 
 Potenzialflaechen.argTypes = PotenzialflaechenStory.argTypes;
 export { Potenzialflaechen };
+
+Klimastation.argTypes = KlimastationStory.argTypes;
+export { Klimastation };
