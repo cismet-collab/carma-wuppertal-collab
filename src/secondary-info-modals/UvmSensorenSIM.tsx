@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import type { ChartOptions } from "chart.js";
-import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 import { Modal, Accordion } from "react-bootstrap";
 import Panel from "react-cismap/commons/Panel";
@@ -9,6 +8,11 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { genericSecondaryInfoFooterFactory } from "../commons";
 import sensorAqmeshImage from "./sensor_aqmesh.png";
 import texts from "./_data/uvmSensorenTexts";
+import {
+  ChartWithZoom,
+  ZOOM_HINT,
+  ZOOM_PLUGIN_OPTIONS,
+} from "./helper/chartWithZoom";
 
 const fmtValue = (v: unknown, decimals: number, unit: string): string => {
   if (typeof v !== "number") return "–";
@@ -165,6 +169,14 @@ const CHART_PANELS: ChartPanel[] = [
   },
 ];
 
+// Einmal angelegt und wiederverwendet. Ueber toLocaleDateString mit
+// Optionsobjekt kostet dieselbe Beschriftung in einer Schleife ueber mehrere
+// tausend Messpunkte ein Vielfaches.
+const dfDayShort = new Intl.DateTimeFormat("de-DE", {
+  day: "2-digit",
+  month: "2-digit",
+});
+
 function buildLineChartData(data: HistoricalData, series: SeriesConfig) {
   const entries = getAttrValues(data[series.attr]);
   if (entries.length === 0) return null;
@@ -172,12 +184,7 @@ function buildLineChartData(data: HistoricalData, series: SeriesConfig) {
   const sorted = [...entries].sort((a, b) =>
     a.observedAt.localeCompare(b.observedAt),
   );
-  const labels = sorted.map((e) =>
-    new Date(e.observedAt).toLocaleDateString("de-DE", {
-      day: "2-digit",
-      month: "2-digit",
-    }),
-  );
+  const labels = sorted.map((e) => dfDayShort.format(new Date(e.observedAt)));
   const scale = series.scale ?? 1;
   const values = sorted.map((e) =>
     typeof e.value === "number" ? e.value * scale : null,
@@ -200,11 +207,14 @@ function buildLineChartData(data: HistoricalData, series: SeriesConfig) {
   };
 }
 
-const lineChartOptions: ChartOptions<"line"> = {
+// Bewusst als "line" | "bar" typisiert: so passt das Objekt in ChartWithZoom,
+// das beide Diagrammarten bedient.
+const lineChartOptions: ChartOptions<"line" | "bar"> = {
   maintainAspectRatio: false,
   plugins: {
     legend: { display: false },
     tooltip: { mode: "index", intersect: false },
+    zoom: ZOOM_PLUGIN_OPTIONS,
   },
   scales: {
     x: {
@@ -372,6 +382,29 @@ const SecondaryInfoModal = ({
     };
   }, [entityId]);
 
+  const historicalDataPointCount = useMemo(() => {
+    if (!historicalData) return 0;
+    const ts = new Set<string>();
+    for (const [key, val] of Object.entries(historicalData)) {
+      if (SKIP_HISTORICAL_KEYS.has(key)) continue;
+      for (const e of getAttrValues(val)) {
+        ts.add(e.observedAt);
+      }
+    }
+    return ts.size;
+  }, [historicalData]);
+
+  // Die Chartdaten entstehen einmal je Datensatz und nicht bei jedem Rerender.
+  // Ein frisch gebautes Datenobjekt laesst react-chartjs-2 die Skalen neu
+  // setzen, womit ein gerade gesetzter Zoom sofort wieder verloren waere.
+  const chartPanelData = useMemo(() => {
+    if (!historicalData || historicalDataPointCount === 0) return [];
+    return CHART_PANELS.map((p) => ({
+      panel: p,
+      data: buildLineChartData(historicalData, p.series),
+    })).filter((entry) => entry.data !== null);
+  }, [historicalData, historicalDataPointCount]);
+
   if (sensor === undefined) return null;
 
   const stationNr = getStationNumber(entityId);
@@ -383,27 +416,6 @@ const SecondaryInfoModal = ({
   const formattedDate = dateObserved
     ? new Date(dateObserved).toLocaleString("de-DE")
     : "–";
-
-  const historicalDataPointCount = historicalData
-    ? (() => {
-        const ts = new Set<string>();
-        for (const [key, val] of Object.entries(historicalData)) {
-          if (SKIP_HISTORICAL_KEYS.has(key)) continue;
-          for (const e of getAttrValues(val)) {
-            ts.add(e.observedAt);
-          }
-        }
-        return ts.size;
-      })()
-    : 0;
-
-  const chartPanelData =
-    historicalData && historicalDataPointCount > 0
-      ? CHART_PANELS.map((p) => ({
-          panel: p,
-          data: buildLineChartData(historicalData, p.series),
-        })).filter((entry) => entry.data !== null)
-      : [];
 
   return (
     <Modal
@@ -463,6 +475,18 @@ const SecondaryInfoModal = ({
           </div>
         </div>
 
+        {chartPanelData.length > 0 && (
+          <div
+            style={{
+              fontSize: "85%",
+              color: "#888",
+              padding: "0 10px 10px 10px",
+            }}
+          >
+            {ZOOM_HINT}
+          </div>
+        )}
+
         {chartPanelData.map((entry, idx) => (
           <Accordion
             key={entry.panel.key}
@@ -475,12 +499,7 @@ const SecondaryInfoModal = ({
               bsStyle="success"
             >
               <div style={{ padding: "10px", paddingTop: 0 }}>
-                <div style={{ height: 260, width: "100%" }}>
-                  <Line
-                    data={entry.data as NonNullable<typeof entry.data>}
-                    options={lineChartOptions}
-                  />
-                </div>
+                <ChartWithZoom data={entry.data} options={lineChartOptions} />
               </div>
             </Panel>
           </Accordion>

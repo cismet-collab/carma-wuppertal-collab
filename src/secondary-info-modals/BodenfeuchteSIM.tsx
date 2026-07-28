@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import type { ChartOptions } from "chart.js";
-import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 import { Modal, Accordion } from "react-bootstrap";
 import Panel from "react-cismap/commons/Panel";
@@ -19,6 +18,11 @@ import {
   type SensorType,
 } from "./bodenfeuchteContent";
 import texts from "./_data/bodenfeuchteTexts";
+import {
+  ChartWithZoom,
+  ZOOM_HINT,
+  ZOOM_PLUGIN_OPTIONS,
+} from "./helper/chartWithZoom";
 
 const fmtValue = (v: unknown, unit: string): string => {
   if (typeof v !== "number" || v === 0) return "–";
@@ -239,6 +243,14 @@ const WATERMARK_SERIES: SeriesConfig[] = [
   { attr: "Widerstand_Steckplatz_6", label: "Kanal 6" },
 ];
 
+// Einmal angelegt und wiederverwendet. Ueber toLocaleDateString mit
+// Optionsobjekt kostet dieselbe Beschriftung in einer Schleife ueber mehrere
+// tausend Messpunkte ein Vielfaches.
+const dfDayShort = new Intl.DateTimeFormat("de-DE", {
+  day: "2-digit",
+  month: "2-digit",
+});
+
 function buildLineChartData(
   data: HistoricalData,
   series: SeriesConfig[],
@@ -253,12 +265,7 @@ function buildLineChartData(
   }
   const timestamps = [...tsSet].sort();
 
-  const labels = timestamps.map((ts) =>
-    new Date(ts).toLocaleDateString("de-DE", {
-      day: "2-digit",
-      month: "2-digit",
-    }),
-  );
+  const labels = timestamps.map((ts) => dfDayShort.format(new Date(ts)));
 
   const datasets = series
     .map((s, i) => {
@@ -287,7 +294,9 @@ function buildLineChartData(
   return { labels, datasets };
 }
 
-const lineChartOptions: ChartOptions<"line"> = {
+// Bewusst als "line" | "bar" typisiert: so passt das Objekt in ChartWithZoom,
+// das beide Diagrammarten bedient.
+const lineChartOptions: ChartOptions<"line" | "bar"> = {
   maintainAspectRatio: false,
   plugins: {
     legend: {
@@ -299,6 +308,7 @@ const lineChartOptions: ChartOptions<"line"> = {
       mode: "index",
       intersect: false,
     },
+    zoom: ZOOM_PLUGIN_OPTIONS,
   },
   scales: {
     x: {
@@ -581,6 +591,41 @@ const SecondaryInfoModal = ({
     };
   }, [entityId]);
 
+  const historicalDataPointCount = useMemo(() => {
+    if (!historicalData) return 0;
+    const ts = new Set<string>();
+    for (const [key, val] of Object.entries(historicalData)) {
+      if (SKIP_HISTORICAL_KEYS.has(key)) continue;
+      for (const e of getAttrValues(val)) {
+        ts.add(e.observedAt);
+      }
+    }
+    return ts.size;
+  }, [historicalData]);
+
+  // Die Chartdaten entstehen einmal je Datensatz und nicht bei jedem Rerender.
+  // Ein frisch gebautes Datenobjekt laesst react-chartjs-2 die Skalen neu
+  // setzen, womit ein gerade gesetzter Zoom sofort wieder verloren waere.
+  const charts = useMemo(() => {
+    if (!historicalData || historicalDataPointCount === 0) return null;
+    const type = getSensorType((sensor?.name as string) ?? "");
+    if (type === "tree" || type === "dike") {
+      return {
+        moisture: buildLineChartData(historicalData, IOPLANT_MOISTURE_SERIES),
+        temperature: buildLineChartData(historicalData, IOPLANT_TEMP_SERIES),
+        resistance: null,
+      };
+    }
+    if (type === "watermark") {
+      return {
+        moisture: null,
+        temperature: null,
+        resistance: buildLineChartData(historicalData, WATERMARK_SERIES),
+      };
+    }
+    return null;
+  }, [historicalData, historicalDataPointCount, sensor]);
+
   if (sensor === undefined) return null;
 
   const name = (sensor.name as string) ?? "";
@@ -596,32 +641,9 @@ const SecondaryInfoModal = ({
     ? new Date(dateObserved).toLocaleString("de-DE")
     : "–";
 
-  const historicalDataPointCount = historicalData
-    ? (() => {
-        const ts = new Set<string>();
-        for (const [key, val] of Object.entries(historicalData)) {
-          if (SKIP_HISTORICAL_KEYS.has(key)) continue;
-          for (const e of getAttrValues(val)) {
-            ts.add(e.observedAt);
-          }
-        }
-        return ts.size;
-      })()
-    : 0;
-
-  // Build chart data if available
-  let moistureData: ReturnType<typeof buildLineChartData> | null = null;
-  let tempData: ReturnType<typeof buildLineChartData> | null = null;
-  let resistanceData: ReturnType<typeof buildLineChartData> | null = null;
-
-  if (historicalData && historicalDataPointCount > 0) {
-    if (sensorType === "tree" || sensorType === "dike") {
-      moistureData = buildLineChartData(historicalData, IOPLANT_MOISTURE_SERIES);
-      tempData = buildLineChartData(historicalData, IOPLANT_TEMP_SERIES);
-    } else if (sensorType === "watermark") {
-      resistanceData = buildLineChartData(historicalData, WATERMARK_SERIES);
-    }
-  }
+  const moistureData = charts?.moisture ?? null;
+  const tempData = charts?.temperature ?? null;
+  const resistanceData = charts?.resistance ?? null;
 
   return (
     <Modal
@@ -703,18 +725,26 @@ const SecondaryInfoModal = ({
         </Accordion>
 
         {/* 2. Diagramme */}
-        {historicalData && historicalDataPointCount > 0 && (
+        {(moistureData || tempData || resistanceData) && (
           <>
+            <div
+              style={{
+                fontSize: "85%",
+                color: "#888",
+                padding: "0 10px 10px 10px",
+              }}
+            >
+              {ZOOM_HINT}
+            </div>
             {(sensorType === "tree" || sensorType === "dike") && moistureData && (
               <Accordion style={{ marginBottom: 6 }} defaultActiveKey="1">
                 <Panel header="Bodenfeuchte (%)" eventKey="1" bsStyle="success">
                   <div style={{ padding: "10px", paddingTop: 0 }}>
-                    <div style={{ height: 300, width: "100%" }}>
-                      <Line
-                        data={moistureData as any}
-                        options={lineChartOptions}
-                      />
-                    </div>
+                    <ChartWithZoom
+                      data={moistureData}
+                      options={lineChartOptions}
+                      height={300}
+                    />
                   </div>
                 </Panel>
               </Accordion>
@@ -723,12 +753,11 @@ const SecondaryInfoModal = ({
               <Accordion style={{ marginBottom: 6 }} defaultActiveKey="2">
                 <Panel header="Temperatur (°C)" eventKey="2" bsStyle="success">
                   <div style={{ padding: "10px", paddingTop: 0 }}>
-                    <div style={{ height: 300, width: "100%" }}>
-                      <Line
-                        data={tempData as any}
-                        options={lineChartOptions}
-                      />
-                    </div>
+                    <ChartWithZoom
+                      data={tempData}
+                      options={lineChartOptions}
+                      height={300}
+                    />
                   </div>
                 </Panel>
               </Accordion>
@@ -737,12 +766,11 @@ const SecondaryInfoModal = ({
               <Accordion style={{ marginBottom: 6 }} defaultActiveKey="3">
                 <Panel header="Widerstand (Ω)" eventKey="3" bsStyle="success">
                   <div style={{ padding: "10px", paddingTop: 0 }}>
-                    <div style={{ height: 300, width: "100%" }}>
-                      <Line
-                        data={resistanceData as any}
-                        options={lineChartOptions}
-                      />
-                    </div>
+                    <ChartWithZoom
+                      data={resistanceData}
+                      options={lineChartOptions}
+                      height={300}
+                    />
                   </div>
                 </Panel>
               </Accordion>

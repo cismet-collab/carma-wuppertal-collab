@@ -1,12 +1,16 @@
 import React, { useEffect, useMemo, useState } from "react";
 import type { ChartOptions } from "chart.js";
-import { Bar, Line } from "react-chartjs-2";
 import "chart.js/auto";
 import { Modal, Accordion } from "react-bootstrap";
 import Panel from "react-cismap/commons/Panel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { genericSecondaryInfoFooterFactory } from "../commons";
+import {
+  ChartWithZoom,
+  ZOOM_HINT,
+  ZOOM_PLUGIN_OPTIONS,
+} from "./helper/chartWithZoom";
 import sensorKlimastationImage from "./sensor_klimastation.png";
 import texts from "./_data/klimastationTexts";
 
@@ -264,6 +268,7 @@ function chartOptions(
             `${fmtNumber(item.parsed.y, decimals)}${unit ? " " + unit : ""}`,
         },
       },
+      zoom: ZOOM_PLUGIN_OPTIONS,
     },
     scales: {
       x: {
@@ -579,15 +584,53 @@ const SecondaryInfoModal = ({
         isSum ? "sum" : "mean",
         panel.decimals,
       );
+      const unit = sensor.unit ?? panel.unit;
+      // Zirkulaere Groessen (Windrichtung): die aggregierten Werte sind
+      // rechnerisch falsch, statt eines Verlaufs steht dort der Hinweis.
+      const isCircular = sensor.circular === true;
       return {
         panel,
         sensor,
         isSum,
+        isCircular,
         // Statistik bewusst aus den ungebuendelten Werten - Buckets wuerden
         // Minimum und Maximum abschleifen.
         stats: statsOf(raw),
-        unit: sensor.unit ?? panel.unit,
-        values,
+        unit,
+        // Daten und Optionen entstehen hier und nicht im Render: ein bei jedem
+        // Rerender neu gebautes Optionsobjekt laesst react-chartjs-2 die Skalen
+        // neu setzen und der gesetzte Zoom waere sofort wieder weg.
+        data: isCircular
+          ? null
+          : {
+              labels: slice.labels,
+              datasets: [
+                {
+                  label: sensor.label,
+                  data: values,
+                  borderColor: panel.color,
+                  backgroundColor: panel.color,
+                  // Summenreihen werden als Balken gezeichnet, alles andere als
+                  // Linie - die Linienoptionen gelten nur dort.
+                  ...(isSum
+                    ? { borderWidth: 0 }
+                    : {
+                        pointRadius: 0,
+                        borderWidth: 1.5,
+                        fill: false,
+                        tension: 0.1,
+                      }),
+                },
+              ],
+            },
+        options: isCircular
+          ? null
+          : chartOptions(
+              slice.fullLabels,
+              unit,
+              panel.decimals,
+              panel.beginAtZero,
+            ),
       };
     }).filter((c): c is NonNullable<typeof c> => c !== null);
   }, [doc, slice]);
@@ -755,6 +798,13 @@ const SecondaryInfoModal = ({
                 ` · je Punkt ${slice.bucketSize} ${resolutionNoun}`}
             </span>
           )}
+          {charts.length > 0 && (
+            <span
+              style={{ fontSize: "85%", color: "#888", flexBasis: "100%" }}
+            >
+              {ZOOM_HINT}
+            </span>
+          )}
         </div>
 
         {loading && (
@@ -781,13 +831,13 @@ const SecondaryInfoModal = ({
         )}
 
         {charts.map((chart) => {
-          const { panel, sensor, stats, unit, values, isSum } = chart;
+          const { panel, sensor, stats, unit, isSum, isCircular } = chart;
           const header = `${sensor.label ?? FALLBACK_LABELS[panel.attr]}${
             unit ? ` (${unit})` : ""
           }`;
           // Zirkulaere Groessen (Windrichtung): die aggregierten Werte sind
           // rechnerisch falsch, deshalb kein Verlauf, sondern der Hinweis.
-          if (sensor.circular) {
+          if (isCircular || !chart.data || !chart.options) {
             return (
               <Accordion
                 key={panel.attr}
@@ -805,34 +855,6 @@ const SecondaryInfoModal = ({
             );
           }
 
-          const data = {
-            labels: slice?.labels ?? [],
-            datasets: [
-              {
-                label: sensor.label,
-                data: values,
-                borderColor: panel.color,
-                backgroundColor: panel.color,
-                // Summenreihen werden als Balken gezeichnet, alles andere als
-                // Linie - die Linienoptionen gelten nur dort.
-                ...(isSum
-                  ? { borderWidth: 0 }
-                  : {
-                      pointRadius: 0,
-                      borderWidth: 1.5,
-                      fill: false,
-                      tension: 0.1,
-                    }),
-              },
-            ],
-          };
-          const options = chartOptions(
-            slice?.fullLabels ?? [],
-            unit,
-            panel.decimals,
-            panel.beginAtZero,
-          );
-
           return (
             <Accordion
               key={panel.attr}
@@ -841,19 +863,15 @@ const SecondaryInfoModal = ({
             >
               <Panel header={header} eventKey={panel.attr} bsStyle="success">
                 <div style={{ padding: 10, paddingTop: 0 }}>
-                  <div style={{ height: 240, width: "100%" }}>
-                    {isSum ? (
-                      <Bar
-                        data={data}
-                        options={options as ChartOptions<"bar">}
-                      />
-                    ) : (
-                      <Line
-                        data={data}
-                        options={options as ChartOptions<"line">}
-                      />
-                    )}
-                  </div>
+                  <ChartWithZoom
+                    // Ein Wechsel von Zeitraum oder Aufloesung soll den Zoom
+                    // nicht mitnehmen.
+                    key={`${panel.attr}-${resolution}-${rangeKey}`}
+                    bars={isSum}
+                    data={chart.data}
+                    options={chart.options}
+                    height={240}
+                  />
                   {stats && (
                     <div
                       style={{ fontSize: "85%", color: "#666", marginTop: 6 }}

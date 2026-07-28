@@ -1,20 +1,16 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import type { ChartOptions } from "chart.js";
-import { Chart as ChartJS } from "chart.js";
-import { Bar, Line } from "react-chartjs-2";
-import type { ChartJSOrUndefined } from "react-chartjs-2/dist/types";
 import "chart.js/auto";
-import zoomPlugin from "chartjs-plugin-zoom";
-
-// Zoom in den Diagrammen, siehe cismet/wupp#4117. Global registriert, aber nur
-// dort aktiv, wo options.plugins.zoom gesetzt ist - andere SIMs bleiben
-// unveraendert.
-ChartJS.register(zoomPlugin);
 import { Modal, Accordion } from "react-bootstrap";
 import Panel from "react-cismap/commons/Panel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { genericSecondaryInfoFooterFactory } from "../commons";
+import {
+  ChartWithZoom,
+  ZOOM_HINT,
+  ZOOM_PLUGIN_OPTIONS,
+} from "./helper/chartWithZoom";
 import sensorPmxTcrImage from "./sensor_pmx_tcr.png";
 import texts from "./_data/fahrradzaehlerTexts";
 
@@ -468,16 +464,7 @@ function buildChartOptions(
           },
         },
       },
-      zoom: {
-        zoom: {
-          drag: { enabled: true, backgroundColor: "rgba(0,0,0,0.1)" },
-          wheel: { enabled: true, modifierKey: "ctrl" },
-          pinch: { enabled: true },
-          mode: "x",
-        },
-        pan: { enabled: true, mode: "x", modifierKey: "shift" },
-        limits: { x: { minRange: 3 } },
-      },
+      zoom: ZOOM_PLUGIN_OPTIONS,
     },
     scales: {
       x: {
@@ -491,67 +478,6 @@ function buildChartOptions(
     },
   };
 }
-
-/** Diagramm samt Schaltflaeche, die den Zoom wieder aufhebt (#4117). */
-const ChartWithZoom = ({
-  bars,
-  data,
-  options,
-}: {
-  bars: boolean;
-  data: ReturnType<typeof buildChartData>;
-  options: ChartOptions<"line" | "bar">;
-}) => {
-  const ref = useRef<ChartJSOrUndefined<"line" | "bar">>(null);
-  const [zoomed, setZoomed] = useState(false);
-
-  // Die Optionen muessen ueber Rerender hinweg identisch bleiben. Ein neues
-  // Objekt laesst react-chartjs-2 die Skalen neu setzen, womit der gerade
-  // gesetzte Zoom sofort wieder verloren waere.
-  const mergedOptions = useMemo(
-    () => ({
-      ...options,
-      plugins: {
-        ...options.plugins,
-        zoom: {
-          ...options.plugins?.zoom,
-          zoom: {
-            ...options.plugins?.zoom?.zoom,
-            onZoomComplete: () => setZoomed(true),
-          },
-        },
-      },
-    }),
-    [options],
-  );
-
-  const commonProps = {
-    ref: ref as never,
-    data,
-    options: mergedOptions as never,
-  };
-
-  return (
-    <div style={{ position: "relative" }}>
-      <div style={{ height: 260, width: "100%" }}>
-        {bars ? <Bar {...commonProps} /> : <Line {...commonProps} />}
-      </div>
-      {zoomed && (
-        <button
-          type="button"
-          className="btn btn-outline-secondary btn-sm"
-          style={{ position: "absolute", top: 0, right: 0 }}
-          onClick={() => {
-            ref.current?.resetZoom();
-            setZoomed(false);
-          }}
-        >
-          Zoom zurücksetzen
-        </button>
-      )}
-    </div>
-  );
-};
 
 const headerBg = "#616161";
 const meteoBg = "#E0E0E0";
@@ -824,10 +750,7 @@ const SecondaryInfoModal = ({
                 </button>
               ))}
             </div>
-            <span style={{ fontSize: "85%", color: "#888" }}>
-              Zum Zoomen einen Bereich mit der Maus aufziehen, Strg und Mausrad
-              zoomen ebenfalls, Umschalt und Ziehen verschiebt den Ausschnitt.
-            </span>
+            <span style={{ fontSize: "85%", color: "#888" }}>{ZOOM_HINT}</span>
           </div>
         )}
 
