@@ -50,9 +50,47 @@ function stripJsonComments(str) {
   return result;
 }
 
+// Strip trailing commas before } or ] (tsconfig allows them, JSON.parse does not)
+// Be careful not to strip commas inside strings
+function stripTrailingCommas(str) {
+  let result = "";
+  let inString = false;
+  let i = 0;
+
+  while (i < str.length) {
+    // Handle string boundaries
+    if (str[i] === '"' && (i === 0 || str[i - 1] !== "\\")) {
+      inString = !inString;
+      result += str[i];
+      i++;
+    }
+    // Handle commas (only outside strings)
+    else if (!inString && str[i] === ",") {
+      // Look ahead past whitespace for a closing brace/bracket
+      let j = i + 1;
+      while (j < str.length && /\s/.test(str[j])) {
+        j++;
+      }
+      if (str[j] === "}" || str[j] === "]") {
+        i++; // Skip the trailing comma
+      } else {
+        result += str[i];
+        i++;
+      }
+    }
+    // Regular character
+    else {
+      result += str[i];
+      i++;
+    }
+  }
+
+  return result;
+}
+
 // Read carma's tsconfig.base.json
 const carmaConfigRaw = fs.readFileSync(CARMA_TSCONFIG, "utf8");
-const carmaConfig = JSON.parse(stripJsonComments(carmaConfigRaw));
+const carmaConfig = JSON.parse(stripTrailingCommas(stripJsonComments(carmaConfigRaw)));
 const carmaPaths = carmaConfig.compilerOptions.paths;
 
 // Read local tsconfig.base.json
