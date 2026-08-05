@@ -54,6 +54,11 @@ interface CurrentSensor {
   value: number | string | null;
 }
 
+interface TextLink {
+  phrase: string;
+  url: string;
+}
+
 /* -------------------------------------------------------------------------- */
 /* Zeitstempel                                                                 */
 /* -------------------------------------------------------------------------- */
@@ -209,7 +214,7 @@ function reduceSeries(
   values: (number | null)[],
   bucketSize: number,
   mode: "mean" | "sum",
-  decimals: number,
+  decimals: number
 ): (number | null)[] {
   if (bucketSize <= 1) return values;
   const out: (number | null)[] = [];
@@ -252,7 +257,7 @@ function chartOptions(
   fullLabels: string[],
   unit: string,
   decimals: number,
-  beginAtZero: boolean,
+  beginAtZero: boolean
 ): ChartOptions<"line" | "bar"> {
   return {
     maintainAspectRatio: false,
@@ -303,7 +308,7 @@ function historicalDocToCsv(doc: HistoricalDoc): string {
         const v = doc.sensors[n].values[i];
         return typeof v === "number" ? String(v) : "";
       }),
-    ].join(";"),
+    ].join(";")
   );
   return [header, ...rows].join("\n");
 }
@@ -348,6 +353,30 @@ const FALLBACK_LABELS: Record<string, string> = {
 
 const headerBg = "#0277BD";
 
+const renderWithLinks = (
+  text: string,
+  links: readonly TextLink[]
+): React.ReactNode[] => {
+  let parts: React.ReactNode[] = [text];
+  for (const { phrase, url } of links) {
+    let linked = false;
+    parts = parts.flatMap((part) => {
+      if (linked || typeof part !== "string") return [part];
+      const index = part.indexOf(phrase);
+      if (index === -1) return [part];
+      linked = true;
+      return [
+        part.slice(0, index),
+        <a key={phrase} href={url} target="_blank" rel="noopener noreferrer">
+          {phrase}
+        </a>,
+        part.slice(index + phrase.length),
+      ];
+    });
+  }
+  return parts;
+};
+
 /* -------------------------------------------------------------------------- */
 /* Illustration                                                                */
 /* -------------------------------------------------------------------------- */
@@ -380,7 +409,7 @@ const illuWidth =
  */
 function currentSensorOf(
   props: Record<string, unknown>,
-  attr: string,
+  attr: string
 ): CurrentSensor {
   const list = Array.isArray(props.sensors)
     ? (props.sensors as CurrentSensor[])
@@ -547,7 +576,8 @@ const SecondaryInfoModal = ({
   // aus Aufloesung und Zeitraum.
   const slice = useMemo(() => {
     if (!doc || !Array.isArray(doc.time) || doc.time.length === 0) return null;
-    const range = RANGES.find((r) => r.key === rangeKey) ?? RANGES[RANGES.length - 1];
+    const range =
+      RANGES.find((r) => r.key === rangeKey) ?? RANGES[RANGES.length - 1];
     // Ueber die Anzahl der Punkte statt ueber Datumsarithmetik schneiden - die
     // Zeitstempel sind Ortszeit ohne Zeitzone (siehe splitTimestamp).
     const perDay = resolution === "hour" ? 24 : 1;
@@ -582,7 +612,7 @@ const SecondaryInfoModal = ({
         raw,
         slice.bucketSize,
         isSum ? "sum" : "mean",
-        panel.decimals,
+        panel.decimals
       );
       const unit = sensor.unit ?? panel.unit;
       // Zirkulaere Groessen (Windrichtung): die aggregierten Werte sind
@@ -629,7 +659,7 @@ const SecondaryInfoModal = ({
               slice.fullLabels,
               unit,
               panel.decimals,
-              panel.beginAtZero,
+              panel.beginAtZero
             ),
       };
     }).filter((c): c is NonNullable<typeof c> => c !== null);
@@ -640,10 +670,13 @@ const SecondaryInfoModal = ({
   const name = (station.name as string) ?? "Klimastation Wuppertal";
   const stationUrl = station.url as string | undefined;
   const altitude = station.altitude as number | undefined;
-  const coordinates = (selectedFeature as { geometry?: { coordinates?: number[] } })
-    ?.geometry?.coordinates;
+  const coordinates = (
+    selectedFeature as { geometry?: { coordinates?: number[] } }
+  )?.geometry?.coordinates;
   const dateObserved = station.dateObserved as string | undefined;
-  const lastReadingInMinutes = station.lastReadingInMinutes as number | undefined;
+  const lastReadingInMinutes = station.lastReadingInMinutes as
+    | number
+    | undefined;
   // Live = juengste Messung nicht aelter als 24 h. Der Minutenwert der API ist
   // zeitzonenfest, der Zeitstempel nicht.
   const isLive =
@@ -754,7 +787,8 @@ const SecondaryInfoModal = ({
             >
               {Array.isArray(coordinates) && coordinates.length >= 2 && (
                 <div>
-                  {fmtNumber(coordinates[1], 2)}°N, {fmtNumber(coordinates[0], 2)}
+                  {fmtNumber(coordinates[1], 2)}°N,{" "}
+                  {fmtNumber(coordinates[0], 2)}
                   °O
                 </div>
               )}
@@ -792,16 +826,16 @@ const SecondaryInfoModal = ({
           {slice && (
             <span style={{ fontSize: "85%", color: "#888" }}>
               {slice.from && slice.to
-                ? `${fmtTimestampFull(slice.from)} bis ${fmtTimestampFull(slice.to)}`
+                ? `${fmtTimestampFull(slice.from)} bis ${fmtTimestampFull(
+                    slice.to
+                  )}`
                 : ""}
               {slice.bucketSize > 1 &&
                 ` · je Punkt ${slice.bucketSize} ${resolutionNoun}`}
             </span>
           )}
           {charts.length > 0 && (
-            <span
-              style={{ fontSize: "85%", color: "#888", flexBasis: "100%" }}
-            >
+            <span style={{ fontSize: "85%", color: "#888", flexBasis: "100%" }}>
               {ZOOM_HINT}
             </span>
           )}
@@ -884,9 +918,10 @@ const SecondaryInfoModal = ({
                         </>
                       ) : (
                         <>
-                          Minimum {fmtNumber(stats.min, panel.decimals)} {unit} ·
-                          Mittel {fmtNumber(stats.avg, panel.decimals)} {unit} ·
-                          Maximum {fmtNumber(stats.max, panel.decimals)} {unit}
+                          Minimum {fmtNumber(stats.min, panel.decimals)} {unit}{" "}
+                          · Mittel {fmtNumber(stats.avg, panel.decimals)} {unit}{" "}
+                          · Maximum {fmtNumber(stats.max, panel.decimals)}{" "}
+                          {unit}
                         </>
                       )}
                     </div>
@@ -915,7 +950,7 @@ const SecondaryInfoModal = ({
                   if (!doc) return;
                   triggerCsvDownload(
                     historicalDocToCsv(doc),
-                    `klimastation_${stationId ?? "wuppertal"}_${resolution}.csv`,
+                    `klimastation_${stationId ?? "wuppertal"}_${resolution}.csv`
                   );
                 }}
               >
@@ -928,9 +963,10 @@ const SecondaryInfoModal = ({
                   : `Messreihen herunterladen (CSV, ${resolutionNoun})`}
               </button>
               {doc && (
-                <span style={{ marginLeft: 10, color: "#666", fontSize: "85%" }}>
-                  ({(doc.time?.length ?? 0).toLocaleString("de-DE")}{" "}
-                  Zeitpunkte,{" "}
+                <span
+                  style={{ marginLeft: 10, color: "#666", fontSize: "85%" }}
+                >
+                  ({(doc.time?.length ?? 0).toLocaleString("de-DE")} Zeitpunkte,{" "}
                   {doc.from ? fmtTimestampFull(doc.from) : "?"} bis{" "}
                   {doc.to ? fmtTimestampFull(doc.to) : "?"})
                 </span>
@@ -938,8 +974,8 @@ const SecondaryInfoModal = ({
               <div style={{ fontSize: "80%", color: "#666", marginTop: 8 }}>
                 Die Datei enthält den gesamten Messzeitraum in der oben
                 gewählten Auflösung, Spalten durch Semikolon getrennt. Die
-                Spalte Windrichtung enthält aggregierte Mittelwerte, die aus
-                dem oben genannten Grund nicht belastbar sind.
+                Spalte Windrichtung enthält aggregierte Mittelwerte, die aus dem
+                oben genannten Grund nicht belastbar sind.
               </div>
             </div>
           </Panel>
@@ -953,12 +989,24 @@ const SecondaryInfoModal = ({
           >
             <div style={{ fontSize: "115%", padding: 10, paddingTop: 0 }}>
               <b>Station und Messverfahren</b>
-              <p>{texts.allgemeineInformationen.station}</p>
+              <p>
+                {renderWithLinks(
+                  texts.allgemeineInformationen.station,
+                  texts.allgemeineInformationen.links
+                )}
+              </p>
               <b>Kontextualisierung</b>
               <p>
-                {texts.allgemeineInformationen.kontext}
+                {renderWithLinks(
+                  texts.allgemeineInformationen.kontext,
+                  texts.allgemeineInformationen.links
+                )}
                 {stationUrl ? (
-                  <a href={stationUrl} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={stationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {texts.allgemeineInformationen.kontextLinkLabel}
                   </a>
                 ) : (
