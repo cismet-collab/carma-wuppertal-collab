@@ -353,14 +353,18 @@ const FALLBACK_LABELS: Record<string, string> = {
 
 const headerBg = "#0277BD";
 
+// Bewusst nicht ReactNode: flatMap kann einen ReactNode (der auch Arrays
+// einschliesst) nicht als Elementtyp zurueckgeben.
+type TextPart = string | React.ReactElement;
+
 const renderWithLinks = (
   text: string,
   links: readonly TextLink[]
-): React.ReactNode[] => {
-  let parts: React.ReactNode[] = [text];
+): TextPart[] => {
+  let parts: TextPart[] = [text];
   for (const { phrase, url } of links) {
     let linked = false;
-    parts = parts.flatMap((part) => {
+    parts = parts.flatMap((part): TextPart[] => {
       if (linked || typeof part !== "string") return [part];
       const index = part.indexOf(phrase);
       if (index === -1) return [part];
