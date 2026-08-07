@@ -418,6 +418,9 @@ function statsOf(values: (number | null)[]): SeriesStats | null {
 const ARROW_BAND_SHARE = 0.2;
 const GRID_COLOR = "rgba(0,0,0,0.1)";
 
+const TICK_COLOR = "rgba(0,0,0,0.35)";
+const TICK_LENGTH = 5;
+
 function chartOptions(
   fullLabels: string[],
   unit: string,
@@ -454,8 +457,24 @@ function chartOptions(
     },
     scales: {
       x: {
-        ticks: { maxTicksLimit: 8, font: { size: 10 }, autoSkip: true },
-        grid: { display: false },
+        ticks: {
+          maxTicksLimit: 8,
+          font: { size: 10 },
+          autoSkip: true,
+          padding: 2,
+        },
+        // Kurzer Strich von der Beschriftung zur Achse: bei acht Beschriftungen
+        // auf mehreren hundert Punkten ist sonst nicht zu sehen, welche Stelle
+        // im Diagramm ein Zeitstempel meint. Senkrechte Gitterlinien bleiben
+        // aus, die wuerden im dicht gezeichneten Verlauf nur stoeren.
+        grid: {
+          display: true,
+          drawOnChartArea: false,
+          drawTicks: true,
+          tickLength: TICK_LENGTH,
+          tickColor: TICK_COLOR,
+          offset: false,
+        },
       },
       y: {
         ticks: {
