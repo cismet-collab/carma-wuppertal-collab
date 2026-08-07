@@ -90,6 +90,112 @@ function fmtTimestampFull(ts: string): string {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Lueckenlose Zeitachse                                                       */
+/* -------------------------------------------------------------------------- */
+
+// Die Archivdateien enthalten nur noch Zeitschritte, in denen auch gemessen
+// wurde - Ausfallzeiten fehlen als Zeile, statt wie frueher als Zeile voller
+// Nullwerte dazustehen. Auf einer Kategorieachse ruecken die Nachbarn dann
+// zusammen und ein Ausfall von Monaten waere im Diagramm nicht zu sehen. Die
+// fehlenden Zeitschritte werden deshalb vor dem Zeichnen wieder eingesetzt.
+const STEP_MS: Record<Resolution, number> = {
+  hour: 60 * 60 * 1000,
+  day: 24 * 60 * 60 * 1000,
+};
+
+/**
+ * Zeitstempel als "Wanduhrzeit" in Millisekunden. Gerechnet wird ueber Date.UTC,
+ * damit die Zeitzone des Browsers die Ortszeit der Station nicht verschiebt.
+ */
+function parseNaive(ts: string): number {
+  const { year, month, day, time } = splitTimestamp(ts);
+  const [hour = "0", minute = "0"] = (time ?? "").split(":");
+  return Date.UTC(
+    Number(year),
+    Number(month) - 1,
+    Number(day),
+    Number(hour),
+    Number(minute)
+  );
+}
+
+/** Umkehrung von parseNaive, im Format der jeweiligen Archivdatei. */
+function formatNaive(ms: number, withTime: boolean): string {
+  const d = new Date(ms);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  const date = `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(
+    d.getUTCDate()
+  )}`;
+  return withTime
+    ? `${date}T${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}:00`
+    : date;
+}
+
+/**
+ * Die zur Sommerzeit uebersprungene Stunde ist keine Datenluecke: in der Nacht
+ * zum letzten Sonntag im Maerz folgt auf 01:00 direkt 03:00, 02:00 gibt es
+ * nicht. Ohne diese Ausnahme bekaeme jedes Jahr einen falschen Ausfall.
+ */
+function isSpringForwardHour(ms: number): boolean {
+  const d = new Date(ms);
+  return (
+    d.getUTCMonth() === 2 &&
+    d.getUTCDay() === 0 &&
+    d.getUTCDate() >= 25 &&
+    d.getUTCHours() === 2
+  );
+}
+
+interface ContinuousSeries {
+  time: string[];
+  values: Record<string, (number | null)[]>;
+  gap: boolean[];
+  inserted: number;
+}
+
+function fillTimeGaps(
+  doc: HistoricalDoc,
+  resolution: Resolution
+): ContinuousSeries {
+  const names = Object.keys(doc.sensors ?? {});
+  const time: string[] = [];
+  const gap: boolean[] = [];
+  const values: Record<string, (number | null)[]> = {};
+  names.forEach((n) => {
+    values[n] = [];
+  });
+
+  const source = Array.isArray(doc.time) ? doc.time : [];
+  const step = STEP_MS[resolution];
+  const withTime = source[0]?.includes("T") ?? false;
+  let inserted = 0;
+
+  source.forEach((ts, i) => {
+    time.push(ts);
+    gap.push(false);
+    names.forEach((n) => {
+      const series = doc.sensors[n]?.values;
+      values[n].push(Array.isArray(series) ? series[i] ?? null : null);
+    });
+
+    const next = source[i + 1];
+    if (next === undefined) return;
+    const current = parseNaive(ts);
+    const missing = Math.round((parseNaive(next) - current) / step) - 1;
+    if (missing < 1) return;
+    if (missing === 1 && isSpringForwardHour(current + step)) return;
+    for (let k = 1; k <= missing; k++) {
+      time.push(formatNaive(current + k * step, withTime));
+      gap.push(true);
+      names.forEach((n) => values[n].push(null));
+      inserted++;
+    }
+  });
+
+  return { time, values, gap, inserted };
+}
+
+/* -------------------------------------------------------------------------- */
 /* Zahlen                                                                      */
 /* -------------------------------------------------------------------------- */
 
@@ -576,21 +682,29 @@ const SecondaryInfoModal = ({
 
   const doc = docs[resolution];
 
+  // Ausfallzeiten fehlen in der Datei als Zeile. Ohne sie ruecken die Nachbarn
+  // auf der Kategorieachse zusammen und ein Ausfall waere unsichtbar.
+  const series = useMemo(
+    () => (doc ? fillTimeGaps(doc, resolution) : null),
+    [doc, resolution]
+  );
+
   // Ausschnitt der Zeitachse und Bucketgroesse fuer die gewaehlte Kombination
   // aus Aufloesung und Zeitraum.
   const slice = useMemo(() => {
-    if (!doc || !Array.isArray(doc.time) || doc.time.length === 0) return null;
+    if (!series || series.time.length === 0) return null;
     const range =
       RANGES.find((r) => r.key === rangeKey) ?? RANGES[RANGES.length - 1];
     // Ueber die Anzahl der Punkte statt ueber Datumsarithmetik schneiden - die
-    // Zeitstempel sind Ortszeit ohne Zeitzone (siehe splitTimestamp).
+    // Zeitstempel sind Ortszeit ohne Zeitzone (siehe splitTimestamp). Auf der
+    // ergaenzten Achse entspricht die Punktzahl wieder der Kalenderzeit.
     const perDay = resolution === "hour" ? 24 : 1;
-    const total = doc.time.length;
+    const total = series.time.length;
     const count =
       range.days === null ? total : Math.min(total, range.days * perDay);
     const start = total - count;
     const bucketSize = Math.max(1, Math.ceil(count / MAX_POINTS));
-    const times = doc.time.slice(start);
+    const times = series.time.slice(start);
     const labelTimes =
       bucketSize === 1 ? times : times.filter((_, i) => i % bucketSize === 0);
     return {
@@ -601,15 +715,16 @@ const SecondaryInfoModal = ({
       fullLabels: labelTimes.map(fmtTimestampFull),
       from: times[0] ?? null,
       to: times[times.length - 1] ?? null,
+      gaps: series.gap.slice(start).filter(Boolean).length,
     };
-  }, [doc, rangeKey, resolution]);
+  }, [series, rangeKey, resolution]);
 
   const charts = useMemo(() => {
-    if (!doc || !slice) return [];
+    if (!doc || !series || !slice) return [];
     return CHART_PANELS.map((panel) => {
       const sensor = doc.sensors?.[panel.attr];
       if (!sensor || !Array.isArray(sensor.values)) return null;
-      const raw = sensor.values.slice(slice.start);
+      const raw = (series.values[panel.attr] ?? []).slice(slice.start);
       if (!raw.some((v) => typeof v === "number")) return null;
       const isSum = sensor.aggregation === "sum";
       const values = reduceSeries(
@@ -667,7 +782,7 @@ const SecondaryInfoModal = ({
             ),
       };
     }).filter((c): c is NonNullable<typeof c> => c !== null);
-  }, [doc, slice]);
+  }, [doc, series, slice]);
 
   if (station === undefined) return null;
 
@@ -836,6 +951,10 @@ const SecondaryInfoModal = ({
                 : ""}
               {slice.bucketSize > 1 &&
                 ` · je Punkt ${slice.bucketSize} ${resolutionNoun}`}
+              {slice.gaps > 0 &&
+                ` · ${slice.gaps.toLocaleString(
+                  "de-DE"
+                )} ${resolutionNoun} ohne Messung`}
             </span>
           )}
           {charts.length > 0 && (
@@ -977,9 +1096,11 @@ const SecondaryInfoModal = ({
               )}
               <div style={{ fontSize: "80%", color: "#666", marginTop: 8 }}>
                 Die Datei enthält den gesamten Messzeitraum in der oben
-                gewählten Auflösung, Spalten durch Semikolon getrennt. Die
-                Spalte Windrichtung enthält aggregierte Mittelwerte, die aus dem
-                oben genannten Grund nicht belastbar sind.
+                gewählten Auflösung, Spalten durch Semikolon getrennt. Zeiten
+                ohne Messung stehen nicht als Zeile in der Datei, anders als in
+                den Diagrammen, die dafür eine Lücke zeichnen. Die Spalte
+                Windrichtung enthält aggregierte Mittelwerte, die aus dem oben
+                genannten Grund nicht belastbar sind.
               </div>
             </div>
           </Panel>
