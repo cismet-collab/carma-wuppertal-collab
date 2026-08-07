@@ -11,6 +11,7 @@ import {
   ZOOM_HINT,
   ZOOM_PLUGIN_OPTIONS,
 } from "./helper/chartWithZoom";
+import "./helper/windDirectionArrows";
 import sensorKlimastationImage from "./sensor_klimastation.png";
 import texts from "./_data/klimastationTexts";
 
@@ -29,10 +30,8 @@ interface HistoricalSensor {
   name: string;
   label: string;
   unit: string | null;
-  /** "mean" | "sum" | "mean-scalar-invalid" - steuert Aggregation und Anzeige. */
+  /** "mean" | "sum" | "mean-circular" - steuert Aggregation und Anzeige. */
   aggregation: string;
-  /** true bei zirkulaeren Groessen (Windrichtung), deren Mittelwerte unbrauchbar sind. */
-  circular?: boolean;
   note?: string;
   values: (number | null)[];
 }
@@ -224,6 +223,7 @@ interface ChartPanelConfig {
   decimals: number;
   color: string;
   beginAtZero: boolean;
+  directionAttr?: string;
 }
 
 // Reihenfolge und Auswahl wie in der Tabelle von #4126.
@@ -255,13 +255,7 @@ const CHART_PANELS: ChartPanelConfig[] = [
     decimals: 1,
     color: "#2ca02c",
     beginAtZero: true,
-  },
-  {
-    attr: "Wind_Richtung",
-    unit: "°",
-    decimals: 0,
-    color: "#8c564b",
-    beginAtZero: true,
+    directionAttr: "Wind_Richtung",
   },
   {
     attr: "Luft_Druck",
@@ -338,6 +332,68 @@ function reduceSeries(
   return out;
 }
 
+function circularMean(values: (number | null)[]): number | null {
+  let sin = 0;
+  let cos = 0;
+  let count = 0;
+  for (const v of values) {
+    if (typeof v !== "number" || !isFinite(v)) continue;
+    const rad = (v * Math.PI) / 180;
+    sin += Math.sin(rad);
+    cos += Math.cos(rad);
+    count++;
+  }
+  if (count === 0) return null;
+  // Gegenlaeufige Richtungen loeschen sich zu einem Vektor ohne Laenge aus.
+  if (Math.hypot(sin, cos) < 1e-8 * count) return null;
+  const deg = (Math.atan2(sin, cos) * 180) / Math.PI;
+  return round((deg + 360) % 360, 1);
+}
+
+/** Buckets einer Richtungsreihe, jeweils als Vektormittel. */
+function reduceCircularSeries(
+  values: (number | null)[],
+  bucketSize: number
+): (number | null)[] {
+  if (bucketSize <= 1)
+    return values.map((v) => (typeof v === "number" ? v : null));
+  const out: (number | null)[] = [];
+  for (let i = 0; i < values.length; i += bucketSize) {
+    out.push(circularMean(values.slice(i, i + bucketSize)));
+  }
+  return out;
+}
+
+const COMPASS_POINTS = [
+  "N",
+  "NNO",
+  "NO",
+  "ONO",
+  "O",
+  "OSO",
+  "SO",
+  "SSO",
+  "S",
+  "SSW",
+  "SW",
+  "WSW",
+  "W",
+  "WNW",
+  "NW",
+  "NNW",
+];
+
+const compassLabel = (degrees: number): string =>
+  COMPASS_POINTS[
+    Math.round((((degrees % 360) + 360) % 360) / 22.5) % COMPASS_POINTS.length
+  ];
+
+/** "254° (WSW)" - Darstellung der Windrichtung in Tooltip und Kennzahlen. */
+const fmtDirection = (degrees: number | null | undefined): string =>
+  typeof degrees === "number" && isFinite(degrees)
+    ? `${fmtNumber(round(degrees, 0), 0)}° (${compassLabel(degrees)})`
+    : "–";
+
 interface SeriesStats {
   min: number;
   max: number;
@@ -359,12 +415,18 @@ function statsOf(values: (number | null)[]): SeriesStats | null {
   };
 }
 
+const ARROW_BAND_SHARE = 0.2;
+const GRID_COLOR = "rgba(0,0,0,0.1)";
+
 function chartOptions(
   fullLabels: string[],
   unit: string,
   decimals: number,
-  beginAtZero: boolean
+  beginAtZero: boolean,
+  directions?: (number | null)[],
+  values?: (number | null)[]
 ): ChartOptions<"line" | "bar"> {
+  const hasArrows = Array.isArray(directions) && directions.length > 0;
   return {
     maintainAspectRatio: false,
     animation: false,
@@ -377,9 +439,18 @@ function chartOptions(
           title: (items) => fullLabels[items[0]?.dataIndex] ?? "",
           label: (item) =>
             `${fmtNumber(item.parsed.y, decimals)}${unit ? " " + unit : ""}`,
+          footer: hasArrows
+            ? (items) =>
+                `Windrichtung ${fmtDirection(
+                  directions?.[items[0]?.dataIndex ?? -1]
+                )}`
+            : undefined,
         },
       },
       zoom: ZOOM_PLUGIN_OPTIONS,
+      ...(hasArrows
+        ? { windDirectionArrows: { directions, speeds: values } }
+        : {}),
     },
     scales: {
       x: {
@@ -387,8 +458,32 @@ function chartOptions(
         grid: { display: false },
       },
       y: {
-        ticks: { maxTicksLimit: 6 },
+        ticks: {
+          maxTicksLimit: 6,
+          // Der Streifen fuer die Pfeile liegt rechnerisch unter null und
+          // bekommt deshalb keine Beschriftung.
+          ...(hasArrows
+            ? {
+                callback: (value: string | number) =>
+                  typeof value === "number" && value < 0 ? undefined : value,
+              }
+            : {}),
+        },
         beginAtZero,
+        // Platz fuer die Pfeilreihe: die Untergrenze der Achse wandert unter
+        // den kleinsten Messwert, damit die Kurve die Pfeile nicht schneidet.
+        ...(hasArrows
+          ? {
+              grid: {
+                color: (ctx: { tick: { value: number } }) =>
+                  ctx.tick.value < 0 ? "transparent" : GRID_COLOR,
+              },
+              afterDataLimits: (scale: { min: number; max: number }) => {
+                const span = scale.max - scale.min;
+                scale.min -= (span || 1) * ARROW_BAND_SHARE;
+              },
+            }
+          : {}),
       },
     },
   };
@@ -715,6 +810,7 @@ const SecondaryInfoModal = ({
       fullLabels: labelTimes.map(fmtTimestampFull),
       from: times[0] ?? null,
       to: times[times.length - 1] ?? null,
+      // Zeitschritte ohne Messung im sichtbaren Ausschnitt.
       gaps: series.gap.slice(start).filter(Boolean).length,
     };
   }, [series, rangeKey, resolution]);
@@ -734,52 +830,65 @@ const SecondaryInfoModal = ({
         panel.decimals
       );
       const unit = sensor.unit ?? panel.unit;
-      // Zirkulaere Groessen (Windrichtung): die aggregierten Werte sind
-      // rechnerisch falsch, statt eines Verlaufs steht dort der Hinweis.
-      const isCircular = sensor.circular === true;
+
+      // Begleitreihe Windrichtung: zirkulaer, deshalb Vektormittel je Bucket
+      // statt reduceSeries. Fehlt sie, bleibt es beim reinen Verlauf.
+      const directionSensor = panel.directionAttr
+        ? doc.sensors?.[panel.directionAttr]
+        : undefined;
+      const rawDirections = panel.directionAttr
+        ? (series.values[panel.directionAttr] ?? []).slice(slice.start)
+        : null;
+      const hasDirections =
+        rawDirections !== null &&
+        rawDirections.some((v) => typeof v === "number");
+      const directions = hasDirections
+        ? reduceCircularSeries(rawDirections, slice.bucketSize)
+        : undefined;
+
       return {
         panel,
         sensor,
         isSum,
-        isCircular,
         // Statistik bewusst aus den ungebuendelten Werten - Buckets wuerden
         // Minimum und Maximum abschleifen.
         stats: statsOf(raw),
+        // Vorherrschende Richtung ueber den gesamten Ausschnitt.
+        prevailingDirection: hasDirections ? circularMean(rawDirections) : null,
+        directionLabel: directionSensor?.label ?? "Windrichtung",
         unit,
         // Daten und Optionen entstehen hier und nicht im Render: ein bei jedem
         // Rerender neu gebautes Optionsobjekt laesst react-chartjs-2 die Skalen
         // neu setzen und der gesetzte Zoom waere sofort wieder weg.
-        data: isCircular
-          ? null
-          : {
-              labels: slice.labels,
-              datasets: [
-                {
-                  label: sensor.label,
-                  data: values,
-                  borderColor: panel.color,
-                  backgroundColor: panel.color,
-                  // Summenreihen werden als Balken gezeichnet, alles andere als
-                  // Linie - die Linienoptionen gelten nur dort.
-                  ...(isSum
-                    ? { borderWidth: 0 }
-                    : {
-                        pointRadius: 0,
-                        borderWidth: 1.5,
-                        fill: false,
-                        tension: 0.1,
-                      }),
-                },
-              ],
+        data: {
+          labels: slice.labels,
+          datasets: [
+            {
+              label: sensor.label,
+              data: values,
+              borderColor: panel.color,
+              backgroundColor: panel.color,
+              // Summenreihen werden als Balken gezeichnet, alles andere als
+              // Linie - die Linienoptionen gelten nur dort.
+              ...(isSum
+                ? { borderWidth: 0 }
+                : {
+                    pointRadius: 0,
+                    borderWidth: 1.5,
+                    fill: false,
+                    tension: 0.1,
+                  }),
             },
-        options: isCircular
-          ? null
-          : chartOptions(
-              slice.fullLabels,
-              unit,
-              panel.decimals,
-              panel.beginAtZero
-            ),
+          ],
+        },
+        options: chartOptions(
+          slice.fullLabels,
+          unit,
+          panel.decimals,
+          panel.beginAtZero,
+          directions,
+          values
+        ),
       };
     }).filter((c): c is NonNullable<typeof c> => c !== null);
   }, [doc, series, slice]);
@@ -988,29 +1097,19 @@ const SecondaryInfoModal = ({
         )}
 
         {charts.map((chart) => {
-          const { panel, sensor, stats, unit, isSum, isCircular } = chart;
+          const {
+            panel,
+            sensor,
+            stats,
+            unit,
+            isSum,
+            prevailingDirection,
+            directionLabel,
+          } = chart;
+          const hasDirections = prevailingDirection !== null;
           const header = `${sensor.label ?? FALLBACK_LABELS[panel.attr]}${
             unit ? ` (${unit})` : ""
-          }`;
-          // Zirkulaere Groessen (Windrichtung): die aggregierten Werte sind
-          // rechnerisch falsch, deshalb kein Verlauf, sondern der Hinweis.
-          if (isCircular || !chart.data || !chart.options) {
-            return (
-              <Accordion
-                key={panel.attr}
-                style={{ marginBottom: 6 }}
-                defaultActiveKey={panel.attr}
-              >
-                <Panel header={header} eventKey={panel.attr} bsStyle="warning">
-                  <div style={{ padding: 10, paddingTop: 0 }}>
-                    <p style={{ marginBottom: 0 }}>
-                      {texts.hinweise.windrichtung}
-                    </p>
-                  </div>
-                </Panel>
-              </Accordion>
-            );
-          }
+          }${hasDirections ? ` und ${directionLabel}` : ""}`;
 
           return (
             <Accordion
@@ -1045,6 +1144,13 @@ const SecondaryInfoModal = ({
                           · Mittel {fmtNumber(stats.avg, panel.decimals)} {unit}{" "}
                           · Maximum {fmtNumber(stats.max, panel.decimals)}{" "}
                           {unit}
+                          {hasDirections && (
+                            <>
+                              {" "}
+                              · Hauptwindrichtung{" "}
+                              {fmtDirection(prevailingDirection)}
+                            </>
+                          )}
                         </>
                       )}
                     </div>
@@ -1054,6 +1160,13 @@ const SecondaryInfoModal = ({
                       style={{ fontSize: "85%", color: "#666", marginTop: 4 }}
                     >
                       {texts.hinweise.niederschlag}
+                    </div>
+                  )}
+                  {hasDirections && (
+                    <div
+                      style={{ fontSize: "85%", color: "#666", marginTop: 4 }}
+                    >
+                      {texts.hinweise.windrichtung}
                     </div>
                   )}
                 </div>
@@ -1099,8 +1212,8 @@ const SecondaryInfoModal = ({
                 gewählten Auflösung, Spalten durch Semikolon getrennt. Zeiten
                 ohne Messung stehen nicht als Zeile in der Datei, anders als in
                 den Diagrammen, die dafür eine Lücke zeichnen. Die Spalte
-                Windrichtung enthält aggregierte Mittelwerte, die aus dem oben
-                genannten Grund nicht belastbar sind.
+                Windrichtung enthält Vektormittel in Grad, leere Zellen bedeuten
+                dort "keine Aussage".
               </div>
             </div>
           </Panel>

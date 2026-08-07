@@ -21,7 +21,7 @@ const klimastationTexts = {
     niederschlag:
       "Beim Niederschlag zeigt das Diagramm echte Summen je Zeitschritt. Sie werden aus dem Zählerstand der Station berechnet, weil die API auch Niederschlagswerte mittelt und damit deutlich zu kleine Mengen liefern würde.",
     windrichtung:
-      "Die Windrichtung ist eine zirkuläre Größe: über den Sprung von 360° auf 0° hinweg ergibt eine Mittelung falsche Werte (aus den Einzelwerten 242°, 0°, 0°, 0° errechnet die API 60,5° statt korrekt 340,8°). Die stunden- und tagesweise aggregierten Archivdaten sind für die Windrichtung deshalb nicht belastbar und werden hier nicht als Verlauf dargestellt. Der aktuelle Messwert in der Tabelle ist davon nicht betroffen.",
+      "Die Pfeile zeigen in die Richtung, in die der Wind weht: ein Pfeil nach unten bedeutet Nordwind. Jeder Pfeil mittelt die Spanne bis zum nächsten, beim Hineinzoomen werden es mehr. Ein offener Kreis bedeutet, dass gemessen wurde, sich aber keine eindeutige Richtung ergibt (etwa bei Windstille), ein blasser Punkt steht für eine Spanne ganz ohne Messwert.",
     zeitstempel:
       "Alle Zeitstempel sind deutsche Ortszeit ohne Zeitzonenangabe, so wie die Station sie liefert. Bei der Zeitumstellung fehlt im Frühjahr eine Stunde, im Herbst treten zwei Stunden mit gleicher Uhrzeit auf.",
     puffer:
