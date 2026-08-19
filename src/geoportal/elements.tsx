@@ -18,6 +18,16 @@ import { OverlayTourProvider } from "../helper-overlay/components/OverlayTourPro
 import { MapInteractionsUI } from "./secondary/MapInteractions";
 import { ObliqueText } from "./secondary/Oblique";
 
+type HomeLabelProps = {
+  label?: string;
+};
+
+export const HomeLabel = ({ label = "Zum Rathaus Barmen" }: HomeLabelProps) => (
+  <div>
+    <b>{label}</b>
+  </div>
+);
+
 export const elements: Record<string, ElementType> = {
   menu: {
     key: "MENULEISTE",
@@ -275,11 +285,7 @@ export const elements: Record<string, ElementType> = {
   },
   homeControl: {
     key: "RATHAUS",
-    content: (
-      <div>
-        <b>Zum Rathaus Barmen</b>
-      </div>
-    ),
+    content: <HomeLabel />,
     containerPos: "center",
     contentPos: "left-center",
     contentWidth: "149px",
