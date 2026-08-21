@@ -7,7 +7,7 @@ import {
   faArrowPointer,
   faLocationDot,
   faRuler,
-  faVectorSquare,
+  faVectorPolygon,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -53,22 +53,22 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             wird dieses Auswahlmenü aus- bzw. wieder eingeblendet. Im Auswahlmenü 
             finden Sie einen Wechselschalter 
             {" "}<FontAwesomeIcon icon={faArrowPointer} />{" "}"Messung auswählen" 
-            zum Ein- und Ausschalten des Selektionsmodus. Für neue Messungen stehen 
-            die Modi{" "}<FontAwesomeIcon icon={faLocationDot} />{" "}"Punkt
+            zum Ein- und Ausschalten des Selektionsmodus für bestehende Messgeometrien. 
+            Für neue Messungen stehen die Modi
+            {" "}<FontAwesomeIcon icon={faLocationDot} />{" "}"Punkt
             messen" (2D und 3D), {" "}<FontAwesomeIcon icon={faRuler} />{" "}
             "Linienzug messen" (2D) bzw. "Distanz messen" (3D) und 
-            {" "}<FontAwesomeIcon icon={faVectorSquare} />{" "}"Fläche messen" 
-            (zzt. nur in 2D) zur Verfügung.  
+            {" "}<FontAwesomeIcon icon={faVectorPolygon} />{" "}"Fläche messen" 
+            (zzt. nur in 2D) zur Verfügung. Nachdem Sie einen dieser Modi 
+            ausgewählt haben, werden in der Info-Box Hinweise dazu angezeigt, wie
+            Sie die jeweiligen Messgeomtrien mit Ihren Mausklicks erzeugen können.  
           </p>
           <p>
             In der <b>2D-Betrachtung</b> werden
             Stützpunkte der Geometrien von Vektor-Kartenebenen eingefangen, eine
             Funktion, die als "Snapping" bezeichnet wird. Bei einem Gerät mit
             externer Tastatur können Sie das Snapping unterdrücken, indem Sie
-            beim Anlegen der Messgeometrie die ALT-Taste gedrückt halten. Einen
-            Linienzug beenden Sie durch erneutes Anklicken des letzten Punktes
-            oder einfach durch einen Doppelklick. Eine Fläche schließen Sie,
-            indem Sie wieder auf den Startpunkt klicken. Die Messergebnisse zu
+            beim Anlegen der Messgeometrie die ALT-Taste gedrückt halten. Die Messergebnisse zu
             einer einzelnen selektierten Messgeometrie (bei Linienzügen die
             Streckenlänge, bei Flächen zusätzlich der Flächeninhalt) werden in
             der Info-Box angezeigt, auch schon fortlaufend während des Anlegens
