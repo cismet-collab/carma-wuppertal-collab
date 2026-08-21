@@ -42,12 +42,25 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             einstellen, dass alle Messungsgeometrien auf der Zeichnungsebene
             angezeigt werden. Außerdem können Sie hierüber alle
             Messungsgeometrien speichern (dazu unten mehr) oder löschen und auch
-            hier den Messungsmodus beenden.
+            hier den Messungsmodus beenden. 
           </p>
           <p>
-            In der <b>2D-Betrachtung</b> gibt es nur einen allgemeinen Modus für
-            das Messen. Mit Ihren Mausklicks erzeugen Sie darin Messgeometrien
-            in Form von Linienzügen oder geschlossenen Flächen. Dabei werden
+            Sowohl in der 2D- als auch in der 3D-Betrachtung stehen Ihnen 
+            unterschiedliche Messmodi zur Verfügung, die in einem Auswahlmenü 
+            unterhalb des Zeichnung-Steuerelementes angeboten werden. Wenn Sie 
+            auf den weißen Hintergrund des Zeichnung-Steuerelements klicken, 
+            wird dieses Auswahlmenü aus- bzw. wieder eingeblendet. Im Auswahlmenü 
+            finden Sie einen Wechselschalter 
+            {" "}<FontAwesomeIcon icon={faArrowPointer} />{" "}"Messung auswählen" 
+            zum Ein- und Ausschalten des Selektionsmodus. Für neue Messungen stehen 
+            die Modi{" "}<FontAwesomeIcon icon={faLocationDot} />{" "}"Punkt
+            messen" (2D und 3D), {" "}<FontAwesomeIcon icon={faRuler} />{" "}
+            "Linienzug messen" (2D) bzw. "Distanz messen" (3D) und 
+            {" "}<FontAwesomeIcon icon={faVectorSquare} />{" "}"Fläche messen" 
+            (zzt. nur in 2D) zur Verfügung.  
+          </p>
+          <p>
+            In der <b>2D-Betrachtung</b> werden
             Stützpunkte der Geometrien von Vektor-Kartenebenen eingefangen, eine
             Funktion, die als "Snapping" bezeichnet wird. Bei einem Gerät mit
             externer Tastatur können Sie das Snapping unterdrücken, indem Sie
