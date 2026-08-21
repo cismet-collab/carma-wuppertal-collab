@@ -7,7 +7,7 @@ import {
   faArrowPointer,
   faLocationDot,
   faRuler,
-  faVectorPolygon,
+  faDrawPolygon,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -58,7 +58,7 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             {" "}<FontAwesomeIcon icon={faLocationDot} />{" "}"Punkt
             messen" (2D und 3D), {" "}<FontAwesomeIcon icon={faRuler} />{" "}
             "Linienzug messen" (2D) bzw. "Distanz messen" (3D) und 
-            {" "}<FontAwesomeIcon icon={faVectorPolygon} />{" "}"Fläche messen" 
+            {" "}<FontAwesomeIcon icon={faDrawPolygon} />{" "}"Fläche messen" 
             (zzt. nur in 2D) zur Verfügung. Nachdem Sie einen dieser Modi 
             ausgewählt haben, werden in der Info-Box Hinweise dazu angezeigt, wie
             Sie die jeweiligen Messgeomtrien mit Ihren Mausklicks erzeugen können.  
