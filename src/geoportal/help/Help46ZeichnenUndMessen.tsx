@@ -61,17 +61,11 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             {" "}<FontAwesomeIcon icon={faDrawPolygon} />{" "}"Fläche messen" 
             (zzt. nur in 2D) zur Verfügung. Nachdem Sie einen dieser Modi 
             ausgewählt haben, werden in der Info-Box Hinweise dazu angezeigt, wie
-            Sie die jeweiligen Messgeomtrien mit Ihren Mausklicks erzeugen können.  
+            Sie die jeweiligen Messgeometrien mit Ihren Mausklicks erzeugen können.  
           </p>
           <p>
-            In der <b>2D-Betrachtung</b> werden
-            Stützpunkte der Geometrien von Vektor-Kartenebenen eingefangen, eine
-            Funktion, die als "Snapping" bezeichnet wird. Bei einem Gerät mit
-            externer Tastatur können Sie das Snapping unterdrücken, indem Sie
-            beim Anlegen der Messgeometrie die ALT-Taste gedrückt halten. Die Messergebnisse zu
-            einer einzelnen selektierten Messgeometrie (bei Linienzügen die
-            Streckenlänge, bei Flächen zusätzlich der Flächeninhalt) werden in
-            der Info-Box angezeigt, auch schon fortlaufend während des Anlegens
+            Die Messergebnisse zu einer einzelnen selektierten Messgeometrie werden 
+            in der Info-Box angezeigt, auch schon fortlaufend während des Anlegens
             der Messgeometrie. Dort können sie außerdem mit den Pfeiltasten{" "}
             <a className="useAClassNameToRenderProperLink">&lt;&lt;</a> und{" "}
             <a className="useAClassNameToRenderProperLink">&gt;&gt;</a> durch
@@ -82,6 +76,13 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             </a>{" "}
             lässt sich der Kartenausschnitt zuvor so einstellen, dass alle
             Messgeometrien sichtbar sind.
+          </p>
+          <p>
+            In der <b>2D-Betrachtung</b> werden Stützpunkte der Geometrien von 
+            Vektor-Kartenebenen eingefangen, eine Funktion, die als "Snapping" 
+            bezeichnet wird. Bei einem Gerät mit externer Tastatur können Sie das 
+            Snapping unterdrücken, indem Sie beim Anlegen der Messgeometrie die 
+            ALT-Taste gedrückt halten. 
           </p>
           <p>
             In der <b>3D-Betrachtung</b> gibt es unterschiedliche Messmodi. Wenn
