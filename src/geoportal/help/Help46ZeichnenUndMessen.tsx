@@ -85,24 +85,17 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             ALT-Taste gedrückt halten. 
           </p>
           <p>
-            In der <b>3D-Betrachtung</b> gibt es unterschiedliche Messmodi. Wenn
-            Sie auf den weißen Hintergrund des Zeichnung-Steuerelements klicken,
-            wird ihnen dazu ein Auswahlmenü angeboten. Mit der Funktion 
-            {" "}<FontAwesomeIcon icon={faLocationDot} />{" "}"Punkt
-            messen" können Sie Punkte auf der Oberfläche des 3D-Modells anlegen
-            und deren dreidimensionale Koordinaten einschließlich der Höhe
-            ermitteln. Wechseln Sie in den Selektionsmodus 
-            {" "}<FontAwesomeIcon icon={faArrowPointer} />{" "}"Messung auswählen" 
-            und klicken Sie auf den Messpunkt oder (einfacher) auf seine Beschriftung,
-            um den Messpunkt auszuwählen. Klicken Sie dann erneut auf seine Beschriftung, 
+            In der <b>3D-Betrachtung</b> ist die Messung von Punkten vor allem 
+            nützlich, um die Höhenverhältnisse zu untersuchen. Klicken Sie im 
+            Selektionsmodus auf einen Messpunkt oder (einfacher) auf seine Beschriftung,
+            um diesen Punkt auszuwählen. Klicken Sie dann erneut auf seine Beschriftung, 
             um zwischen der Anzeige der absoluten und der relativen Höhe des Messpunktes 
             hin- und herzuschalten. Mit der Funktion 
             {" "}<FontAwesomeIcon icon={faArrowsDownToLine} />{" "}"Als Referenzhöhe 
             setzen" in der Info-Box eines Messpunktes können Sie diesen als 
             Bezugspunkt für alle relativen Höhenangaben festlegen. Im Modus 
-            {" "}<FontAwesomeIcon icon={faRuler} />{" "}"Distanz messen" können
-            Sie schräge Strecken auf der Geländeoberfläche messen. Dabei wird
-            automatisch ein rechtwinkliges Hilfsdreieck konstruiert, das Ihnen
+            "Distanz messen" können Sie schräge Strecken auf der Geländeoberfläche messen. 
+            Dabei wird automatisch ein rechtwinkliges Hilfsdreieck konstruiert, das Ihnen
             neben der schrägen Strecke auch den Höhenunterschied und die ebene
             (projizierte) Strecke anzeigt. So können Sie z. B. eine
             Gebäudefassade ausmessen, indem Sie einfach die Diagonale bestimmen.
@@ -110,7 +103,7 @@ const Help46ZeichnenUndMessen = ({ showOverlayFromOutside }) => {
             bei Punkt- wie auch bei Streckenmessungen wird rund um das Fadenkreuz eine
             tellerförmige Messmarke ausgeprägt. Durch die perspektivische Darstellung 
             dieser Marke können Sie erkennen, wie Sie das Fadenkreuz auf die
-            das digitale Modell der Oberfläche aufgesetzt haben. Wenn Sie Im 
+            das digitale Modell der Oberfläche aufgesetzt haben. Wenn Sie im 
             Selektionsmodus eine Messung ausgewählt haben, können Sie durch einen langen
             Klick auf einen Punkt in den Bearbeitungsmodus für diesen Punkt wechseln.
             Sie können ihn auf der Oberfläche des 3D-Modells verschieben, in einer Ebene 
