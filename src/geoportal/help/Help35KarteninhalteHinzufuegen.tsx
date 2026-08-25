@@ -15,6 +15,7 @@ import {
   faSearch,
   faCubes,
 } from "@fortawesome/free-solid-svg-icons";
+import LiveBadge from "../../commons/LiveBadge";
 
 const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
   return (
@@ -104,19 +105,18 @@ const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
             >
               Karteninhalte untersuchen
             </Link>
-            . Sensoren, die aktuell Messwerte übermitteln, sind rechts oben 
-            in der Info-Box durch das rote Symbol LIVE gekennzeichnet. Es wird 
-            angezeigt, solange innerhalb der letzten 24 Stunden ein aktueller 
-            Messwert für den jeweiligen Sensor eingegangen ist; liegt die letzte 
-            Übermittlung länger als 24 Stunden zurück, entfällt die Kennzeichnung. 
-            Unter <FontAwesomeIcon icon={faCubes} />{" "}
-            <strong>Objekte</strong>{" "}finden sie zum einen Bestands- und 
-            Planungsobjekte, zum anderen Planungsareale, die sowohl in der 
-            2D- als auch in der 3D-Ansicht dargestellt werden können. Hier 
-            sind wir ebenfalls noch in der inhaltlichen Aufbauphase. 
-            Als erstes öffentlich zugängliches Objekt bieten wir die zur 
-            Bundesgartenschau 2031 geplante Hängebrücke an. Zu den Objekten 
-            finden sie in der Info-Box
+            . Sensoren, die aktuell Messwerte übermitteln, sind rechts oben in
+            der Info-Box durch <LiveBadge /> gekennzeichnet. Es wird angezeigt,
+            solange innerhalb der letzten 24 Stunden ein aktueller Messwert für
+            den jeweiligen Sensor eingegangen ist; liegt die letzte Übermittlung
+            länger als 24 Stunden zurück, entfällt die Kennzeichnung. Unter{" "}
+            <FontAwesomeIcon icon={faCubes} /> <strong>Objekte</strong> finden
+            sie zum einen Bestands- und Planungsobjekte, zum anderen
+            Planungsareale, die sowohl in der 2D- als auch in der 3D-Ansicht
+            dargestellt werden können. Hier sind wir ebenfalls noch in der
+            inhaltlichen Aufbauphase. Als erstes öffentlich zugängliches Objekt
+            bieten wir die zur Bundesgartenschau 2031 geplante Hängebrücke an.
+            Zu den Objekten finden sie in der Info-Box
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
@@ -126,10 +126,10 @@ const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
               >
                 (s. Hilfefolie)
               </HelpOverlayLink>
-            </span>{" "}i. d. R. zusätzliche Dokumente und/oder Verknüpfungen 
-            mit speziellen Anwendungsprogrammen. Planungsareale in frühen 
-            Projektphasen sind zumeist nur für die direkten Projektbeteiligten 
-            nach Anmeldung
+            </span>{" "}
+            i. d. R. zusätzliche Dokumente und/oder Verknüpfungen mit speziellen
+            Anwendungsprogrammen. Planungsareale in frühen Projektphasen sind
+            zumeist nur für die direkten Projektbeteiligten nach Anmeldung
             <span className="hide-on-small-screens">
               {" "}
               <HelpOverlayLink
@@ -139,10 +139,11 @@ const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
               >
                 (s. Hilfefolie)
               </HelpOverlayLink>
-            </span>{" "}beim DigiTal Zwilling sichtbar.    
-            Unter{" "}<FontAwesomeIcon icon={faList} /> <strong>Entdecken</strong> 
-            {" "}stehen Ihnen vordefinierte Karten (Kombinationen von Kartenebenen) 
-            für typische Fragestellungen zur Verfügung, die sich in der Praxis
+            </span>{" "}
+            beim DigiTal Zwilling sichtbar. Unter{" "}
+            <FontAwesomeIcon icon={faList} /> <strong>Entdecken</strong> stehen
+            Ihnen vordefinierte Karten (Kombinationen von Kartenebenen) für
+            typische Fragestellungen zur Verfügung, die sich in der Praxis
             bewährt haben. <strong>Profi-Tipp</strong>: Zwar gibt es aktuell
             noch keinen eigenen Dialog zum Hinzufügen externer WMS-Dienste (also
             Kartendienste, die nicht von der Stadt Wuppertal stammen), die
