@@ -55,8 +55,7 @@ const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
             "Favoriten" unter "Meine Kartenebenen". Zu Ihren Favoriten gelangen
             Sie, indem Sie im linken Navigationsbereich auf das oberste Symbol{" "}
             <FontAwesomeIcon icon={faStar} /> <strong>Favoriten</strong>{" "}
-            klicken. Das Speichern der Favoriten benutzt den Cache-Speicher
-            Ihres Browsers. Beachten Sie dabei: Ihre Favoriten werden im
+            klicken. Beachten Sie dabei: Ihre Favoriten werden im
             Zwischenspeicher (Cache) Ihres Browsers gespeichert. Wenn Sie diesen
             Speicher leeren, gehen auch Ihre Favoriten verloren.
           </p>
@@ -105,7 +104,12 @@ const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
             >
               Karteninhalte untersuchen
             </Link>
-            . Unter <FontAwesomeIcon icon={faCubes} />{" "}
+            . Sensoren, die aktuell Messwerte übermitteln, sind rechts oben 
+            in der Info-Box durch das rote Symbol LIVE gekennzeichnet. Es wird 
+            angezeigt, solange innerhalb der letzten 24 Stunden ein aktueller 
+            Messwert für den jeweiligen Sensor eingegangen ist; liegt die letzte 
+            Übermittlung länger als 24 Stunden zurück, entfällt die Kennzeichnung. 
+            Unter <FontAwesomeIcon icon={faCubes} />{" "}
             <strong>Objekte</strong>{" "}finden sie zum einen Bestands- und 
             Planungsobjekte, zum anderen Planungsareale, die sowohl in der 
             2D- als auch in der 3D-Ansicht dargestellt werden können. Hier 
