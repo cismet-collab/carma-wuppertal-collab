@@ -106,7 +106,7 @@ const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
               Karteninhalte untersuchen
             </Link>
             . Sensoren, die aktuell Messwerte übermitteln, sind rechts oben in
-            der Info-Box durch{" "}<LiveBadge />{" "}gekennzeichnet. Es wird angezeigt,
+            der Info-Box durch{" "}<LiveBadge />{" "}gekennzeichnet. Das Symbol wird angezeigt,
             solange innerhalb der letzten 24 Stunden ein aktueller Messwert für
             den jeweiligen Sensor eingegangen ist; liegt die letzte Übermittlung
             länger als 24 Stunden zurück, entfällt die Kennzeichnung. Unter{" "}
