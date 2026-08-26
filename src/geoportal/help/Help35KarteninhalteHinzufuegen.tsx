@@ -106,10 +106,10 @@ const Component = ({ showOverlayFromOutside, setAppMenuActiveMenuSection }) => {
               Karteninhalte untersuchen
             </Link>
             . Sensoren, die aktuell Messwerte übermitteln, sind rechts oben in
-            der Info-Box durch{" "}<LiveBadge />{" "}gekennzeichnet. Das Symbol wird angezeigt,
-            solange innerhalb der letzten 24 Stunden ein aktueller Messwert für
-            den jeweiligen Sensor eingegangen ist; liegt die letzte Übermittlung
-            länger als 24 Stunden zurück, ist das Live Symbol grau und
+            der Info-Box durch das Symbol{" "}<LiveBadge />{" "}gekennzeichnet. 
+            Es wird angezeigt, solange innerhalb der letzten 24 Stunden ein aktueller 
+            Messwert für den jeweiligen Sensor eingegangen ist. Liegt die letzte Übermittlung
+            länger als 24 Stunden zurück, ist das Symbol grau und
             durchgestrichen <LiveBadge isLive={false} />. Unter{" "}
             <FontAwesomeIcon icon={faCubes} /> <strong>Objekte</strong> finden
             sie zum einen Bestands- und Planungsobjekte, zum anderen
