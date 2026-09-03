@@ -6,6 +6,10 @@ import Panel from "react-cismap/commons/Panel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { genericSecondaryInfoFooterFactory } from "../commons";
+import LiveBadge from "../commons/LiveBadge";
+import { ChartLoadingPlaceholder } from "./helper/chartLoading";
+import { valueRange, withYScale } from "./helper/chartAxis";
+import { useProgressiveCharts } from "./helper/useProgressiveCharts";
 import {
   ChartWithZoom,
   ZOOM_HINT,
@@ -508,6 +512,108 @@ function chartOptions(
   };
 }
 
+/**
+ * Diagramme eines Archivdokuments. Laeuft ueber useProgressiveCharts ausserhalb
+ * des Renderpfads, damit der Ladezustand stehen bleibt, solange gerechnet und
+ * gezeichnet wird.
+ */
+interface Slice {
+  start: number;
+  bucketSize: number;
+  labels: string[];
+  fullLabels: string[];
+}
+
+function buildPanels(
+  doc: HistoricalDoc,
+  series: ContinuousSeries,
+  slice: Slice
+) {
+  return CHART_PANELS.map((panel) => {
+    const sensor = doc.sensors?.[panel.attr];
+    if (!sensor || !Array.isArray(sensor.values)) return null;
+    const raw = (series.values[panel.attr] ?? []).slice(slice.start);
+    if (!raw.some((v) => typeof v === "number")) return null;
+    const isSum = sensor.aggregation === "sum";
+    const values = reduceSeries(
+      raw,
+      slice.bucketSize,
+      isSum ? "sum" : "mean",
+      panel.decimals
+    );
+    const unit = sensor.unit ?? panel.unit;
+    // Aus den gebuendelten Werten, denn genau die werden gezeichnet.
+    const range = valueRange(values);
+
+    // Begleitreihe Windrichtung: zirkulaer, deshalb Vektormittel je Bucket
+    // statt reduceSeries. Fehlt sie, bleibt es beim reinen Verlauf.
+    const directionSensor = panel.directionAttr
+      ? doc.sensors?.[panel.directionAttr]
+      : undefined;
+    const rawDirections = panel.directionAttr
+      ? (series.values[panel.directionAttr] ?? []).slice(slice.start)
+      : null;
+    const hasDirections =
+      rawDirections !== null &&
+      rawDirections.some((v) => typeof v === "number");
+    const directions = hasDirections
+      ? reduceCircularSeries(rawDirections, slice.bucketSize)
+      : undefined;
+
+    return {
+      panel,
+      sensor,
+      isSum,
+      // Statistik bewusst aus den ungebuendelten Werten - Buckets wuerden
+      // Minimum und Maximum abschleifen.
+      stats: statsOf(raw),
+      // Vorherrschende Richtung ueber den gesamten Ausschnitt.
+      prevailingDirection: hasDirections ? circularMean(rawDirections) : null,
+      directionLabel: directionSensor?.label ?? "Windrichtung",
+      unit,
+      // Daten und Optionen entstehen hier und nicht im Render: ein bei jedem
+      // Rerender neu gebautes Optionsobjekt laesst react-chartjs-2 die Skalen
+      // neu setzen und der gesetzte Zoom waere sofort wieder weg.
+      data: {
+        labels: slice.labels,
+        datasets: [
+          {
+            label: sensor.label,
+            data: values,
+            borderColor: panel.color,
+            backgroundColor: panel.color,
+            // Summenreihen werden als Balken gezeichnet, alles andere als
+            // Linie - die Linienoptionen gelten nur dort.
+            ...(isSum
+              ? { borderWidth: 0 }
+              : {
+                  pointRadius: 0,
+                  borderWidth: 1.5,
+                  fill: false,
+                  tension: 0.1,
+                }),
+          },
+        ],
+      },
+      options: withYScale(
+        chartOptions(
+          slice.fullLabels,
+          unit,
+          panel.decimals,
+          panel.beginAtZero,
+          directions,
+          values
+        ),
+        range?.min ?? 0,
+        range?.max ?? 0,
+        // Luft- und Bodentemperaturen werden im Winter wirklich negativ,
+        // negative Striche bleiben deshalb beschriftet.
+        { beginAtZero: panel.beginAtZero }
+      ),
+    };
+  }).filter((c): c is NonNullable<typeof c> => c !== null);
+}
+
 /* -------------------------------------------------------------------------- */
 /* CSV                                                                         */
 /* -------------------------------------------------------------------------- */
@@ -834,83 +940,15 @@ const SecondaryInfoModal = ({
     };
   }, [series, rangeKey, resolution]);
 
-  const charts = useMemo(() => {
-    if (!doc || !series || !slice) return [];
-    return CHART_PANELS.map((panel) => {
-      const sensor = doc.sensors?.[panel.attr];
-      if (!sensor || !Array.isArray(sensor.values)) return null;
-      const raw = (series.values[panel.attr] ?? []).slice(slice.start);
-      if (!raw.some((v) => typeof v === "number")) return null;
-      const isSum = sensor.aggregation === "sum";
-      const values = reduceSeries(
-        raw,
-        slice.bucketSize,
-        isSum ? "sum" : "mean",
-        panel.decimals
-      );
-      const unit = sensor.unit ?? panel.unit;
-
-      // Begleitreihe Windrichtung: zirkulaer, deshalb Vektormittel je Bucket
-      // statt reduceSeries. Fehlt sie, bleibt es beim reinen Verlauf.
-      const directionSensor = panel.directionAttr
-        ? doc.sensors?.[panel.directionAttr]
-        : undefined;
-      const rawDirections = panel.directionAttr
-        ? (series.values[panel.directionAttr] ?? []).slice(slice.start)
-        : null;
-      const hasDirections =
-        rawDirections !== null &&
-        rawDirections.some((v) => typeof v === "number");
-      const directions = hasDirections
-        ? reduceCircularSeries(rawDirections, slice.bucketSize)
-        : undefined;
-
-      return {
-        panel,
-        sensor,
-        isSum,
-        // Statistik bewusst aus den ungebuendelten Werten - Buckets wuerden
-        // Minimum und Maximum abschleifen.
-        stats: statsOf(raw),
-        // Vorherrschende Richtung ueber den gesamten Ausschnitt.
-        prevailingDirection: hasDirections ? circularMean(rawDirections) : null,
-        directionLabel: directionSensor?.label ?? "Windrichtung",
-        unit,
-        // Daten und Optionen entstehen hier und nicht im Render: ein bei jedem
-        // Rerender neu gebautes Optionsobjekt laesst react-chartjs-2 die Skalen
-        // neu setzen und der gesetzte Zoom waere sofort wieder weg.
-        data: {
-          labels: slice.labels,
-          datasets: [
-            {
-              label: sensor.label,
-              data: values,
-              borderColor: panel.color,
-              backgroundColor: panel.color,
-              // Summenreihen werden als Balken gezeichnet, alles andere als
-              // Linie - die Linienoptionen gelten nur dort.
-              ...(isSum
-                ? { borderWidth: 0 }
-                : {
-                    pointRadius: 0,
-                    borderWidth: 1.5,
-                    fill: false,
-                    tension: 0.1,
-                  }),
-            },
-          ],
-        },
-        options: chartOptions(
-          slice.fullLabels,
-          unit,
-          panel.decimals,
-          panel.beginAtZero,
-          directions,
-          values
-        ),
-      };
-    }).filter((c): c is NonNullable<typeof c> => c !== null);
-  }, [doc, series, slice]);
+  const chartSource = useMemo(
+    () => (doc && series && slice ? { doc, series, slice } : null),
+    [doc, series, slice]
+  );
+  const { prepared, mountedCharts } = useProgressiveCharts(
+    chartSource,
+    ({ doc, series, slice }) => ({ panels: buildPanels(doc, series, slice) })
+  );
+  const charts = prepared?.panels ?? [];
 
   if (station === undefined) return null;
 
@@ -976,20 +1014,10 @@ const SecondaryInfoModal = ({
               <span>
                 Stand: {dateObserved ? fmtTimestampFull(dateObserved) : "–"}
               </span>
-              {isLive && (
-                <span
-                  style={{
-                    background: "#ff1a1a",
-                    color: "white",
-                    padding: "0px 4px",
-                    borderRadius: 2,
-                    fontSize: 9,
-                    fontWeight: "bold",
-                  }}
-                >
-                  LIVE
-                </span>
-              )}
+              {/* Kein Paket in den letzten 3 h: graues, durchgestrichenes
+                  Zeichen statt gar keinem (#4116). Das Zeichen wegzulassen
+                  wuerde einen Stillstand verschweigen. */}
+              <LiveBadge isLive={isLive} />
             </div>
           </div>
           <div
@@ -1092,15 +1120,28 @@ const SecondaryInfoModal = ({
           )}
         </div>
 
-        {loading && (
-          <Accordion style={{ marginBottom: 6 }} defaultActiveKey="loading">
-            <Panel header="Diagramme" eventKey="loading" bsStyle="success">
-              <div style={{ fontSize: "115%", padding: 10, paddingTop: 0 }}>
-                <p>Messreihen werden geladen…</p>
-              </div>
-            </Panel>
-          </Accordion>
-        )}
+        {!prepared &&
+          loading &&
+          CHART_PANELS.map((panel, idx) => (
+            <Accordion
+              key={`loading-${panel.attr}`}
+              style={{ marginBottom: 6 }}
+              defaultActiveKey={panel.attr}
+            >
+              <Panel
+                header={FALLBACK_LABELS[panel.attr] ?? panel.attr}
+                eventKey={panel.attr}
+                bsStyle="success"
+              >
+                <div style={{ padding: 10, paddingTop: 0 }}>
+                  <ChartLoadingPlaceholder
+                    height={240}
+                    label={idx === 0 ? "Messreihen werden geladen…" : "\u00a0"}
+                  />
+                </div>
+              </Panel>
+            </Accordion>
+          ))}
 
         {!loading && loadFailed && (
           <Accordion style={{ marginBottom: 6 }} defaultActiveKey="failed">
@@ -1115,7 +1156,7 @@ const SecondaryInfoModal = ({
           </Accordion>
         )}
 
-        {charts.map((chart) => {
+        {charts.map((chart, idx) => {
           const {
             panel,
             sensor,
@@ -1138,15 +1179,19 @@ const SecondaryInfoModal = ({
             >
               <Panel header={header} eventKey={panel.attr} bsStyle="success">
                 <div style={{ padding: 10, paddingTop: 0 }}>
-                  <ChartWithZoom
-                    // Ein Wechsel von Zeitraum oder Aufloesung soll den Zoom
-                    // nicht mitnehmen.
-                    key={`${panel.attr}-${resolution}-${rangeKey}`}
-                    bars={isSum}
-                    data={chart.data}
-                    options={chart.options}
-                    height={240}
-                  />
+                  {idx < mountedCharts ? (
+                    <ChartWithZoom
+                      // Ein Wechsel von Zeitraum oder Aufloesung soll den Zoom
+                      // nicht mitnehmen.
+                      key={`${panel.attr}-${resolution}-${rangeKey}`}
+                      bars={isSum}
+                      data={chart.data}
+                      options={chart.options}
+                      height={240}
+                    />
+                  ) : (
+                    <ChartLoadingPlaceholder height={240} label="\u00a0" />
+                  )}
                   {stats && (
                     <div
                       style={{ fontSize: "85%", color: "#666", marginTop: 6 }}
