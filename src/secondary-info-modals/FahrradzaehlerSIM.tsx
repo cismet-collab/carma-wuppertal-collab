@@ -6,6 +6,9 @@ import Panel from "react-cismap/commons/Panel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { genericSecondaryInfoFooterFactory } from "../commons";
+import { ChartLoadingPlaceholder } from "./helper/chartLoading";
+import { valueRange, withYScale } from "./helper/chartAxis";
+import { useProgressiveCharts } from "./helper/useProgressiveCharts";
 import {
   ChartWithZoom,
   ZOOM_HINT,
@@ -220,9 +223,12 @@ const dayKeyOf = (d: Date) =>
 // Die Formatter werden einmal angelegt und wiederverwendet. Ueber
 // toLocaleDateString mit Optionsobjekt kostet dieselbe Arbeit fuer die vier
 // Diagramme rund 2,4 Sekunden statt 90 Millisekunden.
+// Mit Jahr: die Messreihen laufen ueber den Jahreswechsel, 23.05. allein sagt
+// nicht, aus welchem Jahr der Wert stammt.
 const dfDayShort = new Intl.DateTimeFormat("de-DE", {
   day: "2-digit",
   month: "2-digit",
+  year: "2-digit",
 });
 const dfDayLong = new Intl.DateTimeFormat("de-DE", {
   weekday: "long",
@@ -266,7 +272,7 @@ function sortedNumericEntries(data: HistoricalData, attr: string) {
  * Luecke sichtbar wird und nicht als durchgezogene Linie (#4117).
  */
 function buildIntervalPoints(
-  entries: { value: number; observedAt: string }[],
+  entries: { value: number; observedAt: string }[]
 ): ChartPoint[] {
   if (entries.length === 0) return [];
 
@@ -276,7 +282,7 @@ function buildIntervalPoints(
       (e, i) =>
         (new Date(e.observedAt).getTime() -
           new Date(entries[i].observedAt).getTime()) /
-        60000,
+        60000
     );
   const sortedGaps = [...gapsMin].sort((a, b) => a - b);
   const typicalGap = sortedGaps.length
@@ -297,7 +303,7 @@ function buildIntervalPoints(
       // ueblichen Takt hineingepasst haetten.
       const missing = Math.min(
         Math.max(Math.round(minutes / typicalGap) - 1, 1),
-        MAX_GAP_FILL,
+        MAX_GAP_FILL
       );
       const gapStart = date.getTime() - minutes * 60000;
       for (let k = 1; k <= missing; k++) {
@@ -332,14 +338,14 @@ function buildIntervalPoints(
 function buildDayPoints(
   entries: { value: number; observedAt: string }[],
   panel: ChartPanel,
-  weights: Map<string, number> | null,
+  weights: Map<string, number> | null
 ): ChartPoint[] {
   if (entries.length === 0) return [];
 
   const byDay = new Map<string, { value: number; weight: number }[]>();
   for (const e of entries) {
     const key = dayKeyOf(new Date(e.observedAt));
-    const weight = weights ? (weights.get(e.observedAt) ?? 0) : 1;
+    const weight = weights ? weights.get(e.observedAt) ?? 0 : 1;
     const bucket = byDay.get(key);
     if (bucket) bucket.push({ value: e.value, weight });
     else byDay.set(key, [{ value: e.value, weight }]);
@@ -347,7 +353,11 @@ function buildDayPoints(
 
   const first = new Date(entries[0].observedAt);
   const last = new Date(entries[entries.length - 1].observedAt);
-  const cursor = new Date(first.getFullYear(), first.getMonth(), first.getDate());
+  const cursor = new Date(
+    first.getFullYear(),
+    first.getMonth(),
+    first.getDate()
+  );
   const end = new Date(last.getFullYear(), last.getMonth(), last.getDate());
 
   const points: ChartPoint[] = [];
@@ -391,7 +401,7 @@ function buildDayPoints(
 function buildPoints(
   data: HistoricalData,
   panel: ChartPanel,
-  granularity: Granularity,
+  granularity: Granularity
 ): ChartPoint[] {
   const entries = sortedNumericEntries(data, panel.series.attr);
   if (entries.length === 0) return [];
@@ -403,13 +413,17 @@ function buildPoints(
           sortedNumericEntries(data, panel.weightAttr).map((e) => [
             e.observedAt,
             e.value,
-          ]),
+          ])
         )
       : null;
   return buildDayPoints(entries, panel, weights);
 }
 
-function buildChartData(points: ChartPoint[], panel: ChartPanel, bars: boolean) {
+function buildChartData(
+  points: ChartPoint[],
+  panel: ChartPanel,
+  bars: boolean
+) {
   return {
     labels: points.map((p) => p.label),
     datasets: [
@@ -436,7 +450,7 @@ function buildChartData(points: ChartPoint[], panel: ChartPanel, bars: boolean) 
 function buildChartOptions(
   points: ChartPoint[],
   panel: ChartPanel,
-  granularity: Granularity,
+  granularity: Granularity
 ): ChartOptions<"line" | "bar"> {
   const format = panel.decimals === 0 ? fmtCount : fmtSpeed;
   return {
@@ -471,12 +485,59 @@ function buildChartOptions(
         ticks: { maxTicksLimit: 8, font: { size: 10 }, autoSkip: true },
         grid: { display: false },
       },
+      // Grenzen und Striche kommen aus withYScale, siehe unten.
       y: {
         ticks: { maxTicksLimit: 6 },
         beginAtZero: true,
       },
     },
   };
+}
+
+/** Diagramme und Datenpunktzahl in einem Durchgang, ausserhalb des Renders. */
+function prepareCharts({
+  data,
+  granularity,
+}: {
+  data: HistoricalData;
+  granularity: Granularity;
+}) {
+  const panels = CHART_PANELS.map((panel) => {
+    const points = buildPoints(data, panel, granularity);
+    if (points.length === 0) return null;
+    // Zaehlungen je Tag als Balken, alles andere als Linie.
+    const bars = granularity === "day" && panel.aggregation === "sum";
+    const suffix =
+      panel.aggregation === "sum"
+        ? GRANULARITY_SUFFIX[granularity]
+        : GRANULARITY_SUFFIX_MEAN[granularity];
+    const range = valueRange(points.map((point) => point.value));
+    const options = buildChartOptions(points, panel, granularity);
+    return {
+      panel,
+      bars,
+      header: `${panel.header} ${suffix}${
+        panel.unit ? ` in ${panel.unit}` : ""
+      }`,
+      data: buildChartData(points, panel, bars),
+      // Zaehlungen und Geschwindigkeiten werden nicht negativ, die Achse
+      // bleibt aber an der Null verankert: bei Balken muss die Laenge zum
+      // Wert passen.
+      options: range
+        ? withYScale(options, range.min, range.max, { beginAtZero: true })
+        : options,
+    };
+  }).filter((entry): entry is NonNullable<typeof entry> => entry !== null);
+
+  const ts = new Set<string>();
+  for (const [key, val] of Object.entries(data)) {
+    if (SKIP_HISTORICAL_KEYS.has(key)) continue;
+    for (const e of getAttrValues(val)) {
+      ts.add(e.observedAt);
+    }
+  }
+
+  return { panels, pointCount: ts.size };
 }
 
 const headerBg = "#616161";
@@ -584,7 +645,7 @@ const SecondaryInfoModal = ({
   const entityId = (sensor?.id as string) ?? "";
 
   const [historicalData, setHistoricalData] = useState<HistoricalData | null>(
-    null,
+    null
   );
   const [historyLoading, setHistoryLoading] = useState(false);
   const [granularity, setGranularity] = useState<Granularity>("day");
@@ -609,26 +670,16 @@ const SecondaryInfoModal = ({
     };
   }, [entityId]);
 
-  const chartPanelData = useMemo(() => {
-    if (!historicalData) return [];
-    return CHART_PANELS.map((panel) => {
-      const points = buildPoints(historicalData, panel, granularity);
-      if (points.length === 0) return null;
-      // Zaehlungen je Tag als Balken, alles andere als Linie.
-      const bars = granularity === "day" && panel.aggregation === "sum";
-      const suffix =
-        panel.aggregation === "sum"
-          ? GRANULARITY_SUFFIX[granularity]
-          : GRANULARITY_SUFFIX_MEAN[granularity];
-      return {
-        panel,
-        bars,
-        header: `${panel.header} ${suffix}${panel.unit ? ` in ${panel.unit}` : ""}`,
-        data: buildChartData(points, panel, bars),
-        options: buildChartOptions(points, panel, granularity),
-      };
-    }).filter((entry): entry is NonNullable<typeof entry> => entry !== null);
-  }, [historicalData, granularity]);
+  // Ein Wechsel der Aufloesung baut die Diagramme neu, deshalb haengt die
+  // Quelle an beidem.
+  const chartSource = useMemo(
+    () => (historicalData ? { data: historicalData, granularity } : null),
+    [historicalData, granularity]
+  );
+  const { prepared, mountedCharts } = useProgressiveCharts(
+    chartSource,
+    prepareCharts
+  );
 
   if (sensor === undefined) return null;
 
@@ -639,18 +690,25 @@ const SecondaryInfoModal = ({
     ? new Date(dateObserved).toLocaleString("de-DE")
     : "–";
 
-  const historicalDataPointCount = historicalData
-    ? (() => {
-        const ts = new Set<string>();
-        for (const [key, val] of Object.entries(historicalData)) {
-          if (SKIP_HISTORICAL_KEYS.has(key)) continue;
-          for (const e of getAttrValues(val)) {
-            ts.add(e.observedAt);
-          }
-        }
-        return ts.size;
-      })()
-    : 0;
+  const historicalDataPointCount = prepared?.pointCount ?? 0;
+
+  // Solange nichts aufbereitet ist, stehen die Kopfzeilen aller Diagramme
+  // schon da. Der Platz stimmt damit von Anfang an.
+  const renderedPanels = prepared
+    ? prepared.panels.map((entry) => ({
+        key: entry.panel.key,
+        header: entry.header,
+      }))
+    : historyLoading || historicalData
+    ? CHART_PANELS.map((panel) => ({
+        key: panel.key,
+        header: `${panel.header} ${
+          panel.aggregation === "sum"
+            ? GRANULARITY_SUFFIX[granularity]
+            : GRANULARITY_SUFFIX_MEAN[granularity]
+        }${panel.unit ? ` in ${panel.unit}` : ""}`,
+      }))
+    : [];
 
   return (
     <Modal
@@ -725,7 +783,7 @@ const SecondaryInfoModal = ({
           </div>
         </div>
 
-        {chartPanelData.length > 0 && (
+        {(historyLoading || prepared) && (
           <div
             style={{
               display: "flex",
@@ -754,45 +812,31 @@ const SecondaryInfoModal = ({
           </div>
         )}
 
-        {chartPanelData.map((entry) => (
+        {renderedPanels.map((entry, idx) => (
           <Accordion
-            key={entry.panel.key}
+            key={entry.key}
             style={{ marginBottom: 6 }}
-            defaultActiveKey={entry.panel.key}
+            defaultActiveKey={entry.key}
           >
-            <Panel
-              header={entry.header}
-              eventKey={entry.panel.key}
-              bsStyle="success"
-            >
+            <Panel header={entry.header} eventKey={entry.key} bsStyle="success">
               <div style={{ padding: "10px", paddingTop: 0 }}>
-                <ChartWithZoom
-                  // Ein Wechsel der Aufloesung soll den Zoom nicht mitnehmen.
-                  key={`${entry.panel.key}-${granularity}`}
-                  bars={entry.bars}
-                  data={entry.data}
-                  options={entry.options}
-                />
+                {prepared && idx < mountedCharts ? (
+                  <ChartWithZoom
+                    // Ein Wechsel der Aufloesung soll den Zoom nicht mitnehmen.
+                    key={`${entry.key}-${granularity}`}
+                    bars={prepared.panels[idx].bars}
+                    data={prepared.panels[idx].data}
+                    options={prepared.panels[idx].options}
+                  />
+                ) : (
+                  <ChartLoadingPlaceholder
+                    label={idx === 0 ? "Messreihen werden geladen…" : "\u00a0"}
+                  />
+                )}
               </div>
             </Panel>
           </Accordion>
         ))}
-
-        {historyLoading && (
-          <Accordion style={{ marginBottom: 6 }} defaultActiveKey="loading">
-            <Panel header="Diagramme" eventKey="loading" bsStyle="success">
-              <div
-                style={{
-                  fontSize: "115%",
-                  padding: "10px",
-                  paddingTop: "0px",
-                }}
-              >
-                <p>Daten werden geladen…</p>
-              </div>
-            </Panel>
-          </Accordion>
-        )}
 
         {historicalDataPointCount > 0 && (
           <Accordion style={{ marginBottom: 6 }} defaultActiveKey="download">
@@ -803,11 +847,13 @@ const SecondaryInfoModal = ({
                 <button
                   type="button"
                   className="btn btn-primary btn-sm"
-                  disabled={historyLoading}
+                  disabled={!prepared}
                   onClick={() => {
                     if (!historicalData) return;
                     const csv = historicalDataToCsv(historicalData);
-                    const filename = `${name.replace(/[^a-zA-Z0-9_-]/g, "_") || "fahrradzaehler"}.csv`;
+                    const filename = `${
+                      name.replace(/[^a-zA-Z0-9_-]/g, "_") || "fahrradzaehler"
+                    }.csv`;
                     triggerCsvDownload(csv, filename);
                   }}
                 >

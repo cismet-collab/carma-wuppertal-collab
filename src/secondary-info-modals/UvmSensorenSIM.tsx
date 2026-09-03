@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import type { ChartOptions } from "chart.js";
 import "chart.js/auto";
 import { Modal, Accordion } from "react-bootstrap";
@@ -13,6 +13,9 @@ import {
   ZOOM_HINT,
   ZOOM_PLUGIN_OPTIONS,
 } from "./helper/chartWithZoom";
+import { ChartLoadingPlaceholder } from "./helper/chartLoading";
+import { valueRange, withYScale } from "./helper/chartAxis";
+import { useProgressiveCharts } from "./helper/useProgressiveCharts";
 
 const fmtValue = (v: unknown, decimals: number, unit: string): string => {
   if (typeof v !== "number") return "–";
@@ -172,9 +175,20 @@ const CHART_PANELS: ChartPanel[] = [
 // Einmal angelegt und wiederverwendet. Ueber toLocaleDateString mit
 // Optionsobjekt kostet dieselbe Beschriftung in einer Schleife ueber mehrere
 // tausend Messpunkte ein Vielfaches.
+// Mit Jahr, weil die Messreihen ueber den Jahreswechsel laufen und 01.08.
+// allein nicht sagt, aus welchem Jahr der Wert stammt.
 const dfDayShort = new Intl.DateTimeFormat("de-DE", {
   day: "2-digit",
   month: "2-digit",
+  year: "2-digit",
+});
+
+const dfTooltip = new Intl.DateTimeFormat("de-DE", {
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
 });
 
 function buildLineChartData(data: HistoricalData, series: SeriesConfig) {
@@ -182,15 +196,22 @@ function buildLineChartData(data: HistoricalData, series: SeriesConfig) {
   if (entries.length === 0) return null;
 
   const sorted = [...entries].sort((a, b) =>
-    a.observedAt.localeCompare(b.observedAt),
+    a.observedAt.localeCompare(b.observedAt)
   );
-  const labels = sorted.map((e) => dfDayShort.format(new Date(e.observedAt)));
+  // Beschriftungen bleiben die rohen Zeitstempel. Ein Sensor liefert rund
+  // 24.000 Messpunkte je Reihe, formatiert wird ueber die Callbacks von Achse
+  // und Tooltip nur, was tatsaechlich angezeigt wird.
+  const labels = sorted.map((e) => e.observedAt);
   const scale = series.scale ?? 1;
   const values = sorted.map((e) =>
-    typeof e.value === "number" ? e.value * scale : null,
+    typeof e.value === "number" ? e.value * scale : null
   );
 
+  const range = valueRange(values);
+  if (!range) return null;
+
   return {
+    ...range,
     labels,
     datasets: [
       {
@@ -211,22 +232,85 @@ function buildLineChartData(data: HistoricalData, series: SeriesConfig) {
 // das beide Diagrammarten bedient.
 const lineChartOptions: ChartOptions<"line" | "bar"> = {
   maintainAspectRatio: false,
+  // Bei 24.000 Messpunkten je Reihe kostet die Einblendanimation Sekunden, in
+  // denen die Zeichenflaeche leer bleibt.
+  animation: false,
   plugins: {
     legend: { display: false },
-    tooltip: { mode: "index", intersect: false },
+    tooltip: {
+      mode: "index",
+      intersect: false,
+      callbacks: {
+        title: (items) =>
+          items.length ? dfTooltip.format(new Date(items[0].label)) : "",
+      },
+    },
     zoom: ZOOM_PLUGIN_OPTIONS,
   },
   scales: {
     x: {
-      ticks: { maxTicksLimit: 8, font: { size: 10 } },
+      ticks: {
+        maxTicksLimit: 8,
+        font: { size: 10 },
+        callback: function (value) {
+          const raw = this.getLabelForValue(Number(value));
+          return dfDayShort.format(new Date(raw));
+        },
+      },
       grid: { display: false },
     },
+    // Grenzen und Striche kommen je Diagramm aus withYScale.
     y: {
       ticks: { maxTicksLimit: 6 },
       beginAtZero: false,
     },
   },
 };
+
+interface PreparedCharts {
+  panels: {
+    panel: ChartPanel;
+    data: NonNullable<ReturnType<typeof buildLineChartData>>;
+    options: ChartOptions<"line" | "bar">;
+  }[];
+  pointCount: number;
+}
+
+/**
+ * Baut Diagrammdaten und Datenpunktzahl in einem Durchgang. Laeuft bewusst
+ * nicht in einem useMemo waehrend des Renderns, sondern erst nachdem der
+ * Ladekringel gezeichnet ist: bei rund 6 MB Rohdaten blockiert dieser Schritt
+ * den Hauptthread, der Ladezustand waere sonst nicht zu sehen.
+ */
+function prepareCharts(data: HistoricalData): PreparedCharts {
+  const ts = new Set<string>();
+  for (const [key, val] of Object.entries(data)) {
+    if (SKIP_HISTORICAL_KEYS.has(key)) continue;
+    for (const e of getAttrValues(val)) {
+      ts.add(e.observedAt);
+    }
+  }
+
+  // Die Optionen entstehen hier mit, damit jedes Diagramm ueber Rerender
+  // hinweg dasselbe Optionsobjekt behaelt. ChartWithZoom setzt sonst die
+  // Skalen neu und ein gerade gesetzter Zoom waere verloren.
+  const panels: PreparedCharts["panels"] = [];
+  for (const panel of CHART_PANELS) {
+    const chartData = buildLineChartData(data, panel.series);
+    if (!chartData) continue;
+    panels.push({
+      panel,
+      data: chartData,
+      options: withYScale(lineChartOptions, chartData.min, chartData.max, {
+        // Negative Konzentrationen sind Rauschen der Sensoren um den
+        // Nullpunkt, keine echten Werte.
+        zeroFloorLabels: true,
+      }),
+    });
+  }
+
+  return { panels, pointCount: ts.size };
+}
 
 const headerBg = "#00acc1";
 const meteoBg = "#b2ebf2";
@@ -358,7 +442,7 @@ const SecondaryInfoModal = ({
   const entityId = (sensor?.id as string) ?? "";
 
   const [historicalData, setHistoricalData] = useState<HistoricalData | null>(
-    null,
+    null
   );
   const [historyLoading, setHistoryLoading] = useState(false);
 
@@ -382,28 +466,19 @@ const SecondaryInfoModal = ({
     };
   }, [entityId]);
 
-  const historicalDataPointCount = useMemo(() => {
-    if (!historicalData) return 0;
-    const ts = new Set<string>();
-    for (const [key, val] of Object.entries(historicalData)) {
-      if (SKIP_HISTORICAL_KEYS.has(key)) continue;
-      for (const e of getAttrValues(val)) {
-        ts.add(e.observedAt);
-      }
-    }
-    return ts.size;
-  }, [historicalData]);
+  const { prepared, mountedCharts } = useProgressiveCharts(
+    historicalData,
+    prepareCharts
+  );
 
-  // Die Chartdaten entstehen einmal je Datensatz und nicht bei jedem Rerender.
-  // Ein frisch gebautes Datenobjekt laesst react-chartjs-2 die Skalen neu
-  // setzen, womit ein gerade gesetzter Zoom sofort wieder verloren waere.
-  const chartPanelData = useMemo(() => {
-    if (!historicalData || historicalDataPointCount === 0) return [];
-    return CHART_PANELS.map((p) => ({
-      panel: p,
-      data: buildLineChartData(historicalData, p.series),
-    })).filter((entry) => entry.data !== null);
-  }, [historicalData, historicalDataPointCount]);
+  const historicalDataPointCount = prepared?.pointCount ?? 0;
+  // Solange nichts aufbereitet ist, stehen die Kopfzeilen aller Diagramme
+  // schon da. Der Platz stimmt damit von Anfang an.
+  const renderedPanels = prepared
+    ? prepared.panels.map((entry) => entry.panel)
+    : historyLoading || historicalData
+    ? CHART_PANELS
+    : [];
 
   if (sensor === undefined) return null;
 
@@ -475,7 +550,7 @@ const SecondaryInfoModal = ({
           </div>
         </div>
 
-        {chartPanelData.length > 0 && (
+        {prepared && prepared.panels.length > 0 && (
           <div
             style={{
               fontSize: "85%",
@@ -487,39 +562,32 @@ const SecondaryInfoModal = ({
           </div>
         )}
 
-        {chartPanelData.map((entry, idx) => (
+        {renderedPanels.map((panel, idx) => (
           <Accordion
-            key={entry.panel.key}
+            key={panel.key}
             style={{ marginBottom: 6 }}
             defaultActiveKey={String(idx)}
           >
             <Panel
-              header={entry.panel.header}
+              header={panel.header}
               eventKey={String(idx)}
               bsStyle="success"
             >
               <div style={{ padding: "10px", paddingTop: 0 }}>
-                <ChartWithZoom data={entry.data} options={lineChartOptions} />
+                {prepared && idx < mountedCharts ? (
+                  <ChartWithZoom
+                    data={prepared.panels[idx].data}
+                    options={prepared.panels[idx].options}
+                  />
+                ) : (
+                  <ChartLoadingPlaceholder
+                    label={idx === 0 ? "Messreihen werden geladen…" : "\u00a0"}
+                  />
+                )}
               </div>
             </Panel>
           </Accordion>
         ))}
-
-        {historyLoading && (
-          <Accordion style={{ marginBottom: 6 }} defaultActiveKey="loading">
-            <Panel header="Diagramme" eventKey="loading" bsStyle="success">
-              <div
-                style={{
-                  fontSize: "115%",
-                  padding: "10px",
-                  paddingTop: "0px",
-                }}
-              >
-                <p>Daten werden geladen…</p>
-              </div>
-            </Panel>
-          </Accordion>
-        )}
 
         {historicalDataPointCount > 0 && (
           <Accordion style={{ marginBottom: 6 }} defaultActiveKey="download">
@@ -530,7 +598,7 @@ const SecondaryInfoModal = ({
                 <button
                   type="button"
                   className="btn btn-primary btn-sm"
-                  disabled={historyLoading}
+                  disabled={!prepared}
                   onClick={() => {
                     if (!historicalData) return;
                     const csv = historicalDataToCsv(historicalData);
