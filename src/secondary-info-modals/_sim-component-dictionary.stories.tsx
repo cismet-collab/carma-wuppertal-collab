@@ -29,6 +29,9 @@ import PotenzialflaechenStory, {
 import KlimastationStory, {
   SecondaryInfo as Klimastation,
 } from "./_klimastation-sim.stories";
+import fluggsSensorenData from "./_data/fluggsSensoren";
+import FluggsSensorenSIM from "./FluggsSensorenSIM";
+import { useFeatureNavigation, simArgTypes } from "./_story-helpers";
 import SIMComponentDictionary from ".";
 import { PI_VALUES } from "@carma-commons/math";
 
@@ -102,3 +105,32 @@ export { Potenzialflaechen };
 
 Klimastation.argTypes = KlimastationStory.argTypes;
 export { Klimastation };
+
+// Only listed here, without a story file of its own
+const fluggsSensorenKeys = Object.keys(fluggsSensorenData);
+
+export const FluggsSensoren = {
+  args: {
+    Beispiele: fluggsSensorenKeys[0],
+    Feature: undefined,
+  },
+  argTypes: simArgTypes(fluggsSensorenKeys),
+  render: ({ Beispiele, Feature: feature }: { Beispiele: string; Feature?: any }) => {
+    useFeatureNavigation(fluggsSensorenKeys, Beispiele);
+
+    const _feature =
+      feature !== undefined && JSON.stringify(feature) !== "{}"
+        ? feature
+        : fluggsSensorenData[Beispiele];
+    return (
+      <div id="myMenu">
+        <FluggsSensorenSIM
+          feature={_feature}
+          setOpen={() => {}}
+          versionString="myVersion"
+          inStorybook={true}
+        />
+      </div>
+    );
+  },
+};
