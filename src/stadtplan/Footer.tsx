@@ -1,4 +1,4 @@
-import { MenuFooter } from "../commons";
+import { MenuFooter_MapLibre } from "../commons";
 
 interface FooterProps {
   version: string;
@@ -10,7 +10,7 @@ export const Footer = ({
   setAppMenuActiveMenuSection,
 }: FooterProps) => {
   return (
-    <MenuFooter
+    <MenuFooter_MapLibre
       title="Online-Stadtplan Wuppertal"
       version={version}
       setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
