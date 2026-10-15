@@ -32,14 +32,14 @@ const Component = ({ showOverlayFromOutside }) => {
             Community-Projekt "Shortbread Tiles" (hieraus verwenden wir das unter der 
             CC0-Lizenz stehende Vector-Tileset-Schema) und das Projekt "OpenMapTiles"
             der Schweizer Firma MapTiler (wir haben unsere Style-Definition an den 
-            Style OSM Bright aus diesem Projekt angelehnt). Die Hintergrundkarte, 
-            die Sie auswählen, wird sofort geladen und als Einstellung für den 
-            Wechselschalter gespeichert. Wenn Sie mit dem Mauszeiger über die 
-            Schaltflächen des Wechselschalters fahren, wird Ihnen die aktuell 
-            eingestellte Karte als Hinweis angezeigt.
+            Style OSM Bright aus diesem Projekt angelehnt). 
           </p>
           <p>
-            Das gleiche Hintergrund-Steuerelement finden Sie auch oben im
+            Die Hintergrundkarte, die Sie auswählen, wird sofort geladen und als 
+            Einstellung für den Wechselschalter gespeichert. Wenn Sie mit dem 
+            Mauszeiger über die Schaltflächen des Wechselschalters fahren, wird 
+            Ihnen die aktuell eingestellte Karte als Hinweis angezeigt. Das 
+            gleiche Hintergrund-Steuerelement finden Sie auch oben im
             Kartenfenster als erstes (linkes) Kartensteuerelement. Es dient
             nämlich auch als zentrales Steuerelement für alle geladenen
             Kartenebenen, was vor allem auf kleinen Bildschirmen nützlich ist.
