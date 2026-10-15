@@ -18,12 +18,25 @@ const Component = ({ showOverlayFromOutside }) => {
             <FontAwesomeIcon icon={faLayerGroup} /> neben dem Wechselschalter
             klicken, öffnet sich ein Dialog, in dem Sie aus weiteren Karten und
             Luftbildkarten auswählen können. Wenn dieser Dialog aufgeklappt ist,
-            sehen Sie auch Informationen darüber, wofür diese Karten geeignet
-            sind und was sie enthalten. Die Hintergrundkarte, die Sie auswählen,
-            wird sofort geladen und als Einstellung für den Wechselschalter
-            gespeichert. Wenn Sie mit dem Mauszeiger über die Schaltflächen des
-            Wechselschalters fahren, wird Ihnen die aktuell eingestellte Karte
-            als Hinweis angezeigt.
+            finden Sie unter <b>Informationen</b> Erläuterungen dazu, wofür diese
+            Karten geeignet sind ("Hintergrundkarte: Eignung") und was sie 
+            enthalten ("Hintergrundkarte: Inhalt"). Bei den Erläuterungen zum Inhalt 
+            finden Sie auch die ausführlichen Urheberrechts- bzw. Copyrightvermerke 
+            zur jeweiligen Karte einschließlich einer Angabe der Lizenz, unter der
+            die zugrundeliegenden Daten stehen. Die dazu erforderlichen Angaben sind bei 
+            einigen Karten recht vielfältig. So weisen wir z. B. bei der OpenStreetMap 
+            auf das grundlegende Copyright der OpenStreetMap Contributors an den 
+            verwendeten Daten und die Open Data Commons Open Database License (ODbL) v1.0
+            als zugehörige Lizenz hin, nennen aber auch die Geofabrik GmbH als 
+            datenbereitstellende Firma (ebenfalls unter der ODbL v1.0) sowie das
+            Community-Projekt "Shortbread Tiles" (hieraus verwenden wir das unter der 
+            CC0-Lizenz stehende Vector-Tileset-Schema) und das Projekt "OpenMapTiles"
+            der Schweizer Firma MapTiler (wir haben unsere Style-Definition an den 
+            Style OSM Bright aus diesem Projekt angelehnt). Die Hintergrundkarte, 
+            die Sie auswählen, wird sofort geladen und als Einstellung für den 
+            Wechselschalter gespeichert. Wenn Sie mit dem Mauszeiger über die 
+            Schaltflächen des Wechselschalters fahren, wird Ihnen die aktuell 
+            eingestellte Karte als Hinweis angezeigt.
           </p>
           <p>
             Das gleiche Hintergrund-Steuerelement finden Sie auch oben im
