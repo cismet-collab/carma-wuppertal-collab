@@ -99,10 +99,7 @@ export const KompaktanleitungSection = () => {
                           eines solchen Punktes oder mit <Icon name="plus" />{" "}
                           die Darstellung, so werden die zusammengefassten POI
                           Schritt für Schritt in die kleineren Symbole für die
-                          konkreten Einzel-POI zerlegt. Ab einer bestimmten
-                          Maßstabsstufe (Zoomstufe 12) führt ein weiterer Klick
-                          dazu, dass eine Explosionsgraphik der
-                          zusammengefassten POI angezeigt wird.
+                          konkreten Einzel-POI zerlegt.
                         </p>
                       </div>
                     ),
@@ -139,15 +136,6 @@ export const KompaktanleitungSection = () => {
                           noch eine <Icon name="calendar" /> Verknüpfung zu
                           wuppertal-live.de, wo sie für viele Veranstaltungen
                           auch Online-Tickets erwerben können.
-                        </p>
-                        <p>
-                          Wenn Sie noch nicht aktiv einen bestimmten POI im
-                          aktuellen Kartenausschnitt selektiert haben, wird der
-                          Fokus automatisch auf den nördlichsten POI gesetzt.
-                          Mit den Funktionen <a>&lt;&lt;</a> vorheriger Treffer
-                          und <a>&gt;&gt;</a> nächster Treffer können Sie in
-                          nördlicher bzw. südlicher Richtung alle aktuell im
-                          Kartenfenster angezeigten POI durchmustern.
                         </p>
                         <p>
                           Mit der Schaltfläche{" "}
