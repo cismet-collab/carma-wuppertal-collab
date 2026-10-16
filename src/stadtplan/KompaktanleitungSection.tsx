@@ -161,6 +161,7 @@ export const KompaktanleitungSection = () => {
                     content: (
                       <div>
                         <InKartePositionierenText
+                          zoomstufe={18}
                           pretext={
                             <>
                               <p>
