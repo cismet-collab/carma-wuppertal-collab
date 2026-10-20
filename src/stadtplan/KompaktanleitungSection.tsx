@@ -7,6 +7,7 @@ import Keinethemenausw from "./assets/sf_keinethemenausw.png";
 import {
   MeinStandortText,
   StadtplanTagNachtText,
+  OpenStreetMapText, 
   LuftbildkarteText,
   InKartePositionierenText,
 } from "../commons";
@@ -40,6 +41,7 @@ export const KompaktanleitungSection = () => {
 
                         <ul>
                           <StadtplanTagNachtText />
+                          <OpenStreetMapText />
                           <LuftbildkarteText />
                         </ul>
 

@@ -6,6 +6,7 @@ export { default as MenuFooter } from "./MenuFooter";
 export { default as MenuFooter_MapLibre } from "./MenuFooter_MapLibre";
 export { default as MeinStandortText } from "./MeinStandortText";
 export { default as StadtplanTagNachtText } from "./StadtplanTagNachtText";
+export { default as OpenStreetMapText } from "./OpenStreetMapText";
 export { default as LuftbildkarteText } from "./LuftbildkarteText";
 export { default as InKartePositionierenText } from "./InKartePositionierenText";
 export { default as genericSecondaryInfoFooterFactory } from "./genericSecondaryInfoFooterFactory";
