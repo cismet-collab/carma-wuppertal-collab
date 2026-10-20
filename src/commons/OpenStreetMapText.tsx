@@ -6,12 +6,12 @@ const OpenStreetMapText = ({
   return (
     <li>
       <strong>OpenStreetMap (OSM)</strong>:{" "} 
-      Mapbox-konformer Vector-Tiles-Kartendienst auf Grundlage der OSM,
+      Mapbox-konformer Vector-Tiles-Kartendienst auf Grundlage der OSM
       (©{" "}
       <a target="_legal" href="https://www.opendatacommons.org/licenses/odbl/1.0/">
         OpenStreetMap contributors
       </a>
-      ){" "} 
+      ),{" "} 
       gehostet von der{" "}
       <a target="_legal" href="https://cismet.de">
         cismet GmbH
