@@ -13,14 +13,8 @@ const MeinStandortText = () => {
         und Tablet-PC&#39;s angeboten, denn nur diese sind 
         regelmäßig mit einem GNSS-Empfänger als Positionssensor 
         ausgestattet (GNSS steht für Global Navigation
-        Satellite Systems, z.B.{" "}
-        <a
-          target="_info"
-          href="https://dvw.de/sites/default/files/landesverein-bayern/VeroeffentlichungenMitteilungen1996_4/DVW_1996_4_Schlie%C3%9Fer_GPS_Systemgrundlagen.pdf"
-        >
-          GPS
-        </a>
-        ). Mit dem ersten Antippen dieses Werkzeugs aktivieren Sie den
+        Satellite Systems, z.B. GPS).
+        Mit dem ersten Antippen dieses Werkzeugs aktivieren Sie den
         &quot;Follow me&quot;-Modus, erkennbar an der orangefarbigen Darstellung
         des Werkzeug-Symbols. Ggf. werden Sie vom Browser bzw. dem
         Betriebssystem Ihres Endgerätes zur Freigabe der Lokalisierung

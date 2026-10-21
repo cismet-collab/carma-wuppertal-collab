@@ -1,4 +1,8 @@
 import Icon from "react-cismap/commons/Icon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
+import meinStandpunktMarkerMitKompass from "./assets/MeinStandpunktMarkerMitKompass.jpg";
+import meinStandpunktMarkerDoppel from "./assets/meinStandpunktMarkerDoppel.jpg";
 import ConfigurableDocBlocks from "react-cismap/topicmaps/ConfigurableDocBlocks";
 import Section from "react-cismap/topicmaps/menu/Section";
 // import AdressMarker from "./assets/AdressMarker.jpg";
@@ -201,7 +205,40 @@ export const KompaktanleitungSection = () => {
                   bsStyle: "secondary",
                   contentBlockConf: {
                     type: "REACTCOMP",
-                    content: <MeinStandortText />,
+                    content: (
+                      <p>
+                        Auf mobilen Endgeräten wird ihnen auf der linken Seite der zusätzliche 
+                        Wechselschalter "Mein Standort"{" "}<FontAwesomeIcon icon={faLocationArrow} />{" "}
+                        zur Aktivierung bzw. Deaktivierung der Standort- und Blickrichtungsanzeige angeboten. 
+                        Mit dem ersten Antippen dieses Werkzeugs aktivieren Sie den "Follow me"-Modus 
+                        (orangefarbiges Werkzeug-Symbol). Ggf. werden Sie zunächst zur Freigabe der Lokalisierung 
+                        aufgefordert. Die Karte wird auf Ihren aktuellen Standort zentriert, der mit einem 
+                        blauen Kreissymbol{" "}
+                        <img
+                          alt="MeinStandpunktMarker"
+                          src={meinStandpunktMarkerMitKompass}
+                        />{" "}
+                        markiert wird. Das kleine blaue Dreieck am Rand dieses Standortsymbols zeigt ihre 
+                        Blickrichtung an. Wenn Sie sich mit Ihrem Endgerät bewegen, wird Ihre aktuelle Position 
+                        in schneller Folge neu bestimmt und stets in der Mitte der Karte angezeigt. Die Karte 
+                        wird dazu automatisiert nachgeführt. Das Standortsymbol ist umgeben von einem zweiten 
+                        Kreis mit transparenter, blauer Füllung, dessen Radius die Unsicherheit der 
+                        Positionsbestimmung angibt{" "}
+                        <img
+                          alt="MeinStandpunktMarkerDoppel"
+                          src={meinStandpunktMarkerDoppel}
+                        />. 
+                        Durch Antippen des inneren Kreises können Sie einen Texthinweis mit einer konkreten 
+                        Angabe der aktuellen Positionsgenauigkeit einblenden. Dieser Hinweis kann durch das 
+                        Antippen einer beliebigen Stelle außerhalb seines Textfeldes geschlossen werden. 
+                        Sie können den "Follow me"-Modus verlassen, indem Sie die Karte manuell verschieben 
+                        (blaues Werkzeug-Symbol). Ihr aktueller Standort wird dann weiterhin angezeigt, der 
+                        Kartenausschnitt aber festgehalten. Bei fortgesetzter Bewegung in eine Richtung wandert 
+                        das Standortsymbol daher vom Zentrum zum Rand des Kartenfensters und verschwindet schließlich.
+                        Das Nachführen der Karte müssen Sie in diesem Modus per Hand erledigen. Ein weiteres Antippen 
+                       von "Mein Standort" schaltet die Anzeige Ihrer Position wieder ab (schwarzes Werkzeug-Symbol). 
+                    </p>
+                    ),
                   },
                 },
                 {
