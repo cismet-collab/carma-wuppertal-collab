@@ -9,7 +9,6 @@ import Section from "react-cismap/topicmaps/menu/Section";
 import PoiZusammen from "./assets/poi_zusammen.png";
 import Keinethemenausw from "./assets/sf_keinethemenausw.png";
 import {
-  MeinStandortText,
   StadtplanTagNachtText,
   OpenStreetMapText, 
   LuftbildkarteText,
