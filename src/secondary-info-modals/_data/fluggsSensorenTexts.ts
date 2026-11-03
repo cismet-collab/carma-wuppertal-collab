@@ -20,16 +20,11 @@ const fluggsSensorenTexts = {
       "An Gütemessstellen werden Kenngrößen der Wasserqualität erfasst: pH-Wert, Trübung, gelöster Sauerstoff und elektrische Leitfähigkeit.",
   } as Record<string, string>,
   allgemeineInformationen: {
-    wupperverband:
-      "[Platzhalter] Kurzbeschreibung des Wupperverbands und seines Messnetzes. Der Text wird mit dem Wupperverband abgestimmt.",
     datenquelle:
       "Die Messwerte stammen aus dem öffentlich zugänglichen FROST-Server (OGC SensorThings API) des Wupperverbands. Veröffentlicht werden alle Messstellen des Verbandsgebiets, also auch die Talsperren außerhalb der drei Städte, weil sie steuern, was durch Wuppertal, Remscheid und Solingen läuft.",
-    kontext:
-      "[Platzhalter] Einordnung der Messstellen in den Digitalen Zwilling Wuppertal. Der Text wird mit dem Wupperverband abgestimmt.",
   },
   hinweise: {
-    zeitreihe:
-      "[Platzhalter] Hier erscheinen künftig die Ganglinien der Messreihe. Die Messwerte werden dafür von cismet zwischengespeichert, damit nicht jeder Aufruf im Geoportal direkt an den Server des Wupperverbands geht.",
+    keineZeitreihe: "Für diese Messreihe liegt derzeit keine Ganglinie vor.",
   },
 };
 
