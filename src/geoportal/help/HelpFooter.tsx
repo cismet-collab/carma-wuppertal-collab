@@ -2,12 +2,14 @@ import Logo_DigiTalZwilling from "./assets/Logo_DigiTalZwilling.png";
 
 interface HelpFooterProps {
   title?: string;
+  logoUrl?: string;
   version: string;
   setAppMenuActiveMenuSection: (arg: string) => void;
 }
 
 const HelpFooter: React.FC<HelpFooterProps> = ({
   title = "DigiTal Zwilling / Geoportal",
+  logoUrl = Logo_DigiTalZwilling,
   version,
 }) => {
   return (
@@ -68,7 +70,7 @@ const HelpFooter: React.FC<HelpFooterProps> = ({
             width: "60px",
           }}
           alt="Logo DigiTal Zwilling"
-          src={Logo_DigiTalZwilling}
+          src={logoUrl}
         />
       </a>
     </div>

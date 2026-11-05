@@ -24,6 +24,8 @@ interface CollabedHelpComponentProps {
   isLoginFormVisible?: boolean;
   loginForm?: React.ReactNode;
   loginFormTrigger?: React.ReactNode;
+  footerTitle?: string;
+  footerLogoUrl?: string;
 }
 
 export const getCollabedHelpComponentConfig = ({
@@ -33,12 +35,16 @@ export const getCollabedHelpComponentConfig = ({
   isLoginFormVisible = false,
   loginForm,
   loginFormTrigger,
+  footerTitle,
+  footerLogoUrl,
 }: CollabedHelpComponentProps) => {
   const MyFooter = () => {
     const { setAppMenuActiveMenuSection } =
       useContext<typeof UIDispatchContext>(UIDispatchContext);
     return (
       <Footer
+        title={footerTitle}
+        logoUrl={footerLogoUrl}
         version={versionString}
         setAppMenuActiveMenuSection={setAppMenuActiveMenuSection}
       />
