@@ -9,6 +9,7 @@ import { Link } from "react-scroll";
 import {
   MeinStandortText,
   StadtplanTagNachtText,
+  OpenStreetMapText, 
   LuftbildkarteText,
   InKartePositionierenText,
 } from "../commons";
@@ -72,8 +73,9 @@ export const KompaktanleitungSection = ({
                         </p>
 
                         <ul>
-                          <LuftbildkarteText />
                           <StadtplanTagNachtText />
+                          <OpenStreetMapText />
+                          <LuftbildkarteText />
                         </ul>
                       </div>
                     ),
