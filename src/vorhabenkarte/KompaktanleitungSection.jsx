@@ -82,32 +82,32 @@ export const KompaktanleitungSection = ({
                   },
                 },
                 {
-                  title: "Fachobjekte auswählen und abfragen",
+                  title: "Vorhaben auswählen und abfragen",
                   bsStyle: "success",
                   contentBlockConf: {
                     type: "REACTCOMP",
                     content: (
                       <div>
                         <p>
-                          Bewegen Sie den Mauszeiger im Kartenfenster auf eines
-                          der farbigen Symbole, mit denen die Fachobjekte des
-                          Kartenthemas in der Karte dargestellt werden, um sich
-                          den Namen des jeweiligen Fachobjektes anzeigen zu
-                          lassen. Ein Klick auf das Symbol setzt den Fokus auf
-                          dieses Fachobjekt. Es wird dann blau hinterlegt und
-                          die zugehörigen Informationen werden unten rechts in
-                          der Info-Box angezeigt. Außerdem werden Ihnen in der
-                          Info-Box weiterführende Funktionen und
-                          Kommunikationslinks zu diesem Fachobjekt angeboten.
-                          Mit der Lupenfunktion <Icon name="search" /> wird die
-                          Karte auf das aktuelle Fachobjekt zentriert und
-                          gleichzeitig ein großer Betrachtungsmaßstab (Zoomstufe
-                          15) eingestellt. Falls es mehr Informationen zu den
-                          Fachobjekten gibt, als in der Info-Box dargestellt
+                          Die Vorhaben werden in der Karte mit einem punktförmigen 
+                          Symbol und bei größerer räumlicher Ausdehnung zusätzlich 
+                          mit einer transparenten, farbigen Fläche dargestellt. 
+                          Ein Klick auf ein Symbol oder in eine Fläche setzt 
+                          den Fokus auf dieses Vorhaben. Es wird dann blau 
+                          hinterlegt und die zugehörigen Informationen werden 
+                          unten rechts in der Info-Box angezeigt. Außerdem werden 
+                          Ihnen in der Info-Box weiterführende Funktionen und
+                          ggf. Kommunikationslinks (
+                          <Icon name="envelope-square" />{" "}E-Mail, 
+                          <Icon name="phone" />{" "}Telefon) zu diesem Vorhaben 
+                          angeboten. Mit der Lupenfunktion <Icon name="search" /> 
+                          wird die Karte auf das aktuelle Vorhaben zentriert und
+                          gleichzeitig ein großer Betrachtungsmaßstab eingestellt. 
+                          Falls es mehr Informationen zu den
+                          Vorhaben gibt, als in der Info-Box dargestellt
                           werden können, können Sie sich diese über die
                           Datenblattfunktion <Icon name="info" /> anzeigen
-                          lassen. Die Kommunikationslinks umfassen{" "}
-                          <Icon name="envelope-square" /> E-Mail.
+                          lassen.
                         </p>
                         <p>
                           Wenn Sie noch kein Fachobjekt im aktuellen

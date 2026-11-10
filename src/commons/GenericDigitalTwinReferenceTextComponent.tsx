@@ -39,10 +39,10 @@ const GenericDigitalTwinReferenceTextComponent: React.FC<
             >
               Urbanen Digitalen Zwilling der Stadt Wuppertal
             </a>
-            . Im Konzept des DigiTal Zwillings implementiert die Anwendung einen{" "}
-            <b>Teilzwilling</b>, also einen themenspezifischen Ausschnitt aus
-            den Daten und Methoden des DigiTal Zwillings für einen spezifischen
-            Anwendungsfall.
+            . Im Konzept des DigiTal Zwillings bildet sie einen{" "}
+            <b>Teilzwilling</b>, also eine auf einen konkreten Anwendungsfall 
+            zugeschnittene Zusammenstellung von Daten und Funktionen des 
+            DigiTal Zwillings.
           </div>
         )}
       </p>
