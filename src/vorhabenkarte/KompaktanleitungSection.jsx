@@ -98,46 +98,33 @@ export const KompaktanleitungSection = ({
                           unten rechts in der Info-Box angezeigt. Außerdem werden 
                           Ihnen in der Info-Box weiterführende Funktionen und
                           ggf. Kommunikationslinks (
-                          <Icon name="envelope-square" />{" "}E-Mail, 
+                          <Icon name="envelope-square" />{" "}E-Mail,{" "} 
                           <Icon name="phone" />{" "}Telefon) zu diesem Vorhaben 
-                          angeboten. Mit der Lupenfunktion <Icon name="search" /> 
+                          angeboten. Mit der Lupenfunktion <Icon name="search" />{" "} 
                           wird die Karte auf das aktuelle Vorhaben zentriert und
                           gleichzeitig ein großer Betrachtungsmaßstab eingestellt. 
                           Falls es mehr Informationen zu den
                           Vorhaben gibt, als in der Info-Box dargestellt
                           werden können, können Sie sich diese über die
-                          Datenblattfunktion <Icon name="info" /> anzeigen
+                          Datenblattfunktion{" "}<Icon name="info" />{" "}anzeigen
                           lassen.
                         </p>
                         <p>
-                          Wenn Sie noch kein Fachobjekt im aktuellen
-                          Kartenausschnitt selektiert haben, wird der Fokus
-                          automatisch auf das nördlichste Objekt gesetzt. Mit
-                          den Funktionen{" "}
-                          <a className="renderAsLink">&lt;&lt;</a> vorheriger
-                          Treffer und <a className="renderAsLink">&gt;&gt;</a>{" "}
-                          nächster Treffer können Sie ausgehend von dem Objekt,
-                          auf dem gerade der Fokus liegt, in nördlicher bzw.
-                          südlicher Richtung alle aktuell im Kartenfenster
-                          angezeigten Objekte durchmustern. Sofern die
-                          Kartenanwendung nur ein einziges Fachobjekt umfasst,
-                          bleibt der Fokus auf diesem Objekt, auch wenn sich
-                          dieses nicht im aktuell eingestellten Kartenausschnitt
-                          befindet. Die Funktionen{" "}
-                          <a className="renderAsLink">&lt;&lt;</a> vorheriger
-                          Treffer und <a className="renderAsLink">&gt;&gt;</a>{" "}
-                          nächster Treffer werden Ihnen in diesem Fall nicht
-                          angeboten. Mit der Funktion <Icon name="search" /> in
+                          Ein von Ihnen ausgewähltes Vorhaben behält den Fokus,
+                          auch wenn Sie die Karte so verschieben, dass es nicht
+                          mehr im aktuellen Kartenausschnitt enthalten ist. 
+                          Mit der Funktion{" "}<Icon name="search" />{" "}in
                           der Info-Box können Sie jederzeit wieder zu diesem
-                          Fachobjekt zurückkehren.
+                          Vorhaben zurückkehren.
                         </p>
                         <p>
                           Mit der Schaltfläche{" "}
                           <Icon name="chevron-circle-down" /> im dunkelgrau
                           abgesetzten rechten Rand der Info-Box lässt sich diese
                           so verkleinern, dass nur noch die thematische
-                          Zuordnung und der Name des Fachobjektes sowie die
-                          Link-Symbole angezeigt werden - nützlich für Endgeräte
+                          Zuordnung und der Name des Vorhabens sowie die
+                          Funktions- und Kommunikationssymbole angezeigt 
+                          werden - nützlich für Endgeräte
                           mit kleinem Display. Mit der Schaltfläche{" "}
                           <Icon name="chevron-circle-up" /> an derselben Stelle
                           können Sie die Info-Box dann wieder vollständig
