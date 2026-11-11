@@ -174,6 +174,25 @@ export const KompaktanleitungSection = ({
                     content: (
                       <div>
                         <p>
+                          Um die Vorhaben an einer bestimmten Stelle des 
+                          Stadtgebietes zu erkunden, geben Sie die Bezeichnung 
+                          eines Vorhabens, den Namen eines Stadtteils (Stadtbezirk 
+                          oder Quartier), eine Adresse, einen Straßennamen oder 
+                          den Namen eines "Point of Interest" (interessanter Ort, 
+                          kurz als POI bezeichnet) im Eingabefeld "Wohin?" links 
+                          unten ein. In der inkrementellen Auswahlliste werden Ihnen 
+                          schon nach der Eingabe des ersten Buchstabens passende 
+                          Treffer angeboten. (Wenn Sie weitere Zeichen eingeben, 
+                          wird der Inhalt der Auswahlliste angepasst.) Durch das
+                          vorangestellte Symbol erkennen Sie, ob es sich dabei um ein{" "}
+                          <Icon name="bookmark" />{" "}Vorhaben, einen{" "}
+                          <Icon name="circle" />{" "}Stadtbezirk, ein{" "}
+                          <Icon name="pie-chart" />{" "}Quartier, eine{" "} 
+                          <Icon name="home" />{" "}Adresse, eine{" "}
+                          <Icon name="road" />{" "}Straße ohne zugeordnete Hausnummern, einen{" "}
+                          <Icon name="tag" />{" "}POI, die{" "}
+                          <Icon name="tags" />{" "}alternative Bezeichnung eines POI oder eine{" "}
+                          <Icon name="graduation-cap" />{" "}Schule handelt.
                           Um in der Karte direkt zu einer bestimmten Adresse zu
                           gelangen, geben Sie den Anfang des betreffenden
                           Straßennamens im Eingabefeld links unten ein
@@ -185,15 +204,6 @@ export const KompaktanleitungSection = ({
                           Straßenname (bei Straßen ohne zugeordnete Hausnummern)
                           oder "Point of Interest" (interessanter Ort, kurz als
                           POI bezeichnet).
-                        </p>
-                        <p>
-                          Durch das in der Auswahlliste vorangestellte Symbol
-                          erkennen Sie, ob es sich bei einem Treffer um ein{" "}
-                          <Icon name="bookmark" /> Vorhaben, eine{" "}
-                          <Icon name="home" /> Adresse, eine{" "}
-                          <Icon name="road" /> Straße ohne Hausnummern, einen{" "}
-                          <Icon name="tag" /> POI oder die <Icon name="tags" />{" "}
-                          alternative Bezeichnung eines POI.
                         </p>
                         <FuzzySearchParagraph />
                         <p>
