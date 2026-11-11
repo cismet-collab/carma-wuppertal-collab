@@ -7,7 +7,7 @@ import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 import meinStandpunktMarkerMitKompass from "../stadtplan/assets/MeinStandpunktMarkerMitKompass.jpg";
-import meinStandpunktMarkerDoppel from "../stadtplan/meinStandpunktMarkerDoppel.jpg";
+import meinStandpunktMarkerDoppel from "../stadtplan/assets/meinStandpunktMarkerDoppel.jpg";
 import {
   MeinStandortText,
   StadtplanTagNachtText,
