@@ -52,6 +52,7 @@ export const MenuIntroduction = ({ setAppMenuActiveMenuSection }) => {
       </Link>{" "} 
       für eine Einordnung des Online-Stadtplans in das Gesamtsystem des 
       Digitalen Zwillings der Stadt Wuppertal ("DigiTal Zwilling").
+      <br />
     </div>
   );
 };

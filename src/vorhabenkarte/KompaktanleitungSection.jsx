@@ -131,15 +131,13 @@ export const KompaktanleitungSection = ({
                           einblenden.
                         </p>
                         <p>
-                          In vielen unserer Kartenanwendungen bieten wir Ihnen
-                          zumindest zu einigen Fachobjekten Fotos oder
-                          Fotoserien an. Sie finden dann ein Vorschaubild direkt
-                          über der Info-Box. Klicken Sie auf das Vorschaubild,
-                          um einen Bildbetrachter (&quot;Leuchtkasten&quot;) mit
-                          dem Foto / der Fotoserie zu öffnen. Wenn wir hier auf
-                          Bildmaterial zugreifen, das der Urheber auch selbst im
-                          Internet publiziert, finden Sie im Fußbereich des
-                          Bildbetrachters einen Link auf dieses Angebot.
+                          Zu einigen Vorhaben bieten wir Ihnen Fotos oder 
+                          Planungsdokumente an, die das jeweilige Projekt 
+                          anschaulich machen. Bei diesen Vorhaben finden Sie 
+                          ein Vorschaubild direkt über der Info-Box. Klicken Sie 
+                          auf das Vorschaubild, um einen Bildbetrachter 
+                          (&quot;Leuchtkasten&quot;) mit den zugehörigen 
+                          Dokumenten zu öffnen.
                         </p>
                       </div>
                     ),
