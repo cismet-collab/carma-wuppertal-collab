@@ -151,17 +151,16 @@ export const KompaktanleitungSection = ({
                     content: (
                       <div>
                         <p>
-                          Zur Darstellung der Fachobjekte des Kartenthemas in
-                          der Karte werden weiße Symbole mit farbigem
-                          Hintergrund verwendet. Die dabei verwendeten Farben
-                          werden in der Titelzeile der Info-Box aufgegriffen.
-                          Zusätzlich werden dort die Informationen textlich
-                          zusammengefasst, die für die Kartendarstellung (Symbol
-                          und Hintergrundfarbe) relevant sind. Dort finden Sie
-                          also die Bedeutung des Symbols. Die verwendete
-                          Symbolik erklärt sich auf diese Weise selbst, sodass
-                          die Kartenanwendung keine klassische Legendengrafik
-                          benötigt.
+                          Wir haben die Vorhaben nach übergeordneten Themen geordnet, 
+                          zu denen jeweils eine Farbe gehört, z. B. Grün für 
+                          "Natur, Klima & Energie". Die Symbole und Flächen, mit 
+                          denen die Vorhaben in der Karte dargestellt werden, verwenden
+                          diese Farben, bei den Symbolen als Hintergrund der weißen 
+                          Piktogramme. Die Farben werden auch in der Titelzeile der 
+                          Info-Box aufgegriffen. Zusätzlich wird dort die Bezeichnung 
+                          des Themas textlich ausgeprägt. Die verwendeten 
+                          Symbole werden Ihnen hier also direkt erklärt. Die 
+                          Vorghabenkarte benötigt daher keine klassische Legendengrafik.
                         </p>
                       </div>
                     ),
