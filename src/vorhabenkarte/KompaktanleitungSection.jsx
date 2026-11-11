@@ -144,24 +144,24 @@ export const KompaktanleitungSection = ({
                   },
                 },
                 {
-                  title: "Kartendarstellung der Fachobjekte",
+                  title: "Kartendarstellung der Vorhaben",
                   bsStyle: "success",
                   contentBlockConf: {
                     type: "REACTCOMP",
                     content: (
                       <div>
                         <p>
-                          Wir haben die Vorhaben nach übergeordneten Themen geordnet, 
-                          zu denen jeweils eine Farbe gehört, z. B. Grün für 
-                          "Natur, Klima & Energie". Die Symbole und Flächen, mit 
-                          denen die Vorhaben in der Karte dargestellt werden, verwenden
-                          diese Farben, bei den Symbolen als Hintergrund der weißen 
-                          Piktogramme. Die Farben werden auch in der Titelzeile der 
-                          Info-Box aufgegriffen. Zusätzlich wird dort die Bezeichnung 
-                          des Themas textlich ausgeprägt. Die verwendeten 
-                          Symbole werden Ihnen hier also direkt erklärt. Die 
-                          Vorghabenkarte benötigt daher keine klassische Legendengrafik.
+                          Die Vorhaben sind nach übergeordneten Themen geordnet, denen jeweils 
+                          eine Farbe zugeordnet ist, z. B. Grün für „Natur, Klima & Energie“. 
+                          Diese Farbe wird sowohl für die Flächendarstellung als auch als 
+                          Hintergrund der weißen Piktogramme in den Punktsymbolen verwendet.
                         </p>
+                        <p>
+                          Die Farbe erscheint auch in der Titelzeile der Info-Box, in der das 
+                          jeweilige Thema zusätzlich namentlich genannt wird. Damit erklärt 
+                          sich die Bedeutung der Kartensymbole unmittelbar aus der Info-Box. 
+                          Eine gesonderte Kartenlegende ist nicht erforderlich.
+                        </p>   
                       </div>
                     ),
                   },
