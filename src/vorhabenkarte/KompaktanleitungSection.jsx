@@ -1,9 +1,9 @@
 import Icon from "react-cismap/commons/Icon";
-
 import ConfigurableDocBlocks from "react-cismap/topicmaps/ConfigurableDocBlocks";
 import Section from "react-cismap/topicmaps/menu/Section";
 import { getSymbolSVGGetter } from "react-cismap/tools/uiHelper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
 import {
