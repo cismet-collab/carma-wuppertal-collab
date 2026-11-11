@@ -168,61 +168,37 @@ export const KompaktanleitungSection = ({
                 },
                 {
                   title: "In Karte positionieren",
-                  bsStyle: "warning",
+                  bsStyle: "secondary",
                   contentBlockConf: {
                     type: "REACTCOMP",
                     content: (
                       <div>
-                        <p>
-                          Um die Vorhaben an einer bestimmten Stelle des 
-                          Stadtgebietes zu erkunden, geben Sie die Bezeichnung 
-                          eines Vorhabens, den Namen eines Stadtteils (Stadtbezirk 
-                          oder Quartier), eine Adresse, einen Straßennamen oder 
-                          den Namen eines "Point of Interest" (interessanter Ort, 
-                          kurz als POI bezeichnet) im Eingabefeld "Wohin?" links 
-                          unten ein. In der inkrementellen Auswahlliste werden Ihnen 
-                          schon nach der Eingabe des ersten Buchstabens passende 
-                          Treffer angeboten. (Wenn Sie weitere Zeichen eingeben, 
-                          wird der Inhalt der Auswahlliste angepasst.) Durch das
-                          vorangestellte Symbol erkennen Sie, ob es sich dabei um ein{" "}
-                          <Icon name="bookmark" />{" "}Vorhaben, einen{" "}
-                          <Icon name="circle" />{" "}Stadtbezirk, ein{" "}
-                          <Icon name="pie-chart" />{" "}Quartier, eine{" "} 
-                          <Icon name="home" />{" "}Adresse, eine{" "}
-                          <Icon name="road" />{" "}Straße ohne zugeordnete Hausnummern, einen{" "}
-                          <Icon name="tag" />{" "}POI, die{" "}
-                          <Icon name="tags" />{" "}alternative Bezeichnung eines POI oder eine{" "}
-                          <Icon name="graduation-cap" />{" "}Schule handelt.
-                          Um in der Karte direkt zu einer bestimmten Adresse zu
-                          gelangen, geben Sie den Anfang des betreffenden
-                          Straßennamens im Eingabefeld links unten ein
-                          (mindestens 2 Zeichen). In der inkrementellen
-                          Auswahlliste werden Ihnen passende Treffer angeboten.
-                          (Wenn Sie weitere Zeichen eingeben, wird der Inhalt
-                          der Auswahlliste angepasst.) Sie können auch andere
-                          Suchbegriffe eingeben, nämlich Vorhabenname,
-                          Straßenname (bei Straßen ohne zugeordnete Hausnummern)
-                          oder "Point of Interest" (interessanter Ort, kurz als
-                          POI bezeichnet).
-                        </p>
-                        <FuzzySearchParagraph />
-                        <p>
-                          Nach der Auswahl eines Treffers aus der Liste wird die
-                          Karte auf die zugehörige Position zentriert. Bei
-                          Suchbegriffen mit Punktgeometrie (Adresse, POI) wird
-                          außerdem ein großer Maßstab (Zoomstufe 14) eingestellt
-                          und ein Marker <Icon name="map-marker" /> auf der
-                          Zielposition platziert. Bei Suchbegriffen mit
-                          Flächengeometrie oder Liniengeometrie wird der Maßstab
-                          so eingestellt, dass die Fläche bzw. Linie vollständig
-                          dargestellt werden kann.
-                        </p>
-                        <p>
-                          Durch Anklicken des Werkzeugs <Icon name="times" />{" "}
-                          links neben dem Eingabefeld können Sie die Suche
-                          zurücksetzen (Entfernung von Marker bzw. Abdunklung,
-                          Löschen des Textes im Eingabefeld).
-                        </p>
+                        <InKartePositionierenText
+                          zoomstufe={18}
+                          pretext={
+                            <>
+                              <p>
+                                Um die Vorhaben an einer bestimmten Stelle des 
+                                Stadtgebietes zu erkunden, geben Sie die Bezeichnung 
+                                eines Vorhabens, eine Adresse, einen Straßennamen oder 
+                                den Namen eines "Point of Interest" (interessanter Ort, 
+                                kurz als POI bezeichnet) im Eingabefeld "Wohin?" links 
+                                unten ein. In der inkrementellen Auswahlliste werden Ihnen 
+                                schon nach der Eingabe des ersten Buchstabens passende 
+                                Treffer angeboten. (Wenn Sie weitere Zeichen eingeben, 
+                                wird der Inhalt der Auswahlliste angepasst.) Durch das
+                                vorangestellte Symbol erkennen Sie, ob es sich dabei um ein{" "}
+                                <Icon name="bookmark" />{" "}Vorhaben, eine{" "}
+                                <Icon name="home" />{" "}Adresse, eine{" "}
+                                <Icon name="road" />{" "}Straße ohne zugeordnete Hausnummern, einen{" "}
+                                <Icon name="tag" />{" "}POI, die{" "}
+                                <Icon name="tags" />{" "}alternative Bezeichnung eines POI oder eine{" "}
+                                <Icon name="graduation-cap" />{" "}Schule handelt.
+                              </p>
+                              <FuzzySearchParagraph />
+                            </>
+                          }
+                        />
                       </div>
                     ),
                   },
