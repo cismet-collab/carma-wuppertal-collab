@@ -180,7 +180,8 @@ export const KompaktanleitungSection = ({
                               <p>
                                 Um die Vorhaben an einer bestimmten Stelle des 
                                 Stadtgebietes zu erkunden, geben Sie die Bezeichnung 
-                                eines Vorhabens, eine Adresse, einen Straßennamen oder 
+                                eines Vorhabens, den Namen eines Stadtteils (Stadtbezirk 
+                                oder Quartier), eine Adresse, einen Straßennamen oder 
                                 den Namen eines "Point of Interest" (interessanter Ort, 
                                 kurz als POI bezeichnet) im Eingabefeld "Wohin?" links 
                                 unten ein. In der inkrementellen Auswahlliste werden Ihnen 
@@ -188,7 +189,9 @@ export const KompaktanleitungSection = ({
                                 Treffer angeboten. (Wenn Sie weitere Zeichen eingeben, 
                                 wird der Inhalt der Auswahlliste angepasst.) Durch das
                                 vorangestellte Symbol erkennen Sie, ob es sich dabei um ein{" "}
-                                <Icon name="bookmark" />{" "}Vorhaben, eine{" "}
+                                <Icon name="bookmark" />{" "}Vorhaben, einen{" "}
+                                <Icon name="circle" />{" "}Stadtbezirk, ein{" "}
+                                <Icon name="pie-chart" />{" "}Quartier, eine{" "}
                                 <Icon name="home" />{" "}Adresse, eine{" "}
                                 <Icon name="road" />{" "}Straße ohne zugeordnete Hausnummern, einen{" "}
                                 <Icon name="tag" />{" "}POI, die{" "}
@@ -254,8 +257,7 @@ export const KompaktanleitungSection = ({
                         <p>
                           Unter "<strong>Einstellungen</strong>" können Sie im
                           Anwendungsmenü festlegen, wie die Hintergrundkarte und
-                          die Fachobjekte des Kartenthemas angezeigt werden
-                          sollen.
+                          die Vorhaben angezeigt werden sollen.
                         </p>
                         <p>
                           Unter "
@@ -277,10 +279,17 @@ export const KompaktanleitungSection = ({
                           für die Fachobjekte des Kartenthemas, die
                           unterschiedlichen Flächennutzungen in der
                           Hintergrundkarte lassen sich aber nicht mehr so gut
-                          unterscheiden wie in der Tag-Karte. Als dritte
-                          Möglichkeit steht eine Luftbildkarte zur Verfügung,
-                          die die Anschaulichkeit des Luftbildes mit der
-                          Eindeutigkeit des Stadtplans (Kartenschrift,
+                          unterscheiden wie in der Tag-Karte. Als Alternative zum 
+                          Stadtplan steht Ihnen mit "<em>OpenStreetMap</em>" eine Karte   
+                          auf der Grundlage einer von Freiwilligen gepflegten Datenbank 
+                          zur Verfügung. Als unbürokratisches Community-Projekt 
+                          wird die OpenStreetMap (OSM) oftmals schneller aktualisiert 
+                          als die amtlichen Geobasisdaten, auf denen unser Stadtplan 
+                          basiert. Aktualität und Vollständigkeit sind jedoch 
+                          tendenziell unzuverlässig, sie hängen von der Aktivität der 
+                          OSM-Community vor Ort ab. Als vierte Möglichkeit steht eine 
+                          Luftbildkarte zur Verfügung, die die Anschaulichkeit des 
+                          Luftbildes mit der Eindeutigkeit des Stadtplans (Kartenschrift,
                           durchscheinende Linien) verbindet.
                         </p>
                         <p>
