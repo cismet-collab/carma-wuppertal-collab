@@ -170,7 +170,7 @@ export const KompaktanleitungSection = ({
                 },
                 {
                   title: "In Karte positionieren",
-                  bsStyle: "secondary",
+                  bsStyle: "success",
                   contentBlockConf: {
                     type: "REACTCOMP",
                     content: (
@@ -210,7 +210,7 @@ export const KompaktanleitungSection = ({
                 },
                 {
                   title: "Mein Standort",
-                  bsStyle: "secondary",
+                  bsStyle: "warning",
                   contentBlockConf: {
                     type: "REACTCOMP",
                     content: (
@@ -245,6 +245,20 @@ export const KompaktanleitungSection = ({
                         das Standortsymbol daher vom Zentrum zum Rand des Kartenfensters und verschwindet schließlich.
                         Das Nachführen der Karte müssen Sie in diesem Modus per Hand erledigen. Ein weiteres Antippen 
                        von "Mein Standort" schaltet die Anzeige Ihrer Position wieder ab (schwarzes Werkzeug-Symbol). 
+                    </p>
+                    ),
+                  },
+                },
+                {
+                  title: "Filter",
+                  bsStyle: "info",
+                  contentBlockConf: {
+                    type: "REACTCOMP",
+                    content: (
+                    <p>
+                      Unter "<strong>Filter</strong>" können
+                      Sie im Anwendungsmenü <Icon name="bars" /> auswählen,
+                      welche POI-Kategorien in der Karte dargestellt werden.
                     </p>
                     ),
                   },
