@@ -255,19 +255,24 @@ export const KompaktanleitungSection = ({
                   contentBlockConf: {
                     type: "REACTCOMP",
                     content: (
-                    <p>
-                      Unter "<strong>Filter</strong>" können
-                      Sie im Anwendungsmenü <Icon name="bars" /> auswählen,
-                      welche Vorhaben-Themen in der Karte dargestellt werden.
-                      Treffen Sie Ihre Auswahl mit den Kontrollkästchen vor den 
-                      Bezeichnungen der Themenfelder oder durch Anklicken 
-                      von "alle" oder "keine". Als Vorschau für Ihre Auswahl wird 
-                      Ihnen ein Donut-Diagramm angezeigt, das die Anzahl der 
-                      zugehörigen Vorhaben und deren Verteilung auf die Themenfelder 
-                      anzeigt anzeigt. Bewegen Sie dazu den Mauszeiger auf eines der 
-                      farbigen Segmente des Donut-Diagramms. (Bei einem Gerät mit
-                      Touchscreen tippen Sie auf eines der farbigen Segmente.)
-                    </p>
+                    <div>
+                      <p>
+                        Unter "<strong>Filter</strong>" können
+                        Sie im Anwendungsmenü <Icon name="bars" /> auswählen,
+                        welche Vorhaben-Themen in der Karte dargestellt werden.
+                        Treffen Sie Ihre Auswahl mit den Kontrollkästchen vor den
+                        Bezeichnungen der Themenfelder oder durch Anklicken
+                        von "alle" oder "keine". 
+                      </p>
+                      <p> 
+                        Als Vorschau für Ihre Auswahl wird Ihnen ein Donut-Diagramm 
+                        angezeigt, das die Anzahl der zugehörigen Vorhaben und deren 
+                        Verteilung auf die Themenfelder anzeigt. Bewegen Sie dazu den 
+                        Mauszeiger auf eines der farbigen Segmente des Donut-Diagramms. 
+                        (Bei einem Gerät mit Touchscreen tippen Sie auf eines der 
+                        farbigen Segmente.)
+                      </p>
+                  </div>
                     ),
                   },
                 },
