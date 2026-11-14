@@ -257,20 +257,25 @@ export const KompaktanleitungSection = ({
                     content: (
                     <div>
                       <p>
-                        Unter "<strong>Filter</strong>" können
-                        Sie im Anwendungsmenü <Icon name="bars" /> auswählen,
-                        welche Vorhaben-Themen in der Karte dargestellt werden.
-                        Treffen Sie Ihre Auswahl mit den Kontrollkästchen vor den
-                        Bezeichnungen der Themenfelder oder durch Anklicken
-                        von "alle" oder "keine". 
+                        Unter "<strong>Filter</strong>" im{" "}<Icon name="bars" />{" "}
+                        Anwendungsmenü können Sie auswählen, welche Themenfelder in 
+                        der Karte berücksichtigt werden. Aktivieren oder deaktivieren 
+                        Sie dazu die Kontrollkästchen vor den Themenfeldern. Mit 
+                        "<strong>alle</strong>" oder "<strong>keine</strong>" können 
+                        Sie sämtliche Themenfelder gleichzeitig auswählen oder abwählen. 
+                        Mit dem Wechselschalter "<strong>nur Vorhaben mit Bürgerbeteiligung</strong>" 
+                        können Sie die Auswahl zusätzlich auf Vorhaben einschränken, 
+                        für die ein formales Bürgerbeteiligungsverfahren läuft. 
                       </p>
                       <p> 
-                        Als Vorschau für Ihre Auswahl wird Ihnen ein Donut-Diagramm 
-                        angezeigt, das die Anzahl der zugehörigen Vorhaben und deren 
-                        Verteilung auf die Themenfelder anzeigt. Bewegen Sie dazu den 
-                        Mauszeiger auf eines der farbigen Segmente des Donut-Diagramms. 
-                        (Bei einem Gerät mit Touchscreen tippen Sie auf eines der 
-                        farbigen Segmente.)
+                        In der blauen Titelzeile wird angezeigt, wie viele Vorhaben 
+                        insgesamt den gewählten Filterbedingungen entsprechen und wie 
+                        viele davon im aktuellen Kartenausschnitt liegen. Das Donut-Diagramm 
+                        zeigt Ihnen als Vorschau, wie sich die ausgewählten Vorhaben auf die 
+                        Themenfelder verteilen. Wenn Sie den Mauszeiger über ein farbiges 
+                        Segment bewegen, wird Ihnen die Anzahl der Vorhaben im jeweiligen 
+                        Themenfeld angezeigt. Auf Geräten mit Touchscreen tippen Sie dazu 
+                        auf das entsprechende Segment.
                       </p>
                   </div>
                     ),
