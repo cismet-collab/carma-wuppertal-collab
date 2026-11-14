@@ -13,9 +13,9 @@ export const getFilterHeader = (
 ) => {
   let term;
   if (numberOfFeatures === 1) {
-    term = "Angebot";
+    term = "Vorhaben";
   } else {
-    term = "Angebote";
+    term = "Vorhaben";
   }
 
   return `Filter (${numberOfFeatures} ${term} gefunden, davon ${
