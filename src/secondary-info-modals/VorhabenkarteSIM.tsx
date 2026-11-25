@@ -11,7 +11,7 @@ import { Tag } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal, Accordion } from "react-bootstrap";
 import { useContext, useEffect, useMemo, useState } from "react";
-import { LightBoxDispatchContext } from "react-cismap/contexts/LightBoxContextProvider";
+import { LightBoxDispatchContext } from "@carma-mapping/lightbox";
 import Panel from "react-cismap/commons/Panel";
 import PhotoGallery from "../vorhabenkarte/PhotoGallery";
 import Contacts from "../vorhabenkarte/Contacts";
@@ -115,7 +115,9 @@ const SecondaryInfoModal = ({
 
   useEffect(() => {
     const props =
-      featureInput?.targetProperties || featureInput?.properties || featureInput;
+      featureInput?.targetProperties ||
+      featureInput?.properties ||
+      featureInput;
     if (props?.fid) {
       // Vector tile feature - need to fetch data
       setCompleteFeature(false);

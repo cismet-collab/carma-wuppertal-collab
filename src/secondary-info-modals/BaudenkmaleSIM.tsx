@@ -2,7 +2,7 @@ import { faLandmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal, Accordion } from "react-bootstrap";
 import { useContext } from "react";
-import { LightBoxDispatchContext } from "react-cismap/contexts/LightBoxContextProvider";
+import { LightBoxDispatchContext } from "@carma-mapping/lightbox";
 import Panel from "react-cismap/commons/Panel";
 import { genericSecondaryInfoFooterFactory } from "../commons";
 
